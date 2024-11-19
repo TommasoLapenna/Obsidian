@@ -24,5 +24,6 @@
     "editor:insert-table",
     "editor:configure-toolbar"
   ],
-  "attachmentFolderPath": "Source Material"
+  "attachmentFolderPath": "Source Material",
+  "alwaysUpdateLinks": true
 }
