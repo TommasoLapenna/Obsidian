@@ -18,12 +18,18 @@
     "editor:toggle-numbered-list",
     "editor:undo",
     "editor:redo",
-    "editor:toggle-inline-math",
     "editor:insert-codeblock",
-    "editor:insert-mathblock",
     "editor:insert-table",
     "editor:configure-toolbar"
   ],
   "attachmentFolderPath": "Source Material",
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "spellcheck": true,
+  "propertiesInDocument": "visible",
+  "foldIndent": true,
+  "showLineNumber": true,
+  "useTab": true,
+  "foldHeading": true,
+  "smartIndentList": false,
+  "showIndentGuide": true
 }

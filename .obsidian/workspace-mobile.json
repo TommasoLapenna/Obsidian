@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "67690423c2709462",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Source Material/Images/TUTTO MATEMATICA DISCRETA E CODICI.jpeg"
-              },
-              "icon": "lucide-image",
-              "title": "TUTTO MATEMATICA DISCRETA E CODICI"
-            }
-          },
-          {
             "id": "9fb6cfcce0b95bdd",
             "type": "leaf",
             "state": {
@@ -33,9 +21,45 @@
               "icon": "lucide-file",
               "title": "Introduzione alla Teoria dei Codici"
             }
+          },
+          {
+            "id": "86f54eb6201df658",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Zettelkasten/Definizioni.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Definizioni"
+            }
           }
         ],
         "currentTab": 1
+      },
+      {
+        "id": "d1cfd1900b394181",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b503cd5e494c23f3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Source Material/TUTTO MATEMATICA DISCRETA E CODICI.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "TUTTO MATEMATICA DISCRETA E CODICI"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -97,8 +121,7 @@
         }
       }
     ],
-    "currentTab": 0,
-    "pinned": true
+    "currentTab": 0
   },
   "right": {
     "id": "ad522054230588e7",
@@ -173,15 +196,22 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "11c19a654a8bdc13",
+  "active": "86f54eb6201df658",
   "lastOpenFiles": [
-    "Indexes/University.md",
     "Source Material/TUTTO MATEMATICA DISCRETA E CODICI.md",
+    "Zettelkasten/Definizioni.md",
+    "Zettelkasten/Introduzione alla Teoria dei Codici.md",
+    "Indexes/University.md",
+    "Tags/Matematica Discreta e Codici.md",
+    "Zettelkasten/Definzioni.md",
+    "Source Material/Images/Latex CheatSheet.jpeg",
+    "Source Material/TUTTO MATEMATICA DISCRETA E CODICI.pdf",
+    "Source Material/Latex CheatSheet.md",
+    "Source Material/latexsheet-a4.pdf",
     "Source Material/Images/TUTTO MATEMATICA DISCRETA E CODICI.jpeg",
     "Source Material/INFO_Immagine_JPEG.md",
     "Source Material/IMG_0278.jpg",
     "Source Material/INFO_IMG_0278_JPG.md",
-    "Zettelkasten/Introduzione alla Teoria dei Codici.md",
     "Source Material/Images/TUTTO MATEMATICA DISCRETA.jpeg",
     "Source Material/Images",
     "Zettelkasten/ffff.md",
@@ -193,19 +223,15 @@
     "Source Material/Images/TUTTO MATEMATICA DISCRETA E CODICI-01.jpg",
     "Source Material/TUTTO MATEMATICA DISCRETA E CODICI-12.jpg",
     "Source Material/TUTTO MATEMATICA DISCRETA E CODICI-12 1.jpg",
-    "Source Material/Pasted image 20241119222701 11.jpg",
     "Source Material/PDFs/TUTTO MATEMATICA DISCRETA E CODICI.pdf",
     "Source Material/Images",
     "0-intro_4a51dc3aa8e7c3cd5f4e9c35dae13ecd.pdf",
     "TUTTO MATEMATICA DISCRETA E CODICI.pdf",
-    "Tags/Matematica Discreta e Codici.md",
     "Tags/Intelligenza Artificiale.md",
     "Source Material/PDFs",
     "Tags",
     "Zettelkasten/Untitled 1.md",
-    "Source Material/TUTTO MATEMATICA DISCRETA E CODICI.pdf",
     "README.md",
-    "2-algebra-relazionale_9873dbea37d02b3c2948e2678982a7c0.pdf",
     "Zettelkasten/univeristy.md",
     "matematica discreta e codici.md",
     "Prova.md",
