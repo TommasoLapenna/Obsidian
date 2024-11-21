@@ -13,13 +13,23 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Zettelkasten/Definizioni.md",
+                "file": "Zettelkasten/Preliminare di algebra.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Definizioni"
+              "title": "Preliminare di algebra"
+            }
+          },
+          {
+            "id": "c9481daedf188b84",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -182,12 +192,13 @@
   },
   "active": "9fb6cfcce0b95bdd",
   "lastOpenFiles": [
+    "Zettelkasten/Preliminare di algebra.md",
+    "Indexes/University.md",
     "Tags/Matematica Discreta e Codici.md",
+    "Zettelkasten/Introduzione alla Teoria dei Codici.md",
     "Zettelkasten/Definizioni.md",
     "Source Material/TUTTO MATEMATICA DISCRETA E CODICI.md",
-    "Zettelkasten/Introduzione alla Teoria dei Codici.md",
     "Zettelkasten/Definzioni.md",
-    "Indexes/University.md",
     "Source Material/Images/Latex CheatSheet.jpeg",
     "Source Material/TUTTO MATEMATICA DISCRETA E CODICI.pdf",
     "Source Material/Latex CheatSheet.md",
