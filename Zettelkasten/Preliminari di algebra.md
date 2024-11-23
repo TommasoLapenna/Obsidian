@@ -212,4 +212,27 @@ Non si possono cercare altri campi nella forma $\,^{\mathbb{Z}}\!/\!_{(n)}$ (per
 	$K$ campo, $K[x]$ e i suoi ideali, $K[x]$ è un anello ad ideali principali.
 
 >**DIMOSTRAZIONE**
-	Sia 
+	Sia $I\underset{ideale}\subseteq k[x]$. Si deve mostrare che esiste$f\in k[x]$ t.c. $I=(f)$. 
+	Se $I=(0_{k[x]})$ fine, $f=0_{k[x]}$ (caso banale, $(0)$ è un ideale principale).
+	Sia $I\supsetneq(0_{k[x]})$, sia $f$ un polinomio di grado minimo tra quelli in $I$ (**OSS.** se $f$ è un tale polinomio, anche $\alpha\cdot f, \ \alpha\in K\backslash\{0_K\}$ è un tale polinomio). Si afferma che$(f)=I\subseteq 0_K$ (poiché $f\in I$).
+	Adesso si mostra l'uguaglianza dimostrando che $(f)\supseteq I$: sia $g\in I\backslash\{0_K\}$ (polinomio non nullo in $I$). Per via della scelta di $f$, $deg(g)\ge deg(f)\Rightarrow$ si può eseguire la divisione:$g=q\cdot f+r$. Si vuole che $r=0_{K[x]}:g=q\cdot f+r\Rightarrow r=g-q\cdot f\in I$, quindi se $r\ne 0_{k[x]}$ sarebbe un polinomio non nullo in $I$ di grado strettamente più piccolo del grado di $f\longrightarrow$ assurdo, $f$ è il polinomio di grado minimo, quindi $r=0{K[x]}, \ g\in(f)\rightarrow(f)\supseteq I$.
+
+>**OSSERVAZIONE**
+	Sia $K$ un campo. Siano $f,g\in K[x]$ t.c. $(f)=(g)$ (cioè $f$ e $g$ generano lo stesso ideale). Ma $(f)=(g)\iff\left\{\begin{matrix} f\in(g)\iff\exists q:f=q\cdot g \\g\in (f)\iff \exists p:g=p\cdot f  \end{matrix}\right.$ $p,q\in K[x]\Rightarrow$$f=q\cdot g =q\cdot p \cdot f+r\Rightarrow q \cdot p =1_{k[x]}\iff q,p\in K\backslash\{0_K\}$.
+	Inoltre $q=\alpha\in K, \ p=\beta\in K\Rightarrow\alpha\cdot\beta=1_K$. Quindi se $g$ è un generatore di $(f)$, allora $\exists\lambda\in K\backslash\{0_K\}$ t.c. $g=\lambda f$ ($\iff f=\lambda^{-1}g$)
+
+Se $f=a_0+a_1x+\ldots+a_nx^n \ \ deg(f)=n\Rightarrow a_n\ne 0_K\Rightarrow$ anche $a_n^{-1}a_0+a_n^{-1}a_1x+\ldots+x^n$ è un generatore di $(f)$. Quindi, per ogni ideale $I\underset{ideale}\subseteq K[x]\ \exists!$ generatore monico $g:(g)=I$, $g$ ha coefficiente di grado massimo $=1_K$.
+In modo equivalente {polinomi monici in $K[x]$}$\longrightarrow${$Ideali(K[x])$} è biettiva.
+
+>**PROPOSIZIONE**
+	Sia $I=(f)\underset{ideale}\subseteq K[x],\ deg(f)=n\ge 1$
+	1.  $K^n\overset{\epsilon}{\rightarrow} \frac{K[x]}{(f)},\ (a_0,a_1,\ldots,a_{n-1})\overset{\epsilon}{\mapsto}[\sum\limits^{n-1}_{i=0}a_ix^i]_{(f)}$ è isomorfismo di $K-$spazi vettoriali($\Rightarrow dim_K(\frac{K[x]}{(f)})=n$)
+	2. C'è una biezione: $Ideali\left( \frac{K[x]}{(f)} \right)\overset{\sim}{\leftrightarrow}$ {polinomi monici in $K[x]$ divisori di $f$}={$g\in K[x]$, $g$ monico con $f\in(g)$}
+
+>**DIMOSTRAZIONE**
+	1. Inanzitutto $\epsilon$ è $K-$lineare, si costruisce un'inversa $\beta=\epsilon^{-1}: \frac{K[x]}{(f)} \overset{\beta}{\rightarrow}K^n$. Sia $[p]_{(f)}\in \frac{K[x]}{(f)}$ un qualsiasi elemento. Se $deg(p)<deg(f)\Rightarrow p=a_0+a_1x+a_{n-1}x^{n-1}$, allora si definisce $\eta([p]_{(f)}):=(a_0,a_1,\ldots,a_{n-1})\in K^n$. Se invece $deg(p)\ge deg(f)=n$, allora si esegue la divisione di $p$ secondo $f:p=q\cdot f+r =\left<\begin{matrix} r=0_{K[x]} \\ r\ne 0 \ e \ \le deg(r)<n \end{matrix}\right.\Rightarrow$ $r=r_0+r_1x+\ldots+r_{n-1}x^{n-1}$, si definisce $\eta([p]_{(f)}):=(r_0,r_1,\ldots,r_{n-1})\in K^n$. Si osservi che $f:p=q\cdot f+r\Rightarrow[p]_{(f)}=[q\cdot f+r]_{(f)}= \frac{0_{K[x]}}{(f)}+[r]_{(f)}=[p]_{(f)}$. Più in generale: se $p\in K[x]$ qualsiasi $\exists!r\in K[x],\ deg(r)<n=deg(f)$ t.c. $[r]_{(f)}=[p]_{(f)}$ (manca la dim che $\eta$ è inversa di $\epsilon$ e che $\eta$ è $K-$lineare)
+	2. Si sa che $Ideali\left( \frac{K[x]}{(f)} \right)\overset{\sim}{\rightarrow}\{Ideali(J)\underset{ideale}\subseteq K[x]|J\supseteq(f)\} \overset{\sim}{\rightarrow}$ {polinomi monici $g\in K[x]:(g)\overset{\iff g\mid f}\supseteq(f)$}={polinomi monici $g\in K[x]$ t.c. $g\mid f$}
+
+>**OSSERVAZIONE**
+
+ 
