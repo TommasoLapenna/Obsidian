@@ -136,5 +136,80 @@ Dunque $(+_{\,^{R}\!/\!_{\sim_I}}, \ \cdot_{\,^{R}\!/\!_{\sim_I}}, \ [0_R]_{\sim
 Sia $I\underset{ideale}\subseteq R$, si vuole poter descrivere $Ideali(\,^{R}\!/\!_{I})$ in termini di $Ideali(R)$.
 
 >**PROPOSIZIONE** 
-	Sia $R$ un anello commutativo, $I\underset{ideale}\subseteq R$. Allora esiste una biezione: $Ideali(\,^{R}\!/\!_{I})\overset{\sim}{\underset{\phi}{\rightarrow}}\{Ideali \ J\underset{ideale}\subseteq R|J\supseteq I\}$ tale che $\left\{\begin{matrix} \phi(0_{\,^{R}\!/\!_{I}})=I \\ \phi({\,^{R}\!/\!_{I}})=R\end{matrix}\right.$
+	Sia $R$ un anello commutativo, $I\underset{ideale}\subseteq R$. Allora esiste una biezione: $Ideali(\,^{R}\!/\!_{I})\overset{\sim}{\underset{\Phi}{\rightarrow}}\{Ideali \ J\underset{ideale}\subseteq R|J\supseteq I\}$ tale che $\left\{\begin{matrix} \phi(0_{\,^{R}\!/\!_{I}})=I \\ \phi({\,^{R}\!/\!_{I}})=R\end{matrix}\right.$
 
+>**DIMOSTRAZIONE (Costruzione di $\Phi$)**
+	**LEMMA**
+		Se $f:A\rightarrow B$ morfismo di anelli commutativi e $U\underset{ideale}{\subseteq}B$, allora $f^{-1}(U)\underset{ideale}{\subseteq} A$.
+	Si applica il lemma a $\pi:\overset{(A)}R\rightarrow\overset{B}{\,^{R}\!/\!_{I}} \ , \ r\mapsto [r]_I$. Si deduce che se $U\underset{ideale}{\subseteq}\,^{R}\!/\!_{I}$, si verifica inoltre che $\pi^{-1}(U)\supseteq I$. Fatto questo si definisce $\Phi:U\rightarrow \pi ^{-1}(U)$, cioè $\Phi(\cdot)=\pi^{-1}(\cdot)$.
+		- $\pi^{-1}(U)\subseteq I$ ? $\longrightarrow$ Sia $\xi\in I, \ \pi(\xi)=[0_R]\in U\Rightarrow \xi\in\pi^{-1}(U)\Rightarrow\pi^{-1}\subseteq I$. Inoltre $\left\{\begin{matrix} \Phi(0_{\,^{R}\!/\!_{I}})=I \\ \Phi(\,^{R}\!/\!_{I})=R \end{matrix}\right.$
+	Resta da dimostrare che tale $\Phi$ è biettiva. Si costruisce $\Phi^{-1}:\{Ideali J\subseteq R|J\supseteq I\}\rightarrow Ideali(\,^{R}\!/\!_{I}), \ R\overset{\pi}{\rightarrow}\,^{R}\!/\!_{I}$. Se $J\subseteq R$ e $J\supseteq I$ allora $\pi(J)$ è un ideale in $\,^{R}\!/\!_{I}$. Quindi si definisce $\Phi^{-1}(\cdot)=\pi(\cdot)$ e si verifica che $\left\{\begin{matrix} \Phi \circ \Phi^{-1} = Id\{J\subseteq R,J\supseteq I \}\\ \Phi^{-1} \circ \Phi = Id\{ideali(\,^{R}\!/\!_{I})\}\end{matrix}\right.$ , cioè in effetti $\Phi^{-1}$ è definita come inversa di $\Phi$.
+
+>**DEFINIZIONE** 
+	Sia $R$ anello commutativo
+	- Un ideale in $R$ si dice **massimale** se $I\neq R$ e se $J\underset{ideale}\subseteq R$ è tale che $J \supseteq I$, allora $J=R$. Si ha equivalentemente: $J\underset{ideale}\subseteq R,\ R\supseteq J\supseteq I\Rightarrow I=R$ o $J=I$.
+	- R è un **campo** se:
+		- $1_R\neq 0_R$, quindi ogni campo ha almeno due elementi ($Ideali(R)=\{(o_R),R\}$).
+		- Se $r\in R\backslash\{0_R\}$, allora $\exists r^{-1}\in I$, cioè $r\cdot_R r^{-1}=1_R$ (ogni elemento non nullo è invertibile rispetto alla moltiplicazione). 
+		Basta rispettare una delle due condizioni sia verificata in quanto sono equivalenti.
+
+>**OSSERVAZIONE**
+	Sia $I\subseteq R$ ideale. Se $I=(0_R)$ ok. Altrimenti $I\supset(0_R)$, quindi $\exists r\in I, \ r\neq0_R\Rightarrow\exists r^{-1}\in R \ t.c. \ r\cdot_Rr^{-1}=1_R\Rightarrow 1_R\in I\Rightarrow I=R$.
+
+>**ESEMPIO**
+	$\mathbb{R}, \ \mathbb{Q}, \ \mathbb{C}$ sono campi (infiniti)
+	$\mathbb{Z}$ non è un campo
+	$\,^{\mathbb{Z}}\!/\!_{2}=\mathbb{F}_2$ è un capo (finito)
+	$\mathbb{R}[x]$ non è un campo ($\nexists{(x+1)}^{-1}$)
+
+>**OSSERVAZIONE**
+	In un campo vale la proprietà si cancellazione, cioè: $x,y\in K, \ x\cdot_K y = 0_K\iff \left\{\begin{matrix} x=0_k \\ y=0_K \end{matrix}\right.$ 
+
+>**DIMOSTRAZIONE**
+	Si suppone che $x\neq 0_K$ e $y \neq 0_k$. $x\cdot y \cdot x^{-1}\cdot y^{-1}=1_K\overset{se \ x\cdot y =0}= 0_K\longrightarrow$ assurdo.
+
+>**ESEMPIO**
+	$R=\,^{\mathbb{Z}}\!/\!_{(6)}=\{0,1,2,3,4,5\}$ anello quoziente, $2(\equiv[2]_6)\ne 0_{\,^{\mathbb{Z}}\!/\!_{(6)}}$, $3(\equiv[3]_6)\ne 0_{\,^{\mathbb{Z}}\!/\!_{(6)}}$ ma $2\cdot 3=0\Rightarrow\,^{\mathbb{Z}}\!/\!_{(6)}$ non ha la proprietà di cancellazione $\Rightarrow\,^{\mathbb{Z}}\!/\!_{(6)}$ non è un campo.
+	Questo perché $6$ non è un numero primo (con due divisori distinti si ottiene il prodotto col modulo che fa $0$).
+
+>**OSSERVAZIONE**
+	Se $K$ è un campo allora $Ideali(K)=\overset{distinti \ perché \ K \ è \ campo}{\{(0_K,\overset{=R}K\}}$ . $I\underset{ideale}\subseteq K$, $\left.\begin{matrix} I\neq(0_K) \\ I\underset{Ideale}\subseteq K\end{matrix}\right\} \ \exists x\in I, \ x\ne 0\longrightarrow$ K campo $\Rightarrow\exists x^{-1}\in K, \ x\cdot x^{-1}=1_K$. Siccome $I$ è ideale $\Rightarrow 1_K\in I=K$ (ha esattamente due ideali).
+
+>**PROPOSIZIONE**
+	Sia $R$ anello commutativo
+		1. $R$ è un campo SSE $Ideali(K)=\{(0_K),\overset{=R}{1_R}\}$
+		2. $I\underset{ideale}\subseteq R$ è un massimale SSE $\,^{R}\!/\!_{I}$ è un campo
+
+>**DIMOSTRAZIONE**
+	1. L'osservazione precedente è $\Rightarrow$, si dimostra $\Leftarrow$: Sia $Ideali(R):=\{(0_R),R\}$. Intanto $0_R\neq 1_R$ (perché $(0_R)\neq 1_R$). Sia poi $r\in R \backslash\{0_R\}$, si deve dimostrare che $\exists r^{-1}\in R$: si considera $(r)\underset{ideale}\subseteq R$ ideale generato da $R$, ma $(r)\neq(0_R)$. Quindi , per ipotesi $(r)=R$, allora $1_R\in(r)$ cioè $\exists r\in R:r\cdot s=1_R, \ s=r^{-1}$.
+	2. Per [[Preliminari di algebra#^b96372|(1.)]] , dimostrare [[Preliminari di algebra#^b96372|(2.)]] che: $I\underset{ideale}\subseteq R$ è un $max\iff Ideali(\,^{R}\!/\!_{I})\overset{per \ definizione \ di \ ideale \ massimale}=\{0_{\,^{R}\!/\!_{I}},\,^{R}\!/\!_{I}\}$   
+^b96372
+
+>**PROPOSIZIONE**
+	$\mathbb{Z}$ è un anello commutativo di **ideali principali**, cioè $Ideali(\mathbb{Z})=\{(n)|n\in\mathbb{Z}_{>0}\}$ cioè ogni ideale è un ideale principale, cioè nella forma $(r),\ r\in R$.
+
+>**DIMOSTRAZIONE**
+	Sia $J\underset{ideale}\subseteq \mathbb{Z}$. Si vuole dimostrare che $\exists n\ge0:J=(n)$. Se $J=(0)$ ok. Si suppone quindi che $J\supsetneq(0)$. Sia quindi $\overline{x}\ne 0, \ \overline{x}\in J\in \mathbb{Z}_{>0}\Rightarrow J\in \mathbb{Z}_{>0}\ne\emptyset$. Si chiama $x:=min\{y|y\in J\cap\mathbb{Z}_{>0}\}$ (tale minimo esiste poiché $\mathbb{Z}_{>0}$ è discreto e $J\cap\mathbb{Z}_{>0}\ne\emptyset$), $x$ è l'elemento più piccolo $>0$ in $J$ e si afferma che $J=(x)$. 
+	Resta da dimostrare che $J\subseteq(x)$. Sia $y\in J$, per dimostrare che $y\in(x)$ si può supporre che $y\ge 0$ e $\left\{\begin{matrix} y>0 \\ y\in J \end{matrix}\right.$ $\begin{pmatrix} 0\in(x) \\ 0\in J \end{pmatrix}$. Siccome $x$ è il più piccolo elemento $>0$ in $J\Rightarrow y\ge x, \ x,y\in J$.
+	Si applica l'algoritmo di divisione $\underset{\in J} y=\underset{\ \ \ \ \ \ \ \ \ \ \in j}{q\cdot\underset{\in J}{x}+r}, \ 0\le r<x,\ \underset{\in J}r=\underset{\in J}{\underset{\in J}y-\underset{\in J}{q\cdot x}}\Rightarrow r\in J$ ma $x$ è l'elemento più piccolo di $x$, quindi $r=0$ ($y=qx$, cioè $y\in(x)$)
+
+>**PROPOSIZIONE**
+	$n>0, \ \,^{\mathbb{Z}}\!/\!_{(n)}$ campo $\iff$ $n$ è un numero primo
+
+>**DIMOSTRAZIONE**
+	- $\Rightarrow$) Sia $n$ primo. Poiché $\,^{\mathbb{Z}}\!/\!_{(n)}$ è capo SSE $(n)$ è $max$, si deve mostrare che $n$ è un numero primo $\Rightarrow(n)$ è massimale ($(n)\underset{id}\subseteq \,^{\mathbb{Z}}\!/\!_{(n)}$). Poiché $\mathbb{Z}$ è ad ideali principali, sia $(m)\underset{ideale}\subseteq\mathbb{Z}, \ (m)\supsetneq(n)$. Si vuole mostrare che $(m)=\mathbb{Z}$. $((m)\supsetneq(n)\Rightarrow\exists k\in (m):n\overset{non \ divide}\nmid k)$ ma $n$ è primo $\Rightarrow MCD(k,n)=1$, quindi $\exists\alpha,\beta\in\mathbb{Z} \ t.c. \ \underset{\in(m)}{\alpha k}+\underset{\in(m)}{\beta n}\underset{\Rightarrow}=\underset{(n)} 1\in (m)\Rightarrow(m) =\mathbb{Z}$ 
+	-$\Leftarrow$) $\,^{\mathbb{Z}}\!/\!_{(n)}$ campo $\iff(n)$ è ideale massimale. Sia $(m)>0 m, \ m\mid n$. Si vuole dimostrare che $\left\{\begin{matrix} m=1 \\ o \\ m=n  \end{matrix}\right.$ (cioè che $n$ è primo). Ma $(n)$ è $max$, quindi implica $\left\{\begin{matrix}  (m)=(n)\iff m=n, \ m,n>0 \\ (m)=\mathbb{Z}=(1)\iff m=1, \ m,n>0 \end{matrix}\right. \longrightarrow$ n è primo.
+
+Questa proposizione fornisce un campo finito (di $\#=p, \ p$ primo) per ogni $p$ primo $\mathbb{F}_p:=\,^{\mathbb{Z}}\!/\!_{(p)}$.
+
+>**OSSERVAZIONE** 
+	In $\mathbb{F}_p$ vale che ${(x+y)}^p=x^p+y^p, \ x,y\in\mathbb{F}_p$, ovvero l'elevamento a potenza è additivo nei campi finiti. 
+	Inoltre esistono campi finiti con un numero di elementi non primo, a patto che questo numero sia una qualche potenza di un numero primo.
+
+Non si possono cercare altri campi nella forma $\,^{\mathbb{Z}}\!/\!_{(n)}$ (per la proposizione), quindi si studiano i quozienti di $\mathbb{F}_p[x]$ ($p$ primo).
+
+>**PROPOSIZIONE**
+	$K$ campo, $K[x]$ e i suoi ideali, $K[x]$ è un anello ad ideali principali.
+
+>**DIMOSTRAZIONE**
+	Sia 
