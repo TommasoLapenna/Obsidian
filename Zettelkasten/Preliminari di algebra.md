@@ -229,10 +229,30 @@ In modo equivalente {polinomi monici in $K[x]$}$\longrightarrow${$Ideali(K[x])$}
 	1.  $K^n\overset{\epsilon}{\rightarrow} \frac{K[x]}{(f)},\ (a_0,a_1,\ldots,a_{n-1})\overset{\epsilon}{\mapsto}[\sum\limits^{n-1}_{i=0}a_ix^i]_{(f)}$ è isomorfismo di $K-$spazi vettoriali($\Rightarrow dim_K(\frac{K[x]}{(f)})=n$)
 	2. C'è una biezione: $Ideali\left( \frac{K[x]}{(f)} \right)\overset{\sim}{\leftrightarrow}$ {polinomi monici in $K[x]$ divisori di $f$}={$g\in K[x]$, $g$ monico con $f\in(g)$}
 
+^bda974
+
 >**DIMOSTRAZIONE**
 	1. Inanzitutto $\epsilon$ è $K-$lineare, si costruisce un'inversa $\beta=\epsilon^{-1}: \frac{K[x]}{(f)} \overset{\beta}{\rightarrow}K^n$. Sia $[p]_{(f)}\in \frac{K[x]}{(f)}$ un qualsiasi elemento. Se $deg(p)<deg(f)\Rightarrow p=a_0+a_1x+a_{n-1}x^{n-1}$, allora si definisce $\eta([p]_{(f)}):=(a_0,a_1,\ldots,a_{n-1})\in K^n$. Se invece $deg(p)\ge deg(f)=n$, allora si esegue la divisione di $p$ secondo $f:p=q\cdot f+r =\left<\begin{matrix} r=0_{K[x]} \\ r\ne 0 \ e \ \le deg(r)<n \end{matrix}\right.\Rightarrow$ $r=r_0+r_1x+\ldots+r_{n-1}x^{n-1}$, si definisce $\eta([p]_{(f)}):=(r_0,r_1,\ldots,r_{n-1})\in K^n$. Si osservi che $f:p=q\cdot f+r\Rightarrow[p]_{(f)}=[q\cdot f+r]_{(f)}= \frac{0_{K[x]}}{(f)}+[r]_{(f)}=[p]_{(f)}$. Più in generale: se $p\in K[x]$ qualsiasi $\exists!r\in K[x],\ deg(r)<n=deg(f)$ t.c. $[r]_{(f)}=[p]_{(f)}$ (manca la dim che $\eta$ è inversa di $\epsilon$ e che $\eta$ è $K-$lineare)
 	2. Si sa che $Ideali\left( \frac{K[x]}{(f)} \right)\overset{\sim}{\rightarrow}\{Ideali(J)\underset{ideale}\subseteq K[x]|J\supseteq(f)\} \overset{\sim}{\rightarrow}$ {polinomi monici $g\in K[x]:(g)\overset{\iff g\mid f}\supseteq(f)$}={polinomi monici $g\in K[x]$ t.c. $g\mid f$}
 
 >**OSSERVAZIONE**
+	[[Preliminari di algebra#^bda974|(1.)]] L'immagine ottenuta tramite $\epsilon$ della base canonica $e_i=(0,\ldots,0,1,0,\ldots,0)\in K^n$ è una base di $\frac{K[x]}{(f)}$ come $K-$spazio vettoriale, quindi $\{[1]_{(f)},[x]_{(f)}[x^2]_{(f)},\ldots,[x^{n-1}]_{(f)}\}$ base di $\frac{K[x]}{(f)}$. In particolare $dim_K \frac{K[x]}{(f)}=deg(f)=n$.
 
- 
+>**TEOREMA (Esistenza e unicità dei campi finiti)**
+	Sia $q\ge2, \ q\in\mathbb{N}$. Esiste un campo finito con $q$ elementi se e solo se $q=p^r$, $p$ primo, $r\ge 1$. Inoltre se $K$ e $K'$ sono campi con $q$ elementi, esiste un isomorfismo $K\simeq K'$ ($\exists$ un solo campo finito con $q$ elementi) (NO DIM).
+
+>**COSTRUZIONE DI CAMPO CON $q=p^r$ ELEMENTI**
+	Si considera $\mathbb{F}_p[x]$ e si sceglie un polinomio irriducibile e di grado $r$ un polinomio $f\in K[x]\backslash\{0_{K[x]}\}, \ K$ campo, si dice irriducibile se $f=g\cdot h\rightarrow g\circ h$ è un polinomio costante.
+	**ES.** $2x=2\cdot x$ è riducibile in $K[x],\mathbb{C}[x],\mathbb{R}[x]$.
+	**OSSERVAZIONE**
+		Bisogna dimostrare che in $\mathbb{F}_p[x]$ con $p$ primo arbitrario esistono polinomi irriducibili di grado arbitrario.
+	Si considera l'anello quoziente $\frac{\mathbb{F}_p[x]}{(f)}, \ deg(f)=r, \ f$ irriducibile **CLAIM:** $\frac{\mathbb{F}_p[x]}{(f)}$ è un campo con $q$ elementi.
+	**DIMOSTRAZIONE**
+		$\overset{} {dim_{\mathbb{F}_p}\left( \mathbb{\frac{F_p[x]}{(f)}} \right)=r}$ (per [[Preliminari di algebra#^bda974|(1.)]])$\Rightarrow\#\left( \frac{\mathbb{F}_p[x]}{(f)} \right)=p^r$ ok, quindi $\frac{\mathbb{F}_p[x]}{(f)}$ ha $q=p^r$ elementi. 
+		Resta da verificare che $\frac{\mathbb{F}_p[x]}{(f)}$ è un campo, a tal fine $f$ è un polinomio irriducibile in $\mathbb{F}_p[x]$. $Ideali\left( \frac{\mathbb{F}_p[x]}{(f)} \right)\overset{\sim}\rightarrow$ (per [[Preliminari di algebra#^bda974|(2.)]]){divisori monici di $f$ in $\mathbb{F}_p=\{a^{-1}_rf,1_\mathbb{F_P}\}$} $\Rightarrow{\frac{\mathbb{F}_p[x]}{(f)}}$ ha solo 2 ideali $\Rightarrow$ è un campo.
+		($f=a_0+a_1x+\ldots+a_rx^r$ $a_r\neq0_{\mathbb{F}_p}$ poiché $deg(f)=r, \ a_i\in\mathbb{F}_p, \ f$ irriducibile).
+	**ESEMPIO**
+		Si costruisce $\mathbb{F}_4, \ q=4=2^2, \ p=r=2$ 	
+		-1° passo) Si considera $\mathbb{F}_2[x]$
+		 2° passo) Si scegli un polinomio di grado 2 in $\mathbb{F}_2[x]$ di grado $r=2$ irriducibile.  Si elencano tutti i polinomi di grado $2$ irriducibili in $\mathbb{F}_2[x]:\underset{riducibile\rightarrow x\cdot x}{x^2},\underset{riducibile\rightarrow (x+1)^2}{x^2+1},\underset{riducibile\rightarrow{x(x+1)}}{x^2+x},\underset{irriducibile}{x^2+x+1}$ 
+	
