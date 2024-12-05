@@ -4,43 +4,43 @@
     "type": "split",
     "children": [
       {
-        "id": "644bfe151ea5289d",
+        "id": "6f7e1a21239bd8a6",
         "type": "tabs",
         "children": [
           {
-            "id": "c9481daedf188b84",
+            "id": "f6c3eb13243c3eb3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Zettelkasten/Preliminari di algebra.md",
+                "file": "Zettelkasten/Funzioni Reali di Variabile Reale.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Preliminari di algebra"
+              "title": "Funzioni Reali di Variabile Reale"
             }
           }
         ]
       },
       {
-        "id": "d7130c69ddd5e8cb",
+        "id": "2909fe0058ceb901",
         "type": "tabs",
         "children": [
           {
-            "id": "70e661a00ca9f4ee",
+            "id": "86813b626884ca02",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Source Material/TUTTO MATEMATICA DISCRETA E CODICI.md",
+                "file": "Source Material/Lezione 1 Analisi 2.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TUTTO MATEMATICA DISCRETA E CODICI"
+              "title": "Lezione 1 Analisi 2"
             }
           }
         ]
@@ -165,6 +165,16 @@
           "icon": "git-pull-request",
           "title": "Source Control"
         }
+      },
+      {
+        "id": "c3b8a3687c61266b",
+        "type": "leaf",
+        "state": {
+          "type": "mermaid-toolbar-view",
+          "state": {},
+          "icon": "trident-custom",
+          "title": "Mermaid Toolbar"
+        }
       }
     ],
     "currentTab": 3
@@ -177,22 +187,37 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "c9481daedf188b84",
+  "active": "f6c3eb13243c3eb3",
   "lastOpenFiles": [
+    "Tags/Analisi 2 e Prbabilità.md",
+    "Zettelkasten/Funzioni Reali di Variabile Reale.md",
     "Zettelkasten/Preliminari di algebra.md",
+    "Zettelkasten/Richiami di Calcolo Vettoriale.md",
+    "Indexes/University.md",
+    "Tags/Matematica Discreta e Codici.md",
+    "Source Material/Lezione 1 Analisi 2.md",
+    "Excalidraw/Drawing 2024-12-05 16.59.46.excalidraw.md",
+    "Excalidraw/Drawing 2024-12-05 16.29.06.excalidraw.md",
+    "Excalidraw",
+    "Source Material/Images/Immagine.jpeg",
+    "Source Material/Latex CheatSheet.md",
+    "Source Material/Excalidraw/Untitled 2024-12-05 15.00.26.excalidraw.md",
+    "Source Material/Excalidraw/Untitled.md",
+    "Source Material/Excalidraw",
+    "Tags/Intelligenza Artificiale.md",
+    "Zettelkasten/Introduzione alla Teoria dei Codici.md",
+    "Zettelkasten/Untitled",
     "Source Material/TUTTO MATEMATICA DISCRETA E CODICI.md",
     "Zettelkasten/Preliminari di algebra^.md",
-    "Tags/Matematica Discreta e Codici.md",
-    "Indexes/University.md",
-    "Zettelkasten/Introduzione alla Teoria dei Codici.md",
     "Zettelkasten/Definizioni.md",
     "Zettelkasten/Definzioni.md",
     "Source Material/Images/Latex CheatSheet.jpeg",
     "Source Material/TUTTO MATEMATICA DISCRETA E CODICI.pdf",
-    "Source Material/Latex CheatSheet.md",
     "Source Material/latexsheet-a4.pdf",
     "Source Material/Images/TUTTO MATEMATICA DISCRETA E CODICI.jpeg",
     "Source Material/INFO_Immagine_JPEG.md",
@@ -208,23 +233,13 @@
     "Source Material/TUTTO MATEMATICA DISCRETA E CODICI.zip",
     "Source Material/Images/TUTTO MATEMATICA DISCRETA E CODICI-01.jpg",
     "Source Material/TUTTO MATEMATICA DISCRETA E CODICI-12.jpg",
-    "Source Material/TUTTO MATEMATICA DISCRETA E CODICI-12 1.jpg",
     "Source Material/PDFs/TUTTO MATEMATICA DISCRETA E CODICI.pdf",
     "Source Material/Images",
     "0-intro_4a51dc3aa8e7c3cd5f4e9c35dae13ecd.pdf",
-    "TUTTO MATEMATICA DISCRETA E CODICI.pdf",
-    "Tags/Intelligenza Artificiale.md",
-    "Source Material/PDFs",
-    "Tags",
-    "Zettelkasten/Untitled 1.md",
     "README.md",
     "Zettelkasten/univeristy.md",
     "matematica discreta e codici.md",
     "Prova.md",
-    "università.md",
-    "Matematica Discreta e Codici/Introduzione alla Teoria dei Codici.md",
-    "Tags/università.md",
-    "Untitled.canvas",
-    "2024-11-19.md"
+    "Untitled.canvas"
   ]
 }
