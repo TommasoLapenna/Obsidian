@@ -11,10 +11,15 @@
             "id": "c9481daedf188b84",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Zettelkasten/Preliminari di algebra.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Preliminari di algebra"
             }
           }
         ]
@@ -178,8 +183,8 @@
   "active": "c9481daedf188b84",
   "lastOpenFiles": [
     "Zettelkasten/Preliminari di algebra.md",
-    "Zettelkasten/Preliminari di algebra^.md",
     "Source Material/TUTTO MATEMATICA DISCRETA E CODICI.md",
+    "Zettelkasten/Preliminari di algebra^.md",
     "Tags/Matematica Discreta e Codici.md",
     "Indexes/University.md",
     "Zettelkasten/Introduzione alla Teoria dei Codici.md",
