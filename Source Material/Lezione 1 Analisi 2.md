@@ -1,3 +1,3 @@
-Tags: [[Analisi 2 e Prbabilità]] [[University]]
+Tags: [[Analisi 2 e Probabilità]] [[University]]
 
 ![[Immagine.jpeg]]

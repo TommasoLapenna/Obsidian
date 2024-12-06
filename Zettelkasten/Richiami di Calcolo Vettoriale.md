@@ -1,4 +1,4 @@
-Tags: [[Analisi 2 e Prbabilità]] [[University]]
+Tags: [[Analisi 2 e Probabilità]] [[University]]
 $\mathbb{R}^n$ spazio ambiente (n copie di $\mathbb{R}$)
 Elementi (vettori)
 	$\mathbf{x}=(x_1,x_2,\ldots,x_n), \ x_i\in\mathbb{R}$

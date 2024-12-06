@@ -2,5 +2,5 @@
 
 ![[Intelligenza Artificiale]]
 
-![[Analisi 2 e Prbabilità]]
+![[Analisi 2 e Probabilità]]
 
