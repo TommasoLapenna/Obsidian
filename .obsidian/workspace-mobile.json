@@ -8,7 +8,34 @@
         "type": "tabs",
         "children": [
           {
-            "id": "f6c3eb13243c3eb3",
+            "id": "554f60456415b72a",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Source Material/Limiti e Continuità per Funzioni di più Variabili 2024-12-07 15.32.12.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Limiti e Continuità per Funzioni di più Variabili 2024-12-07 15.32.12.excalidraw"
+            }
+          },
+          {
+            "id": "edbbfb189b1914ba",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Zettelkasten/Definizioni.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Definizioni"
+            }
+          },
+          {
+            "id": "11553f63001c52d9",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -21,45 +48,43 @@
               "icon": "lucide-file",
               "title": "Funzioni Reali di Variabile Reale"
             }
+          }
+        ],
+        "currentTab": 2
+      },
+      {
+        "id": "d1d7446d35fd88dc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "98c399c1aa7410fc",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/limiti.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "limiti"
+            }
           },
           {
-            "id": "44fa0e5398148c77",
+            "id": "712caf37efb9b517",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Zettelkasten/Concetti di Topologia.md",
+                "file": "Source Material/Lezione 2 Analisi 2.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Concetti di Topologia"
+              "title": "Lezione 2 Analisi 2"
             }
           }
         ],
         "currentTab": 1
-      },
-      {
-        "id": "2909fe0058ceb901",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "86813b626884ca02",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Source Material/Lezione 1 Analisi 2.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Lezione 1 Analisi 2"
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
@@ -208,54 +233,54 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "86813b626884ca02",
+  "active": "11553f63001c52d9",
   "lastOpenFiles": [
-    "Zettelkasten/Concetti di Topologia.md",
-    "Zettelkasten/Funzioni Reali di Variabile Reale.md",
     "Tags/Analisi 2 e Probabilità.md",
-    "Indexes/University.md",
     "Zettelkasten/Richiami di Calcolo Vettoriale.md",
-    "Source Material/PDFs/TUTTO ANALISI II E PROBABILITÀ.pdf",
-    "Screenshot 2024-12-06 (09.28.58).heic",
-    "Source Material/Lezione 1 Analisi 2.md",
-    "Zettelkasten/Preliminari di algebra.md",
+    "Zettelkasten/Coordinate Polari.md",
+    "Source Material/Limiti e Continuità per Funzioni di più Variabili 2024-12-07 15.32.12.excalidraw.md",
+    "Zettelkasten/Definizioni.md",
     "Tags/Matematica Discreta e Codici.md",
+    "Zettelkasten/Preliminari di algebra.md",
+    "Zettelkasten/Introduzione alla Teoria dei Codici.md",
+    "Zettelkasten/Limiti e Continuità per Funzioni di più Variabili.md",
+    "Zettelkasten/Funzioni Reali di Variabile Reale.md",
+    "Zettelkasten/Concetti di Topologia.md",
+    "Excalidraw/coordpol.md",
+    "Source Material/Lezione 2 Analisi 2.md",
+    "Excalidraw/limiti.md",
+    "Zettelkasten/Untitled 2.md",
+    "Source Material/Excalidraw/Punto di Accumulazione.md",
+    "Excalidraw/Drawing 2024-12-06 15.06.42.excalidraw.md",
+    "Indexes/University.md",
+    "Source Material/PDFs/TUTTO ANALISI II E PROBABILITÀ.pdf",
+    "Source Material/Lezione 1 Analisi 2.md",
+    "Zettelkasten/Untitled 1.md",
+    "Zettelkasten/Untitled.md",
+    "Source Material/Images/Immagine 1.jpeg",
+    "Screenshot 2024-12-06 (09.28.58).heic",
     "Excalidraw/Drawing 2024-12-05 16.59.46.excalidraw.md",
     "Excalidraw/Drawing 2024-12-05 16.29.06.excalidraw.md",
     "Excalidraw",
     "Source Material/Images/Immagine.jpeg",
     "Source Material/Latex CheatSheet.md",
-    "Source Material/Excalidraw/Untitled 2024-12-05 15.00.26.excalidraw.md",
     "Source Material/Excalidraw/Untitled.md",
     "Source Material/Excalidraw",
     "Tags/Intelligenza Artificiale.md",
-    "Zettelkasten/Introduzione alla Teoria dei Codici.md",
     "Zettelkasten/Untitled",
-    "Source Material/TUTTO MATEMATICA DISCRETA E CODICI.md",
-    "Zettelkasten/Preliminari di algebra^.md",
-    "Zettelkasten/Definizioni.md",
-    "Zettelkasten/Definzioni.md",
     "Source Material/Images/Latex CheatSheet.jpeg",
     "Source Material/TUTTO MATEMATICA DISCRETA E CODICI.pdf",
     "Source Material/latexsheet-a4.pdf",
     "Source Material/Images/TUTTO MATEMATICA DISCRETA E CODICI.jpeg",
-    "Source Material/INFO_Immagine_JPEG.md",
     "Source Material/IMG_0278.jpg",
-    "Source Material/INFO_IMG_0278_JPG.md",
     "Source Material/Images/TUTTO MATEMATICA DISCRETA.jpeg",
     "Source Material/Images",
-    "Zettelkasten/ffff.md",
-    "Zettelkasten/().md",
     "Source Material/Images/TUTTO MATEMATICA DISCRETA E CODICI-03.jpg",
     "Source Material/Images/TUTTO MATEMATICA DISCRETA E CODICI-09.jpg",
     "Source Material/Images/TUTTO MATEMATICA DISCRETA E CODICI-12.jpg",
     "Source Material/TUTTO MATEMATICA DISCRETA E CODICI.zip",
     "Source Material/Images/TUTTO MATEMATICA DISCRETA E CODICI-01.jpg",
-    "Source Material/TUTTO MATEMATICA DISCRETA E CODICI-12.jpg",
     "Source Material/PDFs/TUTTO MATEMATICA DISCRETA E CODICI.pdf",
-    "README.md",
-    "Zettelkasten/univeristy.md",
-    "matematica discreta e codici.md",
     "Untitled.canvas"
   ]
 }

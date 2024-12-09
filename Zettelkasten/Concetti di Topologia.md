@@ -1,9 +1,7 @@
 Tags: [[Analisi 2 e Probabilità]] [[University]]
 
 >**DEFINIZIONE** 
-	Si dice *Intorno Sferico* di centro $x_0\in\mathbb{R}^n$ e raggio $r>0$
-		$B_r(x_0)=\{x\in\mathbb{R}^n:|x-x_0|<r\}$
-	$B_r(x_0)$ = (iper)sfere centrate in $x_0$
+	Si dice *Intorno Sferico* di centro $x_0\in\mathbb{R}^n$ e raggio $r>0$$$B_r(x_0)=\{x\in\mathbb{R}^n:|x-x_0|<r\}$$$B_r(x_0)$ = (iper)sfere centrate in $x_0$
 
 >**DEFINIZIONE**
 	$E\subseteq\mathbb{R}^n$. Un punto $x_0\in\mathbb{R}^n$ si dice
@@ -71,3 +69,15 @@ Dato $x_0\in\mathbb{R}^n$:
 >**TEOREMA (NO DIM)**
 	- L'unione di una famiglia qualsiasi (anche infinita)  di aperti e l'intersezione di un numero finito di aperti sono insiemi aperti
 	- L'intersezione di una famiglia qualsiasi di chiusi e l'unione di un numero finito di chiusi sono insiemi chiusi
+
+>**DEFINIZIONE**
+	Si dice che $x_0$ è un *Punto di Accumulazione* per $A\subseteq\mathbb{R}^n$ se in ogni intorno sferico di $x_0$ esiste almeno un punto di $A$ diverso da $x_0$
+	![[Punto di Accumulazione]]
+
+>**OSSERVAZIONE**
+	I punti interni di $A$ sono di accumulazione, mentre i punti esterni di $A$ non sono di accumulazione.
+	I punti di frontiera di $A$ possono essere di accumulazione oppure no
+
+>**ESEMPI**
+	Un punto di accumulazione per $A$ non deve necessariamente appartenere ad $A$. Si prenda $$A=\{x\in\mathbb{R}^2:|x<1|\}\cup\{(2,0)\}$$Ogni $x_0\in\mathbb{R}^2$ t.c. $|x_0|=1$ è di accumulazione per $A$ anche se $x_0\notin A$.
+	Invece $(2,0)\in A$, ma non è di accumulazione (è punto isolato) 
