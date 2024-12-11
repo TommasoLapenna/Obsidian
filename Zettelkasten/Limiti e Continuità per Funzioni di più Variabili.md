@@ -92,3 +92,37 @@ $$\lim_{(x,y)\to(1,0)} \frac{y^2\log x}{(x-1)^2+y^2}$$
 		$|\cos\sin^2\theta|\le1$
 		$\Rightarrow|\rho\cos\theta\sin^2\theta|\le\underset{g(\rho)}{\rho}\to0$ per $\rho\to0$
 		Per il criterio il limite è 0
+
+>**Uso  Coordinate Polari** 
+>1) Comporre le funzioni con
+	$\left\{\begin{matrix} x=x_0+\rho\cos\theta \\ y=y_0+\rho\sin\theta \end{matrix}\right.$
+>2) Valutare il limite $f(\rho,\theta)$ per $\rho\to0$. tenendo fisso $\theta$ (ovvero si valuta il limite della funzione lungo una retta passante per il punto $(x_0,y_0)$)
+	- Se il valore del limite dipende da $\theta$ si conclude che il limite non esiste
+	- Se il limite è indipendente $\theta$
+		$S(\rho)=\underset{\theta\in[0,2\pi]}{\sup}|f(x_0+\rho\cos\theta,y_0+\rho\sin\theta)-L|$
+		$\lim_{\rho\to0}S(\rho)=0\Rightarrow\lim_{(x,y)\to(x_0,y_0)}f(x,y)=L$
+		
+**3) Si possono usare delle maggiorazioni**$$
+\begin{align}&e^z\ge1+z,\quad\log z\le z-1\quad|\sin z|\le|z| \\  \\
+&ab\le \frac{1}{2}(a^2b^2)\quad \frac{a^2}{a^2+b^2}\le 1 \\ \\
+&\text{+Teromea del Confronto} \end{align} $$ 
+> **ESEMPIO**
+	Calcolare$$\begin{align}
+&\lim_{(x,y)\to(0,0)} \frac{xy^3-2\sin(x^2y)\cos(x+2y)}{x^2+y^2}=L 
+ \\&L= \underset{L_1}{\lim_{(x,y)\to(0,0)} \frac{xy^3}{x^2+y^2}}- \underset{L_2}{\lim_{(x,y)\to(0,0)} \frac{2\sin(x^2y)\cos(x+2y)}{x^2+y^2}}
+\end{align}$$Perché $L_1,L_2$ esistano e non diano luogo ad una f.i. $[-\infty,+\infty]$ $$\begin{align} &L_1) \quad 0\le| \frac{xy^3}{x^2+y^2}\le \frac{y^2|x||y|}{x^2+y^2} \overset{|x||y|\le \frac{1}{2}(x^2+y^2)}{\le} \frac{y^2}{\cancel{x^2+y^2}} \frac{1}{2}\cancel{(x^2+y^2)}\to0 \\
+     &\quad L_1=0 \ \text{Teorema del Confronto}  \\
+ & \\ &L_2)\lim_{(x,y)\to(0,0)} \frac{2\sin(x^2y)\cos(x+2y)}{x^2y^2} \\
+&\quad\cos(x+2y)\to1 \\
+&\quad 2|\sin(x^2y)|\le2 x^2|y| \\ \\
+&\quad \frac{2|\sin(x^2y)|}{x^2+y^2}\le \frac{2x^2|y|}{x^2+y^2}\overset{x^2\overset{y\ge0}{\le}x^2+y^2}{\le} \frac{2\cancel{x^2+y^2}|y|}{\cancel{x^2+y^2}} \\
+&\quad L_2=0 \ \text{Teorema del Confronto}
+\end{align}
+$$
+
+>**ESEMPIO**
+	Dire se la funzione $$f(x,y)=\left\{\begin{matrix} \frac{x^2y}{x^4+y^2}\quad (x,y)\ne(0,0) \\ 0\quad (x,y)=(0,0) \end{matrix}\right.$$è continua.
+	Da verificare $\lim_{(x,y)\to(0,0)} \frac{x^2y}{x^4+y^2}$ $$\begin{align}&y=x^2 \quad \frac{x^4}{x^4+x^4}=\frac{1}{2}, \\&y=-x^2 \quad - \frac{x^4}{x^4+x^4}\Rightarrow\nexists \end{align}$$
+
+>**NOTA**
+	$\left\{\begin{matrix} x=\rho\cos\theta \\ y=\rho\sin\theta \end{matrix}\right.$ $$f(\rho,\theta)= \frac{\rho^3\cos\theta\sin\theta}{\rho^4\cos^4\theta+\rho^2\sin^2\theta}= \frac{\rho\cos\theta\sin\theta}{\rho^2\cos^4\theta+\sin^2\theta}$$a $\theta$ fissato $f(\rho,\theta)\to0$ se $\rho\to0$, però il limite non esiste. Infatti non si può applicare il criterio ($f(\rho,\theta)$ dipende da $\theta$).

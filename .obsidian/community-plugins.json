@@ -2,11 +2,11 @@
   "obsidian-git",
   "obsidian-hover-editor",
   "obsidian-annotator",
-  "quick-latex",
   "various-complements",
-  "obsidian-latex-suite",
   "obsidian-excalidraw-plugin",
   "mermaid-tools",
   "obsidian-desmos",
-  "graphs"
+  "graphs",
+  "obsidian-latex-suite",
+  "obsidian-binary-file-manager-plugin"
 ]

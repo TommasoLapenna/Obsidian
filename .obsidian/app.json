@@ -22,7 +22,7 @@
     "editor:insert-table",
     "editor:configure-toolbar"
   ],
-  "attachmentFolderPath": "Source Material",
+  "attachmentFolderPath": "Source Material/Images",
   "alwaysUpdateLinks": true,
   "spellcheck": true,
   "propertiesInDocument": "visible",
