@@ -20,7 +20,10 @@
     "editor:redo",
     "editor:insert-codeblock",
     "editor:insert-table",
-    "editor:configure-toolbar"
+    "editor:configure-toolbar",
+    "math-booster:insert-display-math",
+    "math-booster:insert-theorem-callout",
+    "math-booster:insert-proof"
   ],
   "attachmentFolderPath": "Source Material/Images",
   "alwaysUpdateLinks": true,
@@ -31,5 +34,6 @@
   "useTab": true,
   "foldHeading": true,
   "smartIndentList": false,
-  "showIndentGuide": true
+  "showIndentGuide": true,
+  "promptDelete": false
 }

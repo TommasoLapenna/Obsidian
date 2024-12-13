@@ -129,3 +129,73 @@ elements: [
 		Applicabile quando si sa disegnare le curve di livello (procedimento grafico)
 	2) Nell'equazione del vincolo è possibile esplicitare una variabile rispetto alle altre
 	 $\rightsquigarrow\max/\min \ 1d$ Permettono di risolvere problemi di ottimizzazione in casi "fortunati".
+
+>**ESEMPIO** $$\begin{align}
+ &
+\lim_{(x,y)\to(0,0)} \left(  \frac{xy^2+2y^{ \frac{1}{3} }\sin^2x}{x^2+y^2} \right)e^{ \frac{x^2-y^2}{x^2+y^2} } \\
+\\ & g(x,y)= \frac{xy^2+2y^{\frac{1}{3}}\sin^2x}{x^2+y^2} \\
+\\ & g(\rho\cos\theta, \rho\sin\theta)= \frac{\rho^3\cos\theta\sin^2\theta+2\rho^{\frac{1}{3}}(\sin\theta)^{\frac{1}{3}}(\sin(\overset{z}{\overline{\rho\cos\theta}}))^2}{\rho^2} \\
+\\ & |g(\rho\cos\theta,\rho\sin\theta)|\underset{|\sin z|\le|z|}{\le}\rho|\cos\theta||\sin^2\theta|+\frac{2\rho^{\frac{1}{3}}}{\cancel{\rho^2}}|\sin^{\frac{1}{3}}\theta|\cancel{\rho^2}\cos^2\theta \underset{|\sin\theta|,|\cos\theta|\le1}{\le}\rho+2\rho^{\frac{1}{3}} \\
+&=\phi(\rho)\overset{\rho\to0}{\to}0\quad\Longrightarrow \lim_{(x,y)\to(0,0)}g(x,y)=\lim_{\rho\to0}g(\rho\cos\theta,\rho\sin\theta)=0 \\
+& e^{\frac{x^2-y^2}{x^2+y^2}}\le e \ \left( \frac{x^2-y^2}{x^2+y^2}\le1 \right)
+\end{align}$$
+	Per il Teorema del confronto, $f\to0$ perché $g\to0$ e $e^{\frac{x^2-y^2}{x^2+y^2}}\le e$
+
+>**ESEMPIO**
+	max/min $x+y=f(x,y)$ su $x+y^2=1$
+	Metodo delle curve di livello:
+		Il vincolo è una parabola ad asse orizzontale, le curve si livello sono rette $$x+y=k, \ k\in\mathbb{R}\quad y=-x$$
+```graph
+bounds: [-2, 2, 2, -2]
+keepAspectRatio: true
+elements: [
+	{type: implicitcurve, def: ["f:x+y*y-1"]},
+	{type: functiongraph, def: ["f:-x+1.25"]},
+	{type: functiongraph, def: ["f:-x"], att: {name: "$y=-x+k$", withlabel: "true"}},
+	{type: point, def: [0.625,0.625]}
+]
+```
+>	Il livello di $f$ aumenta al crescere di $k$ e il valore minimo si ottiene quando la retta ha 1 sola intersezione con la parabola
+>	Non c'è minimo assoluto in quanto la retta "può spostarsi" indefinitamente verso il basso $$\left\{\begin{matrix}
+ y=-x+k \\ x+y^2=1
+\end{matrix}\right. \longrightarrow \left\{\begin{matrix}
+ x=k-y \quad (1) \\ y^2-y+k-1=0 \quad (2)
+\end{matrix}\right.$$Si cerca una soluzione (che dipendono da $k$)$$\Delta=0\quad \Delta=1-4k+4=5-4k=0\Longrightarrow k=\frac{5}{4}$$Da (2) $y^2-y+\frac{1}{4}=0\iff\left( y-\frac{1}{2} \right)^2=0\iff y=\frac{1}{2}$
+>	Da(1) $x=\overset{k}{\frac{5}{4}}-\overset{y}{\frac{1}{2}}=\frac{3}{4}$
+>	$(\frac{3}{4}, \frac{1}{2})$ punto di max locale
+
+>**ESEMPIO**
+	$f(x,y)=xye^{x+y}$ in $A=\{x+y^2=0\}\quad x=-y^2\rightsquigarrow-y^3e^{-y^2+y}$
+
+>**ESEMPIO**
+	$E$ connesso per archi se $\forall x,y\in E \ \exists r \ [0,1]\to\mathbb{R}^n$ $$\begin{align}
+& r(0)=x \\ & r(1)=y \\ & r(t)\in E \ \forall t \\
+\end{align}$$Graficamente: $E$ è composto da una sola parte
+>
+	$A_1=\{(x,y)\in\mathbb{R}^2: \ y\le x^2 , \ x^2+y^2\le 1\}$
+```graph
+bounds: [-5, 5, 5, -5]
+keepAspectRatio: true
+elements: [
+	{type: functiongraph, def: ["f:x*x"]},
+	{type: inequality, def: ["e0"], att: {inverse: false, fillOpacity: 0.0}},
+	{type: circle, def: [[0,0],2]},
+	{type: curveintersection, def: ["e1", "e2"], att: {fillColor: "yellow", fillOpacity: 0.6}},
+]
+```
+>		è connesso
+>
+>	$A_2=\{(x,y)\in\mathbb{R}^n : \ 0<x+y\ne 1\}$
+```graph
+bounds: [-5, 5, 5, -5]
+keepAspectRatio: true
+elements: [
+	{type: functiongraph, def: ["f:-x"]},
+	{type: inequality, def: ["e0"], att: {inverse: true, fillOpacity: 0.1}},
+	{type: functiongraph, def: ["f=-x+1"], att: {color: "red"}}
+]
+```
+>	Non è connesso perché $x+y=1$ spezza in due parti l'insieme
+
+
+

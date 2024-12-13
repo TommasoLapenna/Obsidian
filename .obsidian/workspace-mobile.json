@@ -8,18 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1ffb39f5c97446b4",
+            "id": "c715d1f29489f8b1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Zettelkasten/Continuità, Max & Min.md",
+                "file": "Zettelkasten/Calcolo Differenziale.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Continuità, Max & Min"
+              "title": "Calcolo Differenziale"
             }
           }
         ]
@@ -29,18 +29,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "a501653ce92b5c1e",
+            "id": "b5fc40f2c7b2ddf1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Source Material/Lezione 3 Analisi 2.md",
+                "file": "Source Material/Lezione 4 Analisi 2.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lezione 3 Analisi 2"
+              "title": "Lezione 4 Analisi 2"
             }
           }
         ]
@@ -192,22 +192,25 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "1ffb39f5c97446b4",
+  "active": "c715d1f29489f8b1",
   "lastOpenFiles": [
-    "Source Material/Lezione 3 Analisi 2.md",
+    "Source Material/Lezione 4 Analisi 2.md",
+    "Zettelkasten/Calcolo Differenziale.md",
     "Zettelkasten/Continuità, Max & Min.md",
+    "Tags/Analisi 2 e Probabilità.md",
+    "Zettelkasten/Analisi 2 e Prbabilità.md",
+    "Source Material/Lezione 3 Analisi 2.md",
+    "Source Material/Images/Immagine 3.jpeg",
     "Source Material/INFO_TUTTO ANALISI II E PROBABILITÀ_PDF.md",
     "Source Material/INFO_Immagine 2_JPEG.md",
     "Source Material/INFO_Immagine_JPEG.md",
     "Source Material/INFO_Immagine 1_JPEG.md",
     "Source Material/INFO_Latex CheatSheet_JPEG.md",
     "Source Material/INFO_TUTTO MATEMATICA DISCRETA E CODICI_JPEG.md",
-    "Tags/Analisi 2 e Probabilità.md",
     "Zettelkasten/Limiti e Continuità per Funzioni di più Variabili.md",
     "Indexes/University.md",
     "Zettelkasten/Untitled 2.md",
     "Zettelkasten/Untitled 1.md",
-    "Zettelkasten/Untitled.md",
     "Source Material/Images/Immagine 2.jpeg",
     "Source Material/Lezione 2 Analisi 2.md",
     "Excalidraw/limiti.md",
@@ -220,8 +223,6 @@
     "Source Material/Pasted image 20241209125419.png",
     "Zettelkasten/Richiami di Calcolo Vettoriale.md",
     "Zettelkasten/Preliminari di algebra.md",
-    "Zettelkasten/Introduzione alla Teoria dei Codici.md",
-    "Zettelkasten/Concetti di Topologia.md",
     "Source Material/PDFs/TUTTO ANALISI II E PROBABILITÀ.pdf",
     "Source Material/Images/Immagine 1.jpeg",
     "Screenshot 2024-12-06 (09.28.58).heic",
@@ -237,7 +238,6 @@
     "Source Material/Images/TUTTO MATEMATICA DISCRETA.jpeg",
     "Source Material/Images",
     "Source Material/Images/TUTTO MATEMATICA DISCRETA E CODICI-03.jpg",
-    "Source Material/Images/TUTTO MATEMATICA DISCRETA E CODICI-09.jpg",
     "Source Material/TUTTO MATEMATICA DISCRETA E CODICI.zip",
     "Source Material/PDFs/TUTTO MATEMATICA DISCRETA E CODICI.pdf",
     "Untitled.canvas"
