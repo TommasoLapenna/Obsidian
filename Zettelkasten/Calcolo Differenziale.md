@@ -329,3 +329,125 @@ r'(t_0)=&\lim_{h\to0} \frac{r(t_0+h)-r(t_0)}{h}= \\
 &=\left( \lim_{h\to0}  \frac{r_1(t_0+h)-r_1(t_0)}{h},\ldots,\lim_{h\to0} \frac{r_m(t_0+h)-r_m(t_0)}{h}\right) \\
 &=(r'_1(t_0),\ldots,r'_m(t_0))
 \end{align}$$ 
+
+## Derivate di Ordine Superiore
+$f:A\subseteq\mathbb{R}^2\to\mathbb{R}$ ammette $\partial_xf,\partial_yf$ esistono $\partial_x(\partial_x f),\ \partial_y(\partial_x f), \ \partial_x(\partial_y f), \ \partial_y(\partial_y f)$$$
+\begin{align}
+&f(x,y)=x^2\sin y \\
+&\partial_xf=2x\sin y \qquad \partial_y=x^2\cos y \\
+& \partial_{xx}f=2\sin y \quad \partial_{yy}=-x^2\sin y\quad \partial_{xy}f=\partial_{yx}=2x\cos y 
+\end{align}
+$$
+>**TEOREMA (di Schwarz)**
+	$f:A\subseteq\mathbb{R}^n\to\mathbb{R}$, $A$ aperto.
+	Si suppone che per certi indici $i,j\in\{1,2,\ldots,n\}$ le derivate seconde miste $f_{x_ix_j}$ e $f_{x_jx_i}$ esistano in un intorno di $x_0\in A$ e siano continue in $x_0$.
+	Allora esse coincidono in $x_0$
+
+>**DEFINIZIONE**
+	$f\in C^2(A)$ se tutte le derivate seconde (parziali) sono continue
+
+>**OSSERVAZIONE**
+	$f\in C^2(A)\Longrightarrow f\in C'(A)$ ($\Longrightarrow$ f è differenziabile in $A$)
+	$\partial_x(\partial_xf)\Longrightarrow\partial_x f$ ha derivate parziali continue perché $f\in C^2$ ($\partial_{x_i}f\in C'$)
+	$\partial_y(\partial_xf)\Longrightarrow$...
+	- Le derivate parziali prime sono differenziabili
+	- Le derivate parziali seconde sono continue
+	- Per il Teorema di Schwarz, le derivate miste coincidono
+
+N.B) Le ipotesi sono "quasi sempre" verificate, ma esistono casi in cui le derivate miste non coincidono.
+
+>**ESEMPIO** $$f(x,y)=\begin{cases}
+\frac{xy(x^2-y^2)}{x^2+y^2} & (x,y)\ne(0,0) \\
+0 & (x,y)=(0,0)
+\end{cases}$$
+	$f\in C'(\mathbb{R}^2)$, ma le derivate seconde miste sono discontinue in $(0,0)$.
+	Dato che le derivate sono discontinue in $(0,0)$ non si può dire che $f_{xy}(0,0)=f_{yx}(0,0)$ $$f_x(x,y)= \frac{y(x^4+4x^2y^2-y^4)}{(x^2+y^2)^2}\quad f_y(x,y)= \frac{x(x^4-4x^2y^2-y^4)}{(x^2+y^2)^2}$$
+	Si vuole calcolare $f_{xy}(0,0)$ $$f_x(0,y)=-y \quad f_y(x,0)=x \qquad f_{xy}(0,y)\big|_{y=0}\ne f_{yx}(x,0)\big|_{x=0}=1$$
+
+## Funzioni Omogenee
+>**DEFINIZIONE** $A\subseteq\mathbb{R}^n$ si dice *Cono* se soddisfa la proprietà $$x\in A \quad\Longrightarrow\quad tx\in A,\quad \forall t>0$$
+
+>**ESEMPIO**
+	- $\mathbb{R}^n; \ \mathbb{R}^n\backslash\{0\}$
+	- In $\mathbb{R}^2$ il primo quadrante è un cono (chiuso o aperto) oppure unione del primo e terzo quadrante
+
+>**DEFINIZIONE**
+	$A$ cono di $\mathbb{R}^n, \ \alpha\in\mathbb{R}$. $f:A\subseteq\mathbb{R}^n\to\mathbb{R}$ si dice omogenea di grado $\alpha$ (pos. omogenea) su $A$ $$f(tx)=t^\alpha f(x)\quad\forall x\in A, \ \forall t>0$$
+
+^98d38c
+
+>**ESEMPIO**
+	- $f(x)=|x|$ è omogenea di grado $1$ su $\mathbb{R}^n$
+	- $f(x)=|x|^p$ è omogenea di grado $p$ su $\mathbb{R}^n$ (su $\mathbb{R}^n\backslash{0}$ se $p<0$) 
+	- $f(x,y)= \frac{tx}{ty}, \ \sin\left( \frac{x}{y} \right), \ e^{\frac{x}{y}}$ sono omogenee di grado $0$ su $A=\{(x,y)\in\mathbb{R}^2: \ y\ne0\}$ ($\alpha=0\rightarrow t^\alpha f(x,y)$) 
+	- $f(x,y)=x^2y\cos\left( \frac{xy}{x^2+y^2} \right)$ è omogenea di grado $4$ su $\mathbb{R}^2\backslash\{0,0\}$ $$\begin{align}
+f(tx,ty)&=(t^3x^3)ty\cos\left( \frac{txty}{t^2x^2+t^2y^2} \right) \\
+&= t^4x^3y\cos\left( \frac{xy}{x^+y^2} \right) \\
+&=t^\overset{\alpha=4}{4}f(x,y)
+\end{align}$$
+
+>**PROPRIETÀ** 
+	- (*Teormea di Eulero*) $f:A\subseteq\mathbb{R}^n\to\mathbb{R}$ differenziabile su $A$ (cono aperto). $f$ è omogenea di grado $\alpha$ se e solo se $$D f(x)\cdot x=\alpha f(x)\quad\forall x\in A$$
+	- *Omogeneità del Gradiente di una Funziona Omogenea* $f:A\to\mathbb{R}$ derivabile su $A\subseteq\mathbb{R}$ cono aperto. Se $f$ è omogena di grado $\alpha$, $\forall i=\,1\ldots,n\ f_{x_i}$ è omogenea di grado $\alpha-1$ su $A$
+
+>**DIMOSTRAZIONE**
+	Derivare [[Calcolo Differenziale#^98d38c|(*)]]
+
+## Risultati Importanti per Studiare Continuità, Limiti e Differenziali 
+>**TEOREMA**
+	$f:\mathbb{R}^n\to\mathbb{R}$ positivamente omogenea di grado $\alpha$, definita e continua per $x\ne0$
+	1) $f$ è continua nell'origine se $\alpha>0$ (in questo caso $f(0)=0$). $f$ è discontinua nell'origine se $\alpha<0$ (è discontinua anche per $\alpha=0$, tranne nel caso banale in cui $f$ è costante)
+	2) $f$ è differenziabile nell'origine se $\alpha>1$. Non è differenziabile in $x=0$ se $\alpha<1$ (tranne il caso in cui $f$ è costante e $\alpha=0$). Se $\alpha=1$ $f$ è differenziabile $\iff$ è una funzione lineare ($f(x)=a\cdot x, \ a\in\mathbb{R}^n$)
+
+>**ESEMPIO**
+	- $f(x,y)= \frac{x^4+3x^3y}{x^2+y^2}$ è omogenea di grado $2\longrightarrow$ $f(tx,ty)= \frac{t^4x^4+3t^3x^3ty}{t^2(x^2+y^2)}= tf(x,y)$ $\longrightarrow$ per $2)\Longrightarrow f$ differenziabile in $0,0$ , per $1)\Longrightarrow f$ continua  in $(0,0)$
+	- $f(x,y)=\sqrt[3]{3x-5y}$ omogenea di grado $\frac{1}{3}\longrightarrow$ $f(tx,ty)=t^{\frac{1}{3}}f(x,y)\longrightarrow f$ continua in $(0,0)$ ma non differenziabile ($\frac{1}{2}>0$ e $\frac{1}{3}<1$) 
+	- $f(x,y)=\frac{xy}{x^2+y^2}$ omogenea di grado $0$, non costante $\longrightarrow$ $f(tx,ty)=f(x,y)=t^0f(x,y)$ da $1)\Longrightarrow$ discontinua in 0, è limitata
+
+*CONTROESEMPIO AL TEOREMA DI SCHWARZ*$$f(x,y)=\begin{cases}
+\frac{xy(x^2-y?2)}{x^2+y^2} & (x,y)\ne(0,0) \\
+0 & (x,y)=(0,0)
+\end{cases}$$$f(tx,ty)=t^2 f(x,y)$ omogenea (pos.) di grado $2$ regolare su $\mathbb{R}^2\backslash\{0\}$ (cono aperto)
+$f_{x_i}$ sono omogenee di grado $1$
+$f_{x_ix_i}$ sono omogenee di grado $0$ (non costanti) $\overset{1)}{\Longrightarrow} f_{x_ix_i}$ sono discontinue in $(0,0)$
+
+## Equazioni a Derivate Parziali
+>**DEFINIZIONE**
+	Una EDP (PDE) è un equazione differenziale in cui l'incognita è una funzione in più variabili $u(x_1,\ldots,x_n)$ che compare nell'equazione attraverso alcune derivate, fatte almeno rispetto a due variabili diverse
+
+>**ESEMPIO**
+	Equazione di Laplace $$\begin{align}
+&\nabla u(x)=0\quad x\in \mathbb{R}^n  \\
+&\nabla=\sum^n_{i=1}\quad \partial_{xx}u+\partial_{yy}u=0\quad \ in \ \mathbb{R}^2
+\end{align}$$Se $n=3$ è soddisfatta dal potenziale elettrostatico $u$ nei punti privi di carica (in $\mathbb{R}^3$)
+	- $\partial_tu-k\Delta u=0, \ u=u(x_1,\ldots,x_n,\underset{tempo}{t}$
+	$n=3$ è soddisfatta dalla temperatura di un corpo omogeneo. $K$ è coefficiente di diffusione (dipende dal materiale)
+
+## Differenziale Secondo, Matrice Hessiana, Formula di Taylor (al secondo ordine)
+>**DEFINIZIONE**
+	$f:A\subseteq\mathbb{R}^n\to\mathbb{R}$, $A$ aperto, $f\in C^2(A)$, $(x_0,y_0)\in A$, $(x_0,y_0)\in A$, si dice *Differenziale Secondo* di $f$ in $(x_0,y_0)$ la funzione $$d^2f(x_0,y_0):(h,k)\mapsto \frac{\partial^2f}{\partial x^2}(x_0,y_0)h^2+2 \frac{\partial^2f}{\partial_x\partial_y}(x_0,y_0)hk+ \frac{\partial^2f}{\partial y^2}(x_0,y_0)k^2$$(In $\mathbb{R}^n\ d^2f(x_0):\underset{\in\mathbb{R}^n}{h}\mapsto \sum^n_{i,j=1} \frac{\partial^2f}{\partial{x_i\partial x_j}}(x_0)h_ih_j$) $$Hf=\begin{pmatrix}
+f_{xx}(x_0,y_0) & f_{xy}(x_0,y_0) \\
+f_{yx}(x_0,y_0) & f_{yy}(x_0,y_0)
+\end{pmatrix}$$Matrice Hessiana $\underset{in \ \mathbb{R}^2}{(2x2)}$
+	$f\in C^2(A)$, dal Teorema di Schwarz $Hf$ è simmetrica
+	Differenziale $\rightsquigarrow$ Piano tangente
+	Differenziale secondo $\rightsquigarrow$ Migliore approssimazione
+
+>**TEOREMA (Formula di Taylor con Resto di Peano)**
+	$f:A\subseteq\mathbb{R}^n\to\mathbb{R}$, $A$ aperto, $f\in C^2(A)$. Per ogni $x_0\in A$ vale $$f(x_0+h)=f(x_0)+\sum^n_{i=1}\partial_{x_i}f(x_0)h_i+\frac{1}{2}\sum^n_{i,j=1}\partial_{x_ix_j}f(x_0)h_ih_j+(|h|^2)\quad h\to0$$
+
+>**OSSERVAZIONE**
+	Per $f\in C^2(A)$ migliora l'approssimazione di $f$ con il piano tangente
+
+>**TEOREMA (Formula di Taylor con Resto di Lagrange)**
+	$f\in C^2(A)$. Per ogni $x_0\in A$ e $h\in\mathbb{R}^2$ t.c. $x_0+h\in A$ esiste un numero reale $\delta\in(0,1)$ dipendente da $x_0$ e $h$ t.c. $$f(x_0+h)=f(x_0)+\sum^n_{i=1}\partial_{x_i}f(x_0)h_i+\frac{1}{2}\sum^n_{i,j=1}\partial^2_{x_ix_j}f(x_0+\delta h)h_ih_j$$
+
+>**DIMOSTRAZIONE (Resto di Lagrange)**
+	$g(t)=f(x_0+th)\in C^2([0,1])$. Da Taylor in dim. 1 (applicato a $g$)$$g(1)=g(0)+g'(0)+\frac{1}{2}g''(\delta)$$$\delta\in(0,1)$ che dipende da $g$ $$\begin{align}
+&g(1)=f(x_0+h) \\
+&g(0)=f(x_0) \\
+&g'(t)=\sum^n_{i=1}f(x_0+th)h_i\Longrightarrow g'(0)=\sum^n_{i=1}\partial_{x_i}f(x_0)h_i \\
+&g''(t)=\ldots \\
+&g''(\delta)
+\end{align}$$
+

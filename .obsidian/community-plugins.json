@@ -9,5 +9,6 @@
   "graphs",
   "obsidian-latex-suite",
   "obsidian-binary-file-manager-plugin",
-  "obsidian-latex-environments"
+  "obsidian-latex-environments",
+  "obsidian-linter"
 ]
