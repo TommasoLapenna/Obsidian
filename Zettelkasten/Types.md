@@ -1,4 +1,4 @@
-Tags: [[webdev]] [[Programming]]
+Tags:[[Typescript]]  [[webdev]] [[Programming]]
 ## Primitives
 - `string`
 - `number`: There aren't int, float, ecc.
@@ -6,6 +6,7 @@ Tags: [[webdev]] [[Programming]]
 ## Arrays
 - `<type>[<number>]`
 - `Array<number>`
+(Arrays are considered object type)
 ## Any
 Every syntactical legal kind of operation can be performed on a variable defined as `any` (it's not type-checked), such as accessing any proprieties of it (thi will return a type of `any`), call it like a function ecc. The `noImplicitAny` flag counts any implicit `any` as error.
 ## Type Annotations on Variables

@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Zettelkasten/Narrowing.md",
+                "file": "Zettelkasten/Functions.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Narrowing"
+              "title": "Functions"
             }
           }
         ]
@@ -173,16 +173,17 @@
   },
   "active": "f610b2337074fa4d",
   "lastOpenFiles": [
+    "Tags/Typescript.md",
+    "Zettelkasten/Functions.md",
     "Zettelkasten/Narrowing.md",
-    "Zettelkasten/Typescript.md",
     "Zettelkasten/Types.md",
-    "Zettelkasten/Basics.md",
     "Indexes/Programming.md",
+    "Zettelkasten/Basics.md",
+    "Tags/webdev.md",
     "Indexes/University.md",
     "Zettelkasten/Progetto Sito.md",
     "Zettelkasten/CSS.md",
     "Zettelkasten/HTML.md",
-    "Tags/webdev.md",
     "Zettelkasten/Domande Orale.md",
     "Zettelkasten/DDL.md",
     "Source Material/Domande Basi di Dati.md",
@@ -202,7 +203,6 @@
     "Source Material/Images/Immagine 5.jpeg",
     "Zettelkasten/Untitled 1.md",
     "Zettelkasten/Analisi 2 e Prbabilità.md",
-    "Source Material/Lezioni Analisi 2 e Probabilità/Lezione 4 Analisi 2.md",
     "Source Material/Lezioni Analisi 2 e Probabilità",
     "Source Material/Images/Immagine 4.jpeg",
     "Source Material/Images/Pasted image 20241213165210.png",

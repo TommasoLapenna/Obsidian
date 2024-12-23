@@ -1,4 +1,4 @@
-Tags: [[webdev]] [[Programming]]
+Tags:[[Typescript]] [[webdev]] [[Programming]]
 
 ## Static Type-Checking
 Typescript has a static type-checking prevents lots of error before compilation, unlike vanilla javascript. Static types systems describe the shapes and behaviour s of what values will be when the code is running.
