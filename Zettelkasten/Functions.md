@@ -19,4 +19,11 @@ In Typescript generics are used when a corrispondence between two values needs t
 by using `Type` in two places , a link between the input and the output of the function is created.
 The type in `Type` is inferred.
 The `Type` can be constrained by writing an `extend` clause
+...
+## Optional Parameters
+an optional parameter is marked with `?` before in the parameter. the parameter type will be `<type>|undefined`. A parameter can also have a default value `<parameter> = <value>`.
+## Function Overload
+overloading
+## `this` in a Function 
+A parameter called `this` cannot appear in the parameters list
 
