@@ -14,13 +14,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Zettelkasten/Curve.md",
+                "file": "Tags/Analisi 2 e Probabilità.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Curve"
+              "title": "Analisi 2 e Probabilità"
             }
           },
           {
@@ -51,13 +51,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Source Material/Lezioni Analisi 2 e Probabilità/Lezione 8 Analisi 2.md",
+                "file": "Source Material/Lezioni Analisi 2 e Probabilità/Lezione 9 Analisi 2.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lezione 8 Analisi 2"
+              "title": "Lezione 9 Analisi 2"
             }
           }
         ]
@@ -209,24 +209,28 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "11c19a654a8bdc13",
+  "active": "fd8cac0883263021",
   "lastOpenFiles": [
+    "Zettelkasten/Richiami di Calcolo Vettoriale.md",
+    "Tags/Analisi 2 e Probabilità.md",
+    "Source Material/Lezioni Analisi 2 e Probabilità/Lezione 9 Analisi 2.md",
+    "Zettelkasten/Curve.md",
+    "Source Material/Lezioni Analisi 2 e Probabilità/Lezione 8 Analisi 2.md",
+    "Source Material/Images/Immagine 10.jpeg",
+    "Zettelkasten/Funzioni Reali di Variabile Reale.md",
+    "Source Material/INFO_Pasted image 20241227181333_PNG.md",
+    "Source Material/Images/Pasted image 20241227181333.png",
+    "Zettelkasten/Untitled 2.md",
     "Source Material/INFO_Pasted image 20241227174327_PNG.md",
     "Source Material/Images/Pasted image 20241227174327.png",
-    "Source Material/Lezioni Analisi 2 e Probabilità/Lezione 8 Analisi 2.md",
-    "Zettelkasten/Curve.md",
-    "Tags/Analisi 2 e Probabilità.md",
     "Zettelkasten/Ottimizzazione.md",
-    "Zettelkasten/Funzioni Reali di Variabile Reale.md",
     "Zettelkasten/Calcolo Differenziale.md",
-    "Zettelkasten/Untitled 2.md",
     "Source Material/Lezioni Analisi 2 e Probabilità/Lezione 7 Analisi 2.md",
     "Source Material/Images/Immagine 9.jpeg",
     "Zettelkasten/Untitled 1.md",
     "Zettelkasten/Analisi 2 e Prbabilità.md",
     "Zettelkasten/Untitled.md",
     "Zettelkasten/Continuità, Max & Min.md",
-    "Zettelkasten/Richiami di Calcolo Vettoriale.md",
     "Zettelkasten/Concetti di Topologia.md",
     "Zettelkasten/Limiti e Continuità per Funzioni di più Variabili.md",
     "Zettelkasten/Functions.md",
@@ -237,8 +241,6 @@
     "Zettelkasten/Basics.md",
     "Tags/webdev.md",
     "Indexes/University.md",
-    "Zettelkasten/Progetto Sito.md",
-    "Zettelkasten/CSS.md",
     "Source Material/Images/Immagine 8.jpeg",
     "Source Material/Images/Immagine 7.jpeg",
     "Source Material/Images/Immagine 6.jpeg",
@@ -246,8 +248,6 @@
     "Source Material/Lezioni Analisi 2 e Probabilità",
     "Source Material/Images/Immagine 4.jpeg",
     "Source Material/Images/Pasted image 20241213165210.png",
-    "Source Material/Images/Immagine 3.jpeg",
-    "Source Material/Images/Immagine 2.jpeg",
     "Source Material/PDFs/TUTTO ANALISI II E PROBABILITÀ.pdf",
     "Screenshot 2024-12-06 (09.28.58).heic",
     "Excalidraw",
