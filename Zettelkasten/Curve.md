@@ -179,15 +179,8 @@ y=R\sin\left( \frac{S}{R} \right)
 Sia $r:[a,b]\to\mathbb{R}^m$ un arco di una curva regolare con sostegno $\gamma$, $f$ una funzione a valore reali definita su $A\subseteq\mathbb{R}^m$ contenente $\gamma$ $$f:A\subseteq\mathbb{R}^m\to\mathbb{R} \ con \ A \supset\gamma$$Si dice *Integrale di Linea* $$\int_\gamma f \ dS \equiv\int_a^b f(r(t))|r'(t)| \ dt$$
 #### Significato Geometrico
 $m=2$, $f$ positiva e continua, $\gamma$ sostegno
-```graph
-bounds: [-10, 10, 10, -10]
-bounds3d: [[-5,5],[-5,5],[-5,5]]
-axis: false
-keepAspectRatio: true
-elements: [
-	
-]
-```
+![[Pasted image 20241228161931.png]]
+
 $S=$ superficie formata dai segmenti verticali che congiungono i punti di $\gamma$ con quelli di $f$.
 $\int_\gamma f\ dS$ misura dell'area $S$
 ### Esempio
