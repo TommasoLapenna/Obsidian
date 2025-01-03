@@ -4,12 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "3438d27d86a3d3c8",
+        "id": "0f10f20bab46cfc3",
         "type": "tabs",
-        "dimension": 49.92732558139535,
         "children": [
           {
-            "id": "fd8cac0883263021",
+            "id": "8331c2c03ca414a4",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -26,42 +25,25 @@
         ]
       },
       {
-        "id": "b464aa5a6c544de2",
+        "id": "367e2eb13dca6c94",
         "type": "tabs",
-        "dimension": 50.07267441860465,
         "children": [
           {
-            "id": "4bae1628406610e5",
+            "id": "cc603690d3d0fdf8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Source Material/Lezioni Analisi 2 e Probabilità/Lezione 9 Analisi 2.md",
+                "file": "Source Material/Lezioni Analisi 2 e Probabilità/Lezione 11 Analisi 2.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lezione 9 Analisi 2"
-            }
-          },
-          {
-            "id": "926a43af9b2f0d94",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Source Material/Lezione 10 Analisi 2.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Lezione 10 Analisi 2"
+              "title": "Lezione 11 Analisi 2"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -210,44 +192,45 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "fd8cac0883263021",
+  "active": "8331c2c03ca414a4",
   "lastOpenFiles": [
     "Tags/Analisi 2 e Probabilità.md",
-    "Zettelkasten/Integrali Multipli.md",
-    "Source Material/Lezione 10 Analisi 2.md",
-    "Source Material/Images/Immagine 11.jpeg",
-    "Zettelkasten/Curve.md",
-    "Zettelkasten/Analisi 2 e Prbabilità.md",
-    "Source Material/INFO_Pasted image 20241229130735_PNG.md",
-    "Source Material/Images/Pasted image 20241229130735.png",
-    "Source Material/Lezioni Analisi 2 e Probabilità/Lezione 9 Analisi 2.md",
-    "Source Material/INFO_Pasted image 20241229114810_PNG.md",
-    "Source Material/Images/Pasted image 20241229114810.png",
-    "Source Material/INFO_Pasted image 20241228170502_PNG.md",
-    "Source Material/Images/Pasted image 20241228170502.png",
-    "Source Material/INFO_Pasted image 20241228170351_PNG.md",
-    "Source Material/Images/Pasted image 20241228170351.png",
-    "Zettelkasten/Funzioni Reali di Variabile Reale.md",
-    "Source Material/INFO_Pasted image 20241228161931_PNG.md",
-    "Source Material/Images/Pasted image 20241228161931.png",
-    "Source Material/Lezioni Analisi 2 e Probabilità/Lezione 8 Analisi 2.md",
-    "Zettelkasten/Richiami di Calcolo Vettoriale.md",
-    "Source Material/Images/Immagine 10.jpeg",
-    "Source Material/INFO_Pasted image 20241227181333_PNG.md",
-    "Source Material/Images/Pasted image 20241227181333.png",
-    "Zettelkasten/Untitled 2.md",
-    "Source Material/INFO_Pasted image 20241227174327_PNG.md",
-    "Source Material/Images/Pasted image 20241227174327.png",
     "Zettelkasten/Ottimizzazione.md",
-    "Zettelkasten/Calcolo Differenziale.md",
-    "Source Material/Lezioni Analisi 2 e Probabilità/Lezione 7 Analisi 2.md",
-    "Source Material/Images/Immagine 9.jpeg",
-    "Zettelkasten/Untitled 1.md",
-    "Zettelkasten/Untitled.md",
+    "Source Material/Lezioni Analisi 2 e Probabilità/Lezione 11 Analisi 2.md",
+    "Source Material/Images/Immagine 12.jpeg",
+    "Zettelkasten/Integrali Multipli.md",
+    "Source Material/PDFs/Lebesgue.pdf",
+    "Source Material/INFO_lebesgue_9fc0f47a5c3fb868e53323d3df1cd4a6_PDF.md",
     "Zettelkasten/Continuità, Max & Min.md",
-    "Zettelkasten/Concetti di Topologia.md",
     "Zettelkasten/Limiti e Continuità per Funzioni di più Variabili.md",
-    "Zettelkasten/Functions.md",
+    "Zettelkasten/Concetti di Topologia.md",
+    "Zettelkasten/Funzioni Reali di Variabile Reale.md",
+    "Zettelkasten/Analisi 2 e Prbabilità.md",
+    "Zettelkasten/Richiami di Calcolo Vettoriale.md",
+    "Source Material/INFO_Pasted image 20250102163530_PNG.md",
+    "Source Material/Images/Pasted image 20250102163530.png",
+    "Source Material/Lezione 10 Analisi 2.md",
+    "Source Material/INFO_Pasted image 20250102151013_PNG.md",
+    "Source Material/Images/Pasted image 20250102151013.png",
+    "Source Material/INFO_Pasted image 20250102150338_PNG.md",
+    "Source Material/Images/Pasted image 20250102150338.png",
+    "Source Material/INFO_Pasted image 20250102144519_PNG.md",
+    "Source Material/Images/Pasted image 20250102144519.png",
+    "Source Material/INFO_Pasted image 20250102125719_PNG.md",
+    "Source Material/Images/Pasted image 20250102125719.png",
+    "Zettelkasten/Curve.md",
+    "Source Material/INFO_Pasted image 20250102114734_PNG.md",
+    "Source Material/Images/Pasted image 20250102114734.png",
+    "Zettelkasten/Tiramisù.md",
+    "Source Material/Lezioni Analisi 2 e Probabilità/Lezione 9 Analisi 2.md",
+    "Source Material/INFO_Pasted image 20241229132455_PNG.md",
+    "Source Material/Images/Pasted image 20241229132455.png",
+    "Source Material/INFO_Pasted image 20241229132330_PNG.md",
+    "Source Material/Images/Pasted image 20241229132330.png",
+    "Source Material/Images/Immagine 11.jpeg",
+    "Source Material/INFO_Pasted image 20241229130735_PNG.md",
+    "Source Material/INFO_Pasted image 20241229114810_PNG.md",
+    "Source Material/INFO_Pasted image 20241228170502_PNG.md",
     "Source Material/Lezioni Analisi 2 e Probabilità",
     "Source Material/PDFs/TUTTO ANALISI II E PROBABILITÀ.pdf",
     "Screenshot 2024-12-06 (09.28.58).heic",
@@ -257,7 +240,6 @@
     "Source Material/TUTTO MATEMATICA DISCRETA E CODICI.pdf",
     "Source Material/latexsheet-a4.pdf",
     "Source Material/Images",
-    "Source Material/TUTTO MATEMATICA DISCRETA E CODICI.zip",
     "Untitled.canvas"
   ]
 }

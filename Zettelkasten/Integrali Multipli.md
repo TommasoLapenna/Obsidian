@@ -161,6 +161,173 @@ $f$ è integrabile si $D\iff f$ è continua a meno di un insieme di misura nulla
 $D$ compatto e misurabile $$f \ contnua \Longrightarrow f \ integrabile$$Infatti se $R$ è un rettangolo contenente $D$ e $\overline f$ estende $f$ a zero in $R\backslash D$, le sole discontinuità di $\overline f$ sono contenute in $\partial D$ che ha misura di Peano-Jordan nulla.
 Si ragiona similmente per dedurre che $$f \ continua \ in \ D \ aperto \ misurabile \Longrightarrow è \ integrabile \ in \ D$$
 $D=\{a\le x\le b\quad g_1\le y\le g_2(x)\}=\{c\le y\le d\quad h_1(y)\le x \le h_2(y)\}$ 
-![[Pasted image 20241229130735.png]]
 
 **N.B** $D\subseteq\mathbb{R}^n$ misurabile. Si definisce ill volume $n-dim$ di $D$ $$Vol_n(D)=\int_D1 \ dx$$($Vol_1(D)=$ lunghezza, $Vol_2(D)=$ area, $Vol_3(D)=$volume)
+## Integrazioni su Regioni Semplici
+### Definizione
+$D\subset \mathbb{R}^2$ si dice $y$-semplice se è della forma $$D=\{(x,y)\in\mathbb{R}^2:a\le x\le b,\ g_1(x)\le y\le g_2(x)\}$$$g_1, \ g_2$ continue
+![[Pasted image 20241229132455.png]]
+D si dice $x-$semplice  se è della forma $$D=\{c\le y\le d, \ h_1(y)\le x\le h_2(y)\}$$$h_1,h_2$ continue
+![[Pasted image 20241229132330.png]]
+### Teorema (Formule di Riduzione)
+Ogni funzione continua su un insieme semplice è integrabile in $D$. Valgono le formule:
+- $D$ è $y-$semplice $$\iint_D f(x,y)\ dxdy=\int_a^b\left(\int_{g_1(x)}^{g_2(x)}f(x,y)\ dy\right)dx$$
+- $D$ è $x-$semplice $$\iint_D f(x,y) \ dxdy=\int_c^d\left(\int_{h_1(y)}^{h_2(y)}f(x,y)\ dx\right)dy$$
+![[Pasted image 20250102114734.png]]$$A(y)=\int_{h_1(y)}^{h_2(y)}f(x,y)\ dx\Longrightarrow \int_c^d A(y)\ dy$$
+### Esempio
+Calcolare $\iint_D (x+y^2)\ dxdy$
+$D$ è la regione delimitata da $y=x^2$ e $y=2x+3$
+```graph
+bounds: [-10, 10, 10, -10]
+keepAspectRatio: true
+elements: [
+	{type: functiongraph, def: ["f:2*x+3"]},
+	{type: inequality, def: ["e0"], att: {inverse: true, fillOpacity: 0.0}},
+	{type: functiongraph, def: ["f:x*x"]},
+	{type: inequality, def: ["e2"], att: {inverse: true, fillOpacity: 0.0}},
+	{type: curvedifference, def: ["e3", "e1"], att: {fillColor: "yellow", fillOpacity: 0.6}}
+]
+```
+$$\begin{cases}
+y=x^2  \\
+y=2x+3
+\end{cases} \quad x^2-2x-3=0 \ \begin{matrix}
+\rightarrow x_1=3 \\
+\rightarrow x_2=-1
+\end{matrix}\quad y-semplice$$$f$ è continua $$\begin{align}
+I&=\int_{-1}^3\left(\int_{x^3}^{2x+3}x+y^2\ dy\right)dx=\int_{-1}^{2}\left[xy+\frac{y^3}{3}\right]^{y=2x+3}_{y=x^2} dx=\int_{-1}^{3}\left[ xy+\frac{y^3}{3} \right]^{y=2x+3}_{y=x^2} dx \\
+&=\int_{-1}^3\left(x(2x+3)+\frac{(2x+3)^3}{3}-x^3-\frac{x^6}{3}\right)dx \\
+&=\int_{-1}^{3}\left(2x^2+3x+ \frac{(2x+3)^3}{3}-x^3-\frac{x^6}{3} \right)dx \\
+&=\left[\frac{2}{3}x^3+\frac{3}{2}x^2+\frac{(2x+3)^3}{3}-\frac{x^4}{4}-\frac{x^7}{21}\right]^{x=3}_{x=-1}=\ldots= \frac{3776}{21}
+\end{align}$$
+### Osservazione
+Se $D_1,\ldots,D_k$ regioni semplici che non hanno (a due a due) punti in comune oltre ad una parte della frontiera, allora ogni funzione continua su $$D_1\cup D_2\cup\ldots\cup D_k$$è integrabile e $$\iint_D f(x,y)\ dxdy=\iint_{D_1} f\ dxdy+\ldots+\iint_{D_k} f\ dxdy$$
+# Cambiamento di Variabile negli Integrali Doppi 
+$$\int_a^b f(x)\ dx=\int_{g^{-1}(a)}^{g^{-1}(b)} f(g(t))g'(t)\ dt$$ $x=g(t)$ derivabile e monotona 
+### Definizione 
+Un cambiamento di variabili $T:\mathbb{R}^2\to\mathbb{R}^2$ $$T:(u,v)\longmapsto(\underset{=x}{g(u,v)}, \underset{=y}{h(u,v)})$$lega le coordinate $(u,v)$ a $(x,y)$ $$\begin{bmatrix}
+x \\
+y
+\end{bmatrix}=T\left(\begin{bmatrix}
+u \\
+v
+\end{bmatrix}\right)=\begin{bmatrix}
+g(u,v) \\
+h(u,v)
+\end{bmatrix}$$se $T$ è biunivoca, $T^{-1}$ inversa ![[Pasted image 20250102125719.png]]
+### Teorema
+$T:A\subset\mathbb{R}^2\to\mathbb{R}^2$, $A$ aperto misurabile di classe $C'$, $T(u,v)=g((u,v), h(u,v))$ che sia:
+- biunivoca da un aperto misurabile $S$ del piano $(u,v)$ in un aperto misurabile $T=T(S)$ del piano $(x,y)$
+- La matrice $$DT=\begin{pmatrix}
+g_u & g_v \\
+h_u & h_v
+\end{pmatrix}\begin{matrix}
+(\nabla g) \\
+(\nabla h)
+\end{matrix}$$ha determinante non nullo e limitato 
+Allora, per ogni $f:T\to\mathbb{R}$ integrabile vale $$\iint_T f(x,y)\ dxdy=\iint_S f(g(u,v),h(u,v))|\det DT|\ dudv$$ $x=\rho\cos\theta=g(\rho,\theta)(u,v)=(\rho,\theta), \ y=\rho\sin\theta=h(\rho,\theta)$ $$\begin{align}
+&\det\begin{pmatrix}
+\cos\theta & -\rho\sin\theta \\
+\sin\theta & \rho\cos\theta
+\end{pmatrix}=\rho\cos^2\theta+\rho\sin^2\theta=\rho\quad \small\begin{matrix}
+\rho\in[a,b] \\
+\theta\in[\alpha, \beta]
+\end{matrix} \\
+&\iint_T f\ dxdy=\int_\alpha^\beta\left(\int_a^bf(\rho\cos\theta,\rho\sin\theta)\rho \ d\rho\right)d\theta
+\end{align}$$
+### Osservazione
+Le coordinate polari sono utili nel caso di circonferenze, corone circolari, settori circolari.
+
+Il teorema di prima è per aperti misurabili. Per le coordinate polari si ha bisogno del seguente:
+### Corollario
+$T:A\subset\mathbb{R}^2\to\mathbb{R}$ trasformazione di classe $C'$
+- biunivoca da $(u,v)$ e $(x,y)$ come prima 
+- $\det DT$ non nullo come prima
+Allora, per ogni chiuso, limitati e misurabile $C\subset A$, ogni funzione $T:D=T(C)\to\mathbb{R}$ vale $$\iint_D f(x,y)\ dxdy=\iint_C f(g(u,v),h(u,v))|\det DT| dudv$$
+### Esempio
+$D$ quadrato di vertici $(\pm 1,0)$ e $(0,\pm1)$ $$\iint_D(x^2-y^2)\ dxdy$$![[Pasted image 20250102144519.png]]
+Utilizzando il cambiamento di variabili $x=\frac{u+v}{2}$ $y=\frac{u-v}{2}$ $$T\left(\begin{bmatrix}
+u \\
+v
+\end{bmatrix}\right)=\begin{pmatrix}
+\frac{1}{2} & \frac{1}{2}  \\
+\frac{1}{2} & -\frac{1}{2}
+\end{pmatrix}\begin{pmatrix}
+u \\
+v
+\end{pmatrix}$$Si ricava $u=x+y$, $v=x-y$ $$T^{-1}\left(\begin{bmatrix}
+x \\
+y
+\end{bmatrix}\right)=\begin{pmatrix}
+1 & 1 \\
+1 & -1
+\end{pmatrix}\begin{pmatrix}
+x \\
+y
+\end{pmatrix}$$ $C=T^{-1}(D)\quad \underset{quadrato}{(1,1),\ (-1,1),\ (1, -1),\ (-1,-1)}$
+$\det DT= -\frac{1}{2}\quad x=\frac{u+v}{2}$, $y=\frac{u-v}{2}$ $$\begin{align}
+&\iint_D(x^2-y^2)^2\ dxdy =\iint_C\left(\left( \frac{u+v}{2} \right)^2 -\left( \frac{u-v}{2} \right)^2  \right)^2\underset{|\det DT|}{\frac{1}{2}}\ dudv  \\
+&=\frac{1}{2}\iint_C \left( \frac{u^2+v^2+2uv}{4}- \frac{u^2+v^2-2uv}{4} \right)^2\ dudv = \frac{1}{2}\iint_C \left( \frac{4uv}{4} \right)^2\ dudv \\
+&=\frac{1}{2}\iint_Cu^2v^2\ dudv=   \frac{1}{2} \iint_{[-1,1]\times[-1,1]}u^2v^2\ dudv = \frac{1}{2}\int_{-1}^{1} u^2\ du
+\int_{-1}^1 v^2\ dv = \frac{2}{9}\end{align}$$
+![[Pasted image 20250102150338.png]]
+$x=\rho\cos\theta$, $y=\rho\sin\theta$
+$$\int_0^{\pi/2}\int_1^2 f(\rho\cos\theta, \rho\sin\theta)\rho\ d\rho d\theta$$
+$[0, \frac{\pi}{2}]\times[1,2]$ $\{1<x^2+y^2<2, \ x,y>0\}$
+
+![[Pasted image 20250102151013.png]]
+$$\iint_T \frac{x}{x^2+y^2}\ dxdy$$$T$ è la parte di corona circolare delimitata da $x^2+y^2=1$ e $x^2+y^2=4$ $$\begin{align}
+&\begin{cases}
+x=\rho\cos\theta \\
+y=\rho\sin\theta
+\end{cases}\quad \theta\in\left[ -\frac{\pi}{2}, \frac{\pi}{2} \right], \ 1\le\rho\le2 \\
+\iint_T \frac{x}{x^2+y^2}\ dxdy &=\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \frac{\rho\cos\theta}{\rho^2\cos^2\theta+\rho^2\sin^2\theta}\rho\ d\rho d \theta=\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \frac{\cancel{\rho}^2\cos\theta}{\cancel{\rho^2}}\ d\rho d\theta  \\
+&=\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}[\rho\cos\theta]^{\rho=2}_{\rho=1}\ d\theta=\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}(2\cos\theta-\cos\theta)\ d\theta=\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\cos\theta\ d\theta \\
+&=\sin\theta|^{\pi/2}_{-\frac{\pi}{2}}=2
+\end{align}$$
+
+$$\begin{align}
+&I_R=\iint_{\{x^2+y^2<R^2\}}e^{-(x^2+y^2)}\ dxdy \\
+&\int_0^{2\pi}\int_0^R e^{-(\rho^2\cos\theta+\rho^2\sin^2\theta)}\rho\ d\rho d\theta=\int_0^{2\pi}\int_0^R\rho e^{-\rho^2}\ d\rho d\theta=\int_0^{2\pi}\left[ -\frac{1}{2}e^{-\rho^2} \right]^R_0\ d\theta \\
+&=\int_0^{2\pi}\left( -\frac{1}{2}e^{-R^2}+\frac{1}{2} \right) d\theta=\left( -\frac{1}{2}e^{-R^2}+\frac{1}{2} \right)\theta|_0^{2\pi}=\pi(1-e^{-R^2})
+\end{align}$$
+# Integrali Doppi Generalizzati
+$$\begin{align}
+&I=\iint_\mathbb{R}^2 e^{-(x^2+y^2)}\ dxdy \\
+&\lim_{R\to\infty}\iint_{\{x^2+y^2<R^2\}}e^{-(x^2+y^2)}\ dxdy = \lim_{R\to\infty}\pi(1-e^{-R^2})=\pi
+\end{align}$$Integrale della Gaussiana.
+Calcolare $$\begin{align}
+&\int_\mathbb{R}e^{-t^2}\ dt \\
+&\int_0^{+\infty}e^{-t^2}=\int_0^1e^-t^2\ dt<+\infty \\ \\
+
+&e^{-t^2}\le e^{-t} \quad t\in[1,+\infty] \\
+&I=\iint_{\mathbb{R}^2}e^{-(x^2+y^2)}\ dxdy=\pi \\
+&\underset{J}{\int_\mathbb{R}e^{-x^2}}\ dx\underset{J}{\int_\mathbb{R}e^{-y^2}\ dx}=J^2\quad J=\int_\mathbb{R} e^{-t^2}\ dt  \\
+&\Longrightarrow J^2=\pi\Longrightarrow J=\sqrt{I} =\sqrt{\pi}
+\end{align}$$Il risultato per $J$ non è banale perché $e^{-t^2}$ non ha primitiva elementari 
+$$\begin{align}
+&\iint_{\{x^2+y^2<1\}} \frac{1}{(\sqrt{x^2+y^2})^\alpha}\ dxdy \quad \left( \int_0^1 \frac{1}{x^\alpha}\ dx\right) \\
+&I=\lim_{r\to0^+}\iint_{\{r<x^2+y^2\}} \frac{1}{(\sqrt{x^2+y^2})^\alpha}\ dxdy = \lim_{r\to0^+}\int_0^{2\pi}\int_r^1 \frac{1}{\rho^\alpha}\rho\ d\rho d \theta \\
+&= \lim_{r\to0^+}\int_r^1\int_0^{2\pi} \frac{1}{\rho^{\alpha-1}}\ d\theta d\rho= \lim_{r\to0^+}\int_r^1 \frac{1}{\rho^{\alpha-1}}\theta|_0^{2\pi}d\rho=\lim_{r\to 0^+}2\pi\int_\pi^1 \frac{1}{\rho^{\alpha-1}}d\rho \\
+&\overset{\alpha\ne2}{=}\lim_{r\to 0^+}2\pi\left[ \frac{\rho^{2-\alpha}}{2-\alpha} \right]^{\rho=1}_{\rho=r}=\lim_{r\to 0^+}2\pi\left[ \frac{1}{2-\alpha}- \frac{r^{2-\alpha}}{2-\alpha} \right]= \lim_{r\to 0^+} \frac{2\pi}{2-\alpha}[1-r^{2-\alpha}]= \\
+&=\begin{cases} \frac{2\pi}{2-\alpha} & \alpha<2 \\
++\infty & \alpha>2
+\end{cases} \\
+&\alpha=2\to I=\lim_{r\to 0^+} -2\pi\log r=+\infty
+\end{align}$$Converge se $\alpha<2$, diverge se $\alpha\ge2$
+### Esempio
+Calcolare l'integrale doppio $$\iint_T\sqrt{x^2-y^2}\ dxdy$$dove $T$ è il trapezio del piano $xy$ di vertici $(1,-1),\ (1,-1),\ (2,2),\ (2,-2)$
+![[Pasted image 20250102163530.png]]
+$$\begin{align}
+&T=\{(x,y)\in\mathbb{R}^2:\ 1\le x\le 2, \ -x\le y\le x\} \\
+&\iint_T f\ dxdy =\int_1^2 \left( \int_{-x}^x\sqrt{x^2-y^2}\right)\ dx \\
+&\int\sqrt{x^2-y^2}\ dy \quad y=x\sin t\quad x\in\mathbb{R} \ \left( t\in\left[ -\frac{\pi}{2}, \frac{\pi}{2} \right] \right) \\
+& \int\sqrt{x^2-x^2\sin^2t}\ x\cos t \ dt = \int x^2\cos^2 t \ dt =\int x^2\cos^2 t \ dt = x^2\int\cos^2 t \ dt =  \\
+&\int\sqrt{x^2-y^2}\ x\cos t \ dt =\int x^2\cos^2t \ dt = x^2\int\cos^2 t \ dt \\
+&\int\cos^2 t \ dt = \int\cos t \cos t = \sin t \cos t-\int(-\sin^2 t)\ dt = \sin t \cos t +\int\sin^2 t\ dt \\
+&
+\end{align}
+$$
+.........
+## Cenni Integrale Lebesgue
+[[Lebesgue.pdf]]
