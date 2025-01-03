@@ -8,6 +8,8 @@ Tags: [[University]]
 7. [[Ottimizzazione]]
 8. [[Curve]] 
 9. [[Integrali Multipli]]
+10. [[Introduzione Probabilità, Analisi Combinatoria]]
+11. 
 
 Lezioni
 	[[Lezione 1 Analisi 2]]
@@ -21,4 +23,4 @@ Lezioni
 	[[Lezione 9 Analisi 2]]
 	[[Lezione 10 Analisi 2]] 
 	[[Lezione 11 Analisi 2]]
-	
+	[[Lezione 12 Analisi 2]] 

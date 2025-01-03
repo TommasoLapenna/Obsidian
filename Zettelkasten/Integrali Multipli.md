@@ -1,3 +1,6 @@
+---
+aliases:
+---
 Tags: [[Analisi 2 e Probabilità]] [[University]]
 
 # Limiti, Continuità e Differenziabilità per $f:\mathbb{R}^n\to\mathbb{R}^m$
@@ -331,3 +334,54 @@ $$
 .........
 ## Cenni Integrale Lebesgue
 [[Lebesgue.pdf]]
+### Esercizi 
+Sia $C$ il cerchio di raggio $r$ e centro $(r,0)$
+![[Pasted image 20250103103847.png]]
+- a) $\iint_C (x^2+y^2)\ dxdy$ $$\begin{align}
+&\begin{cases}
+x=r+\rho\cos\theta \\
+y=\rho\sin\theta
+\end{cases}  \\
+\\
+&x^2+y^2=(r+\rho\cos\theta)^2+\rho^2\sin^2\theta=r^2+\rho^2\cos^2\theta+2r\rho\cos\theta+\rho^2\sin^2\theta \\ \\
+&= r^2+\rho^2+2r\rho\cos\theta \\
+ \\
+&C\rightsquigarrow A=\{(\rho,\theta):\ 0\le\rho\le r, \ 0\le\theta\le2\pi\} \\
+&\iint_A (r^2+2r\rho\cos\theta+\rho^2)\rho\ d\rho d\theta=\ldots=\frac{3}{2}\pi r^4
+\end{align}$$
+- b) $\iint_C\sqrt{x^2+y^2}\ dxdy$ $$\begin{align} \\
+&\begin{cases} x=\rho\cos\theta \\ y=\rho\sin\theta \end{cases} \\ \\
+\\
+&\iint_C f(x,y)\ dxdy=\iint_R f(r+\rho\cos\theta,\rho\sin\theta)\underset{\rho}{|\det DT|} \\
+& C\rightsquigarrow A=\left\{ (\rho,\theta):\ 0\le\rho\le 2\pi\cos\theta, \ 0\in\left[ -\frac{\pi}{2}, \frac{\pi}{2} \right] \right\} \\
+&\iint_C\sqrt{x^2+y^2}=\int_{-\frac{\pi}{2}}^{\pi/2}\left(\int_0^{2\pi\cos\theta}\underset{\sqrt{x^2+y^2}}{\rho} \underset{|\det DT|}{\rho} d\rho\right)d\theta=\ldots= \frac{32}{9}r^3
+\end{align}$$
+### Equazioni Differenziali Parziali
+$$\begin{align}
+&Du=\{u_{x_1},\ldots,u_{x_n}\} \\
+&D^2u=\{u_{x_ix_j}, \ i,j=1,\ldots,n\}
+\end{align}$$
+EDP di ordine $Z(k)$ è nella forma $$F(x,u(x),Du(x),D^2u(x))=0$$ $u:A\subseteq\mathbb{R}^n\to\mathbb{R}$ incognita, $F:A\times\mathbb{R}\times\mathbb{R}^n\times\mathbb{R}^{n\times n}\to\mathbb{R}$.
+Si definisce soluzione classica $u\in C^2(C^k)$ t.c. $F$ è soddisfatta punto per punto
+### Esempio
+$u_{x_n}$ $$u(x_1,\ldots,x_n)=g(x_1,\ldots,x_{n-1})$$ $g\in C'$ ok
+
+- **Lineari** 
+	- $u_t(x,t)+b(x,t)\cdot\nabla u(x,t)=0$ (trasporto)
+	- $\Delta u(x)=0=\sum_{i=1}^n u_{x_ix_i(x)}$ (Laplace)
+	- $u_t(x,t)-\Delta u(x,t)=0$ (calore)
+	- $u_{tt}(x,t)-\Delta u=0$ (onde)
+- **Non lineari**
+	- $u_t^{(x,t)}+u\cdot u_x^{(x,t)}=0$ (Burger)
+	- $u_t+H(x_1\nabla u)=0$ (Hamilton-Jacobi)
+	- $\det(D^2u)=f$ (Monge-Ampere)
+**Sistemi**
+$\begin{cases} u_t+u\cdot\nabla u=-\nabla p \\ div(u)=0 \\ div(u)=\sum_{i=1}^n u_{x_i}\end{cases}$ Eulero per fluidi comprimibili
+$\underset{velocità}{u=(u_1,u_2,u_2)}$ $p=$ pressione
+$\begin{cases} u_t+u\cdot\nabla u-\Delta u=-\nabla p \\ div(u)=0\end{cases}$ Meccanica dei fluidi (Navier-Stokes)
+$u_t-\Delta u=f(u)$ Reazione-Diffusione
+**Problemi**
+- Determinare delle formule analitiche per le soluzioni, esatte o approssimate
+- Sviluppare metodi numerici "veloci" ed "accurati"
+- Sviluppare una teoria rigorosa e generale 
+- N.B Spesso le soluzioni non sono esplicite e si cerca di sviluppare una teoria per dedurre indirettamente proprietà della soluzione
