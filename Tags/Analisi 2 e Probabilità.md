@@ -9,7 +9,7 @@ Tags: [[University]]
 8. [[Curve]] 
 9. [[Integrali Multipli]]
 10. [[Introduzione Probabilità, Analisi Combinatoria]]
-11. 
+11. [[Variabili Aleatorie]]
 
 Lezioni
 	[[Lezione 1 Analisi 2]]
@@ -24,3 +24,6 @@ Lezioni
 	[[Lezione 10 Analisi 2]] 
 	[[Lezione 11 Analisi 2]]
 	[[Lezione 12 Analisi 2]] 
+	[[Lezione 13 Analisi 2]] 
+	[[Lezione 14 Analisi 2]]
+	

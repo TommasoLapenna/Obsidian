@@ -253,5 +253,316 @@ $P(E_1^c\cap E_2^c)=?$
 	$P(\cap^2_{i=1}E_i^c)\overset{De \ Morgan}{=}P((U^2_{i=1} E_i)^c)=1-P(E_1\cup E_2)2$
 	$P(E_1\cup E_2)\overset{Prop.\ precedente}{=}P(E_1)+P(E_1)-P(E_1\cap E_2)=0,5+0,4-0,3=0,6$ 
 	$P(E_1^c\cap E_2^c)=1-P(E_1\cup E_2)=1-0,6=0,4$
-
 $$P(E\cup F\cup G)= P(E)+P(F)+P(G)-P(E\cap F)- P(F\cap G)- P(E\cap G)+P(E\cap F\cap G)$$
+# Spazi Campionari con Esiti Equiprobabili
+$S=\{1,2\ldots,N\}$ spazio campionario finito, si suppongono esiti equiporbabili $$P(\{1\})=P(\{2\})=\ldots=P(\{N\})\Longrightarrow P(\{i\})= \frac{1}{N}=\frac{1}{\# S}=p$$
+- Assioma 2 $\rightarrow P(S)=1$
+- Assioma 3 $\rightarrow P(\cup E_i)=\sum P(E_i)$ disgiunti
+Per l'assioma 3 vale $$P(E)= \frac{\text{numero di elementi di E}}{\text{numero di elementi di S}}$$infatti:
+	Se $E\subset S$, si può calcolare $P(E)$ come segue:
+		Se $E$ è composto da $k$ elementi $(s_1,\ldots,s_k)$, $k=\#E$
+		$E=\{S_1\}\cup\ldots\{S_k\}$
+		$P(E)=P(\{S_1\})+\ldots+P(\{S_k\})=p^k= \frac{1}{\# S}\cdot k= \frac{E}{S}$
+### Esempio
+Lancio di 2 dadi, calcolare la probabilità che la somma dei cue valori sulla faccia superiore sia 7 (36 esiti possibili)
+$E=\{somma=7\}$
+$(1,6), \ (2,5), \ (3,4), \ (4,3), \ (5,2), \ (1,6)$
+$P(E)= \frac{\overset{\#E}{6}}{\underset{\# S}{36}}= \frac{1}{6}$ su 36 esiti equiprobabili
+### Esempio
+Estrazione casuale di 3 palline da un'urna che contiene 6 palline bianche e 5 nere. Qual'è la probabilità che una pallina sia bianca e le altre due nere?
+Metodo 1
+	Tenendo conto dell'ordine $E=\{1B;2N\}$, esiti equiprobabili $$11\cdot10\cdot9=990\text{ possibili esiti}$$ $$\begin{align}
+6\cdot5\cdot4=120\qquad &B\quad N\quad N \\
+5\cdot6\cdot4=120\qquad &N\quad B\quad N  \\
+5\cdot 4\cdot 6=120 \qquad &N\quad N\quad B
+\end{align}
+	$$$P(E)= \frac{120+120+120}{990}= \frac{4}{11}$
+Metodo 2:
+	Non tendendo conto dell'ordine $$\begin{pmatrix}
+11 \\
+3
+\end{pmatrix}=165\text{ esiti possibili}$$ $$P(E)= \frac{ \begin{pmatrix}
+6 \\
+1
+\end{pmatrix}\begin{pmatrix}
+5 \\
+2
+\end{pmatrix}}{\begin{pmatrix}
+11 \\
+3
+\end{pmatrix}}= \frac{4}{11}$$
+### Esempio
+Commissione di 5 persone da un gruppo di 6 uomini e 9 donne. Se la selezione avviene in modo casuale, qual'è la probabilità che la commissione sia ciìomposta da 3 uomini e 2 donne?
+$$\begin{pmatrix}
+15 \\
+5
+\end{pmatrix}\text{ Possibili combinazioni di 15 persone (etratte in modo equiprobabile)}$$ $$P(E)= \frac{\begin{pmatrix}
+6 \\
+ 3
+\end{pmatrix}\cdot\begin{pmatrix}
+9 \\
+2
+\end{pmatrix}}{\begin{pmatrix}
+15 \\
+5
+\end{pmatrix}}$$
+# Probabilità come Misura della Fiducia
+### Definizione (Soggettività della Probabilità)
+Totocalcio $1,X,2$ 13 partite.
+Un evento è un possibile esito delle 13 gare. Qual'è la probabilità che una colonna sia vincente?
+$N$ possibili esiti (si suppone che siano equiprobabili)
+$N=3^13$
+$p=3^{-13}= \frac{6}{10000000}$
+### Definizione (Soggettiva)
+Si considera un evento $E$, la probabilità che un soggetto attribuisce all'evento è un numero real che misura il grado si fiducia che un individuo coerente attribuisce, seconde le su informazioni e opinioni, all'avverasi di $E$.
+### Osservazione
+**Approccio Frequentista:** La definizione è a posteri $\lim_{n\to\infty} \frac{n(E)}{n}$
+**Approccio Moderno:** $S$ finito con esiti equiporbabili
+Aspetti negativi (della definizione $\frac{\text{casi favorevoli}}{casi poverset{}{}sibili}$):
+- Non si può sempre dire che gli eventi sono equiprobabili
+- Il numero di esiti è finito
+Aspetti positivi:
+- Definizione operativa
+- Calcolo a priori della probabilità (tramite calcolo combinatorio)
+### Esempio
+Una mano a poker è detta full se consiste in tre carte di un tipo più due carte di un altro tipo. Qual'è la probabilità che si riceva un full?
+Esiti equiprobabili, 52 carte $$\begin{pmatrix}
+52 \\
+5
+\end{pmatrix}\text{Mani di poker equiprobabili (insiemi di 5 carte)}$$$E=\{full\}$, 2 dieci e 3 jack $$\begin{pmatrix}
+4 \\
+2
+\end{pmatrix}\cdot\begin{pmatrix}
+4 \\
+4
+\end{pmatrix}\text{ Combinazioni di 2 dieci e 3 jack}$$13 possibili scelte delle coppie e, dopo aver fissato la coppia, 12 scelte per il tris $$P(E)= \frac{13\begin{pmatrix}
+4 \\
+2
+\end{pmatrix}12\begin{pmatrix}
+4 \\
+3
+\end{pmatrix}}{\begin{pmatrix}
+52 \\
+5
+\end{pmatrix}}\approx 0,0014$$
+### Esempio
+ In un club sportivo 36 soci giocano a tennis, 28 a squash e 18 a badminton
+22 giocano sia a Tennis che Squash
+12 giocano sia a Tennis che Badminton
+9 giocano sia a Squash che Badminton
+4 giocano a tutti e 3
+Quanti membri del club giocano ad almeno uno di questi sport
+T= soci che giocano a Tennis
+S= soci che giocano a Squash
+B= soci che giocano a Badminton
+$P(C)= \frac{\text{numero dei soci in C}}{N},\quad C\text{ sottoinsieme del club}$ $$\begin{align}
+P(T\cup S\cup B)&=P(T)+P(S)+P(B)-P(T\cap S)-P(T\cap B)-P(S\cap B)+P(T\cap S\cap B)
+ \\
+&= \frac{36}{N}+\frac{28}{N}+\frac{18}{N}-\frac{12}{N}-\frac{9}{N}-\frac{22}{N}+\frac{4}{N} \\
+&= \frac{36+28+18-12-9-22+4}{N}= \frac{M}{N}=\frac{43}{N}
+\end{align}$$
+### Esempio
+Si scelgono casualmente 5 palline, senza reinserimento, da un'urna che ne contiene 5 rosse, 6 bianche, 7 blu
+Determinare la probabilità di scegliere una pallina di ogni colore
+$R=${NON vengono scelte palline rosse}
+$W=${NON vengono scelte palline bianche}
+$B=${NON vengono scelte palline blu}
+$P((R\cup W\cup B)^c=(R^c\cap W^c\cap B^c))=?$
+$P((R\cup W\cup B)^c)=1-P(R\cup W\cup B)$ $$\begin{align}
+P(R\cup W\cup B)&=P(R)+P(W)+P(B)-P(R\cap W)-P(R\cap B)-P(W\cap B)+P(R\cap N\cap B) \\
+&= \frac{\begin{pmatrix}
+13 \\
+5
+\end{pmatrix}}{\begin{pmatrix}
+18 \\
+5
+\end{pmatrix}}+\frac{\begin{pmatrix}
+12 \\
+5
+\end{pmatrix}}{\begin{pmatrix}
+18 \\
+5
+\end{pmatrix}}+\frac{\begin{pmatrix}
+11 \\
+5
+\end{pmatrix}}{\begin{pmatrix}
+18 \\
+5
+\end{pmatrix}}-\frac{\begin{pmatrix}
+7 \\
+5
+\end{pmatrix}}{\begin{pmatrix}
+18 \\
+5
+\end{pmatrix}}-\frac{\begin{pmatrix}
+6 \\
+5
+\end{pmatrix}}{\begin{pmatrix}
+18 \\
+5
+\end{pmatrix}}-\frac{\begin{pmatrix}
+5 \\
+5
+\end{pmatrix}}{\begin{pmatrix}
+18 \\
+5
+\end{pmatrix}}+0=0,2933
+\end{align}$$$P(R^c\cap W^c\cap B^c)=1-P(R\cup W\cup B)=1-0,2933$
+# Probabilità Condizionata e Indipendenza
+**Motivazione:** Calcolare probabilità conoscendo alcune informazioni a priori
+Lancio di 2 dadi, prima esce 3. Data questa informazione, calcolare la probabiltià che la somma sia 8.
+Possibili esiti: $(3,1),\ (3,2),\ (3,3),\ (3,4),\ (3,5),\ (3,6)$
+$P\left( \frac{\overset{somma \ 8}{E}}{\underset{primo \ lancio \ 3}{F}} \right)=\frac{1}{6}$
+### Definizione
+Se $P(F)>0$, allora $P\left( \frac{E}{F} \right)= \frac{P(E\cap F)}{P(F)}$
+### Osservazione
+$P(\frac{E}{F})$ è definita nel modo classico come $\frac{\text{casi \ favorevoli}}{\text{casi \ possibili}}$. Se $F$ si realizza, $E$ si realizza se e solo se si realizza l'evento $E\cap F$
+$P(E\cap F)$ frequenza casi favorevoli
+$P(F)$ frequenza casi possibili
+### Esempio
+Una moneta viene lanciata 2 volte $$S=\{(T,T),\ (T,C),\ (C,T),\ (C,C)\}$$Si suppone che gli esiti siano equiprobabili. Qual'è la probabilità che venga testa in entrambi i lanci sapendo che
+1) Nel primo lancio è uscita testa
+	$E=\{(T,T)\}$
+	$F_1=\{(T,C),\ (T,T)\}$ 
+	$P(E|F_1)= \frac{P(E\cap F_1)}{P(F_1)}= \frac{P(\{T,T\})}{P(\{T,C\},\ \{T,T\})}= \frac{\frac{1}{4}}{\frac{1}{4}+\frac{1}{4}}= \frac{\frac{1}{4}}{\frac{2}{4}}=\frac{1}{2}$
+2) Esce testa in almeno un lancio
+	$F_2=\{(T,C), \ (C,T),\ (T,T)\}$
+	$P(E|F_2)= \frac{P(E\cap F_2)}{P(F_2)}= \frac{P({T,T})}{\frac{1}{4}+\frac{1}{4}+\frac{1}{4}}= \frac{\frac{1}{4}}{\frac{3}{4}}=\frac{1}{3}$
+### Esempio
+A è indecisa se frequentare un corso di francese o chimica e stima che la probabilità di pendere più di 27 è pari è $\frac{1}{2}$ nel caso del corso si francese e $\frac{2}{3}$ per chimica. Se $A$ basa la sua decisione sul lancio di una moneta, qual'è la probabilità che prende più di 27 in chimica?
+$C=${$A$ frequenta chimica}
+$B=${$A$ prende 27, qualunque sia l'esame}
+$P(C\cap B)=P(C)\cdot P(B|C)=\frac{1}{2}\cdot \frac{2}{3}=\frac{1}{3}$ (dalla definizione $P(B|C)= \frac{P(C\cap B)}{P(C)}\Rightarrow$ $P(C\cap B)=P(C)P(B|C)$) 
+### Osservazione
+Generalizzazione: regola del prodotto (legge delle probabilità composte)
+$P(E_1\cap E_2\cap\ldots\cap E_n)>0$
+$P(E_1\cap E_2\cap\ldots\cap E_n)= \begin{align}&P(E_1)P(E_2|E_1) \\ &P(E_3|E_1\cap E_2)\\ &\quad\vdots \\ &P(E_n|E_1\cap\ldots\cap E_{n-1}) \end{align}$
+### Esempio
+SI può utilizzare la probabilità condizionata anche in altri contesti.
+52 carte suddivise in 4 mazzetti di 13 carte. Calcolare la probabilità che in ogni mazzetto ci sia un asso
+Metodo 1:
+	$E_i\quad i=1,2,3,4$
+	$E_1=${asso di picche in uno dei mazzetti}
+	$E_2=${asso di picche e cuori in due dei mazzetti}
+	$E_3=${asso di picche, cuori e quadri in tre dei mazzetti}
+	$E_4=${i 4 assi sono in 4 mazzetti diversi}
+	$P(E_1\cap E_2\cap E_3\cap E_4)=P(E_1)P(E_2|E_1)P(E_3|E_1\cap E_2)P(E_4|E_1\cap E_2\cap E_3)$ $$\left.\begin{matrix}
+P(E_1)=1 \\
+P(E_2|E_1)= \frac{39}{51} \\
+P(E_3| E_1\cap E_2)= \frac{26}{50} \\
+P(E_4|E_1\cap E_2\cap E_3)= \frac{13}{49}
+\end{matrix}\right\}\Longrightarrow P(\cap_{i=1}^4 E_i)= \frac{39\cdot 26\cdot 13}{51\cdot 50\cdot 49}$$
+Metodo 2:
+	$E_i=${la mano i-esima ha esattamente un asso}
+	$P(E_1\cap E_2\cap E_3\cap E_4)= P(E_1)P(E_2|E_1)\ldots$
+	$P(E_1)=\frac{\begin{pmatrix}4 \\ 1\end{pmatrix}\cdot\begin{pmatrix}48 \\ 12\end{pmatrix}}{\begin{pmatrix}52 \\ 13\end{pmatrix}}=\ldots$
+	$P(E_2|E_1)=\frac{\begin{pmatrix}3 \\ 1\end{pmatrix}\cdot\begin{pmatrix}36 \\ 12\end{pmatrix}}{\begin{pmatrix}39 \\ 13\end{pmatrix}}=\ldots$
+	$P(E_3|E_1\cap E_2)=\frac{\begin{pmatrix}2 \\ 1\end{pmatrix}\cdot\begin{pmatrix}24 \\ 12\end{pmatrix}}{\begin{pmatrix}13 \\ 13\end{pmatrix}}=1$
+# Probabilità Condizionata
+se $P(F)>0$ $$P(E|F)=\frac{P(E\cap F)}{P(F)}$$
+Regola del prodotto: se $P(E_1\cap E_2\cap\ldots\cap E_n)>0$ $$P(E_1\cap\ldots\cap E_n)=P(E_1)P(E_2|E_1)\ldots P(E_n|E_1\cap\ldots E_{n-1})$$
+### Proposizione 
+$P(\cdot|F)$ è una probabilità, cioè verifica
+1) $0\le P(E|F)\le 1$
+2) $P(S|F)=1$
+3) Se $E_i$ sono a due a due disgiunti $$P(\cup_{i=1}^\infty E_i|F)=\sum^\infty_{i=1}P(E_i|F)$$
+In altre parole, $a(E)=P(E|F)$ è una funziona di probabilità sullo spazio campionario
+1) $0\le P(E|F)\overset{def}{=} \frac{P(E\cap F)}{P(F)}\underset{E\cap F\subset F\Rightarrow P(F)\ge P(E\cap F)}{\le} \frac{P(F)}{P(F)}=1$
+2) $P(S|F)\overset{def}{=} \frac{P(S\cap F)}{P(F)}= \frac{P(F)}{P(F)}$
+3) $P(\cup_{i=1}^\infty E_i|F)\overset{def}{=} \frac{P((\cup^\infty_{i=1})\cap F)}{P(F)}=\frac{P(\cup^\infty_{i=1}(E_i\cap F))}{P(F)}\overset{per\ ipotesi}{=} \frac{\sum_{i=1}^\infty P(E_i\cap F)}{P(F)}\overset{def}{=}\sum^\infty_{i=1}P(E_i|F)$$= \frac{P(E_1\cap F)}{P(F)}+ \frac{P(E_2\cap F)}{P(F)}$
+- $Q(E):=P(E|F)$
+- $Q(E^c)=P(E^c|F)=1-P(E|F)=1-Q(E)$
+- $Q(E_1\cup E_2)=Q(E_1)+Q(E_2)-Q(E_1\cap E_2)$
+- $P(E_1\cup E_2|F)=P(E_1|F)+P(E_2|F)-P(E_1\cap E_2|F)$
+## Formula di Bayes
+E, F eventi con $0<P(F)<1$
+$E=(E\cap F)\cup(E\cap F)^c$
+$E\cap F$, $E\cap F^c$ sono disgiunti per l'assioma 3 
+$$\begin{align}
+P(E)&\overset{Ax3}{=}P(E\cap F)+P(E\cap F^c)\overset{def}{=}P(E|F)P(E)+P(E|F^c)P(F^c) \\
+&=P(E|F)P(F)+P(E|F^c)(1-P(F))
+\end{align}$$media ponderata della probabilità di $E$ condizionata a $F$ e $F^c$, con pesi pari alla probabilità dell'evento sul quale si condiziona $F$
+### Esempio
+Una compagnia di assicurazioni suddivide le persone in 2 classi: propensi e non propensi ad incidenti
+le  statistiche mostrano che le persone propense ad incidenti hanno probabilità $0,4$ di avere incidenti in un anno. Questa probabilità scende a $0,2$ per gli altri
+1) Si suppone che il $30\%$ della popolazione sia propensa ad incidenti, calcolare la probabilità che un nuovo assicurato abbia un incidente entro un anno dalla stipula della polizza
+	$A=${l'assicurato è propenso agli incidenti}
+	$A_1=${l'assicurato ha un incidente entro un anno dall'acquisto}
+	$P(A_1)=$? $$\begin{align}
+&P(A_1)=P(A_1|A)P(A)+P(A_1|A_c)P(A^C)=0,4\cdot0,3+0,2\cdot(1-0,3)=0,26 \\
+&P(A)=0,3 \\
+&P(A_1|A)=0,4 \\
+&P(A_1|A^c)=0,2
+\end{align}$$
+2) Si suppone che un nuovo assicurato abbia un incidente entro un anno dall'acquisto. Calcolare la probabilità che si tratti di una persone propensa agli incidenti $$P(A|A_1)\overset{def}{=} \frac{P(A\cap A_1)}{P(A_1)}= \frac{P(A_1|A)P(A)}{P(A_1)}= \frac{0,4\cdot0,3}{0,26}= \frac{6}{13}$$
+#### Generalizzazione
+$F_1,\ldots,F_n$ a due a due disgiunti e $P(F_i)>0$, $\cup_{i=1}^n F_i=S$, {$F_i$} formano una partizione di $S$
+$E=\cup_{i=1}^n E\cap F_i$, $E\cap F_i$ sono a due a due disgiunti $$P(E)=\sum_{i=1}^n P(E\cap F_i)\overset{def}{=}\sum_{i=1}^nP(E|F_i)P(F_i)$$
+### Legge delle Probabilità totali
+$F$ e $F^c$, $P(F^c)=1-P(F)$
+
+$F_1\ldots F_n$ a due a due disgiunti$\quad\cup F_i=S\quad P(F_i)>0$  $$P(F_j|E)\overset{def}{=} \frac{P(E\cap F_J)}{P(E)}\overset{Legge\ della\ prob.\ totale}{=} \frac{P(E|F_j)P(F_j)}{\sum_{i=1}^nP(E|F_j)P(F_i)}$$Formula di Bayes
+### Esempio (Falsi Positivi nei Test Medici)
+Test per una certa malattia
+Da prove sperimentali il test da un risultato positivo corretto (cioè in effettiva presenza della malattia) nel 99% dei casi. Da un risultato negativo corretto (in assenza della malattia) nel 93% dei casi.
+Si suppone di sapere che la malattia ha un'incidenza della 0,2% nella popolazione (si può interpretare come la proprietà che il paziente abbia la malattia)
+-  Calcolare la probabilità che il paziente sia sano anche se il test ha dato un risultato positivo (falso positivo) $$\begin{align}
+&A=\{\text{Paziente ha la malattia}\} \\
+&B=\{\text{Il test è positivo}\} \\
+&P(A)=0,002 \\
+&P(B|A)=0,99 \\
+&P(B^c|A^c)=0,93 \\
+&P(A^c|B)=1-P(A|B)=?
+\end{align}$$$A$ e $A^c$ formano una partizione $$\begin{align}
+&P(A|B)= \frac{P(B|A)P(A)}{P(B)}\overset{Legge\ della\ prob.\ totale}{=} \frac{P(B|A)P(A)}{P(B|A)P(A)+P(B|A^c)\cdot P(A^c)} \\
+&P(B|A^c)=1-P(B^c|A^c)=1-0,93=0,07 \\
+&P(A|B)= \frac{0,99\cdot 0,002}{0,99\cdot0,002+0,07\cdot0,998}\approx0,028 \\
+&P(A^c|B)=1-P(A|B)\approx 1-0,028
+\end{align}$$
+### Osservazione
+$\left.\begin{matrix} \text{Affidabilità del test è alta} \\ \text{La malattia è rara} \end{matrix}\right\}\Longrightarrow\text{Falso positivo è "probabile"}$
+Il risultato non dice che il test è inutile
+$$\begin{align}
+&P(A)=0,2\%\overset{14 \ volte\ maggiore}{\longrightarrow}P(A|B)=2,8\% \\
+&P(A)\rightsquigarrow P(A|B) \\
+&P(A|B)= \frac{0,99\cdot0,028}{0,99\cdot0,028+0,07\cdot\underset{(1-0,028)}{0,972}}\approx0,029
+\end{align}$$
+### Esempio
+Una scatola con 3 tipi di lampadine diverse. La probabilità che la lampadina di tipo 1 duri di più di 1000 ore è pari a 0,7, vale 0,4 per il tipo 2 e 0,3 per il tipo 3. Si suppone che il 20% delle lampadine sia di tipo 1, il tipo 30% di tipo 2 e il 50% di tipo 3
+1) Probabilità che una lampadina scelta a caso duri più di 1000 ore $$\begin{align}
+P(A)&=\sum^3_{i=1}P(A|F_i)P(F_i)=P(A|F_i)P(F_i)+P(A|F_2)P(F_2)+P(A|F_3)P(F_3) \\
+&=0,7\cdot0,2+0,4\cdot0,3+0,3\cdot0,5=0,41
+\end{align}$$
+2) Sapendo che la lampadina scelta duri più di 1000 ore, calcolare la probabilità che sia di tipo $j=1,2,3$ $$\begin{align}
+&P(F_j|A)= \frac{P(A|F_j)P(F_j)}{P(A)}\ \forall j \\
+&P(F_1|A)= \frac{P(A|F_1)P(F_1)}{P(A)}= \frac{0,7\cdot0,2}{0,41}\approx 0,341 \\
+&P(F_2|A)= \frac{0,4\cdot0,3}{0,41} \\
+&P(F_3|A)= \frac{0,3\cdot0,5}{0,41}
+\end{align}$$
+## Eventi Indipendenti
+### Definizione
+Due eventi $E$, $F$ si dicono *Indipendenti* se $$P(E\cap F)=P(E)P(F)$$si dicono *Dipendenti* altrimenti
+### Esempio
+52 carte
+$E=${La carta è un asso}
+$F=${La carta è di picche}
+$P(E\cap F)= \frac{1}{52}\quad P(E)=\frac{4}{52} \ P(F)=\frac{13}{52}$
+$\frac{1}{52}=P(E\cap F)=P(E)P(F)= \frac{4}{52}\cdot \frac{13}{52}$
+### Proposizione
+$E$ e $F$ indipendenti, allora $E$ e $F^c$ sono indipendenti
+**Significato:** Se $E$ è indipendente da $F$, la probabilità che $E$ si realizzi non è modificata dalla realizzazione o meno di $F$.
+### Dimostrazione
+$E$,$F$ sono indipendenti $P(E\cap F^c)\overset{?}{=}P(E)P(F^c)$ $$\begin{align}
+&E=(E\cap F)\cup(E\cap F^c)\ disgiunti \\
+&P(E)=P(E\cap F)+P(E\cap F^c)\overset{E,F\ indip.}{=}P(E)P(F)+P(E\cap F^c) \\
+&\Longrightarrow P(E\cap F^c)=P(E)-P(E)P(F)=P(E)(1-P(F))=P(E)P(F^c)
+\end{align}$$
+### Osservazione
+$E_1,\ldots,E_n$ si dicono indipendenti se ogni sottoinsieme $E_{i1},\ldots,E_{ir}$ di essi vale $$P(E_{i1}\cap E_{i2}\cap\ldots\cap E_{ir})=P(E_{i1})\ldots P(E_{ir})$$
+### Esempio
+3 eventi $E,F,G$ $$\begin{cases}
+P(E\cap F\cap G)=P(E)P(F)P(G) \\
+P(E\cap F)=P(E)P(F) \\
+P(E\cap G)=P(E)P(G) \\
+P(F\cap G)=P(F)P(G)
+\end{cases}$$
