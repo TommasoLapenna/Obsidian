@@ -10,6 +10,8 @@ Tags: [[University]]
 9. [[Integrali Multipli]]
 10. [[Introduzione Probabilità, Analisi Combinatoria]]
 11. [[Variabili Aleatorie]]
+12. [[Valore Atteso e Varianza]]
+13. 
 
 Lezioni
 	[[Lezione 1 Analisi 2]]
@@ -26,4 +28,4 @@ Lezioni
 	[[Lezione 12 Analisi 2]] 
 	[[Lezione 13 Analisi 2]] 
 	[[Lezione 14 Analisi 2]]
-	
+	[[Lezione 15 Analisi 2]] 
