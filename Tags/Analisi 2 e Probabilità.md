@@ -10,8 +10,8 @@ Tags: [[University]]
 9. [[Integrali Multipli]]
 10. [[Introduzione Probabilità, Analisi Combinatoria]]
 11. [[Variabili Aleatorie]]
-12. [[Valore Atteso e Varianza]]
-13. 
+12. [[Valore Atteso e Varianza, Esempi di v.a.]]
+13. [[Variabili Aleatorie Continue]]
 
 Lezioni
 	[[Lezione 1 Analisi 2]]
@@ -29,3 +29,8 @@ Lezioni
 	[[Lezione 13 Analisi 2]] 
 	[[Lezione 14 Analisi 2]]
 	[[Lezione 15 Analisi 2]] 
+	[[Lezione 16 Analisi 2]]
+	[[Lezione  17 Analisi 2]]
+	[[Lezione 18 Analisi 2]] 
+	[[Lezione 19 Analisi 2]]
+	
