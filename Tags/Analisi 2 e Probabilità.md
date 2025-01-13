@@ -12,6 +12,8 @@ Tags: [[University]]
 11. [[Variabili Aleatorie]]
 12. [[Valore Atteso e Varianza, Esempi di v.a.]]
 13. [[Variabili Aleatorie Continue]]
+14. [[Distribuzioni, Densità Congiunta]]
+15. [[Riassunto]] 
 
 Lezioni
 	[[Lezione 1 Analisi 2]]
@@ -33,4 +35,4 @@ Lezioni
 	[[Lezione  17 Analisi 2]]
 	[[Lezione 18 Analisi 2]] 
 	[[Lezione 19 Analisi 2]]
-	
+	[[Lezione 20 Analisi 2]] 
