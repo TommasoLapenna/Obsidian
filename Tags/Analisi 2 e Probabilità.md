@@ -1,3 +1,4 @@
+
 Tags: [[University]]
 1. [[Richiami di Calcolo Vettoriale]] 
 2. [[Funzioni Reali di Variabile Reale]]
@@ -36,3 +37,7 @@ Lezioni
 	[[Lezione 18 Analisi 2]] 
 	[[Lezione 19 Analisi 2]]
 	[[Lezione 20 Analisi 2]] 
+
+Esercizi
+	[[Esercizi Analisi 2]]
+	

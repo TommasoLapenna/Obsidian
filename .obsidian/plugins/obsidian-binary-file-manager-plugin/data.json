@@ -1,5 +1,5 @@
 {
-  "autoDetection": true,
+  "autoDetection": false,
   "extensions": [
     "png",
     "jpg",

@@ -12,7 +12,7 @@
   "compress": true,
   "decompressForMDView": false,
   "onceOffCompressFlagReset": true,
-  "onceOffGPTVersionReset": false,
+  "onceOffGPTVersionReset": true,
   "autosave": true,
   "autosaveIntervalDesktop": 60000,
   "autosaveIntervalMobile": 30000,
@@ -25,6 +25,7 @@
   "annotatePrefix": "annotated_",
   "annotatePreserveSize": false,
   "previewImageType": "SVGIMG",
+  "renderingConcurrency": 3,
   "allowImageCache": true,
   "allowImageCacheInScene": true,
   "displayExportedImageIfAvailable": false,
@@ -35,7 +36,7 @@
   "dynamicStyling": "colorful",
   "isLeftHanded": false,
   "iframeMatchExcalidrawTheme": true,
-  "matchTheme": false,
+  "matchTheme": true,
   "matchThemeAlways": false,
   "matchThemeTrigger": false,
   "defaultMode": "normal",
@@ -46,7 +47,7 @@
   "renderImageInMarkdownReadingMode": false,
   "renderImageInHoverPreviewForMDNotes": false,
   "renderImageInMarkdownToPDF": false,
-  "allowPinchZoom": false,
+  "allowPinchZoom": true,
   "allowWheelZoom": false,
   "zoomToFitOnOpen": true,
   "zoomToFitOnResize": true,
@@ -99,7 +100,7 @@
   "library2": {
     "type": "excalidrawlib",
     "version": 2,
-    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.6.8",
+    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.7.5",
     "libraryItems": []
   },
   "imageElementNotice": true,
@@ -111,7 +112,7 @@
   "mdCSS": "",
   "scriptEngineSettings": {},
   "defaultTrayMode": false,
-  "previousRelease": "2.6.8",
+  "previousRelease": "2.7.5",
   "showReleaseNotes": true,
   "showNewVersionNotification": true,
   "latexBoilerplate": "\\color{blue}",
@@ -435,8 +436,8 @@
   "pdfBorderBox": true,
   "pdfFrame": false,
   "pdfGapSize": 20,
-  "pdfGroupPages": false,
-  "pdfLockAfterImport": true,
+  "pdfGroupPages": true,
+  "pdfLockAfterImport": false,
   "pdfNumColumns": 1,
   "pdfNumRows": 1,
   "pdfDirection": "right",
@@ -784,5 +785,5 @@
       "key": "G"
     }
   ],
-  "showSplashscreen": true
+  "showSplashscreen": false
 }
