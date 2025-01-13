@@ -156,7 +156,8 @@
         }
       }
     ],
-    "currentTab": 3
+    "currentTab": 3,
+    "pinned": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -168,8 +169,7 @@
       "command-palette:Open command palette": false,
       "obsidian-git:Open Git source control": false,
       "mermaid-tools:Open Mermaid Toolbar": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false,
-      "tldraw:Create new tldrawing": false
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
   "active": "8331c2c03ca414a4",
