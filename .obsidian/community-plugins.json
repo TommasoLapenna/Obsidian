@@ -1,14 +1,11 @@
 [
   "obsidian-git",
   "obsidian-hover-editor",
-  "obsidian-annotator",
   "obsidian-excalidraw-plugin",
   "mermaid-tools",
   "obsidian-desmos",
   "graphs",
   "obsidian-latex-suite",
   "obsidian-binary-file-manager-plugin",
-  "obsidian-latex-environments",
-  "obsidian-linter",
-  "ink"
+  "obsidian-latex-environments"
 ]

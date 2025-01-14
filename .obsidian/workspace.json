@@ -11,10 +11,15 @@
             "id": "574a32de0d3ffff7",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Tags/Analisi 2 e Probabilità.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Analisi 2 e Probabilità"
             }
           }
         ]
@@ -73,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "c819aff5afd62417",
@@ -161,23 +165,27 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "mermaid-tools:Open Mermaid Toolbar": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-git:Open Git source control": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false,
-      "mermaid-tools:Open Mermaid Toolbar": false
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "574a32de0d3ffff7",
   "lastOpenFiles": [
     "Zettelkasten/Limiti e Continuità per Funzioni di più Variabili.md",
+    "Indexes/University.md",
+    "Indexes/Programming.md",
+    "Source Material/PDFs/Lebesgue.pdf",
+    "Zettelkasten/Integrali Multipli.md",
+    "Tags/Analisi 2 e Probabilità.md",
     "Zettelkasten/Untitled.md",
     "Zettelkasten/Concetti di Topologia.md",
-    "Indexes/University.md",
     "Zettelkasten/Funzioni Reali di Variabile Reale.md",
     "Zettelkasten/Introduzione Probabilità, Analisi Combinatoria.md",
     "Zettelkasten/Continuità, Max & Min.md",
