@@ -125,10 +125,10 @@ $C_{min}=-1\rightsquigarrow(0,\pm1)$ punti di min
 $C_{min}=-1\rightsquigarrow(\pm1,0)$ punti di max
 
 **RIASSUNTO**
-	max/min $f(x,y)$ su $A\subseteq\mathbb{R}^2$
-	1) Metodo delle curve di livello
-		Applicabile quando si sa disegnare le curve di livello (procedimento grafico)
-	2) Nell'equazione del vincolo è possibile esplicitare una variabile rispetto alle altre
+max/min $f(x,y)$ su $A\subseteq\mathbb{R}^2$
+1) Metodo delle curve di livello
+	Applicabile quando si sa disegnare le curve di livello (procedimento grafico)
+2) Nell'equazione del vincolo è possibile esplicitare una variabile rispetto alle altre
 	 $\rightsquigarrow\max/\min \ 1d$ Permettono di risolvere problemi di ottimizzazione in casi "fortunati".
 
 ### Esempio 

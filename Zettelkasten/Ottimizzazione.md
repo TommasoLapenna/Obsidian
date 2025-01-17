@@ -305,14 +305,15 @@ $$Hf(x,y)=\begin{pmatrix}
 $(0,0)$ punto di minimo locale
 ### Osservazione
 $f(x,1)=3x^2+1-x^3\overset{x\to+\infty}{\longrightarrow}-\infty$
-- $(\sqrt{2},\sqrt{2})$ $$\begin{align}
+- $(\sqrt{2},\sqrt{2})$ 
+$$\begin{align}
 &Hf(\sqrt{2}, \sqrt{2})=\begin{pmatrix}
 -6 & -6 \\
 -6 & 2
-
 \end{pmatrix} \\
 & \det Hf(\sqrt{2}, \sqrt{2})<0
-\end{align}$$$\Longrightarrow Hf(\sqrt{2}, \sqrt{2})$ è indefinita $\Longrightarrow(\sqrt{2}, \sqrt{2})$ è punto di sella
+\end{align}$$
+$\Longrightarrow Hf(\sqrt{2}, \sqrt{2})$ è indefinita $\Longrightarrow(\sqrt{2}, \sqrt{2})$ è punto di sella
 - $(-\sqrt{2}, -\sqrt{2})$ punto di sella (stesso modo)
 ### Ricorda:
 $f\in C^2(A)$, $(x_0,y_0)\in A$ punto critico $$Hf(x_0,y_0)=\begin{pmatrix}
