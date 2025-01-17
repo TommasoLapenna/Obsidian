@@ -43,24 +43,23 @@ Se $\lim_{(x,y)\to(x_0,y_0)}f(x,y)=L$, allora per ogni sottoinsieme $C$ del domi
 		- Dimostrare che il limite non esiste
 
 Qualsiasi delle forme di indeterminazione
-	1) **Restrizione ad una curva per provare la non esistenza del limite**
-		$f:A\subseteq\mathbb{R}^2\to\mathbb{R}$ 
-		$r:I\subseteq\mathbb{R}\to\mathbb{R}^n$ arco di curva
-		$g(t)=f(r(t))$ si dice *Restrizione di f alla curva r* ($g:\mathbb{R}\rightarrow\mathbb{R}$)
-		Idea: per dimostrare che il limite per $x\to x_0 \ \nexists$ è sufficiente determinare due curve che passano per $x_0$ lungo le quali la funzione ha limiti diversi. 
-		Vale la stessa conclusione se la restrizione di $f$ non ammette limite.
-		ESEMPIO:
-			1) Calcolare $\lim_{(x,y)\to(0,0)} \frac{xy}{x^2+y^2}$
-				$f_{|_{y=x}}= \frac{x^2}{2x^2}= \frac{1}{2}$ , $f_{|_{y=-x}}= \frac{-x^2}{2x^2}= -\frac{1}{2}$  Il limite non esiste
-			1) Studiare $\lim_{(x,y)\to(0,0)} \frac{xy^2}{x^2+y^4}$
-				$f(x,0)=0=f(0,y)$, il candidato è L=0
-				$y=mx$
-				$C=\{(x,y):y=mx, \ x\ne 0\}$
-				$\lim_{\underset{(x,y)\in C}{(x,y)\to(x_0,y_0)}}f=\lim_{x\to 0}f(x,mx)=\lim_{x\to} \frac{xm^2x^2}{x^2+m^4x^4}=$$\lim_{x\to 0} \frac{m^2x^3}{x^2+m^4x^4}=0$
-			    Avvicinandosi lungo $x=y^2$
-				$C'=\{(x,y):x=y^2\}$
-				$\lim_{\underset{(x,y)\in C}{(x,y)\to(x_0,y_0)}}f=\lim_{x\to0} \frac{y^4}{y^4+y^4}=\frac{1}{2}$ 
-				Quindi $\nexists$ il limite.
+1) **Restrizione ad una curva per provare la non esistenza del limite**
+	$f:A\subseteq\mathbb{R}^2\to\mathbb{R}$ 
+	$r:I\subseteq\mathbb{R}\to\mathbb{R}^n$ arco di curva
+	$g(t)=f(r(t))$ si dice *Restrizione di f alla curva r* ($g:\mathbb{R}\rightarrow\mathbb{R}$)
+	Idea: per dimostrare che il limite per $x\to x_0 \ \nexists$ è sufficiente determinare due curve che passano per $x_0$ lungo le quali la funzione ha limiti diversi. 
+	Vale la stessa conclusione se la restrizione di $f$ non ammette limite.
+	ESEMPIO:
+	1) Calcolare $\lim_{(x,y)\to(0,0)} \frac{xy}{x^2+y^2}$,   Il limite non esiste
+	3) Studiare $\lim_{(x,y)\to(0,0)} \frac{xy^2}{x^2+y^4}$
+		$f(x,0)=0=f(0,y)$, il candidato è L=0
+		$y=mx$
+		$C=\{(x,y):y=mx, \ x\ne 0\}$
+		$\lim_{\underset{(x,y)\in C}{(x,y)\to(x_0,y_0)}}f=\lim_{x\to 0}f(x,mx)=\lim_{x\to} \frac{xm^2x^2}{x^2+m^4x^4}=$$\lim_{x\to 0} \frac{m^2x^3}{x^2+m^4x^4}=0$
+		Avvicinandosi lungo $x=y^2$
+		$C'=\{(x,y):x=y^2\}$
+		$\lim_{\underset{(x,y)\in C}{(x,y)\to(x_0,y_0)}}f=\lim_{x\to0} \frac{y^4}{y^4+y^4}=\frac{1}{2}$ 
+		Quindi $\nexists$ il limite.
 	2) **Uso di maggiorazioni con funzioni radiali**
 		Se $n=2$
 	    ![[coordpol]]
@@ -104,7 +103,9 @@ $$\lim_{(x,y)\to(1,0)} \frac{y^2\log x}{(x-1)^2+y^2}$$
 Calcolare$$\begin{align}
 &\lim_{(x,y)\to(0,0)} \frac{xy^3-2\sin(x^2y)\cos(x+2y)}{x^2+y^2}=L 
  \\&L= \underset{L_1}{\lim_{(x,y)\to(0,0)} \frac{xy^3}{x^2+y^2}}- \underset{L_2}{\lim_{(x,y)\to(0,0)} \frac{2\sin(x^2y)\cos(x+2y)}{x^2+y^2}}
-\end{align}$$Perché $L_1,L_2$ esistano e non diano luogo ad una f.i. $[-\infty,+\infty]$ $$\begin{align} &L_1) \quad 0\le| \frac{xy^3}{x^2+y^2}\le \frac{y^2|x||y|}{x^2+y^2} \overset{|x||y|\le \frac{1}{2}(x^2+y^2)}{\le} \frac{y^2}{\cancel{x^2+y^2}} \frac{1}{2}\cancel{(x^2+y^2)}\to0 \\
+\end{align}$$
+Perché $L_1,L_2$ esistano e non diano luogo ad una f.i. $[-\infty,+\infty]$ 
+$$\begin{align} &L_1) \quad 0\le| \frac{xy^3}{x^2+y^2}\le \frac{y^2|x||y|}{x^2+y^2} \overset{|x||y|\le \frac{1}{2}(x^2+y^2)}{\le} \frac{y^2}{\cancel{x^2+y^2}} \frac{1}{2}\cancel{(x^2+y^2)}\to0 \\
      &\quad L_1=0 \ \text{Teorema del Confronto}  \\
  & \\ &L_2)\lim_{(x,y)\to(0,0)} \frac{2\sin(x^2y)\cos(x+2y)}{x^2y^2} \\
 &\quad\cos(x+2y)\to1 \\

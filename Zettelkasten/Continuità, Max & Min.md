@@ -34,17 +34,18 @@ $E\subseteq\mathbb{R}^n$ connesso per archi
 	$f:E\to\mathbb{R}$ continua. Se $x,y\in E$ t.c. $$f(x)>0 \quad f(y)<0$$Allora esiste $z\in E$ t.c. $f(z)=0$
 
 ### DIMOSTRAZIONE
-$E$ connesso per archi $\exists:\underset{arco}{[a,b]}\to E$ t.c.$$\begin{align} \\
- & r(a)=x \\ & r(b)=y \\ & f\circ r:[a,b]\to\mathbb{R} \ \text{1d continua} \\ & f(r(a))\underset{per \ ipotesi}{>}0\quad f(r(b)\underset{per \ ipotesi}{<} 0 \end{align}$$Per il teorema degli zeri (n=1) $\exists E\in[a,b],\ z=r(F) \ t.c. \ f(z)=f(r(F))=0$
+$E$ connesso per archi $\exists:\underset{arco}{[a,b]}\to E$ t.c.
+$$\begin{align} 
+ & r(a)=x \\ & r(b)=y \\ & f\circ r:[a,b]\to\mathbb{R} \ \text{1d continua} \\ & f(r(a))\underset{per \ ipotesi}{>}0\quad f(r(b)\underset{per \ ipotesi}{<} 0 \end{align}$$
+ Per il teorema degli zeri (n=1) $\exists E\in[a,b],\ z=r(F) \ t.c. \ f(z)=f(r(F))=0$
 
 Insiemi aperti e chiusi definiti da funzioni continua $f:\mathbb{R}^n\to \mathbb{R}$ 
-	$\{x\in\mathbb{R}^n:f(x)>0\}$
-	$\{x\in\mathbb{R}^n:f(x)<0\}$ Sono Aperti
-	$\{x\in\mathbb{R}^n:f(x)\ne0\}$
-
-	$\{x\in\mathbb{R}^n:f(x)\ge0\}$
-	$\{x\in\mathbb{R}^n:f(x)\le0\}$ Sono Chiusi
-	$\{x\in\mathbb{R}^n:f(x)=0\}$
+$\{x\in\mathbb{R}^n:f(x)>0\}$
+$\{x\in\mathbb{R}^n:f(x)<0\}$ Sono Aperti
+$\{x\in\mathbb{R}^n:f(x)\ne0\}$
+$\{x\in\mathbb{R}^n:f(x)\ge0\}$
+$\{x\in\mathbb{R}^n:f(x)\le0\}$ Sono Chiusi
+$\{x\in\mathbb{R}^n:f(x)=0\}$
 
 ### DEFINIZIONE
 $E\subseteq\mathbb{R}^n$. 
@@ -57,7 +58,8 @@ $$\lim_{(x,y)\to(0,0)} \frac{x^3+y^5}{x^2+y^4} \quad \begin{align} & \left|\frac
 & \left| \frac{x^3+y^5}{x^2+y^4} \right|\underset{dis.\ triangolare}{\le}\left| \frac{x^3}{x^2+\underset{\ge 0}{y^4}} \right|+ \left| \frac{y^5}{\underset{\ge0}{x^2}+y^4} \right| \\
 & \underset{\frac{1}{x^2+y^4}\le \frac{1}{x^2}}{x^2\le x^2+y}\le \frac{|x|^3}{x^2}+ \frac{|y|^5}{y^4} \underset{\underset{(ii) \frac{y^5}{x^2+y^4\le \frac{y^5}{y^4}}}{(ii) \frac{x^3}{x^2+y^4}\le \frac{x^3}{x^2}}} {\le} \underset{g(x,y)}{\underline{|x|+|y|}}\to0 \\
 \\& g(x,y)=|x|+|y| \ \text{è continua in }(0,0) \quad g(x,y)\to0 \ per \ (x,y)\to(0,0) \\ & \text{Quindi }f\to0\text{ per il teorema del confronto}
-	\end{align}$$$$\lim_{(x,y)\to(0,0)} \frac{y^3+x^5}{x^2+y^4}\quad \begin{align}&  \left| \frac{y^3+x^5}{x^2+y^4} \right|\le \left| \frac{y^3}{x^2+y^4} \right| + \left| \frac{x^5}{x^2+y^4} \right|  \\
+\end{align}$$
+$$\lim_{(x,y)\to(0,0)} \frac{y^3+x^5}{x^2+y^4}\quad \begin{align}&  \left| \frac{y^3+x^5}{x^2+y^4} \right|\le \left| \frac{y^3}{x^2+y^4} \right| + \left| \frac{x^5}{x^2+y^4} \right|  \\
  & \left|\frac{y^3+x^5}{x^2+y^4}\right| \underset{\underset{\frac{|y|^3}{x^2+y^4}\le \frac{|y|^3}{y^4}\le \frac{1}{|y|}}{\frac{|x|^5}{x^2+y^4}\le \frac{|x|^5}{x^2}}\le|x|^3}{\le} \frac{1}{|y|}+|x|^3 \\
 & \frac{1}{|y|}\cancel{\to}0 \\
 & \quad -\ f(x,x)\underset{y=x}{=} \frac{x^3+x^5}{x^2+x^4}\sim \frac{x^3}{x^2}=x\to 0  \\
@@ -66,7 +68,6 @@ $$\lim_{(x,y)\to(0,0)} \frac{x^3+y^5}{x^2+y^4} \quad \begin{align} & \left|\frac
 & \frac{\rho^3\sin^3\theta+\rho^5\cos^5\theta}{\rho^2\cos^2\theta+\rho^4\sin^4\theta} \\
 & \left| \frac{\rho^3\sin^3\theta}{\rho^2\cos^2\theta+\rho^4\sin^4\theta} \right| \le \frac{\rho^3}{\ldots}\le g(\rho) \\
 & \overset{\frac{1+xy}{x^2}=k\quad k\in\mathbb{R}}{-\lim_{(x,y)\to(0,0)}\left(  \frac{xy^2+2y^{\frac{1}{3}}\sin^2x}{x^2+y^2} \right)e^{\frac{x^2-y^2}{x^2+y^2}}}  \end{align} $$
-
 ### DEFINIZIONE
 $f:A\subseteq\mathbb{R}^2\to\mathbb{R}, \ x_0\in A$, $x_0$ è un punto di max (rispettivamente minimo) assoluto per $f$ in $A$ se $\forall x\in A$ $$f(x)\underset{(\ge)}{\le} f(x_0)$$ $f(x)$ è max (min)
 
@@ -120,14 +121,14 @@ elements: [
 	{type: circle, def: [[0,0],1]}
 ]
 ```
-	$C_{min}=-1\rightsquigarrow(0,\pm1)$ punti di min
-	$C_{min}=-1\rightsquigarrow(\pm1,0)$ punti di max
+$C_{min}=-1\rightsquigarrow(0,\pm1)$ punti di min
+$C_{min}=-1\rightsquigarrow(\pm1,0)$ punti di max
 
 **RIASSUNTO**
-	max/min $f(x,y)$ su $A\subseteq\mathbb{R}^2$
-	1) Metodo delle curve di livello
-		Applicabile quando si sa disegnare le curve di livello (procedimento grafico)
-	2) Nell'equazione del vincolo è possibile esplicitare una variabile rispetto alle altre
+max/min $f(x,y)$ su $A\subseteq\mathbb{R}^2$
+1) Metodo delle curve di livello
+	Applicabile quando si sa disegnare le curve di livello (procedimento grafico)
+2) Nell'equazione del vincolo è possibile esplicitare una variabile rispetto alle altre
 	 $\rightsquigarrow\max/\min \ 1d$ Permettono di risolvere problemi di ottimizzazione in casi "fortunati".
 
 ### Esempio 
