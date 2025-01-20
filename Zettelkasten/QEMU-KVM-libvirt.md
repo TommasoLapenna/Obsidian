@@ -13,3 +13,14 @@ Starting from the bottom:
 - libvirt arranges and manages QEMU sessions, its disks and networks
 ![[virt 1.png]]
 # Usage
+https://wiki.archlinux.org/title/KVM
+https://wiki.archlinux.org/title/QEMU
+https://wiki.archlinux.org/title/Libvirt
+https://gist.github.com/tatumroaquin/c6464e1ccaef40fd098a4f31db61ab22
+
+- `LC_ALL=C.UTF-8 lscpu | grep Virtualization` hardware virtualization support
+- `zgrep CONFIG_KVM= /proc/config.gz` to check if the necessary modules are available in the kernel, it is available if the command returns either 
+- `qemu-full qemu-img libvirt virt-install virt-manager virt-viewer edk2-ovmf dnsmasq swtpm guestfs-tools libosinfo tuned` packages
+- `sudo systemctl enable libvirtd.service`
+- `sudo virt-host-validate qemu` to check if everything works correctly
+- 
