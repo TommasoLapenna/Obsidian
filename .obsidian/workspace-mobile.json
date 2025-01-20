@@ -13,39 +13,31 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Zettelkasten/Ottimizzazione.md",
-                "mode": "preview",
+                "file": "Tags/Virtualization.md",
+                "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ottimizzazione"
+              "title": "Virtualization"
             }
           },
           {
-            "id": "9a0576f5c02ab131",
+            "id": "06f9b3e36979c05a",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Excalidraw/Esercizi Analisi 2.md"
+                "file": "Indexes/Drone Project.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "Esercizi Analisi 2"
-            }
-          },
-          {
-            "id": "20377744ff67352d",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {},
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Drone Project"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -194,10 +186,35 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "20377744ff67352d",
+  "active": "2a008df85dd4325f",
   "lastOpenFiles": [
-    "Zettelkasten/Ottimizzazione.md",
+    "Zettelkasten/QEMU-KVM-libvirt.md",
+    "Indexes/Drone Project.md",
+    "Tags/Virtualization.md",
+    "QEMU/KVM/libvirt.md",
+    "QEMU",
+    "QEMU/KVM",
+    "Indexes/Linux.md",
+    "Zettelkasten/Battery.md",
+    "Zettelkasten/Propellers.md",
+    "Zettelkasten/PID Control.md",
+    "Zettelkasten/FPV System.md",
+    "Zettelkasten/Flight Controller.md",
+    "Zettelkasten/ESC Theory.md",
+    "Zettelkasten/ESC.md",
+    "Zettelkasten/Motors.md",
+    "Zettelkasten/Electromotive and Back Electromotive Force.md",
+    "Zettelkasten/Motors Theory.md",
+    "Source Material/Images/Pasted image 20250118153551.jpg",
+    "Zettelkasten/Batteries Theory.md",
+    "Source Material/Images/Pasted image 20250118124916.png",
+    "Source Material/Images/Pasted image 20250118105341.png",
+    "Source Material/Images/Pasted image 20250118105102.png",
+    "Source Material/Images/Pasted image 20250118105000.jpg",
+    "Zettelkasten/Frame.md",
+    "Zettelkasten/Remote Control.md",
     "Excalidraw/Esercizi Analisi 2.md",
+    "Zettelkasten/Ottimizzazione.md",
     "Tags/Analisi 2 e Probabilità.md",
     "Zettelkasten/Calcolo Differenziale.md",
     "Zettelkasten/Continuità, Max & Min.md",
@@ -206,43 +223,19 @@
     "Indexes/University.md",
     "Zettelkasten/Limiti e Continuità per Funzioni di più Variabili.md",
     "Zettelkasten/Funzioni Reali di Variabile Reale.md",
-    "Zettelkasten/Richiami di Calcolo Vettoriale.md",
-    "Zettelkasten/Concetti di Topologia.md",
-    "Zettelkasten/Curve.md",
-    "Zettelkasten/Introduzione Probabilità, Analisi Combinatoria.md",
-    "Zettelkasten/Integrali Multipli.md",
-    "Indexes/Drone Project.md",
-    "Zettelkasten/GrafoProva.md",
-    "Zettelkasten/Motors.md",
-    "Zettelkasten/Frame.md",
     "Source Material/Images/Pasted image 20250115124737.jpg",
     "Source Material/Images/Pasted image 20250115124541.jpg",
     "Source Material/Images/Pasted image 20250115124508.jpg",
-    "Zettelkasten/Frame (Materials, Orientation).md",
-    "Zettelkasten/Untitled.md",
-    "Zettelkasten/Untitled 1.md",
-    "/Zettelkasten/Untitled.md",
-    "/Zettelkasten/Untitled 1.md",
     "Untitled 2.canvas",
     "Untitled 1.canvas",
-    "Tldraw 2025-01-13 11.59AM.md",
     "Source Material/Images/Ink/Writing/2025.1.13 - 11.56am.writing",
     "Source Material/Images/Ink/Writing",
     "Source Material/Images/Ink",
     "Source Material/Images/Soluzioni Foglio 1_4f5488090d829062ed4d1eac1d944a68.pdf",
     "Source Material/Images/Esercizi_Foglio1_f6901d5714f6ff8f3620099dcf69d450.pdf",
-    "Source Material/INFO_Esercizi_Foglio1_f6901d5714f6ff8f3620099dcf69d450_PDF.md",
-    "Excalidraw/Drawing 2024-12-06 15.06.42.excalidraw.md",
     "Source Material/Images/Immagine 21.jpeg",
     "Source Material/Images/Pasted image 20250111174731.png",
-    "Source Material/Images/Pasted image 20250111012325.png",
-    "Source Material/Images/Immagine 20.jpeg",
     "Untitled.canvas",
-    "Source Material/Images/Immagine 19.jpeg",
-    "Source Material/Images/Immagine 18.jpeg",
-    "Source Material/Images/Immagine 17.jpeg",
-    "Source Material/PDFs/Lebesgue.pdf",
-    "Source Material/Lezioni Analisi 2 e Probabilità",
-    "Source Material/PDFs/TUTTO ANALISI II E PROBABILITÀ.pdf"
+    "Source Material/PDFs/Lebesgue.pdf"
   ]
 }
