@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Indexes/University.md",
-                "mode": "preview",
+                "file": "Zettelkasten/QEMU-KVM-libvirt.md",
+                "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "University"
+              "title": "QEMU-KVM-libvirt"
             }
           }
         ]
@@ -178,10 +178,33 @@
   },
   "active": "574a32de0d3ffff7",
   "lastOpenFiles": [
+    "Source Material/Images/virt 1.png",
+    "Source Material/Images/virt.png",
+    "Indexes/Linux.md",
+    "Indexes/University.md",
+    "Zettelkasten/Remote Control.md",
+    "Zettelkasten/QEMU-KVM-libvirt.md",
+    "Zettelkasten/Propellers.md",
+    "Zettelkasten/PID Control.md",
+    "Zettelkasten/Motors Theory.md",
+    "Zettelkasten/Flight Controller.md",
+    "Zettelkasten/Electromotive and Back Electromotive Force.md",
+    "Zettelkasten/ESC.md",
+    "Zettelkasten/ESC Theory.md",
+    "Zettelkasten/Battery.md",
+    "Zettelkasten/Batteries Theory.md",
+    "Tags/Virtualization.md",
+    "Source Material/Images/Pasted image 20250118153551.jpg",
+    "Source Material/Images/Pasted image 20250118124916.png",
+    "Source Material/Images/Pasted image 20250118105341.png",
+    "Source Material/Images/Pasted image 20250118105102.png",
+    "Source Material/Images/Pasted image 20250118105000.jpg",
+    "QEMU/KVM/libvirt.md",
+    "QEMU/KVM",
+    "QEMU",
     "Indexes/Programming.md",
     "Indexes/Drone Project.md",
     "Excalidraw/Esercizi Analisi 2.md",
-    "Indexes/University.md",
     "Zettelkasten/Introduzione Probabilità, Analisi Combinatoria.md",
     "Zettelkasten/Richiami di Calcolo Vettoriale.md",
     "Zettelkasten/Funzioni Reali di Variabile Reale.md",
@@ -194,17 +217,6 @@
     "Source Material/Images/Pasted image 20250115124541.jpg",
     "Source Material/Images/Pasted image 20250115124508.jpg",
     "Source Material/Images/Esercizi_Foglio2_bd265c7c9c695a504c22f417c678d2a2.pdf",
-    "Tags/Analisi 2 e Probabilità.md",
-    "Zettelkasten/Limiti e Continuità per Funzioni di più Variabili.md",
-    "Source Material/PDFs/Lebesgue.pdf",
-    "Zettelkasten/Integrali Multipli.md",
-    "Zettelkasten/Untitled.md",
-    "Zettelkasten/Concetti di Topologia.md",
-    "Zettelkasten/Continuità, Max & Min.md",
-    "Zettelkasten/Ottimizzazione.md",
-    "Zettelkasten/Calcolo Differenziale.md",
-    "Zettelkasten/Introduzione alla Teoria dei Codici.md",
-    "Zettelkasten/Untitled 1.md",
-    "Excalidraw/Drawing 2025-01-13 23.41.13.excalidraw.md"
+    "Source Material/PDFs/Lebesgue.pdf"
   ]
 }
