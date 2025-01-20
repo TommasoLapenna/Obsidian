@@ -79,7 +79,7 @@ Simmetria radiale ($f$ ha lo stesso valore nei punti che hanno la stessa distanz
 # Domini
 $n=1\leadsto D_f=I$ o unione di intervalli
 ### ESEMPIO (in $\mathbb{R}^2$)
-	$f(x,y)=\frac{\sqrt{x^2-y}}{log(x+y)}$
+$f(x,y)=\frac{\sqrt{x^2-y}}{log(x+y)}$
 l'insieme di definizione di $f$ è dato da 
 	a - $x^2-y\ge0$ (radicando non negativo)
 	b - $x+y>0$ (argomento del $log>0$)		c- $x+y\ne 1$ (denominatore $\ne 0$)
