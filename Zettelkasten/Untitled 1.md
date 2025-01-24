@@ -13,4 +13,4 @@ page: 1
 ```
 
 
-
+![[Esercizi_Foglio1_f6901d5714f6ff8f3620099dcf69d450.pdf]]
