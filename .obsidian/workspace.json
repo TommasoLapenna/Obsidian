@@ -11,12 +11,15 @@
             "id": "de8e28bc3a6761a6",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Source Material/Images/TUTTO MATEMATICA DISCRETA E CODICI.jpeg"
+                "file": "Zettelkasten/Integrali Multipli.md",
+                "mode": "preview",
+                "backlinks": true,
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "TUTTO MATEMATICA DISCRETA E CODICI"
+              "icon": "lucide-file",
+              "title": "Integrali Multipli"
             }
           }
         ]
@@ -175,8 +178,10 @@
   },
   "active": "de8e28bc3a6761a6",
   "lastOpenFiles": [
-    "Drawings/tldraw/Tldraw 2025-01-24 6.27PM.md",
+    "Indexes/University.md",
+    "Zettelkasten/Riassunto.md",
     "Source Material/Images/TUTTO MATEMATICA DISCRETA E CODICI.jpeg",
+    "Drawings/tldraw/Tldraw 2025-01-24 6.27PM.md",
     "Source Material/Images/virt 1.png",
     "Source Material/Images/virt.png",
     "Source Material/Images/SoluzioniFoglio2 2_07442914581f35737af5af4146529aff.pdf",
@@ -218,7 +223,6 @@
     "Drawings/Excalidraw/Drawing 2024-12-10 11.40.44.excalidraw.md",
     "Drawings/Excalidraw/Drawing 2024-12-06 15.06.42.excalidraw.md",
     "Drawings/Excalidraw/Drawing 2024-12-05 16.29.06.excalidraw.md",
-    "Indexes/University.md",
     "Zettelkasten/Remote Control.md",
     "Zettelkasten/Propellers.md"
   ]

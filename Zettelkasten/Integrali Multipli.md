@@ -51,7 +51,7 @@ DH=& \begin{pmatrix}
 	Area con segno di una regione di piano compresa tra il grafico di una funzione e l'asse $x$
 - Integrali multipli
 	Volume (con segno) della regione di spazio delimitata dal grafico fi una funzione di due variabili
-![[Pasted image 20241228170502.png]]
+![[Pasted image 20241228170502v2.png]]
 $R=[a,b]\times[c,d]$, $V=\{(x,y,x)\in\mathbb{R}^3: a\le x\le b, \ \ c\le y \le d,\  \ 0\le z\le f(x,y)\}$
 - Dividere $R$ in sottorettangoli
 	- Si divide $[a,b]$ in sottointervalli $[x_{i-1},x_i]$
