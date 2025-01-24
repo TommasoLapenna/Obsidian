@@ -38,6 +38,6 @@ Lezioni
 	[[Lezione 19 Analisi 2]]
 	[[Lezione 20 Analisi 2]] 
 
-Esercizi
-	[[Esercizi Analisi 2]]
+Riassunto
+	[[Riassunto Analisi 2 e Probabilità.canvas|Riassunto Analisi 2 e Probabilità]]
 	

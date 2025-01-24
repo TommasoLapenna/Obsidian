@@ -16,7 +16,7 @@ There are three main types of quadcopter frames: X, H and + frames (there are al
 - H frame
 	Mainly used on racing drones, the main advantage of this configuration is that there is more room for electronics and batteries.
 	![[Pasted image 20250115124541.jpg]]
-- + frame
+-  \+ frame
 	Virtually identical to the X frame, but has a different orientation when flying. This configuration is not commonly used because the arms block the camera view
 	![[Pasted image 20250115124737.jpg]]
 	

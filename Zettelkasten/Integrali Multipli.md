@@ -120,7 +120,7 @@ $\iint_D f(x,y)\ dxdy$, $D$ generico e limitato $$\overline f(x,y)=\begin{cases}
 f(x,y) & se \ (x,y)\in D \\
 0 & altrimenti
 \end{cases}$$
-![[Pasted image 20241229114810.png]]
+![[Pasted image 20241229114810.webp]]
 L'integrale su $D$ è (se esiste) l'integrale di $\overline f$ su un qualunque rettangolo $R$ che racchiude $D$ $$\iint_D f(x,y)\ dxdy=\int_R \overline f(x,y) \ dxdy$$
 Problema $\longrightarrow$ A quali insiemi si può associare un'area
 ## Teorema della Misura
