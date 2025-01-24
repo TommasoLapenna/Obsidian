@@ -23,4 +23,17 @@ https://gist.github.com/tatumroaquin/c6464e1ccaef40fd098a4f31db61ab22
 - `qemu-full qemu-img libvirt virt-install virt-manager virt-viewer edk2-ovmf dnsmasq swtpm guestfs-tools libosinfo tuned` packages
 - `sudo systemctl enable libvirtd.service`
 - `sudo virt-host-validate qemu` to check if everything works correctly
-- 
+- `sudo systemctl enable --now tuned.service` to enable TuneD deamon
+	- `tuned-adm active` to check the active profile, `tuned-adm list`, to list all the profiles, `sudo tuned-adm profile virtual-host` to set a profile
+- libvirt can run either in `session` or `system` mode
+	- `sudo virsh uri` to check the current mode
+	- `sudo usermod -aG libvirt $USER` to add the current user to the libvirt group
+	- `echo 'export LIBVIRT_DEFAULT_URI="qemu:///system"' >> ~/.bashrc sudo virsh uri` to set env variable with the libvirt group
+- `sudo getfacl /var/lib/libvirt/images` to check permission on the images directory
+	- `sudo setfacl -R -b /var/lib/libvirt/images/` to recursively remove existing ACL permissions, `sudo setfacl -R -m "u:${USER}:rwX" /var/lib/libvirt/images/` to recursively grant permission to the current user, `sudo setfacl -m "d:u:${USER}:rwx" /var/lib/libvirt/images/` to enable special permission default ACL
+	- `sudo getfacl /var/lib/libvirt/images/` to check ACL permission within the images directory
+# VM Setup
+- `qemu-img create -f qcow2 winxp.img 3G` to create a qcow2 of a specified size or  `qemu-img create -f raw image_file 4G` for a raw disk image (qcow2 = flexibility, raw = performance)
+- `qemu-system-x86_64 -cdrom iso_image -boot order=d -drive file=disk_image,format=raw` to boot off an ISO image and giving it a specified amount of RAM
+- `qemu-system-x86_64 -m 256 -hda winxp.img -cdrom winxpsp2.iso -enable-kvm` to start QEMU with KVM
+- `qemu-system-x86_64 options disk_image` to run the virtualized system, to enable KVM append `-accell kvm` withthe `-machine` option
