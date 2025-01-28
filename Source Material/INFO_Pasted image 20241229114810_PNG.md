@@ -1,4 +1,0 @@
-![[Pasted image 20241229114810.webp]]
-LINK: [[Pasted image 20241229114810.webp]]
-CREATED At: 2024-12-29
-FILE TYPE: PNG
