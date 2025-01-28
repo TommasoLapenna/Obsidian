@@ -12,5 +12,7 @@ page: 1
 }
 ```
 
+p
 
-![[Esercizi_Foglio1_f6901d5714f6ff8f3620099dcf69d450.pdf]]
+![[TUTTO MATEMATICA DISCRETA E CODICI.jpeg|606]]
+![[TUTTO MATEMATICA DISCRETA E CODICI.jpeg|606]]
