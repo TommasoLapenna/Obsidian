@@ -1,1 +1,0 @@
-1 tuorlo e 1 cucchiaio di zucchero 
