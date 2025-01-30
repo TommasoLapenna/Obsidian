@@ -40,4 +40,4 @@ Lezioni
 
 Riassunto
 	[[Riassunto Analisi 2 e Probabilità.canvas|Riassunto Analisi 2 e Probabilità]]
-	
+	[[Probabilità del Bro Bombardelli]] 

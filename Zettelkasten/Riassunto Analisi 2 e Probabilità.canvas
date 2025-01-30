@@ -1,800 +1,690 @@
 {
-  "edges": [
-    {
-      "fromNode": "0562746fb9ff312d",
-      "fromSide": "right",
-      "id": "2f00ad3b6eb094b4",
-      "toNode": "d1d815ac7c897e25",
-      "toSide": "left"
-    },
-    {
-      "fromNode": "0562746fb9ff312d",
-      "fromSide": "top",
-      "id": "4bfc1bbe078da008",
-      "toNode": "2bd8c44151e18af7",
-      "toSide": "bottom"
-    },
-    {
-      "fromNode": "d3145ef1d2e5af26",
-      "fromSide": "bottom",
-      "id": "bee0f312124a1dcc",
-      "toNode": "363a882039e8956d",
-      "toSide": "top"
-    },
-    {
-      "fromNode": "363a882039e8956d",
-      "fromSide": "bottom",
-      "id": "7a224af86e960b7a",
-      "toNode": "d18d7df9b603a2b1",
-      "toSide": "top"
-    },
-    {
-      "fromNode": "d3145ef1d2e5af26",
-      "fromSide": "left",
-      "id": "8e0c17ff9637dd56",
-      "toNode": "8993e3660d145ffd",
-      "toSide": "top"
-    },
-    {
-      "fromNode": "0562746fb9ff312d",
-      "fromSide": "left",
-      "id": "dcdb92fe271818d6",
-      "toNode": "eb94f7bccb0e6cbe",
-      "toSide": "top"
-    },
-    {
-      "fromNode": "eb94f7bccb0e6cbe",
-      "fromSide": "bottom",
-      "id": "64759b2555ecc1fe",
-      "styleAttributes": {
-      },
-      "toNode": "5b5bf61e9cd73742",
-      "toSide": "top"
-    },
-    {
-      "fromNode": "eb94f7bccb0e6cbe",
-      "fromSide": "left",
-      "id": "3fca336b58aa334c",
-      "styleAttributes": {
-      },
-      "toNode": "03aadb747408ce72",
-      "toSide": "top"
-    },
-    {
-      "fromNode": "5b5bf61e9cd73742",
-      "fromSide": "bottom",
-      "id": "347a1b1383e54192",
-      "styleAttributes": {
-      },
-      "toNode": "345c1fb4642f911a",
-      "toSide": "top"
-    },
-    {
-      "fromNode": "03aadb747408ce72",
-      "fromSide": "bottom",
-      "id": "9f7a8da17e1e618e",
-      "styleAttributes": {
-      },
-      "toNode": "5b5bf61e9cd73742",
-      "toSide": "left"
-    },
-    {
-      "fromNode": "eb94f7bccb0e6cbe",
-      "fromSide": "right",
-      "id": "4facaac45ddcb8bc",
-      "styleAttributes": {
-      },
-      "toNode": "385faa03213a827f",
-      "toSide": "top"
-    },
-    {
-      "fromNode": "385faa03213a827f",
-      "fromSide": "bottom",
-      "id": "68ec97fe79a85af0",
-      "styleAttributes": {
-      },
-      "toNode": "df591895e87060e8",
-      "toSide": "top"
-    },
-    {
-      "fromNode": "df591895e87060e8",
-      "fromSide": "bottom",
-      "id": "f092f9865c57f4f8",
-      "styleAttributes": {
-      },
-      "toNode": "eed815349d2ac311",
-      "toSide": "top"
-    },
-    {
-      "fromNode": "385faa03213a827f",
-      "fromSide": "bottom",
-      "id": "792d3e5380e18687",
-      "styleAttributes": {
-      },
-      "toNode": "242286418bbd5b6d",
-      "toSide": "top"
-    },
-    {
-      "fromNode": "df591895e87060e8",
-      "fromSide": "right",
-      "id": "26902dc04d35466e",
-      "styleAttributes": {
-      },
-      "toNode": "242286418bbd5b6d",
-      "toSide": "left"
-    },
-    {
-      "fromNode": "03aadb747408ce72",
-      "fromSide": "left",
-      "id": "e869d05340ae1303",
-      "styleAttributes": {
-      },
-      "toNode": "f6b2cd787907d609",
-      "toSide": "top"
-    },
-    {
-      "fromNode": "5b5bf61e9cd73742",
-      "fromSide": "bottom",
-      "id": "2dfac9ebbb336da9",
-      "styleAttributes": {
-      },
-      "toNode": "f6b2cd787907d609",
-      "toSide": "right"
-    },
-    {
-      "fromNode": "eb94f7bccb0e6cbe",
-      "fromSide": "bottom",
-      "id": "6b0a2b2f07aae607",
-      "styleAttributes": {
-      },
-      "toNode": "56f0c22b33f7c10f",
-      "toSide": "top"
-    },
-    {
-      "fromNode": "56f0c22b33f7c10f",
-      "fromSide": "bottom",
-      "id": "bd73ac29a8e8d423",
-      "styleAttributes": {
-      },
-      "toNode": "cdeb4ad37095b52a",
-      "toSide": "top"
-    },
-    {
-      "fromNode": "56f0c22b33f7c10f",
-      "fromSide": "bottom",
-      "id": "f74f687c68eb2055",
-      "styleAttributes": {
-      },
-      "toNode": "cebb042ce9c777a0",
-      "toSide": "top"
-    },
-    {
-      "fromNode": "cdeb4ad37095b52a",
-      "fromSide": "bottom",
-      "id": "27dca653d04f90ab",
-      "styleAttributes": {
-      },
-      "toNode": "cebb042ce9c777a0",
-      "toSide": "left"
-    },
-    {
-      "fromNode": "0562746fb9ff312d",
-      "fromSide": "top",
-      "id": "684ce6aab486ab65",
-      "styleAttributes": {
-      },
-      "toNode": "d3145ef1d2e5af26",
-      "toSide": "right"
-    },
-    {
-      "fromNode": "0562746fb9ff312d",
-      "fromSide": "bottom",
-      "id": "4fa829a5ef4fa9d7",
-      "styleAttributes": {
-      },
-      "toNode": "60a40ee103283514",
-      "toSide": "top"
-    },
-    {
-      "fromNode": "60a40ee103283514",
-      "fromSide": "bottom",
-      "id": "e3b44434921ce0d5",
-      "styleAttributes": {
-      },
-      "toNode": "240f7ced15f52e97",
-      "toSide": "top"
-    },
-    {
-      "fromNode": "60a40ee103283514",
-      "fromSide": "bottom",
-      "id": "837c21608c537ea8",
-      "styleAttributes": {
-      },
-      "toNode": "c9cbcc1931465274",
-      "toSide": "top"
-    },
-    {
-      "fromNode": "240f7ced15f52e97",
-      "fromSide": "bottom",
-      "id": "38e0e08c9ade6132",
-      "styleAttributes": {
-      },
-      "toNode": "c5942dedb19f8e0a",
-      "toSide": "top"
-    },
-    {
-      "fromNode": "c9cbcc1931465274",
-      "fromSide": "bottom",
-      "id": "54f72ada7169fddd",
-      "styleAttributes": {
-      },
-      "toNode": "c5942dedb19f8e0a",
-      "toSide": "top"
-    },
-    {
-      "fromNode": "56f0c22b33f7c10f",
-      "fromSide": "bottom",
-      "id": "ad81a3e5475aec76",
-      "styleAttributes": {
-      },
-      "toNode": "935faa6bac5cb7db",
-      "toSide": "top"
-    },
-    {
-      "fromNode": "d1d815ac7c897e25",
-      "fromSide": "right",
-      "id": "dc4eed082dd8e556",
-      "styleAttributes": {
-      },
-      "toNode": "c88290bbe191de0e",
-      "toSide": "left"
-    },
-    {
-      "fromNode": "c88290bbe191de0e",
-      "fromSide": "right",
-      "id": "2d438cd2cf1f56bc",
-      "styleAttributes": {
-      },
-      "toNode": "7c4486cbc93e59b7",
-      "toSide": "top"
-    },
-    {
-      "fromNode": "d1d815ac7c897e25",
-      "fromSide": "right",
-      "id": "d0a05a0d73b2ad37",
-      "styleAttributes": {
-      },
-      "toNode": "7c4486cbc93e59b7",
-      "toSide": "left"
-    },
-    {
-      "fromNode": "345c1fb4642f911a",
-      "fromSide": "bottom",
-      "id": "ece9a91f791f6f22",
-      "styleAttributes": {
-      },
-      "toNode": "023579e98c5ee35e",
-      "toSide": "top"
-    },
-    {
-      "fromNode": "0562746fb9ff312d",
-      "fromSide": "bottom",
-      "id": "752ae9fc367e03fb",
-      "styleAttributes": {
-      },
-      "toNode": "6a2daf970f437270",
-      "toSide": "left"
-    },
-    {
-      "fromNode": "6a2daf970f437270",
-      "fromSide": "right",
-      "id": "b407fdba26e3ddf8",
-      "styleAttributes": {
-      },
-      "toNode": "88ebbdf287fed4c7",
-      "toSide": "left"
-    },
-    {
-      "fromNode": "6a2daf970f437270",
-      "fromSide": "right",
-      "id": "a45bc71f81a93574",
-      "styleAttributes": {
-      },
-      "toNode": "603fccd63349a4f6",
-      "toSide": "left"
-    },
-    {
-      "fromNode": "60a40ee103283514",
-      "fromSide": "right",
-      "id": "531a5fcea1e47422",
-      "styleAttributes": {
-      },
-      "toNode": "419db6a2d20b197a",
-      "toSide": "left"
-    },
-    {
-      "fromNode": "385faa03213a827f",
-      "fromSide": "right",
-      "id": "636d79545fb7fc66",
-      "styleAttributes": {
-      },
-      "toNode": "79aa65b8ec339ab6",
-      "toSide": "left"
-    },
-    {
-      "fromNode": "7c4486cbc93e59b7",
-      "fromSide": "right",
-      "id": "c3f9c0cf8aa82ec4",
-      "styleAttributes": {
-      },
-      "toNode": "908cffbe9dae8fcd",
-      "toSide": "left"
-    },
-    {
-      "fromNode": "2bd8c44151e18af7",
-      "fromSide": "right",
-      "id": "b874382ee0634389",
-      "styleAttributes": {
-      },
-      "toNode": "311682311498767f",
-      "toSide": "left"
-    },
-    {
-      "fromNode": "311682311498767f",
-      "fromSide": "right",
-      "id": "f6cbb461ade60b5f",
-      "styleAttributes": {
-      },
-      "toNode": "e8b2a4c74097ab3c",
-      "toSide": "left"
-    },
-    {
-      "fromNode": "2bd8c44151e18af7",
-      "fromSide": "top",
-      "id": "0379c329b8b89753",
-      "styleAttributes": {
-      },
-      "toNode": "14d2fe2687624216",
-      "toSide": "bottom"
-    },
-    {
-      "fromNode": "311682311498767f",
-      "fromSide": "right",
-      "id": "d5ab0cf0c9afb037",
-      "styleAttributes": {
-      },
-      "toNode": "6f55f92ac1d06d2d",
-      "toSide": "left"
-    },
-    {
-      "fromNode": "311682311498767f",
-      "fromSide": "right",
-      "id": "8aa9d65693b63fa9",
-      "styleAttributes": {
-      },
-      "toNode": "f375c5a4faabc4ab",
-      "toSide": "left"
-    }
-  ],
-  "nodes": [
-    {
-      "height": 50,
-      "id": "0562746fb9ff312d",
-      "styleAttributes": {
-      },
-      "text": "# Analisi 2 e Probablilità",
-      "type": "text",
-      "width": 345,
-      "x": -300,
-      "y": -950
-    },
-    {
-      "height": 56,
-      "id": "d3145ef1d2e5af26",
-      "styleAttributes": {
-      },
-      "text": "### Limiti",
-      "type": "text",
-      "width": 120,
-      "x": -711,
-      "y": -1360
-    },
-    {
-      "height": 225,
-      "id": "8993e3660d145ffd",
-      "styleAttributes": {
-      },
-      "text": "Per dimostrare che un limite NON esiste, si può usare una restrizione ad una curva:\n- Siano $f:A\\subseteq\\mathbb{R}^2\\to\\mathbb{R}$ , $r:I\\subseteq\\mathbb{R}\\to\\mathbb{R}^n$ arco di curva. Allora $g(t)=f(r(t))$ si dice *restrizione di $f$ alla curva $r$*.\n\nA questo punto è sufficiente determinare due curve che passano per $x_0$",
-      "type": "text",
-      "width": 480,
-      "x": -1597,
-      "y": -1360
-    },
-    {
-      "height": 133,
-      "id": "363a882039e8956d",
-      "styleAttributes": {
-      },
-      "text": "**Coordinate polari:**\n\tPer $f(x,y)$ con $(x,y)\\to(x_0,y_0)$ $$\\begin{cases}\nx= x_0+\\rho\\cos\\theta \\\\\ny=y_0+\\rho\\sin\\theta\n\\end{cases}$$",
-      "type": "text",
-      "width": 285,
-      "x": -1032,
-      "y": -1135
-    },
-    {
-      "height": 320,
-      "id": "d18d7df9b603a2b1",
-      "styleAttributes": {
-        "border": null
-      },
-      "text": "Valutare il limite $f(\\rho,\\theta)$ per $\\rho\\to0$ tenendo fisso $\\theta$ :\n- Se il valore del limite dipende da $\\theta$ il limite non esiste\n- Se il limite è indipendente da $\\theta$ (criterio generale per provare l'esistenza del limite): $$|f(x,y)-L|\\le g(\\rho)\\quad g(\\rho)\\to0$$$g$ indipendente da $\\theta$\n- Si possono usare delle maggiorazioni",
-      "type": "text",
-      "width": 362,
-      "x": -1538,
-      "y": -1002
-    },
-    {
-      "height": 60,
-      "id": "56f0c22b33f7c10f",
-      "styleAttributes": {
-      },
-      "text": "### Derivate di Ordine Superiore",
-      "type": "text",
-      "width": 340,
-      "x": -1059,
-      "y": -179
-    },
-    {
-      "height": 108,
-      "id": "03aadb747408ce72",
-      "styleAttributes": {
-      },
-      "text": "### Definizione\n$$\\frac{\\partial f}{\\partial x_i}(x_0)= \\lim_{h\\to0} \\frac{f(x_0+he_i)-f(x_0)}{h}$$",
-      "type": "text",
-      "width": 311,
-      "x": -1668,
-      "y": -261
-    },
-    {
-      "height": 460,
-      "id": "f6b2cd787907d609",
-      "styleAttributes": {
-      },
-      "text": "### Derivate Funzioni Composte\n1) $f:A\\subseteq\\mathbb{R}^2\\to\\mathbb{R}$, $g:I\\subseteq\\mathbb{R}\\to\\mathbb{R}$. Se $f$ è differenziabile in $x_0$ e $g$ è derivabile in $f(x_0)$ allora $$h=g\\circ f:U\\subseteq\\mathbb{R}\\to\\mathbb{R}$$è differenziabile in $x_0$ e vale $$\\nabla h(x_0)=g'(f(x_0)\\nabla f(x_0)$$\n2) $r:I\\subseteq\\mathbb{R}\\to\\mathbb{R}^n$, $f:A\\subseteq\\mathbb{R}^n\\to\\mathbb{R}$. Se $r$ è derivabile in $t_0$ e $f$ è differenziabile in $r(t_0)$ allora $$g= f\\circ r: J\\subseteq\\mathbb{R}\\to\\mathbb{R}$$è derivabile in $t_0$ e vale $$g'(t_0)=\\nabla f(r(t_0))\\cdot r'(t)$$",
-      "type": "text",
-      "width": 413,
-      "x": -2081,
-      "y": -101
-    },
-    {
-      "height": 50,
-      "id": "eb94f7bccb0e6cbe",
-      "styleAttributes": {
-      },
-      "text": "### Calcolo Differenziale",
-      "type": "text",
-      "width": 261,
-      "x": -1126,
-      "y": -560
-    },
-    {
-      "height": 100,
-      "id": "5b5bf61e9cd73742",
-      "styleAttributes": {
-      },
-      "text": "### Gradiente \n$$\\nabla f(x_0,y_0)=(\\partial_x f(x_0,y_0),\\partial_y f(x_0,y_0)$$",
-      "type": "text",
-      "width": 300,
-      "x": -1507,
-      "y": -67
-    },
-    {
-      "height": 120,
-      "id": "cdeb4ad37095b52a",
-      "styleAttributes": {
-      },
-      "text": "Teorema di Schwarz: Le derivate miste $f_{x_ix_j}$ e $f_{x_jx_i}$ coincidono in $x_0$ se esse esistono in un intorno di $x_0$ e sono continue in $x_0$",
-      "type": "text",
-      "width": 300,
-      "x": -1176,
-      "y": 9
-    },
-    {
-      "height": 460,
-      "id": "345c1fb4642f911a",
-      "styleAttributes": {
-      },
-      "text": "- Una funzione si dice *continua* in un punto se $\\lim_{(x,y)\\to(x_0,y_0)}f(x,y)= f(x_0,y_0)$\n- Una funzione si dice *derivabile* in un punto se in quel punto esistono tutte le coordinate parziali\n- **Differenzibilità**\n\t- *Condizione necessaria e sufficiente*: $f(x,y):A\\subseteq\\mathbb{R}^2\\to\\mathbb{R}$ è differenziabile in $(x_0,y_0)\\in A$ se e solo se\n\t\t1) Esistono le derivate parziali prime nel punto $(x_0,y_0)$ (non necessario che esse siano continue)\n\t\t2) $$\\lim_{(h,k)\\to(0,0)} \\frac{f(x_0+h,y_0+k)-f(x_0,y_0)-f_x(x_0,y_0)k-f_y(x_0,y_0)k}{\\sqrt{h^2+k^2}}=0$$\n\t- *Condizione sufficiente*: $f:A\\in\\mathbb{R}^2\\to\\mathbb{R}$, $A$ aperto $$f\\in C'(A)\\Longrightarrow \\text{differenziabiltà}$$(ovvero esistono le derivate parziali prime continue)\nLa differenziabilità indica la continuità, differenziabilità e piano tangente",
-      "type": "text",
-      "width": 650,
-      "x": -1645,
-      "y": 280
-    },
-    {
-      "height": 106,
-      "id": "cebb042ce9c777a0",
-      "styleAttributes": {
-      },
-      "text": "##### Matrice Hessiana\n$$Hf=\\begin{pmatrix}\nf_{xx}(x_0,y_0) & f_{xy}(x_0,y_0) \\\\\nf_{yx}(x_0,y_0) & f_{yy}(x_0,y_0)\n\\end{pmatrix}$$",
-      "type": "text",
-      "width": 260,
-      "x": -904,
-      "y": 174
-    },
-    {
-      "height": 60,
-      "id": "385faa03213a827f",
-      "styleAttributes": {
-      },
-      "text": "### Derivata Direzionale",
-      "type": "text",
-      "width": 260,
-      "x": -719,
-      "y": -430
-    },
-    {
-      "height": 100,
-      "id": "eed815349d2ac311",
-      "styleAttributes": {
-      },
-      "text": "$v$ versore di una retta $r$ $$v= \\frac{r}{||r||}= \\frac{r}{\\sqrt{r_1^2+r_2^2}}$$",
-      "type": "text",
-      "width": 280,
-      "x": -524,
-      "y": -49
-    },
-    {
-      "height": 200,
-      "id": "935faa6bac5cb7db",
-      "styleAttributes": {
-      },
-      "text": "##### Matrice Jacobiana\n$$Df(x)=\\begin{pmatrix}\n\\frac{\\partial f_1}{x_1} & \\cdots & \\frac{\\partial f_1}{x_n} \\\\\n\\frac{\\partial f_2}{x_1} & \\cdots & \\frac{\\partial f_2}{x_n} \\\\\n\\vdots & \\ddots & \\vdots \\\\\n\\frac{\\partial f_n}{x_1} & \\cdots & \\frac{\\partial f_1m}{x_n}\n\\end{pmatrix}$$",
-      "type": "text",
-      "width": 300,
-      "x": -600,
-      "y": 180
-    },
-    {
-      "height": 100,
-      "id": "023579e98c5ee35e",
-      "styleAttributes": {
-      },
-      "text": "### Piano Tangente\n$$z=f(x_0,y_0)+f_x(x_0,y_0)(x-x_0)+f_y(x,y)(y-y_0)$$",
-      "type": "text",
-      "width": 420,
-      "x": -1440,
-      "y": 840
-    },
-    {
-      "height": 56,
-      "id": "d1d815ac7c897e25",
-      "styleAttributes": {
-      },
-      "text": "### Integrali Multipli",
-      "type": "text",
-      "width": 213,
-      "x": 540,
-      "y": -1230
-    },
-    {
-      "height": 280,
-      "id": "c88290bbe191de0e",
-      "styleAttributes": {
-      },
-      "text": "### Formule di Riduzione\n$R=[a,b]\\times[c,d]$, $f\\in C(R)$ $$\\iint_R f(x,y)\\ dxdy = \\int_a^b\\left(\\int_c^d f(x,y)\\ dy\\right)\\ dx = \\int_c^d\\left(\\int_a^b f(x,y)\\ dx\\right)\\ dy$$\n### Formule di Riduzione su Regioni Semplici\n- $D$ è $y-$semplice $$\\iint_D f(x,y)\\ dxdy=\\int_a^b\\left(\\int_{g_1(x)}^{g_2(x)}f(x,y)\\ dy\\right)dx$$\n- $D$ è $x-$semplice $$\\iint_D f(x,y) \\ dxdy=\\int_c^d\\left(\\int_{h_1(y)}^{h_2(y)}f(x,y)\\ dx\\right)dy$$",
-      "type": "text",
-      "width": 520,
-      "x": 890,
-      "y": -1560
-    },
-    {
-      "height": 174,
-      "id": "7c4486cbc93e59b7",
-      "styleAttributes": {
-      },
-      "text": "### Cambio di Variabile negli Integrali Doppi\n$$\\int_a^b f(x)\\ dx=\\int_{g^{-1}(a)}^{g^{-1}(b)} f(g(t))g'(t)\\ dt$$\n$$\\iint_D f(x,y)\\ dxdy=\\iint_C f(g(u,v),h(u,v))|\\det DT| dudv$$\n$$DT=\\begin{pmatrix}\ng_u & g_v \\\\\nh_u & h_v\n\\end{pmatrix}\\begin{matrix}\n(\\nabla g) \\\\\n(\\nabla h)\n\\end{matrix}$$",
-      "type": "text",
-      "width": 460,
-      "x": 1480,
-      "y": -1202
-    },
-    {
-      "height": 60,
-      "id": "6a2daf970f437270",
-      "styleAttributes": {
-      },
-      "text": "### Curve",
-      "type": "text",
-      "width": 140,
-      "x": 350,
-      "y": -920
-    },
-    {
-      "height": 130,
-      "id": "88ebbdf287fed4c7",
-      "styleAttributes": {
-      },
-      "text": "$r:[a,b]\\to\\mathbb{R}^n$ e parametrizza un arco di curva regolare $\\Longrightarrow\\gamma$ è rettificabile e $$l(\\gamma)=\\int_a^b||r'(t)||\\ dt$$",
-      "type": "text",
-      "width": 400,
-      "x": 610,
-      "y": -1080
-    },
-    {
-      "height": 150,
-      "id": "603fccd63349a4f6",
-      "styleAttributes": {
-      },
-      "text": "### Integrale di Linea (1° Specie) $$\\int_\\gamma f\\ dS\\equiv \\int_a^b f(r(t))\\ |r'(t)|\\ dt$$",
-      "type": "text",
-      "width": 400,
-      "x": 610,
-      "y": -890
-    },
-    {
-      "height": 60,
-      "id": "60a40ee103283514",
-      "styleAttributes": {
-      },
-      "text": "### Studio di Funzioni",
-      "type": "text",
-      "width": 238,
-      "x": 112,
-      "y": -640
-    },
-    {
-      "height": 100,
-      "id": "df591895e87060e8",
-      "styleAttributes": {
-      },
-      "text": "##### Definizione\n$$D_vf(x_0)=\\lim_{t\\to0} \\frac{f(x_0+tv)-f(x_0)}{t}$$",
-      "type": "text",
-      "width": 341,
-      "x": -644,
-      "y": -219
-    },
-    {
-      "height": 140,
-      "id": "79aa65b8ec339ab6",
-      "styleAttributes": {
-      },
-      "text": "Una funziona ha derivate direzionali lungo qualsiasi direzione in un punto $x_0$ se (Condizione Sufficiente)è differenziabile in $x_0$",
-      "type": "text",
-      "width": 260,
-      "x": -340,
-      "y": -500
-    },
-    {
-      "height": 285,
-      "id": "419db6a2d20b197a",
-      "styleAttributes": {
-      },
-      "text": "### Metodo delle Curve di Livello\n1) Si disegna le generica curva di livello $f(x,y)=k$\n2) Si considera le intersezioni $\\{f(x,y)=k\\}$ con $A$\n3) Si calcola il valore $k_{max}$ per cui $\\{(x,y):f(x,y)=k\\}$ ha intersezione non vuota con $A$\n4) Si calcola il valore $k_{min}$",
-      "type": "text",
-      "width": 410,
-      "x": 1275,
-      "y": -740
-    },
-    {
-      "height": 420,
-      "id": "c9cbcc1931465274",
-      "styleAttributes": {
-      },
-      "text": "#### Condizione Necessaria del 2° Ordine\n- Se $x_0$ è massimo locale $\\Longrightarrow\\begin{cases} \\nabla f(x_0)=0 \\\\ H f(x_0)\\le0\\end{cases}$\n- Se $x_0$ è minimo locale $\\Longrightarrow\\begin{cases} \\nabla f(x_0)=0 \\\\ H f(x_0)\\ge0\\end{cases}$\n### Condizioni Sufficienti del 2° Ordine per Estremi Locali\n- Max) Se $\\begin{cases}\\nabla f(x_0)=0 \\\\ Hf(x_0)<0\\end{cases}\\Longrightarrow x_0$ è un massimo locale\n- Min) Se $\\begin{cases}\\nabla f(x_0)=0 \\\\ Hf(x_0)>0\\end{cases}\\Longrightarrow x_0$ è un minimo locale\nSe $x_0$ è critico e $Hf(x_0)$ è indefinita $\\Longrightarrow x_0$ è un punto di sella",
-      "type": "text",
-      "width": 540,
-      "x": 940,
-      "y": -419
-    },
-    {
-      "height": 120,
-      "id": "240f7ced15f52e97",
-      "styleAttributes": {
-      },
-      "text": "### Condizione Necessaria del 1° Ordine\nTeorema di Fermat: $$\\nabla f(x_0)=0$$",
-      "type": "text",
-      "width": 420,
-      "x": 490,
-      "y": -329
-    },
-    {
-      "height": 320,
-      "id": "c5942dedb19f8e0a",
-      "styleAttributes": {
-      },
-      "text": "Procedimento Pratico:\n1) Trovare i punti critici, ovvero i punti nei quali $\\nabla f(x_0,y_0)=0$\n2) Calcolare $Hf(x,y)$ e valutarla nei punti critici individuati nel punto precedente\n3) Verificare come è definita la funzione:\n\t- $M$ definita positiva $\\iff$ tutti gli autovalori sono > 0 $\\Longrightarrow$ **Punto di Minimo**\n\t- $M$ definita negativa $\\iff$ tutti gli autovalori sono < $0$ $\\Longrightarrow$ **Punto di Massimo**\n\t- Altrimenti (un autovalore positivo e l'altro negativo), **Punto di Sella\n4) Nel caso $Hf(x_0)$ sia nulla o semidefinita ($\\det(Hf)=0$), occorre un'analisi aggiuntiva:\n\tDa scrivere",
-      "type": "text",
-      "width": 690,
-      "x": 540,
-      "y": 160
-    },
-    {
-      "height": 184,
-      "id": "242286418bbd5b6d",
-      "styleAttributes": {
-      },
-      "text": "Formula del Gradiente: Se $f$ è differenziabile in $x_0$, allora per ogni versore $v$ esiste $D_v$ e vale\n$$D_v f(x_0)=\\nabla f(x_0)\\cdot v = f_x(x_0,y_0)\\cdot v_1+f_y(x_0,y_0)\\cdot v_2$$\nPer $n=2$: $$D_v f(x_0,y_0) = \\left(\\frac{\\partial f}{\\partial x}(x_0,y_0), \\frac{\\partial f}{\\partial y}(x_0,y_0)\\right)\\cdot (\\cos\\theta,\\sin\\theta)=\\left(\\frac{\\partial f}{\\partial x}(x_0,y_0)\\cos\\theta, \\frac{\\partial f}{\\partial y}(x_0,y_0)\\sin\\theta\\right)$$",
-      "type": "text",
-      "width": 767,
-      "x": -152,
-      "y": -141
-    },
-    {
-      "height": 100,
-      "id": "908cffbe9dae8fcd",
-      "styleAttributes": {
-      },
-      "text": "**Coordinate Polari**\n$$\\begin{cases}\nx=x_0 +\\rho\\cos\\theta \\\\\ny= y_0+\\rho\\sin\\theta \n\\end{cases}\\quad DT = \\rho$$",
-      "type": "text",
-      "width": 280,
-      "x": 2080,
-      "y": -1140
-    },
-    {
-      "height": 56,
-      "id": "2bd8c44151e18af7",
-      "styleAttributes": {
-      },
-      "text": "### Probabilità",
-      "type": "text",
-      "width": 160,
-      "x": -500,
-      "y": -2000
-    },
-    {
-      "height": 60,
-      "id": "311682311498767f",
-      "styleAttributes": {
-      },
-      "text": "### Analisi Combinatoria",
-      "type": "text",
-      "width": 260,
-      "x": -160,
-      "y": -2140
-    },
-    {
-      "height": 100,
-      "id": "14d2fe2687624216",
-      "styleAttributes": {
-      },
-      "text": "$$P(E)= \\frac{\\#\\text{ di volte che }E\\text{ accade}}{\\#\\text{ di possibili esiti}}$$",
-      "type": "text",
-      "width": 260,
-      "x": -550,
-      "y": -2180
-    },
-    {
-      "height": 180,
-      "id": "e8b2a4c74097ab3c",
-      "styleAttributes": {
-      },
-      "text": "### Principio Fondamentale del Calcolo Combinatorio\nSi realizzano due esperimenti. Si supponga che il primo abbia $m$ esiti e che, per ognuno di questi, il secondo esperimento abbia $n$ esiti. Allora, se sequenze distinte di esiti dei due esperimenti producono esiti distinti, i due esperimenti hanno $m\\cdot n$ esiti.\n",
-      "type": "text",
-      "width": 560,
-      "x": 220,
-      "y": -2600
-    },
-    {
-      "height": 300,
-      "id": "6f55f92ac1d06d2d",
-      "styleAttributes": {
-      },
-      "text": "### Permutazioni\n##### Permutazioni Semplici (senza ripetizioni)\nUna permutazione di $n$ oggetti è una presentazione ordinata dei suoi elementi nella quale ogni elemento viene preso una sola volta $$\\underset{n}{\\blacksquare}\\quad \\underset{n-1}{\\blacksquare}\\quad\\ldots\\quad\\underset{1}{\\blacksquare}\\quad n!$$\n$n_1$ sono identici tra loro\n$n_2$ sono identici tra loro e distinti dai precedenti\n$\\vdots$\n$n_r\\rightsquigarrow \\frac{n!}{n_1!n_2!\\ldots n_r!}$",
-      "type": "text",
-      "width": 540,
-      "x": 340,
-      "y": -2380
-    },
-    {
-      "height": 260,
-      "id": "f375c5a4faabc4ab",
-      "styleAttributes": {
-      },
-      "text": "### Combinazioni\n##### Coefficiente Binomiale\n$$\\begin{pmatrix} n \\\\ k \\end{pmatrix}= \\begin{cases}\\frac{n!}{k!(n-k)!} & se \\ n,k\\in\\mathbb{N},\\ 0\\le k\\le n\\\\ 0 & se \\ n,k\\in\\mathbb{N}, \\ 0\\le n<k\\end{cases}$$ \nrappresenta il numero di sottoinsiemi di $k$ elementi che si possono estrarre da un insieme di $n$ elementi (distinti, indipendentemente dall'ordine).",
-      "type": "text",
-      "width": 520,
-      "x": 340,
-      "y": -2040
-    }
-  ]
+	"edges":[
+		{"fromNode":"0562746fb9ff312d","fromSide":"right","id":"2f00ad3b6eb094b4","toNode":"d1d815ac7c897e25","toSide":"left"},
+		{"fromNode":"0562746fb9ff312d","fromSide":"top","id":"4bfc1bbe078da008","toNode":"2bd8c44151e18af7","toSide":"bottom"},
+		{"fromNode":"d3145ef1d2e5af26","fromSide":"bottom","id":"bee0f312124a1dcc","toNode":"363a882039e8956d","toSide":"top"},
+		{"fromNode":"363a882039e8956d","fromSide":"bottom","id":"7a224af86e960b7a","toNode":"d18d7df9b603a2b1","toSide":"top"},
+		{"fromNode":"d3145ef1d2e5af26","fromSide":"left","id":"8e0c17ff9637dd56","toNode":"8993e3660d145ffd","toSide":"top"},
+		{"fromNode":"0562746fb9ff312d","fromSide":"left","id":"dcdb92fe271818d6","toNode":"eb94f7bccb0e6cbe","toSide":"top"},
+		{
+			"fromNode":"eb94f7bccb0e6cbe",
+			"fromSide":"bottom",
+			"id":"64759b2555ecc1fe",
+			"styleAttributes":{},
+			"toNode":"5b5bf61e9cd73742",
+			"toSide":"top"
+		},
+		{
+			"fromNode":"eb94f7bccb0e6cbe",
+			"fromSide":"left",
+			"id":"3fca336b58aa334c",
+			"styleAttributes":{},
+			"toNode":"03aadb747408ce72",
+			"toSide":"top"
+		},
+		{
+			"fromNode":"5b5bf61e9cd73742",
+			"fromSide":"bottom",
+			"id":"347a1b1383e54192",
+			"styleAttributes":{},
+			"toNode":"345c1fb4642f911a",
+			"toSide":"top"
+		},
+		{
+			"fromNode":"03aadb747408ce72",
+			"fromSide":"bottom",
+			"id":"9f7a8da17e1e618e",
+			"styleAttributes":{},
+			"toNode":"5b5bf61e9cd73742",
+			"toSide":"left"
+		},
+		{
+			"fromNode":"eb94f7bccb0e6cbe",
+			"fromSide":"right",
+			"id":"4facaac45ddcb8bc",
+			"styleAttributes":{},
+			"toNode":"385faa03213a827f",
+			"toSide":"top"
+		},
+		{
+			"fromNode":"385faa03213a827f",
+			"fromSide":"bottom",
+			"id":"68ec97fe79a85af0",
+			"styleAttributes":{},
+			"toNode":"df591895e87060e8",
+			"toSide":"top"
+		},
+		{
+			"fromNode":"df591895e87060e8",
+			"fromSide":"bottom",
+			"id":"f092f9865c57f4f8",
+			"styleAttributes":{},
+			"toNode":"eed815349d2ac311",
+			"toSide":"top"
+		},
+		{
+			"fromNode":"385faa03213a827f",
+			"fromSide":"bottom",
+			"id":"792d3e5380e18687",
+			"styleAttributes":{},
+			"toNode":"242286418bbd5b6d",
+			"toSide":"top"
+		},
+		{
+			"fromNode":"df591895e87060e8",
+			"fromSide":"right",
+			"id":"26902dc04d35466e",
+			"styleAttributes":{},
+			"toNode":"242286418bbd5b6d",
+			"toSide":"left"
+		},
+		{
+			"fromNode":"03aadb747408ce72",
+			"fromSide":"left",
+			"id":"e869d05340ae1303",
+			"styleAttributes":{},
+			"toNode":"f6b2cd787907d609",
+			"toSide":"top"
+		},
+		{
+			"fromNode":"5b5bf61e9cd73742",
+			"fromSide":"bottom",
+			"id":"2dfac9ebbb336da9",
+			"styleAttributes":{},
+			"toNode":"f6b2cd787907d609",
+			"toSide":"right"
+		},
+		{
+			"fromNode":"eb94f7bccb0e6cbe",
+			"fromSide":"bottom",
+			"id":"6b0a2b2f07aae607",
+			"styleAttributes":{},
+			"toNode":"56f0c22b33f7c10f",
+			"toSide":"top"
+		},
+		{
+			"fromNode":"56f0c22b33f7c10f",
+			"fromSide":"bottom",
+			"id":"bd73ac29a8e8d423",
+			"styleAttributes":{},
+			"toNode":"cdeb4ad37095b52a",
+			"toSide":"top"
+		},
+		{
+			"fromNode":"56f0c22b33f7c10f",
+			"fromSide":"bottom",
+			"id":"f74f687c68eb2055",
+			"styleAttributes":{},
+			"toNode":"cebb042ce9c777a0",
+			"toSide":"top"
+		},
+		{
+			"fromNode":"cdeb4ad37095b52a",
+			"fromSide":"bottom",
+			"id":"27dca653d04f90ab",
+			"styleAttributes":{},
+			"toNode":"cebb042ce9c777a0",
+			"toSide":"left"
+		},
+		{
+			"fromNode":"0562746fb9ff312d",
+			"fromSide":"top",
+			"id":"684ce6aab486ab65",
+			"styleAttributes":{},
+			"toNode":"d3145ef1d2e5af26",
+			"toSide":"right"
+		},
+		{
+			"fromNode":"0562746fb9ff312d",
+			"fromSide":"bottom",
+			"id":"4fa829a5ef4fa9d7",
+			"styleAttributes":{},
+			"toNode":"60a40ee103283514",
+			"toSide":"top"
+		},
+		{
+			"fromNode":"60a40ee103283514",
+			"fromSide":"bottom",
+			"id":"e3b44434921ce0d5",
+			"styleAttributes":{},
+			"toNode":"240f7ced15f52e97",
+			"toSide":"top"
+		},
+		{
+			"fromNode":"60a40ee103283514",
+			"fromSide":"bottom",
+			"id":"837c21608c537ea8",
+			"styleAttributes":{},
+			"toNode":"c9cbcc1931465274",
+			"toSide":"top"
+		},
+		{
+			"fromNode":"240f7ced15f52e97",
+			"fromSide":"bottom",
+			"id":"38e0e08c9ade6132",
+			"styleAttributes":{},
+			"toNode":"c5942dedb19f8e0a",
+			"toSide":"top"
+		},
+		{
+			"fromNode":"c9cbcc1931465274",
+			"fromSide":"bottom",
+			"id":"54f72ada7169fddd",
+			"styleAttributes":{},
+			"toNode":"c5942dedb19f8e0a",
+			"toSide":"top"
+		},
+		{
+			"fromNode":"56f0c22b33f7c10f",
+			"fromSide":"bottom",
+			"id":"ad81a3e5475aec76",
+			"styleAttributes":{},
+			"toNode":"935faa6bac5cb7db",
+			"toSide":"top"
+		},
+		{
+			"fromNode":"d1d815ac7c897e25",
+			"fromSide":"right",
+			"id":"dc4eed082dd8e556",
+			"styleAttributes":{},
+			"toNode":"c88290bbe191de0e",
+			"toSide":"left"
+		},
+		{
+			"fromNode":"c88290bbe191de0e",
+			"fromSide":"right",
+			"id":"2d438cd2cf1f56bc",
+			"styleAttributes":{},
+			"toNode":"7c4486cbc93e59b7",
+			"toSide":"top"
+		},
+		{
+			"fromNode":"d1d815ac7c897e25",
+			"fromSide":"right",
+			"id":"d0a05a0d73b2ad37",
+			"styleAttributes":{},
+			"toNode":"7c4486cbc93e59b7",
+			"toSide":"left"
+		},
+		{
+			"fromNode":"345c1fb4642f911a",
+			"fromSide":"bottom",
+			"id":"ece9a91f791f6f22",
+			"styleAttributes":{},
+			"toNode":"023579e98c5ee35e",
+			"toSide":"top"
+		},
+		{
+			"fromNode":"0562746fb9ff312d",
+			"fromSide":"bottom",
+			"id":"752ae9fc367e03fb",
+			"styleAttributes":{},
+			"toNode":"6a2daf970f437270",
+			"toSide":"left"
+		},
+		{
+			"fromNode":"6a2daf970f437270",
+			"fromSide":"right",
+			"id":"b407fdba26e3ddf8",
+			"styleAttributes":{},
+			"toNode":"88ebbdf287fed4c7",
+			"toSide":"left"
+		},
+		{
+			"fromNode":"6a2daf970f437270",
+			"fromSide":"right",
+			"id":"a45bc71f81a93574",
+			"styleAttributes":{},
+			"toNode":"603fccd63349a4f6",
+			"toSide":"left"
+		},
+		{
+			"fromNode":"60a40ee103283514",
+			"fromSide":"right",
+			"id":"531a5fcea1e47422",
+			"styleAttributes":{},
+			"toNode":"419db6a2d20b197a",
+			"toSide":"left"
+		},
+		{
+			"fromNode":"385faa03213a827f",
+			"fromSide":"right",
+			"id":"636d79545fb7fc66",
+			"styleAttributes":{},
+			"toNode":"79aa65b8ec339ab6",
+			"toSide":"left"
+		},
+		{
+			"fromNode":"7c4486cbc93e59b7",
+			"fromSide":"right",
+			"id":"c3f9c0cf8aa82ec4",
+			"styleAttributes":{},
+			"toNode":"908cffbe9dae8fcd",
+			"toSide":"left"
+		},
+		{
+			"fromNode":"2bd8c44151e18af7",
+			"fromSide":"right",
+			"id":"b874382ee0634389",
+			"styleAttributes":{},
+			"toNode":"311682311498767f",
+			"toSide":"left"
+		},
+		{
+			"fromNode":"311682311498767f",
+			"fromSide":"right",
+			"id":"f6cbb461ade60b5f",
+			"styleAttributes":{},
+			"toNode":"e8b2a4c74097ab3c",
+			"toSide":"left"
+		},
+		{
+			"fromNode":"2bd8c44151e18af7",
+			"fromSide":"top",
+			"id":"0379c329b8b89753",
+			"styleAttributes":{},
+			"toNode":"14d2fe2687624216",
+			"toSide":"bottom"
+		},
+		{
+			"fromNode":"311682311498767f",
+			"fromSide":"right",
+			"id":"d5ab0cf0c9afb037",
+			"styleAttributes":{},
+			"toNode":"6f55f92ac1d06d2d",
+			"toSide":"left"
+		},
+		{
+			"fromNode":"311682311498767f",
+			"fromSide":"right",
+			"id":"8aa9d65693b63fa9",
+			"styleAttributes":{},
+			"toNode":"f375c5a4faabc4ab",
+			"toSide":"left"
+		}
+	],
+	"nodes":[
+		{
+			"height":50,
+			"id":"0562746fb9ff312d",
+			"styleAttributes":{},
+			"text":"# Analisi 2 e Probablilità",
+			"type":"text",
+			"width":345,
+			"x":-300,
+			"y":-950
+		},
+		{
+			"height":56,
+			"id":"d3145ef1d2e5af26",
+			"styleAttributes":{},
+			"text":"### Limiti",
+			"type":"text",
+			"width":120,
+			"x":-711,
+			"y":-1360
+		},
+		{
+			"height":225,
+			"id":"8993e3660d145ffd",
+			"styleAttributes":{},
+			"text":"Per dimostrare che un limite NON esiste, si può usare una restrizione ad una curva:\n- Siano $f:A\\subseteq\\mathbb{R}^2\\to\\mathbb{R}$ , $r:I\\subseteq\\mathbb{R}\\to\\mathbb{R}^n$ arco di curva. Allora $g(t)=f(r(t))$ si dice *restrizione di $f$ alla curva $r$*.\n\nA questo punto è sufficiente determinare due curve che passano per $x_0$",
+			"type":"text",
+			"width":480,
+			"x":-1597,
+			"y":-1360
+		},
+		{
+			"height":133,
+			"id":"363a882039e8956d",
+			"styleAttributes":{},
+			"text":"**Coordinate polari:**\n\tPer $f(x,y)$ con $(x,y)\\to(x_0,y_0)$ $$\\begin{cases}\nx= x_0+\\rho\\cos\\theta \\\\\ny=y_0+\\rho\\sin\\theta\n\\end{cases}$$",
+			"type":"text",
+			"width":285,
+			"x":-1032,
+			"y":-1135
+		},
+		{
+			"height":320,
+			"id":"d18d7df9b603a2b1",
+			"styleAttributes":{
+				"border":null
+			},
+			"text":"Valutare il limite $f(\\rho,\\theta)$ per $\\rho\\to0$ tenendo fisso $\\theta$ :\n- Se il valore del limite dipende da $\\theta$ il limite non esiste\n- Se il limite è indipendente da $\\theta$ (criterio generale per provare l'esistenza del limite): $$|f(x,y)-L|\\le g(\\rho)\\quad g(\\rho)\\to0$$$g$ indipendente da $\\theta$\n- Si possono usare delle maggiorazioni",
+			"type":"text",
+			"width":362,
+			"x":-1538,
+			"y":-1002
+		},
+		{
+			"height":60,
+			"id":"56f0c22b33f7c10f",
+			"styleAttributes":{},
+			"text":"### Derivate di Ordine Superiore",
+			"type":"text",
+			"width":340,
+			"x":-1059,
+			"y":-179
+		},
+		{
+			"height":108,
+			"id":"03aadb747408ce72",
+			"styleAttributes":{},
+			"text":"### Definizione\n$$\\frac{\\partial f}{\\partial x_i}(x_0)= \\lim_{h\\to0} \\frac{f(x_0+he_i)-f(x_0)}{h}$$",
+			"type":"text",
+			"width":311,
+			"x":-1668,
+			"y":-261
+		},
+		{
+			"height":460,
+			"id":"f6b2cd787907d609",
+			"styleAttributes":{},
+			"text":"### Derivate Funzioni Composte\n1) $f:A\\subseteq\\mathbb{R}^2\\to\\mathbb{R}$, $g:I\\subseteq\\mathbb{R}\\to\\mathbb{R}$. Se $f$ è differenziabile in $x_0$ e $g$ è derivabile in $f(x_0)$ allora $$h=g\\circ f:U\\subseteq\\mathbb{R}\\to\\mathbb{R}$$è differenziabile in $x_0$ e vale $$\\nabla h(x_0)=g'(f(x_0)\\nabla f(x_0)$$\n2) $r:I\\subseteq\\mathbb{R}\\to\\mathbb{R}^n$, $f:A\\subseteq\\mathbb{R}^n\\to\\mathbb{R}$. Se $r$ è derivabile in $t_0$ e $f$ è differenziabile in $r(t_0)$ allora $$g= f\\circ r: J\\subseteq\\mathbb{R}\\to\\mathbb{R}$$è derivabile in $t_0$ e vale $$g'(t_0)=\\nabla f(r(t_0))\\cdot r'(t)$$",
+			"type":"text",
+			"width":413,
+			"x":-2081,
+			"y":-101
+		},
+		{
+			"height":50,
+			"id":"eb94f7bccb0e6cbe",
+			"styleAttributes":{},
+			"text":"### Calcolo Differenziale",
+			"type":"text",
+			"width":261,
+			"x":-1126,
+			"y":-560
+		},
+		{
+			"height":100,
+			"id":"5b5bf61e9cd73742",
+			"styleAttributes":{},
+			"text":"### Gradiente \n$$\\nabla f(x_0,y_0)=(\\partial_x f(x_0,y_0),\\partial_y f(x_0,y_0)$$",
+			"type":"text",
+			"width":300,
+			"x":-1507,
+			"y":-67
+		},
+		{
+			"height":120,
+			"id":"cdeb4ad37095b52a",
+			"styleAttributes":{},
+			"text":"Teorema di Schwarz: Le derivate miste $f_{x_ix_j}$ e $f_{x_jx_i}$ coincidono in $x_0$ se esse esistono in un intorno di $x_0$ e sono continue in $x_0$",
+			"type":"text",
+			"width":300,
+			"x":-1176,
+			"y":9
+		},
+		{
+			"height":460,
+			"id":"345c1fb4642f911a",
+			"styleAttributes":{},
+			"text":"- Una funzione si dice *continua* in un punto se $\\lim_{(x,y)\\to(x_0,y_0)}f(x,y)= f(x_0,y_0)$\n- Una funzione si dice *derivabile* in un punto se in quel punto esistono tutte le coordinate parziali\n- **Differenzibilità**\n\t- *Condizione necessaria e sufficiente*: $f(x,y):A\\subseteq\\mathbb{R}^2\\to\\mathbb{R}$ è differenziabile in $(x_0,y_0)\\in A$ se e solo se\n\t\t1) Esistono le derivate parziali prime nel punto $(x_0,y_0)$ (non necessario che esse siano continue)\n\t\t2) $$\\lim_{(h,k)\\to(0,0)} \\frac{f(x_0+h,y_0+k)-f(x_0,y_0)-f_x(x_0,y_0)k-f_y(x_0,y_0)k}{\\sqrt{h^2+k^2}}=0$$\n\t- *Condizione sufficiente*: $f:A\\in\\mathbb{R}^2\\to\\mathbb{R}$, $A$ aperto $$f\\in C'(A)\\Longrightarrow \\text{differenziabiltà}$$(ovvero esistono le derivate parziali prime continue)\nLa differenziabilità indica la continuità, differenziabilità e piano tangente",
+			"type":"text",
+			"width":650,
+			"x":-1645,
+			"y":280
+		},
+		{
+			"height":106,
+			"id":"cebb042ce9c777a0",
+			"styleAttributes":{},
+			"text":"##### Matrice Hessiana\n$$Hf=\\begin{pmatrix}\nf_{xx}(x_0,y_0) & f_{xy}(x_0,y_0) \\\\\nf_{yx}(x_0,y_0) & f_{yy}(x_0,y_0)\n\\end{pmatrix}$$",
+			"type":"text",
+			"width":260,
+			"x":-904,
+			"y":174
+		},
+		{
+			"height":60,
+			"id":"385faa03213a827f",
+			"styleAttributes":{},
+			"text":"### Derivata Direzionale",
+			"type":"text",
+			"width":260,
+			"x":-719,
+			"y":-430
+		},
+		{
+			"height":100,
+			"id":"eed815349d2ac311",
+			"styleAttributes":{},
+			"text":"$v$ versore di una retta $r$ $$v= \\frac{r}{||r||}= \\frac{r}{\\sqrt{r_1^2+r_2^2}}$$",
+			"type":"text",
+			"width":280,
+			"x":-524,
+			"y":-49
+		},
+		{
+			"height":200,
+			"id":"935faa6bac5cb7db",
+			"styleAttributes":{},
+			"text":"##### Matrice Jacobiana\n$$Df(x)=\\begin{pmatrix}\n\\frac{\\partial f_1}{x_1} & \\cdots & \\frac{\\partial f_1}{x_n} \\\\\n\\frac{\\partial f_2}{x_1} & \\cdots & \\frac{\\partial f_2}{x_n} \\\\\n\\vdots & \\ddots & \\vdots \\\\\n\\frac{\\partial f_n}{x_1} & \\cdots & \\frac{\\partial f_1m}{x_n}\n\\end{pmatrix}$$",
+			"type":"text",
+			"width":300,
+			"x":-600,
+			"y":180
+		},
+		{
+			"height":100,
+			"id":"023579e98c5ee35e",
+			"styleAttributes":{},
+			"text":"### Piano Tangente\n$$z=f(x_0,y_0)+f_x(x_0,y_0)(x-x_0)+f_y(x,y)(y-y_0)$$",
+			"type":"text",
+			"width":420,
+			"x":-1440,
+			"y":840
+		},
+		{
+			"height":56,
+			"id":"d1d815ac7c897e25",
+			"styleAttributes":{},
+			"text":"### Integrali Multipli",
+			"type":"text",
+			"width":213,
+			"x":540,
+			"y":-1230
+		},
+		{
+			"height":280,
+			"id":"c88290bbe191de0e",
+			"styleAttributes":{},
+			"text":"### Formule di Riduzione\n$R=[a,b]\\times[c,d]$, $f\\in C(R)$ $$\\iint_R f(x,y)\\ dxdy = \\int_a^b\\left(\\int_c^d f(x,y)\\ dy\\right)\\ dx = \\int_c^d\\left(\\int_a^b f(x,y)\\ dx\\right)\\ dy$$\n### Formule di Riduzione su Regioni Semplici\n- $D$ è $y-$semplice $$\\iint_D f(x,y)\\ dxdy=\\int_a^b\\left(\\int_{g_1(x)}^{g_2(x)}f(x,y)\\ dy\\right)dx$$\n- $D$ è $x-$semplice $$\\iint_D f(x,y) \\ dxdy=\\int_c^d\\left(\\int_{h_1(y)}^{h_2(y)}f(x,y)\\ dx\\right)dy$$",
+			"type":"text",
+			"width":520,
+			"x":890,
+			"y":-1560
+		},
+		{
+			"height":174,
+			"id":"7c4486cbc93e59b7",
+			"styleAttributes":{},
+			"text":"### Cambio di Variabile negli Integrali Doppi\n$$\\int_a^b f(x)\\ dx=\\int_{g^{-1}(a)}^{g^{-1}(b)} f(g(t))g'(t)\\ dt$$\n$$\\iint_D f(x,y)\\ dxdy=\\iint_C f(g(u,v),h(u,v))|\\det DT| dudv$$\n$$DT=\\begin{pmatrix}\ng_u & g_v \\\\\nh_u & h_v\n\\end{pmatrix}\\begin{matrix}\n(\\nabla g) \\\\\n(\\nabla h)\n\\end{matrix}$$",
+			"type":"text",
+			"width":460,
+			"x":1480,
+			"y":-1202
+		},
+		{
+			"height":60,
+			"id":"6a2daf970f437270",
+			"styleAttributes":{},
+			"text":"### Curve",
+			"type":"text",
+			"width":140,
+			"x":350,
+			"y":-920
+		},
+		{
+			"height":130,
+			"id":"88ebbdf287fed4c7",
+			"styleAttributes":{},
+			"text":"$r:[a,b]\\to\\mathbb{R}^n$ e parametrizza un arco di curva regolare $\\Longrightarrow\\gamma$ è rettificabile e $$l(\\gamma)=\\int_a^b||r'(t)||\\ dt$$",
+			"type":"text",
+			"width":400,
+			"x":610,
+			"y":-1080
+		},
+		{
+			"height":150,
+			"id":"603fccd63349a4f6",
+			"styleAttributes":{},
+			"text":"### Integrale di Linea (1° Specie) $$\\int_\\gamma f\\ dS\\equiv \\int_a^b f(r(t))\\ |r'(t)|\\ dt$$",
+			"type":"text",
+			"width":400,
+			"x":610,
+			"y":-890
+		},
+		{
+			"height":60,
+			"id":"60a40ee103283514",
+			"styleAttributes":{},
+			"text":"### Studio di Funzioni",
+			"type":"text",
+			"width":238,
+			"x":112,
+			"y":-640
+		},
+		{
+			"height":100,
+			"id":"df591895e87060e8",
+			"styleAttributes":{},
+			"text":"##### Definizione\n$$D_vf(x_0)=\\lim_{t\\to0} \\frac{f(x_0+tv)-f(x_0)}{t}$$",
+			"type":"text",
+			"width":341,
+			"x":-644,
+			"y":-219
+		},
+		{
+			"height":140,
+			"id":"79aa65b8ec339ab6",
+			"styleAttributes":{},
+			"text":"Una funziona ha derivate direzionali lungo qualsiasi direzione in un punto $x_0$ se (Condizione Sufficiente)è differenziabile in $x_0$",
+			"type":"text",
+			"width":260,
+			"x":-340,
+			"y":-500
+		},
+		{
+			"height":285,
+			"id":"419db6a2d20b197a",
+			"styleAttributes":{},
+			"text":"### Metodo delle Curve di Livello\n1) Si disegna le generica curva di livello $f(x,y)=k$\n2) Si considera le intersezioni $\\{f(x,y)=k\\}$ con $A$\n3) Si calcola il valore $k_{max}$ per cui $\\{(x,y):f(x,y)=k\\}$ ha intersezione non vuota con $A$\n4) Si calcola il valore $k_{min}$",
+			"type":"text",
+			"width":410,
+			"x":1275,
+			"y":-740
+		},
+		{
+			"height":420,
+			"id":"c9cbcc1931465274",
+			"styleAttributes":{},
+			"text":"#### Condizione Necessaria del 2° Ordine\n- Se $x_0$ è massimo locale $\\Longrightarrow\\begin{cases} \\nabla f(x_0)=0 \\\\ H f(x_0)\\le0\\end{cases}$\n- Se $x_0$ è minimo locale $\\Longrightarrow\\begin{cases} \\nabla f(x_0)=0 \\\\ H f(x_0)\\ge0\\end{cases}$\n### Condizioni Sufficienti del 2° Ordine per Estremi Locali\n- Max) Se $\\begin{cases}\\nabla f(x_0)=0 \\\\ Hf(x_0)<0\\end{cases}\\Longrightarrow x_0$ è un massimo locale\n- Min) Se $\\begin{cases}\\nabla f(x_0)=0 \\\\ Hf(x_0)>0\\end{cases}\\Longrightarrow x_0$ è un minimo locale\nSe $x_0$ è critico e $Hf(x_0)$ è indefinita $\\Longrightarrow x_0$ è un punto di sella",
+			"type":"text",
+			"width":540,
+			"x":940,
+			"y":-419
+		},
+		{
+			"height":120,
+			"id":"240f7ced15f52e97",
+			"styleAttributes":{},
+			"text":"### Condizione Necessaria del 1° Ordine\nTeorema di Fermat: $$\\nabla f(x_0)=0$$",
+			"type":"text",
+			"width":420,
+			"x":490,
+			"y":-329
+		},
+		{
+			"height":320,
+			"id":"c5942dedb19f8e0a",
+			"styleAttributes":{},
+			"text":"Procedimento Pratico:\n1) Trovare i punti critici, ovvero i punti nei quali $\\nabla f(x_0,y_0)=0$\n2) Calcolare $Hf(x,y)$ e valutarla nei punti critici individuati nel punto precedente\n3) Verificare come è definita la funzione:\n\t- $M$ definita positiva $\\iff$ tutti gli autovalori sono > 0 $\\Longrightarrow$ **Punto di Minimo**\n\t- $M$ definita negativa $\\iff$ tutti gli autovalori sono < $0$ $\\Longrightarrow$ **Punto di Massimo**\n\t- Altrimenti (un autovalore positivo e l'altro negativo), **Punto di Sella\n4) Nel caso $Hf(x_0)$ sia nulla o semidefinita ($\\det(Hf)=0$), occorre un'analisi aggiuntiva:\n\tDa scrivere",
+			"type":"text",
+			"width":690,
+			"x":540,
+			"y":160
+		},
+		{
+			"height":184,
+			"id":"242286418bbd5b6d",
+			"styleAttributes":{},
+			"text":"Formula del Gradiente: Se $f$ è differenziabile in $x_0$, allora per ogni versore $v$ esiste $D_v$ e vale\n$$D_v f(x_0)=\\nabla f(x_0)\\cdot v = f_x(x_0,y_0)\\cdot v_1+f_y(x_0,y_0)\\cdot v_2$$\nPer $n=2$: $$D_v f(x_0,y_0) = \\left(\\frac{\\partial f}{\\partial x}(x_0,y_0), \\frac{\\partial f}{\\partial y}(x_0,y_0)\\right)\\cdot (\\cos\\theta,\\sin\\theta)=\\left(\\frac{\\partial f}{\\partial x}(x_0,y_0)\\cos\\theta, \\frac{\\partial f}{\\partial y}(x_0,y_0)\\sin\\theta\\right)$$",
+			"type":"text",
+			"width":767,
+			"x":-152,
+			"y":-141
+		},
+		{
+			"height":100,
+			"id":"908cffbe9dae8fcd",
+			"styleAttributes":{},
+			"text":"**Coordinate Polari**\n$$\\begin{cases}\nx=x_0 +\\rho\\cos\\theta \\\\\ny= y_0+\\rho\\sin\\theta \n\\end{cases}\\quad DT = \\rho$$",
+			"type":"text",
+			"width":280,
+			"x":2080,
+			"y":-1140
+		},
+		{
+			"height":56,
+			"id":"2bd8c44151e18af7",
+			"styleAttributes":{},
+			"text":"### Probabilità",
+			"type":"text",
+			"width":160,
+			"x":-500,
+			"y":-2000
+		},
+		{
+			"height":60,
+			"id":"311682311498767f",
+			"styleAttributes":{},
+			"text":"### Analisi Combinatoria",
+			"type":"text",
+			"width":260,
+			"x":-160,
+			"y":-2140
+		},
+		{
+			"height":100,
+			"id":"14d2fe2687624216",
+			"styleAttributes":{},
+			"text":"$$P(E)= \\frac{\\#\\text{ di volte che }E\\text{ accade}}{\\#\\text{ di possibili esiti}}$$",
+			"type":"text",
+			"width":260,
+			"x":-550,
+			"y":-2180
+		},
+		{
+			"height":180,
+			"id":"e8b2a4c74097ab3c",
+			"styleAttributes":{},
+			"text":"### Principio Fondamentale del Calcolo Combinatorio\nSi realizzano due esperimenti. Si supponga che il primo abbia $m$ esiti e che, per ognuno di questi, il secondo esperimento abbia $n$ esiti. Allora, se sequenze distinte di esiti dei due esperimenti producono esiti distinti, i due esperimenti hanno $m\\cdot n$ esiti.\n",
+			"type":"text",
+			"width":560,
+			"x":220,
+			"y":-2600
+		},
+		{
+			"height":300,
+			"id":"6f55f92ac1d06d2d",
+			"styleAttributes":{},
+			"text":"### Permutazioni\n##### Permutazioni Semplici (senza ripetizioni)\nUna permutazione di $n$ oggetti è una presentazione ordinata dei suoi elementi nella quale ogni elemento viene preso una sola volta $$\\underset{n}{\\blacksquare}\\quad \\underset{n-1}{\\blacksquare}\\quad\\ldots\\quad\\underset{1}{\\blacksquare}\\quad n!$$\n$n_1$ sono identici tra loro\n$n_2$ sono identici tra loro e distinti dai precedenti\n$\\vdots$\n$n_r\\rightsquigarrow \\frac{n!}{n_1!n_2!\\ldots n_r!}$",
+			"type":"text",
+			"width":540,
+			"x":340,
+			"y":-2380
+		},
+		{
+			"height":260,
+			"id":"f375c5a4faabc4ab",
+			"styleAttributes":{},
+			"text":"### Combinazioni\n##### Coefficiente Binomiale\n$$\\begin{pmatrix} n \\\\ k \\end{pmatrix}= \\begin{cases}\\frac{n!}{k!(n-k)!} & se \\ n,k\\in\\mathbb{N},\\ 0\\le k\\le n\\\\ 0 & se \\ n,k\\in\\mathbb{N}, \\ 0\\le n<k\\end{cases}$$ \nrappresenta il numero di sottoinsiemi di $k$ elementi che si possono estrarre da un insieme di $n$ elementi (distinti, indipendentemente dall'ordine).",
+			"type":"text",
+			"width":520,
+			"x":340,
+			"y":-2040
+		}
+	]
 }
