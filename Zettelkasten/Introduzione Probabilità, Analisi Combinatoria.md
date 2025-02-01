@@ -298,7 +298,8 @@ Commissione di 5 persone da un gruppo di 6 uomini e 9 donne. Se la selezione avv
 $$\begin{pmatrix}
 15 \\
 5
-\end{pmatrix}\text{ Possibili combinazioni di 15 persone (etratte in modo equiprobabile)}$$ $$P(E)= \frac{\begin{pmatrix}
+\end{pmatrix}\text{ Possibili combinazioni di 15 persone (etratte in modo equiprobabile)}$$ 
+$$P(E)= \frac{\begin{pmatrix}
 6 \\
  3
 \end{pmatrix}\cdot\begin{pmatrix}
