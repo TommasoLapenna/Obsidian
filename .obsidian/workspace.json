@@ -37,9 +37,9 @@
               "state": {
                 "file": "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas",
                 "viewState": {
-                  "x": -883.7809144633022,
-                  "y": -1968.8419327762517,
-                  "zoom": -0.9695375341595271
+                  "x": 74.29538679043685,
+                  "y": -1843.0703042142245,
+                  "zoom": -1.4695375341595271
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -103,7 +103,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "73070c279435b60b",
@@ -207,9 +208,10 @@
   },
   "active": "982fd93d6f4e2f6f",
   "lastOpenFiles": [
+    "Zettelkasten/Riassunto.md",
     "Tags/Analisi 2 e Probabilità.md",
-    "Zettelkasten/Introduzione Probabilità, Analisi Combinatoria.md",
     "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas",
+    "Zettelkasten/Introduzione Probabilità, Analisi Combinatoria.md",
     "Zettelkasten/Probabilità del Bro Bombardelli.md",
     "Indexes/University.md"
   ]
