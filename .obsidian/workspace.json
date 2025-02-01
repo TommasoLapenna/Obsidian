@@ -6,7 +6,7 @@
       {
         "id": "52fe63e8370ac2a5",
         "type": "tabs",
-        "dimension": 43.31896551724138,
+        "dimension": 43.318965517241374,
         "children": [
           {
             "id": "982fd93d6f4e2f6f",
@@ -27,7 +27,7 @@
       {
         "id": "fef27d23571f4eea",
         "type": "tabs",
-        "dimension": 56.68103448275862,
+        "dimension": 56.681034482758626,
         "children": [
           {
             "id": "fe63f593590fcc60",
@@ -37,8 +37,8 @@
               "state": {
                 "file": "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas",
                 "viewState": {
-                  "x": -639.2337955293327,
-                  "y": -1778.0156276137327,
+                  "x": -883.7809144633022,
+                  "y": -1968.8419327762517,
                   "zoom": -0.9695375341595271
                 }
               },
@@ -191,7 +191,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 239.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -205,7 +205,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "fe63f593590fcc60",
+  "active": "982fd93d6f4e2f6f",
   "lastOpenFiles": [
     "Tags/Analisi 2 e Probabilità.md",
     "Zettelkasten/Introduzione Probabilità, Analisi Combinatoria.md",
