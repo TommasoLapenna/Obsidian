@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Zettelkasten/Flight Controller.md",
+                "file": "Indexes/Drone Project.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Flight Controller"
+              "title": "Drone Project"
             }
           },
           {
@@ -35,8 +35,7 @@
               "title": "Remote Control"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -196,12 +195,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "abd794c7f866ef26",
+  "active": "982fd93d6f4e2f6f",
   "lastOpenFiles": [
+    "Zettelkasten/Remote Control.md",
+    "trim.jpg",
+    "control.jpg",
     "Indexes/Drone Project.md",
     "Zettelkasten/Flight Controller.md",
     "flight.jpg",
-    "Zettelkasten/Remote Control.md",
     "Zettelkasten/Motors.md",
     "Zettelkasten/Propellers.md",
     "pithc.png",
