@@ -10,7 +10,7 @@ Sources:
 - https://oscarliang.com/fpv-drone-guide/
 - https://it.mathworks.com/help/aeroblks/quadcopter-physical-characteristics.html
 - https://en.wikipedia.org/wiki/Aircraft_principal_axes
-- https://en.wikipedia.org/wiki/Propeller
+- https://dronewolf.darkwolf.io/How%20They%20Work/Hardware/flightcontroller
 
 An **unmanned aerial vehicle** (**UAV**), or **unmanned aircraft system** (**UAS**), commonly known as a **drone**, is an aircraft with no human pilot, crew, or passengers onboard. UAVs were originally developed through the twentieth century for military missions too "dull, dirty or dangerous"(h) for humans, and by the twenty-first, they had become essential assets to most militaries. As control technologies improved and costs fell, their use expanded to many non-military applications. These include aerial photography, area coverage, precision agriculture, forest fire monitoring, river monitoring, environmental monitoring, weather observation, policing and surveillance, infrastructure inspections, smuggling, product deliveries, entertainment, and drone racing.
 
