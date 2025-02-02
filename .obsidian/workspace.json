@@ -6,33 +6,33 @@
       {
         "id": "52fe63e8370ac2a5",
         "type": "tabs",
-        "dimension": 43.318965517241374,
         "children": [
           {
             "id": "982fd93d6f4e2f6f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Indexes/Drone Project.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Drone Project"
             }
-          }
-        ]
-      },
-      {
-        "id": "fef27d23571f4eea",
-        "type": "tabs",
-        "dimension": 56.681034482758626,
-        "children": [
+          },
           {
-            "id": "fe63f593590fcc60",
+            "id": "edcea830bdeaa95e",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Indexes/Drone Project.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Drone Project"
             }
           }
         ]
@@ -92,7 +92,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "73070c279435b60b",
@@ -194,8 +195,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5a221de48f37b008",
+  "active": "982fd93d6f4e2f6f",
   "lastOpenFiles": [
+    "Zettelkasten/Remote Control.md",
+    "Indexes/Drone Project.md",
+    "Zettelkasten/Motors.md",
+    "Zettelkasten/Propellers.md",
+    "pithc.png",
+    "prop.jpg",
+    "().md",
+    "Zettelkasten/Three Axis Motion.md",
+    "Ciaooooo.md",
     "Tags/Analisi 2 e Probabilità.md",
     "Zettelkasten/Tiramisù.md",
     "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas",
@@ -204,7 +214,6 @@
     "Zettelkasten/Distribuzioni, Densità Congiunta.md",
     "Zettelkasten/Continuità, Max & Min.md",
     "Source Material/PDFs/TUTTO ANALISI II E PROBABILITÀ.pdf",
-    "Ciaooooo.md",
     "Zettelkasten/Riassunto.md",
     "Zettelkasten/Probabilità del Bro Bombardelli.md",
     "Indexes/University.md"
