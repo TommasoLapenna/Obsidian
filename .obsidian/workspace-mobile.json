@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Ciaooooo.md",
+                "file": "Indexes/Drone Project.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ciaooooo"
+              "title": "Drone Project"
             }
           }
         ]
@@ -155,8 +155,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d21ddcdbe1450511",
+  "active": "08cbe3c1e323609e",
   "lastOpenFiles": [
+    "Source Material/Images/flight.jpg",
+    "Indexes/Drone Project.md",
+    "Zettelkasten/Propellers.md",
+    "Zettelkasten/Remote Control.md",
+    "Zettelkasten/Three Axis Motion.md",
+    "Source Material/Images/prop.jpg",
+    "Source Material/Images/pithc.png",
     "Ciaooooo.md"
   ]
 }
