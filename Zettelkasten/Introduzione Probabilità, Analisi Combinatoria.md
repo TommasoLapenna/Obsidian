@@ -321,7 +321,7 @@ Si considera un evento $E$, la probabilità che un soggetto attribuisce all'even
 ### Osservazione
 **Approccio Frequentista:** La definizione è a posteri $\lim_{n\to\infty} \frac{n(E)}{n}$
 **Approccio Moderno:** $S$ finito con esiti equiporbabili
-Aspetti negativi (della definizione $\frac{\text{casi favorevoli}}{casi poverset{}{}sibili}$):
+Aspetti negativi (della definizione $\frac{\text{casi favorevoli}}{\text{casi possibili}}$):
 - Non si può sempre dire che gli eventi sono equiprobabili
 - Il numero di esiti è finito
 Aspetti positivi:

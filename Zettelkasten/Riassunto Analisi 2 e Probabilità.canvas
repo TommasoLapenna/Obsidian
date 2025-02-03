@@ -308,7 +308,8 @@
 		{"id":"ea459fed10a86b2a","fromNode":"1c26d27681c1d8e1","fromSide":"top","toNode":"c5c733844d057ad8","toSide":"bottom"},
 		{"id":"90ecfb090e6b2ad4","fromNode":"2bd8c44151e18af7","fromSide":"left","toNode":"83ecb4467a960ebc","toSide":"right"},
 		{"id":"194ac1e634b2a995","fromNode":"83ecb4467a960ebc","fromSide":"bottom","toNode":"6fa486943d1b71dd","toSide":"top"},
-		{"id":"cf9244f679b31b5f","fromNode":"83ecb4467a960ebc","fromSide":"left","toNode":"85d47442cc7478c4","toSide":"right"}
+		{"id":"cf9244f679b31b5f","fromNode":"83ecb4467a960ebc","fromSide":"left","toNode":"85d47442cc7478c4","toSide":"right"},
+		{"id":"5992268c4c475d9d","fromNode":"83ecb4467a960ebc","fromSide":"bottom","toNode":"5064e8f185dc47c2","toSide":"top"}
 	],
 	"nodes":[
 		{
@@ -676,9 +677,7 @@
 			"height":100
 		},
 		{"id":"1c26d27681c1d8e1","type":"text","text":"### Assiomi\n1) $0\\le P(E)\\le 1$\n2) $P(S)=1$\n3) Successione di eventi t.c. $E_{i}\\cap E_{j}=0,\\ i\\ne j$, allora $$P(\\cup^\\infty_{i=1}E_{i})= \\sum^\\infty_{i=1}P(E_{i})$$","x":-802,"y":-2447,"width":362,"height":287},
-		{"id":"c5c733844d057ad8","type":"text","text":"### Operazioni Insiemistiche con gli Eventi\n- $P(E^c)=1-P(E)$\n- $1=P(S)=P(E\\cup E^c)$\n- $P(E\\cup F)= P(E)+P(F)-P(E\\cap F)$\n- $P(E\\cup F)= P(E)+P(E^c\\cap F)$\n- *De Morgan:*\n\t- $P((E\\cup F)^c)=P(E^c\\cap F^c)$\n\t- $P((A\\cap B)^c)= P(A^c\\cup B^c)$","x":-861,"y":-2820,"width":480,"height":280},
 		{"id":"83ecb4467a960ebc","type":"text","text":"### Probabilità Condizionata\n$$P(E|F)= \\frac{P(E\\cap F)}{P(F)}$$\n*Regola del Prodotto:*  $$P(E_{1}\\cap\\ldots\\cap E_{n})=P(E_{1})P(E_{2}|E_{1})\\ldots P(E_{n}|E_{1}\\cap\\ldots E_{n-1})$$\n### Formula di Bayes\n$$E=(E\\cap F)\\cup (E \\cap F)^c$$\n$P(E)=P(E\\cap F)+P(E\\cap F^c)=P(E|F)P(E)+P(E|F^c)P(F^c)=P(E|F)P(F)+P(E|F^c)(1-P(F))$","x":-1351,"y":-2080,"width":760,"height":340},
-		{"id":"6fa486943d1b71dd","type":"text","text":"### Legge della Probabilità Totale\n$$P(E_{j}|E)= \\frac{P(E\\cap F_{j})}{P(E)}= \\frac{P(E|F_{j})P(F_{j})}{\\sum^n_{i=1}P(E|F_{j})P(F_{i})}$$","x":-1096,"y":-1641,"width":385,"height":121},
 		{"id":"85d47442cc7478c4","type":"text","text":"### Eventi Indipendenti\nDue eventi $E$, $F$ si dicono indipendenti se $$P(E\\cap F)=P(E)P(F)$$","x":-1800,"y":-1989,"width":300,"height":159},
 		{
 			"id":"0562746fb9ff312d",
@@ -699,6 +698,9 @@
 			"y":-1910,
 			"width":180,
 			"height":65
-		}
+		},
+		{"id":"c5c733844d057ad8","type":"text","text":"### Operazioni Insiemistiche con gli Eventi\n- $P(E^c)=1-P(E)$\n- $1=P(S)=P(E\\cup E^c)$\n- $P(E\\cup F)= P(E)+P(F)-P(E\\cap F)$\n- $P(E\\cup F)= P(E)+P(E^c\\cap F)$\n- $P(E^c\\cap F)=P(F)-P(E\\cap F)$\n- $P(E\\cup F\\cup U)=P(E)+P(F)+P(U)-P(E\\cap F)-P(E\\cap F)-P(F\\cap U)-P(E\\cap U)$\n- *De Morgan:*\n\t- $P((E\\cup F)^c)=P(E^c\\cap F^c)$\n\t- $P((A\\cap B)^c)= P(A^c\\cup B^c)$","x":-861,"y":-2840,"width":681,"height":320},
+		{"id":"6fa486943d1b71dd","type":"text","text":"### Legge della Probabilità Totale\n$$P(E_{j}|E)= \\frac{P(E\\cap F_{j})}{P(E)}= \\frac{P(E|F_{j})P(F_{j})}{\\sum^n_{i=1}P(E|F_{j})P(F_{i})}$$\n$$P(A|B)= \\frac{P(B|A)P(A)}{P(B)}= \\frac{P(B|A)P(A)}{P(B|A)P(A)+P(B|A^c)P(A^c)}$$","x":-880,"y":-1640,"width":460,"height":180},
+		{"id":"5064e8f185dc47c2","x":-1380,"y":-1654,"width":263,"height":94,"type":"text","text":"### Eventi Indipendenti\n$$P(E\\cap F)= P(E)P(F)$$"}
 	]
 }

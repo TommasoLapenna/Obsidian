@@ -132,7 +132,8 @@ Lancio di 5 monete equilibrate (gli esiti sono indipendenti). $X=$ conta il nume
 \end{align}$$
 ### Esempio
 Fabbrica che produce viti, è noto che le viti prodotte presentano un difetto in maniera indipendente una dall'altra, con probabilità pari a $0,01$. La fabbrica vende le viti in confezioni da $10$ e sostituisce i pacchetti che contengono più di una vite difettosa. Qual'è la percentuale di pacchetti venduti che la fabbrica dovrà sostituire?
-$X=$ numero di vite difettose in confezioni da $10$, $n=10$, $p=0,01$ $$\begin{align} \\
+$X=$ numero di vite difettose in confezioni da $10$, $n=10$, $p=0,01$ 
+$$\begin{align} \\
 P\{X=i\}&=\begin{pmatrix}
 10 \\
 i
@@ -224,14 +225,14 @@ k
 \end{pmatrix}^{11900}\begin{pmatrix}
 1-\frac{12}{500}
 \end{pmatrix}^{488100}
-\end{align}$$Calcolo complicato. Soluzione:
-$$\begin{align}
+\end{align}$$Calcolo complicato. Soluzione:$$\begin{align}
 &\lim_{n\to+\infty}P\{X_n=k\} \\
 &P\{X_n=k\}=\left[ \frac{\lambda^k}{k!}\left( 1-\frac{\lambda}{n}^{-k} \right) \right] \frac{\overset{\frac{n!}{(n-k)!}}{n(n-1)\ldots(n-k+1)}}{n^k}\left( 1-\frac{\lambda}{n} \right)^n\quad n\to+\infty \\
 &\lim_{n\to+\infty}\left( 1-\frac{\lambda}{n} \right)^{-k}=1\quad\lim_{n\to+\infty} \frac{n(n-1)\ldots(n-k+1)}{n^k}=1 \\
 &\lim_{n\to+\infty}\left( 1-\frac{\lambda}{n} \right)^n=\lim_{n\to+\infty}\left[ \left( 1-\frac{\lambda}{n} \right)^{\frac{n}{-\lambda}} \right]^{-\lambda}=e^{-\lambda} \\
 &\lim_{n\to+\infty}P\{X_n=k\}=e^{-\lambda} \frac{\lambda^k}{k!}
-\end{align}$$$n$ grande, $np=\lambda$
+\end{align}$$
+$n$ grande, $np=\lambda$
 ### Definizione
 v.a. *di Poisson* approssimano le v.a. $B(n,p)$, $n$ grande, $p$ piccolo perché $np$ tende ad un valore finito $\lambda=np$
 Alcuni esempi di v.a di Poisson

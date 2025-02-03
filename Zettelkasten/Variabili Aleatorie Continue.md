@@ -93,11 +93,11 @@ elements: [
 
 - Poisson approssima $X\sim B(n,p)$, $n$ grande, $p$ piccolo, $np=\lambda$
 - $N(\mu,\sigma^2)$ approssimano bene $B(n,p)$, $np(1-p)\ge10$
-Verificare che $\int^\infty_{-\infty} f_x(x)\ dx=1$ $$\begin{align}
+Verificare che $\int^\infty_{-\infty} f_x(x)\ dx=1$ 
+$$\begin{align}
 &\frac{1}{\sqrt{2\pi}\sigma}\int^\infty_{-\infty}e^{-\frac{(x-\mu)^2}{2\sigma^2}}\ dx=1 \\
 &y= \frac{x-\mu}{\sigma}\quad I= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-\frac{y^2}{2}}\ dy\overset{?}{=}1 \quad\int^\infty_{-\infty} e^{-\frac{y^2}{2}}\ dy=\sqrt{2\pi} \\
 &J=\int_{-\infty}^\infty e^{- \frac{y^2}{2}}\ dy\quad J^2=\int^\infty_{-\infty}e^{-\frac{y^2}{2}}\ dy\int_{-\infty}^\infty e^{-\frac{x^2}{2}}\ dx=\int_{-\infty}^\infty\int_{-\infty}^\infty e^{-\frac{x^2+y^2}{2}}\ dxdy \\ \\
-
 &\begin{cases}
 x=\rho\cos\theta & \rho\in[0,+\infty) \\
 y=\rho\sin\theta & \theta\in[0,2\pi]
@@ -105,11 +105,13 @@ y=\rho\sin\theta & \theta\in[0,2\pi]
 &J^2=\int^\infty_0\int_0^{2\pi} e^{-\frac{\rho^2}{2}}\rho\ d\theta d\rho=2\pi\int_0^\infty \rho e^{-\frac{\rho^2}{2}}\ d\rho=2\pi e^{-\frac{\rho^2}{2}}|^\infty_0=2\pi \\
 &J=\sqrt{2\pi}\Longrightarrow I= \frac{1}{\sqrt{2\pi}}J=1
 \end{align}$$
+
 ### Proprietà
 $X\sim N(\mu,\sigma^2)$ allora $$Y=\alpha X+\beta\Longrightarrow Y\sim N(\alpha\mu+\beta,\ \alpha^2\sigma^2)$$
 ### Dimostrazione
-$\alpha>0$ $$F_Y(a)=P\{Y\le a\}=P\{\alpha X+\beta\le a\} =P\left\{ X\le \frac{\alpha-\beta}{\alpha} \right\}\overset{def}{=} F_X\left( \frac{\alpha-\beta}{\alpha} \right) \\ 
-$$$$ \begin{align}
+$\alpha>0$ 
+$$F_Y(a)=P\{Y\le a\}=P\{\alpha X+\beta\le a\} =P\left\{ X\le \frac{\alpha-\beta}{\alpha} \right\}\overset{def}{=} F_X\left( \frac{\alpha-\beta}{\alpha} \right)$$
+$$ \begin{align}
 f_y(a)&= \frac{d}{da}(F_Y(a))= \frac{d}{da}\left( F_X\left( \frac{\alpha-\beta}{\alpha} \right) \right)= \frac{1}{\alpha}f_X\left( \frac{\alpha-\beta}{\alpha} \right)=\frac{1}{\alpha} \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{\left ( \frac{\alpha-\beta}{\alpha}-\mu \right)^2}{2\sigma^2}} \\
 &= \frac{1}{\alpha\sigma} \frac{1}{\sqrt{2\pi}}e^{-\frac{(\alpha-\beta-\mu\sigma)^2}{2\alpha^2\sigma^2}}=\frac{1}{\underset{\overset{\sim}{\sigma}}{\alpha\sigma}} \frac{1}{\sqrt{2\pi}} e^{- \frac{(a-\overset{\overset{\sim}{\mu}}{(\beta+\mu\alpha)})^2}{2\underset{\overset{\sim}{\sigma}^2}{\alpha^2\sigma^2}}} \\
 & Y\sim N(\overset{\sim}{\mu}, \overset{\sim}{\sigma})=N(\alpha\mu+\beta,\ \alpha^2\sigma^2)

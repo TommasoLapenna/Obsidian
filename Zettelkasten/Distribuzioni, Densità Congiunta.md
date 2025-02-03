@@ -40,14 +40,13 @@ Proprietà di assenza di memoria $$P\{X>s+t|X>t\}\overset{def}{=} \frac{P(\{X>s+
 $\begin{cases}\lambda e^{-\lambda x} & x\ge0 \\ 0 & altrimenti\end{cases}$
 # Leggi Congiunte di Variabili Aleatorie
 $(x,y)$ si parla di *Distribuzione Congiunta* di $X$ e $Y$ $$
-F_{X,Y}(a,b)=P\{X\le a, Y\le b\} $$
-$$ \begin{align}
+F_{X,Y}(a,b)=P\{X\le a, Y\le b\}$$
+$$\begin{align}
 F_X(a)&=P\{X\le a\}=P\{X\le a, Y<\infty\}
 =P(\lim_{b\to\infty}\{ X\le a, Y\le b\}) \\
-
 &=\lim_{b\to\infty}P\{X\le a, Y\le b\} 
-\end{align}
-$$$E_n$ successione (crescente $(\lim_{n\to\infty}E_n=\cup_{i=1}^\infty E_i)$ o decrescente $(\lim_{n\to\infty} E_n=\cap^\infty_{i=1} E_i)$ di eventi) $$\lim_{n\to\infty} P(E_n)=P(\lim_{n\to\infty} E_n)$$(La probabilità è una funzione di insieme continua)$$=\lim_{b\to\infty}F(a,b)=F(a, \infty)$$
+\end{align}$$
+$E_n$ successione (crescente $(\lim_{n\to\infty}E_n=\cup_{i=1}^\infty E_i)$ o decrescente $(\lim_{n\to\infty} E_n=\cap^\infty_{i=1} E_i)$ di eventi) $$\lim_{n\to\infty} P(E_n)=P(\lim_{n\to\infty} E_n)$$(La probabilità è una funzione di insieme continua)$$=\lim_{b\to\infty}F(a,b)=F(a, \infty)$$
 ### Esempio
 Nota $F_{x,y}$, determinare $P\{X>a, Y>b\}$ $$\begin{align}
 &=1-P(\overset{(\{X>a\}\cap\{Y>b\})^c}{\{X>a, Y>b\}^c})=1-P(\{X>a\}^c\cup\{Y>b\}^c) \\
@@ -122,7 +121,8 @@ $$\begin{align}
 &\lim_{(x,y)\to (1,0)} \frac{\overset{(x-1)^2}{(x^2-2x+1)}y}{(x^2-2x+1+y^2)^\alpha},\quad \alpha>0 \\
 &x=1+\rho\cos\theta \\
 &y=\rho\sin\theta \\
-\end{align}$$ $$\begin{align}
+\end{align}$$
+$$\begin{align}
 \rho(1+\rho\cos\theta,\rho\sin\theta)= &\frac{\rho^2\cos^2\theta\rho\sin\theta}{\rho^2\alpha}=\rho^{3-2\alpha}\cos^2\theta\sin\theta\overset{\rho\to 0}{\to}3-2\alpha>0 \\
 &\begin{matrix}
 0<\alpha< \frac{3}{2} & l=0 \\
