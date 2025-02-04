@@ -4,40 +4,40 @@
     "type": "split",
     "children": [
       {
-        "id": "c5f7a79bafcd4e12",
+        "id": "16f3cb6c9dd13db5",
         "type": "tabs",
         "children": [
           {
-            "id": "d0aad3dd7f5433db",
+            "id": "ce5f771aa9944468",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tags/Analisi 2 e Probabilità.md",
+                "file": "Zettelkasten/Riassunto.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Analisi 2 e Probabilità"
+              "title": "Riassunto"
             }
           }
         ]
       },
       {
-        "id": "f9b5143e182a8047",
+        "id": "badc3fa7bbc58e49",
         "type": "tabs",
         "children": [
           {
-            "id": "f2ed1d4cd8d75efe",
+            "id": "fa27f2ed688710a6",
             "type": "leaf",
             "state": {
               "type": "canvas",
               "state": {
                 "file": "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas",
                 "viewState": {
-                  "x": -684.0244747805142,
-                  "y": -1626.0348775118152,
-                  "zoom": -0.1716701269011267
+                  "x": 49.83146852124022,
+                  "y": -3974.6309294406988,
+                  "zoom": 0.10743923654315557
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -121,7 +121,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Ciaooooo.md",
+            "file": "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -178,15 +178,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f2ed1d4cd8d75efe",
+  "active": "fa27f2ed688710a6",
   "lastOpenFiles": [
+    "Zettelkasten/Riassunto.md",
+    "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas",
     "Tags/Analisi 2 e Probabilità.md",
-    "Zettelkasten/Distribuzioni, Densità Congiunta.md",
     "Zettelkasten/Variabili Aleatorie Continue.md",
     "Zettelkasten/Valore Atteso e Varianza, Esempi di v.a..md",
+    "Untitled.md",
+    "Zettelkasten/Distribuzioni, Densità Congiunta.md",
     "Zettelkasten/Variabili Aleatorie.md",
     "Zettelkasten/Introduzione Probabilità, Analisi Combinatoria.md",
-    "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas",
     "Indexes/University.md",
     "Indexes/Drone Project.md",
     "Source Material/Images/flight.jpg",
