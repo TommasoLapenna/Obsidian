@@ -304,12 +304,30 @@
 		},
 		{"id":"d89ff489a4310bf0","fromNode":"311682311498767f","fromSide":"right","toNode":"3a6d664125ee262e","toSide":"left"},
 		{"id":"f6337ad8c867fdb0","fromNode":"f375c5a4faabc4ab","fromSide":"right","toNode":"0376cb916128ffb7","toSide":"left"},
-		{"id":"5ca15bd4f2cdae67","fromNode":"2bd8c44151e18af7","fromSide":"top","toNode":"1c26d27681c1d8e1","toSide":"bottom"},
+		{"id":"5ca15bd4f2cdae67","fromNode":"2bd8c44151e18af7","fromSide":"top","toNode":"1c26d27681c1d8e1","toSide":"left"},
 		{"id":"ea459fed10a86b2a","fromNode":"1c26d27681c1d8e1","fromSide":"top","toNode":"c5c733844d057ad8","toSide":"bottom"},
 		{"id":"90ecfb090e6b2ad4","fromNode":"2bd8c44151e18af7","fromSide":"left","toNode":"83ecb4467a960ebc","toSide":"right"},
 		{"id":"194ac1e634b2a995","fromNode":"83ecb4467a960ebc","fromSide":"bottom","toNode":"6fa486943d1b71dd","toSide":"top"},
 		{"id":"cf9244f679b31b5f","fromNode":"83ecb4467a960ebc","fromSide":"left","toNode":"85d47442cc7478c4","toSide":"right"},
-		{"id":"5992268c4c475d9d","fromNode":"83ecb4467a960ebc","fromSide":"bottom","toNode":"5064e8f185dc47c2","toSide":"top"}
+		{"id":"5992268c4c475d9d","fromNode":"83ecb4467a960ebc","fromSide":"bottom","toNode":"5064e8f185dc47c2","toSide":"top"},
+		{"id":"8b9ebdd63522d46d","fromNode":"2bd8c44151e18af7","fromSide":"top","toNode":"b17a8e026350eb53","toSide":"right"},
+		{"id":"2045f4ad8d680b33","fromNode":"b17a8e026350eb53","fromSide":"left","toNode":"1b19a9670c5cebac","toSide":"right"},
+		{"id":"585260c0ce00617b","fromNode":"b17a8e026350eb53","fromSide":"left","toNode":"1b1e4ba522bb00d2","toSide":"right"},
+		{"id":"905c46be0b47740f","fromNode":"b17a8e026350eb53","fromSide":"top","toNode":"7df154395ec9b90c","toSide":"bottom"},
+		{"id":"0eb3d441a0c158e3","fromNode":"7df154395ec9b90c","fromSide":"top","toNode":"05b43e7425efa122","toSide":"bottom"},
+		{"id":"9ae3829e7ed8e2a7","fromNode":"7df154395ec9b90c","fromSide":"top","toNode":"23cca075aa532580","toSide":"bottom"},
+		{"id":"164f2120b7c5de54","fromNode":"7df154395ec9b90c","fromSide":"top","toNode":"198442becf9f7def","toSide":"bottom"},
+		{"id":"2761a6d38502f067","fromNode":"7df154395ec9b90c","fromSide":"top","toNode":"f6de600c35dadcca","toSide":"bottom"},
+		{"id":"511ee925e71cfa78","fromNode":"b17a8e026350eb53","fromSide":"top","toNode":"69e10965b6f5b9f3","toSide":"right"},
+		{"id":"ac2d468733ee555b","fromNode":"69e10965b6f5b9f3","fromSide":"top","toNode":"779f0d8b797ea761","toSide":"bottom"},
+		{"id":"d3e70582cca291dc","fromNode":"69e10965b6f5b9f3","fromSide":"left","toNode":"17c4ecec3c47137d","toSide":"right"},
+		{"id":"7897a904515457dd","fromNode":"69e10965b6f5b9f3","fromSide":"left","toNode":"e4dc8e55f9470d1f","toSide":"right"},
+		{"id":"54cd40a9b17111af","fromNode":"69e10965b6f5b9f3","fromSide":"left","toNode":"3d800447d55d71c2","toSide":"right"},
+		{"id":"7af92901f88beb26","fromNode":"69e10965b6f5b9f3","fromSide":"left","toNode":"c29d864f82722c72","toSide":"right"},
+		{"id":"356012252c76cdc7","fromNode":"69e10965b6f5b9f3","fromSide":"top","toNode":"2333aca3a0579163","toSide":"bottom"},
+		{"id":"1d14299acc2f0a37","fromNode":"2333aca3a0579163","fromSide":"right","toNode":"0a10ddbe49c68c9b","toSide":"left"},
+		{"id":"02b879361cd6caee","fromNode":"2333aca3a0579163","fromSide":"right","toNode":"7b1a1a806d78e54e","toSide":"left"},
+		{"id":"d2c44a4ba0ee2375","fromNode":"7b1a1a806d78e54e","fromSide":"right","toNode":"f4b9b9aeb6d94e58","toSide":"left"}
 	],
 	"nodes":[
 		{
@@ -625,48 +643,6 @@
 			"height":100
 		},
 		{
-			"id":"311682311498767f",
-			"styleAttributes":{},
-			"text":"### Analisi Combinatoria",
-			"type":"text",
-			"x":-160,
-			"y":-2140,
-			"width":260,
-			"height":60
-		},
-		{"id":"0376cb916128ffb7","type":"text","text":"### Coefficienti Multinomiali\nSe si devono distribuire gli oggetti in $r$ sezioni diverse e $$\\sum^r_{i=1}n_{i}=n$$Allora le possibili assegnazioni sono: \n$$\\begin{pmatrix}n \\\\\nn_{1}\\end{pmatrix}\\cdot \\begin{pmatrix}n-n_{1} \\\\\nn_{2}\\end{pmatrix}\\cdot\\begin{pmatrix}n-n_{1}-n_{2} \\\\\nn_{3}\\end{pmatrix}\\ldots\\begin{pmatrix}n-n_{1}-n_{2}-\\ldots-n_{r-1} \\\\\nn_{r}\\end{pmatrix} \n$$","x":1055,"y":-2017,"width":485,"height":277},
-		{
-			"id":"6f55f92ac1d06d2d",
-			"styleAttributes":{},
-			"text":"### Permutazioni\n##### Permutazioni Semplici (senza ripetizioni)\nUna permutazione di $n$ oggetti è una presentazione ordinata dei suoi elementi nella quale ogni elemento viene preso una sola volta $$\\underset{n}{\\blacksquare}\\quad \\underset{n-1}{\\blacksquare}\\quad\\ldots\\quad\\underset{1}{\\blacksquare}\\quad n!$$\n$n_1$ sono identici tra loro\n$n_2$ sono identici tra loro e distinti dai precedenti\n$\\vdots$\n$n_r\\rightsquigarrow \\frac{n!}{n_1!n_2!\\ldots n_r!}$",
-			"type":"text",
-			"x":330,
-			"y":-2510,
-			"width":560,
-			"height":370
-		},
-		{"id":"3a6d664125ee262e","type":"text","text":"### Disposizioni\nOgni sottoinsieme di $k$ elementi a partire da $n$ elementi. Due disposizioni sono diverse se almeno uno degli elementi cambia o se gli stessi elementi compaiono in ordine differente (l'ordine conta)\n$$\\frac{n!}{(n-k)!}$$\n","x":338,"y":-2110,"width":545,"height":220},
-		{
-			"id":"f375c5a4faabc4ab",
-			"styleAttributes":{},
-			"text":"### Combinazioni\n##### Coefficiente Binomiale\n$$\\begin{pmatrix} n \\\\ k \\end{pmatrix}= \\begin{cases}\\frac{n!}{k!(n-k)!} & se \\ n,k\\in\\mathbb{N},\\ 0\\le k\\le n\\\\ 0 & se \\ n,k\\in\\mathbb{N}, \\ 0\\le n<k\\end{cases}$$ \nrappresenta il numero di sottoinsiemi di $k$ elementi che si possono estrarre da un insieme di $n$ elementi (distinti, l'ordine non conta).",
-			"type":"text",
-			"x":338,
-			"y":-1870,
-			"width":520,
-			"height":260
-		},
-		{
-			"id":"e8b2a4c74097ab3c",
-			"styleAttributes":{},
-			"text":"### Principio Fondamentale del Calcolo Combinatorio\nSi realizzano due esperimenti. Si supponga che il primo abbia $m$ esiti e che, per ognuno di questi, il secondo esperimento abbia $n$ esiti. Allora, se sequenze distinte di esiti dei due esperimenti producono esiti distinti, i due esperimenti hanno $m\\cdot n$ esiti.\n",
-			"type":"text",
-			"x":323,
-			"y":-2760,
-			"width":560,
-			"height":200
-		},
-		{
 			"id":"14d2fe2687624216",
 			"styleAttributes":{},
 			"text":"$$P(E)= \\frac{\\#\\text{ di volte che }E\\text{ accade}}{\\#\\text{ di possibili esiti}}$$",
@@ -676,9 +652,6 @@
 			"width":260,
 			"height":100
 		},
-		{"id":"1c26d27681c1d8e1","type":"text","text":"### Assiomi\n1) $0\\le P(E)\\le 1$\n2) $P(S)=1$\n3) Successione di eventi t.c. $E_{i}\\cap E_{j}=0,\\ i\\ne j$, allora $$P(\\cup^\\infty_{i=1}E_{i})= \\sum^\\infty_{i=1}P(E_{i})$$","x":-802,"y":-2447,"width":362,"height":287},
-		{"id":"83ecb4467a960ebc","type":"text","text":"### Probabilità Condizionata\n$$P(E|F)= \\frac{P(E\\cap F)}{P(F)}$$\n*Regola del Prodotto:*  $$P(E_{1}\\cap\\ldots\\cap E_{n})=P(E_{1})P(E_{2}|E_{1})\\ldots P(E_{n}|E_{1}\\cap\\ldots E_{n-1})$$\n### Formula di Bayes\n$$E=(E\\cap F)\\cup (E \\cap F)^c$$\n$P(E)=P(E\\cap F)+P(E\\cap F^c)=P(E|F)P(E)+P(E|F^c)P(F^c)=P(E|F)P(F)+P(E|F^c)(1-P(F))$","x":-1351,"y":-2080,"width":760,"height":340},
-		{"id":"85d47442cc7478c4","type":"text","text":"### Eventi Indipendenti\nDue eventi $E$, $F$ si dicono indipendenti se $$P(E\\cap F)=P(E)P(F)$$","x":-1800,"y":-1989,"width":300,"height":159},
 		{
 			"id":"0562746fb9ff312d",
 			"styleAttributes":{},
@@ -689,18 +662,81 @@
 			"width":385,
 			"height":82
 		},
+		{"id":"85d47442cc7478c4","type":"text","text":"### Eventi Indipendenti\nDue eventi $E$, $F$ si dicono indipendenti se $$P(E\\cap F)=P(E)P(F)$$","x":-2000,"y":-1989,"width":300,"height":159},
+		{"id":"83ecb4467a960ebc","type":"text","text":"### Probabilità Condizionata\n$$P(E|F)= \\frac{P(E\\cap F)}{P(F)}$$\n*Regola del Prodotto:*  $$P(E_{1}\\cap\\ldots\\cap E_{n})=P(E_{1})P(E_{2}|E_{1})\\ldots P(E_{n}|E_{1}\\cap\\ldots E_{n-1})$$\n### Formula di Bayes\n$$E=(E\\cap F)\\cup (E \\cap F)^c$$\n$P(E)=P(E\\cap F)+P(E\\cap F^c)=P(E|F)P(E)+P(E|F^c)P(F^c)=P(E|F)P(F)+P(E|F^c)(1-P(F))$","x":-1507,"y":-2079,"width":760,"height":340},
+		{"id":"5064e8f185dc47c2","type":"text","text":"### Eventi Indipendenti\n$$P(E\\cap F)= P(E)P(F)$$","x":-1538,"y":-1644,"width":263,"height":94},
+		{"id":"6fa486943d1b71dd","type":"text","text":"### Legge della Probabilità Totale\n$$P(E_{j}|E)= \\frac{P(E\\cap F_{j})}{P(E)}= \\frac{P(E|F_{j})P(F_{j})}{\\sum^n_{i=1}P(E|F_{j})P(F_{i})}$$\n$$P(A|B)= \\frac{P(B|A)P(A)}{P(B)}= \\frac{P(B|A)P(A)}{P(B|A)P(A)+P(B|A^c)P(A^c)}$$","x":-1032,"y":-1644,"width":460,"height":180},
+		{"id":"1c26d27681c1d8e1","type":"text","text":"### Assiomi\n1) $0\\le P(E)\\le 1$\n2) $P(S)=1$\n3) Successione di eventi t.c. $E_{i}\\cap E_{j}=0,\\ i\\ne j$, allora $$P(\\cup^\\infty_{i=1}E_{i})= \\sum^\\infty_{i=1}P(E_{i})$$","x":-317,"y":-2700,"width":362,"height":287},
+		{
+			"id":"e8b2a4c74097ab3c",
+			"styleAttributes":{},
+			"text":"### Principio Fondamentale del Calcolo Combinatorio\nSi realizzano due esperimenti. Si supponga che il primo abbia $m$ esiti e che, per ognuno di questi, il secondo esperimento abbia $n$ esiti. Allora, se sequenze distinte di esiti dei due esperimenti producono esiti distinti, i due esperimenti hanno $m\\cdot n$ esiti.\n",
+			"type":"text",
+			"x":405,
+			"y":-2765,
+			"width":560,
+			"height":200
+		},
+		{
+			"id":"6f55f92ac1d06d2d",
+			"styleAttributes":{},
+			"text":"### Permutazioni\n##### Permutazioni Semplici (senza ripetizioni)\nUna permutazione di $n$ oggetti è una presentazione ordinata dei suoi elementi nella quale ogni elemento viene preso una sola volta $$\\underset{n}{\\blacksquare}\\quad \\underset{n-1}{\\blacksquare}\\quad\\ldots\\quad\\underset{1}{\\blacksquare}\\quad n!$$\n$n_1$ sono identici tra loro\n$n_2$ sono identici tra loro e distinti dai precedenti\n$\\vdots$\n$n_r\\rightsquigarrow \\frac{n!}{n_1!n_2!\\ldots n_r!}$",
+			"type":"text",
+			"x":412,
+			"y":-2515,
+			"width":560,
+			"height":370
+		},
+		{"id":"3a6d664125ee262e","type":"text","text":"### Disposizioni\nOgni sottoinsieme di $k$ elementi a partire da $n$ elementi. Due disposizioni sono diverse se almeno uno degli elementi cambia o se gli stessi elementi compaiono in ordine differente (l'ordine conta)\n$$\\frac{n!}{(n-k)!}$$\n","x":420,"y":-2115,"width":545,"height":220},
+		{
+			"id":"f375c5a4faabc4ab",
+			"styleAttributes":{},
+			"text":"### Combinazioni\n##### Coefficiente Binomiale\n$$\\begin{pmatrix} n \\\\ k \\end{pmatrix}= \\begin{cases}\\frac{n!}{k!(n-k)!} & se \\ n,k\\in\\mathbb{N},\\ 0\\le k\\le n\\\\ 0 & se \\ n,k\\in\\mathbb{N}, \\ 0\\le n<k\\end{cases}$$ \nrappresenta il numero di sottoinsiemi di $k$ elementi che si possono estrarre da un insieme di $n$ elementi (distinti, l'ordine non conta).",
+			"type":"text",
+			"x":420,
+			"y":-1875,
+			"width":520,
+			"height":260
+		},
+		{
+			"id":"311682311498767f",
+			"styleAttributes":{},
+			"text":"### Analisi Combinatoria",
+			"type":"text",
+			"x":-92,
+			"y":-2017,
+			"width":260,
+			"height":60
+		},
+		{"id":"0376cb916128ffb7","type":"text","text":"### Coefficienti Multinomiali\nSe si devono distribuire gli oggetti in $r$ sezioni diverse e $$\\sum^r_{i=1}n_{i}=n$$Allora le possibili assegnazioni sono: \n$$\\begin{pmatrix}n \\\\\nn_{1}\\end{pmatrix}\\cdot \\begin{pmatrix}n-n_{1} \\\\\nn_{2}\\end{pmatrix}\\cdot\\begin{pmatrix}n-n_{1}-n_{2} \\\\\nn_{3}\\end{pmatrix}\\ldots\\begin{pmatrix}n-n_{1}-n_{2}-\\ldots-n_{r-1} \\\\\nn_{r}\\end{pmatrix} \n$$","x":1080,"y":-2095,"width":485,"height":277},
 		{
 			"id":"2bd8c44151e18af7",
 			"styleAttributes":{},
 			"text":"### Probabilità",
 			"type":"text",
-			"x":-395,
-			"y":-1910,
+			"x":-215,
+			"y":-1739,
 			"width":180,
 			"height":65
 		},
-		{"id":"c5c733844d057ad8","type":"text","text":"### Operazioni Insiemistiche con gli Eventi\n- $P(E^c)=1-P(E)$\n- $1=P(S)=P(E\\cup E^c)$\n- $P(E\\cup F)= P(E)+P(F)-P(E\\cap F)$\n- $P(E\\cup F)= P(E)+P(E^c\\cap F)$\n- $P(E^c\\cap F)=P(F)-P(E\\cap F)$\n- $P(E\\cup F\\cup U)=P(E)+P(F)+P(U)-P(E\\cap F)-P(E\\cap F)-P(F\\cap U)-P(E\\cap U)$\n- *De Morgan:*\n\t- $P((E\\cup F)^c)=P(E^c\\cap F^c)$\n\t- $P((A\\cap B)^c)= P(A^c\\cup B^c)$","x":-861,"y":-2840,"width":681,"height":320},
-		{"id":"6fa486943d1b71dd","type":"text","text":"### Legge della Probabilità Totale\n$$P(E_{j}|E)= \\frac{P(E\\cap F_{j})}{P(E)}= \\frac{P(E|F_{j})P(F_{j})}{\\sum^n_{i=1}P(E|F_{j})P(F_{i})}$$\n$$P(A|B)= \\frac{P(B|A)P(A)}{P(B)}= \\frac{P(B|A)P(A)}{P(B|A)P(A)+P(B|A^c)P(A^c)}$$","x":-880,"y":-1640,"width":460,"height":180},
-		{"id":"5064e8f185dc47c2","x":-1380,"y":-1654,"width":263,"height":94,"type":"text","text":"### Eventi Indipendenti\n$$P(E\\cap F)= P(E)P(F)$$"}
+		{"id":"b17a8e026350eb53","x":-1160,"y":-2556,"width":600,"height":116,"type":"text","text":"### Variabili Aleatorie\nUna v.a. è una funzione a variabili reali definita sullo spazio combinatorio. "},
+		{"id":"1b1e4ba522bb00d2","x":-1645,"y":-2456,"width":345,"height":240,"type":"text","text":"### Varianza\n$$Var(X)=E[X^2]-(E[X])^2$$\n**Proprietà:**\n- $Var(aX+b)=a^2Var(X)$\n- $Var(X+Y)=Var(X)+Var(Y)$\n- $Var(X-Y)=Var(X)+Var(Y)$"},
+		{"id":"1b19a9670c5cebac","x":-1645,"y":-2840,"width":305,"height":260,"type":"text","text":"### Valore Atteso\n$$E[X]=\\sum_{x:p(x)>0}x\\cdot p(x)$$ **Proprietà:**\n- $E[aX+b]= aE[X]+b$\n- $E[XY]=E[X]E[Y]$\n- $E[X+Y]=E[X]+E[Y]$"},
+		{"id":"c5c733844d057ad8","type":"text","text":"### Operazioni Insiemistiche con gli Eventi\n- $P(E^c)=1-P(E)$\n- $1=P(S)=P(E\\cup E^c)$\n- $P(E\\cup F)= P(E)+P(F)-P(E\\cap F)$\n- $P(E\\cup F)= P(E)+P(E^c\\cap F)$\n- $P(E^c\\cap F)=P(F)-P(E\\cap F)$\n- $P(E\\cup F\\cup U)=P(E)+P(F)+P(U)-P(E\\cap F)-P(E\\cap F)-P(F\\cap U)-P(E\\cap U)$\n- *De Morgan:*\n\t- $P((E\\cup F)^c)=P(E^c\\cap F^c)$\n\t- $P((A\\cap B)^c)= P(A^c\\cup B^c)$","x":-215,"y":-3200,"width":681,"height":320},
+		{"id":"7df154395ec9b90c","x":-747,"y":-3220,"width":340,"height":340,"type":"text","text":"**Variabili Aleatorie Discrete**\nUna variabile aleatoria è discreta se assume un'infinità al più numerabile di valori $x_{1},x_{2},\\ldots,x_{n}$\n$$F(a)=P\\{X\\le a\\}\\quad -\\infty<a<\\infty$$\nFunzione di ripartizione o distribuzione* \n- $F$ non è decrescente $$\\begin{align}\n&p(a)=P\\{X\\le a\\} \\\\\n&F(a)=\\sum_{x\\le a}p(x)\n\\end{align}$$"},
+		{"id":"23cca075aa532580","x":-756,"y":-3760,"width":379,"height":260,"type":"text","text":"### Binomiale\nSe vengono eseguite $n$ prove indipendenti (definite con Bernulli)\n$$\\begin{align} &X\\sim B(n,p) \\\\\n&P\\{X=i\\}=p_{i}(x)\n\\end{align}\\begin{pmatrix}\nn \\\\\ni\n\\end{pmatrix}p^i(1-p)^{n-1}$$\n- $E[X]=np$\n- $Var(X)=np(1-p)$"},
+		{"id":"198442becf9f7def","x":-281,"y":-3740,"width":326,"height":240,"type":"text","text":"### Possion\nApprossima la Binomiale per $n$ grande e $p$ piccolo\n$$\\begin{align}\n&\\lambda=np   \\\\\n&X\\sim Pois(\\lambda)\\\\\n\n&P\\{X=K\\}=e^{-k} \\frac{\\lambda^k}{k!}\n\\end{align}$$"},
+		{"id":"05b43e7425efa122","x":-1075,"y":-3695,"width":282,"height":130,"type":"text","text":"### Bernulloni\n$$P\\{X=x\\}=\\begin{cases}\n1 && se \\ x=1 \\\\\n1-p && se\\ x=0\n\\end{cases}$$"},
+		{"id":"f6de600c35dadcca","x":125,"y":-3750,"width":380,"height":260,"type":"text","text":"### Geometrica\n$n$ prove indipendenti ripetute finche non si ottiene un successo\n$$\\begin{align}\n&X\\sim G(p) \\\\\n&P{X=n}=(1-p)^{n-1}p \\\\\n\\end{align}$$\n- $E[X]=\\frac{1}{p}$\n- $Var(X)= \\frac{1-p}{p^2}$"},
+		{"id":"69e10965b6f5b9f3","x":-1551,"y":-3471,"width":540,"height":394,"type":"text","text":"### Variabili Aleatorie Continue\nUna v.a. si dice *Continua* se esiste una funzione non negativa $f_X$, chiamata *Densità*, t.c. per ogni insieme $B$ $$P\\{X\\in B\\}=\\int_B f_X(x)\\ dx$$\n$f_X$ continua a tratti e integrabile in senso generalizzato\n- $\\int_{-\\infty}^\\infty f_X(x)\\ dx=1$\n- Se $X$ è continua, la funzione di distribuzione $F_x$ è derivabile e $$F'_X(x)=f_X(x)$$\n- $E[X]=\\int_{-\\infty}^\\infty xf_X(x)\\ dx$\n- $E[g(x)]=\\int_{-\\infty}^\\infty g(x)f_X(x)\\ dx$"},
+		{"id":"17c4ecec3c47137d","x":-2093,"y":-3720,"width":330,"height":180,"type":"text","text":"Variabili uniformi su $(\\alpha,\\beta)$ $$\\begin{align}\n&f_X(x)=\\begin{cases}\n\\frac{1}{\\beta-\\alpha} & \\alpha<x<\\beta \\\\\n0 & altrimenti\n\\end{cases} \\\\\n&E[X]= \\frac{\\alpha+\\beta}{2}\\quad Var(X)= \\frac{(\\beta-\\alpha)^2}{12}\n\\end{align}$$"},
+		{"id":"3d800447d55d71c2","x":-2049,"y":-3225,"width":290,"height":148,"type":"text","text":"Variabile esponenziale $$\\begin{align}\n&f_X(x)=\\begin{cases}\n\\lambda e^{-\\lambda x} & x\\ge 0 \\\\\n0 & altrimenti\n\\end{cases} \\\\\n& E[X]= \\frac{1}{\\lambda}\\quad Var(X)= \\frac{1}{\\lambda^2}\n\\end{align}$$"},
+		{"id":"e4dc8e55f9470d1f","x":-2335,"y":-3500,"width":572,"height":240,"type":"text","text":"Variabili normali di parametri $\\mu$ e $\\sigma^2$ $$\\begin{align}\n&f_X(x)= \\frac{1}{\\sigma\\sqrt{2\\pi}}e^{- \\frac{(x-\\mu)^2}{2\\sigma^2}}\\quad x\\in\\mathbb{R} \\\\\n&E[X]=\\mu\\quad Var(X)=\\sigma^2\\qquad X\\sim N(\\mu,\\sigma^2)\\Longrightarrow Z= \\frac{X-\\mu}{\\sigma}\\sim N(0,1)\n\\end{align}$$Dal teorema di De Moivre - Laplace le variabili normali approssimano le $B(n,p)$ ($np(1-p)\\ge 10$)"},
+		{"id":"c29d864f82722c72","x":-2134,"y":-3050,"width":375,"height":246,"type":"text","text":"Caso particolare della Distribuzione Gamma $$\\begin{align}\n&f_X(x)=\\begin{cases}\n\\frac{\\lambda e^{-\\lambda x}(\\lambda x)^{\\alpha-1}}{\\Gamma(\\alpha)} & x\\ge 0 \\\\\n0 & altrimenti\n\\end{cases} \\\\\n&\\Gamma(\\alpha)=\\int_0^\\infty e^{-x}x^{\\alpha}\\ dx , \\ \\alpha>1 \\\\\n&E[X]=\\frac{\\alpha}{\\lambda}\\quad Var(X)= \\frac{\\alpha}{\\lambda^2} \n\\end{align}$$Variabile esponenziale si ottiene per $\\alpha=1$"},
+		{"id":"779f0d8b797ea761","x":-1853,"y":-3864,"width":208,"height":104,"type":"text","text":"$$E[X^2]=\\int_{\\mathbb R}x^2 f_{X}(x)\\ dx$$"},
+		{"id":"2333aca3a0579163","x":-1402,"y":-4300,"width":542,"height":540,"type":"text","text":"### Distribuzioni Congiunte\n$X$, $Y$ discrete, si definisce la *Densità Discreta* $$\\begin{align}\n&p_{X,Y}(i,j)=P\\{X=i,Y=j\\} \\\\\n&p_X(i)=P_X\\{X=1\\}=\\sum_j p_{X,Y}(i,j)\\quad p_Y(j)=\\sum_i p_{X,Y} (i,j) \\ (*)\n\\end{align}$$Le variabili $X$ e $Y$ si dicono *Congiuntamente Continue* se esiste una $f_{X,Y}$ integrabile t.c. $\\forall C\\subseteq\\mathbb{R}^2$ $$P\\{(X,Y)\\in C\\}=\\iint_Cf_{X,Y}\\ dxdy$$Si ha \n- $f_{X,Y}\\ge0$\n- $\\iint_{\\mathbb{R}^2}$\nSe $X$, $Y$ sono congiuntamente continue, allora lo sono individualmente $$f_X(x)=\\int_{-\\infty}^\\infty f_{X,Y}(x,y)\\ dy,\\ f_Y(t)=\\int_{-\\infty}^\\infty f_{X,Y}(x,y)\\ dx$$"},
+		{"id":"0a10ddbe49c68c9b","x":-700,"y":-4520,"width":437,"height":400,"type":"text","text":"### Formule di Riduzione\n$C\\subset \\mathbb{R}^2$, $f,C$ sono limitati, $C$ dominio normale rispetto a $x/y$ (valgono le formule di riduzione) \nSe $f$ o $C$ illimitati $$\\int_a^b\\left( \\int_{g_1(x)}^{g_2(x)} f(x,y)\\ dx \\right)dy$$Rispetto ad $y$, $a,b$, $g_1$ o $g_2$ sono $+\\infty$ o $-\\infty$\nè necessario che $$\\int_a^b\\left(\\int_{g_1}^{g_2} |f_{X,Y}(x,y)|\\ dx\\right)dy<+\\infty$$\n- $f_{X,Y}\\ge0$\n- $\\iint_{\\mathbb{R}^2} f_{X,Y}=1$"},
+		{"id":"7b1a1a806d78e54e","x":-700,"y":-4040,"width":460,"height":220,"type":"text","text":"### Indipendenza\n$X$, $Y$ indipendenti se $$P\\{X\\in A, Y\\in B\\}=P\\{X\\in A\\}P\\{Y\\in B\\}$$($E_A=\\{X\\in A\\}$, $F_B=\\{Y\\in B\\}$ sono indipendenti) $$\\begin{align}\n\\iff& f_{X+Y}(x,y)=f_X(x)f_Y(y) \\\\\n&F_{X+Y}(x,y)= F_X(x)F_y(X)\n\\end{align}$$"},
+		{"id":"f4b9b9aeb6d94e58","x":-88,"y":-3958,"width":250,"height":60,"type":"text","text":"### Somma di Variabili Indipendenti"}
 	]
 }

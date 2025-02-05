@@ -69,7 +69,7 @@ $X$ v.a.c uniforme su $(0,1)$ $$f_x(x)=\begin{cases}
 \end{cases}$$(più in generale è uniforme su $(\alpha,\beta)$ se $x\in(\alpha,\beta)$ $$f_x(x)=\begin{cases}
 \frac{1}{\beta-\alpha}& se \ x\in(\alpha,\beta) \\
 0 & altrimenti
-\end{cases}$$altrimenti $$\int_{-\infty}^\infty f_x(x)=1$$)
+\end{cases}$$altrimenti $$\int_{-\infty}^\infty f_x(x)=1$$
 ### Esempio
 Gli autobus passano in una fermata ad intervalli di 15 minuti, a partire dalle 7:00 di mattina. Se un passeggero arriva alla fermata in un istante uniformemente distribuito tra le 7:00 e le 7:30, determinare la probabilità che il passeggere aspetti l'autobus:
 $X=$ minuto dopo le 7:00 nel quale il passeggero arriva alla fermata $$f_x(x)=\begin{cases}
