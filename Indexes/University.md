@@ -5,3 +5,5 @@
 ![[Analisi 2 e Probabilità]]
 
 ![[Basi di Dati]]
+
+![[Fisica I]]
