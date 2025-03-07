@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cinematica.md",
+                "file": "Indexes/Linux.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Cinematica"
+              "title": "Linux"
             }
           }
         ]
@@ -157,15 +157,19 @@
   },
   "active": "0df1de5f17a19d6b",
   "lastOpenFiles": [
-    "Zettelkasten/Ottimizzazione.md",
-    "Cinematica.md",
-    "Tags/Fisica I.md",
-    "Introduzione.md",
+    "Indexes/Drone Project.md",
+    "Indexes/Linux.md",
+    "Indexes/Programming.md",
     "Indexes/University.md",
+    "Zettelkasten/Cinematica.md",
+    "Zettelkasten/Introduzione.md",
+    "Untitled.md",
+    "Zettelkasten/Ottimizzazione.md",
+    "Tags/Fisica I.md",
     "Zettelkasten/Calcolo Differenziale.md",
     "Zettelkasten/Limiti e Continuità per Funzioni di più Variabili.md",
     "Zettelkasten/Continuità, Max & Min.md",
-    "Immagine.png",
+    "Source Material/Images/Immagine.png",
     "Zettelkasten/Definizioni.md",
     "Zettelkasten/Preliminari di algebra.md",
     "Zettelkasten/Introduzione alla Teoria dei Codici.md",
@@ -175,10 +179,8 @@
     "Zettelkasten/Riassunto.md",
     "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas",
     "Zettelkasten/Variabili Aleatorie Continue.md",
-    "Untitled.md",
     "Zettelkasten/Distribuzioni, Densità Congiunta.md",
     "Zettelkasten/Variabili Aleatorie.md",
-    "Indexes/Drone Project.md",
     "Source Material/Images/flight.jpg",
     "Zettelkasten/Propellers.md",
     "Zettelkasten/Remote Control.md",
