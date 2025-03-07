@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Indexes/Linux.md",
+                "file": "Zettelkasten/Cinematica.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Linux"
+              "title": "Cinematica"
             }
           }
         ]
@@ -157,10 +157,10 @@
   },
   "active": "0df1de5f17a19d6b",
   "lastOpenFiles": [
-    "Indexes/Drone Project.md",
-    "Indexes/Linux.md",
-    "Indexes/Programming.md",
     "Indexes/University.md",
+    "Indexes/Linux.md",
+    "Indexes/Drone Project.md",
+    "Indexes/Programming.md",
     "Zettelkasten/Cinematica.md",
     "Zettelkasten/Introduzione.md",
     "Untitled.md",
