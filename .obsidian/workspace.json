@@ -4,24 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "52fe63e8370ac2a5",
+        "id": "24fef3c45b60b4bb",
         "type": "tabs",
         "children": [
           {
-            "id": "982fd93d6f4e2f6f",
+            "id": "5dc7e1c251ca7ea2",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas",
-                "viewState": {
-                  "x": -1067.0704387237479,
-                  "y": -3675.608051839467,
-                  "zoom": -1.0301707055189429
-                }
+                "file": "Zettelkasten/Cinematica.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "Riassunto Analisi 2 e Probabilità"
+              "icon": "lucide-file",
+              "title": "Cinematica"
             }
           }
         ]
@@ -183,11 +180,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "abd794c7f866ef26",
+  "active": "5dc7e1c251ca7ea2",
   "lastOpenFiles": [
+    "Indexes/University.md",
+    "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas",
+    "Indexes/Programming.md",
     "Untitled.md",
     "Zettelkasten/Remote Control.md",
-    "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas",
     "Tags/Analisi 2 e Probabilità.md",
     "Zettelkasten/Flight Controller.md",
     "Indexes/Drone Project.md",
@@ -208,7 +207,6 @@
     "Zettelkasten/Continuità, Max & Min.md",
     "Source Material/PDFs/TUTTO ANALISI II E PROBABILITÀ.pdf",
     "Zettelkasten/Riassunto.md",
-    "Zettelkasten/Probabilità del Bro Bombardelli.md",
-    "Indexes/University.md"
+    "Zettelkasten/Probabilità del Bro Bombardelli.md"
   ]
 }
