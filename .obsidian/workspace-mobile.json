@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Zettelkasten/Cinematica.md",
+                "file": "Appendice.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Cinematica"
+              "title": "Appendice"
             }
           }
         ]
@@ -157,15 +157,26 @@
   },
   "active": "0df1de5f17a19d6b",
   "lastOpenFiles": [
+    "Pasted image 20250310182457.png",
+    "Pasted image 20250310174956.png",
+    "Tags/Fisica I.md",
+    "Appendice.md",
+    "Zettelkasten/Cinematica.md",
+    "Pasted image 20250309125400.png",
     "Indexes/University.md",
+    "Pasted image 20250309113243.png",
+    "Pasted image 20250308182412.png",
+    "Pasted image 20250308164730.png",
+    "Pasted image 20250308163103.png",
+    "Pasted image 20250308161613.png",
+    "Pasted image 20250308155417.png",
+    "Pasted image 20250308154041.png",
     "Indexes/Linux.md",
     "Indexes/Drone Project.md",
     "Indexes/Programming.md",
-    "Zettelkasten/Cinematica.md",
     "Zettelkasten/Introduzione.md",
     "Untitled.md",
     "Zettelkasten/Ottimizzazione.md",
-    "Tags/Fisica I.md",
     "Zettelkasten/Calcolo Differenziale.md",
     "Zettelkasten/Limiti e Continuità per Funzioni di più Variabili.md",
     "Zettelkasten/Continuità, Max & Min.md",
@@ -181,12 +192,7 @@
     "Zettelkasten/Variabili Aleatorie Continue.md",
     "Zettelkasten/Distribuzioni, Densità Congiunta.md",
     "Zettelkasten/Variabili Aleatorie.md",
-    "Source Material/Images/flight.jpg",
     "Zettelkasten/Propellers.md",
-    "Zettelkasten/Remote Control.md",
-    "Zettelkasten/Three Axis Motion.md",
-    "Source Material/Images/prop.jpg",
-    "Source Material/Images/pithc.png",
-    "Ciaooooo.md"
+    "Zettelkasten/Remote Control.md"
   ]
 }
