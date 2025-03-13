@@ -41,3 +41,4 @@ $$
 \vec{A} = \hat{u}_{x}\int_{t_{1}}^{t_{N}}a_{x}(t)dt+ \hat{u}_{y}\int_{t_{1}}^{t_{N}}a_{y}(t)dt+\hat{u}_{z}\int_{t_{1}}^{t_{N}}a_{z}(t)dt
 $$
 Quindi l'integrale del vettore ha come componenti gli integrali delle componenti del vettore.
+# TODO equazioni differenziali

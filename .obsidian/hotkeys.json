@@ -5,6 +5,20 @@
         "Mod"
       ],
       "key": "M"
+    },
+    {
+      "modifiers": [
+        "Shift"
+      ],
+      "key": "4"
+    }
+  ],
+  "editor:redo": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "Y"
     }
   ]
 }
