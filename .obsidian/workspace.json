@@ -11,14 +11,12 @@
             "id": "5dc7e1c251ca7ea2",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Zettelkasten/Cinematica.md",
-                "mode": "source",
-                "source": false
+                "file": "Source Material/Images/Pasted image 20250308154041.png"
               },
-              "icon": "lucide-file",
-              "title": "Cinematica"
+              "icon": "lucide-image",
+              "title": "Pasted image 20250308154041"
             }
           }
         ]
@@ -180,8 +178,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5dc7e1c251ca7ea2",
+  "active": "5a221de48f37b008",
   "lastOpenFiles": [
+    "Dinamica.md",
+    "Source Material/Images/Pasted image 20250308154041.png",
+    "Source Material/Images/Pasted image 20250308155417.png",
+    "Tags/Fisica I.md",
+    "Zettelkasten/Cinematica.md",
     "Indexes/University.md",
     "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas",
     "Indexes/Programming.md",
