@@ -11,12 +11,14 @@
             "id": "5dc7e1c251ca7ea2",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Source Material/Images/Pasted image 20250308154041.png"
+                "file": "Programma Seganli.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20250308154041"
+              "icon": "lucide-file",
+              "title": "Programma Seganli"
             }
           }
         ]
@@ -178,14 +180,19 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5a221de48f37b008",
+  "active": "5dc7e1c251ca7ea2",
   "lastOpenFiles": [
+    "Fondamenti di Segnali e Trasmissione.md",
+    "Programma Seganli.md",
+    "Indexes/University.md",
+    "Tags/Fisica I.md",
     "Dinamica.md",
+    "Source Material/Images/Dinamica.md",
+    "Source Material/Images/Appendice.md",
+    "Numeri Complessi.md",
     "Source Material/Images/Pasted image 20250308154041.png",
     "Source Material/Images/Pasted image 20250308155417.png",
-    "Tags/Fisica I.md",
     "Zettelkasten/Cinematica.md",
-    "Indexes/University.md",
     "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas",
     "Indexes/Programming.md",
     "Untitled.md",
@@ -209,7 +216,6 @@
     "Zettelkasten/Distribuzioni, Densità Congiunta.md",
     "Zettelkasten/Continuità, Max & Min.md",
     "Source Material/PDFs/TUTTO ANALISI II E PROBABILITÀ.pdf",
-    "Zettelkasten/Riassunto.md",
-    "Zettelkasten/Probabilità del Bro Bombardelli.md"
+    "Zettelkasten/Riassunto.md"
   ]
 }
