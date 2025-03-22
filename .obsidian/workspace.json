@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programma Seganli.md",
-                "mode": "source",
+                "file": "Indexes/University.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Programma Seganli"
+              "title": "University"
             }
           }
         ]
@@ -72,6 +72,16 @@
               "state": {},
               "icon": "lucide-bookmark",
               "title": "Bookmarks"
+            }
+          },
+          {
+            "id": "0a84c11d65a6cddc",
+            "type": "leaf",
+            "state": {
+              "type": "mk-path-view",
+              "state": {},
+              "icon": "layout-grid",
+              "title": "Navigator"
             }
           }
         ]
@@ -170,18 +180,19 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-excalidraw-plugin:New drawing": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "templates:Insert template": false,
       "daily-notes:Open today's daily note": false,
       "command-palette:Open command palette": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false,
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5dc7e1c251ca7ea2",
+  "active": "5a221de48f37b008",
   "lastOpenFiles": [
+    "Image Align.css",
     "Fondamenti di Segnali e Trasmissione.md",
     "Programma Seganli.md",
     "Indexes/University.md",
@@ -215,7 +226,6 @@
     "Zettelkasten/Introduzione Probabilità, Analisi Combinatoria.md",
     "Zettelkasten/Distribuzioni, Densità Congiunta.md",
     "Zettelkasten/Continuità, Max & Min.md",
-    "Source Material/PDFs/TUTTO ANALISI II E PROBABILITÀ.pdf",
-    "Zettelkasten/Riassunto.md"
+    "Source Material/PDFs/TUTTO ANALISI II E PROBABILITÀ.pdf"
   ]
 }
