@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fondamenti di Segnali e Trasmissione.md",
-                "mode": "source",
+                "file": "Introduzione allo Studio di Segnali.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Fondamenti di Segnali e Trasmissione"
+              "title": "Introduzione allo Studio di Segnali"
             }
           }
         ]
@@ -157,8 +157,17 @@
   },
   "active": "0df1de5f17a19d6b",
   "lastOpenFiles": [
-    "Numeri Complessi.md",
+    "Pasted image 20250320122740.png",
     "Fondamenti di Segnali e Trasmissione.md",
+    "Numeri Complessi.md",
+    "Pasted image 20250320120941.png",
+    "Pasted image 20250320120932.png",
+    "Pasted image 20250320120830.png",
+    "Pasted image 20250320120321.png",
+    "Pasted image 20250320120026.png",
+    "Pasted image 20250320112828.png",
+    "Introduzione allo Studio di Segnali.md",
+    "Programma Seganli.md",
     "Indexes/University.md",
     "Tags/Fisica I.md",
     "Source Material/Images/Dinamica.md",
@@ -168,12 +177,6 @@
     "Pasted image 20250313172142.png",
     "Pasted image 20250313154913.png",
     "Pasted image 20250312105844.png",
-    "Pasted image 20250311201814.png",
-    "Pasted image 20250311181845.png",
-    "Pasted image 20250311181718.png",
-    "Pasted image 20250311181640.png",
-    "Pasted image 20250311181556.png",
-    "Pasted image 20250311181533.png",
     "Indexes/Linux.md",
     "Indexes/Drone Project.md",
     "Indexes/Programming.md",
@@ -190,9 +193,6 @@
     "Tags/Analisi 2 e Probabilità.md",
     "Zettelkasten/Introduzione Probabilità, Analisi Combinatoria.md",
     "Zettelkasten/Riassunto.md",
-    "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas",
-    "Zettelkasten/Variabili Aleatorie Continue.md",
-    "Zettelkasten/Distribuzioni, Densità Congiunta.md",
-    "Zettelkasten/Variabili Aleatorie.md"
+    "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas"
   ]
 }

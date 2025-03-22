@@ -14,7 +14,7 @@ _SECONDA PARTE_ 
 
 _Richiami di teoria delle probabilità e processi aleatori:_ variabili aleatorie, funzioni di distribuzione e di densità di probabilità; statistiche del primo e del secondo ordine; processi aleatori, stazionarietà, densità spettrale di potenza; filtraggio di processi stazionari; rumore bianco [LV, estratti dai Cap. 7 e 8].
 
-_Segnali a tempo discreto:_ Dal tempo continuo al tempo discreto; Rappresentazione dei segnali aperiodici a tempo discreto nel dominio della frequenza; Teoremi sulla Trasformata di Fourier di una sequenza; La condizione di Nyquist; Campionamento e Interpolazione; Il teorema del campionamento, varie esempi di interpolazione di segnal.i Analisi di Fourier delle sequenza periodiche e proprietà della DFT; relazioni tra convoluzione lineare e ciclica; la FFT  [LV, Cap. 5][ARG, par. 5.4, 5.5, 5.6]. 
+_Segnali a tempo discreto:_ Dal tempo continuo al tempo discreto; Rappresentazione dei segnali aperiodici a tempo discreto nel dominio della frequenza; Teoremi sulla Trasformata di Fourier di una sequenza; La condizione di Nyquist; Campionamento e Interpolazione; Il teorema del campionamento, varie esempi di interpolazione di segnal.i Analisi di Fourier delle sequenza periodiche e proprietà della DFT; relazioni tra convoluzione lineare e ciclica; la FFT  [LV, Cap. 5]  [ARG, par. 5.4, 5.5, 5.6]. 
 
 _Sistemi a tempo discreto_. Caratterizzazione dei sistemi a tempo discreto: Proprietà dei sistemi monodimensionali a tempo discreto, Sistemi lineari e stazionari a tempo discreto, Risposta in frequenza di un SLS, Filtri a tempo discreto  [LV, Cap. 6.1, ARG Cap 3, sezioni 3.1-3.4].
 
