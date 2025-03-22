@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "be0f5220ae9b46ed",
+        "id": "600d56f941735f13",
         "type": "tabs",
         "children": [
           {
-            "id": "0df1de5f17a19d6b",
+            "id": "5aeb79748f192de1",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -84,9 +84,19 @@
           "icon": "lucide-bookmark",
           "title": "Bookmarks"
         }
+      },
+      {
+        "id": "21e54a0617688b93",
+        "type": "leaf",
+        "state": {
+          "type": "mk-path-view",
+          "state": {},
+          "icon": "layout-grid",
+          "title": "Navigator"
+        }
       }
     ],
-    "currentTab": 0
+    "currentTab": 4
   },
   "right": {
     "id": "a10862bf1887e6d2",
@@ -98,7 +108,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Zettelkasten/Valore Atteso e Varianza, Esempi di v.a..md",
+            "file": "Zettelkasten/Introduzione allo Studio di Segnali.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -151,48 +161,52 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "0df1de5f17a19d6b",
+  "active": "5aeb79748f192de1",
   "lastOpenFiles": [
-    "Pasted image 20250320122740.png",
-    "Zettelkasten/Fondamenti di Segnali e Trasmissione.md",
+    "Tags/Fondamenti di Segnali e Trasmissione.md",
     "Zettelkasten/Numeri Complessi.md",
-    "Pasted image 20250320120941.png",
-    "Pasted image 20250320120932.png",
-    "Pasted image 20250320120830.png",
-    "Pasted image 20250320120321.png",
-    "Pasted image 20250320120026.png",
-    "Pasted image 20250320112828.png",
     "Zettelkasten/Introduzione allo Studio di Segnali.md",
-    "Programma Seganli.md",
+    "Source Material/Images/IMG_0351.jpg",
     "Indexes/University.md",
-    "Tags/Fisica I.md",
-    "Source Material/Images/Dinamica.md",
-    "Zettelkasten/Cinematica.md",
-    "Source Material/Images/Appendice.md",
-    "Pasted image 20250313185821.png",
-    "Pasted image 20250313172142.png",
-    "Pasted image 20250313154913.png",
-    "Pasted image 20250312105844.png",
-    "Indexes/Linux.md",
-    "Indexes/Drone Project.md",
-    "Indexes/Programming.md",
-    "Zettelkasten/Introduzione.md",
-    "Untitled.md",
-    "Zettelkasten/Ottimizzazione.md",
-    "Zettelkasten/Calcolo Differenziale.md",
-    "Zettelkasten/Limiti e Continuità per Funzioni di più Variabili.md",
-    "Zettelkasten/Continuità, Max & Min.md",
-    "Zettelkasten/Definizioni.md",
-    "Zettelkasten/Preliminari di algebra.md",
-    "Zettelkasten/Introduzione alla Teoria dei Codici.md",
-    "Zettelkasten/Valore Atteso e Varianza, Esempi di v.a..md",
+    "Tags/Tags.md",
     "Tags/Analisi 2 e Probabilità.md",
-    "Zettelkasten/Introduzione Probabilità, Analisi Combinatoria.md",
-    "Zettelkasten/Riassunto.md",
+    "Tags/Matematica Discreta e Codici.md",
+    "Tags/Basi di Dati.md",
+    "Tags/Intelligenza Artificiale.md",
+    "Tags/Fisica I.md",
+    "study/study.md",
+    "study",
+    "Study/Study.md",
+    "Study",
+    "Source Material/Info/Latex CheatSheet.md",
+    "Source Material/Info/INFO_Pasted image 20241228170351_PNG.md",
+    "Source Material/Source Material.md",
+    "Source Material/Images/IMG_0350.jpg",
+    "Source Material/Info/INFO_Pasted image 20241227181333_PNG.md",
+    "Source Material/Info/INFO_Pasted image 20241229114810_PNG.md",
+    "Source Material/Images/screenshot.png",
+    "Source Material/Images/Pasted image 20250320120932.png",
+    "Source Material/Info/INFO_Pasted image 20241229132330_PNG.md",
+    "Source Material/Images/Pasted image 20250322121215.png",
+    "Source Material/Info/INFO_Pasted image 20250102144519_PNG.md",
+    "Source Material/Untitled.md",
+    "Source Material/Info/Info.md",
+    "Source Material/Info",
+    "Source Material/IMG_0347.png",
+    "Source Material/PDFs/Lebesgue.pdf",
+    "Source Material/Limiti e Continuità per Funzioni di più Variabili 2024-12-07 15.32.12.excalidraw.md",
+    "Source Material/INFO_Pasted image 20250111012325_PNG.md",
+    "Source Material/Images/Logo_universita_firenze.svg",
+    "Indexes/Linux.md",
+    "Indexes/Programming.md",
+    "Indexes/Drone Project.md",
+    "Zettelkasten/DSC05429.jpg",
+    "Source Material/Images/Pasted image 20250320120321.png",
+    "Source Material/Images/Pasted image 20250320112828.png",
     "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas"
   ]
 }

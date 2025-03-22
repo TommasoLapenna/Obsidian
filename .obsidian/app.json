@@ -1,4 +1,10 @@
 {
   "showLineNumber": true,
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "Zettelkasten",
+  "userIgnoreFilters": [
+    "Source Material/"
+  ],
+  "attachmentFolderPath": "Source Material/Images"
 }

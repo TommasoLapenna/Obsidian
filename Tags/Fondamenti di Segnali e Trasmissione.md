@@ -1,3 +1,8 @@
+---
+sticker: emoji//1f4e1
+banner: Source Material/Images/IMG_0351.jpg
+banner_y: "71"
+---
 Tags: [[University]]
 
 0. [[Numeri Complessi]]

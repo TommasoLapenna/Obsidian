@@ -1,3 +1,6 @@
+---
+sticker: emoji//267e-fe0f
+---
 
 Tags: [[University]]
 1. [[Richiami di Calcolo Vettoriale]] 

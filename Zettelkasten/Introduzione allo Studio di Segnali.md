@@ -1,3 +1,6 @@
+---
+sticker: emoji//0031-fe0f-20e3
+---
 Tags: [[Fondamenti di Segnali e Trasmissione]] [[University]] 
 
 ### Definizione di Segnale
@@ -17,7 +20,7 @@ Si possono inoltre dividere i segnali nelle seguenti classi:
 - *Periodico:* Se esiste un intervallo temporale $T_{0}(N_{0})$ tale che $x(t)=x(t+T_{0})\ \forall t$, $x[n]=x[n+N_{0}] \ \forall n$
 - *Aperiodico:* Non esiste $T_{0}(N_{0})$ che soddisfa la relazione suddetta
 ### Proprietà Elementari dei Segnali Determinati a Tempo Continuo
-Dalla legge di Ohm si sa che la potenza dissipata sul resistore $P=R\cdot i^2(t)\ [W]$, mentre l'energia dissipata sul resistore è $E=R\int_{-\infty}^{\infty}|i^2|(t)\ dt$. Si può quindi osservare il rapporto di proporzionalità tra potenza (e energia) ed il quadrato del segnale.
+Dalla legge di Ohm si sa che la potenza dissipata sul resistore $P=R\cdot i^2(t)\ [W]$, mentre l'energia dissipata sul resistore è $E=R\int_{-\infty}^{\infty}|i^2|(t)\ dt$. Si può quindi osservare il rapporto di proporzionalità tra potenza istantanea ed il quadrato del segnale.
 Nella teoria dei segnali, attraverso la normalizzazione, si ha un'astrazione delle grandezze delle dimensioni; si definiscono proprietà analoghe:
 - *Potenza Istantanea Normalizzata di un Segnale $x(t)$:*
 $$
@@ -54,3 +57,15 @@ Un segnale ha energia finita se ha potenza media nella, un segnale con potenza m
 >**ESEMPIO:** Potenza media della batteria ideale $$ P_{v}=\lim_{ T \to \infty } \frac{1}{T}\int_{-\frac{T}{2}}^ {\frac{T}{2}} |v(t)|^2\ dt= \lim_{ T \to \infty } \frac{1}{T}\int_{-\frac{T}{2}}^ {\frac{T}{2}} v_{0}^2\ dt=v_{0}$$
 
 ### Segnale Periodico
+Un segnale è periodico se esiste un intervallo temporale $T_{0}$ tale che
+$$
+x(t)= x(t+T_{0})\quad \forall t
+$$
+e si definisce la *Frequenza di Ripetizione*
+$$
+f_{0}=\frac{1}{T_{0}}
+$$
+Il segnale è completamente noto se si conosce il suo valore all'interno di un periodo.
+
+![[Pasted image 20250322121215.png|500]]
+È dato un segnale $x(t)$ di durata finita in $\left( -\frac{T}{2}, \frac{T}{2} \right)$, quindi aperiodico, ovvero per cui $x(t)=0$ per $|t|> \frac{T}{2}$

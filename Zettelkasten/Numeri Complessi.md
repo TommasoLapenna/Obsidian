@@ -1,3 +1,6 @@
+---
+sticker: emoji//0030-fe0f-20e3
+---
 Tags: [[Fondamenti di Segnali e Trasmissione]] [[University]]
 
 - $j= \sqrt{ -1 }$ = Soluzione di $x^2+1=0$

@@ -3,5 +3,7 @@
   "graphs",
   "obsidian-latex-suite",
   "obsidian-latex-environments",
-  "obsidian-git"
+  "obsidian-git",
+  "make-md",
+  "editing-toolbar"
 ]

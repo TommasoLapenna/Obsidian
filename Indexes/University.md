@@ -1,3 +1,7 @@
+---
+banner: Source Material/Images/IMG_0350.jpg
+sticker: emoji//1f4da
+---
 ![[Matematica Discreta e Codici]]
 
 ![[Intelligenza Artificiale]]

@@ -1,3 +1,6 @@
+---
+sticker: emoji//1f4d0
+---
 Tags: [[University]] 
 
 0. [[Appendice]] 
