@@ -32,3 +32,25 @@ Per tutti i segnali fisici l'integrale dell'energia risulta convergente, convien
 
 > **ESEMPIO:** Se si considera la tensione $v(t)$ di una batteria ideale, essa è costante per ogni valore di $t$, quindi $\int_{-\infty}^\infty|v(t)|^2\ dt=\infty$, allora la definizione di energia è mal posta. Nonostante ciò, se una batteria reale viene osservata in un periodo in cui è carica, $v(t)$ risulta essere un ottima approssimazione.
 
+Si considera un segnale generico $x(t)$ a valori limitati ma energia infinita, attraverso un operazione di troncamento si costruisce il segnale 
+$$
+x_{T}(t)=\begin{cases}
+x(t) & |t|\le \frac{T}{2} \\
+0 & altrove
+\end{cases}
+$$
+L'energia del segnale limitata dall'intervallo è limitata ($E_{x_{T}}\le\infty$). Se si espande l'intervallo ($T\to \infty$) si ottiene che $E_{x_{T}}\to \infty$, si introduce allora il concetto di potenza:
+- *Potenza media su un Intervallo $T$ di un Segnale*
+$$
+P_{T}= \frac{1}{T}\int_{-\frac{T}{2}}^ {\frac{T}{2}} |x(t)|^2\ dt
+$$
+- *Potenza Media*
+$$
+\overline{P}=\lim_{ T \to \infty }P_{T} =\lim_{ T \to \infty }\frac{1}{T}\int_{-\frac{T}{2}}^ {\frac{T}{2}} |x(t)|^2\ dt
+$$
+Un segnale si dice a **Potenza Media Finita** se $\overline{P}<\infty$.
+Un segnale ha energia finita se ha potenza media nella, un segnale con potenza media diversa da $0$ ha energia infinita
+
+>**ESEMPIO:** Potenza media della batteria ideale $$ P_{v}=\lim_{ T \to \infty } \frac{1}{T}\int_{-\frac{T}{2}}^ {\frac{T}{2}} |v(t)|^2\ dt= \lim_{ T \to \infty } \frac{1}{T}\int_{-\frac{T}{2}}^ {\frac{T}{2}} v_{0}^2\ dt=v_{0}$$
+
+### Segnale Periodico
