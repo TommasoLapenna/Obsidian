@@ -6,5 +6,6 @@
   "userIgnoreFilters": [
     "Source Material/"
   ],
-  "attachmentFolderPath": "Source Material/Images"
+  "attachmentFolderPath": "Source Material/Images",
+  "mobileToolbarCommands": []
 }

@@ -5,5 +5,9 @@
   "obsidian-latex-environments",
   "obsidian-git",
   "make-md",
-  "editing-toolbar"
+  "editing-toolbar",
+  "obsidian-admonition",
+  "mathlinks",
+  "dataview",
+  "css-editor"
 ]
