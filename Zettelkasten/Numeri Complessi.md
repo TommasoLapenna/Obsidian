@@ -37,7 +37,7 @@ e^{j\theta}=\cos \theta+j\sin \theta \Longrightarrow \begin{cases}
 \sin \theta= \frac{e^{j\theta-e^{-j\theta}}}{2j} 
 \end{cases}
 $$
-![[Pasted image 20250320120932.png]]
+![[Pasted image 20250320120932.png| center | 500]]
 Da Eulero quindi 
 $$
 z=r\cos \phi+jr\sin \phi=r(\cos \phi+j\sin \phi)=re^{j\phi}
