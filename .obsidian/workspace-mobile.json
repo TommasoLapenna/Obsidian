@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Zettelkasten/Segnali Periodici a Tempo Continuo.md",
+                "file": "Zettelkasten/Segnali Aperiodici a Tempo Continuo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Segnali Periodici a Tempo Continuo"
+              "title": "Segnali Aperiodici a Tempo Continuo"
             }
           }
         ]
@@ -86,7 +86,7 @@
         }
       },
       {
-        "id": "fbf0932ef3199d84",
+        "id": "24695b588cf8ad96",
         "type": "leaf",
         "state": {
           "type": "mk-path-view",
@@ -108,7 +108,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Zettelkasten/Introduzione allo Studio di Segnali.md",
+            "file": "Zettelkasten/Segnali Aperiodici a Tempo Continuo.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -167,22 +167,22 @@
   },
   "active": "e191d1074609d26c",
   "lastOpenFiles": [
-    "Source Material/Images/Pasted image 20250324192654.png",
-    "Source Material/Images/Pasted image 20250324192624.png",
-    "Source Material/Images/Pasted image 20250324192618.png",
-    "Source Material/Images/Pasted image 20250324190650.png",
     "Tags/Fondamenti di Segnali e Trasmissione.md",
-    "Zettelkasten/Segnali Periodici a Tempo Continuo.md",
+    "Zettelkasten/Segnali Aperiodici a Tempo Continuo.md",
     "Zettelkasten/Programma Seganli.md",
+    "Zettelkasten/Segnali Periodici a Tempo Continuo.md",
+    "Source Material/Images/Pasted image 20250328134935.png",
+    "Source Material/Images/Pasted image 20250328133042.png",
+    "Source Material/Images/Pasted image 20250328132831.png",
+    "Source Material/Images/Pasted image 20250328132429.png",
+    "Source Material/Images/Pasted image 20250328131548.png",
+    "Source Material/Images/Pasted image 20250328131408.png",
+    "Source Material/Images/Pasted image 20250325181849.png",
+    "Source Material/Images/Pasted image 20250325181828.png",
+    "Source Material/Images/Pasted image 20250325181127.png",
+    "Source Material/Images/Pasted image 20250325181108.png",
     "Zettelkasten/Introduzione allo Studio di Segnali.md",
     "Zettelkasten/Numeri Complessi.md",
-    "Source Material/Images/Pasted image 20250324184039.png",
-    "Source Material/Images/Pasted image 20250324183539.png",
-    "Source Material/Images/Pasted image 20250324183523.png",
-    "Source Material/Images/Pasted image 20250324183431.png",
-    "Source Material/Images/Pasted image 20250324181055.png",
-    "Source Material/Images/Pasted image 20250324181035.png",
-    "Source Material/Images/Pasted image 20250324174603.png",
     "Indexes/University.md",
     "Fondamenti di Segnali e Trasmissione/Fondamenti di Segnali e Trasmissione.md",
     "Vault.md",

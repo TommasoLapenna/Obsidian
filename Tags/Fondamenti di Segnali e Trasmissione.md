@@ -8,5 +8,6 @@ Tags: [[University]]
 0. [[Numeri Complessi]]
 1. [[Introduzione allo Studio di Segnali]] 
 2. [[Segnali Periodici a Tempo Continuo]] 
+3. [[Segnali Aperiodici a Tempo Continuo]]
 
 [[Programma Seganli|Programma]] 
