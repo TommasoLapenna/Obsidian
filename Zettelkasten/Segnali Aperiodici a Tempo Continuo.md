@@ -739,7 +739,6 @@ Questa proprietà prende il nome di *Proprietà campionatrice* dell'impulso unit
 > Il simbolo accanto alla freccia indica l'area sottesa da funzione questa funzione è unitaria e non rappresenta un valore riportato sull'asse delle ordinate. 
 
 ![[Pasted image 20250402185157.png]]
-
 ### Proprietà della Funzione Generalizzata $\delta(t)$
 
 > [!gray] Proprietà Campionatrice
@@ -772,3 +771,239 @@ $$
 x(t)=\int_{-\infty}^\infty x(\alpha)\delta(t-\alpha)\ d\alpha = x(t)\otimes \delta(t)
 $$
 - Questa relazione indica che la funzione generalizzata $\delta(t)$ può intendersi come *Elemento Neutro* rispetto all'operazione di integrale di convoluzione
+
+TODO Esempio ----->
+### Trasformata Generalizzata di Fourier della $\delta$ di Dirac
+Si  calcola la trasformata della funzione generalizzata $\delta(t)$. Applicando direttamente la definizione di trasformata e ricordando la proprietà campionatrice si ha
+$$
+\Delta (f)= \int_{-\infty}^\infty \delta(t) e^{-j 2\pi ft}\ dt= [e^{-j 2\pi ft}]_{t=0}=1
+$$
+![[Pasted image 20250403010846.png|center|500]]
+Lo spettro della funzione di $\delta$ di Dirac ha ampiezza costante pari a 1 per ogni valore della frequenza. La peculiarità della funzione $\delta$ è riflessa anche nella sua trasformata: lo spettro di $\delta$ contiene componenti a qualunque frequenza arbitrariamente grande e tutte con la medesima ampiezza.
+Dal teorema della dualità si ricava poi
+$$
+x(t)= 1\iff \delta(-f)=\delta(f)
+$$
+![[Pasted image 20250403011127.png|center|500]]
+Questo mostra che l'introduzione delle funzioni generalizzate permette di calcolare la trasformata di un segnale ad energia infinta come un segnale costante (questa trasformata deve intendersi in senso generalizzato)
+### Trasformata Notevole: Funzione $\frac{1}{t}$
+$x(t)=\frac{1}{t}$
+![[Pasted image 20250403011943.png|center|450]]
+Saltando i conti, si ha che la trasformata
+$$
+-j \pi\ \text{sgn}(t)\iff - \frac{1}{f}
+$$
+Da cui per la dualità si ricava che 
+$$
+\text{sgn}(t)\iff \text{SGN(f)}= \frac{1}{j \pi f}
+$$
+![[Pasted image 20250403111149.png|center|500]]
+La trasformata di $u(t)$ in senso ordinario non esiste, facendo uso della funzione $\text{sgn}(t)$ si può esprimete $u(t)$ come 
+$$
+u(t)= \frac{1}{2}= \text{sgn}(t) + \frac{1}{2}
+$$
+da cui
+$$
+U(f)= \frac{1}{2}\text{SGN}(f)+ \frac{1}{2}\delta(f)= \frac{1}{j 2\pi f}+ \frac{1}{2}\delta(f)
+$$
+### Teorema d'Integrazione Completo
+Come già spiegato, la trasformata del gradino unitario ideale $u(t)$ non esiste in senso ordinario.
+Con i risultati però ottenuti precedentemente, si può rimuovere l'ipotesi $X(0)=0$ che è alla base dell'applicabilità del teorema di integrazione nella sua forma incompleta ricavata precedentemente
+$$
+\int_{-\infty}^t x(\alpha)\ d\alpha \iff \frac{X(f)}{j 2\pi f}
+$$
+Per definizione di integrale di conviluzione si può scrivere che
+$$
+x(t)\otimes u(t)=\int_{-\infty}^\infty x(\alpha)u(t-\alpha)\ d\alpha= \int_{-\infty}^t x(\alpha)\ d\alpha
+$$
+![[Pasted image 20250403112519.png]]
+Risulta, visto che la trasformata di un integrale di convoluzione è uguale al prodotto delle trasformate dei fattori
+$$
+\int^t_{-\infty}x(\alpha)\ d\alpha = x(t)\otimes u(t)\iff X(f)U(f)= X(f)\left[ \frac{1}{j 2\pi f}+ \frac{1}{2} \delta(f) \right]
+$$
+
+> [!gray] Il teorema di integrazione afferma quindi che
+> $$
+> y(t)= \int_{-\infty}^t x(\alpha)\ d\alpha \iff \frac{X(f)}{j 2\pi f}+ \frac{1}{2}\delta(f)X(0)
+> $$
+
+Il termine aggiuntivo tiene conto dell'eventuale valore medio diverso da zero del segnale.
+### Trasformata Generalizzata delle Funzioni Seno, Coseno e dei Segnali Periodici
+La funzione generalizzata $\delta(t)$ permette di calcolare trasformate di Fourier non esistenti in senso ordinario. Altri esempi di questo tipo di segnali si possono ottenere applicando i teoremi del ritardo e della traslazione in frequenza alle trasformate generalizzate già ottenute
+$$\begin{align}
+\delta(t)&\iff_{1}& &\Longrightarrow& &\delta(t-t_{0})\iff e^{-j 2\pi ft_{0}}& \\
+1&\iff\delta(f)& &\Longrightarrow& &e^{j 2\pi f_{0}t}=1\cdot e^{j 2\pi f_{0}t}\iff \delta(f-f_{0})&
+\end{align}$$
+Quest'ultima relazione permette di calcolare la trasformata continua di Fourier di un'oscillazione cosinusoidale, infatti si ha
+$$
+x_{c}(t)=\cos(2 \pi f_{0} t)= \frac{e^{j 2\pi f_{0}t}+e^{-j 2\pi f_{0}t}}{2}\iff X_{c}(f)= \frac{\delta(f-f_{0})+\delta(f+f_{0})}{2}
+$$
+![[Pasted image 20250403123233.png|center|450]]
+Invece per una oscillazione sinusoidale
+$$
+x_{s}=\sin(2 \pi f_{0}t)= \frac{e^{j 2\pi f_{0}t}-e^{-j 2\pi f_{0}t}}{2j}\iff X_{s}(f)= \frac{\delta(f-f_{0})-\delta(f+f_{0})}{2j}
+$$
+![[Pasted image 20250403123257.png|center|450]]
+Con questi risultati si può dare una nuova interpretazione al teorema della modulazione, tenendo presente il teorema del prodotto (trasformata del prodotto di due segnali è la convoluzione delle trasformate) si scrive
+$$
+x(t)=\cos(2\pi f_{0}t)\iff X(f)\otimes\left[ \frac{\delta(f-f_{0})+\delta(f+f_{0})}{2} \right]
+$$
+ma 
+$$
+X(f)\otimes\delta(f-f_{0})=\int_{-\infty}^\infty X(\alpha)\delta(f-f_{0}-\alpha)\ d\alpha = \underset{\text{Proprietà campionatrice}}{X(f-f_{0})=X(f+f_{0})}
+$$
+quindi:
+$$
+x(t)\cos(2\pi f_{0}t)\iff \frac{X(f-f_{0})+X(f+f_{0})}{2}
+$$
+Avendo determinato la trasformata continua di Fourier di una oscillazione sinusoidale in forma reale o complessa, si riesce ad esprimere anche a esprimere la trasformata continua di un segnale periodico qualunque.
+Se $x(t)$ è periodico (periodo $T_{0}$ e $f_{0}=\frac{1}{T_{0}}$), si può scrivere come la serie di Fourier
+$$
+x(t)= \sum_{k=-\infty}^\infty X_{k}e^{j \frac{2\pi kt}{T_{0}}}\quad\underset{\text{Teorema di linearità }X(f)=\sum_{k=-\infty}^\infty X_{k} \mathcal F\{e^{j 2\pi f_{0}t}\} }{\overset{e^{j 2\pi f_{0}t}\iff\delta(f-f_{0})}{\iff}}\quad X(f)=\sum_{k=-\infty}^\infty X_{k}\delta\left( f- \frac{k}{T_{0}} \right)
+$$
+Questa relazione mostra che il contenuto spettrale di un segnale periodico è concentrato nelle frequenza armoniche, piuttosto che con continuità su tutte le frequenza come per un segnale aperiodico.
+Il contributo del segnale della $k-$esima armonica è rappresentato da una $\delta$ posizionata alla frequenza $\frac{k}{T_{0}}$ e di integrale pari a $X_{k}$.
+Lo spettro è ancora a riche come nella serie, ma le frecce sono rappresentazioni simboliche della presenza di una $\delta$ a quella frequenza.
+![[Pasted image 20250403125657.png]]
+
+> [!example]+ Esempio:
+> Calcolo della trasformata di $x(t)= \cos^2\left( \frac{2\pi t}{T_{0}} \right)$, può essere riscritto nella forma ($\cos^2\alpha=\frac{1}{2}+\frac{1}{2}\cos(2\alpha)$) $$x(t)=\frac{1}{2}+\frac{1}{2}\cos\left( \frac{4\pi t}{T_{0}} \right)$$
+> da cui si ricava l'espressione
+> $$
+> X(f)= \frac{1}{2}\delta (f)+ \frac{1}{2} \frac{\delta\left( f- \frac{2}{T_{0}} \right)+\delta\left( f+ \frac{2}{T_{0}} \right)}{2}= \frac{1}{2}\delta(f)+\frac{1}{4}\delta\left( f- \frac{2}{T_{0}} \right)+ \frac{1}{4}\delta\left( f+ \frac{2}{T_{0}} \right)
+> $$
+> ![[Pasted image 20250403162152.png|center|400]]
+> 
+
+Se calcolare $X(f)$ è difficile, può essere conveniente la seguente strada. Dato $x(t)$:
+1. Si calcola $s(t)$, derivata del segnale $x(t)$
+2. Si calcola $S(f)$, trasformata di Fourier di $s(t)$
+3. Utilizzando il teorema dell'integrale per il calcolo di $X(f)$ a partire da $S(f)$, dato che $s(t)$ è la derivata di $x(t)$, a sua volta $x(t)$ è l'integrale di $s(t)$
+$$  
+x(t)=\int_{-\infty}^t s(\alpha)\ d\alpha
+$$
+
+> [!example]+ Esempio
+> Calcolo della trasformata del segnale $x(t)=\text{rect}\left( \frac{t}{T} \right)$.
+> Si può utilizzare il teorema del calcolo integrale per il calcolo di $X(f)$, si ricava dunque la derivata prima $s(t)$ del segnale $x(t)$, in modo che risulti $x(t)=\int_{-\infty}^t s(\alpha)\ d\alpha$.
+> Quindi
+> $$
+> x(t)=\text{rect}\left( \frac{t}{T} \right)= u\left( t + \frac{T}{2} \right)-u\left( t- \frac{T}{2} \right)
+> $$
+> Si calcola poi la derivata, che sarà sempre nulla tranne in corrispondenza dei due gradini
+> $$
+> \frac{d}{dt}x(t)= \frac{d}{dt}\left\{ u\left( t+\frac{T}{2} \right)+u\left( t- \frac{T}{2} \right) \right\} = \delta\left( t+\frac{T}{2} \right)- \delta\left( t-\frac{T}{2} \right)
+> $$
+> Si è completato quindi il primo passo (calcolo di $s(t)$), può procedere adesso con il calcolo della trasformata di quest'ultimo
+> $$
+> S(f)= 1\cdot e^{j 2\pi f \frac{T}{2}}- 1\cdot e^{-j 2\pi f \frac{T}{2}}= e^{j \pi fT}-e^{-j\pi fT}
+> $$
+> Infine si completa l'ultimo passo (applicazione del teorema di integrazione), di cui la condizione $S(0)=0$ è verificata
+> $$
+> X(f)= \frac{S(f)}{j 2\pi f}= \frac{e^{j \pi fT- e^{j \pi fT}}}{j 2\pi f}= \frac{\sin(\pi fT)}{\pi f}= T \frac{\sin(\pi fT)}{\pi fT}= T\text{sinc}(fT)
+> $$
+> ![[Pasted image 20250403163408.png|center|400]]
+
+> [!example]+ Esempio:
+> Calcolo della trasformata di $x(t)= \frac{|t|}{T}\text{rect}\left( \frac{t}{2T} \right)$.
+> Poiché $x(t)$ è lineare a tratti, si può applicare il teorema dell'integrale. Si ricava innanzitutto la derivata prima $s(t)$ in modo che $x(t)=\int_{-\infty}^ts(\alpha)\ d\alpha$ 
+> $$
+> s(t)=\underset{1}{\delta (t+T)}-\underset{2}{\delta(t-T)}\underset{3}{-\frac{1}{T}\text{rect}\left( \frac{t+ \frac{T}{2}}{T} \right)}\underset{4}{+ \frac{1}{T}\text{rect}\left(  \frac{t- \frac{T}{2}}{T} \right)}
+> $$
+> Si calcola la trasformata
+> $$\begin{align}
+> S(f)&= 1\cdot e^{j 2\pi fT}-1\cdot e^{-j 2\pi fT}- \frac{1}{T}\text{sinc}(fT)e^{j \pi fT}+\frac{1}{T}\text{sinc}(fT)e^{j\pi fT}= \\
+> &=2j \frac{e^{j 2\pi fT} e^{-j 2\pi fT}}{2j}- \text{sin}(fT) 2j \frac{e^{j\pi fT}-e^{-j \pi fT}}{2j}= 2j\sin(2\pi fT)-2j \text{sinc}(fT)\sin(\pi fT)
+> \end{align}$$
+> Siccome $x(+\infty)$ o $S(0)=0$, si può applicare il teorema di integrazione incompleto:
+> $$\begin{align}
+> X(f)&= \frac{S(f)}{j 2\pi ft}= \frac{2j\sin(2\pi fT)-2j\text{sinc(fT)sin(pifT)}}{j 2\pi fT}= \\
+> &= \frac{2j-T\sin(2\pi fT)}{j 2\pi fT}- \frac{2j\text{sinc}(fT)T\sin(\pi fT)}{j 2\pi fT}= 2T\text{sinc}(2fT)-T\text{sinc}^2(fT)
+> \end{align}$$
+> ![[Pasted image 20250403164828.png|center|400]]
+> Si può ricavare lo stesso risultato osservando xche $x(t)$ può essere espresso come la differenza fra un impulso rettangolare e uno triangolare, aventi la stessa durata $2T$
+> $$\begin{align}
+> x(t)&=\text{rect}\left( \frac{t}{2T} \right)- \left( 1- \frac{|t|}{T} \right)\text{rect}\left( \frac{t}{2T} \right) \\
+> X(f)&=2T\text{sinc}(2fT)-T\text{sinc}^2(fT)
+> \end{align}$$
+
+Es3.21 da fare
+### Periodicizzazione e Formule di Somma di Poisson
+Si considera un segnale aperiodico $x(t)$ e si costruisce il segnale $y(t)$ periodico di periodo $T_{0}$ secondo la relazione di periodicizzazione
+$$
+y(t)=\sum_{n=-\infty}^\infty x(t-nT_{0})
+$$
+![[Pasted image 20250406181347.png]]
+Il segnale $y(t)$ può essere sviluppato in serie di Foruier:
+$$ y(t)=\sum_{k=-\infty}^\infty Y_{k}e^{j 2\pi k f_{0}t} $$
+Si espande sulla relazione tra la trasformata $X(f)$ e il coefficiente $Y_{k}$
+$$\begin{align}
+Y_{k}&= \frac{1}{T_{0}}\int_{- \frac{T_{0}}{2}}^{\frac{T_{0}}{2}y(t)}e^{j 2\pi}\ dt= \frac{1}{T_{0}}\int_{- \frac{T_{0}}{2}}^{\frac{T_{0}}{2}} \sum_{n=-\infty}^\infty x(t-n T_{0})e^{-j 2\pi kf_{0}t}\ dt= \\
+&= \frac{1}{T_{0}} \sum_{n=-\infty}^\infty \int_{- \frac{T_{0}}{2}}^{\frac{T_{0}}{2}}x(t-nT_{0})e^{-j 2\pi kf_{0}}t\ dt = \frac{1}{T_{0}}\sum_{n=-\infty}^\infty \int_{-\frac{T_{0}}{2}-nT_{0}}^{\frac{T_{0}}{2}- nT_{0}}x(\alpha) e^{-j 2\pi k_{0}}(\alpha)+n T_{0}\ d\alpha = \\
+&= \frac{1}{T_{0}}\sum_{n=-\infty}^\infty \int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}}x(\alpha)e^{-j 2\pi k_{0}\alpha}e^{-j 2\pi k_{0} nT_{0}}\ d\alpha 
+\end{align}$$
+Si ha che $e^{j 2\pi k_{0}nT_{0}}=r^{-j 2\pi kn}=(\cos( 2\pi kn)-j (\sin(2 \pi kn)))=1$, essendo $k$ e $n$ interi, si ha
+$$
+Y_{k}= \frac{1}{T_{0}} \sum_{n=-\infty}^\infty \int_{-\frac{T_{0}}{2}-nT_{0}}^{\frac{T_{0}}{2}-nT_{0}} x(\alpha)e^{-j 2\pi_{0}\alpha_{0}\alpha}= \frac{1}{T_{0}}\int_{-\infty}^\infty x(\alpha)e^{-j 2\pi(kf_{0})\alpha}\ d \alpha= \frac{1}{T_{0}}X(kf_{0})= \frac{1}{T_{0}}X\left( \frac{k}{T_{0}} \right)
+$$
+![[Pasted image 20250406183008.png]]
+
+Si ottiene una relazione detta di *Campionamento di Frequenza*.
+I coefficienti della serie del segnale periodico $y(t)$ sono, a meno del fattore $\frac{1}{T_{0}}$, i valori campioni della trasformata del segnale base $x(t)$ presi in corrispondenza delle frequenze armoniche $kf_{0}$:
+$$
+Y_{k}= \frac{1}{T_{0}} X\left( \frac{k}{T_{0}} \right)
+$$
+e quindi si ottiene la *Prima Formula di Poisson*
+$$
+\sum_{n=-\infty}^\infty x(t-nT_{0})=\sum_{k=-\infty}^\infty \frac{1}{T_{0}}X\left( \frac{k}{T_{0}} \right)e^{j \frac{2\pi kt}{T_{0}}}
+$$
+
+> [!example]+ Esempio
+> $y(t)=|\cos(2\pi_{1}t)|$
+> ![[Pasted image 20250406183827.png|center|500]]
+> con periodo $T_{1}= \frac{1}{f_{1}}$. La trasformata si calcola con
+> $$
+> y(t)=\sum_{k=-\infty}^\infty x\left( t-k \frac{T_{1}}{2} \right)
+> $$
+> Si può considerare $y(t)$ come la periodicizzazione del segnale aperiodico $x(t)$, dove
+> $$
+> x(t)=\cos(2\pi f_{1}t)\text{rect}\left( \frac{t}{\frac{T_{1}}{2}} \right)
+> $$
+> Quindi
+> $$
+> \begin{align}
+> &TCF\left( \text{rect}\left( \frac{t}{\frac{T_{1}}{2}} \right) \right)= \frac{T_{1}}{2}\text{sinc}\left( \frac{fT_{1}}{2} \right) \\
+>  \\
+> & X(f)= \frac{T_{1}}{2} \frac{1}{2}\left[ \text{sinc}\left( \frac{(f+f_{1})T_{1}}{2} \right) +\text{sinc}\left( \frac{(f-f_{1})T_{1}}{2} \right) \right] \\
+> &X(f)= \frac{T_{1}}{2} \frac{\text{sinc}\left(\frac{fT_{1}+1}{2}  \right)+\text{sinc}\left(  \frac{fT_{1}-1}{2} \right)}{4} 
+> \end{align}
+> $$
+> E per la somma di Poisson (essendo $T_{0}= \frac{T_{1}}{2}$) si ha
+> $$
+> Y_{k}= \frac{1}{T_{0}}X\left( \frac{k}{T_{0}}\right)\qquad Y_{k}=\frac{2}{T_{1}}X\left( \frac{2k}{T_{1}} \right)=\frac{ \text{sinc}\left( \frac{2k+1}{2}\right)+\text{sinc}\left( \frac{2k-1}{2} \right)}{2}
+> $$
+> ![[Pasted image 20250406185333.png|center|500]]
+
+> [!example]+ Esempio:
+> La trasformata di un segnale $x(t)$ di un segnale $s(t)$ ha spettro di ampiezza $|S(f)|$ e ha spettro di fase nullo. Calcolare $s(t)$
+> ![[Pasted image 20250406185929.png|center|450]]
+> Lo spettro può essere scomposto in due segnale come $S(f)=S_{1}(f)+S_{2}(f)$
+> ![[Pasted image 20250406190357.png]]
+> Ricordando che
+> $$\begin{align}
+> &\text{rect}\left( \frac{t}{T} \right)& &\iff& &T\text{sinc}(fT)& \\
+> &T\text{sinc}(tT)& &\iff& &\text{rect}\left( -\frac{f}{T} \right)=\text{rect}\left( \frac{f}{T} \right)& \\
+> & B\text{sinc}(Bt)& &\iff& &\text{rect}\left( \frac{f}{B} \right)&
+> \end{align}$$
+> In questo caso si ha
+> $$
+> s_{1}(t)=A 2B \text{sinc}(2Bt)\iff S_{1}(f)=A\text{rect}\left( \frac{f}{2B} \right) 
+> $$
+> Ricordando che
+> $$
+> S_{2}(f)= A\left( 1- \frac{|f|}{B} \right)\text{rect}\left( \frac{f}{2B} \right)= A\text{tri}\left( \frac{f}{B} \right)=A \frac{1}{B}\text{rect}\left( \frac{f}{B} \right)\otimes\text{rect}\left( \frac{f}{B} \right)
+> $$
+> Si ottiene
+> $$
+> s_{2}(t)= A \frac{1}{B}\text{sinc}(Bt)\text{sinc}(Bt)= AB \text{sinc}^2(Bt)
+> $$

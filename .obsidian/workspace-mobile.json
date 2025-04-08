@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Zettelkasten/Segnali Aperiodici a Tempo Continuo.md",
+                "file": "Zettelkasten/Sistemi Monodimensionali a Tempo Continuo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Segnali Aperiodici a Tempo Continuo"
+              "title": "Sistemi Monodimensionali a Tempo Continuo"
             }
           }
         ]
@@ -86,7 +86,7 @@
         }
       },
       {
-        "id": "219d22e32a495cf4",
+        "id": "a19bdce223a93d6f",
         "type": "leaf",
         "state": {
           "type": "mk-path-view",
@@ -167,18 +167,23 @@
   },
   "active": "9c3e0e75ac0268f6",
   "lastOpenFiles": [
+    "Source Material/Images/Pasted image 20250408231405.png",
+    "Source Material/Images/Pasted image 20250408231325.png",
+    "Source Material/Images/Pasted image 20250408231045.png",
+    "Source Material/Images/Pasted image 20250408231012.png",
+    "Source Material/Images/Pasted image 20250408230927.png",
+    "Source Material/Images/Pasted image 20250408230839.png",
+    "Source Material/Images/Pasted image 20250408230752.png",
+    "Source Material/Images/Pasted image 20250408224713.png",
+    "Source Material/Images/Pasted image 20250408224307.png",
+    "Source Material/Images/Pasted image 20250408224036.png",
+    "Source Material/Images/Pasted image 20250408222521.png",
     "Tags/Fondamenti di Segnali e Trasmissione.md",
     "Zettelkasten/Segnali Aperiodici a Tempo Continuo.md",
-    "Source Material/Images/Pasted image 20250402185157.png",
-    "Source Material/Images/Pasted image 20250402184330.png",
-    "Source Material/Images/Pasted image 20250402183527.png",
-    "Source Material/Images/Pasted image 20250402180351.png",
-    "Source Material/Images/Pasted image 20250402175856.png",
-    "Source Material/Images/Pasted image 20250402175246.png",
-    "Source Material/Images/Pasted image 20250402174401.png",
-    "Source Material/Images/Pasted image 20250402173245.png",
-    "Source Material/Images/Pasted image 20250401190312.png",
-    "Source Material/Images/Pasted image 20250401190226.png",
+    "Zettelkasten/Sistemi Monodimensionali a Tempo Continuo.md",
+    "Untitled.canvas",
+    "Source Material/Images/PDF document.pdf",
+    "Zettelkasten/Zettelkasten.md",
     "Zettelkasten/Segnali Periodici a Tempo Continuo.md",
     "Zettelkasten/Introduzione allo Studio di Segnali.md",
     "Zettelkasten/Numeri Complessi.md",
@@ -192,7 +197,6 @@
     "Zettelkasten/Introduzione.md",
     "Zettelkasten/Select Note.md",
     "Fondamenti di Segnali e Trasmissione",
-    "Zettelkasten/Zettelkasten.md",
     "Tags/Analisi 2 e Probabilità.md",
     "Tags/Matematica Discreta e Codici.md",
     "Tags/Basi di Dati.md",
@@ -204,7 +208,6 @@
     "Source Material/Info/Latex CheatSheet.md",
     "Source Material/Info/INFO_Pasted image 20241228170351_PNG.md",
     "Source Material/Source Material.md",
-    "Source Material/Info/INFO_Pasted image 20241227181333_PNG.md",
     "Source Material/Info",
     "Source Material/PDFs/Lebesgue.pdf",
     "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas"

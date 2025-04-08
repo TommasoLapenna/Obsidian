@@ -9,5 +9,5 @@ Tags: [[University]]
 1. [[Introduzione allo Studio di Segnali]] 
 2. [[Segnali Periodici a Tempo Continuo]] 
 3. [[Segnali Aperiodici a Tempo Continuo]]
-
+4. [[Sistemi Monodimensionali a Tempo Continuo]] 
 [[Programma Seganli|Programma]] 
