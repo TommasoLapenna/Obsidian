@@ -1,4 +1,4 @@
-Tags: [[Analisi 2 e Probabilità]] [[University]]
+Tags: [[Analisi 2 e Probabilità]] [[Old Vault/Indexes/University]]
 
 3 interpretazioni della probabilità
 1) $P(E)= \frac{\#\text{ di volte che E accade}}{\#\text{ di possibili esiti}}$

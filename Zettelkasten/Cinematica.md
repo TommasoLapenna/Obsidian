@@ -1,4 +1,4 @@
-Tags: [[Fisica I]] [[University]] 
+Tags: [[Fisica I]] [[Old Vault/Indexes/University]] 
 
 # Cinematica di un Punto Materiale
 La parte della meccanica che descrive il moto di un corpo, indipendentemente dalle cause che lo determinano viene detta *Cinematica*

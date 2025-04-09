@@ -1,4 +1,4 @@
-Tags: [[Analisi 2 e Probabilità]] [[University]]
+Tags: [[Analisi 2 e Probabilità]] [[Old Vault/Indexes/University]]
 ### Definizione
 Una v.a. è una funzione a variabili reali definita sullo spazio combinatorio. Una variabile aleatoria è discreta se assume un'infinità al più numerabile di valori $x_1,x_2,\ldots,x_n$ $$F(a)=P\{X\le a\}\quad -\infty<a<\infty$$*Funzione di ripartizione o distribuzione* 
 - $F$ non è decrescente $$\begin{align}

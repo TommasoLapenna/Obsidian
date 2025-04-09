@@ -1,7 +1,7 @@
 ---
 sticker: emoji//1f4d0
 ---
-Tags: [[University]] 
+Tags: [[Old Vault/Indexes/University]] 
 
 0. [[Appendice]] 
 1. [[Introduzione]] 

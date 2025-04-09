@@ -1,4 +1,4 @@
-Tags: [[Analisi 2 e Probabilità]] [[University]]
+Tags: [[Analisi 2 e Probabilità]] [[Old Vault/Indexes/University]]
 
 Una variabile aleatoria è una funzione a valori reali definita nello spazio campionario
 ### Esempio

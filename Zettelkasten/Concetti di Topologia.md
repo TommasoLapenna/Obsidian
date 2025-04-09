@@ -1,4 +1,4 @@
-Tags: [[Analisi 2 e Probabilità]] [[University]]
+Tags: [[Analisi 2 e Probabilità]] [[Old Vault/Indexes/University]]
 
 ### DEFINIZIONE 
 Si dice *Intorno Sferico* di centro $x_0\in\mathbb{R}^n$ e raggio $r>0$$$B_r(x_0)=\{x\in\mathbb{R}^n:|x-x_0|<r\}$$$B_r(x_0)$ = (iper)sfere centrate in $x_0$

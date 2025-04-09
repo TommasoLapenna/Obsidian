@@ -1,4 +1,4 @@
-Tags: [[Fisica I]] [[University]] 
+Tags: [[Fisica I]] [[Old Vault/Indexes/University]] 
 
 ### Metodo Scientifico
 1. Osservare un fenomeno

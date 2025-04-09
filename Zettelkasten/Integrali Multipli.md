@@ -1,7 +1,7 @@
 ---
 aliases:
 ---
-Tags: [[Analisi 2 e Probabilità]] [[University]]
+Tags: [[Analisi 2 e Probabilità]] [[Old Vault/Indexes/University]]
 
 # Limiti, Continuità e Differenziabilità per $f:\mathbb{R}^n\to\mathbb{R}^m$
 $x_0$ di accumulazione  per $A\subseteq\mathbb{R}^n$, $f:A\to\mathbb{R}^m$, $l\in\mathbb{R}^m$ $$\lim_{z\to x_0}f(x)=l$$se $\forall\epsilon>0 \ \exists\delta>0$ t.c. $$\underset{norme \ su \ \mathbb{R}^m}{|f(x)-l|}<\epsilon\quad\forall x \in A \backslash\{x_0\}:\underset{norme \ su \ \mathbb{R}^n}{|x-x_0|}<\gamma$$

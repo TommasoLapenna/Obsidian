@@ -1,4 +1,4 @@
-Tags: [[Analisi 2 e Probabilità]] [[University]] 
+Tags: [[Analisi 2 e Probabilità]] [[Old Vault/Indexes/University]] 
 
 # Funzioni Convesse
 **Segmento:** $x,y\in\mathbb{R}^n \quad [x,y]=\{ty+(1-t)x: \ t\in[0,1]\}$

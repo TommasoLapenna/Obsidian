@@ -2,4 +2,4 @@
 LINK: [[Source Material/Images/Immagine 8.jpeg]]
 CREATED At: 2024-12-17
 FILE TYPE: JPEG
-Tags: [[Basi di Dati]] [[University]] 
+Tags: [[Basi di Dati]] [[Old Vault/Indexes/University]] 

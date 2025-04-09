@@ -1,4 +1,4 @@
-Tags: [[Matematica Discreta e Codici]] [[University]]
+Tags: [[Matematica Discreta e Codici]] [[Old Vault/Indexes/University]]
 
 >  **DEFINIZIONE (Alfabeto)** 
 	$A_q$ insieme finito di $q$ elementi

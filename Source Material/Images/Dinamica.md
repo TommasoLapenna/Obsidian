@@ -1,4 +1,4 @@
-Tags: [[Fisica I]] [[University]]
+Tags: [[Fisica I]] [[Old Vault/Indexes/University]]
 
 # Dinamica del Punto Materiale
 La parte della *Dinamica* si occupa di studiare le cause fisiche che mettono in moto un punto (e anche lo stato di equilibrio). Viene usato il concetto di *Forza*, ovvero la grandezza che esprime e misura l'interazione tra sistemi di misura

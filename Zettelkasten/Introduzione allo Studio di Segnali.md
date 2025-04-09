@@ -1,7 +1,8 @@
 ---
 sticker: emoji//0031-fe0f-20e3
+Order: "1"
 ---
-Tags: [[Fondamenti di Segnali e Trasmissione]]  [[University]] 
+Tags: [[Old Vault/Tags/Fondamenti di Segnali e Trasmissione]]  [[Old Vault/Indexes/University]] 
 
 ### Definizione di Segnale
 Un segnale è una qualsiasi grandezza fisica alla quale è possibile associare un'informazione, la quale può essere di varia natura. In molti casi, l'andamento del segnale può essere perfettamente noto, pertanto il metodo più conveniente per studiare un segnale è attraverso il grafico di una funzione matematica (in una o più variabili).

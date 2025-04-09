@@ -1,4 +1,4 @@
 ---
 sticker: lucide//brain-circuit
 ---
-Tags: [[University]] 
+Tags: [[Old Vault/Indexes/University]] 

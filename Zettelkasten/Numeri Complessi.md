@@ -1,7 +1,8 @@
 ---
 sticker: emoji//0030-fe0f-20e3
+Order: "0"
 ---
-Tags: [[Fondamenti di Segnali e Trasmissione]] [[University]]
+Tags: [[Old Vault/Tags/Fondamenti di Segnali e Trasmissione]] [[Old Vault/Indexes/University]]
 
 - $j= \sqrt{ -1 }$ = Soluzione di $x^2+1=0$
 - Coppia ordinata di numeri reali (con alcune proprietà particolari)

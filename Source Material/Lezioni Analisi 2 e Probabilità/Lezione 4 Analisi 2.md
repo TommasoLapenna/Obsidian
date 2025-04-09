@@ -1,4 +1,4 @@
-Tags:  [[Analisi 2 e Probabilità]] [[University]] 
+Tags:  [[Analisi 2 e Probabilità]] [[Old Vault/Indexes/University]] 
 ![[Source Material/Images/Immagine 3.jpeg]]
 LINK: [[Source Material/Images/Immagine 3.jpeg]]
 CREATED At: 2024-12-12

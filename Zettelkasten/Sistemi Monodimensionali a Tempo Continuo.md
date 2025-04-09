@@ -1,4 +1,8 @@
-Tags: [[Tags/Fondamenti di Segnali e Trasmissione|Fondamenti di Segnali e Trasmissione]] [[University]]
+---
+sticker: emoji//0034-fe0f-20e3
+Order: "4"
+---
+Tags: [[Old Vault/Tags/Fondamenti di Segnali e Trasmissione|Fondamenti di Segnali e Trasmissione]] [[Old Vault/Indexes/University]]
 
 ## Dal concetto di Segnale al Concetto di Sistema
 Si passa dal come caratterizzare dal punto di vista matematico un segnale (nel dominio del tempo e nel dominio della frequenza), allo studio di come è possibile elaborare un segnale attraverso un sistema.
@@ -414,5 +418,137 @@ $$x(t)=\cos(\pi f_{0}t)\Longrightarrow y(t)=A(f_{0})\cos(\pi f_{0}t+\theta(f_{0}
 ![[Pasted image 20250408231045.png]]
 ![[Pasted image 20250408231405.png]]
 ## Densità Spettrale di Energia e Potenza
+I criteri di banda e selettività in frequenza posso essere rivisitati e ridefiniti considerando il contenuto energetico dei segnali. È quindi necessario esaminare il concetto di energia e potenza dei segnali a tempo continuo e studiare come queste grandezze vengono utilizzate dall'elaborazione dei medesimi con SLS
 ### Teorema di Parseval e Densità Spettrale di Energia
-I criteri di banda 
+Si considera un segnale $x(t)$ ad energia finita
+$$
+E_{x}\int_{-\infty}^\infty |x(t)|^2<\infty
+$$
+e si mostra come il calcolo di questa grandezza può essere effettuato anche nel dominio della frequenza. 
+
+> [!gray] Teorema di Parseval
+> **Dimostrazione:**
+> Si sfruttano le proprietà dei numeri complessi $|z|^2=z\cdot z^*$, $(a-jb)(a+jb)=a^2+b^2$, definizione di modulo al quadrato $|z|=\sqrt{ a^2+b^2 }$  
+> $$
+> \int_{-\infty}^\infty |x(t)|^2\ dt=\int_{-\infty}^\infty x(t)x(t)^*\ dt
+> $$
+> Si sfrutta l'antitrasformata  $(x(t))^*=\left( \int_{-\infty}^\infty X(f)e^{-j 2\pi ft}\ df \right)^*=\int_{-\infty}^\infty X(f)^* e^{-j 2\pi ft}\ df$
+> $$\begin{align}
+> &=\int_{t=-\infty}^\infty x(t)\left[ \int_{f=-\infty}^\infty X^*(f)e^{-j 2\pi ft}\ df \right]\ dt\overset{\text{Si scambiano gli integrali}}{=} \\
+> &=\int_{f=-\infty}^\infty X^*(f)\left[ \int_{t=-\infty}^\infty x(t)e^{-j 2\pi ft}\ dt \right]=\int_{f=-\infty}^\infty X^*(f)X(f)\ df= \int_{-\infty}^\infty|X(f)|^2\ df
+> \end{align}$$
+> In conclusione, si ottiene la relazione del teorema, che mostra che l'energia viene mantenuta in entrambi i domini
+> $$
+> \int_{-\infty}^\infty |x(t)|^2\ dt= \int_{-\infty}^\infty|X(f)|^2\ df
+> $$
+
+Dalla definizione di energia di un segnale, si ha che la quantità
+$$
+p_{x}(t)=|x(t)|^2
+$$
+rappresenta la potenza istantanea (normalizzata) del segnale, che integrata fornisce l'energia del segnale stesso (è una densità di energia nel tempo).
+Il significato fisico della quantità duale è 
+$$
+\mathrm E_{x}(f)=|X(f)|^2
+$$
+Detta *Densità Spettrale di Energia* del segnale $x(t)$.
+**Proprietà:**
+1. $\mathrm E_{x}(f)\ge 0$ (non assume valori negativi)
+2. $E_{x}=\int_{-\infty}^\infty \mathrm E_{x}(f)\ df$
+3. Se $x(t)$ è reale $\mathrm E_{x}(f)=\mathrm E_{x(-f)}$ (è pari)
+Si considera adesso il caso in cui si ha un solo SLS in cui in ingresso $x(t)$ e in uscita $y(t)$. La funzione $\mathrm{E}_{y}(f)$ relativa al segnale di uscita si può ricavare immediatamente nota $\mathrm{E}_{x}(f)$:
+$$
+\mathrm{E}_{y}(f)=|Y(f)|^2=|X(f)H(f)|^2=\underset{\text{Densità Spettrale in ingresso}}{|X(f)|^2}|H(f)|^2=\mathrm{E}_{x}(f)|H(f)|^2
+$$
+Si usano o moduli perché la potenza dipende dallo spettro di ampiezza, non da quello di fase, visto che dipende dalla forma del segnale e non dove si trova.
+La definizione di densità spettrale di energia mostra che, ai fini del calcolo dell'energia $x(t)$, risulta determinante il solo spettro del segnale stesso, mentre lo spettro di fase è ininfluente. La stessa osservazione a proposito della relazione fondamentale del filtraggio secondo la quale, ai fini del calcolo dell'energia del segnale di uscita, risulta determinante la sola risposta in ampiezza.
+### Densità Spettrale di Potenza
+I concetti introdotti riguardo ai segnali ad energia finita possono essere generalizzati ad un segnale $x(t)$ per il quale è finita la potenza
+$$
+P_{x}=\lim_{ T \to \infty }\int_{-\frac{T}{2}}^{\frac{T}{2}}x^2(t)\ dt<\infty 
+$$
+Il valore di questo integrale rappresenta l'energia del segnale troncato $x_{T}(t)=x(t)\text{rect}\left( \frac{t}{T} \right)$, che ha necessariamente energia finita.
+La densità spettrale di energia di $x_{T}(t)$ è dunque
+$$
+\mathrm{E}_{x(f)}=|X_{T}(f)|^2
+$$
+e l'energia associata a $x_{T}(t)$ è data da 
+$$
+E_{x_{T}} =\int_{-\infty}^\infty |X_{T}(f)|^2\ df
+$$
+Allora la potenza del segnale di partenza $x(t)$ può essere calcolata come
+$$
+P_{x}=\lim_{ T \to \infty } \frac{E_{x_{T}}}{T}=\lim_{ T \to \infty }\int_{-\infty}^\infty \frac{|X_{T}(f)|^2}{T}\ df=\int_{-\infty}^\infty \lim_{ T \to \infty } \frac{|X_{T}(f)|^2}{T}\ df   
+$$
+Con questo risultato si definisce una funzione di *Densità Spettrale di Potenza* ($E_{x_{T}}(f)$ densità spettrale di energia troncato)
+$$
+S_{x}(f)=\lim_{ T \to \infty } \frac{E_{x_{T}}}{T}=\lim_{ T \to \infty }  \frac{|X_{T}(f)|^2}{T}
+$$
+**Proprietà:**
+1. $S_{x}(f)\ge 0$
+2. Se $x(t)$ è reale $S_{x}(f)=S_{x}(-f)$ (è pari)
+3. $P_{x}=\int_{-\infty}^\infty S_{x}(f)\ df$
+4. Se il segnale $x(t)$ è posto in ingresso ad un SLS con risposta in frequenza $H(f)$ la densità spettrale di potenza del segnale di uscita $y(t)$ è legata a quella del segnale di ingresso dalla relazione $$
+S_{y}=S_{x}(f)|H(f)|^2$$
+### Funzione di Autocorrezione e Teorema di Wiener-Khintchine
+Le funzioni di densità spettrale di energia e potenza possono essere calcolate in maniera alternativa se si introduce una nuova grandezza che caratterizza ulteriormente il segnale nel dominio del tempo: la *Funzione di Autocorrelazione*. Per un segnale $x(t)$ ad energia finita si definisce questa grandezza definita da 
+$$
+R_{x}=\int_{-\infty}^\infty x(t)x(t-\tau)\ d\tau
+$$
+Il risultato dipende dal ritardo della replica $x(t-\tau)$ del segnale dato, questa notazione suggerisce questa dipendenza.
+La funzione di autocorrelazione fornisce informazioni utili sulla rapidità di variazione del segnale $x(t)$.
+![[Pasted image 20250409103517.png]]
+A parità di ritardo ed energia, il valore della funzione della funzione di autocorrelazione cambia a seconda della velocità di variazione di $x(t)$ e $y(t)$.
+- $x(t)$ che è più veloce ha un valore della autocorrelazione minore di quello del segnale $y(t)$ a parità di ritardo $\tau$.
+- Quando $\tau$ assume valori crescenti si riduce l'ampiezza dell'intervallo in cui sia $x(t)$ che $x(t-\tau)$ assumono valori non nulli, di conseguenza tende a diminuire il valore di $R_{x}(\tau)$.
+![[Pasted image 20250409103943.png]]
+**Proprietà:**
+1. $R_{x}(0)=\int_{-\infty}^\infty x^2(t)\ dt= E_{x}$ (la funzione di autocorrelazione valutata per $\tau=0$ coincide con l'energia del segnale)
+2. $|R_{x}(\tau)|\le R_{x}(0)$ (il segnale è massimamente correlato con se stesso quando $\tau_{0}0$, cioè quando $x(t-\tau)=x(t)$)
+3. $R_{x}(\tau)=R_{x}(-\tau)$ (è pari)
+È possibile mettere in relazione la funzione di autocorrelazione con la densità spettrale di energia del segnale
+
+> [!gray] Teorema di Wiener-Khintchine
+> Questo teorema afferma ce la densità spettrale di energia di un segnale è pari alla trasformata di Fourier  della rispettiva funzione di autocorrelazione
+> <br>**Dimostrazione:**
+> $$
+> R_{x}(\tau)=\int_{-\infty}^\infty x(\alpha)x(\alpha -\tau)\ d\alpha = \overset{\begin{aligned}
+> &\text{Convoluzione tra il segnale e il segnale rigirato }
+> \\ & \text{(che quindi torna come prima)}
+> \end{aligned}}{\int_{-\infty}^\infty x(\alpha)x(-(\tau-\alpha))\ d\alpha=x(\tau)\otimes x(-\tau)}
+> $$
+> Per il teorema della convoluzione (corrispondenza in frequenza al prodotto) si ha che la trasformata è allora
+> $$
+> R_{x}(\tau)\iff X(f)X(-f)
+> $$
+> ed essendo il segnale $x(t)$ reale risulta $X(-f)=X^*(f)$ segue che
+> $$
+> R_{x}(\tau)\iff |X(f)|^2=E_{x}(f)
+> $$
+> <br>La definizione di funzione di autocorrelazione appena data si applica solo al caso di segnali ad energia finita, per i segnali a potenza finita si deve modificare come segue (visto che non si potrebbe integrare tra $\pm \infty$):
+> $$
+> R_{x}(\tau)=\lim_{ T \to \infty } \frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}x(t)x(t-\tau)\ d\tau 
+> $$
+> da cui, in particolare
+> $$
+> R_{x}(0)=P_{x}
+> $$
+> Questa funzione di autocorrelazione possiede tutte le proprietà formali per i segnali ad energia finita; inoltre il teorema è di nuovo applicabile, e stabilisce l'uguaglianza tra la trasformata di Fourier della funzione di autocorrelazione e la densità spettrale di potenza del segnale $x(t)$
+> $$
+> S_{x}(f)=\int_{-\infty}^\infty R_{x}(\tau)e^{-j 2\pi f\tau} = 2\int_{0}^\infty R_{x}(\tau)\cos(2 \pi f\tau)\ d\tau
+> $$
+
+> [!example]+ Esempio: Calcolo della densità spettrale di energia dell'impulso rettangolare
+> $x(t)=\text{rect}\left( \frac{t}{T} \right)$
+> $$\begin{align}
+> &X(f)=T\text{sinc}(fT) \\
+> &E_{x}(f)=|X(f)|^2=T^2\text{sinc}^2(fT)
+> \end{align}$$
+> Si può ottenere lo stesso risultato calcolando la funzione di autocorrelazione data da
+> $$
+> R_{x}(\tau)=x(\tau)\otimes  x(-\tau) =\underset{\begin{aligned}
+> &\text{rect}\left( \frac{\tau}{T} \right)\otimes \text{rect}\left( \frac{\tau}{T} \right)=T\text{tr}\left( \frac{\tau}{T} \right)
+> \\ & \text{conv tra due rect} = \text{traingolo}
+> \end{aligned}}{\text{rect}\left( \frac{\tau}{T} \right)\otimes \text{rect} \left( \frac{\tau}{T} \right)}= T\left( 1- \frac{|\tau|}{T} \right)\text{rect}\left( \frac{\tau}{2T} \right)
+> $$
+> Se si calcola la trasformata di Fourier di $R_{x}(\tau)$ si riottiene il risultato ricavato prima. 

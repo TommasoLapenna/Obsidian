@@ -1,4 +1,4 @@
-Tags: [[Analisi 2 e Probabilità]] [[University]] 
+Tags: [[Analisi 2 e Probabilità]] [[Old Vault/Indexes/University]] 
 
 # Riassunto Prima Parte
 Una v.a. si dice *Continua* se esiste una funzione non negativa $f_X$, chiamata *Densità*, t.c. per ogni insieme $B$ $$P\{X\in B\}=\int_B f_X(x)\ dx$$ $f_X$ continua a tratti e integrabile in senso generalizzato

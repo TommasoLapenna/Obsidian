@@ -1,4 +1,4 @@
-Tags: [[Analisi 2 e Probabilità]] [[University]]
+Tags: [[Analisi 2 e Probabilità]] [[Old Vault/Indexes/University]]
 
 ### Definizione
 $X$ è una v.a. *Continua* se esiste una funzione non negativa definita per ogni $\in\mathbb{R}$ t.c. per ogni sottoinsieme $B$ nei reali $$P\{X\in B\}=\int_B f(x) \ dx$$$f$ è la funzione di densità

@@ -1,4 +1,4 @@
-Tags: [[Analisi 2 e Probabilità]] [[University]] 
+Tags: [[Analisi 2 e Probabilità]] [[Old Vault/Indexes/University]] 
 
 1) Comporre le funzioni con
 	$\left\{\begin{matrix} x=x_0+\rho\cos\theta \\ y=y_0+\rho\sin\theta \end{matrix}\right.$

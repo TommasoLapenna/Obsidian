@@ -1,4 +1,4 @@
-Tags: [[Analisi 2 e Probabilità]] [[University]]
+Tags: [[Analisi 2 e Probabilità]] [[Old Vault/Indexes/University]]
 
 In analisi 1, $f:A\in \mathbb{R}^1\rightarrow\mathbb{R}^1$, 1 ingresso - 1 uscita
 **Obiettivo:** estendere il caso in cui i dati in ingresso sono più di uno

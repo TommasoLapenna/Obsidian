@@ -12,4 +12,4 @@ sticker: emoji//1f4da
 
 ![[Fisica I]]
 
-![[Fondamenti di Segnali e Trasmissione]] 
+![[Old Vault/Tags/Fondamenti di Segnali e Trasmissione]] 

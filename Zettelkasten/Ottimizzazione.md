@@ -1,4 +1,4 @@
-Tags: [[Analisi 2 e Probabilità]] [[University]] 
+Tags: [[Analisi 2 e Probabilità]] [[Old Vault/Indexes/University]] 
 
 OBIETTIVO: max/min una certa quantità sotto opportune condizioni
 	- Ricerca di estremi all'interno del dominio $A$ di $f$ (si chiamano *estremi liberi* se $A$ è aperto)

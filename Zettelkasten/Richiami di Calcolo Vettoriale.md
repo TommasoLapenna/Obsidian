@@ -1,4 +1,4 @@
-Tags: [[Analisi 2 e Probabilità]] [[University]]
+Tags: [[Analisi 2 e Probabilità]] [[Old Vault/Indexes/University]]
 
 $\mathbb{R}^n$ spazio ambiente (n copie di $\mathbb{R}$)
 Elementi (vettori)

@@ -1,4 +1,4 @@
-Tags: [[Analisi 2 e Probabilità]] [[University]] 
+Tags: [[Analisi 2 e Probabilità]] [[Old Vault/Indexes/University]] 
 
 # Derivate Parziali, Piano Tangente, Differenziabilità
 - Introduzione al concetto di derivate per $f:A\subseteq\mathbb{R}^n\to\mathbb{R}$

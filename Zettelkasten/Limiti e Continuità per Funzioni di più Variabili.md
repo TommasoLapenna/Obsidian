@@ -1,4 +1,4 @@
-Tags: [[Analisi 2 e Probabilità]] [[University]] 
+Tags: [[Analisi 2 e Probabilità]] [[Old Vault/Indexes/University]] 
 
 ### DEFINIZIONE (Limite di Successione)
 Data una successione di punti ${\{x_k\}}^\infty_{k=1}$ di $\mathbb{R}^n$. Si dice $$x_k\longrightarrow x_0 \ per \ k\rightarrow +\infty \quad se \ |x_k-x_0|\rightarrow0$$

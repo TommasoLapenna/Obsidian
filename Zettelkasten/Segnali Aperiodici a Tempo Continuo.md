@@ -1,4 +1,8 @@
-Tags: [[Tags/Fondamenti di Segnali e Trasmissione|Fondamenti di Segnali e Trasmissione]] [[University]]
+---
+sticker: emoji//0033-fe0f-20e3
+Order: "3"
+---
+Tags: [[Old Vault/Tags/Fondamenti di Segnali e Trasmissione|Fondamenti di Segnali e Trasmissione]] [[Old Vault/Indexes/University]]
 
 ## Dalla Serie all'Integrale di Fourier
 Si può rappresentare un segnale non periodico come un opportuna sovrapposizione di segnali elementari (in particolare sinusoidi).

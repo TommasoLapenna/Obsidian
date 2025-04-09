@@ -1,4 +1,8 @@
-Tags: [[Tags/Fondamenti di Segnali e Trasmissione|Fondamenti di Segnali e Trasmissione]] [[University]]
+---
+sticker: emoji//0032-fe0f-20e3
+Order: "2"
+---
+Tags: [[Old Vault/Tags/Fondamenti di Segnali e Trasmissione|Fondamenti di Segnali e Trasmissione]] [[Old Vault/Indexes/University]]
 
 \int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}x(t)
 ## Analisi Armonica dei Segnali Periodici

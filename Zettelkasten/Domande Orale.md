@@ -1,4 +1,4 @@
-Tags: [[Basi di Dati]] [[University]]
+Tags: [[Basi di Dati]] [[Old Vault/Indexes/University]]
 Domande: [[Domande Basi di Dati]]
 # MODELLO RELAZIONALE
 
