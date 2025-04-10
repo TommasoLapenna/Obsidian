@@ -229,8 +229,11 @@ La funzione $\text{sinc}$ è pari in quanto rapporto di due funzioni dispari. Ne
 ### Segnali Pari
 
 >[!gray] Il segnale $x(t)$ è pari se
->1. $x(t)=x(-t)$. Il coefficiente della serie $X_{k}$ allora è una funzione pari di $k$ 
->2. $X_{k}=X_{-k}$ (essendo $x(t)$ reale, $X_{-k}=X^*_{k}$) si può scrivere $x(t)=X_{0}+2\sum_{k=1}^\infty \cos(2\pi kf_{0}t)$ 
+>1. $x(t)=x(-t)$. Il coefficiente della serie $X_{k}$ allora è una funzione pari di $k$  $$X_{k}=X_{-k}$$
+>2. Essendo $x(t)$ reale, si ha $X_{-k}=X^*_{k}$, quindi <span style="background:rgba(240, 200, 0, 0.2)">il coefficiete $X_{k}$ è reale</span>
+>$$ X_{-k}=X_{k}^*=X_{k}
+>$$
+>e si può scrivere$x(t)=X_{0}+2\sum_{k=1}^\infty \cos(2\pi kf_{0}t)$ 
 >
 >**Dimostrazione:** 
 >1. 
@@ -253,8 +256,7 @@ x(t)&= X_{0}+\sum^\infty_{k=1} X_{k}e^{j_{2}\pi kf_{0}t}+\sum_{k=-\infty}^{-1}X_
 
 Se $x(t)$ è reale e pari si può usare una formula semplificativa per il calcolo fi $X_{k}$:
 $$\begin{align}
-X_{k}&=\frac{1}{T_{0}}\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}}x(t)e^{-j_{2}\pi kf_{0}t}\ dt=\frac{1}{T_{0}}\underset{\text{pari}\cdot \text{pari}=\text{pari}}{\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}}x(t)\cos(2\pi kf_{0}t)\ dt} \\
-&=-\frac{j}{T_{0}}\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}}x(t)\sin(2\pi kf_{0}t)\ dt
+X_{k}&=\frac{1}{T_{0}}\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}}x(t)e^{-j_{2}\pi kf_{0}t}\ dt=\frac{1}{T_{0}}\underset{\text{pari}\cdot \text{pari}=\text{pari}}{\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}}x(t)\cos(2\pi kf_{0}t)\ dt} -\frac{j}{T_{0}}\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}}x(t)\sin(2\pi kf_{0}t)\ dt
 \end{align}$$
 L'integrale di una funzione pari su un intervallo simmetrico rispetto a $0$ è pari al doppio dell'integrale su metà dell'intervallo
 $$
@@ -263,8 +265,10 @@ $$
 L'integrale di una funzione dispari su un intervallo simmetrico rispetto a $0$ è nullo
 ### Segnali Dispari
 >[!gray] Il segnale $x(t)$ è dispari se:
->1. $x(t)=-x(-t)$. Il coefficiente della serie di Fourier $X_{k}$ è una funzione dispari di $k$.
->2. $X_{k}=-X_{k}$. Inoltre, essendo $x(t)$ reale si ha $X_{-k}=X^*_{k}$, quindi il coefficiente $X_{k}$ è immaginario puro: $X_{-k}=X^*_{k}=-X_{k}$, ne consegue che $X_{0}=0$. SI può scrivere $$x(t)=2j\sum_{k=1}^\infty X_{k}\sin(2\pi kf_{0}t)$$
+>1. $x(t)=-x(-t)$. Il coefficiente della serie di Fourier $X_{k}$ è una funzione dispari di $k$. $$ X_{-k}=-X_{k}
+>$$
+>2. Inoltre, essendo $x(t)$ anche reale si ha $X_{-k}=X^*_{k}$, quindi il coefficiente <span style="background:rgba(240, 200, 0, 0.2)">$X_{k}$ è immaginario puro </span>: $X_{-k}=X^*_{k}=-X_{k}$, ne consegue che $X_{0}=0$.  $$X_{-k}=X_{k}^*=-X_{-k}$$
+Si può scrivere $$x(t)=2j\sum_{k=1}^\infty X_{k}\sin(2\pi kf_{0}t)$$
 **Dimostrazione:**
 >Se $x(t)$ è reale e dispari si può usare una formula semplificativa per il calcolo di $X_{k}$
 >$$\begin{align}
@@ -310,7 +314,7 @@ Per osservare le peculiarità precedentemente menzionate, si considera lo svilup
 con 
 $$
 x(t)=\begin{cases}
-A\left( 1+ \frac{4t}{T_{0}} \right) & -\frac{T_{0}}{2}\le 2 \le 0 \\
+A\left( 1+ \frac{4t}{T_{0}} \right) & -\frac{T_{0}}{2}\le t\le 0 \\
 A\left( 1- \frac{4t}{T_{0}} \right) & 0\le t \le \frac{T_{0}}{2}
 \end{cases}
 $$
