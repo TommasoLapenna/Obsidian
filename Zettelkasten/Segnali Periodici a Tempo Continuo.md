@@ -59,20 +59,22 @@ Si determina un espressione per il calcolo del coefficiente $X_{n}$:
 > \begin{aligned}
 > &\text{Si ipotizza che la serie converga uniformemente}
 > \end{aligned} \\
-> &\rightarrow \int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}x(t)e^{-j_{2}\pi f_{0}t}\ dt= \sum_{k=-\infty}^\infty\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}e^{j_{2}\pi(k-n)f_{0}t}\ dt\rightarrow \begin{aligned}
-> &\text{Si calcola l'integrale del secondo} \\
-> &\text{membro}
-> \end{aligned}  \\
+> &\rightarrow \int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}x(t)e^{-j_{2}\pi f_{0}t}\ dt= \sum_{k=-\infty}^\infty X_{k}\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}e^{j_{2}\pi(k-n)f_{0}t}\ dt
+>\end{align}
+>$$
+>Si calcola l'integrale del secondo membro
+>$$
+\begin{align}
 > &\rightarrow \int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}e^{j_{2}\pi(k-n)f_{0}t}\ dt=\left[ \frac{e^{j_{2}\pi(k-n)f_{0}t}}{j_{2}\pi(k-nf_{0})} \right]^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}} \overset{ \text{Essendo }f_{0}T_{0}=1}{=} \frac{e^{j_{2}\pi(k-n)}-e^{-j(k-n)}}{j_{2}\pi(k-n)f_{0}}= \\
 > &= \frac{\sin[\pi(k-n)]}{\pi(k-n)f_{0}}
 > \end{align}$$
 > Il valore dell'integrale è pertanto nullo se $k\ne n$ (essendo $\sin[\pi(k-n)]=0$). Invece se $k=n$ il risultato finale perde significato, ma se si sotituisce nell'espressione iniziale si ricava il risultato $T_{0}$
 > $$
-> \Longrightarrow \int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}x(t)e^{j_{2}\pi nf_{0}t}\ dt=\sum_{k=-\infty}^\infty\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}e^{j_{2}\pi(k-n)f_{0}t}\ dt= X_{n}T_{0}
+> \Longrightarrow \int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}x(t)e^{j_{2}\pi nf_{0}t}\ dt=\sum_{k=-\infty}^\infty X_{k}\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}e^{j_{2}\pi(k-n)f_{0}t}\ dt= X_{n}T_{0}
 > $$
 > <span style="background:rgba(240, 200, 0, 0.2)">dalla quale si ottiene infine l'espressione del generico coefficiente di Fourier $X_{k}$:</span>
 > $$
-> X_{n}= \frac{1}{T_{0}}\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}} x(t)e^{-j_{2}\pi nf_{0}t}\ dt\qquad X_{0}= \frac{1}{T_{0}}\int_{\frac{-T_{0}}{2}}^{\frac{T_{0}}{2}}x(t)\ dt\text{ (corrisponde al valore medio)}
+> X_{k}= \frac{1}{T_{0}}\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}} x(t)e^{-j_{2}\pi nf_{0}t}\ dt\qquad X_{0}= \frac{1}{T_{0}}\int_{\frac{-T_{0}}{2}}^{\frac{T_{0}}{2}}x(t)\ dt\text{ (corrisponde al valore medio)}
 > $$
 
 ### Sviluppo in Serie di Fourier (Forma Rettangolare)
@@ -97,7 +99,7 @@ Occorre verificare se questi tipi di segnali si possono rappresentare attraverso
 ### Criterio di Dirichlet
 Un insieme di condizioni sufficienti che garantiscono la possibilità di sviluppare un segnale in serie di Fourier è il cosiddetto *Criterio di Dirichlet*, che può essere enunciato nel seguente modo:
 
->[!gray] Criterio di Dirichlet
+>[!gray] <span style="background:rgba(240, 200, 0, 0.2)">Criterio di Dirichlet</span>
 > 1. Se $x(t)$ è assolutamente integrabile sul periodo $T_{0}$ (se è verificata la condizione $\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}|x(t)|\ dt<\infty$)
 > 2. Se $x(t)$ è continua o presenta in un periodo un numero finito di discontinuità di 1° specie
 > 3. Se $x(t)$ è derivabile rispetto al tempo nel periodo, escluso al più un numero finito di punti nei quali esistono finite la derivata destra e sinistra
