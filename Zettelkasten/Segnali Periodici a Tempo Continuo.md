@@ -229,7 +229,7 @@ La funzione $\text{sinc}$ è pari in quanto rapporto di due funzioni dispari. Ne
 ### Segnali Pari
 
 >[!gray] Il segnale $x(t)$ è pari se
->1. $x(t)=x(-t)$. Il coefficiente della serie $X_{k}$ allora è una funzione pari di $X_{k}$ 
+>1. $x(t)=x(-t)$. Il coefficiente della serie $X_{k}$ allora è una funzione pari di $k$ 
 >2. $X_{k}=X_{-k}$ (essendo $x(t)$ reale, $X_{-k}=X^*_{k}$) si può scrivere $x(t)=X_{0}+2\sum_{k=1}^\infty \cos(2\pi kf_{0}t)$ 
 >
 >**Dimostrazione:** 
