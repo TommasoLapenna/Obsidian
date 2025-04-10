@@ -11,15 +11,14 @@ Un segnale è periodico se $x(t)=x(t+T_{0})$, con potenza media $P_{x}=\frac{1}{
 > Il segnale coseno ($x(t))=\cos(2\pi tf_{0}+\theta)$) è conosciuto completamente se è nota la sua frequenza ($f_{0}$) e la fase iniziale ($\theta$). 
 Esiste una rappresentazione che permette di analizzare un segnale reale periodico con la stessa semplicità
 
-Attraverso l'*Analisi di Fourier*, secondo le opportune ipotesi, è possibile esprimere un segnale reale periodico come somma di oscillazioni sinusoidali (con la relativa ampiezza, frequenza e fase)
-$$x(t)=a_{0}+a_{1}\cos(2\pi f_{1}t+\theta_{1})+a_{2}\cos(2\pi f_{2}+\theta_{2})+\ldots$$
+Attraverso l'*Analisi di Fourier*, secondo le opportune ipotesi, è possibile esprimere un segnale reale periodico come somma di oscillazioni sinusoidali (conm la relativa ampiezza, frequenza e fase)
+$$
+x(t)=a_{0}+a_{1}\cos(2\pi f_{1}t+\theta_{1})+a_{2}\cos(2\pi f_{2}+\theta_{2})+\ldots
+$$
 ### Sviluppo in Serie di Fourier (Forma Polare)
-
-> [!gray] ->
-> $$
-> x(t)=A_{0}+2\sum^\infty_{k=1}A_{k}\cos(2\pi kf_{0}t+\theta_{k})
-> $$
-
+$$
+x(t)=A_{0}+2\sum^\infty_{k=1}A_{k}\cos(2\pi kf_{0}t+\theta_{k})
+$$
 ![[Pasted image 20250324192624.png|center|450]]
 è rappresentato come la somma di una costante $A_{0}$ e di una serie il cui il $k-$esimo termine (detto $k-$esima oscillazione armonica, o armonica) ha:
 - Ampiezza $2A_{k}$
@@ -28,56 +27,53 @@ $$x(t)=a_{0}+a_{1}\cos(2\pi f_{1}t+\theta_{1})+a_{2}\cos(2\pi f_{2}+\theta_{2})+
 
 I termini coseno costituiscono la base dello spazio vettoriale dei segnali periodici di periodo $T_{0}$
 ![[Pasted image 20250324192654.png]]
+Attraverso le formule di Eulero, la serie di Fourier può essere riscritta nel seguente modo:
+$$
+\begin{align}
+x(t)&=A_{0}+2\sum_{k=1}^\infty A_{k}\cos(2\pi kf_{0}t+\theta_{k})=A_{0} +2\sum_{k=1}^\infty A_{k} \frac{e^{j_{2}\pi kf_{0}t+\theta_{k}}+e{-j_{2}\pi kf_{0}t+\theta_{k}}}{2} \\
+&=A_{0}+\sum_{k=1}^\infty A_{k}e^{j\theta_{k}}e^{j_{2}\pi kf_{0}t}+\sum_{k=1}^\infty A_{k}A_{k}e^{-j\theta_{k}}e^{-j_{2}\pi kf_{0}t} \\
+&= A_{0}+\sum_{k=1}^\infty A_{k}e^{j\theta_{k}}e^j_{2}\pi f_{0}t+\sum_{k=-\infty}^{-1}A_{-k}e^{-j\theta_{{-k}}}e^{j_{2}\pi kf_{0}t}
+\end{align}
+$$
+Si definiscono le quantità:
+$$X_{0}=A_{0}, \quad X_{k}=A_{k}e^{j\theta}\text{ con } k=-1,-2,\ldots$$
+Si ottiene :
+$$
+x(t)=X_{0}+\sum_{k=1}^\infty X_{k}e^{j_{2}\pi f_{0}t}+\sum_{k=-1}^{-\infty} X_{k}e^{j_{2}\pi f_{0}t}
+$$
 ### Sviluppo in Serie di Fourier (Forma Complessa)
-
-> [!gray] ->
-> Attraverso le formule di Eulero, la serie di Fourier può essere riscritta nel seguente modo:
-> $$
-> \begin{align}
-> x(t)&=A_{0}+2\sum_{k=1}^\infty A_{k}\cos(2\pi kf_{0}t+\theta_{k})=A_{0} +2\sum_{k=1}^\infty A_{k} \frac{e^{j_{2}\pi kf_{0}t+\theta_{k}}+e^{-j_{2}\pi kf_{0}t+\theta_{k}}}{2} \\
-> &=A_{0}+\sum_{k=1}^\infty A_{k}e^{j\theta_{k}}e^{j_{2}\pi kf_{0}t}+\sum_{k=1}^\infty A_{k}A_{k}e^{-j\theta_{k}}e^{-j_{2}\pi kf_{0}t} \\
-> &= A_{0}+\sum_{k=1}^\infty A_{k}e^{j\theta_{k}}e^{j2\pi f_{0}t}+\sum_{k=-\infty}^{-1}A_{-k}e^{-j\theta_{{-k}}}e^{j_{2}\pi kf_{0}t}
-> \end{align}
-> $$
-> Si definiscono le quantità:
-> $$X_{0}=A_{0}, \qquad X_{k}=A_{k}e^{j\theta_{k}}\text{ con }k=1,2,\ldots\qquad X_{k}=A_{-k}e^{-j\theta_{-k}}\text{ con }k=-1,-2,\ldots$$
-> <span style="background:rgba(240, 200, 0, 0.2)">Si ottiene la trasformata in forma complessa:</span>
-> $$
-> x(t)=X_{0}+\sum_{k=1}^\infty X_{k}e^{j_{2}\pi f_{0}t}+\sum_{k=-\infty}^{-1} X_{k}e^{j_{2}\pi f_{0}t}=\sum_{k=-\infty}^\infty X_{k}e^{j 2\pi kf_{0}t}
-> $$
-
 Si determina un espressione per il calcolo del coefficiente $X_{n}$:
 
 > [!gray] ->
 > $$\begin{align} \\
 > x(t)&=\sum^\infty_{k=-\infty}X_{k}e^{j_{2}\pi f_{0}t}\rightarrow \begin{aligned}
 > &\text{Si moltiplicano entramni i membri per } \\
->  &e^{j_{2}\pi kf_{0}t}\text{ e si  integra nel periodo }T_{0} 
-> \end{aligned}\rightarrow \int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}x(t)e^{-j_{2}\pi f_{0}t}\ dt= \\
+>  &e^{j_{2}\pi nf_{0}t}\text{ e si  integra nel periodo }T_{0} 
+> \end{aligned}\rightarrow \int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}x(t)e^{-j_{2}\pi nf_{0}t}\ dt= \\
 > &=\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}\sum_{k=-\infty}^\infty X_{k}e^{j_{2}\pi kf_{0}t}e^{-j_{2}\pi nf_{0}}\ dt\rightarrow  
 >   
 > \begin{aligned}
 > &\text{Si ipotizza che la serie converga uniformemente}
 > \end{aligned} \\
-> &\rightarrow \int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}x(t)e^{-j_{2}\pi f_{0}t}\ dt= \sum_{k=-\infty}^\infty X_{k}\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}e^{j_{2}\pi(k-n)f_{0}t}\ dt
->\end{align}
->$$
->Si calcola l'integrale del secondo membro
->$$
-\begin{align}
+> &\rightarrow \int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}x(t)e^{-j_{2}\pi nf_{0}t}\ dt= \sum_{k=-\infty}^\infty\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}e^{j_{2}\pi(k-n)f_{0}t}\ dt\rightarrow \end{align}
+> $$
+> Si calcola lì'integrale del secondo membro
+> $$
+> \begin{align}
 > &\rightarrow \int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}e^{j_{2}\pi(k-n)f_{0}t}\ dt=\left[ \frac{e^{j_{2}\pi(k-n)f_{0}t}}{j_{2}\pi(k-nf_{0})} \right]^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}} \overset{ \text{Essendo }f_{0}T_{0}=1}{=} \frac{e^{j_{2}\pi(k-n)}-e^{-j(k-n)}}{j_{2}\pi(k-n)f_{0}}= \\
 > &= \frac{\sin[\pi(k-n)]}{\pi(k-n)f_{0}}
 > \end{align}$$
 > Il valore dell'integrale è pertanto nullo se $k\ne n$ (essendo $\sin[\pi(k-n)]=0$). Invece se $k=n$ il risultato finale perde significato, ma se si sotituisce nell'espressione iniziale si ricava il risultato $T_{0}$
 > $$
-> \Longrightarrow \int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}x(t)e^{j_{2}\pi nf_{0}t}\ dt=\sum_{k=-\infty}^\infty X_{k}\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}e^{j_{2}\pi(k-n)f_{0}t}\ dt= X_{n}T_{0}
+> \Longrightarrow \int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}x(t)e^{j_{2}\pi nf_{0}t}\ dt=\sum_{k=-\infty}^\infty\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}e^{j_{2}\pi(k-n)f_{0}t}\ dt= X_{n}T_{0}
 > $$
-> <span style="background:rgba(240, 200, 0, 0.2)">dalla quale si ottiene infine l'espressione del generico coefficiente di Fourier $X_{k}$:</span>
+> dalla quale si ottiene infine <span style="background:rgba(240, 200, 0, 0.2)">l'espressione del generico coefficiente di Fourier $X_{k}$:</span>
 > $$
-> X_{k}= \frac{1}{T_{0}}\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}} x(t)e^{-j_{2}\pi nf_{0}t}\ dt\qquad X_{0}= \frac{1}{T_{0}}\int_{\frac{-T_{0}}{2}}^{\frac{T_{0}}{2}}x(t)\ dt\text{ (corrisponde al valore medio)}
+> X_{n}= \frac{1}{T_{0}}\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}} x(t)e^{-j_{2}\pi nf_{0}t}\ dt\qquad X_{0}= \frac{1}{T_{0}}\int_{\frac{-T_{0}}{2}}^{\frac{T_{0}}{2}}x(t)\ dt\text{ (corrisponde al valore medio)}
 > $$
-
+>
 ### Sviluppo in Serie di Fourier (Forma Rettangolare)
+
 $$
 \begin{align}
 x(t)&=A_{0}+2\sum^\infty_{k=1} A_{k}\cos(2\pi kf_{0}t+\theta_{k}) \\
@@ -99,7 +95,7 @@ Occorre verificare se questi tipi di segnali si possono rappresentare attraverso
 ### Criterio di Dirichlet
 Un insieme di condizioni sufficienti che garantiscono la possibilità di sviluppare un segnale in serie di Fourier è il cosiddetto *Criterio di Dirichlet*, che può essere enunciato nel seguente modo:
 
->[!gray] <span style="background:rgba(240, 200, 0, 0.2)">Criterio di Dirichlet</span>
+>[!gray] Criterio di Dirichlet
 > 1. Se $x(t)$ è assolutamente integrabile sul periodo $T_{0}$ (se è verificata la condizione $\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}|x(t)|\ dt<\infty$)
 > 2. Se $x(t)$ è continua o presenta in un periodo un numero finito di discontinuità di 1° specie
 > 3. Se $x(t)$ è derivabile rispetto al tempo nel periodo, escluso al più un numero finito di punti nei quali esistono finite la derivata destra e sinistra
