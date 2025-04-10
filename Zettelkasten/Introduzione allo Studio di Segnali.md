@@ -78,7 +78,7 @@ Il segnale è completamente noto se si conosce il suo valore all'interno di un p
 
 È dato un segnale $x(t)$ di durata finita in $\left( -\frac{T}{2}, \frac{T}{2} \right)$, quindi aperiodico, ovvero per cui $x(t)=0$ per $|t|> \frac{T}{2}$. A questo segnale si può associare un segnale periodico ripetendo $x(t)$ con periodo $T$ (o $T'>T$).
 
-> [!gray] Dato un segnale periodico $x(t)$ di periodo $T_{0}$ e tale che $\int_{{\frac{T}{2}}}^ \frac{T}{2} |x(t)|^2\ dt <\infty$, si può dimostrare che ha energia finita:
+> [!gray] Dato un segnale periodico $x(t)$ di periodo $T_{0}$ e tale che $\int_{{\frac{T}{2}}}^ \frac{T}{2} |x(t)|^2\ dt <\infty$, si può dimostrare che ha energia infinita:
 >**Dimostrazione**
 $E=\int_{-\infty}^\infty|x(t)|^2\ dt=\infty$, essendo $x(t)$ periodico, $|x(t)|$ non va mai a $0$, quindi l'integrale non converge. Si tratta quindi di una somma di infinite aree di base $T_{0}$ che non valgono $0$
 
@@ -107,7 +107,7 @@ $$
 \frac{1}{2} & t=0 \\
 0 & t<0
 \end{cases} \\
-& E_{u}=\int_{-\infty}^\infty|u(t)|^2\ dt =\int_{-\infty}^\infty 1\ dt  \\
+& E_{u}=\int_{-\infty}^\infty|u(t)|^2\ dt =\int_{0}^\infty 1\ dt  \\
 
 &P_{u}=\lim_{ T \to \infty } \frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}|u(t)|^2\ dt =\lim_{ T \to \infty } \frac{1}{T}\int_{0}^{\frac{T}{2}}1\ dt=\lim_{ T \to \infty } \frac{1}{T}\cdot \frac{T}{2}=\frac{1}{2}&
 \end{align}
