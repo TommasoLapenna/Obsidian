@@ -150,7 +150,7 @@ Gli spettri di ampiezza e fase del segnale sono a righe, perciò sono discreti, 
 Calcolare il complesso coniugato corrisponde al cambiare il segno della fase, quindi
 $$
 \begin{align}
-X_{k}&= \frac{1}{T_{0}}\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}x(t)e^{-j_{2}\pi kf_{0}t}\ dt\longrightarrow X_{k}^*\left( \frac{1}{T_{0}}\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}}x(t)^*e^{-j_{2}\pi kf_{0}t} \right)^* \\
+X_{k}&= \frac{1}{T_{0}}\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}x(t)e^{-j_{2}\pi kf_{0}t}\ dt\longrightarrow X_{k}^*=\left( \frac{1}{T_{0}}\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}}x(t)^*e^{-j_{2}\pi kf_{0}t} \right)^* \\
 &=\frac{1}{T_{0}}\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}}x(t)^*e^{j_{2}\pi kf_{0}t}\ dt = \frac{1}{T_{0}}\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}}x(t)e^{-j_{2}\pi (-k)f_{0}t}\ dt = X_{-k}
 \end{align}
 $$
