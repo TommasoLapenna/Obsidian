@@ -125,6 +125,7 @@ Si ha che ogni segnale $x(t)$ che soddisfa il Criterio di Dirichlet può essere 
 ![[Pasted image 20250325161814.png]]
 
 Gli spettri di ampiezza e fase del segnale sono a righe, perciò sono discreti, in quanto sono definiti in corrispondenza delle frequenze armoniche. Gli spettri di ampiezza dei segnali periodici si misurano con gli analizzatori di spettro.
+Calcoli esempi sotto nella slide 2
 
 >[!example]+ Esempio: 
 >$x(t)=a\cos(2\pi f_{0}t)$
@@ -150,7 +151,7 @@ Gli spettri di ampiezza e fase del segnale sono a righe, perciò sono discreti, 
 Calcolare il complesso coniugato corrisponde al cambiare il segno della fase, quindi
 $$
 \begin{align}
-X_{k}&= \frac{1}{T_{0}}\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}x(t)e^{-j_{2}\pi kf_{0}t}\ dt\longrightarrow X_{k}^*=\left( \frac{1}{T_{0}}\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}}x(t)^*e^{-j_{2}\pi kf_{0}t} \right)^* \\
+X_{k}&= \frac{1}{T_{0}}\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}x(t)e^{-j_{2}\pi kf_{0}t}\ dt\longrightarrow X_{k}^*=\left( \frac{1}{T_{0}}\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}}x(t)e^{-j_{2}\pi kf_{0}t} \right)^* \\
 &=\frac{1}{T_{0}}\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}}x(t)^*e^{j_{2}\pi kf_{0}t}\ dt = \frac{1}{T_{0}}\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}}x(t)e^{-j_{2}\pi (-k)f_{0}t}\ dt = X_{-k}
 \end{align}
 $$
