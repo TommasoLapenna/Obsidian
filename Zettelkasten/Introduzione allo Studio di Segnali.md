@@ -26,16 +26,16 @@ Si possono inoltre dividere i segnali nelle seguenti classi:
 Dalla legge di Ohm si sa che la potenza dissipata sul resistore $P=R\cdot i^2(t)\ [W]$, mentre l'energia dissipata sul resistore è $E=R\int_{-\infty}^{\infty}|i^2|(t)\ dt$. Si può quindi osservare il rapporto di proporzionalità tra potenza istantanea ed il quadrato del segnale.
 Nella teoria dei segnali, attraverso la normalizzazione, si ha un'astrazione delle grandezze delle dimensioni; si definiscono proprietà analoghe:
 
-- *Potenza Istantanea Normalizzata di un Segnale $x(t)$:*
+- *<span style="background:rgba(240, 200, 0, 0.2)">Potenza Istantanea Normalizzata di un Segnale $x(t)$:</span>*
 $$
 P_{x}=|x(t)|^2
 $$
-- *Energia di un Segnale:*
+- <span style="background:rgba(240, 200, 0, 0.2)">*Energia di un Segnale:*</span>
 $$
 E_{x}=\int_{-\infty}^\infty |x(t)|^2\ dt
 $$
-Un segnale si dice a **Energia Finita** se $E<\infty$.
-Per tutti i segnali fisici l'integrale dell'energia risulta convergente, conviene quindi utilizzare modelli ideali di segnali, utili per approssimare casi reali.
+Un segnale si dice a <span style="background:rgba(240, 200, 0, 0.2)">**Energia Finita** se $E\lt\infty$. </span>
+Per tutti i segnali fisici l'integrale dell'energia risulta convergente, conviene quindi utilizzare modelli ideali di segnali, utili per approssimare casi reali. 
 
 > [!example]+ Esempio
 > Se si considera la tensione $v(t)$ di una batteria ideale, essa è costante per ogni valore di $t$, quindi $\int_{-\infty}^\infty|v(t)|^2\ dt=\infty$, allora la definizione di energia è mal posta. Nonostante ciò, se una batteria reale viene osservata in un periodo in cui è carica, $v(t)$ risulta essere un ottima approssimazione.
@@ -50,16 +50,16 @@ x(t) & |t|\le \frac{T}{2} \\
 $$
 L'energia del segnale limitata dall'intervallo è limitata ($E_{x_{T}}\le\infty$). Se si espande l'intervallo ($T\to \infty$) si ottiene che $E_{x_{T}}\to \infty$, si introduce allora il concetto di potenza:
 
-- *Potenza media su un Intervallo $T$ di un Segnale*
+- <span style="background:rgba(240, 200, 0, 0.2)">*Potenza media su un Intervallo $T$ di un Segnale</span>*
 $$
 P_{T}= \frac{1}{T}\int_{-\frac{T}{2}}^ {\frac{T}{2}} |x(t)|^2\ dt
 $$
-- *Potenza Media*
+- <span style="background:rgba(240, 200, 0, 0.2)">*Potenza Media*</span>
 $$
 \overline{P}=\lim_{ T \to \infty }P_{T} =\lim_{ T \to \infty }\frac{1}{T}\int_{-\frac{T}{2}}^ {\frac{T}{2}} |x(t)|^2\ dt
 $$
-Un segnale si dice a **Potenza Media Finita** se $\overline{P}<\infty$.
-Un segnale ha energia finita se ha potenza media nella, un segnale con potenza media diversa da $0$ ha energia infinita
+Un segnale si dice a <span style="background:rgba(240, 200, 0, 0.2)">**Potenza Media Finita** se $\overline{P}\lt\infty$.</span>
+Un segnale ha energia finita se ha potenza media nulla, un segnale con potenza media diversa da $0$ ha energia infinita
 
 > [!example]+ Esempio: Potenza Media della Batteria Ideale
 > $$ P_{v}=\lim_{ T \to \infty } \frac{1}{T}\int_{-\frac{T}{2}}^ {\frac{T}{2}} |v(t)|^2\ dt= \lim_{ T \to \infty } \frac{1}{T}\int_{-\frac{T}{2}}^ {\frac{T}{2}} v_{0}^2\ dt=v_{0}$$
@@ -78,7 +78,7 @@ Il segnale è completamente noto se si conosce il suo valore all'interno di un p
 
 È dato un segnale $x(t)$ di durata finita in $\left( -\frac{T}{2}, \frac{T}{2} \right)$, quindi aperiodico, ovvero per cui $x(t)=0$ per $|t|> \frac{T}{2}$. A questo segnale si può associare un segnale periodico ripetendo $x(t)$ con periodo $T$ (o $T'>T$).
 
-> [!gray] Dato un segnale periodico $x(t)$ di periodo$T_{0}$ e tale che $\int_{{\frac{T}{2}}}^ \frac{T}{2} |x(t)|^2\ dt <\infty$, si può dimostrare che ha energia finita:
+> [!gray] Dato un segnale periodico $x(t)$ di periodo $T_{0}$ e tale che $\int_{{\frac{T}{2}}}^ \frac{T}{2} |x(t)|^2\ dt <\infty$, si può dimostrare che ha energia finita:
 >**Dimostrazione**
 $E=\int_{-\infty}^\infty|x(t)|^2\ dt=\infty$, essendo $x(t)$ periodico, $|x(t)|$ non va mai a $0$, quindi l'integrale non converge. Si tratta quindi di una somma di infinite aree di base $T_{0}$ che non valgono $0$
 
@@ -117,8 +117,8 @@ Serve a modellare l'accensione all'istante $t=0$ di un generatore ideale di tens
 ![[Pasted image 20250324181055.png]]
 $$
 \begin{align}
-&x(t)=e^{\frac{t}{\tau}} u(t) \\
-&E_{x}=\int_{\infty}^\infty |x(t)|^2\ dt = \int_{0}^{\infty} e^{-\frac{2t}{\tau}}\ dt=\left[ -\frac{\tau}{2}e^{-\frac{2t}{\tau}} \right]^{t=\infty}_{t=0}= \frac{t}{2}<\infty \\
+&x(t)=e^{-\frac{t}{\tau}} u(t) \\
+&E_{x}=\int_{\infty}^\infty |x(t)|^2\ dt = \int_{0}^{\infty} e^{-\frac{2t}{\tau}}\ dt=\left[ -\frac{\tau}{2}e^{-\frac{2t}{\tau}} \right]^{t=\infty}_{t=0}= \frac{\tau}{2}<\infty \\
 &P_{x}= \lim_{ T \to \infty } \frac{1}{T}\int_{0}^{\frac{T}{2}}e^{-\frac{2t}{\tau}}\ dt= \lim_{ T \to \infty }\left[ -\frac{\tau}{2T}e^{-\frac{2t}{\tau}} \right]^{t=\frac{T}{2}}_{{t=0}}=\lim_{ T \to \infty }\left( -\frac{\tau}{2T}(e^{-\frac{2t}{\tau}}-1)=0 \right)  
 \end{align}
 $$

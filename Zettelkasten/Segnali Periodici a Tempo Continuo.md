@@ -3,8 +3,6 @@ sticker: emoji//0032-fe0f-20e3
 Order: "2"
 ---
 Tags: [[Old Vault/Tags/Fondamenti di Segnali e Trasmissione|Fondamenti di Segnali e Trasmissione]] [[Old Vault/Indexes/University]]
-
-\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}x(t)
 ## Analisi Armonica dei Segnali Periodici
 Un segnale è periodico se $x(t)=x(t+T_{0})$, con potenza media $P_{x}=\frac{1}{T_{0}}\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}|x(t)|^2\ dt$, valore medio $x_{m}= \frac{1}{T_{0}}\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}} x(t) \ dt$ e frequenza di ripetizione $f_{0}=\frac{1}{T_{0}}$ (velocità di variazione del segnale).
 
@@ -22,10 +20,11 @@ $$
 x(t)=A_{0}+2\sum^\infty_{k=1}A_{k}\cos(2\pi kf_{0}t+\theta_{k})
 $$
 ![[Pasted image 20250324192624.png|center|450]]
-è rappresentato come la somma di una costante $A_{0}$ e di una serie il cui il $k-$esm termine (detto $k-$esima oscillazione armonica, o armonica) ha:
+è rappresentato come la somma di una costante $A_{0}$ e di una serie il cui il $k-$esimo termine (detto $k-$esima oscillazione armonica, o armonica) ha:
 - Ampiezza $2A_{k}$
 - Frequenza $kf_{0}$ (frequenza armonica) 
 - Fase iniziale $\theta_{k}$
+
 I termini coseno costituiscono la base dello spazio vettoriale dei segnali periodici di periodo $T_{0}$
 ![[Pasted image 20250324192654.png]]
 Attraverso le formule di Eulero, la serie di Fourier può essere riscritta nel seguente modo:
@@ -119,22 +118,24 @@ Si ha che ogni segnale $x(t)$ che soddisfa il Criterio di Dirichlet può essere 
 
 Gli spettri di ampiezza e fase del segnale sono a righe, perciò sono discreti, in quanto sono definiti in corrispondenza delle frequenze armoniche. Gli spettri di ampiezza dei segnali periodici si misurano con gli analizzatori di spettro.
 
->[!example]+ Esempio: $x(t)=a\cos(2\pi f_{0}t)$
+>[!example]+ Esempio: 
+>$x(t)=a\cos(2\pi f_{0}t)$
 >![[Pasted image 20250325162523.png|center|500]]
 >$$
-x(t)=\sum^\infty_{k=1}A_{k}\cos(2\pi kf_{0}t)\Longrightarrow \begin{aligned}
-&A_{1}=\frac{a}{2},\ \theta_{1}=0,\quad A_{k},\ \theta_{k}=0\ \forall k\ne 1 \text{ ovvero:}
-\\ & X_{1}=\frac{a}{2},\ X_{-1}= \frac{a}{2},\quad X_{k}=0\ \forall k\ne\pm 1
-\end{aligned}
-$$
+>x(t)=\sum^\infty_{k=1}A_{k}\cos(2\pi kf_{0}t)\Longrightarrow \begin{aligned}
+>&A_{1}=\frac{a}{2},\ \theta_{1}=0,\quad A_{k},\ \theta_{k}=0\ \forall k\ne 1 \text{ ovvero:}
+>\\ & X_{1}=\frac{a}{2},\ X_{-1}= \frac{a}{2},\quad X_{k}=0\ \forall k\ne\pm 1
+>\end{aligned}
+>$$
 
->[!example]+ $x(t)=a\sin(2\pi f_{0}t)=a\cos\left( 2\pi f_{0}t- \frac{\pi}{2} \right)$
-> ![[Pasted image 20250325162712.png| center | 500]]
-> $$\begin{align}
-&A_{1}= \frac{a}{2},\ \theta_{1}=\frac{\pi}{2}, \quad A_{k}, \ \theta_{k}=0 \ \forall k\ne  \\
-&\text{ovvero: } X_{1}=\frac{a}{2}e^{-j \frac{\pi}{2}},\ X_{-1}= \frac{a}{2}e^{j \frac{\pi}{2}},\ X_{k}=0 \ \forall k\ne\pm 1
-\end{align}
- $$
+>[!example]+ Esempio:
+>$x(t)=a\sin(2\pi f_{0}t)=a\cos\left( 2\pi f_{0}t- \frac{\pi}{2} \right)$
+>![[Pasted image 20250325162712.png| center | 500]]
+>$$\begin{align}
+>&A_{1}= \frac{a}{2},\ \theta_{1}=\frac{\pi}{2}, \quad A_{k}, \ \theta_{k}=0 \ \forall k\ne  \\
+>&\text{ovvero: } X_{1}=\frac{a}{2}e^{-j \frac{\pi}{2}},\ X_{-1}= \frac{a}{2}e^{j \frac{\pi}{2}},\ X_{k}=0 \ \forall k\ne\pm 1
+>\end{align}
+>$$
 
 ## Proprietà dello Spettro di un Segnale Reale Periodico
 ### Simmetria

@@ -1,3 +1,7 @@
+---
+order: "2"
+sticker: emoji//0032-fe0f-20e3
+---
 Tags: [[Fisica I]] [[Old Vault/Indexes/University]] 
 
 # Cinematica di un Punto Materiale

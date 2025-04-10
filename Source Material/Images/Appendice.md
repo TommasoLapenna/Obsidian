@@ -1,3 +1,7 @@
+---
+order: "0"
+sticker: emoji//0030-fe0f-20e3
+---
 # Derivata di un Versore
 Siccome un versore è un vettore unitario, solo la direzione può cambiare in funzione di $t$, cioè può solo compiere una rotazione di $\Delta \theta$, quindi
 $$

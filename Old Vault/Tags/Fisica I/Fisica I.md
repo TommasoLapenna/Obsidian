@@ -1,5 +1,8 @@
 ---
 sticker: emoji//1f4d0
+Year: "1"
+Semester: "1"
+banner: Source Material/Images/IMG_0415.jpg
 ---
 Tags: [[Old Vault/Indexes/University]] 
 

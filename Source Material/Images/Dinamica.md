@@ -1,3 +1,7 @@
+---
+order: "3"
+sticker: emoji//0033-fe0f-20e3
+---
 Tags: [[Fisica I]] [[Old Vault/Indexes/University]]
 
 # Dinamica del Punto Materiale

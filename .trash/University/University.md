@@ -1,4 +1,3 @@
 ---
-sticker: emoji//1f4da
 banner: Source Material/Images/IMG_0350.jpg
 ---

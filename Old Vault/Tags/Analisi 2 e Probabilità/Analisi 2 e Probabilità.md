@@ -1,5 +1,9 @@
 ---
 sticker: emoji//267e-fe0f
+Year: "2"
+banner: Source Material/Images/Immagine 10.jpeg
+banner_y: "50"
+Semester: "1"
 ---
 
 Tags: [[Old Vault/Indexes/University]]
