@@ -188,7 +188,7 @@ Significa che una combinazione lineare di segnali con lo stesso periodo $T_{0}$ 
 
 >[!gray] Dimostrazione:
 >La proprietà di linearità dei coefficienti di Fourier deriva dalla medesima proprietà dell'integrale: $$ \begin{align}
-&Z_{k}=\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}z(t)e^{-j_{2}\pi kf_{0}t}\ dt= \int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}[ax(t)+by(t)]e^{-j_{2}\pi kf_{0}t}\ dt= \\
+&Z_{k}=\frac{1}{T_{0}}\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}z(t)e^{-j_{2}\pi kf_{0}t}\ dt=\frac{1}{T_{0}} \int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}[ax(t)+by(t)]e^{-j_{2}\pi kf_{0}t}\ dt= \\
  &\overset{\text{Linearità Integrale}}{=} \frac{a}{T_{0}}\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}x(t)e^{-j_{2}\pi kf_{0}t}\ dt +\frac{b}{T_{0}}\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}y(t)e^{-j_{2}\pi kf_{0}t}\ dt = a X_{k}+ bY_{k}
 \end{align}$$
 
