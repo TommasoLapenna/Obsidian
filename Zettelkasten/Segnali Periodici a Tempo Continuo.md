@@ -63,7 +63,10 @@ Si determina un espressione per il calcolo del coefficiente $X_{n}$:
 > &\rightarrow \int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}e^{j_{2}\pi(k-n)f_{0}t}\ dt=\left[ \frac{e^{j_{2}\pi(k-n)f_{0}t}}{j_{2}\pi(k-nf_{0})} \right]^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}} \overset{ \text{Essendo }f_{0}T_{0}=1}{=} \frac{e^{j_{2}\pi(k-n)}-e^{-j(k-n)}}{j_{2}\pi(k-n)f_{0}}= \\
 > &= \frac{\sin[\pi(k-n)]}{\pi(k-n)f_{0}}
 > \end{align}$$
-> Il valore dell'integrale è pertanto nullo se $k\ne n$ (essendo $\sin[\pi(k-n)]=0$). Invece se $k=n$ il risultato finale perde significato, ma se si sotituisce nell'espressione iniziale si ricava il risultato $T_{0}$
+> Il valore dell'integrale è pertanto nullo se $k\ne n$ (essendo $\sin[\pi(k-n)]=0$). Invece se $k=n$ il risultato finale perde significato, ma se si sotituisce nell'espressione iniziale si ricava il risultato $T_{0}$. Ponendo $k=n$ nell'espressione di partenza si ricava che l'integrale cercato vale in questo caso $T_{0}$. Riassmuendo
+>$$ \int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}}e^{j 2\pi (k-n)f_{0}t}\ dt = \begin{cases} T_{0} & k=n \\ 0 & k\ne 0
+>\end{cases}
+>$$
 > $$
 > \Longrightarrow \int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}x(t)e^{j_{2}\pi nf_{0}t}\ dt=\sum_{k=-\infty}^\infty\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}e^{j_{2}\pi(k-n)f_{0}t}\ dt= X_{n}T_{0}
 > $$
@@ -152,12 +155,15 @@ X_{k}&= \frac{1}{T_{0}}\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}x(t)e^{-j_{2}\pi
 \end{align}
 $$
 I coefficienti $X_{k}$ godono quindi si simmetria coniugata (o hermitiana), ovvero:
-$$
-X_{-k}= X^*_{k}=\begin{cases}
-|X_{k}|=|X_{k}| \\
-\angle X_{k}=-\angle X_{-k}
-\end{cases}
-$$
+
+> [!gray] ->
+> $$
+> X_{-k}= X^*_{k}=\begin{cases}
+> |X_{k}|=|X_{-k}| \\
+> \angle X_{k}=-\angle X_{-k}
+> \end{cases}
+> $$
+
 Infatti se due numeri complessi $A=a_{R}+ja_{I}$ e $B=b_{R}+jb_{I}$ sono tali che
 $$
 \begin{align}
