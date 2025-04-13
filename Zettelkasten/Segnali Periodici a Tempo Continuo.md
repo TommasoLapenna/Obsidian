@@ -3,6 +3,29 @@ sticker: emoji//0032-fe0f-20e3
 Order: "2"
 ---
 Tags: [[Old Vault/Tags/Fondamenti di Segnali e Trasmissione|Fondamenti di Segnali e Trasmissione]] [[Old Vault/Indexes/University]]
+
+---
+
+- [[#Analisi Armonica dei Segnali Periodici|Analisi Armonica dei Segnali Periodici]]
+	- [[#Analisi Armonica dei Segnali Periodici#Sviluppo in Serie di Fourier (Forma Polare)|Sviluppo in Serie di Fourier (Forma Polare)]]
+	- [[#Analisi Armonica dei Segnali Periodici#Sviluppo in Serie di Fourier (Forma Complessa)|Sviluppo in Serie di Fourier (Forma Complessa)]]
+	- [[#Analisi Armonica dei Segnali Periodici#Sviluppo in Serie di Fourier (Forma Rettangolare)|Sviluppo in Serie di Fourier (Forma Rettangolare)]]
+- [[#Convergenza della Serie di Fourier|Convergenza della Serie di Fourier]]
+	- [[#Convergenza della Serie di Fourier#Criterio di Dirichlet|Criterio di Dirichlet]]
+- [[#Spettri di Ampiezza e di Fase|Spettri di Ampiezza e di Fase]]
+- [[#Proprietà dello Spettro di un Segnale Reale Periodico|Proprietà dello Spettro di un Segnale Reale Periodico]]
+	- [[#Proprietà dello Spettro di un Segnale Reale Periodico#Simmetria|Simmetria]]
+	- [[#Proprietà dello Spettro di un Segnale Reale Periodico#Linearità|Linearità]]
+	- [[#Proprietà dello Spettro di un Segnale Reale Periodico#Funzione Sinc|Funzione Sinc]]
+- [[#Segnali Pari e Dispari|Segnali Pari e Dispari]]
+	- [[#Segnali Pari e Dispari#Segnali Pari|Segnali Pari]]
+	- [[#Segnali Pari e Dispari#Segnali Dispari|Segnali Dispari]]
+- [[#Sintesi del Segnale con un Numero Limitato di Armoniche|Sintesi del Segnale con un Numero Limitato di Armoniche]]
+		- [[#Segnali Dispari#Onda Quadra Asimmetrica|Onda Quadra Asimmetrica]]
+		- [[#Segnali Dispari#Onda Triangolare|Onda Triangolare]]
+	- [[#Sintesi del Segnale con un Numero Limitato di Armoniche#Osservazioni|Osservazioni]]
+---
+
 ## Analisi Armonica dei Segnali Periodici
 Un segnale è periodico se $x(t)=x(t+T_{0})$, con potenza media $P_{x}=\frac{1}{T_{0}}\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}}|x(t)|^2\ dt$, valore medio $x_{m}= \frac{1}{T_{0}}\int^{\frac{T_{0}}{2}}_{-\frac{T_{0}}{2}} x(t) \ dt$ e frequenza di ripetizione $f_{0}=\frac{1}{T_{0}}$ (velocità di variazione del segnale).
 
@@ -87,6 +110,8 @@ Si definiscono $a_{0}=A_{0}$, $a_{k}=A_{k}\cos \theta_{k}$, $b_{k}=A_{k}\sin \th
 $$
 x(t)=a_{0}+2\sum^\infty_{k=1}[a_{k}\cos(2\pi f_{0}t)-b_{k}\sin(2\pi f_{0}t)],\quad \small{x_{k}=a_{k}+jb_{k}=A_{k}
 \cos \theta_{k}+jA_{k}\sin \theta_{k}=A_{k}e^{j\theta_{k}}}$$
+---
+
 ## Convergenza della Serie di Fourier
 Per i segnali di comune applicazione pratica, l'ipotesi di convergenza è verificata. Spesso però si fa ricorso a funzioni per schematizzare fenomeni fisici che però non rappresentano esattamente i segnali in esami, ma forniscono una maggiore semplicità. Per queste funzioni è necessario disporre di criteri che garantiscono la correttezza dello sviluppo.
 
@@ -112,8 +137,8 @@ La terza ipotesi del criterio può essere sostituita (in modo equivalente) con l
 > Si può quindi affermare che la prima funzione dente di sega può essere sviluppata in serie di Fourier. Nel punto di discontinuità il valore a cui la serie converge è $x_{0}(T_{0})=\frac{[x(T_{0}^+)+x(T_{0}^-)]}{2}=\frac{A}{2}$
 
 ## Spettri di Ampiezza e di Fase
-Si ha che ogni segnale $x(t)$ che soddisfa il Criterio di Dirichlet può essere rappresentato con lo sviluppio in serie di Fourier
-
+Si ha che ogni segnale $x(t)$ che soddisfa il Criterio di Dirichlet può essere rappresentato con lo sviluppo in serie di Fourier
+<font color="#ffff00">$$x(t)=\sum_{k=-\infty}^\infty X_{k}e^{j 2\pi kf_{0}t}\qquad X_{k}= \frac{1}{T_{0}}\int_{-\infty}^\infty x(t)e^{-j 2\pi kf_{0}t}$$</font>
 ![[Pasted image 20250325161350.png]]
 
  L' equazione di sintesi prevede l'uso di infinite armoniche per ricostruire il segnale. D'altronde, la condizione necessaria alla convergenza della serie è che l'ampiezza $|X_{k}|$ delle armoniche tenda a $0$ quando $k\to \infty$. Questo comporta che le armoniche importanti sono in un numero limitato (si può quindi utilizzare una sommatoria più semplice).
@@ -145,6 +170,8 @@ Calcoli esempi sotto nella slide 2
 >&\text{ovvero: } X_{1}=\frac{a}{2}e^{-j \frac{\pi}{2}},\ X_{-1}= \frac{a}{2}e^{j \frac{\pi}{2}},\ X_{k}=0 \ \forall k\ne\pm 1
 >\end{align}
 >$$
+
+---
 
 ## Proprietà dello Spettro di un Segnale Reale Periodico
 ### Simmetria
@@ -225,6 +252,8 @@ La funzione $\text{sinc}$ è pari in quanto rapporto di due funzioni dispari. Ne
 
 ![[Pasted image 20250325181849.png]]
 
+---
+
 ## Segnali Pari e Dispari
 ### Segnali Pari
 
@@ -233,7 +262,7 @@ La funzione $\text{sinc}$ è pari in quanto rapporto di due funzioni dispari. Ne
 >2. Essendo $x(t)$ reale, si ha $X_{-k}=X^*_{k}$, quindi <span style="background:rgba(240, 200, 0, 0.2)">il coefficiete $X_{k}$ è reale</span>
 >$$ X_{-k}=X_{k}^*=X_{k}
 >$$
->e si può scrivere$x(t)=X_{0}+2\sum_{k=1}^\infty \cos(2\pi kf_{0}t)$ 
+>e si può scrivere $x(t)=X_{0}+2\sum_{k=1}^\infty \cos(2\pi kf_{0}t)$ 
 >
 >**Dimostrazione:** 
 >1. 
@@ -287,6 +316,8 @@ X_{k}&= \frac{1}{T_{0}}\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}} x(t)e^{-j_{2}\p
 > [!tip] Nota
 > - Lo *Spettro di Ampiezza* esprime quindi quali sinusoidi (e con quali ampiezza) servono a sintetizzare il segnale di una certa forma
 > - Lo *Spettro di Fase* indica la fase iniziale di ogni sinusoide che dipende dalla posizione del segnale da sintetizzare
+
+---
 
 ## Sintesi del Segnale con un Numero Limitato di Armoniche
 #### Onda Quadra Asimmetrica

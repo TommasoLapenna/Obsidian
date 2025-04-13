@@ -43,7 +43,8 @@
     "//Old Vault/Old Vault/Tags",
     "//Old Vault/Old Vault/Tags/Old Vault/Tags/Matematica Discreta e Codici",
     "//Old Vault/Old Vault/Tags/Old Vault/Tags/Basi di Dati",
-    "//University/University/Fondamenti di Segnali e Trasmissione"
+    "//University/University/Fondamenti di Segnali e Trasmissione",
+    "//University"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
@@ -73,7 +74,9 @@
     "Source Material/INFO_Pasted image 20241213165210_PNG.md",
     "Source Material/INFO_Lebesgue_PDF.md",
     "Source Material/INFO_Pasted image 20250102125719_PNG.md",
-    "Source Material/INFO_Pasted image 20241228161931_PNG.md"
+    "Source Material/INFO_Pasted image 20241228161931_PNG.md",
+    "Old Vault",
+    "Tags"
   ],
   "hiddenExtensions": [
     ".mdb",

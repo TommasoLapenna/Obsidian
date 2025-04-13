@@ -4,6 +4,8 @@ Order: "0"
 ---
 Tags: [[Old Vault/Tags/Fondamenti di Segnali e Trasmissione]] [[Old Vault/Indexes/University]]
 
+# Numeri Complessi
+
 - $j= \sqrt{ -1 }$ = Soluzione di $x^2+1=0$
 - Coppia ordinata di numeri reali (con alcune proprietà particolari)
 $$
@@ -44,3 +46,8 @@ $$
 z=r\cos \phi+jr\sin \phi=r(\cos \phi+j\sin \phi)=re^{j\phi}
 $$
 Se $r=1\Longrightarrow z=e^{j\phi}$, in questo caso $z$ è un punto nel piano complesso appartenente ad un cerchio di raggio unitario, individuato dal valore della fase
+
+---
+
+# Approfondimenti
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jnxqHcObNK4?si=L-T0rlZ9PON9EtRd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

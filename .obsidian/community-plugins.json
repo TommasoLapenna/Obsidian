@@ -3,11 +3,8 @@
   "graphs",
   "obsidian-latex-suite",
   "obsidian-latex-environments",
-  "obsidian-git",
   "make-md",
   "editing-toolbar",
-  "obsidian-admonition",
-  "mathlinks",
-  "dataview",
-  "css-editor"
+  "css-editor",
+  "obsidian-plugin-toc"
 ]

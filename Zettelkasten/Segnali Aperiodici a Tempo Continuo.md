@@ -4,6 +4,33 @@ Order: "3"
 ---
 Tags: [[Old Vault/Tags/Fondamenti di Segnali e Trasmissione|Fondamenti di Segnali e Trasmissione]] [[Old Vault/Indexes/University]]
 
+---
+- [[#Dalla Serie all'Integrale di Fourier|Dalla Serie all'Integrale di Fourier]]
+	- [[#Dalla Serie all'Integrale di Fourier#Trasformata Continua di Fourier|Trasformata Continua di Fourier]]
+- [[#Proprietà della Trasformata di Fourier|Proprietà della Trasformata di Fourier]]
+	- [[#Proprietà della Trasformata di Fourier#Crisi di Esistenza|Crisi di Esistenza]]
+	- [[#Proprietà della Trasformata di Fourier#Simmetrie degli Spettri|Simmetrie degli Spettri]]
+	- [[#Proprietà della Trasformata di Fourier#Segnali Pari e Dispari|Segnali Pari e Dispari]]
+- [[#Teoremi sulla Trasformata di Fourier|Teoremi sulla Trasformata di Fourier]]
+	- [[#Teoremi sulla Trasformata di Fourier#Teorema di Dualità|Teorema di Dualità]]
+	- [[#Teoremi sulla Trasformata di Fourier#Teorema del ritardo|Teorema del ritardo]]
+	- [[#Teoremi sulla Trasformata di Fourier#Teorema del Cambiamento di Scala|Teorema del Cambiamento di Scala]]
+	- [[#Teoremi sulla Trasformata di Fourier#Teorema della Modulazione|Teorema della Modulazione]]
+	- [[#Teoremi sulla Trasformata di Fourier#Teoremi di Derivazione e Integrazione|Teoremi di Derivazione e Integrazione]]
+		- [[#Teoremi di Derivazione e Integrazione#Teorema di Derivazione|Teorema di Derivazione]]
+		- [[#Teoremi di Derivazione e Integrazione#Teoremi di Integrazione|Teoremi di Integrazione]]
+	- [[#Teoremi sulla Trasformata di Fourier#Teorema del Prodotto|Teorema del Prodotto]]
+	- [[#Teoremi sulla Trasformata di Fourier#Teorema della Convoluzione|Teorema della Convoluzione]]
+- [[#Trasformate di Fourier Generalizzate|Trasformate di Fourier Generalizzate]]
+	- [[#Teoremi sulla Trasformata di Fourier#Funzione Generalizzata Impulsiva o $\delta$ di Dirac| Funzione Generalizzata Impulsiva o $\delta$ di Dirac]]
+	- [[#Teoremi sulla Trasformata di Fourier#Proprietà della Funzione Generalizzata $\delta(t)$|Proprietà della Funzione Generalizzata $\delta(t)$]]
+	- [[#Teoremi sulla Trasformata di Fourier#Trasformata Generalizzata di Fourier della $\delta$ di Dirac|Trasformata Generalizzata di Fourier della $\delta$ di Dirac]]
+	- [[#Teoremi sulla Trasformata di Fourier#Trasformata Notevole: Funzione $\frac{1}{t}$|Trasformata Notevole: Funzione $\frac{1}{t}$]]
+	- [[#Teoremi sulla Trasformata di Fourier#Teorema d'Integrazione Completo|Teorema d'Integrazione Completo]]
+	- [[#Teoremi sulla Trasformata di Fourier#Trasformata Generalizzata delle Funzioni Seno, Coseno e dei Segnali Periodici|Trasformata Generalizzata delle Funzioni Seno, Coseno e dei Segnali Periodici]]
+	- [[#Teoremi sulla Trasformata di Fourier#Periodicizzazione e Formule di Somma di Poisson|Periodicizzazione e Formule di Somma di Poisson]]
+---
+
 ## Dalla Serie all'Integrale di Fourier
 Si può rappresentare un segnale non periodico come un opportuna sovrapposizione di segnali elementari (in particolare sinusoidi).
 ### Trasformata Continua di Fourier
@@ -13,7 +40,8 @@ Rappresentazione di funzioni non periodiche, definite tra $-\infty$ e $\infty$, 
 
 ![[Pasted image 20250328223635.png]]
 
-$x_{p}(t)$ è ottenuto periodicizzando $x(t)$ con periodo $T_{0}$. Il segnale originario $x(t)$ può essere considerato un caso limite di un segnale periodico: Partendo da $x_{p}(t)$, si ottiene un impulso base $x(t)$ centrato in $t=0$ se si pensa di fare una periodicizzazione di periodo $T_{0}\to \infty$ ($x(t)=\lim_{ T_{0} \to \infty }x_{p}(t)$), quindi
+$x_{p}(t)$ è ottenuto periodicizzando $x(t)$ con periodo $T_{0}$. Il segnale originario $x(t)$ può essere considerato un caso limite di un segnale periodico: 
+- Partendo da $x_{p}(t)$, si ottiene un impulso base $x(t)$ centrato in $t=0$ se si pensa di fare una periodicizzazione di periodo $T_{0}\to \infty$ ($x(t)=\lim_{ T_{0} \to \infty }x_{p}(t)$), quindi
 
 ![[Pasted image 20250328224014.png]]
 $x_{p}(t)$, essendo periodico, può essere rappresentato mediante la serie di Fourier
@@ -22,60 +50,61 @@ $$x_{p}(t)=\sum_{k=-\infty}^\infty X_{k}e^{j_{2}\pi kf_{0}t},\quad \text{con }f_
 ![[Pasted image 20250328224313.png | center | 550]]
 
 Quando $T_{0}\to \infty$, si riduce la frequenza fondamentale $f_{0}$, quindi si riduce la distanza tra due generiche frequenze armoniche consecutive $kf_{0}-(k-1)f_{0}=f_{0}$. Ciò determina un infittimento dello spettro del segnale (la scala delle frequenze è stata normalizzata al valore della durata $T$ dell'impulso $x(t)$, attraverso la variabile data dal prodotto $fT$).
-Si Può rimediare alla riduzione delle ampiezze delle armoniche $kf_{0}$ definendo un coefficiente di Fourier modificato:
+L'ampiezza dei  coefficienti tende a ridursi a ridursi man mano ed ad assumere valori sempre più piccole per tutte le frequenze armoniche.
+Si può rimediare alla riduzione delle ampiezze delle armoniche $kf_{0}$ definendo un coefficiente di Fourier modificato (_Serve forse a normalizzare visto che $kf_{0}=\frac{k}{T_{0}}$???_):
 $$
 X(kf_{0})=T_{0}X_{k}=\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}}x_{p}(t)e^{-j_{2}\pi kf_{0}t}\ dt= T\text{sinc}(kf_{0}T)
 $$
 Così facendo l'ampiezza rimane la solita nonostante diventi più fitto il grafico, in quanto è evidente che non tende a $0$ per $T_{0}\to \infty$.
-
 ![[Pasted image 20250330120530.png]]
+Si ottiene quindi una rappresentazione dello spettro di ampiezza per punti (invece che a righe)
 
-
-
-Si riscrive l'espansione in serie di Fourier di $x_{p}(t)$ usando il coeficiente modificato, ovvero al posto di $X_{k}$ si mette $\frac{X(kf_{0})}{T_{0}}$ ovvero $X(kf_{0})f_{0}$
-$$
-x_{p}(t)=\sum^\infty_{k=-\infty} X(kf_{0})e^{j_{2}\pi kf_{0}t}\cdot f_{0}
-$$
-in questo caso, quando $T_{0}\to \infty$:
-- $x_{p}(t)\to x(t)$
-- $f_{0}\to 0$, ovvero un valore infinitesimo indicato con $df$
-- $kf_{0}\to$ ad un valore non discreto ma continuo, indicato con $f$
-- dalla sommatoria si passa all'integrale
+> [!gray] Si riscrive l'espansione in serie di Fourier di $x_{p}(t)$ usando il coefficiente modificato, ovvero al posto di $X_{k}$ si mette $\frac{X(kf_{0})}{T_{0}}$ ovvero $X(kf_{0})f_{0}$
+> $$
+> x_{p}(t)=\sum^\infty_{k=-\infty} X(kf_{0})e^{j_{2}\pi kf_{0}t}\cdot f_{0}
+> $$
+> in questo caso, quando $T_{0}\to \infty$:
+> - $x_{p}(t)\to x(t)$
+> - $f_{0}\to 0$, ovvero un valore infinitesimo indicato con $df$
+> - $kf_{0}\to$ ad un valore non discreto ma continuo, indicato con $f$
+> - dalla sommatoria si passa all'integrale
+> 
 Il risultato è:
-$$
-x(t)=\int_{-\infty}^\infty X(f)e^{j_{2}\pi ft}\ df
-$$
-Viceversa, per il coefficiente modificato si ha
-$$
-X(kf_{0})= T_{0}X_{k}=\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}} x_{p}(t)e^{-j_{2}\pi kf_{0}t}\ dt
-$$
-in questo caso, quando  $T_{0}\to \infty$:
-- $x_{p}(t)\to x(t)$
-- $kf_{0}\to$ ad un valore non discreto ma continuo, indicato con $f$
-- Gli estremi dell'integrale $\pm \frac{T_{0}}{2}\to \infty$
-Il risultato è 
-$$
-X(f)=\lim_{\begin{align}
-&T_{0}\to \infty \\
-&f_{0}\to 0
-\end{align} }\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}}x_{p}(t)e^{-j_{2}\pi kf_{0}}t\ dt = \int_{-\infty}^{\infty} x(t)e^{-j_{2}\pi f}\ dt 
-$$
+> $$
+> x(t)=\int_{-\infty}^\infty X(f)e^{j_{2}\pi ft}\ df
+> $$
+> Viceversa, per il coefficiente modificato si ha
+> $$
+> X(kf_{0})= T_{0}X_{k}=\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}} x_{p}(t)e^{-j_{2}\pi kf_{0}t}\ dt
+> $$
+> in questo caso, quando  $T_{0}\to \infty$:
+> - $x_{p}(t)\to x(t)$
+> - $kf_{0}\to$ ad un valore non discreto ma continuo, indicato con $f$
+> - Gli estremi dell'integrale $\pm \frac{T_{0}}{2}\to \infty$
+> Il risultato è 
+> $$
+> X(f)=\lim_{\begin{align}
+> &T_{0}\to \infty \\
+> &f_{0}\to 0
+> \end{align} }\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}}x_{p}(t)e^{-j_{2}\pi kf_{0}}t\ dt = \int_{-\infty}^{\infty} x(t)e^{-j_{2}\pi f}\ dt 
+> $$
+
 $X(f)$ è una funzione complessa della variabile continua $f$ (da $kf_{0}$ quando $f_{0}\to 0$), da cui lo spettro di ampiezza diventa non più a righe, ma continuo. 
 
 ![[Pasted image 20250330120436.png]]
 
-Nella serie di Fourier per un segnale periodico, quest'ultimo viene raappresentato con componenti sinusoidali a frequenze in relazione armonica, cioè multiple di un'unica fondamentale, nonché di ampiezza finita. Nel caso del segnale aperiodico, con l'antitrasformata di Fourier si può ancora rappresentare il segnale aperiodico $x(t)$ come sovrapposizione di componenti sinusoidali, ma questa volta con ampiezza infinitesima $|X(f)|\ df$ e di frequenza $f$ variabile con continuità su tutto l'asse reale.
+Nella serie di Fourier per un segnale periodico, quest'ultimo viene rappresentato con componenti sinusoidali a frequenze in relazione armonica, cioè multiple di un'unica fondamentale, nonché di ampiezza finita. Nel caso del segnale aperiodico, con l'antitrasformata di Fourier si può ancora rappresentare il segnale aperiodico $x(t)$ come sovrapposizione di componenti sinusoidali, ma questa volta con ampiezza infinitesima $|X(f)|\ df$ e di frequenza $f$ variabile con continuità su tutto l'asse reale.
 Più semplicemente:
 - Il segnale aperiodico è visto come un segnale periodico di periodo illimitato e quindi con frequenza fondamentale infinitesamente piccola. Il numero discreto di armoniche della serie degenera  in un insieme continuo di componenti.
 
 > [!gray] Un segnale aperiodico $x(t)$ è rappresentabile attraverso l'*Intergale di Foureir*
-> *Antitrasformata di Fourier*:
+> <span style="background:rgba(240, 200, 0, 0.2)">*Antitrasformata di Fourier*:</span>
 > $$
 > x(t)=\int_{-\infty}^\infty X(f)e^{j_{2}\pi ft}\ df
 > $$
 >Equazione di sintesi, rappresenta il segnale come sovrapposizione di segnali elementari.
 > <br>
-> *Trasformata Continua di Fourier:*
+> <span style="background:rgba(240, 200, 0, 0.2)">*Trasformata Continua di Fourier:*</span>
 > $$
 > X(f)=\int_{-\infty}^\infty x(t)e^{-j_{2}\pi ft}\ dt
 > $$
@@ -85,7 +114,7 @@ Queste relazioni mettono in corrispondenza un segnale nel tempo con la propria t
 $$
 \underset{\text{Dominio del Tempo}}{x(t)}\iff\underset{\text{Dominio della frequenza}}{X(f)}
 $$
-La conoscenza dell'andamento nel tempo di un segnale equivale a conoscerne l'andamento nella frequenza.
+<span style="background:rgba(240, 200, 0, 0.2)">La conoscenza dell'andamento nel tempo di un segnale equivale a conoscerne l'andamento nella frequenza.</span>
 Altre rappresentazioni della trasformata ed antitrasformata:
 $$
 \begin{align}
@@ -186,17 +215,19 @@ Discontinua nell'origine, utile per rappresentare i segnali causali, cioè nulli
 > $$
 > ![[Pasted image 20250331105121.png|center|400]]
 > 
+
+---
 ## Proprietà della Trasformata di Fourier
 ### Crisi di Esistenza
 Ci sono dei criteri sufficienti per la rappresentazione di un segnale $x(t)$ tramite la propria trasformata $X(f)$.
 
 > [!gray] Condizioni Sufficienti
-> Un *primo criterio sufficiente* è che segnale $x(t)$ ha energia finita, ovvero
+> <span style="background:rgba(240, 200, 0, 0.2)">Un *primo criterio sufficiente*</span> è che segnale $x(t)$ ha energia finita, ovvero
 > $$
 > E_{x}=\int_{-\infty}^\infty |x(t)|^2\ dt<+\infty
 > $$
 > Allora la trasformata $X(f)$ esiste, nel senso che l'integrale di analisi è convergente, e la rappresentazione di $x(t)$ come antitrasformata ($x(t)=\int_{-\infty}^\infty X(f)e^{j 2\pi ft}\ df$) vale quasi ovunque (cioè eccetto al più un numero finito di punti). <br>
-> Un *secondo criterio sufficiente* meno restrittivo (*Criterio di Dirichlet*) può essere enunciato come segue:
+><span style="background:rgba(240, 200, 0, 0.2)"> Un *secondo criterio sufficiente* meno restrittivo (*Criterio di Dirichlet*)</span> può essere enunciato come segue:
 > 1. Se il segnale è assolutamente sommabile, ovvero 
 > $$\int_{-\infty}^\infty|x(t)|\ dt<+\infty$$
 > 2. Se in un qualunque intervallo finito $t_{1}\le t\le t_{2}$ il segnale $x(t)$ è continuo o ha un numero finito di discontinuità di prima specie
@@ -217,8 +248,8 @@ Si può osservare chiaramente che
 $$
 \underset{\cos(a)=\cos(-a)}{R(f)=R(-f)}\qquad \underset{\sin(a)=-\sin(-a)}{I(f)=-I(-f)}
 $$
-- La parte reale è una funzione pari
-- La parte immaginaria è una funzione dispari
+<span style="background:rgba(240, 200, 0, 0.2)">- La parte reale è una funzione pari</span>
+<span style="background:rgba(240, 200, 0, 0.2)">- La parte immaginaria è una funzione dispari</span>
 
 >[!gray] Simmetire
 > $$ X(f)=X^*(-f) $$
@@ -289,6 +320,8 @@ Questa proprietà si riflette inoltre sulle funzioni $\theta(f)$ e $A(f)$
 > &=\frac{1}{j_{2}\pi f}\cdot [\text{sinc}(fT)-\cos(\pi fT)]
 > \end{align}$$
 > 
+
+---
 
 ## Teoremi sulla Trasformata di Fourier
 
@@ -663,7 +696,10 @@ Si applica il teorema della convoluzione
 >&z(t)= x(t)\otimes y(t)= \text{rect}\left( \frac{t}{A} \right)\otimes  \text{rect}\left( \frac{t}{B} \right) \\
 >&Z(f)= X(f)Y(f)=AB\text{sinc(Af)}\text{sinc}(Bf)
 >\end{align}$$
-### Trasformate di Fourier Generalizzate
+
+---
+
+## Trasformate di Fourier Generalizzate
 Si considera la funzione gradino:
 $$
 u(t)=\begin{cases}

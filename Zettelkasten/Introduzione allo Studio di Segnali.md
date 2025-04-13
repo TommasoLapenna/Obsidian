@@ -4,6 +4,20 @@ Order: "1"
 ---
 Tags: [[Old Vault/Tags/Fondamenti di Segnali e Trasmissione]]  [[Old Vault/Indexes/University]] 
 
+---
+
+- [[#Definizione di Segnale|Definizione di Segnale]]
+- [[#Tipi di Segnali|Tipi di Segnali]]
+- [[#Tipi di Segnali#Proprietà Elementari dei Segnali Determinati a Tempo Continuo|Proprietà Elementari dei Segnali Determinati a Tempo Continuo]]
+- [[#Tipi di Segnali#Segnale Periodico|Segnale Periodico]]
+- [[#Segnali Notevoli|Segnali Notevoli]]
+	- [[#Segnale Periodico#Gradino Unitario|Gradino Unitario]]
+	- [[#Segnale Periodico#Esponenziale Monolatero|Esponenziale Monolatero]]
+	- [[#Segnale Periodico#Seno|Seno]]
+	- [[#Segnale Periodico#Coseno|Coseno]]
+	- [[#Segnale Periodico#Esponenziale Complesso|Esponenziale Complesso]]
+---
+
 ### Definizione di Segnale
 Un segnale è una qualsiasi grandezza fisica alla quale è possibile associare un'informazione, la quale può essere di varia natura. In molti casi, l'andamento del segnale può essere perfettamente noto, pertanto il metodo più conveniente per studiare un segnale è attraverso il grafico di una funzione matematica (in una o più variabili).
 ## Tipi di Segnali
