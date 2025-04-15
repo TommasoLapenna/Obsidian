@@ -1,5 +1,6 @@
 ---
 undefined: ""
+sticker: lucide//clipboard-list
 ---
 
 _PRIMA PARTE_   

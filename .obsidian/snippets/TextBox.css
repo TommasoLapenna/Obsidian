@@ -1,4 +1,4 @@
 .callout[data-callout="gray"]{
   --callout-color: 186, 186, 186;
-  --callout-icon: none;
+  --callout-icon: lucide-book;
 }

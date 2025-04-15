@@ -8,17 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e5b7feec4eb159de",
+            "id": "8950c01908b1aca9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Zettelkasten/Segnali Aperiodici a Tempo Continuo.md",
-                "mode": "preview",
+                "file": "University/Elettronica Digitale/Dispositivi Elettronici.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Segnali Aperiodici a Tempo Continuo"
+              "title": "Dispositivi Elettronici"
             }
           }
         ]
@@ -106,7 +106,7 @@
         }
       }
     ],
-    "currentTab": 5
+    "currentTab": 4
   },
   "right": {
     "id": "a10862bf1887e6d2",
@@ -118,7 +118,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Zettelkasten/Segnali Periodici a Tempo Continuo.md",
+            "file": "University/Elettronica Digitale/Dispositivi Elettronici.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -176,22 +176,38 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "e5b7feec4eb159de",
+  "active": "8950c01908b1aca9",
   "lastOpenFiles": [
+    "Source Material/Images/Pasted image 20250414193344.png",
+    "Source Material/Images/Pasted image 20250414192353.png",
+    "Source Material/Images/Pasted image 20250414192341.png",
+    "Source Material/Images/Pasted image 20250414191104.png",
+    "Source Material/Images/Pasted image 20250414185644.png",
+    "University/Elettronica Digitale/Elettronica Digitale.md",
+    "University/Elettronica Digitale/Programma.md",
+    "University/Elettronica Digitale/Dispositivi Elettronici.md",
+    "Source Material/Images/Pasted image 20250414181810.png",
+    "Source Material/Images/Pasted image 20250414180919.png",
+    "Source Material/Images/Pasted image 20250414173655.png",
+    "Source Material/Images/Pasted image 20250414171951.png",
+    "Source Material/Images/Pasted image 20250414171313.png",
+    "Source Material/Images/Pasted image 20250414122449.png",
+    "University/University.md",
+    "Old Vault/Indexes/University.md",
     "University/Fondamenti di Segnali e Trasmissione/Fondamenti di Segnali e Trasmissione.md",
-    "Zettelkasten/Segnali Periodici a Tempo Continuo.md",
+    "Old Vault/Tags/Basi di Dati/Basi di Dati.md",
+    "Old Vault/Tags/Fisica I/Fisica I.md",
+    "University/Fondamenti di Segnali e Trasmissione/Programma.md",
+    "University/Elettronica Digitale",
     "Zettelkasten/Introduzione allo Studio di Segnali.md",
-    "Zettelkasten/Appendice.md",
     "Zettelkasten/Segnali Aperiodici a Tempo Continuo.md",
+    "Zettelkasten/Segnali Periodici a Tempo Continuo.md",
+    "Zettelkasten/Appendice.md",
     "Zettelkasten/Sistemi Monodimensionali a Tempo Continuo.md",
     "README.md",
-    "University/Fondamenti di Segnali e Trasmissione/Programma.md",
-    "University/University.md",
     "Tags",
     "Old Vault/Old Vault.md",
     "Old Vault/Tags/Matematica Discreta e Codici/Matematica Discreta e Codici.md",
-    "Old Vault/Tags/Basi di Dati/Basi di Dati.md",
-    "Old Vault/Tags/Fisica I/Fisica I.md",
     "Zettelkasten/Domande Orale.md",
     "Zettelkasten/DDL.md",
     "Old Vault/Tags/Basi di Dati",
@@ -200,31 +216,15 @@
     "Source Material/Images/Dinamica.md",
     "Source Material/Images/Images.md",
     "Source Material/Images/Appendice.md",
-    "Source Material/Images/IMG_0415.jpg",
     "Old Vault/Tags/Fisica I",
     "Old Vault/Tags/Matematica Discreta e Codici",
     "Old Vault/Tags/Analisi 2 e Probabilità/Analisi 2 e Probabilità.md",
     "Old Vault/Tags/Analisi 2 e Probabilità",
-    "Old Vault/Tags/Tags.md",
     "University",
-    "University/University/University.md",
     "University/University",
-    "University/Untitled.md",
-    "University/bb.md",
-    "Source Material/Source Material.md",
     "Old Vault",
-    "Source Material/Images/Pasted image 20250409103943.png",
-    "Source Material/Images/Pasted image 20250409103517.png",
-    "Source Material/Images/Pasted image 20250409103320.png",
-    "Source Material/Images/Pasted image 20250408231405.png",
-    "Source Material/Images/Pasted image 20250408231325.png",
-    "Source Material/Images/Pasted image 20250408231045.png",
-    "Source Material/Images/Pasted image 20250408231012.png",
-    "Source Material/Images/Pasted image 20250408230927.png",
-    "Source Material/Images/Pasted image 20250408230839.png",
     "Untitled.canvas",
     "Source Material/Images/PDF document.pdf",
-    "University/Fondamenti di Segnali e Trasmissione",
     "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas"
   ]
 }
