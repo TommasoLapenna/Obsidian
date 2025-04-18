@@ -3,6 +3,40 @@ undefined: ""
 sticker: emoji//0031-fe0f-20e3
 Order: "1"
 ---
+- [[#Semiconduttori|Semiconduttori]]
+	- [[#Semiconduttori#Materiali|Materiali]]
+- [[#Giunzione P-N|Giunzione P-N]]
+- [[#Diodo P-N|Diodo P-N]]
+		- [[#Materiali#Polarizzazione Diretta (Forward Bias)|Polarizzazione Diretta (Forward Bias)]]
+		- [[#Materiali#Polarizzazione Inversa (Reverse Bias)|Polarizzazione Inversa (Reverse Bias)]]
+	- [[#Diodo P-N#Comportamento del Diodo|Comportamento del Diodo]]
+- [[#Tipi di Diodo|Tipi di Diodo]]
+	- [[#Tipi di Diodo#Fotodiodo|Fotodiodo]]
+	- [[#Tipi di Diodo#LED|LED]]
+	- [[#Tipi di Diodo#Diodo Schottky|Diodo Schottky]]
+	- [[#Tipi di Diodo#Esempi|Esempi]]
+- [[#BJT: Giunzione n-p-n|BJT: Giunzione n-p-n]]
+	- [[#BJT: Giunzione n-p-n#Regioni di Funzionamento|Regioni di Funzionamento]]
+		- [[#Regioni di Funzionamento#Cutoff|Cutoff]]
+		- [[#Regioni di Funzionamento#Diretta Attiva|Diretta Attiva]]
+		- [[#Regioni di Funzionamento#Saturazione|Saturazione]]
+		- [[#Regioni di Funzionamento#Attiva Inversa|Attiva Inversa]]
+	- [[#BJT: Giunzione n-p-n#Schema Fisico|Schema Fisico]]
+- [[#BJT pnp|BJT pnp]]
+- [[#Riassunto BJT|Riassunto BJT]]
+- [[#BJT Speciale: Fototransistor|BJT Speciale: Fototransistor]]
+- [[#Esercizi|Esercizi]]
+- [[#Dispositivi MOS|Dispositivi MOS]]
+- [[#N-MOS|N-MOS]]
+		- [[#Schema Fisico#Regioni di Funzionamento|Regioni di Funzionamento]]
+			- [[#Regioni di Funzionamento#Cutoff|Cutoff]]
+			- [[#Regioni di Funzionamento#Lineare|Lineare]]
+			- [[#Saturazione|Saturazione]]
+- [[#P-MOS|P-MOS]]
+- [[#Riassunto MOS|Riassunto MOS]]
+- [[#N-MOS Reale|N-MOS Reale]]
+- [[#Esercizi MOS|Esercizi MOS]]
+
 ## Semiconduttori
 I semiconduttori hanno conducibilità molto più alta degli isolanti, ma minore dei conduttori. Gli atomi sono legati da legami covalenti covalenti come per gli isolanti, con i quali condividono anche la dipendenza della conducibilità dalla temperatura.
 Il semiconduttore per funzionare deve essere a cristalli secondo una matrice regolare, viene quindi prima reso monocristallino in dei cilindri per poi essere fatto a fette. Si ottengono così i *Wafer*.
@@ -153,6 +187,23 @@ Il *Transistor Bipolare* (Bipolar Junction Transistor) è un dispositivo a tre t
 - **Base**
 - **Emettitore**
 - **Collettore**
+```
+       Vcc
+        |
+        |
+       Rc
+        |
+        +------> Collettore (C)
+        |
+	   /
+     |/
+ --> |    Base (B)
+     |\
+       \
+	    |
+        +------> Emettitore (E) --> GND
+```
+
 La zona $p$ (base) è molto stretta per fare scorrere la corrente più facilmente;
 Il drogaggio del semiconduttore avviene per diffusione anziché per impiantazione ionica, questo limita le dimensione minime ottenibili del transistor.
 
@@ -184,5 +235,138 @@ $$
 V_{BE}>V_{th},\ V_{BC}<0\qquad I_{B}>0,\ I_{C}=h_{FE}I_{B}
 $$
 con $h$ guadagno, che darà luogo ad un multiplo preciso della corrente di base
+![[Pasted image 20250415151937.png|center|400]]
+A livello circuitale si può dire che si comporta come amplificatore di corrente.
+![[Pasted image 20250415153300.png|center|100]]
 #### Saturazione
+In saturazione entrambe le giunzioni sono polarizzate direttamente, in questo caso il dispositivo si comporta come un amplificatore di corrente (?).
+$$V_{BE}>V_{th},\ V_{CE}<V_{CE-sat}\Rightarrow V_{BC}>V_{th}\qquad I_{B}>0,\ I_{C}<h_{FE}I_{B}$$
+![[Pasted image 20250415154454.png|center|400]]
 #### Attiva Inversa
+In regione attiva inversa la giunzione tra base è collettore è polarizzata direttamente, mentre la giunzione tra base e emettitore è polarizzata inversamente. Il comportamento non è precisamente simmetrico alla regione attiva inversa (a causa dei diversi drogaggi del collettore e emettitore) e si ha un guadagno (negativo) diverso da $h_{FE}$. Il risultato è un componente che invece di amplificare la corrente, la attenua (caso molto specifico, poco utilizzato)
+$$
+V_{BE}<0,\ V_{BC}>V_{th}\qquad -I_{C}\le -I_{B} \text{ current gain }\le 1
+$$
+![[Pasted image 20250415155021.png|center|425]]
+Nel grafo delle regioni vanno scambiati i terminali
+### Schema Fisico
+![[Pasted image 20250415160449.png|center|500]]
+![[Pasted image 20250415160501.png|center|500]]
+## BJT pnp
+Questo dispositivo è complementare rispetto all'npn:
+![[Pasted image 20250415161514.png|center|400]]
+Ha le stesse equazioni, ma con correnti e tensioni opposte (per esempio $V_{BE}$ per essere polarizzato direttamente deve essere $V_{BE}<-0,7V$).
+> [!hint] Definizioni Tensioni e Correnti
+> ![[Pasted image 20250415161903.png|center|350]]
+><sup>Disegnato in modo che il potenziale più alto stia sopra</sup>
+
+Rispetto all'npn, il pnp ha un guadagno minore che lo rende meno efficiente, in quanto usa le lacune invece degli elettroni (i portatori di carica positiva si muovono più lentamente di quelli negativi).
+Le regioni di funzionamento sono le stesse, cambiano quindi solo le polarizzazioni.
+## Riassunto BJT
+
+| Regione               | Effetto                                                                                                         |
+| --------------------- | --------------------------------------------------------------------------------------------------------------- |
+| Cutoff                | Spento, non scorre corrente e si comporta quindi logicamente come un circuito aperto.                           |
+| Direct Active Region  | Tensione sul collettore, si comporta logicamente come un generatore di corrente controllato con da una corrente |
+| Saturation            | No tensione sul collettore, output costante di tensione $V_{CE-sat}$                                            |
+| Reverse Active Regiom | Guadagno di corrente molto piccolo                                                                              |
+## BJT Speciale: Fototransistor
+Il fototransistor è equivalente al fotodiodo, con però una capacità di corrente molto maggiore a quest'ultimo per il guadagno in corrente del transistor. La corrente in base $I_{B}$ fotogenerata, mentre gli altri parametri rimangono gli stessi di un BJT normale. 
+![[Pasted image 20250415163330.png|center|350]]
+con
+$$I_{c}=h_{FE}\cdot I_{b}\qquad \small{\text{oppure }\underset{\small{P_{L}\text{ potenza luminosa}}}{I_{C}=k\cdot P_{L}}}$$
+La corrente di base è quindi generata quando la base è esposta alla luce, è importante però inserire un resistore dal lato del collettore per evitare di andare in saturazione (?).
+## Esercizi
+
+> [!example]+ Esercizi BJT
+> ![[Pasted image 20250415173344.png]]
+
+---
+## Dispositivi MOS
+La sigla MOS sta per Metal Oxide Silicon, è una sovrapposizione di tre strati: 
+- Metallo
+- Ossido di silicio (SiO$_{2}$) 
+- Silicio $p$ o $n$
+L'ossido è un isolante che non permette il passaggio tra le cariche elettriche tra metallo e semiconduttore.
+I MOS sono dispositivi controllati dalla differenza di potenziale tra due suoi terminali, inoltre questa tecnologia non utilizza la giunzione.
+## N-MOS
+![[Pasted image 20250415181044.png]]
+Questo dispositivo ha tre terminali: *Source* (S), *Gate* (G), *Drain* (D).
+Le definizioni di tensioni e correnti sono le stesse dell'npn. 
+In corrente continua, la tensione corrente al gate è sempre 0, mentre invece se la corrente è alternata scorre una piccola quantità di corrente (visto la forma simile ad un condensatore).
+- Se $V_{GS}<0$, allora non scorre corrente tra S e D, in quanto le due giunzioni pn delle due regioni n sono contropolarizzate.
+- Se $0<V_{GS}<V_{t}$, allora si accumulano delle cariche negative sotto il gate che creano una regione di svuotamento. In questo caso è come se tra il source e drain, e la regione $p$, ci fosse un diodo che blocca la corrente (il dispositivo risulta spento) ![[Pasted image 20250415182002.png|center|250]]
+- Se $V_{GS}>V_{t}$, il campo generato è abbastanza potente da "schiacciare" gli elettroni presenti sotto al gate, a questo punto si crea un canale conduttivo (di elettroni liberi) per il passaggio di corrente tra S e D. ![[Pasted image 20250415182804.png|center|250]]
+Si può osservare quindi che il dispositivo è controllato dalla tensione di gate $V_{GS}$.
+#### Regioni di Funzionamento
+^ppoop
+
+![[Pasted image 20250415191005.jpg]]
+##### Cutoff
+In questa regione il dispositivo non conduce sul drain e source
+$$
+V_{GS}<V_{t}
+$$
+##### Lineare
+In questa regione (corrispondente a alla saturazione del BJT), si ha poca corrente e il dispositivo lavora come un resistore controllato in tensione
+$$
+V_{GS}> V_{t},\ I_{D}= \frac{V_{DS}}{R_{DS}}< I_{D-sat}
+$$
+Si ha quindi che
+$$
+\frac{1}{R_{DS}}\propto V_{GS}
+$$
+##### Saturazione
+In questa regione la corrente è costante
+$$
+V_{GS}>V_{t},\ I_{D}=I_{D-sat}
+$$
+Equazione delle corrente:
+$$\begin{align}
+&I_{D}=K[2(V_{GS}-V_{t})V_{DS}-V_{DS}]^2\qquad \\ &I_{D-sat}=K(V_{GS}-V_{t})^2 \ \text{per }V_{DS}\ge V_{GS}-V_{t} \\
+&K=\frac{1}{2}\mu C_{ox} \frac{W}{L}
+\end{align}$$
+con
+- $K$: Costante proporzionale
+- $\mu$: Mobilità dei portatori
+- $C_{ox}$: Capacità dell'ossido
+- $\frac{W}{L}$: Width/Lenght
+La corrente è direttamente proporzionale alla alla larghezza e inversamente proporzionale alla lunghezza
+$$
+I_{D}\propto W \qquad I_{D}\propto \frac{1}{L}
+$$
+Più è lungo il canale, più strada deve percorrere la corrente e più energia dissipa, mentre se il canale è più largo più elettroni possono passare
+![[Pasted image 20250415190252.png|center|250]]
+Se cresce troppo la tensione di drain si crea un campo elettrico che prima o poi manda il dispositivo in breakdown. Questo campo dipende dalla distanza dei due terminali (proporzionale a $\frac{1}{L}$)
+![[Pasted image 20250415190915.png|center|200]]
+
+---
+## P-MOS
+> [!info] Differenza Conducibilità tra $n$ e $p$
+> Un dispositivo che usa gli elettroni invece che le lacune ha una conducibilità doppia rispetto a quelli che usano le lacuna
+> $$\mu\ n = 2\mu \ p$$
+
+Il P-MOS è il dispositivo complementare al N-MOS, quindi a canale $p$ su un substrato di semiconduttore $n$ con piazzole di drain e source $p+$. 
+![[Pasted image 20250415192532.png]]
+Il canale che porta la corrente sarà di lacune anziché di elettroni.
+Ha le [[#^ppoop|stesse]] equazioni  del P-MOS, con tensioni e correnti negative.
+Ha un guadagno minore per via dell'uso delle lacune (ci vuole molta più corrente e tensione nel MOS per raggiungerla).
+## Riassunto MOS
+La regione attiva non è prevista, a differenza del transistor. Nel transistor, la regione della saturazione è quella di sinistra, nel MOS è quella di destra.
+
+| Regione                      | Effetto                                                                                                      |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Cutoff $V_{GS}<V_{t}$        | Non c'è conduzione                                                                                           |
+| Linear Region $V_{GS}>V_{t}$ | Corrente lineare (parabolica), resistore controllato in tensione                                             |
+| Saturation $V_{GS}>V_{t}$    | Output costante di corrente (fissata, $I_{D-sat}$), generatore di corrente controllato in tensione (di gate) |
+
+## N-MOS Reale
+![[Pasted image 20250417143427.png|center|300]]
+<sup>Il diodo reale ha un diodo tra Source e Drain</sup>
+Il MOS reale non ha un comportamento simmetrico per la presenza del diodo.
+Il drain deve essere positivo rispetto al source, altrimenti il diodo sarebbe in polarizzazione diretta.
+![[Pasted image 20250417144231.png|center|500]]
+## Esercizi MOS
+
+> [!example]+ Esercizi:
+> ![[Pasted image 20250417144829.png]]

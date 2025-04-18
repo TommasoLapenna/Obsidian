@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/Elettronica Digitale/Dispositivi Elettronici.md",
+                "file": "University/Fondamenti di Segnali e Trasmissione/Segnali a Tempo Discreto.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Dispositivi Elettronici"
+              "title": "Segnali a Tempo Discreto"
             }
           }
         ]
@@ -86,17 +86,7 @@
         }
       },
       {
-        "id": "61f9a040f2ee876e",
-        "type": "leaf",
-        "state": {
-          "type": "mk-path-view",
-          "state": {},
-          "icon": "layout-grid",
-          "title": "Navigator"
-        }
-      },
-      {
-        "id": "60b3fc3698ca0b62",
+        "id": "f4f9666e461d8e25",
         "type": "leaf",
         "state": {
           "type": "mk-path-view",
@@ -118,7 +108,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "University/Elettronica Digitale/Dispositivi Elettronici.md",
+            "file": "University/Fondamenti di Segnali e Trasmissione/Segnali a Tempo Discreto.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -171,39 +161,40 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-excalidraw-plugin:New drawing": false,
-      "obsidian-git:Open Git source control": false,
-      "copilot:Open Copilot Chat": false
+      "obsidian-excalidraw-plugin:New drawing": false
     }
   },
   "active": "8950c01908b1aca9",
   "lastOpenFiles": [
-    "Source Material/Images/Pasted image 20250414193344.png",
-    "Source Material/Images/Pasted image 20250414192353.png",
-    "Source Material/Images/Pasted image 20250414192341.png",
-    "Source Material/Images/Pasted image 20250414191104.png",
-    "Source Material/Images/Pasted image 20250414185644.png",
-    "University/Elettronica Digitale/Elettronica Digitale.md",
-    "University/Elettronica Digitale/Programma.md",
-    "University/Elettronica Digitale/Dispositivi Elettronici.md",
-    "Source Material/Images/Pasted image 20250414181810.png",
-    "Source Material/Images/Pasted image 20250414180919.png",
-    "Source Material/Images/Pasted image 20250414173655.png",
-    "Source Material/Images/Pasted image 20250414171951.png",
-    "Source Material/Images/Pasted image 20250414171313.png",
-    "Source Material/Images/Pasted image 20250414122449.png",
-    "University/University.md",
-    "Old Vault/Indexes/University.md",
+    "Source Material/Images/Pasted image 20250417185307.png",
+    "Source Material/Images/Pasted image 20250417184641.png",
+    "Source Material/Images/Pasted image 20250417183427.png",
+    "Source Material/Images/Pasted image 20250417183410.png",
+    "Source Material/Images/Pasted image 20250417183214.png",
+    "Source Material/Images/Pasted image 20250417182550.png",
+    "Source Material/Images/Pasted image 20250417182141.png",
+    "Source Material/Images/Pasted image 20250417181020.png",
+    "Source Material/Images/Pasted image 20250417180713.png",
+    "University/Fondamenti di Segnali e Trasmissione/Segnali a Tempo Discreto.md",
     "University/Fondamenti di Segnali e Trasmissione/Fondamenti di Segnali e Trasmissione.md",
+    "University/Fondamenti di Segnali e Trasmissione/Programma.md",
+    "University/Fondamenti di Segnali e Trasmissione/Processi Aleatori Analogici.md",
+    "Source Material/Images/Pasted image 20250417163707.png",
+    "Source Material/Images/Pasted image 20250417154651.png",
+    "Zettelkasten/Sistemi Monodimensionali a Tempo Continuo.md",
+    "University/University.md",
+    "University/Elettronica Digitale/Elettronica Digitale.md",
+    "University/Elettronica Digitale/Dispositivi Elettronici.md",
+    "University/Elettronica Digitale/Circuiti Logici Digitali.md",
+    "University/Elettronica Digitale/Programma.md",
+    "Old Vault/Indexes/University.md",
     "Old Vault/Tags/Basi di Dati/Basi di Dati.md",
     "Old Vault/Tags/Fisica I/Fisica I.md",
-    "University/Fondamenti di Segnali e Trasmissione/Programma.md",
     "University/Elettronica Digitale",
     "Zettelkasten/Introduzione allo Studio di Segnali.md",
     "Zettelkasten/Segnali Aperiodici a Tempo Continuo.md",
     "Zettelkasten/Segnali Periodici a Tempo Continuo.md",
     "Zettelkasten/Appendice.md",
-    "Zettelkasten/Sistemi Monodimensionali a Tempo Continuo.md",
     "README.md",
     "Tags",
     "Old Vault/Old Vault.md",
@@ -214,11 +205,8 @@
     "Zettelkasten/Introduzione.md",
     "Zettelkasten/Cinematica.md",
     "Source Material/Images/Dinamica.md",
-    "Source Material/Images/Images.md",
-    "Source Material/Images/Appendice.md",
     "Old Vault/Tags/Fisica I",
     "Old Vault/Tags/Matematica Discreta e Codici",
-    "Old Vault/Tags/Analisi 2 e Probabilità/Analisi 2 e Probabilità.md",
     "Old Vault/Tags/Analisi 2 e Probabilità",
     "University",
     "University/University",
