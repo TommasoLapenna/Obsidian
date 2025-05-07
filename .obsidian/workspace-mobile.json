@@ -20,6 +20,28 @@
               "icon": "lucide-file",
               "title": "Segnali a Tempo Discreto"
             }
+          },
+          {
+            "id": "4819687335f53203",
+            "type": "leaf",
+            "state": {
+              "type": "mk-space",
+              "state": {
+                "path": "University/Fondamenti di Segnali e Trasmissione"
+              },
+              "icon": "lucide-file",
+              "title": "Fondamenti di Segnali e Trasmissione"
+            }
+          },
+          {
+            "id": "4f309310f4420659",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
           }
         ]
       }
@@ -86,7 +108,7 @@
         }
       },
       {
-        "id": "f4f9666e461d8e25",
+        "id": "aaf766199cca800c",
         "type": "leaf",
         "state": {
           "type": "mk-path-view",
@@ -166,25 +188,27 @@
   },
   "active": "8950c01908b1aca9",
   "lastOpenFiles": [
-    "Source Material/Images/Pasted image 20250417185307.png",
-    "Source Material/Images/Pasted image 20250417184641.png",
-    "Source Material/Images/Pasted image 20250417183427.png",
-    "Source Material/Images/Pasted image 20250417183410.png",
-    "Source Material/Images/Pasted image 20250417183214.png",
-    "Source Material/Images/Pasted image 20250417182550.png",
-    "Source Material/Images/Pasted image 20250417182141.png",
-    "Source Material/Images/Pasted image 20250417181020.png",
-    "Source Material/Images/Pasted image 20250417180713.png",
-    "University/Fondamenti di Segnali e Trasmissione/Segnali a Tempo Discreto.md",
+    "Source Material/Images/Pasted image 20250506182513.png",
+    "Source Material/Images/Pasted image 20250506181118.png",
+    "Source Material/Images/Pasted image 20250506180024.png",
+    "Source Material/Images/Pasted image 20250506171841.png",
     "University/Fondamenti di Segnali e Trasmissione/Fondamenti di Segnali e Trasmissione.md",
+    "University/Fondamenti di Segnali e Trasmissione/Segnali a Tempo Discreto.md",
+    "Source Material/Images/Pasted image 20250419182502.png",
+    "Source Material/Images/Pasted image 20250419182257.png",
     "University/Fondamenti di Segnali e Trasmissione/Programma.md",
-    "University/Fondamenti di Segnali e Trasmissione/Processi Aleatori Analogici.md",
-    "Source Material/Images/Pasted image 20250417163707.png",
-    "Source Material/Images/Pasted image 20250417154651.png",
-    "Zettelkasten/Sistemi Monodimensionali a Tempo Continuo.md",
-    "University/University.md",
+    "Zettelkasten/Segnali Aperiodici a Tempo Continuo.md",
+    "Source Material/Images/Pasted image 20250419175512.png",
+    "Source Material/Images/Pasted image 20250419175446.png",
+    "Source Material/Images/Pasted image 20250419175425.png",
+    "Source Material/Images/Pasted image 20250419175403.png",
+    "Source Material/Images/Pasted image 20250419175344.png",
+    "Zettelkasten/Segnali Periodici a Tempo Continuo.md",
     "University/Elettronica Digitale/Elettronica Digitale.md",
     "University/Elettronica Digitale/Dispositivi Elettronici.md",
+    "University/Fondamenti di Segnali e Trasmissione/Processi Aleatori Analogici.md",
+    "Zettelkasten/Sistemi Monodimensionali a Tempo Continuo.md",
+    "University/University.md",
     "University/Elettronica Digitale/Circuiti Logici Digitali.md",
     "University/Elettronica Digitale/Programma.md",
     "Old Vault/Indexes/University.md",
@@ -192,8 +216,6 @@
     "Old Vault/Tags/Fisica I/Fisica I.md",
     "University/Elettronica Digitale",
     "Zettelkasten/Introduzione allo Studio di Segnali.md",
-    "Zettelkasten/Segnali Aperiodici a Tempo Continuo.md",
-    "Zettelkasten/Segnali Periodici a Tempo Continuo.md",
     "Zettelkasten/Appendice.md",
     "README.md",
     "Tags",

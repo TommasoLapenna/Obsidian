@@ -9,24 +9,31 @@ sticker: emoji//0036-fe0f-20e3
 
 Un caso tipico nell'elaborazione dei segnali è quello in cui il segnale a tempo discreto $x[n]$ viene ottenuto a partire da un segnale a tempo continuo attraverso un'operazione di campionamento.
 Campionare un segnale $x(t)$ significa estrarre dal segnale i valori che esso assume assume a istanti di temporali equidistanti (multipli di un intervallo $T$ detto *Periodo di Campionamento*)
+
 ![[Pasted image 20250417180713.png|center|400]]
+
 Con questa operazione si crea una sequenza il cui l'$n-$esimo valore è il valore assunto dal segnale a tempo continuo all'istante $nT$
 $$
 x[n]=x(nT)
 $$
 L'operazione di campionamento viene effettuata da un dispositivo chiamato *Campionatore*
+
 ![[Pasted image 20250417181020.png|center|250]]
-La cadenza con cui l'interruttore si chiude (cioè con la quale il segnale viene campionato) è $$f_{c}= \frac{1}{T}$$ed è*Frequenza di Campionamento* ($Hz$ o $\frac{\text{campioni}}{s}$)
+
+La cadenza con cui l'interruttore si chiude (cioè con la quale il segnale viene campionato) è $$f_{c}= \frac{1}{T}$$ed è *Frequenza di Campionamento* ($Hz$ o $\frac{\text{campioni}}{s}$).
+
 Nella pratica, il campionamento viene effettuato dai convertitori A/D (Analogico/Digitale). Questi dispositivi sono controllati da un clock a frequenza $f_{c}$ che fornisce gli impulsi di comando al circuito per le operazioni di campionamento.
 Il campionatore ideale estrae il valore del segnale $x(t)$ in corrispondenza di ogni impulso di clock, il convertitore A/D invece rende una rappresentazione finita del numero reale estratto (solitamente in aritmetica binaria 8 o 16 bit), introducendo un *Errore di Quantizzazione*.
 
 L'elaborazione del segnale viene eseguita sui valori digitali estratti dal segnale attraverso la conversione A/D, e si risolve con l'esecuzione di un programma da parte di microprocessori specializzati, chiamati DSP (Digital Signal Processor).
 
+
 ![[Pasted image 20250417182141.png]]
 
 <sup>Struttura flessibile, le funzioni di elaborazione possono essere realizzate cambiando semplicemente software (invece dell'hardware)</sup>
 
-Il segnale $y[n]$ risultante viene successivamente riconvertito in un segnale analogico $y(t)$ attraverso una conversione D/A (Digitale/Analogico). Il dispositivo responsabile di questa operazione di chiama *Interpolatore*
+Il segnale $y[n]$ risultante viene successivamente riconvertito in un segnale analogico $y(t)$ attraverso una conversione D/A (Digitale/Analogico). Il dispositivo responsabile di questa operazione di chiama *Interpolatore*.
+
 ![[Pasted image 20250417182550.png|center|400]]
 ## Segnali Notevoli
 ##### Sequenza Gradino Unitario
@@ -59,10 +66,10 @@ u[n]=\begin{cases}
 \end{cases}
 $$
 Il gradino è la sequenza somma della $\delta[n]$ $$
-u[n]=\sum^n_{i=-\infty}\delta[i]\qquad u[n]=\delta[-\infty]+\ldots+\delta[n-1]+\delta[n]
-$$
+u[n]=\sum^n_{i=-\infty}\delta[i]\qquad u[n]=\delta[-\infty]+\ldots+\delta[n-1]+\delta[n]$$
 Solo se $n\ge 0$ almeno un termine fa $1$, altrimenti sono tutti $0$.
 Inoltre $\delta[n]=u[n]-u[n-1]$
+
 ![[Pasted image 20250417184641.png|center|350]]
 ##### Sequenza Impulso Rettangolare Causale di Durata $N$
 $$
@@ -72,6 +79,7 @@ x[n]=\begin{cases}
 \end{cases}
 $$
 Si ottiene come differenza tra un $u[n]$ e una sua versione ritardata
+
 ![[Pasted image 20250417185307.png|center|400]]
 ##### Oscillazione Complessa Discreta alla Frequenza Normalizzata $F_{0}$
 $$
@@ -90,9 +98,8 @@ $$
 funzione della variabile $F$ (frequenza normalizzata).
 
 Si osserva che la trasformata di una sequenza è una funzione periodica in $F$ di periodo $1$ $$
-\overline{X}(F+1)=\sum_{n=-\infty}^\infty [n]e^{-j 2\pi n(F+1)}=\sum_{n=-\infty}^\infty e^{j 2\pi nF}\underset{\text{Vale }1\text{ per }n\text{ intero} }{e^{-j 2\pi n}}=\sum_{n=-\infty}^\infty x[n]e^{-j 2\pi nF}=\overline{X}(F)
-$$
-Quindi $\overline{X}(F)$ è completamente nota se è noto il suo andamento in un intervallo delle frequenze normnalizzate di ampiezza unitaria (per esempio $F\in\left[ -\frac{1}{2}, \frac{1}{2} \right]$), chiamato *Intervallo Base*.
+\overline{X}(F+1)=\sum_{n=-\infty}^\infty [n]e^{-j 2\pi n(F+1)}=\sum_{n=-\infty}^\infty e^{j 2\pi nF}\underset{\text{Vale }1\text{ per }n\text{ intero} }{e^{-j 2\pi n}}=\sum_{n=-\infty}^\infty x[n]e^{-j 2\pi nF}=\overline{X}(F)$$
+Quindi $\overline{X}(F)$ è completamente nota se è noto il suo andamento in un intervallo delle frequenze normalizzate di ampiezza unitaria (per esempio $F\in\left[ -\frac{1}{2}, \frac{1}{2} \right]$), chiamato *Intervallo Base*.
 
 La definizione della trasformata è molto esaustiva dal punto di vista matematico, ma è poco conveniente quando la sequenza $x[n]$ proviene da un'operazione di campionamento di un segnale analogico $x(t)$.
 La presenza della frequenza normalizzata infatti non consente di stabilire un legame con la frequenza delle componenti della trasformata $X(f)$ del segnale analogico di partenza. Se allora il periodo di campionamento è $T$, si può definire la variabile
@@ -101,9 +108,12 @@ f= \frac{F}{T}= F\cdot f_{c}
 $$
 che viene ottenuta denormalizzando la frequenza normalizzata, misurabile in $Hz$.
 Sostituendo nella definizione iniziale di trasformata $F=fT$, si ottiene una funzione complessa della frequenza misurabile in $Hz$ (nuova definizione).
-$$
-\overline{X}(f)=\sum_{n=-\infty}^\infty x[n]e^{-j 2\pi nfT}=TFS[x[n]]
-$$
+
+> [!gray] ==Trasformata di Fourier di una Sequenza==
+> $$
+> \overline{X}(f)=\sum_{n=-\infty}^\infty x[n]e^{-j 2\pi nfT}=TFS[x[n]]
+> $$
+
 Anche per la trasformata di una sequenza si introducono lo spettro si ampiezza $\overline A(f)=|\overline X(f)|$ e lo spettro di fase $\overline \theta(f)=\angle \overline X(f)$.
 Poiché la funzione $\overline X(f)$ è periodica di periodo $1$, è allora periodica in ambito frequenziale di un periodo pari alla frequenza di campionamento $f_{c}=\frac{1}{T}$:
 $$
@@ -111,17 +121,350 @@ $$
 $$
 Questa periodicità è caratteristica delle trasformate di sequenza, che diventa evidente nella relazione di *Antitrasformata*.
 Si introduce quindi la relazione di antitrasformazione
-$$
-x[n]=ITFS[\overline X(f)]= T \int_{-\frac{1}{2T}}^{\frac{1}{2T}}\overline X(f)e^{j 2\pi nfT}\ df
-$$
+
+> [!gray] ==Antitrasformata di Fourier di una Sequenza==
+> $$
+> x[n]=ITFS[\overline X(f)]= T \int_{-\frac{1}{2T}}^{\frac{1}{2T}}\overline X(f)e^{j 2\pi nfT}\ df
+> $$
+
 Permette di esprimere la sequenza attraverso un integrale di Fourier.
 
-Procedimento per ottenere l'Antitrasformata
-Si parte dalla definizione di trasformata
+> [!gray] Procedimento per ottenere l'Antitrasformata
+> Si parte dalla definizione di trasformata
+> $$
+> \overline X(f)=\sum_{n=-\infty}^\infty x[m]e^{-j 2\pi mfT}=TFS[x[m]]
+> $$
+> Si moltiplicano entrambi i membri per un'oscillazione complessa alla frequenza $f$ e si integra sull'intervallo frequenziale $\left[ -\frac{1}{2T}, \frac{1}{2T} \right]$
+> $$
+> \int_{-\frac{1}{2T}}^{\frac{1}{2T}}e^{j 2\pi nfT}\ df = \int_{-\frac{1}{2T}}^{\frac{1}{2T}}\sum_{m=-\infty}^\infty x[m]e^{-j 2\pi mfT}e^{j 2\pi nfT}\ df = \sum_{m=-\infty}^\infty x[m]\int_{-\frac{1}{2T}}^{\frac{1}{2T}} e^{-j 2\pi(m-n)fT}\ df
+> $$
+> ^496717
+> 
+> Si osserva che
+> $$
+> \int_{-\frac{1}{2T}}^{\frac{1}{2T}}e^{-j 2\pi(m-n)fT}\ df= \begin{cases}
+> 0 & m\ne n \\ \frac{1}{T} & m=n
+> \end{cases}
+> $$
+> La serie del secondo membro della relazione su riduce in un unico termine per cui $m=n$, in cui vale l'integrale $\frac{1}{T}$: 
+> $$
+> \int_{-\frac{1}{2T}}^{\frac{1}{2T}}\overline{X}(f)e^{j 2\pi fT}\ df= \frac{1}{T}x[n]
+> $$
+> Da cui si ottiene la relazione di antitrasformazione ^f0871d
+> $$
+> x[n]=ITFS[\overline X(f)]= T \int_{-\frac{1}{2T}}^{\frac{1}{2T}} \overline X(f)e^{j 2\pi fT}\ df
+> $$
+> La serie al secondo membro della relazione [[#^496717|precedente]] si riduce all'unico termine per cui $m=n$, in cui l'integrale vale $\frac{1}{T}$.
+
+Il significato dell'espansione della frequenza $x[n]$ è la solita della trasformata di Fourier:
+- Il segnale viene espresso come sovrapposizione di un continuo di componenti frequenziali di ampiezza e fase regolate da $\overline X(f)$. 
+
+> [!info] Componenti Necessarie
+> Per un segnale analogico servono tutte le componenti a tutte le frequenze sull'asse reale (da $-\infty$ a $+\infty$). Invece per esprimere una frequenza in ambito frequenziale bastano le componenti aventi frequenze comprese nell'intervallo $\left[ -\frac{1}{2T}, \frac{1}{2T} \right]$.
+Questo fatto è giustificato dalla periodicità
+
+Questo fatto è giustificato dalla periodicità della trasformata di una sequenza (solo le componenti veramente significative sono quelle nel periodo di base).
+
+> [!hint] Periodicità della Trasformata di una Sequenza
+> La periodicità e/o limitatezza della trasformata di una sequenza sono conseguenze di un fenomeno che si verifica nei segnali a tempo discreto:
+> - Due oscillazioni sinusoidale (complesse) alle rispettive frequenze $f_{0}+\frac{m}{T}$ e $f_{0}$ sono indistinguibili.
+>
+> Infatti
+> $$
+> \exp\left[ j 2\pi\left( f_{0}+\frac{m}{T} \right)nT \right]=\exp(j 2\pi f_{0}nT)\exp (j 2\pi mn)= \exp(j 2\pi f_{0}nT)
+> $$
+> ![[Pasted image 20250419152654.png|center|425]]
+> Quindi non ha senso pensare a componenti significative nello spettro del segnale discreto fuori di un intervallo base di ampiezza pari alla frequenza di campionamento (in quanto queste componenti sono indistinguibili da quelle presenti nel periodo base).
+> Questa è proprio la definizione di periodicità della trasformata.
+
+<br>
+Per la serie della TFS si possono porre problemi di convergenza.
+
+> [!gray] Condizione Sufficiente per l'Esistenza della trasformata
+> Una condizione sufficiente è l'assoluta sommabilità:
+> $$
+> \sum_{n=-\infty}^\infty |x[n]|<+\infty
+> $$
+> Infatti si ha che
+> $$
+> |\overline{X}(f)|=|\sum_{n=-\infty}^\infty x[n]e^{-j 2\pi fT}|\le\sum_{n=-\infty}^\infty |x[n]e^{-j 2\pi nfT}|= \sum_{n=-\infty}^\infty|x[n]|
+> $$
+> Per cui se $\sum_{n=-\infty}^\infty |x[n]|<\infty$ allora è vero che $|\overline X(f)|<+\infty$ (il verificarsi di questa condizione assicura la convergenza per tutti i valori della sequenza).
+> 
+
+Le proprietà della trasformata di Fourier di una sequenza relativamente a quelle del segnale temporale sono identiche a quelle ricavate per la trasformata di Fourier di un segnale continuo (simmetria Hermitaina, segnale pari o dispari, segnale reale ecc..). Queste proprietà si ricavano delle seguenti relazioni (ricavate precedentemente)
+- ==*Analisi*:== $$\overline X(f)=\sum_{n=-\infty}^\infty x[m]e^{-j 2\pi mfT}=TFS[x[m]]$$
+- ==*Sintesi:*== $$x[n]=ITFS[\overline X(f)]= T \int_{-\frac{1}{2T}}^{\frac{1}{2T}}\overline X(f)e^{j 2\pi nfT}\ df$$
+
+> [!info] N.B.
+> Il segnale nel tempo è discreto, ma la trasformata è continua.
+
+> [!example]+ Esempio: Calcolo della trasformata della sequenza $\delta[n]$
+> ![[Pasted image 20250419155821.png]]
+
+> [!example]+ Esempio: Calcolo della trasformata dell'impulso rettangolare discreto:
+> ![[Pasted image 20250419161036.png]]
+> 
+
+> [!example]+ Esempio: Calcolo della Trasformata della Sequenza Esponenziale Discreto
+> ![[Pasted image 20250419162448.png]]
+
+---
+## Teoremi sulla Trasformata di Fourier di una Sequenza
+Alcune proprietà della trasformata di una sequenza sono analoghe a quelle della trasformata di un segnale continuo, mentre altre sono radicalmente diverse.
+### Teorema di Linearità
+> [!gray] ->
+> Si considera la seguente combinazione lineare:
+> $$
+> x[n]=a\cdot x_{1}[n]+b\cdot x_{2}[n]
+> $$
+> Allora
+> $$
+> \overline X(f) = a\cdot \overline X_{1}(f)+b\cdot\overline X_{2}(f)
+> $$
+> dove $\overline X_{1}(f)=TFS[x_{1}[n]]$ e $\overline X_{2}(f)=TFS[x_{2}[n]]$.
+> 
+
+Questa proprietà è una banale conseguenza della definizione di trasformata di Fourier di una sequenza, si dimostra in modo analogo al caso continuo
+### Teorema del Ritardo
+
+> [!gray] ->
+> Si considera una sequenza $x[n]$ con trasformata $\overline X(f)$. la trasformata della sequenza $x[n-k]$ (ottenuta ritardando $x[n]$ di $k$ passi) è espressa nel seguente modo:
+> $$
+> x[n-k]\iff \overline X(f)e^{-j 2\pi kft}
+> $$
+> <br>**Dimostrazione:**
+> Basta osservare che
+> $$
+> \begin{align}
+> TFS[x[n-k]]&=\sum_{n=-\infty}^\infty x[n-k]e^{-j 2\pi nfT}=\sum_{n=-\infty}^\infty x[m]e^{-j 2\pi(m+k)fT}=e^{-j 2\pi kfT} \sum_{m=-\infty}^\infty x[m]e^{-j 2\pi mfT} \\
+> &= \overline X(f)e^{-j 2\pi kfT}
+> \end{align}
+> $$
+> avendo effettuato il cambio di variabile $m=n-k$.
+
+### Teorema della della Modulazione (o Traslazione in Frequenza)
+
+> [!gray] ->
+> La trasformata della sequenza $x[n]e^{j 2\pi nf_{0}T}$ (ottenuta modulando $x[n]$ con la sequenza $e^{j 2\pi nf_{0}T}$) è espressa da
+> $$
+> x[n]e^{j 2\pi nf_{0}T}\iff \overline X(f-f_{0})
+> $$
+> <br> **Dimostrazione:**
+> Infatti si ha
+> $$
+> TFS[x[n]e^{j 2\pi nf_{0}T}] = \sum_{n=-\infty}^\infty x[n]e^{j 2\pi nf_{0}T}e^{-j 2\pi nfT}= \sum_{n=-\infty}^\infty x[n]e^{-j 2\pi n(f-f_{0})T}=\overline X(f-f_{0})
+> $$
+
+### Teorema della Somma di Convoluzione
+> [!info] Somma di Convoluzione tra Sequenza Aperiodiche
+> Si definisce la sequenza $z[n]$ come somma di convoluzione tra le sequenze (aperiodiche) $x[n]$ e $y[n]$: 
+> $$
+> z[n]=x[n]\otimes y[n]=\sum_{k=-\infty}^\infty x[k]y[n-k]=\sum_{k=-\infty}^\infty y[k]x[n-k]
+> $$
+> - Gode delle stesse proprietà commutativa, associativa e distributiva dell'integrale di convoluzione.
+
+> [!gray] ->
+> La trasformata di Fourier della sequenza $z[n]=x[n]\otimes y[n]$ è espressa da
+> $$
+> z[n]=x[n]\otimes y[n] \iff \overline Y(f)\cdot \overline X(f)= \overline Z(f)
+> $$
+> <br>**Dimostrazione:**
+> $$
+> \overline Z(f)=\sum_{n=-\infty }^\infty \sum_{k=-\infty}^\infty x[k]y[n-k]e^{-j 2\pi nfT}
+>  = \sum_{k=-\infty}^\infty x[k]\sum_{n=-\infty}^\infty y[n-k]e^{-j 2\pi nfT}$$
+> Invertendo l'ordine delle due sommatorie, si osserva che (teorema del ritardo)
+> $$
+> \sum_{n=-\infty}^\infty y[n-k]e^{-j 2\pi nfT} = \overline Y(f)e^{-j 2\pi kfT}
+> $$
+> Allora si può scrivere
+> $$
+> \overline Z(f)=\sum_{k=-\infty}^\infty x[k]\ \overline Y(f)e^{-j 2\pi kfT} =\overline Y(f)\sum_{k=-\infty}^\infty x[k]e^{-j 2\pi kfT}=\overline Y(f)\overline X(f)
+> $$
+
+### Teorema del Prodotto
+
+> [!gray] ->
+> Si considera la frequenza $p[n]$ data dal prodotto fra la sequenza $x[n]$ e la sequenza $y[n]$, ovvero $p[n]=x[n]\cdot y[n]$, e se ne calcola la trasformata:
+> $$
+> \overline P(f)=\sum_{n=-\infty}^\infty p[n]e^{-j 2\pi nfT} =\sum_{n=-\infty}^\infty x[n]y[n]e^{-j 2\pi nfT}=\sum_{n=-\infty}^\infty \left( T \int_{-\frac{1}{2T}}^{\frac{1}{2T}}\overline X (v)e^{j 2\pi nvT}\ dv \right)y[n]e^{-j 2\pi nfT}
+> $$
+> (avendo espresso $x[n]$ come antitrasformata di $\overline X(f)$).
+> Con questa trasformata si ricava (invertendo l'ordine delle operazione di somma e intergale):
+> $$
+> \overline P(f)=T\int_{-\frac{1}{2T}}^{\frac{1}{2T}} \overline X(v)\sum_{n=-\infty}^\infty y[n]e^{-j 2\pi n(f-v)T}\ dv = T\int_{-\frac{1}{2T}}^{\frac{1}{2T}} \overline X(v) \overline Y(f-v)\ dv
+> $$
+> che permette di stabilire la relazione
+> $$
+> p[n]=x[n]y[n]\iff\overline P(f)=T\int_{-\frac{1}{2T}}^{\frac{1}{2T}}\overline X(v)\overline Y(f-v)\ dv
+> $$
+
+Poiché le funzioni $\overline X(v)$ e $\overline Y(f-v)$ sono periodiche di periodo $\frac{1}{T}$, l'integrazione può esere svolta su un qualsiasi intervallo frequenziale di ampiezza $\frac{1}{T}$. Questo integrale rappresenta la *Convoluzione Ciclica* (o periodica) fra le trasformate $\overline X(v)$ e $\overline Y(v)$
+
+La convoluzione ciclica p un'operazione che si definisce tra funzioni periodiche come le trasformate delle sequenze. Si noti come la funzione integranda è analoga a quella nella convoluzione lineare (o aperiodice), ma viene calcolato su un solo periodo, e il risultato viene poi diviso per l'ampiezza del periodo stesso ($\frac{1}{T}$).
+### Teorema dell'incremento
+
+> [!gray] ->
+> La derivata di un segnale a tempo continuo $x(t)$ può essere approssimata con il rapporto incrementale
+> $$\left.\frac{dx(t)}{dt}\right |_{t=nT}\simeq \frac{x(nT)-x(nT-T)}{T}=\frac{x[n]-x[n-1]}{T}$$
+> avendo definito la sequenza $x[n]=x(nT)$ ottenuta per campionamento del segnale continuo $x(t)$.
+> Si introduce l'operatore *Incremento* $\Delta$ definito dalla relazione 
+> $$\Delta x[n]=x[n]-x[n-1]$$
+> Si può immaginare la sequenza degli incrementi $\Delta x[n]$ di $x[n]$ come il corrispondente a tempo discreto della derivata del segnale a tempo continuo $\frac{dx(t)}{dt}$.
+> Infine, usando il teorema del ritardo si può scrivere
+> $$
+> \Delta x[n]\iff \overline X(f)-\overline X(f)e^{-j 2\pi fT}=\overline X(f)(1-e^{-j 2\pi fT})
+> $$
+
+### Teorema della Sequenza Somma
+
+> [!gray] ->
+> Si considera la *Sequenza Somma* $y[n]$ di una sequenza $x[n]$:
+> $$
+> y[n]=\sum_{k=-\infty}^n x[k]
+> $$
+> La trasformata della sequenza è espressa da 
+> $$
+> \overline Y(f)= \frac{\overline X (f)}{1-e^{-j 2\pi fT}}\qquad \text{se }\overline X(0)=0
+> $$
+> <br> **Dimostrazione:**
+> per il teorema dell'incremento si può scrivere 
+> $$
+> \Delta y[n]\iff \overline Y(f)(1-e^{j 2\pi fT})
+> $$
+> D'altronde 
+> $$
+> \Delta y[n]=y[n]-y[n-1] = \sum_{k=-\infty}^n x[k]-\sum^{n-1}_{k=-\infty} x[k]=x[n]
+> $$
+> e quindi
+> $$
+> \overline X(f)=\overline Y(f)(1-e^{-j 2\pi fT})
+> $$
+>
+> ^poopo
+> 
+> e si conclude con
+> $$
+> y[n]= \sum_{k=-\infty}^n x[k]\iff \overline Y(f)= \frac{\overline X(f)}{1-e^{-j 2\pi fT}}
+> $$
+> Se si considera però [[#^poopo|(*)]], per $f=0$ si ottiene
+> $$\overline X(0)=\overline Y(0)(1-e^{-j0})$$
+> che non può essere valida se $\overline X(0)\ne0$. Quindi, la condizione per l'applicabilità di questo teorema nella forma appena espressa è che valga
+> $$
+> \overline X(0)=\sum_{n=-\infty}^\infty x[n]=0
+> $$
+
+## Esempi
+
+> [!example]+ Esempio:
+> ![[Pasted image 20250419175156.png]]
+> ![[Pasted image 20250419175224.png]]
+> ![[Pasted image 20250419175248.png]]
+
+> [!example] Esempio:
+> ![[Pasted image 20250419175344.png]]
+> ![[Pasted image 20250419175403.png]]
+> ![[Pasted image 20250419175425.png]]
+> ![[Pasted image 20250419175446.png]]
+> ![[Pasted image 20250419175512.png]]
+
+---
+## Condizione di Nyquist e Teorema del Campionamento
+### Campionamento
+Si prende in considerazione il campionamento di un segnale a tempo continuo $x(t)$:
+$$x[n]=x(nT)$$
+Si determinano ora le conseguenza in ambito frequenziale di questa relazione (già validata in ambito temporale).
+
+Ovviamente si ha:
 $$
-\overline X(f)=\sum_{n=-\infty}^\infty x[m]e^{-j 2\pi mfT}=TFS[x[m]]
+\overline X(f)=\sum_{n=-\infty}^\infty x[n]e^{-j 2 \pi nfT}=\sum_{n=-\infty}^\infty x(nT)e^{-j 2\pi nfT}
 $$
-Si moltiplicano entrambi i membri per un'oscillazione complessa alla frequenza $f$ e si integra sull'intervallo frequenziale $\left[ -\frac{1}{2T}, \frac{1}{2T} \right]$
+^ddd
+
+Si esprimono i campioni del segnale a tempo continuo $x(t)$ attraverso l'integrale di Fourier (antitrasformata) all'istante $t=nT$ (usando la variabile ausiliare $v$)
 $$
-\int_{-\frac{1}{2T}}^{\frac{1}{2T}}e^{j 2\pi nfT}\ df = \int_{-\frac{1}{2T}}^{\frac{1}{2T}}\sum_{m=-\infty}^\infty x[m]e^{-j 2\pi mfT}e^{j 2\pi nfT}\ df = \sum_{m=-\infty}^\infty x[m]\int_{-\frac{1}{2T}}^{\frac{1}{2T}} e^{-j 2\pi(m-n)fT}\ df
+x(t)=\int_{-\infty}^\infty X(v)e^{j 2\pi vnT}\ dv\Longrightarrow x[n]=x(nT)=\int_{-\infty}^\infty X(v)e^{j 2\pi vnT}\ dv 
+$$
+Sostituendo alla relazione [[#^ddd|precedente]] si ottiene
+$$
+\overline X(f)=\sum_{n=-\infty}^\infty \left(\int_{-\infty}^\infty X(v)\ e^{j 2\pi vnT}\ dv\right)e^{-j 2\pi nfT}=\int_{-\infty}^\infty X(v)\sum_{n=-\infty}^\infty e^{-j 2\pi n(f-v)T}\ dv
+$$
+avendo scambiato l'ordine di somma e integrazione. 
+
+Per semplificare questo risultato, si considera lo sviluppo in serie di Fourier del segnale pettine di Dirac, con coefficienti tutti uguali a $\frac{1}{T}$
+$$x(t)=\sum_{n=-\infty}^{\infty} \delta(t-nT)=\sum_{k=-\infty}^\infty X_{k}e^{k \frac{2\pi kt}{T}}= \frac{1}{T}\sum^\infty_{k=-\infty}e^{j \frac{2\pi kt}{T}} $$![[Pasted image 20250419182257.png|center|250]]
+Se si calcola la trasformata di Fourier dei due membri della relazione:
+$$\sum_{n=-\infty}^\infty e^{ -j 2\pi n }= \frac{1}{T}\sum_{k=-\infty}^\infty \delta \left( f- \frac{k}{T} \right)$$
+![[Pasted image 20250419182502.png|center|250]]
+
+Si sostituisce questa espressione in $\overline X(f)=\int_{-\infty}^\infty X(v)\sum_{n=-\infty}^\infty e^{ -j 2\pi n(f-n)T }\ dv$ e si ottiene 
+$$
+\begin{align}
+\overline{X}(f)&= \int_{-\infty}^\infty X(v) \frac{1}{T}\sum_{k=-\infty}^\infty \delta\left( f-v- \frac{k}{T} \right)\ dv = \frac{1}{T}\sum_{k=-\infty}^\infty \int_{-\infty}^\infty X(v)\delta \left( v-\left( f- \frac{k}{T} \right) \right)\ dv 
+\end{align}
+$$
+Infine, per la proprietà campionatrice della funzione $\delta$ si ottiene:
+$$
+\overline{X}(f)=\frac{1}{T}\sum_{k=-\infty}^\infty X\left( f- \frac{k}{T} \right)
+$$
+
+> [!hint] Trasformata di una Sequenza di Campionamento
+> Questa relazione mostra che la trasformata di una sequenza ottenuta tramite campionamento di un segnale analogico $x(t)$ si ricava come periodicizzazione della trasformata di $x(t)$, con un periodo di ripetizione in frequenza pari alla frequenza di campionamento $\frac{1}{T}$.
+
+Si considera come esempio lo spettro seguente segnale analogico $x(t)$ (a). Si considerano successivamente i due spettri di $x[n]$ (b e c), ottenute con due frequenze di campionamento diverse.
+
+![[Pasted image 20250506171841.png]]
+
+Nel caso b) si ottiene una banda $B$ sufficientemente larga, si ha così che le replice della trasformata di $x(t)$ siano separate e non sovrapposte.
+Lo stesso non si può dire nel caso c), dove la frequenza di campionamento minore da origine ad una banda $B$ non sufficientemente grande, il risultato è la sovrapposizione delle repliche della trasformata di $x(t)$, le quali si sommano e creano un'interferenza.
+
+La conseguenza di una frequenza di campionamento non sufficientemente grande è quella dell'introduzione di un ==*Errore di Aliasing*== nell'intervallo $\left[ - \frac{1}{2T}, \frac{1}{2T} \right]$, creato dalle repliche dello spettro-base, che porta ad una distorsione del segnale.
+
+Se il segnale è a banda limitata, è dunque possibile trovare una condizione che garantisce l'assenza di aliasing. La banda del segnale analogico di partenza $B$ deve essere più piccola dell'estremo superiore dell'intervallo base $\left[ - \frac{1}{2T}, \frac{1}{2T} \right]$, cioè $B\le \frac{1}{2T}$.
+
+> [!gray] Condizione di Nyquist
+> Fissata la banda del segnale $B$, la frequenza di campionamento deve essere scelta in modo che valga la seguente condizione
+> $$
+> f_{c}= \frac{1}{T}\ge 2B
+> $$
+
+Tornando al caso precedente, in b si ha che la condizione è rispettata ($f_{c}= .5 B >2B$), perciò l'intervallo base contiene una replica indistorta dello spettro del segnale analogico di partenza.
+
+> [!example]+ Esempio:
+> ![[Pasted image 20250506180024.png]]
+
+La condizione di Nyquist pone alcuni vincoli sulla scelta della frequenza di campionamento se si desidera ricostruire un segnale a tempo continuo utilizzandone i campioni. In particolare, il periodo di campionamento deve essere scelto in funzione della banda del segnale analogico.
+L'informazione portata da un segnale è data dalla sua forma, ovvero il suo andamento del tempo, quindi i campioni per poter rappresentare questa informazione devono seguire nel modo più fedele possibile questi andamento.
+
+> [!example]+ Esempio:
+> ![[Pasted image 20250506181118.png]]
+
+> [!hint] Corrispondenza tra Dominio del Tempo e della Frequenza
+> Se si aumenta $f_{c}$, le repliche in frequenza si allontanano. Ovvero se si diminuisce $T$, i campioni si avvicinano
+
+> [!example]+ Esempio: Trasformata di $x[n]=1$
+> Ricavare la trasformata di Fourier della sequenza costante $x[n]=1$.
+> Si può pensare $x[n]$ come risultante da un campionamento con intervallo $T$ arbitrario del segnale costante a tempo continuo $x(t)=1$.
+> Poiché
+> $$
+> x(t)=1\iff X(f)=\delta(f)
+> $$
+> Applicando la relazione del campionamento
+> $$
+> \overline{X}(f)= \frac{1}{T}\sum_{k=-\infty}^\infty X\left( f- \frac{k}{T} \right)
+> $$
+> Si trova
+> $$
+> \overline{X}(f)= \frac{1}{T}\sum_{k=-\infty}^\infty \delta \left( f- \frac{k}{T} \right)
+> $$
+> ![[Pasted image 20250506182513.png]]
+> Ricordando che la trasformata per sequenze è periodica, si può limitare il risultato all'intervallo $\left[ -\frac{1}{2T}, \frac{1}{2T} \right]$.
+
+Esempio: 
+Trovare la trasformata di Fourier delle sequenze
+- $z[n]=\cos(2\pi nf_{0}T)$
+- $y[n]=\sin(2 \pi nf_{0}T)$
+Dalla trasformata della sequenza costante dell'esempio precedente e dal teorema della modulazione si ottiene
+$$
+x[n]=e^{j 2\pi n_{0}T}\iff \overline{X}(f-f_{0})
 $$
