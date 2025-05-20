@@ -4,7 +4,9 @@
   "navigatorEnabled": true,
   "filePreviewOnHover": false,
   "blinkEnabled": true,
+  "datePickerTime": false,
   "imageThumbnails": false,
+  "noteThumbnails": false,
   "spacesMDBInHidden": true,
   "cacheIndex": true,
   "spacesRightSplit": false,
@@ -33,6 +35,7 @@
   "folderNoteName": "",
   "sidebarTabs": true,
   "showRibbon": true,
+  "vaultSelector": true,
   "deleteFileOption": "trash",
   "expandedSpaces": [
     "/",
@@ -43,8 +46,8 @@
     "//Old Vault/Old Vault/Tags",
     "//Old Vault/Old Vault/Tags/Old Vault/Tags/Matematica Discreta e Codici",
     "//Old Vault/Old Vault/Tags/Old Vault/Tags/Basi di Dati",
-    "//University",
-    "//University/University/Elettronica Digitale"
+    "//University/Old Vault/Tags/Matematica Discreta e Codici",
+    "//University"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
@@ -92,7 +95,6 @@
   "inlineContextProperties": true,
   "inlineContextSectionsExpanded": true,
   "banners": true,
-  "dataviewInlineContext": false,
   "inlineContextNameLayout": "vertical",
   "spacesUseAlias": false,
   "fmKeyAlias": "aliases",
@@ -113,7 +115,6 @@
   "selectedKit": "default",
   "actionMaxSteps": 100,
   "contextPagination": 25,
-  "searchWorker": false,
   "skipFolderNames": [],
   "skipFolders": [],
   "enhancedLogs": false,
@@ -226,5 +227,7 @@
   "firstLaunch": true,
   "notesPreview": false,
   "editStickerInSidebar": true,
-  "overrideNativeMenu": false
+  "overrideNativeMenu": false,
+  "dataviewInlineContext": false,
+  "searchWorker": false
 }

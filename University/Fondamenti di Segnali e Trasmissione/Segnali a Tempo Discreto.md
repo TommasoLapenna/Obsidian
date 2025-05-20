@@ -460,11 +460,52 @@ L'informazione portata da un segnale è data dalla sua forma, ovvero il suo anda
 > ![[Pasted image 20250506182513.png]]
 > Ricordando che la trasformata per sequenze è periodica, si può limitare il risultato all'intervallo $\left[ -\frac{1}{2T}, \frac{1}{2T} \right]$.
 
-Esempio: 
-Trovare la trasformata di Fourier delle sequenze
-- $z[n]=\cos(2\pi nf_{0}T)$
-- $y[n]=\sin(2 \pi nf_{0}T)$
-Dalla trasformata della sequenza costante dell'esempio precedente e dal teorema della modulazione si ottiene
-$$
-x[n]=e^{j 2\pi n_{0}T}\iff \overline{X}(f-f_{0})
-$$
+> [!example]+ Esempio: 
+> Trovare la trasformata di Fourier delle sequenze
+> - $z[n]=\cos(2\pi nf_{0}T)$
+> - $y[n]=\sin(2 \pi nf_{0}T)$
+> Dalla trasformata della sequenza costante dell'esempio precedente e dal teorema della modulazione si ottiene
+> $$
+> x[n]=e^{j 2\pi n_{0}T}\iff \overline{X}(f-f_{0})
+> $$
+> Si ha che, rispetto alla sequenza costante $x[n]=1$
+> $$
+> e^{j 2\pi n_{0}T}\iff \frac{1}{T}\sum_{k=-\infty}^\infty \delta\left( f-f_{0}- \frac{k}{T} \right)
+> $$
+> Per cui, utilizzando le formule di Eulero, si trova immediatamente
+> $$
+> \begin{aligned}
+> &\overline{Z}(f)= \frac{1}{2T}\delta(f-f_{0})+\frac{1}{2T}\delta(f+f_{0}) \\
+> &\overline{Y}(f) \frac{1}{2jT}\delta(f-f_{0})- \frac{1}{2jT}\delta(f+f_{0})
+> \end{aligned} \qquad -\frac{1}{2T}\le f\le \frac{1}{2T}
+> $$
+> Limitato all'intervallo base della trasformata.
+
+> [!example]+ Esempio:
+> La trasformata di Fourier $\overline X(f)$ di una sequenza $x[n]$ è rappresentata nella seguente figura.
+> ![[Pasted image 20250507120631.png|center|400]]
+> Attraverso la relazione di antitrasformata si trova
+> $$
+> x[n]=T\int_{-\frac{1}{2T}}^{\frac{1}{2T}}\overline X(f)e^{j 2\pi nfT}
+> \ df= T\int_{-B}^B e^{j 2\pi nfT}\ df= T \left[ \frac{e^{j 2\pi nfT}}{j 2\pi nT} \right]^B_{-B}=2BT\text{sinc}(2BnT)$$
+> Si può ottenere lo stesso risultato pensando a $\overline X(f)$ come  derivante della periodicizzazione di una singola funzione $\text{rect}$:
+> $$
+> \overline X(f)= \frac{1}{T}\sum_{k=-\infty}^\infty T\cdot \text{rect}\left( \frac{f-\frac{k}{T}}{2B} \right)
+> $$
+> Quindi la sequenza $x[n]$ si può ricavare come campionamento del segnale a tempo continuo 
+> $$
+> x(t)=ITCF\left[ T\cdot\text{rect}\left( \frac{f}{2B} \right) \right]=2BT\text{sinc}(2Bt)
+> $$
+> ![[Pasted image 20250507122423.png|center|450]]
+
+### Interpolazione
+La ricostruzione di un segnale a tempo continuo a partire da una sequenza di campioni viene e viene realizzata attraverso un *Interpolatore*.
+L'nterpolazione è da considerarsi come una generalizzazione dell'operazione compiuta in pratica da un convertitore D/A in uscita.
+
+Il sistema che esegue l'operazione di campionamento e la successiva interpolazione (senza elaborazioni intermedie) è composto da due blocchi A/D e D/A in cascata:
+
+![[Pasted image 20250507124719.png]]
+
+Ci sono vari tipi di operazione di interpolazione.
+### Interpolazione a Mantenimento
+L'operazione di *Interpolazione a Mantenimento*
