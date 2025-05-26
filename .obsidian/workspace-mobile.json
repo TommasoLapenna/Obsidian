@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/Progettazione e Produzione Multimediale/Immagini (Concetti Generali).md",
-                "mode": "source",
+                "file": "University/Fondamenti di Segnali e Trasmissione/Segnali a Tempo Discreto.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Immagini (Concetti Generali)"
+              "title": "Segnali a Tempo Discreto"
             }
           }
         ]
@@ -86,7 +86,7 @@
         }
       },
       {
-        "id": "99e825cf37aff576",
+        "id": "14921ed9eddcb0e7",
         "type": "leaf",
         "state": {
           "type": "mk-path-view",
@@ -108,7 +108,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "University/Progettazione e Produzione Multimediale/Immagini (Concetti Generali).md",
+            "file": "University/Fondamenti di Segnali e Trasmissione/Segnali a Tempo Discreto.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -166,20 +166,21 @@
   },
   "active": "4f309310f4420659",
   "lastOpenFiles": [
-    "Source Material/Images/Pasted image 20250519173152.png",
-    "Source Material/Images/Pasted image 20250519172552.png",
-    "Source Material/Images/Pasted image 20250519170648.png",
-    "Source Material/Images/Pasted image 20250519124828.png",
-    "Source Material/Images/Pasted image 20250519124759.png",
-    "Source Material/Images/Pasted image 20250519122733.png",
-    "Source Material/Images/Pasted image 20250519122438.png",
-    "Source Material/Images/IMG_0477.mov",
-    "Source Material/Images/Pasted image 20250517171441.png",
-    "Source Material/Images/Pasted image 20250517171001.png",
-    "Source Material/Images/Pasted image 20250517163433.png",
-    "University/Progettazione e Produzione Multimediale/Immagini (Concetti Generali).md",
+    "Source Material/Images/Pasted image 20250521125619.png",
+    "Source Material/Images/Pasted image 20250521125321.png",
+    "Source Material/Images/Pasted image 20250521125049.png",
+    "Source Material/Images/Pasted image 20250521124814.png",
+    "Source Material/Images/Pasted image 20250521124452.png",
+    "Source Material/Images/Pasted image 20250521124021.png",
+    "Source Material/Images/Pasted image 20250521123654.png",
+    "Source Material/Images/Pasted image 20250521115718.png",
+    "Source Material/Images/Pasted image 20250521112900.png",
+    "Source Material/Images/Pasted image 20250521112046.png",
+    "Source Material/Images/Pasted image 20250521110742.png",
+    "University/Fondamenti di Segnali e Trasmissione/Fondamenti di Segnali e Trasmissione.md",
     "University/University.md",
-    "Source Material/Images/IMG_0479.jpg",
+    "University/Progettazione e Produzione Multimediale/Immagini (Concetti Generali).md",
+    "Source Material/Images/IMG_0477.mov",
     "University/Progettazione e Produzione Multimediale/Progettazione e Produzione Multimediale.md",
     "University/Progettazione e Produzione Multimediale",
     "University/Untitled.md",
@@ -188,7 +189,6 @@
     "University/Elettronica Digitale/Elettronica Digitale.md",
     "University/Elettronica Digitale/Dispositivi Elettronici.md",
     "University/Elettronica Digitale/Circuiti Logici Digitali.md",
-    "University/Fondamenti di Segnali e Trasmissione/Fondamenti di Segnali e Trasmissione.md",
     "Old Vault/Tags/Matematica Discreta e Codici/Matematica Discreta e Codici.md",
     "University/Fondamenti di Segnali e Trasmissione/Segnali a Tempo Discreto.md",
     "University/Fondamenti di Segnali e Trasmissione/Programma.md",

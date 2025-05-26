@@ -2,6 +2,29 @@
 Order: "6"
 sticker: emoji//0036-fe0f-20e3
 ---
+- [[#Campionamento dei Segnali a Tempo Continuo|Campionamento dei Segnali a Tempo Continuo]]
+- [[#Segnali Notevoli|Segnali Notevoli]]
+			- [[#Sequenza Gradino Unitario|Sequenza Gradino Unitario]]
+			- [[#Sequenza Esponenziale Unilatero|Sequenza Esponenziale Unilatero]]
+			- [[#Sequenza $\delta$ o Impulsiva|Sequenza $\delta$ o Impulsiva]]
+			- [[#Sequenza Impulso Rettangolare Causale di Durata $N$|Sequenza Impulso Rettangolare Causale di Durata $N$]]
+			- [[#Oscillazione Complessa Discreta alla Frequenza Normalizzata $F_{0}$|Oscillazione Complessa Discreta alla Frequenza Normalizzata $F_{0}$]]
+- [[#Rappresentazione dei Segnali Aperiodici a Tempo Discreto nel Dominio della Frequenza|Rappresentazione dei Segnali Aperiodici a Tempo Discreto nel Dominio della Frequenza]]
+- [[#Teoremi sulla Trasformata di Fourier di una Sequenza|Teoremi sulla Trasformata di Fourier di una Sequenza]]
+	- [[#Teoremi sulla Trasformata di Fourier di una Sequenza#Teorema di Linearità|Teorema di Linearità]]
+	- [[#Teoremi sulla Trasformata di Fourier di una Sequenza#Teorema del Ritardo|Teorema del Ritardo]]
+	- [[#Teoremi sulla Trasformata di Fourier di una Sequenza#Teorema della della Modulazione (o Traslazione in Frequenza)|Teorema della della Modulazione (o Traslazione in Frequenza)]]
+	- [[#Teoremi sulla Trasformata di Fourier di una Sequenza#Teorema della Somma di Convoluzione|Teorema della Somma di Convoluzione]]
+	- [[#Teoremi sulla Trasformata di Fourier di una Sequenza#Teorema del Prodotto|Teorema del Prodotto]]
+	- [[#Teoremi sulla Trasformata di Fourier di una Sequenza#Teorema dell'incremento|Teorema dell'incremento]]
+	- [[#Teoremi sulla Trasformata di Fourier di una Sequenza#Teorema della Sequenza Somma|Teorema della Sequenza Somma]]
+- [[#Esempi|Esempi]]
+- [[#Condizione di Nyquist e Teorema del Campionamento|Condizione di Nyquist e Teorema del Campionamento]]
+	- [[#Condizione di Nyquist e Teorema del Campionamento#Campionamento|Campionamento]]
+	- [[#Condizione di Nyquist e Teorema del Campionamento#Interpolazione|Interpolazione]]
+	- [[#Condizione di Nyquist e Teorema del Campionamento#Interpolazione a Mantenimento|Interpolazione a Mantenimento]]
+- [[#Interpolazione Cardinale e Teorema del Campionamento|Interpolazione Cardinale e Teorema del Campionamento]]
+
 ## Campionamento dei Segnali a Tempo Continuo
 
 > [!info]
@@ -508,4 +531,204 @@ Il sistema che esegue l'operazione di campionamento e la successiva interpolazio
 
 Ci sono vari tipi di operazione di interpolazione.
 ### Interpolazione a Mantenimento
-L'operazione di *Interpolazione a Mantenimento*
+L'operazione di *Interpolazione a Mantenimento* da questo componente è la seguente:
+- Per costruire il segnale anologico in iscita, il valore $n-$esimo della sequenza di ingresso $x[n]$ viene mantenuto a partire dall'istante $nT$ fino a che non sia disponibile, all'istante $(n+1)T$, il successivo valore $n[n+1]$
+
+![[Pasted image 20250520150919.png]]
+
+Si può quindi scrivere facilmente l'espressione del segnale interpolato $\hat{x}(t)$ in funzione dei valori della sequenza $x[n]$.
+$\hat{x}(t)$ è costuito da una successione di impulsi rettangolari di durata $T$, applicata agli istanti $nT$ e di ampiezza pari al relativo valore $n-$esimo:
+$$
+\hat{x}=\sum^\infty_{n=-\infty} x[n]p(t-nT)
+$$
+con $p(t)$ impulso rettangolare o più in generale l'impulso di mantenimento.
+$$
+p(t)=\text{rect}\left( \frac{t-\frac{T}{2}}{T} \right)
+$$
+![[Pasted image 20250520152613.png]]
+
+Il segnale ricostruito dall'interpolatore a mantenimento è quindi un onda costante a tratti non è una replica indistorta del segnale analogico $x(t)$.
+
+> [!info] Sample & Hold
+> L'operazione che direttamente conduce da $x(t)$ al segnale costante a tratti $\hat{x}(t)$ viene indicata in elettronica con il nome *Sample and Hold*
+
+Si calcola adesso la trasformata di Fourier del segnale interpolato per espandere sul comportamento dell'interpolatore a mantenimento nel dominio dell frequenza.
+$$
+\hat{x}(t)=\sum_{n=-\infty}^\infty x[n]p(t-nT)\Longrightarrow \hat{X}= \sum_{n=-\infty}^\infty x[n]P(f)e^{-j 2\pi nfT}= P(f)\sum_{n=\infty}^\infty x[n]e^{-j 2\pi nfT}=P(f)\overline X (f)
+$$
+Questa relazione mostra che la trasformata di Fourier di un segnale interpolato è data dal prodotto della trasformata continua dell'impulso di mantenimento $p(t)$ con la trasformata della sequenza $x[n]$.
+
+> [!hint] ->
+> Si ricorda che in generale, considerando che 
+> $$
+> \text{Segnale Continuo }x(f)\iff X(f)
+> $$
+> Avendo inoltre dimostrato che la trasformata di $F$ della sequenza $x[n]$ è legata a quella del segnale $x(f)$:
+> $$
+> \text{Segnale campionato discreto }x[n]\iff \overline X(f)=\frac{1}{T}\sum_{k=-\infty}^\infty X\left( f-\frac{k}{T} \right)
+> $$
+> e
+> $$
+> \text{Segnale ricostruito continuo }\hat{x}(t)\iff \hat{X}(f)=P(f)\hat{X}(f)=P(f)=\frac{1}{T}\sum_{k=-\infty}^\infty X\left( f-\frac{k}{T} \right)
+> $$
+
+Essendo poi $p(t)$ espresso da $p(t)=\text{rect}\left( \frac{t-\frac{T}{2}}{T} \right)$ si ha che
+$$
+P(f)=T\text{sinc}(fT)e^{-j \pi fT}
+$$
+e siccome la trasformata della sequenza $x[n]$ è legata a quella del segnale a tempo continuo $x(t)$ ($\overline X(f)= \frac{1}{T}\sum_{k=-\infty}^\infty X\left( f-\frac{k}{T} \right)$), con le opportune sostituzioni si ottiene:
+$$
+\hat{X}(f)=P(f)\overline X(f)=T\text{sinc}(fT)e^{-j \pi fT}
+\frac{1}{T}\sum_{k=-\infty}^\infty X\left( f-\frac{k}{T} \right)$$
+Considerando solo lo spettro delle ampiezze:
+$$
+|\hat{X}(f)|=T\text{sinc}(fT) \frac{1}{T}\sum^\infty_{k=-\infty} X\left( f- \frac{k}{T} \right)$$
+![[Pasted image 20250520161251.png|center|400]]
+
+Per esempio, si suppone che la trasformata di Fourier del segnale $x(t)$ di banda $B$ sia espressa da
+$$
+X(f)= \frac{1}{2B}\cdot \frac{|f|}{B}\text{rect}\left( \frac{f}{2B} \right)$$
+(Spettro del segnale continuo)
+
+![[Pasted image 20250520164517.png|center|400]]
+
+Si suppone inoltre che si campioni il segnale con $f_{c}=\frac{1}{T}=2.5B\ge 2B$, ovvero che soddisfi la condizione di Nyquist, e che poi si ricostruisca con il sample & hold.
+
+![[Pasted image 20250520165411.png|center|400]]
+
+Lo spettro di ampiezza della sequenza $x[n]$, formato dalle repliche dello spettro originale con un periodo $f_{c}=2.5B$ (lo spettro NON è normalizzato per $\frac{1}{T}$)
+$$
+T\hat{X}(f)=\sum_{k=-\infty}^\infty X\left( f- \frac{k}{T} \right)
+$$
+![[Pasted image 20250520165809.png]]
+<sup>La linea grigia indica $T|\hat{X}(f)|$, mentre quella tratteggiata indica $|\text{sinc}(fT)|$ </sup>
+
+![[Pasted image 20250520170321.png]]
+![[Pasted image 20250520170446.png]]
+
+Si può risolvere questo problema usando un filtro *Anti-Immagine* all'uscita dell'interpolatore (convertitore D/A). Questo filtro è un passa banda, con banda B, che elimina le immagini dello spettro del segnale interpolato, riducendo il segnale nella banda originaria.
+
+![[Pasted image 20250521103951.png|center|459]]
+
+![[Pasted image 20250521104039.png|center|500]]
+
+L'effetto del filtro anti-immagine in ambito temporale è quello di smussare il segnale costante a tratti (quindi con discontinuità) e ridurlo quindi ad un andamento più simile a quello del segnale analogico originale:
+
+![[Pasted image 20250521104632.png|center|400]]
+
+> [!example]+ Esempio: Segnale Cinematografico
+![[Pasted image 20250521110742.png]]
+Il procedimento di interpolazione con mantenimento è efficace, cioè non si ha apparente percezione della "granularità" del movimento effettivamente ricostruito, perché l'occhio umano svolge la funzione di filtro anti-immagine.
+Il dato, spesso citato, di "tempo di permanenza delle immagini sulla retina" pari a circa $0.1s$ porta a valutare la "banda" dell'occhio umano in circa $10\ Hz$. e quindi l'effetto anti-immagine filtrante è adeguato vista la frequenza di campionamento di $24\ Hz$.
+Tuttavia, nelle proiezioni cinematografiche si notano spesso artefatti.
+### Interpolazione Cardinale e Teorema del Campionamento
+Le fonti di distorsione dell'interpolatore a mantenimento posso essere attribuite alla particolare scelta dell'impulso $p(t)$ utilizzato nella formula di interpolazione. Le discontinuità di questo impluso inducono infatti infiniti punti di discontinuità nel segnale inetrpolato $\hat{x}(t)$. Queste discontinuità causano l'allargamento illimitato della banda di $\hat{x}(t)$ stesso.
+Analogamente, la distorsione di ampiezza è da attribuire al fatto che nell'intervallo $\left[ -\frac{1}{2T}, \frac{1}{2T} \right]$ la trasformata $P(f)$ dell'impulso interpolante non assume un valore costante.
+Queste osservazioni suggeriscono la possibilità di generalizzare l'operazione di interpolazione, scegliendo un diverso tipo di impulso interpolante $p(t)$.
+
+![[Pasted image 20250521112046.png|center|400]]
+
+Scelte diverse di $p(t)$ corrisponderanno a formule di interpolazione diverse e andamenti temporali e frequenaziali del segnale interpolato $\hat{x}(t)$. 
+
+Lo spettro del segnale interpolato è espresso dalla formula 
+$$
+\hat{X}(f)=\sum_{n=-\infty}^\infty x[n]P(f)e^{-j 2\pi nfT}=P(f)\sum_{n=-\infty}^\infty x[n]e^{-j 2\pi nfT}=P(f)\overline X(f)
+$$
+valida per qualunque forma di $p(t)$.
+Si sceglie adesso un impulso interpolante tale che la sua trasformata sia costante nell'intervallo $\left[ - \frac{1}{2T}, \frac{1}{2T} \right]$ e nulla al di fuori, cioè $$P(f)=T\text{rect}(fT)$$allora
+$$
+\hat{X}(f)=P(f)\overline X(f)=T\text{rect}(fT)\cdot \frac{1}{T}\sum_{k=-\infty}^\infty X\left( f- \frac{k}{T} \right)=X(f)
+$$
+valida ovviamente in assenza di aliasing, ovvero se $x(t)$ ha banda limitata $B$ e se è rispettata la condizione di Nyquist $f_{c}\ge 2B$:
+![[Pasted image 20250521112900.png|center|350]]
+
+Questo risultato è di fondamentale importanza, ed è universalmente noto com *Sampling Theorem (C. Shannon)*
+
+> [!gray] Teorema del Campionamento
+Un segnale il cui spettro è limitato nella banda $B$ può essere ricostruito esattamente a partire dai propri campioni, purché la frequenza di campionamento non sia inferiore a $2B$
+
+In particolare, pocihé
+$$
+T\text{rect}(fT)=P(f)\iff p(t)=\text{sinc}\left( \frac{t}{T} \right)
+$$
+la formula di interpolazione risultante dalla scelta di $p(t)$ è
+$$
+\hat{x}=\sum_{n=-\infty}^\infty x[n]\text{sinc}\left( \frac{t-nT}{T} \right)
+$$
+che è nota come ==*Formula di Interpolazione Cardinale*==.
+
+> [!info] Significato di $\text{sinc}(\cdot)$
+> Il nome $\text{sinc}$, assegnato a suo tempo alla funzione $\frac{\sin(\pi\alpha)}{\pi\alpha}$ significa infatti *Seno Cardinale*, con riferimento al ruolo cardine assunto nella formula precedente dall'interpolazione stessa.
+
+![[Pasted image 20250521115718.png]]
+
+Se il ricampionamento del segnale interpolato al generico istante $t=kT$, per le proprietà della funzione $\text{sinc}$, solo il $k-$esimo fra tutti gli impulsi della sommatoria produce contributo non nullo, e pari proprio al valore $x[k]=x(kT)$ del campione del segnale di partenza. si ha infatti:
+$$
+\hat{x}(kT)=\sum_{n=-\infty}^\infty x[n]\text{sinc}(k-n)=\sum_{n=-\infty}^\infty x[n]\delta[k-n]=x[k]=x(kT)
+$$
+==Questo risultato conferma che il segnale interpolato coincide con il segnale di partenza negli istanti di campionamenti==
+
+Se si considera un qualunque altro istante non coincidente con uno di quelli di campionamento, si nota che il valore del segnale interpolato viene ottenuto combinando linearmente tutti gli infiniti campioni $x[n]$ del segnale $x(t)$
+$$
+\hat{x}(t)=\sum^\infty_{n=-\infty}x[n]\text{sinc} \left( \frac{t-nT}{T} \right)
+$$
+
+> [!hint] ->
+> In  altre parole, la ricostruzione di un segnale a banda limitata a un certo istante richiede la conoscenza di tutta la sequenza di campioni del segnale stesso, in istanti sia precedenti a quello considerato, sia successivi.
+> 
+
+Pertanto la formula di interpolazione cardinale, sebbene abbia una grande rilevanza teorica, è inutilizzabile bella sua forma esatta nelle applicazioni pratiche:
+1. Sono in teoria richiesti infiniti termini di una sommatoria per ricostruire il segnale originario.
+2. Una ricostruzione in tempo reale è impossibile perché richiederebbe la conoscenza di valori del segnale in istanti successivi a quello di interpolazione (interpolatore non causale).
+
+> [!example]+ Esempio: Interpolazione Lineare
+> Si suppone che l'impulso $p(t)$ dell'interpolatore sia
+> $$
+> p(t)=\left( 1- \frac{|t|}{T} \right)\text{rect}\left( \frac{t}{2T} \right)= \text{tr}\left( \frac{t}{T} \right)
+> $$
+> Questo impulso rettangolare è caratteristico della formula di *Interpolazione Lineare*.
+> ![[Pasted image 20250521123654.png|center|400]]
+> 
+> Il segnale interpolato $\hat{x}(t)$ è costituito da una spezzata che collega i punti corrispondenti a campioni consecutivi del segnale $x(t)$, $\hat{x}(t)$ rappresenta la cosiddetta interpolazione lineare della sequenza si campioni.
+> 
+> ![[Pasted image 20250521124021.png|center|450]]
+> 
+> Infatti, osservando che in un generico intervallo $[(k-1)T,\ kT)$ compreso fra due campioni consecutivi $x[k-1]$ e $x[k]$, solo due addendi della sommatoria danno contributo non nullo cioè quelli con $n=k-1$ e $n=k$. In questo intervallo il segnale interpolato vale allora
+> $$
+> \begin{align}
+> \hat{x}(t)&=x[k-1]p(t-(k-1)T)+x[k]p(t-kT) \\
+> &=x[k-1]\left( 1- \frac{t-kT+T}{T} \right)+x[k]\left( 1+ \frac{t-kT}{T} \right) \\
+> &= x[k]+\{x[k]-x[k-1]\}\left( \frac{t-kT}{T} \right)
+> \end{align}
+> $$
+> ![[Pasted image 20250521124452.png|center|250]]
+> La quale rappresenta l'equazione del segmento di retta che collega i punti ai campioni $x[k-1]$ e $x[k]$.
+> 
+> La trasformata di Fourier del segnale $\hat{x}(t)$ è data ancora da:
+> $$
+> \hat{X}(f)=P(f)\overline X(f)
+> $$
+> con 
+> $$
+> P(f)=T\text{sinc}^2(fT)
+> $$
+> Lo spettro del segnale interpolato ha un andamento qualitativamente non dissimile da quello relativo all'interpolatore con mantenimento.
+> 
+> ![[Pasted image 20250521124814.png|center|500]]
+> 
+> Il segnale interpolato linearmente ha un lo spettro di ampiezza con immagini più attenuate rispetto al caso dell'interpolatore con mantenimento.
+> Lo spettro $P(f)$ dell'impulso interpolatore decresce più rapidamente al crescere della frequenza nel caso di interpolazione lineare che nel caso del mantenimento
+> 
+> ![[Pasted image 20250521125049.png|center|500]]
+> 
+> Se si confronta il segnale generato da un interpolatore a mantenimento con quello generato da un interpolatore lineare si osserva che:
+> - Il primo presenta discontinuità di prima specie, il secondo è un segnale continuo
+> - Il primo segnale avrà un maggiore contenuto di componenti ad alte frequenza rispetto al secondo
+> 
+> ![[Pasted image 20250521125321.png|center|500]]
+> 
+> Si nota che la distorsione di banda è abbastanza evidente. Questo deriva dalla particolare forma dello spettro del segnale di partenza in cui sono più ampie le componenti vicine al limite di banda $B$.
+> 
+> Se lo spettro di partenza è invece più decisamente passa-basso (ovvero con componenti via via digradanti all'aumentare della frequenza), la trasforata del segnale interpolato linearmente presenterà una distorsione di banda piuttosto ridotta.
+> 
+> ![[Pasted image 20250521125619.png|center|500]]
