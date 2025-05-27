@@ -640,6 +640,7 @@ $$
 \hat{X}(f)=P(f)\overline X(f)=T\text{rect}(fT)\cdot \frac{1}{T}\sum_{k=-\infty}^\infty X\left( f- \frac{k}{T} \right)=X(f)
 $$
 valida ovviamente in assenza di aliasing, ovvero se $x(t)$ ha banda limitata $B$ e se è rispettata la condizione di Nyquist $f_{c}\ge 2B$:
+
 ![[Pasted image 20250521112900.png|center|350]]
 
 Questo risultato è di fondamentale importanza, ed è universalmente noto com *Sampling Theorem (C. Shannon)*
@@ -732,3 +733,161 @@ Pertanto la formula di interpolazione cardinale, sebbene abbia una grande rileva
 > Se lo spettro di partenza è invece più decisamente passa-basso (ovvero con componenti via via digradanti all'aumentare della frequenza), la trasforata del segnale interpolato linearmente presenterà una distorsione di banda piuttosto ridotta.
 > 
 > ![[Pasted image 20250521125619.png|center|500]]
+
+___
+
+## Trasformata Discreta di Fourier
+Una sequenza $x[n]$ è periodica se esiste un numero intero positivo $N_{0}$ (periodo della sequenza) tale che
+$$
+x[n]=x[n+N_{0}]\quad \forall n
+$$
+Una sequenza $x[n]$ periodica di periodo $N_{0}$ è individuata quindi da $N_{0}$ numeri reali (o complessi) che rappresentano i valori assunti da $x[n]$ in un periodo , as  esempio nell'intervallo $n=0,1,\ldots,N_{0}-1$.
+
+Si osserva che il campionamento di un segnale periodico a tempo continuo di periodo $T_{0}$ non genera necessariamente una sequenza periodica di periodo $N_{0}$:
+- Se $T$ è il periodo di campionamento, affinché si ottenga una sequenza periodica è necessario che un numero intero $N_{0}$ di intervalli di campionamento sia esattamente pari a un qualunque numero intero $M_{0}$ di periodi di ripetizione del segnale originario: $$N_{0}T=M_{0}T_{0}$$ Ciò significa che il rapporto $\frac{T}{T_{0}}$ deve essere un numero razionale.
+
+In pratica, gli impulsi di campionamento del convertitore $A/D$ devono essere sincronizzati con il segnale periodico analogico, ovvero avere legame preciso con il periodo di ripetizione del segnale $x(t)$. ==Quindi se il rapporto $\frac{T}{T_{0}}$ non è un numero razionale, l'operazione di campionamento non da origine ad una sequenza periodica.==
+
+![[Pasted image 20250526122032.png|center|450]]
+
+> [!gray] Trasformata e Antitrasforamata Discreta di Fourier
+> - Si suppone che $x[n]$ sia una sequenza periodica di periodo $N_{0}$. Essa può essere rappresentata mediante uno sviluppo del tutto analogo alla serie di Fourier per i segnali periodici a tempo continuo, chiamato ==*Serie Discreta* o *Antitraformata Discreta di Fourier*== $$x[n]=\frac{1}{N_{0}}\sum_{k=0}^{N_{0}-1}\overline X_{k}e^{j \frac{2\pi kn}{N_{0}}}\quad \forall n\in[0,N_{0}-1]$$
+> - La sequenza dei coefficienti discreti di Fourier è chiamata ==*Trasformata Discreta di Fourier* (*DTF*)== della sequenza periodica$$
+> \overline X_{k}=\sum_{n=0}^{N_{0}-1}x[n]e^{-j \frac{2\pi kn}{N_{0}}}\quad \forall k\in[0,N_{0}-1]
+> $$
+
+> [!info] NB
+> Il fattore di normalizzazione $\frac{1}{N_{0}}$ può essere messo indifferentemente nella trasformata diretta o nella trasformata inversa. È importante quindi essere consistenti con la notazione scelta. Verrà successivamente applicata la seguente notazione:
+> $$
+> IDTF:\ x[n]=\frac{1}{N_{0}}\sum^{N_{0}-1}_{k=0}\overline X_{k} e^{j \frac{2\pi kn}{N_{0}}}\qquad DTF:\ \overline X_{k}=\sum^{N_{0}-1}_{n=0} x[n]e^{-j \frac{2\pi kn}{N_{0}}}
+> $$
+
+Si notano le analogie tra queste relazioni e le corrispondenti relazione di sintesi e analisi per i segnali periodici a tempo continuo:
+- Per i segnali periodici a tempo continuo la rappresentazione mediante serie di Fourier comporta una somma infinita di termini $$x(t)=\sum^\infty_{k=-\infty} X_{k}e^{j \frac{2\pi kt}{T_{0}}}\quad X_{k}=\frac{1}{T_{0}}\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}}x(t)e^{-j \frac{2\pi kt}{T_{0}}}\ dt$$
+- Nel caso di sequenze periodiche, la rappresentazione mediante antitrasformata discreta consiste in una somma con un numero finito di addendi $$ x[n]= \frac{1}{N_{0}}\sum^{N_{0}-1}_{k=0}\overline X_{k}e^{j \frac{2\pi kn}{N_{0}}}\quad \overline X_{k}=\sum_{n=0}^{N_{0}-1}x[n]e^{-j \frac{2\pi kn}{N_{0}}}$$
+Infatti, la trasformata di una sequenza periodica di periodo $N_{0}$ è essa stessa con il medesimo periodo:
+$$\begin{align}
+&\overline X_{k+N_{0}} = \sum^{N_{0}-1}_{n=0}x[n]e^{-j \frac{2\pi(k+N_{0})n}{N_{0}}}=\sum^{N_{0}-1}_{n=0}x[n]e^{-j \frac{2\pi kn}{N_{0}}}\underset{=1}{e^{-j 2\pi n}}= \sum^{N_{0}-1}_{n=0}x[n]e^{-j \frac{2\pi kn}{N_{0}}}=\overline X_{k} \\
+&\Longrightarrow \overline X_{k+N_{0}}=\overline X_{k}
+\end{align}$$
+La sequenza periodica è espressa, come nel caso del segnale periodico a tempo continuo, da una somma di oscillazioni sinusoidali a frequenza armoniche (cioè multiple di una frequenza fondamentale).
+Si riscrive l'equazione di sintesi nel seguente modo:
+$$
+x[n]=\frac{1}{N_{0}}\sum^{N_{0}-1}_{k=0}\overline X_{k} e^{j \frac{2\pi kn}{N_{0}}}=\frac{1}{N_{0}}\sum^{N_{0}-1}_{k=0}\overline X_{k}e^{\frac{j2\pi k}{N_{0}T}nT}= \frac{1}{N_{0}}\sum^{N_{0}-1}_{k=0} \overline X_{k}e^{j 2\pi f_{k}nT}
+$$
+I valori esponenziali complessi nella scomposizione oscillano alle frequenze $f_{k}= \frac{k}{N_{0}T},\ k=0,\ldots,N_{0}-1$ che si chiamano *Armoniche Relative al Periodo di Ripetizione $N_{0}$*, ovvero la frequenza dondamenrale $\frac{1}{N_{0}T}$ (essendo $N_{0}T$ il periodo del segnale, numero di campioni per passo di campionamento).
+
+Anche in questo caso si possono osservare le analogie tra le corrispondenti relazioni di sintesi e analisi per i segnali periodici:
+$$\begin{align}
+& x[n]=\sum^{N_{0}-1}_{k=0}\overline X_{k}e^{j \frac{2\pi kn}{N_{0}}}& &x(t)=\sum^\infty_{k=-\infty} \overline X_{k}e^{j \frac{2\pi kt}{T_{0}}}& \\
+& X_{k}=\frac{1}{N_{0}}\sum^{N_{0}-1}_{n=0}x[n]e^{-j \frac{2\pi jn}{N_{0}}}& &X_{k}=\frac{1}{T_{0}}\int^{\frac{T_{0}}{2}}_{{-\frac{T_{0}}{2}}}x(t)e^{-j \frac{2\pi kt}{T_{0}}}\ dt&
+\end{align}$$
+- La differenza principale tra le equazioni di analisi a tempo continuo e discreto consiste nell'integrale per ricavare il coefficiente di Fourier, che viene calcolato sull'insieme simmetrico $\left( -\frac{T_{0}}{2}, \frac{T_{0}}{2} \right)$, mentre la trasformata viene calcolata come sommatoria di un intervallo asimmetrico $[0, N_{0}-1]$. 
+
+> [!info] Motivazione
+> Questo perché quando $N_{0}$ è un numero dispari, è semplice calcolare la trasformata discreta anche sull'intervallo simmetrico $\left[ \frac{-N_{0}-1}{2} ,\frac{N_{0}-1}{2}\right]$, ma se $N_{0}$ è un numero pari non è possibile  trovare un intervallo simmetrico di ampiezza pari a $N_{0}$. Si preferisce quindi unificare i due casi usando l'intervallo asimmetrico destro $[0,N_{0}-1]$
+
+> [!gray] ->
+> Si dimostra adesso che dalla relazione di sintesi, ovvero l'antitrasformata discreta, discende la relazione di analisi ($\overline X_{k}=\sum^{N_{0}-1}_{n=0}e^{-j \frac{2\pi kn}{N_{0}}}$) (trasformata discreta). Si parte quindi dall'equazione
+> $$
+> x[n]=\frac{1}{N_{0}}\sum^{N_{0}-1}_{k=0}e^{j \frac{2\pi kn}{N_{0}}}
+> $$
+> e si moltiplicano entrambi i membri per il fattore $e^{-j \frac{2\pi nm}{N_{0}}}$ (con $0\le m\le N_{0}-1$) e si effettua l'operazione di somma sul periodo rispetto all'indice $n$:
+> $$
+> \Longrightarrow \sum^{N_{0}-1}_{{n=0}}x[n]e^{-j \frac{2\pi nm}{N_{0}}}= \frac{1}{N_{0}} \sum^{N_{0}-1}_{n=0}\sum^{N_{0}-1}_{k=0} \overline X_{k}e^{j \frac{2\pi nk}{N_{0}}}e^{-j \frac{2\pi nm}{N_{0}}}
+> $$
+> Sviluppando poi il secondo membro e scambiando le due sommatorie si ricava
+> $$
+> \sum^{N_{0}-1}_{n=0}\sum^{N_{0}-1}_{k=0}\overline X_{k} e^{-j \frac{2\pi mn}{N_{0}}}e^{j \frac{2\pi nk}{N_{0}}}=\sum^{N_{0}-1}_{k=0}\overline X_{k} \sum^{N_{0}-1}_{n=0} e^{j \frac{2\pi n(k-m)}{N_{0}}}
+> $$
+> La seconda sommatoria al secondo membro diviene (usando la formula $\sum^{N-1}_{n=0}q^n= \frac{1-q^N}{1-q}$)
+> $$
+> \sum^{N_{0}-1}_{n=0} e^{j \frac{2\pi n(k-m)}{N_{0}}}=\sum^{N_{0}-1}_{n=0}\left( e^{j \frac{2\pi(k-m)}{N_{0}}} \right) = \frac{1-e^{j 2\pi
+> (k-m)}}{1-e^{j \frac{2\pi(k-m)}{N_{0}}}}=0\quad k\ne m
+> $$
+> Essendo $e^{j2\pi(k-m)}=1$, mentre per $k=m$ si ha
+> $$
+> \sum^{N_{0}-1}_{n=0} \overline X_{k}e^{-j \frac{2\pi mn}{N_{0=}}}=\sum^{N_{0}-1}_{n=0}1=N_{0}$$
+> Pertanto, esprimendo la condizione $$\sum^{N_{0}-1}_{n=0}e^{j \frac{2\pi n(k-m)}{N_{0}}}=\begin{cases}N_{0}& \text{per }n=m \\ 0 & \text{per } n\ne m\end{cases}= \delta[k-m]N_{0}$$
+> si trova 
+> $$
+> \frac{1}{N_{0}}\sum^{N_{0}-1}_{n=0}\sum^{N_{0}-1}_{k=0} \overline X_{k}e^{-j \frac{2\pi mn}{N_{0}}}e^{j \frac{2\pi nk}{N_{0}}}= \frac{1}{N_{0}}\sum^{N_{0}-1}_{k=0}\overline X_{k} \delta[k-m]N_{0}= \frac{1}{N_{0}}N_{0}\overline X_{m}
+> $$
+> e per sostituzione si ricava infine 
+> $$
+> \sum^{N_{0}-1}_{n=0} x[n]e^{-j \frac{2\pi mn}{N_{0}}}= \overline X_{m}
+> $$
+> Da cui segue immediatamente l'equazione di analisi.
+
+## Proprietà della DFT
+Analogamente alla trasformata di Fourier per sequenze, anche per la DTF è possibile dimostrare delle proprietà importanti. Verrà usata la notazione 
+$$
+DTF_{N_{0}}\{X[n]\}=\overline X_{k}\quad 0\le n, \ k\le N-1
+$$
+### Proprietà di Linearità
+
+> [!gray] ->
+> $$
+> DTF_{N_{0}}\{a x[n]+by[n]\}=a \overline X_{k}+b \overline Y_{k}
+> $$
+### Proprietà di Traslazione Circolare
+
+> [!gray] ->
+> $$
+> DTF_{N_{0}}\{x[n-n_{0}]\}=e^{-j \frac{2\pi kn_{0}}{N_{0}}}\overline X_{k}
+> $$
+> **Dimostrazione:**
+> $$\begin{align}
+> DTF_{N_{0}}\{x[n-n_{0}]\}&= \sum^{N-1}_{n=0}x[n-n_{0}]e^{-j \frac{2\pi}{N_{0}}kn}\overset{\small{p=n- n_{0}\Rightarrow n=p+n_{0}}}{=}\sum^{N_{0}-1-n_{0}}_{p=-n_{0}}x[p]e^{-j \frac{2\pi}{N_{0}}k(p+n_{0})} \\
+> &= e^{-j \frac{2\pi}{N_{0}}kn_{0}}\sum^{N_{0}-1-n_{0}}_{p=-n_{0}}x[p]e^{-j \frac{2\pi}{N_{0}}kp}= e^{-j \frac{2\pi}{N_{0}}kn_{0}}\sum^{N-1}_{p=0}x[p]e^{-j \frac{2\pi}{N_{0}}kp} \\
+> &=e^{-j \frac{2\pi kn_{0}}{N_{0}}}\overline X_{k}
+> \end{align}$$
+> Nel penultimo passaggio viene sfruttata la periodicità della sequenza $x[n]$ e della funzione esponenziale all'interno della sommatoria.
+> ![[Pasted image 20250526172244.png|center|300]]
+> Questo fatto permette di sostituire il termine relativo a $p=-n_{0}$ con quello relativo a $p=N_{0}-n_{0}$, il termine relativo a $p=-n_{0}+1$ con quello relativo a $p=N-n_{0}+1$ etc. in modo tale che la sommatoria da $-n_{0}$ a $N_{0}-1-n_{0}$ è uguale alla sommatoria da $0$ a $N_{0}-1$.
+> 
+> Poiché sia la sequenza $x[n]$ che la sua versione traslata $x[n-n_{0}]$ sono sequenze periodiche, è interessante ricavare la relazione esistente tra i due periodi delle due sequenze.
+> ![[Pasted image 20250526172529.png|center|500]]
+> Dall'osservazione di questi, si nota che, a causa della periodicità, i campioni che escono a destra dell'intervallo $[0,5]$, a causa della traslazione, rientrano a sinistra in tale intervallo. Tale effetto giustifica la denominazione di traslazione circolare data all'operazione
+
+### Proprietà della Traslazione in Frequenza
+> [!gray] ->
+> $$
+> DTF_{{N_{0}}} \left\{ x[n]e^{j \frac{2\pi k_{0}n}{N_{0}}} \right\}=\overline X_{k-k0}
+> $$pru
+### Proprietà di Inversione Temporale
+
+> [!gray] ->
+> $$\begin{align}
+> &DTF_{N_{0}}\{x[-n]\}=\overline X_{-k}=\overline X_{N_{0}-k} \\
+> & DTF_{N_{0}}\{x[-n]\}= \overline X^*_{k}\text{ se } x[n] \text{ è reale}
+> \end{align}$$
+> ![[Pasted image 20250526173135.png|center|500]]
+> $$
+> DTF_{N_{0}}\{x[-n]\}=\overline{X}_{-k}= \overline X_{{N_{0}-k}}
+> $$
+> **Dimostrazione:**
+> $$\begin{align}
+> DTF_{N_{0}}\{x[-n]\}=& \sum^{N_{0}-1}_{n=0}x[-n]e^{-j \frac{2\pi}{N_{0}}kn}= \overset{\begin{aligned}
+> &n=N_{0}-p \\
+> &p=N_{0}-m
+> \end{aligned}}{\sum^{N-1}_{n=0}x[N_{0}-n]e^{-j \frac{2\pi}{N_{0}}kn}}=\overset{\overset{=1}{e^{-j \frac{2\pi k\cancel{N_{0}}}{\cancel{N_{0}}}}}\cdot e^{+j \frac{2\pi kp}{N_{0}}}}{\sum^{N_{0}}_{p=1}x[p]e^{-j \frac{2\pi}{N_{0}}k(N_{0}-p)}} \\
+> =& \overset{=e^{-j \frac{2\pi}{N_{0}}(-k)\cdot p}}{\sum^{N-1}_{p=0}x[p]e^{j \frac{2\pi}{N_{0}}kp}}=\overline X_{-k}=\overline X_{N_{0}-k}
+> \end{align}$$
+> Dove nel primo passaggio è stata usata la periodicità della sequenza $x[n]$ e nel penultimo passaggio, per cambiare gli indici della sommatoria, è stata usata la proprietà di periodicità della sequenza e della funzione esponenziale.
+### Proprietà di Coniugazione
+
+> [!gray] ->
+> $$
+> DTF_{N_{0}}\{x^*[n]\}=\overline X^*_{-k}=\overline X^*_{N_{0}-k}
+> $$
+### Proprietà di Simmetria per Sequenze Reali
+Per una sequenza reale $x[n]$, si ha:
+$$
+DTF_{N_{0}}\{x[n]\}=DTF_{N_{0}}\{x^*[n]\}\longrightarrow \overline X_{k}= \overline X^*_{-k} = \overline X^*_{N_{0}-k}
+$$
+da cui derivano le seguenti proprietà di simmetria di modulo e la fase di $X[k]$:
+$$
+|\overline X_{k}|= |\overline X_{-k}|= |\overline X_{N_{0-k}}|\qquad \angle \overline X_{k}=-\angle \overline X_{-k}=-\angle \overline X_{N_{0}-k}
+$$
+Tali relazioni implicano che il modulo della sequenza $X[k]$ è simmetrico rispetto al valore $k=\frac{N}{2}$, mentre la fase è antisimmetrica a tala valore.

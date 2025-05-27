@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "University/Fondamenti di Segnali e Trasmissione/Segnali a Tempo Discreto.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -86,7 +86,7 @@
         }
       },
       {
-        "id": "14921ed9eddcb0e7",
+        "id": "8e8392eea341ec92",
         "type": "leaf",
         "state": {
           "type": "mk-path-view",
@@ -96,7 +96,7 @@
         }
       }
     ],
-    "currentTab": 5
+    "currentTab": 4
   },
   "right": {
     "id": "a10862bf1887e6d2",
@@ -166,18 +166,19 @@
   },
   "active": "4f309310f4420659",
   "lastOpenFiles": [
+    "Source Material/Images/Pasted image 20250526173135.png",
+    "Source Material/Images/Pasted image 20250526172529.png",
+    "Source Material/Images/Pasted image 20250526172244.png",
+    "Source Material/Images/Pasted image 20250526122032.png",
+    "Source Material/Images/Pasted image 20250526114610.png",
+    "University/Fondamenti di Segnali e Trasmissione/Fondamenti di Segnali e Trasmissione.md",
+    "University/Fondamenti di Segnali e Trasmissione/Segnali a Tempo Discreto.md",
     "Source Material/Images/Pasted image 20250521125619.png",
     "Source Material/Images/Pasted image 20250521125321.png",
     "Source Material/Images/Pasted image 20250521125049.png",
     "Source Material/Images/Pasted image 20250521124814.png",
     "Source Material/Images/Pasted image 20250521124452.png",
     "Source Material/Images/Pasted image 20250521124021.png",
-    "Source Material/Images/Pasted image 20250521123654.png",
-    "Source Material/Images/Pasted image 20250521115718.png",
-    "Source Material/Images/Pasted image 20250521112900.png",
-    "Source Material/Images/Pasted image 20250521112046.png",
-    "Source Material/Images/Pasted image 20250521110742.png",
-    "University/Fondamenti di Segnali e Trasmissione/Fondamenti di Segnali e Trasmissione.md",
     "University/University.md",
     "University/Progettazione e Produzione Multimediale/Immagini (Concetti Generali).md",
     "Source Material/Images/IMG_0477.mov",
@@ -190,7 +191,6 @@
     "University/Elettronica Digitale/Dispositivi Elettronici.md",
     "University/Elettronica Digitale/Circuiti Logici Digitali.md",
     "Old Vault/Tags/Matematica Discreta e Codici/Matematica Discreta e Codici.md",
-    "University/Fondamenti di Segnali e Trasmissione/Segnali a Tempo Discreto.md",
     "University/Fondamenti di Segnali e Trasmissione/Programma.md",
     "Zettelkasten/Segnali Aperiodici a Tempo Continuo.md",
     "Zettelkasten/Segnali Periodici a Tempo Continuo.md",
