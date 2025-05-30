@@ -13,12 +13,40 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/Fondamenti di Segnali e Trasmissione/Segnali a Tempo Discreto.md",
+                "file": "University/Fondamenti di Segnali e Trasmissione/Quantizzazione.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Segnali a Tempo Discreto"
+              "title": "Quantizzazione"
+            }
+          },
+          {
+            "id": "4e2b4d066a2f4d47",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Zettelkasten/Variabili Aleatorie Continue.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Variabili Aleatorie Continue"
+            }
+          },
+          {
+            "id": "eb25fe32200768b0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Zettelkasten/Valore Atteso e Varianza, Esempi di v.a..md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Valore Atteso e Varianza, Esempi di v.a."
             }
           }
         ]
@@ -86,7 +114,7 @@
         }
       },
       {
-        "id": "8e8392eea341ec92",
+        "id": "8a9c582cf6360473",
         "type": "leaf",
         "state": {
           "type": "mk-path-view",
@@ -108,7 +136,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "University/Fondamenti di Segnali e Trasmissione/Segnali a Tempo Discreto.md",
+            "file": "University/Fondamenti di Segnali e Trasmissione/Quantizzazione.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -166,20 +194,28 @@
   },
   "active": "4f309310f4420659",
   "lastOpenFiles": [
-    "Source Material/Images/Pasted image 20250526173135.png",
-    "Source Material/Images/Pasted image 20250526172529.png",
-    "Source Material/Images/Pasted image 20250526172244.png",
-    "Source Material/Images/Pasted image 20250526122032.png",
-    "Source Material/Images/Pasted image 20250526114610.png",
+    "Source Material/Images/Pasted image 20250530104554.png",
+    "Source Material/Images/Pasted image 20250530104305.png",
+    "Source Material/Images/Pasted image 20250530103901.png",
+    "Source Material/Images/Pasted image 20250530103819.png",
+    "Source Material/Images/Pasted image 20250530103744.png",
+    "Source Material/Images/Pasted image 20250530103521.png",
+    "Source Material/Images/Pasted image 20250529193946.png",
+    "Source Material/Images/Pasted image 20250529193426.png",
     "University/Fondamenti di Segnali e Trasmissione/Fondamenti di Segnali e Trasmissione.md",
-    "University/Fondamenti di Segnali e Trasmissione/Segnali a Tempo Discreto.md",
-    "Source Material/Images/Pasted image 20250521125619.png",
-    "Source Material/Images/Pasted image 20250521125321.png",
-    "Source Material/Images/Pasted image 20250521125049.png",
-    "Source Material/Images/Pasted image 20250521124814.png",
-    "Source Material/Images/Pasted image 20250521124452.png",
-    "Source Material/Images/Pasted image 20250521124021.png",
     "University/University.md",
+    "Old Vault/Tags/Analisi 2 e Probabilità/Analisi 2 e Probabilità.md",
+    "Zettelkasten/Variabili Aleatorie Continue.md",
+    "Zettelkasten/Valore Atteso e Varianza, Esempi di v.a..md",
+    "Zettelkasten/Richiami di Calcolo Vettoriale.md",
+    "University/Fondamenti di Segnali e Trasmissione/Quantizzazione.md",
+    "Source Material/Images/Pasted image 20250529191520.png",
+    "Source Material/Images/Pasted image 20250529191427.png",
+    "Source Material/Images/Pasted image 20250529185545.png",
+    "University/Fondamenti di Segnali e Trasmissione/Sistemi Monodimensionali a Tempo Discreto.md",
+    "University/Fondamenti di Segnali e Trasmissione/Programma.md",
+    "University/Fondamenti di Segnali e Trasmissione/Processi Aleatori Analogici.md",
+    "University/Fondamenti di Segnali e Trasmissione/Segnali a Tempo Discreto.md",
     "University/Progettazione e Produzione Multimediale/Immagini (Concetti Generali).md",
     "Source Material/Images/IMG_0477.mov",
     "University/Progettazione e Produzione Multimediale/Progettazione e Produzione Multimediale.md",
@@ -191,21 +227,13 @@
     "University/Elettronica Digitale/Dispositivi Elettronici.md",
     "University/Elettronica Digitale/Circuiti Logici Digitali.md",
     "Old Vault/Tags/Matematica Discreta e Codici/Matematica Discreta e Codici.md",
-    "University/Fondamenti di Segnali e Trasmissione/Programma.md",
     "Zettelkasten/Segnali Aperiodici a Tempo Continuo.md",
     "Zettelkasten/Segnali Periodici a Tempo Continuo.md",
-    "University/Fondamenti di Segnali e Trasmissione/Processi Aleatori Analogici.md",
     "Zettelkasten/Sistemi Monodimensionali a Tempo Continuo.md",
     "University/Elettronica Digitale/Programma.md",
     "Old Vault/Indexes/University.md",
     "University/Elettronica Digitale",
-    "Zettelkasten/Introduzione allo Studio di Segnali.md",
-    "Zettelkasten/Appendice.md",
-    "README.md",
     "Tags",
-    "Old Vault/Old Vault.md",
-    "Zettelkasten/Domande Orale.md",
-    "Zettelkasten/DDL.md",
     "Old Vault/Tags/Basi di Dati",
     "Old Vault/Tags/Fisica I",
     "Old Vault/Tags/Matematica Discreta e Codici",

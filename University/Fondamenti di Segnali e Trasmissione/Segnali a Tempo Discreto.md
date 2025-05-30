@@ -4,11 +4,10 @@ sticker: emoji//0036-fe0f-20e3
 ---
 - [[#Campionamento dei Segnali a Tempo Continuo|Campionamento dei Segnali a Tempo Continuo]]
 - [[#Segnali Notevoli|Segnali Notevoli]]
-			- [[#Sequenza Gradino Unitario|Sequenza Gradino Unitario]]
-			- [[#Sequenza Esponenziale Unilatero|Sequenza Esponenziale Unilatero]]
-			- [[#Sequenza $\delta$ o Impulsiva|Sequenza $\delta$ o Impulsiva]]
-			- [[#Sequenza Impulso Rettangolare Causale di Durata $N$|Sequenza Impulso Rettangolare Causale di Durata $N$]]
-			- [[#Oscillazione Complessa Discreta alla Frequenza Normalizzata $F_{0}$|Oscillazione Complessa Discreta alla Frequenza Normalizzata $F_{0}$]]
+	- [[#Sequenza Gradino Unitario|Sequenza Gradino Unitario]]
+	- [[#Sequenza Esponenziale Unilatero|Sequenza Esponenziale Unilatero]]			- [[#Sequenza $\delta$ o Impulsiva|Sequenza $\delta$ o Impulsiva]]
+	- [[#Sequenza Impulso Rettangolare Causale di Durata $N$|Sequenza Impulso Rettangolare Causale di Durata $N$]]
+	- [[#Oscillazione Complessa Discreta alla Frequenza Normalizzata $F_{0}$|Oscillazione Complessa Discreta alla Frequenza Normalizzata $F_{0}$]]
 - [[#Rappresentazione dei Segnali Aperiodici a Tempo Discreto nel Dominio della Frequenza|Rappresentazione dei Segnali Aperiodici a Tempo Discreto nel Dominio della Frequenza]]
 - [[#Teoremi sulla Trasformata di Fourier di una Sequenza|Teoremi sulla Trasformata di Fourier di una Sequenza]]
 	- [[#Teoremi sulla Trasformata di Fourier di una Sequenza#Teorema di Linearità|Teorema di Linearità]]
@@ -23,7 +22,22 @@ sticker: emoji//0036-fe0f-20e3
 	- [[#Condizione di Nyquist e Teorema del Campionamento#Campionamento|Campionamento]]
 	- [[#Condizione di Nyquist e Teorema del Campionamento#Interpolazione|Interpolazione]]
 	- [[#Condizione di Nyquist e Teorema del Campionamento#Interpolazione a Mantenimento|Interpolazione a Mantenimento]]
-- [[#Interpolazione Cardinale e Teorema del Campionamento|Interpolazione Cardinale e Teorema del Campionamento]]
+	- [[#Condizione di Nyquist e Teorema del Campionamento#Interpolazione Cardinale e Teorema del Campionamento|Interpolazione Cardinale e Teorema del Campionamento]]
+- [[#Trasformata Discreta di Fourier|Trasformata Discreta di Fourier]]
+- [[#Proprietà della DFT|Proprietà della DFT]]
+	- [[#Proprietà della DFT#Proprietà di Linearità|Proprietà di Linearità]]
+	- [[#Proprietà della DFT#Proprietà di Traslazione Circolare|Proprietà di Traslazione Circolare]]
+	- [[#Proprietà della DFT#Proprietà della Traslazione in Frequenza|Proprietà della Traslazione in Frequenza]]
+	- [[#Proprietà della DFT#Proprietà di Inversione Temporale|Proprietà di Inversione Temporale]]
+	- [[#Proprietà della DFT#Proprietà di Coniugazione|Proprietà di Coniugazione]]
+	- [[#Proprietà della DFT#Proprietà di Simmetria per Sequenze Reali|Proprietà di Simmetria per Sequenze Reali]]
+	- [[#Proprietà della DFT#Teorema di Parseval|Teorema di Parseval]]
+	- [[#Proprietà della DFT#Teorema del Prodotto|Teorema del Prodotto]]
+	- [[#Proprietà della DFT#Teorema della Convoluzione|Teorema della Convoluzione]]
+	- [[#Proprietà della DFT#Relazioni tra Convoluzione Lineare e Convoluzione Circolare|Relazioni tra Convoluzione Lineare e Convoluzione Circolare]]
+- [[#Complessità di Calcolo della Trasformata Discreta|Complessità di Calcolo della Trasformata Discreta]]
+	- [[#Complessità di Calcolo della Trasformata Discreta#Fast Fourier Transform (FFT)|Fast Fourier Transform (FFT)]]
+- [[#Tavola Sinottica|Tavola Sinottica]]
 
 ## Campionamento dei Segnali a Tempo Continuo
 
@@ -819,6 +833,40 @@ $$\begin{align}
 > $$
 > Da cui segue immediatamente l'equazione di analisi.
 
+> [!example]+ Esempio:
+> Calcolare la trasformata discreta della sequenza $x[n]$ periodica di periodo $N_{0}=8$, definita sul periodo-base come
+> $$
+> x[n]=\begin{cases}
+> 1 & 0\le n\le 3 \\
+> 0 & 4\le n\le 7
+> \end{cases}
+> $$
+> Questa sequenza è un treno di impulsi rettangolari a tempo discreto
+> 
+> ![[Pasted image 20250527144045.png|center|400]]
+> 
+> La trasformata discreta è
+> $$
+> \overline X_{k}=\sum^{N_{0}-1}_{n=0}x[n]e^{-j \frac{2\pi kn}{N_{0}}}= \sum^{3}_{n=0}e^{-j \frac{2\pi kn}{8}}=\sum^{3}_{n=0}\left( e^{-j \frac{\pi k}{4}} \right)^n
+> $$
+> Si può applicare la formula della somma di una progressione geometrica quando $k\ne 0$, mentre quando $k=0$ si ha banalmente $\overline X_{0}=4$.
+> Quindi riassumendo si ha:
+> $$
+> \overline X_{k}=\begin{cases}
+> 4 & k=0 \\
+> \frac{1-e^{-jk\pi}}{1-e^{-j \frac{\pi}{4}}} & k\ne 0
+> \end{cases}
+> $$
+> Si può verificare che 
+> $$\begin{align} 
+> &\overline X_{2}=\overline X_{4}=\overline X_{6}=0 \\
+> &|\overline X_{1}|=|\overline X_{7}|= \frac{1}{8\sin\left( \frac{\pi}{8} \right)}\simeq 0.327\cdot 8 \\
+> &|\overline X_{3}|=|\overline X_{5}|= \frac{1}{8\sin\left( \frac{3\pi}{8} \right)}\simeq 0.135\cdot 8
+> \end{align}$$
+> e lo spettro di ampiezza è
+> 
+> ![[Pasted image 20250527144908.png|center|400]]
+
 ## Proprietà della DFT
 Analogamente alla trasformata di Fourier per sequenze, anche per la DTF è possibile dimostrare delle proprietà importanti. Verrà usata la notazione 
 $$
@@ -882,12 +930,180 @@ $$
 > DTF_{N_{0}}\{x^*[n]\}=\overline X^*_{-k}=\overline X^*_{N_{0}-k}
 > $$
 ### Proprietà di Simmetria per Sequenze Reali
-Per una sequenza reale $x[n]$, si ha:
+
+> [!gray] ->
+> Per una sequenza reale $x[n]$, si ha:
+> $$
+> DTF_{N_{0}}\{x[n]\}=DTF_{N_{0}}\{x^*[n]\}\longrightarrow \overline X_{k}= \overline X^*_{-k} = \overline X^*_{N_{0}-k}
+> $$
+> da cui derivano le seguenti proprietà di simmetria di modulo e la fase di $X[k]$:
+> $$
+> |\overline X_{k}|= |\overline X_{-k}|= |\overline X_{N_{0-k}}|\qquad \angle \overline X_{k}=-\angle \overline X_{-k}=-\angle \overline X_{N_{0}-k}
+> $$
+> Tali relazioni implicano che il modulo della sequenza $X[k]$ è simmetrico rispetto al valore $k=\frac{N}{2}$, mentre la fase è antisimmetrica a tala valore.
+> - Per sequenze di lunghezza pari, il centro di simmetria coincide con un campione della lunghezza della sequenza![[Pasted image 20250527142512.png|center|400]]<sup>In questo cao per $N_0=6$, si ha che $k=3$</sup>
+> - Per sequenze di lunghezza dispari, invece il centro di simmetria coincide con un punto equidistante tra due campioni ![[Pasted image 20250527142716.png|center|400]]
+
+### Teorema di Parseval
+> [!gray] ->
+> $$
+> \sum^{N_{0}-1}_{n=0}x[n]y^*[n]=\frac{1}{N_{0}}\sum^{N_{0}-1}_{k=0}\overline X_{k}\overline Y^*_{k}\qquad \sum^{N_{0}-1}_{n=0}|x[n]|^2= \frac{1}{N_{0}}\sum^{N_{0}-1}_{k=0} |\overline X_{k}|^2
+> $$
+> **Dimostrazione:**
+> $$\begin{align}
+> \sum^{N_{0}-1}_{n=0}x[n]y^*[n]=&\sum^{N_{0}-1}_{n=0}x[n]\left( \frac{1}{N_{0}}\sum^{N_{0}-1}_{k=0} \overline Y_{k} e^{j \frac{2\pi kn}{N_{0}}} \right)^*= \frac{1}{N_{0}}\sum^{N_{0}-1}_{k=0}\overline Y^*_{k}\sum^{N_{0}-1}_{n=0}x[n]e^{-j \frac{2\pi kn}{N_{0}}}= \frac{1}{N_{0}}\sum^{N_{0}-1}_{k=0}\overline X_{k}\overline Y^*_{k}
+> \end{align}$$
+> Ponendo $x[n]=y[n]$ si ottiene la seconda relazione
+
+### Teorema del Prodotto
+
+> [!gray] ->
+> Si considera adesso una sequenza periodica $p[n]$ data dal prodotto fra le sequenza $x[n]$ e la sequenza $y[n]$ entrambe periodiche di periodo $N_{0}$
+> $$
+> p[n]=x[n]y[n]
+> $$
+> e si calcola poi la sua trasformata discreta di Fourier
+> $$\begin{align}
+> \overline P_{k}=& \sum^{N_{0}-1}_{n=0}p[n]e^{-j \frac{2\pi nk}{N_{0}}}=\sum^{N_{0}-1}_{n=0}x[n]y[n]e^{-j \frac{2\pi nk}{N_{0}}}= \sum^{N_{0}-1}_{n=0} \frac{1}{N_{0}}\sum^{N_{0}-1}_{m=0}\overline X_{m} e^{j \frac{2\pi nm}{N_{0}}}\cdot y[n]e^{-j \frac{2\pi nk}{N_{0}}} \\
+> \end{align}$$
+> Dove $x[n]$ è stata composta in serie discreta di Fourier. In questo passaggio è stata usata una variabile muta $m$ nell'operazione di antitrasformazione per non creare ambiguità con la variabile $k$ da cui dipende la trasformata.
+> Invertendo l'ordine delle sommatorie si ricava
+> $$
+> \overline P_{k}= \sum^{N_{0}-1}_{m=0}\overline X_{m} \frac{1}{N_{0}}\sum^{N_{0}-1}_{n=0}y[n]e^{-j \frac{2\pi n(k-m)}{N_{0}}}= \frac{1}{N_{0}}\sum^{N_{0}-1}_{m=0}\overline X_{m} \overline Y_{{k-m}}= \frac{1}{N_{0}} \cdot \overline X_{k}\otimes \overline Y_{k}
+> $$
+> In cui la convluzione fra le trasformate discrete è una somma di concoluzione ciclica tra sue sequenze periodiche $\overline X_{k}$ e $\overline Y_{k}$ in ambito frequenziale. 
+> 
+> ==In conclusione:==
+> $$
+> p[n]=x[n]y[n]\iff \overline P_{k}= \frac{1}{N_{0}} \sum^{N_{0}-1}_{m=0}\overline X_{m}\overline Y_{k-m}= \frac{1}{N_{0}}\cdot \overline X_{k}\otimes \overline Y_{k}
+> $$
+
+### Teorema della Convoluzione
+
+> [!gray] ->
+> Si considera la sequenza $z[n]$ come somma di convoluzione ciclica o circolare tra le due sequenze $x[n]$ e $y[n]$, periodiche di periodo $N_{0}$
+> $$
+> z[n]=x[n]\otimes y[n] = \sum^{N_{0}-1}_{m=0} x[m] y[n-m]=\sum^{N_{0}-1}_{m=0}y[m]x[n-m]
+> $$
+> Questa somma di convoluzione gode delle stesse proprietà della somma di convoluzione tra sequenze aperiodiche (commutativa, associativa, distributova).
+> Si calcola la trasformata discreta di $z[n]$
+> $$\begin{align}
+> \overline Z_{k}&=\sum^{N_{0}-1}_{n=0}z[n]e^{-j \frac{2\pi nk}{N_{0}}}=\sum^{N_{0}-1}_{n=0}\sum^{N_{0}-1}_{m=0}x[m]y[n-m] e^{-j \frac{2\pi nk}{N_{0}}}= \sum^{N_{0}-1}_{m=0}x[m]\sum^{N_{0}-1}_{n=0}y[y-m]e^{-j \frac{2\pi nk}{N_{0}}} \\
+> &=\sum^{N_{0}-1}_{m=0}x[m]\overline Y_{k}e^{-j \frac{2\pi mk}{N_{0}}}=\overline Y_{k}\sum^{N_{0}-1}_{m=0}x[m]e^{-j \frac{2\pi mk}{N_{0}}}=\overline X_{k}\cdot \overline Y_{k}
+> \end{align}$$
+
+In conclusione, si può enunciare il teorema della convoluizione (ciclica) nella forma
 $$
-DTF_{N_{0}}\{x[n]\}=DTF_{N_{0}}\{x^*[n]\}\longrightarrow \overline X_{k}= \overline X^*_{-k} = \overline X^*_{N_{0}-k}
+x[n]\otimes y[n]\iff \overline X_{k}\cdot \overline Y_{k}
 $$
-da cui derivano le seguenti proprietà di simmetria di modulo e la fase di $X[k]$:
+### Relazioni tra Convoluzione Lineare e Convoluzione Circolare
+Si studiano adesso le relazioni che esistono tra convoluzione discreta, lineare e concoluzione circolare di due sequenze di lunghezza finita.
+Siano data $x[n]$ e $h[n]$ due sequenze di lunghezza $L$ e $M$, ovvero il supporto sul quale le sequenze hanno campioni nulli, è rispettivamente $[0,L-1]$ e $[0,M-1]$
+
+![[Pasted image 20250527152223.png|center|450]]
+
+- Per quanto riguarda la convoluzione circolare, considerando che le due sequenze hanno lunghezza diversa, è necessario fissare un periodo comune $N$, con il quale eseguire l'estensione periodica delle sequenze. L'unico vincolo che si pone è che $N\ge \text{max}(L,M)$. Fissato $N$, è necessario appendere in fondo alle sequenze un certo numero di zeri ($N-L$ e $N-M$, rispettivamente per $x[n]$ e $h[n]$) prima di estendere periodicamente le due sequenze.
+
+La convoluzione circolare tra due sequenze è quindi data da 
 $$
-|\overline X_{k}|= |\overline X_{-k}|= |\overline X_{N_{0-k}}|\qquad \angle \overline X_{k}=-\angle \overline X_{-k}=-\angle \overline X_{N_{0}-k}
+y_{c}[n]=x[n]\otimes h[n]=\sum^{N-1}_{k=0}x[k]h[n-k]
 $$
-Tali relazioni implicano che il modulo della sequenza $X[k]$ è simmetrico rispetto al valore $k=\frac{N}{2}$, mentre la fase è antisimmetrica a tala valore.
+È importante stabilire la relazione esistente tra $y_{l}[n]$ e $y_{c}[n]$. Senza ambiguità, si assume $L>M$
+$$
+\begin{align}
+&y_{c}[n]=x[n]\otimes h[n]=\sum^{N-1}_{k=0}x[k]h[n-k] \\
+& y_{l}[n]=x[n]*h[n]=\sum^{\infty}_{k=-\infty} x[k]h[n-k]
+\end{align}
+$$
+Poiché tale relazione dipende dalla scelta di $N$, si distinguono due casi
+...
+ESERCIZI...
+## Complessità di Calcolo della Trasformata Discreta 
+Si considera di avere in generale $x[n]$ a valori complessi, cioè $z=a+jb$, e che gli esponenziali complessi siano precalcolati, cioè già in memoria. Per il calcolo di un singolo campione $X[k]$ è necessario eseguire
+$$
+\overline X_{k}=x[0]e^{-j0}+ x[1]e^{-j \frac{2\pi k}{N_{0}}}+x[2]e^{-j \frac{2\pi 2k}{N_{0}}}+\ldots+x[N_{0}-1]e^{-j \frac{2\pi(N_{0}-1)k}{N_{0}}}
+$$
+con:
+- $N_{0}$ moltiplicazioni complesse
+- $N_{0}-1$ addizioni complesse
+La maggior parte degli elaboratori traducono le operazioni nel campo complesso in operazioni nel campo reale, eseguite tra le parti reali e immaginarie dei numeri complessi coinvolti, cioè
+- Per eseguire un'addizione complessa è necessario eseguire $2$ addizioni reali:
+$$(a+jb)+(c+jd)=(a+c)+j(b+d)$$
+- Per eseguire una moltiplicazione complessa è necessario eseguire $4$ moltiplicazioni reali e $2$ addizioni reali
+$$
+(a+jb)\cdot(c+jd)= (a\cdot c- b\cdot d)+j(a\cdot d+ b\cdot c)
+$$
+Per eseguire il calcolo di un singolo campione $X[k]$
+- Occorre eseguire $N_{0}-1$ addizioni complesse, e $N_{0}$ moltiplicazioni complesse
+	- Addizione complessa: 2 addizioni reali
+	- Moltiplicazione complessa: 4 moltiplicazioni reali + 2 addizioni reali = 6 operazioni reali
+- Sono necessarie complessivamente 
+	- $(N_{0}-1)*2= 2N_{0}-2$ addizioni reali
+	- $4N_{0}$ moltiplicazioni reali e $2N_{0}$ addizioni reali
+In tutto $2N_{0}-2+4N_{0}+2N_{0}=8N_{0}-2$ operazioni reali per ogni valore di $k$.
+
+Poiché la sequenza è costituita da $N_{0}$ coefficienti DFT, il numero complessivo di operazioni da compiere per calcolare la trasformata discreta di Fourier (TDF) di una sequenza periodica di periodo $N_{0}$ è pari a 
+$$
+N_{TDF}(N_{0})=(8N_{0}-2)N_{0}=8N_{0}^2-2N_{0}\simeq 8N^2_{0}
+$$
+**Complessità Quadratica Rispetto al Numero di Campioni**
+
+Riassumendo:
+![[Pasted image 20250527155325.png]]
+
+Se $N_{0}=1024=2^{10}$ e, supponendo di avere in processore con frequenza di clock $f_{{clk}}=1 \ GHz$, il tempo per il calcolo della DTF è:
+$$
+T_{calcolo}=\frac{NTDF(N_{0})}{f_{clk}}= 8\cdot 2^{20}\cdot 10^{-9}\simeq 8\cdot 10^6\cdot 10^{-9}= 8ms
+$$
+Un deciso miglioramento della velocità di elaborazione è stato raggiunto utilizzando un algoritmo veloce di calcolo che sfrutta le simmetrie dei fattori esponenziali riduce la complessità.
+Tale algoritmo, noto come *Fast Fourier Transform (FFT)* a parità di clock permette di ridurre notevolmente i tempi di calcolo. Si applica se $N_{0}=2^M$
+### Fast Fourier Transform (FFT)
+FFT è un algoritmo a decimazione nel tempo: si ottiene suddividendo gli addendi in 2 gruppi
+$$\begin{align}
+\overline X_{k}&= \sum^{\frac{N_{0}}{2}-1}_{m=0}x[2m]e^{-j \frac{2\pi(2m)}{N_{0}}}+\sum^{\frac{N_{0}}{2}-1}_{m=0} x[2m+1]e^{-j \frac{2\pi(2m+1)}{N_{0}}} \\
+&=\overset{\overline P_{k}}{\overline{\sum^{\frac{N_{0}}{2}-1}_{m=0}x[2m]e^{-j \frac{2\pi km}{\frac{N_{0}}{2}}}}}+e^{-j \frac{2\pi k}{N_{0}}}\cdot \overset{\overline D_{k}}{\overline{\sum^{\frac{N_{0}}{2}-1}x[2m+1]e^{-j \frac{2\pi km}{\frac{N_{0}}{2}}}}}
+\end{align}$$
+- Il primo termine è la trasformata della sequenza ottenuta dai $\frac{N_{0}}{2}$ campioni di indice pari a $x[n]$.
+- Il secondo termine è la trasformata della sequenza ottenuta dai $\frac{N_{0}}{2}$ campioni di indici dispari di $x[n]$.
+Questa scomposizione è ricorsiva nell'ordine, cioè la trasformata di ordine $N_{0}$ è espressa come combinazione lineare di due trasformate di ordine $\frac{N_{0}}{2}$.
+Il numero di operazioni $N_{FFT}(N_{0})$ necessarie a calcolare la trasformata di ordine $N_{0}$ secondo questo criterio può allora essere espresso in maniera ugualmente ricorsiva sulla base di questa scomposizione
+$$
+N_{FFT}(N_{0})=N_{FFT}\left( \frac{N_{0}}{2} \right)+N_{FFT}\left( \frac{N_{0}}{2} \right)+6N_{0}+2N_{0}
+$$
+Avendo tenuto conto del fatto che, per ogni valore di $k$, è necessario moltiplicare $D_{k}$ per un esponenziale complesso precalcolato (6 operazioni reali) e quindi effettuare la somma con $P_{k}$ (2 operazioni reali $\overset{\overline P_{k}}{\overline{\sum^{\frac{N_{0}}{2}-1}_{m=0}x[2m]e^{-j \frac{2\pi km}{\frac{N_{0}}{2}}}}}+e^{-j \frac{2\pi k}{N_{0}}}\cdot \overset{\overline D_{k}}{\overline{\sum^{\frac{N_{0}}{2}-1}x[2m+1]e^{-j \frac{2\pi km}{\frac{N_{0}}{2}}}}})$).
+Questo procedimento di scomposizione può essere poi ripetuto in modo ricorsivo
+$$
+N_{FFT}(N_{0})=N_{FFT}\left( \frac{N_{0}}{2} \right)+N_{FFT}\left( \frac{N_{0}}{2} \right)+6N_{0}+2N_{0}= 2\left[ N_{FFT}\left( \frac{N_{0}}{2}+4N_{0} \right) \right]
+$$
+essendo $N_{FFT}\left( \frac{N_{0}}{2} \right)=2\left[ N_{FFT}\left( \frac{N_{0}}{4}+ \frac{4N_{0}}{2} \right) \right]$ risulta
+$$
+N_{FFT}(N_{0})=2\left\{ 2\left[ N_{FFT}\left( \frac{N_{0}}{4} \right)+\frac{4N_{0}}{2} \right]+4N_{0} \right\}= 4N_{FFT}\left( \frac{N_{0}}{4} \right)+2\cdot 8N_{0}
+$$
+Iterando
+$$\begin{align}
+&N_{FFT}(N_{0})=8N_{FFT}\left( \frac{N_{0}}{8} \right)+3\cdot 8N_{0}
+  \\
+&N_{FFT}(N_{0})=16N_{FFT}\left( \frac{N_{0}}{16} \right)+4\cdot 8N_{0}
+ \\
+&\vdots \\
+&N_{FFT}(N_{0})=N_{0}\cdot N_{FFT}\left( \frac{N_{0}}{N_{0}} \right)+\log_{2}N_{0}\cdot 8N_{0}
+
+\end{align}$$
+Dove $N_{0}\cdot N_{FFT}(1)=N_{0}\cdot 6$, dove $6$ è il numero di operazioni per una moltiplicazione complessa.
+
+Si ottiene in conclusione
+$$
+N_{FFT}(N_{0})=6N_{0}+8N_{0}\log_{2}N_{0}\simeq 8N_{0}\log_{2}N_{0}
+$$
+Questa relazione indica una complessità per l'algoritmo di FFT notevolmente inferiore alla complessità quadratica dell'algoritmo di trasformata discreta secondo la definizione.
+Il rapporto tra il numero di operazioni necessarie nei due casi è pari a 
+$$
+\frac{N_{TDF}(N_{0})}{N_{FFT}(N_{0})}= \frac{\cancel 8N_{0}^{\cancel 2}}{\cancel 8 \cancel{N_{0}}\log_{2}N_{0}}= \frac{N_{0}}{\log_{2}N_{0}}= \frac{1024}{10}\simeq 100$$
+Se si usa il medesimo elaboratore per calcolare una FFT di ordine $1024$, si otterrà un tempo di calcolo inferiore a quello prima calcolato del fattore $\frac{1024}{10}\simeq 100$. Il vantaggio che si consegue utilizzando l'algoritmo di calcolo FFT invece della trasformata classica aumenta al crescere di $N_{0}$.
+
+L'algoritmo di FFT fu pubblicato nel 1965 da Cooley e Tukey. a questa data si fa risalire la nascita della moderna elaborazione dei segnali. Attraverso la FFT, infatti, possono essere effettuate in maniera efficiente alcune operazioni fondamentali di analisi ed elaborazione dei segnali. Tali operazioni non furono realizzabili in pratico fino al momento di introduzione dell'algoritmo veloce, vista la ridotta velocità dei componenti elettronici e quindi dei calcolatori dell'epoca.
+Questo giustifica l'importanza centrale attribuita alla FFT nello sviluppo delle tecniche di elaborazione numerica
+## Tavola Sinottica
+![[Pasted image 20250527162623.png|center|500]]
+
+Ogniqualvolta il segnale è periodico nel tempo, esso possiede uno spettro discreto. Se il segnale è discreto nel tempo, esso possiede uno spettro periodico (dualità dei domini di tempo e frequenza).
