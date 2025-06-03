@@ -2,6 +2,11 @@
 Order: "8"
 sticker: emoji//0038-fe0f-20e3
 ---
+- [[#Quantizzazione di Segnali Campionati|Quantizzazione di Segnali Campionati]]
+	- [[#Quantizzazione di Segnali Campionati#Quantizzatori Uniformi|Quantizzatori Uniformi]]
+	- [[#Quantizzazione di Segnali Campionati#Modello dell'Errore di Quantizzazione|Modello dell'Errore di Quantizzazione]]
+	- [[#Quantizzazione di Segnali Campionati#Quantizzazione in Presenza di Disturbi|Quantizzazione in Presenza di Disturbi]]
+
 ## Quantizzazione di Segnali Campionati
 L'operazione di campionamento trasforma un segnale tempo-continuo in un segnale tempo-discreto. L'ampiezza dei campioni, tuttavia, rimane sotto forma di un numero reale rappresentabile, in generale, con un numero infinito di cifre. Questo crea problemi per l'elaborazione del segnale mediante tecniche numeriche, che possono trattare solo quantità esprimibili con numero finito di cifre.
 
