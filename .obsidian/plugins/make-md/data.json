@@ -46,8 +46,7 @@
     "//Old Vault/Old Vault/Tags",
     "//Old Vault/Old Vault/Tags/Old Vault/Tags/Matematica Discreta e Codici",
     "//Old Vault/Old Vault/Tags/Old Vault/Tags/Basi di Dati",
-    "//University/Old Vault/Tags/Matematica Discreta e Codici",
-    "//University"
+    "//University/Old Vault/Tags/Matematica Discreta e Codici"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
@@ -79,7 +78,8 @@
     "Source Material/INFO_Pasted image 20250102125719_PNG.md",
     "Source Material/INFO_Pasted image 20241228161931_PNG.md",
     "Old Vault",
-    "Tags"
+    "Tags",
+    "Pasted image 20250521124452.png"
   ],
   "hiddenExtensions": [
     ".mdb",
@@ -104,7 +104,7 @@
   "fmKeySticker": "sticker",
   "openSpacesOnLaunch": true,
   "indexSVG": false,
-  "readableLineWidth": true,
+  "readableLineWidth": false,
   "autoAddContextsToSubtags": true,
   "releaseNotesPrompt": 0.999,
   "enableDefaultSpaces": true,

@@ -6,5 +6,8 @@
   "make-md",
   "editing-toolbar",
   "css-editor",
-  "obsidian-plugin-toc"
+  "obsidian-plugin-toc",
+  "highlightr-plugin",
+  "table-editor-obsidian",
+  "obsidian-text-format"
 ]

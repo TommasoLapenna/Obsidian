@@ -8,5 +8,6 @@
   ],
   "attachmentFolderPath": "Source Material/Images",
   "mobileToolbarCommands": [],
-  "smartIndentList": false
+  "smartIndentList": false,
+  "readableLineLength": false
 }

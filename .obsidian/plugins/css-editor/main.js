@@ -28,10 +28,10 @@ __export(main_exports, {
   default: () => CssEditorPlugin
 });
 module.exports = __toCommonJS(main_exports);
-var import_obsidian8 = require("obsidian");
+var import_obsidian9 = require("obsidian");
 
 // src/views/CssEditorView.ts
-var import_obsidian2 = require("obsidian");
+var import_obsidian4 = require("obsidian");
 var import_view6 = require("@codemirror/view");
 
 // node_modules/@replit/codemirror-vim/dist/index.js
@@ -7272,6 +7272,7 @@ async function renameSnippetFile(app, oldFile, newFileName) {
   );
   toggleSnippetFileState(app, oldFile);
   toggleSnippetFileState(app, newFile);
+  app.workspace.trigger("css-snippet-rename", newFile, oldFile.name);
   return newFile;
 }
 async function writeSnippetFile(app, file, data) {
@@ -10072,14 +10073,87 @@ var indentSize = new import_state4.Compartment();
 
 // src/views/CssEditorView.ts
 var import_language7 = require("@codemirror/language");
+
+// src/modals/CssSnippetRenameModal.ts
+var import_obsidian3 = require("obsidian");
+
+// src/obsidian/Notice.ts
+var import_obsidian2 = require("obsidian");
+var DEFAULT_NOTICE_TIMEOUT_SECONDS = 5;
+var InfoNotice = class extends import_obsidian2.Notice {
+  constructor(message, timeout = DEFAULT_NOTICE_TIMEOUT_SECONDS) {
+    super(message, timeout * 1e3);
+    console.info(`css-editor: ${message}`);
+  }
+};
+var ErrorNotice = class extends import_obsidian2.Notice {
+  constructor(message, timeout = DEFAULT_NOTICE_TIMEOUT_SECONDS) {
+    super(message, timeout * 1e3);
+    console.error(`css-editor: ${message}`);
+  }
+};
+
+// src/modals/CssSnippetRenameModal.ts
+var CssSnippetRenameModal = class extends import_obsidian3.Modal {
+  constructor(app, file) {
+    super(app);
+    this.value = "";
+    this.file = file;
+  }
+  onOpen() {
+    super.onOpen();
+    this.titleEl.setText("Rename CSS snippet");
+    this.containerEl.addClass("css-editor-rename-modal");
+    this.buildForm();
+  }
+  buildForm() {
+    const textInput = new import_obsidian3.TextComponent(this.contentEl);
+    textInput.setPlaceholder("CSS snippet file name (ex: snippet.css)");
+    textInput.setValue(this.file.basename);
+    textInput.onChange((val) => this.value = val);
+    textInput.inputEl.addEventListener("keydown", (evt) => {
+      this.handleKeydown(evt);
+    });
+  }
+  async handleKeydown(evt) {
+    if (evt.key === "Escape") {
+      this.close();
+    } else if (evt.key === "Enter") {
+      try {
+        await renameSnippetFile(this.app, this.file, this.value);
+        this.close();
+      } catch (err) {
+        if (err instanceof Error) {
+          new ErrorNotice(err.message);
+        } else {
+          new ErrorNotice("Failed to rename file. Reason unknown.");
+        }
+      }
+    }
+  }
+};
+
+// src/obsidian/view-helpers.ts
+function focusAndSelectElement(el) {
+  el.focus({ preventScroll: true });
+  const range = document.createRange();
+  range.selectNodeContents(el);
+  const selection = getSelection();
+  if (selection) {
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }
+}
+
+// src/views/CssEditorView.ts
 var VIEW_TYPE_CSS = "css-editor-view";
-var CssEditorView = class extends import_obsidian2.ItemView {
+var CssEditorView = class extends import_obsidian4.ItemView {
   constructor(leaf, plugin) {
     var _a, _b;
     super(leaf);
     this.file = null;
     this.isSavingTitle = false;
-    this.requestSave = (0, import_obsidian2.debounce)(this.save, 1e3);
+    this.requestSave = (0, import_obsidian4.debounce)(this.save, 1e3);
     const { settings } = plugin;
     this.navigation = true;
     this.editor = new import_view6.EditorView({
@@ -10103,9 +10177,15 @@ var CssEditorView = class extends import_obsidian2.ItemView {
         })
       ]
     });
-    this.scope = new import_obsidian2.Scope(this.app.scope);
+    this.scope = new import_obsidian4.Scope(this.app.scope);
     this.scope.register(null, "F2", () => {
-      this.titleEl.focus();
+      if (!this.file)
+        return;
+      if (this.titleEl.isShown()) {
+        focusAndSelectElement(this.titleEl);
+      } else {
+        new CssSnippetRenameModal(this.app, this.file).open();
+      }
     });
   }
   getViewType() {
@@ -10125,7 +10205,7 @@ var CssEditorView = class extends import_obsidian2.ItemView {
         clearInterval(timer);
     }, 200);
     this.registerInterval(timer);
-    if (import_obsidian2.Platform.isMobileApp) {
+    if (import_obsidian4.Platform.isMobileApp) {
       this.titleEl.addEventListener("touchstart", () => {
         this.titleEl.contentEditable = "true";
       });
@@ -10168,7 +10248,7 @@ var CssEditorView = class extends import_obsidian2.ItemView {
   onTitleBlur() {
     this.saveTitle(this.titleEl);
     this.titleEl.spellcheck = false;
-    if (import_obsidian2.Platform.isMobileApp) {
+    if (import_obsidian4.Platform.isMobileApp) {
       this.titleEl.contentEditable = "false";
     }
     this.editor.focus();
@@ -10189,21 +10269,15 @@ var CssEditorView = class extends import_obsidian2.ItemView {
     }
   }
   async saveTitle(el) {
-    var _a;
     if (!this.file)
       return;
     const newTitle = el.getText().trim();
-    if (newTitle === ((_a = this.file) == null ? void 0 : _a.basename))
+    if (newTitle === this.file.basename)
       return;
     if (this.isSavingTitle)
       return;
     this.isSavingTitle = true;
-    const newFile = await renameSnippetFile(this.app, this.file, newTitle);
-    this.app.workspace.trigger(
-      "css-snippet-rename",
-      newFile,
-      this.file.name
-    );
+    await renameSnippetFile(this.app, this.file, newTitle);
     this.isSavingTitle = false;
   }
   getEditorData() {
@@ -10279,10 +10353,10 @@ var CssEditorView = class extends import_obsidian2.ItemView {
 };
 
 // src/modals/CssSnippetFuzzySuggestModal.ts
-var import_obsidian5 = require("obsidian");
+var import_obsidian6 = require("obsidian");
 
 // src/obsidian/workspace-helpers.ts
-var import_obsidian3 = require("obsidian");
+var import_obsidian5 = require("obsidian");
 async function openView(workspace, type, openInNewTab, state) {
   const leaf = workspace.getLeaf(openInNewTab);
   await leaf.setViewState({
@@ -10295,7 +10369,7 @@ async function detachCssFileLeaves(workspace, file) {
   var _a;
   const leaves = workspace.getLeavesOfType(VIEW_TYPE_CSS);
   for (const leaf of leaves) {
-    if ((0, import_obsidian3.requireApiVersion)("1.7.2")) {
+    if ((0, import_obsidian5.requireApiVersion)("1.7.2")) {
       await leaf.loadIfDeferred();
     }
     if (((_a = leaf.getViewState().state) == null ? void 0 : _a.file) === file.name) {
@@ -10304,24 +10378,8 @@ async function detachCssFileLeaves(workspace, file) {
   }
 }
 
-// src/obsidian/Notice.ts
-var import_obsidian4 = require("obsidian");
-var DEFAULT_NOTICE_TIMEOUT_SECONDS = 5;
-var InfoNotice = class extends import_obsidian4.Notice {
-  constructor(message, timeout = DEFAULT_NOTICE_TIMEOUT_SECONDS) {
-    super(message, timeout * 1e3);
-    console.info(`css-editor: ${message}`);
-  }
-};
-var ErrorNotice = class extends import_obsidian4.Notice {
-  constructor(message, timeout = DEFAULT_NOTICE_TIMEOUT_SECONDS) {
-    super(message, timeout * 1e3);
-    console.error(`css-editor: ${message}`);
-  }
-};
-
 // src/modals/CssSnippetFuzzySuggestModal.ts
-var CssSnippetFuzzySuggestModal = class extends import_obsidian5.FuzzySuggestModal {
+var CssSnippetFuzzySuggestModal = class extends import_obsidian6.FuzzySuggestModal {
   constructor(app, plugin) {
     super(app);
     this.plugin = plugin;
@@ -10366,12 +10424,12 @@ var CssSnippetFuzzySuggestModal = class extends import_obsidian5.FuzzySuggestMod
     this.setInstructions([
       { command: "\u2191\u2193", purpose: "to navigate" },
       {
-        command: import_obsidian5.Platform.isMacOS ? "\u2318 \u21B5" : "ctrl \u21B5",
+        command: import_obsidian6.Platform.isMacOS ? "\u2318 \u21B5" : "ctrl \u21B5",
         purpose: "to open in new tab"
       },
       { command: "shift \u21B5", purpose: "to create" },
       {
-        command: import_obsidian5.Platform.isMacOS ? "\u2318 del" : "ctrl del",
+        command: import_obsidian6.Platform.isMacOS ? "\u2318 del" : "ctrl del",
         purpose: "to delete"
       },
       { command: "tab", purpose: "to enable/disable" },
@@ -10582,8 +10640,8 @@ function isKeymapInfo(hotkey) {
 }
 
 // src/modals/CssSnippetCreateModal.ts
-var import_obsidian6 = require("obsidian");
-var CssSnippetCreateModal = class extends import_obsidian6.Modal {
+var import_obsidian7 = require("obsidian");
+var CssSnippetCreateModal = class extends import_obsidian7.Modal {
   constructor(app, plugin) {
     super(app);
     this.value = "";
@@ -10591,12 +10649,12 @@ var CssSnippetCreateModal = class extends import_obsidian6.Modal {
   }
   onOpen() {
     super.onOpen();
-    this.titleEl.setText("Create CSS Snippet");
+    this.titleEl.setText("Create CSS snippet");
     this.containerEl.addClass("css-editor-create-modal");
     this.buildForm();
   }
   buildForm() {
-    const textInput = new import_obsidian6.TextComponent(this.contentEl);
+    const textInput = new import_obsidian7.TextComponent(this.contentEl);
     textInput.setPlaceholder("CSS snippet file name (ex: snippet.css)");
     textInput.onChange((val) => this.value = val);
     textInput.inputEl.addEventListener("keydown", (evt) => {
@@ -10628,7 +10686,7 @@ var CssSnippetCreateModal = class extends import_obsidian6.Modal {
 // src/obsidian/setting-tab.ts
 var import_language8 = require("@codemirror/language");
 var import_view7 = require("@codemirror/view");
-var import_obsidian7 = require("obsidian");
+var import_obsidian8 = require("obsidian");
 function updateCSSEditorView(app, spec) {
   app.workspace.getLeavesOfType(VIEW_TYPE_CSS).forEach((leaf) => {
     if (leaf.view instanceof CssEditorView) {
@@ -10636,14 +10694,14 @@ function updateCSSEditorView(app, spec) {
     }
   });
 }
-var CSSEditorSettingTab = class extends import_obsidian7.PluginSettingTab {
+var CSSEditorSettingTab = class extends import_obsidian8.PluginSettingTab {
   constructor(app, plugin) {
     super(app, plugin);
     this.plugin = plugin;
   }
   display() {
     this.containerEl.empty();
-    new import_obsidian7.Setting(this.containerEl).setName("Line wrap").setDesc("Toggle line wrap in the editor.").addToggle((toggle) => {
+    new import_obsidian8.Setting(this.containerEl).setName("Line wrap").setDesc("Toggle line wrap in the editor.").addToggle((toggle) => {
       toggle.setValue(this.plugin.settings.lineWrap);
       toggle.onChange((val) => {
         this.plugin.settings.lineWrap = val;
@@ -10653,7 +10711,7 @@ var CSSEditorSettingTab = class extends import_obsidian7.PluginSettingTab {
         });
       });
     });
-    new import_obsidian7.Setting(this.containerEl).setName("Indent size").setDesc("Adjust the amount of spaces used for indentation.").addText((field) => {
+    new import_obsidian8.Setting(this.containerEl).setName("Indent size").setDesc("Adjust the amount of spaces used for indentation.").addText((field) => {
       field.setPlaceholder("2");
       field.setValue(this.plugin.settings.indentSize.toString());
       field.onChange((val) => {
@@ -10675,7 +10733,7 @@ var DEFAULT_SETTINGS = {
   lineWrap: true,
   indentSize: 2
 };
-var CssEditorPlugin = class extends import_obsidian8.Plugin {
+var CssEditorPlugin = class extends import_obsidian9.Plugin {
   async onload() {
     await this.loadSettings();
     this.addCommand({

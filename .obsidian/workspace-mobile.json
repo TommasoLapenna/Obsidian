@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "49042019a867927b",
+        "id": "abca017b998ae40a",
         "type": "tabs",
         "children": [
           {
-            "id": "28d4d0aff6f1b4d8",
+            "id": "7e36d54c7bc589ea",
             "type": "leaf",
             "state": {
-              "type": "mk-space",
+              "type": "markdown",
               "state": {
-                "path": "University/Fondamenti di Segnali e Trasmissione"
+                "file": "Zettelkasten/Appendice.md",
+                "mode": "source",
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Fondamenti di Segnali e Trasmissione"
+              "title": "Appendice"
             }
           }
         ]
@@ -84,7 +86,7 @@
         }
       },
       {
-        "id": "2f72d4ebc7aceded",
+        "id": "78c873b0647b8a30",
         "type": "leaf",
         "state": {
           "type": "mk-path-view",
@@ -106,7 +108,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "University/Fondamenti di Segnali e Trasmissione/Elementi di un Sistema di Comunicazione Digitale.md",
+            "file": "ESP32/Introduction.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -159,48 +161,50 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-excalidraw-plugin:New drawing": false
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e9526f5ca29a2118",
+  "active": "7e36d54c7bc589ea",
   "lastOpenFiles": [
+    "Zettelkasten/Introduzione allo Studio di Segnali.md",
+    "Zettelkasten/Appendice.md",
+    "University/Fondamenti di Segnali e Trasmissione/Fondamenti di Segnali e Trasmissione.md",
     "University/Fondamenti di Segnali e Trasmissione/Elementi di un Sistema di Comunicazione Digitale.md",
+    "University/Fondamenti di Segnali e Trasmissione/Quantizzazione.md",
+    "University/Fondamenti di Segnali e Trasmissione/Sistemi Monodimensionali a Tempo Discreto.md",
+    "University/Fondamenti di Segnali e Trasmissione/Segnali a Tempo Discreto.md",
+    "ESP32/ESP32.md",
+    "ESP32/Introduction.md",
+    "Source Material/Images/Espressif_Logo_RGB_EN_02.png",
+    "Source Material/Images/IMG_0566.webp",
+    "Zettelkasten/18.md",
+    "Zettelkasten/Zettelkasten.md",
+    "Source Material/Images/IMG_0565.jpg",
+    "README.md",
+    "Untitled.md",
+    "ESP32",
+    "Source Material/Images/Pasted image 20250521124452.png",
+    "Source Material/Source Material.md",
+    "University/University.md",
+    "Zettelkasten/Segnali Periodici a Tempo Continuo.md",
+    "Zettelkasten/Sistemi Monodimensionali a Tempo Continuo.md",
+    "Zettelkasten/Segnali Aperiodici a Tempo Continuo.md",
+    "University/Fondamenti di Segnali e Trasmissione/Programma.md",
+    "University/Progettazione e Produzione Multimediale/Progettazione e Produzione Multimediale.md",
+    "University/Progettazione e Produzione Multimediale/Immagini (Concetti Generali).md",
     "Source Material/Images/Pasted image 20250603164736.png",
     "Source Material/Images/Pasted image 20250603164631.png",
     "Source Material/Images/Pasted image 20250603164109.png",
     "Source Material/Images/Pasted image 20250603163734.png",
     "Source Material/Images/Pasted image 20250603162820.png",
     "Source Material/Images/Pasted image 20250603162054.png",
-    "Source Material/Images/Pasted image 20250603161409.png",
-    "Source Material/Images/Pasted image 20250603160532.png",
-    "Source Material/Images/Pasted image 20250603155950.png",
-    "Source Material/Images/Pasted image 20250603155357.png",
-    "University/Fondamenti di Segnali e Trasmissione/Fondamenti di Segnali e Trasmissione.md",
-    "Zettelkasten/Segnali Periodici a Tempo Continuo.md",
-    "Zettelkasten/Introduzione allo Studio di Segnali.md",
-    "Zettelkasten/Appendice.md",
-    "University/Fondamenti di Segnali e Trasmissione/Quantizzazione.md",
-    "Zettelkasten/Sistemi Monodimensionali a Tempo Continuo.md",
-    "University/Fondamenti di Segnali e Trasmissione/Programma.md",
-    "University/Fondamenti di Segnali e Trasmissione/Sistemi Monodimensionali a Tempo Discreto.md",
-    "University/Fondamenti di Segnali e Trasmissione/Segnali a Tempo Discreto.md",
     "University/Fondamenti di Segnali e Trasmissione/Processi Aleatori Analogici.md",
-    "University/University.md",
     "Zettelkasten/Valore Atteso e Varianza, Esempi di v.a..md",
     "Zettelkasten/Variabili Aleatorie Continue.md",
     "Old Vault/Tags/Analisi 2 e Probabilità/Analisi 2 e Probabilità.md",
-    "Zettelkasten/Richiami di Calcolo Vettoriale.md",
-    "University/Progettazione e Produzione Multimediale/Immagini (Concetti Generali).md",
     "Source Material/Images/IMG_0477.mov",
-    "University/Progettazione e Produzione Multimediale/Progettazione e Produzione Multimediale.md",
     "University/Progettazione e Produzione Multimediale",
-    "University/Untitled.md",
-    "Old Vault/Tags/Fisica I/Fisica I.md",
-    "Old Vault/Tags/Basi di Dati/Basi di Dati.md",
-    "University/Elettronica Digitale/Elettronica Digitale.md",
-    "University/Elettronica Digitale/Dispositivi Elettronici.md",
-    "University/Elettronica Digitale/Circuiti Logici Digitali.md",
-    "Old Vault/Tags/Matematica Discreta e Codici/Matematica Discreta e Codici.md",
     "University/Elettronica Digitale",
     "Tags",
     "Old Vault/Tags/Basi di Dati",
@@ -208,7 +212,6 @@
     "Old Vault/Tags/Matematica Discreta e Codici",
     "Old Vault/Tags/Analisi 2 e Probabilità",
     "University",
-    "University/University",
     "Untitled.canvas",
     "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas"
   ]
