@@ -9,5 +9,6 @@
   "attachmentFolderPath": "Source Material/Images",
   "mobileToolbarCommands": [],
   "smartIndentList": false,
-  "readableLineLength": false
+  "readableLineLength": false,
+  "defaultViewMode": "preview"
 }

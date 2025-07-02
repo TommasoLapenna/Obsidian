@@ -56,6 +56,7 @@ $$
 X(kf_{0})=T_{0}X_{k}=\int_{-\frac{T_{0}}{2}}^{\frac{T_{0}}{2}}x_{p}(t)e^{-j_{2}\pi kf_{0}t}\ dt= T\text{sinc}(kf_{0}T)
 $$
 Così facendo l'ampiezza rimane la solita nonostante diventi più fitto il grafico, in quanto è evidente che non tende a $0$ per $T_{0}\to \infty$.
+
 ![[Pasted image 20250330120530.png]]
 Si ottiene quindi una rappresentazione dello spettro di ampiezza per punti (invece che a righe)
 
@@ -464,7 +465,7 @@ In altre parole, se $|\alpha|>1$ l'evoluzione del segnale viene accelerata, vice
 > [!gray] ->
 > Se $x(t)\iff X(f)$, allora
 > $$
-> x(t)=\cos(2\pi f_{0}t)\iff \frac{X(f-f_{0})+X(f+f_{0})}{2}
+> x(t)\cos(2\pi f_{0}t)\iff \frac{X(f-f_{0})+X(f+f_{0})}{2}
 > $$
 > <br>**Dimostrazione:**
 > Si trova la trasformata del primo membro
@@ -520,7 +521,7 @@ In altre parole, se $|\alpha|>1$ l'evoluzione del segnale viene accelerata, vice
 > [!gray] ->
 > Se $x(t)\iff X(f)$, allora
 > $$
-> \frac{dx(t)}{dt}\iff j 2\pi ft\cdot X(f)
+> \frac{dx(t)}{dt}\iff j 2\pi f\cdot X(f)
 > $$
 > <br>**Dimostrazione:**
 > Si considera $x(t)$ con trasformata $X(f)$, espresso come integrale di Fourier $x(t)\int_{-\infty}^\infty X(f)e^{j 2\pi ft}\ df$. Se inoltre il segnale è derivabile
@@ -547,7 +548,7 @@ In altre parole, se $|\alpha|>1$ l'evoluzione del segnale viene accelerata, vice
 > ![[Pasted image 20250401154504.png|center|550]]
 #### Teoremi di Integrazione
 
-> [!gray] ->
+ > [!gray] ->
 > Se $x(t)\iff X(f)$ e $\int_{-\infty}^t x(\alpha)\ d\alpha$, allora
 > $$
 > \int_{-\infty}^t x(\alpha)\ d\alpha \iff \frac{X(f)}{j 2\pi f}

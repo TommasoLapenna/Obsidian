@@ -1087,7 +1087,6 @@ $$\begin{align}
  \\
 &\vdots \\
 &N_{FFT}(N_{0})=N_{0}\cdot N_{FFT}\left( \frac{N_{0}}{N_{0}} \right)+\log_{2}N_{0}\cdot 8N_{0}
-
 \end{align}$$
 Dove $N_{0}\cdot N_{FFT}(1)=N_{0}\cdot 6$, dove $6$ è il numero di operazioni per una moltiplicazione complessa.
 

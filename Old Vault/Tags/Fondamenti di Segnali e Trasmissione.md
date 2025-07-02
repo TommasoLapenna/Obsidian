@@ -5,7 +5,7 @@ banner_y: "71"
 ---
 Tags: [[Old Vault/Indexes/University]]
 
-0. [[Zettelkasten/Appendice]]
+0. [[University/Fondamenti di Segnali e Trasmissione/Appendice]]
 1. [[Introduzione allo Studio di Segnali]] 
 2. [[Segnali Periodici a Tempo Continuo]] 
 3. [[Segnali Aperiodici a Tempo Continuo]]

@@ -54,6 +54,7 @@ Indicando l'intervallo di variazione di ampiezza dei campioni del segnale con $(
 
 > [!example]+ Esempio:
 > Un segnale sinusoidale di ampiezza $A$ assume valori tra $-A$ e $A$ e quindi $D>2A$
+>
 > ![[Pasted image 20250529174439.png|center|400]]
 
 Se invece si desidera quantizzare i campioni di un processo aleatorio le cui ampiezze seguono una distribuzione di probabilità Gaussiana, si riscontra un problema con l'intervallo di variazione illimitato di una variabile aleatoria Gaussiana (servirebbe una dinamica infinita).
@@ -92,13 +93,13 @@ Per evitare problemi di overflow e mancato uso di alcuni livelli, è necessario 
 > abbia una dinamica in $(-1,1)$. In questo caso sarà $A=\frac{1}{2}$
 
 Nella progettazione di quantizzatori uniformi, sono possibili diverse scelte:
-- In base alla scelta dei livelli di quantizzazione
+- ==In base alla scelta dei livelli di quantizzazione==
 	1. **Midtread Quantizer** 
 	![[Pasted image 20250529191427.png||400]]
 	2. **Midrise Quantizer**
 	![[Pasted image 20250529191520.png|400]]
 	
-- In base alla scelta della regola si associazione tra il campione $x(nT)$ e il valore quantizzato $\hat{x}(nT)$
+- ==In base alla scelta della regola si associazione tra il campione $x(nT)$ e il valore quantizzato $\hat{x}(nT)$==
 	1. **Arrotondamento**$$\hat{x}(nT)=\{\hat{x}_{i}:i=\text{arg}\text{ min}_{k}(|x(nT)|-\hat{x}_{k})\}$$Si associa a $x(nT)$ il livello di quantizzazione $\hat{x}_{i}$ ad esso più vicino. Le soglie di quantizzazione risultano essere posizionate nel punto medio tra due livelli di quantizzazione, l'errore commesso soddisfa la disuguaglianza $$0\le|e(nT)|\le \frac{\Delta}{2}$$![[Pasted image 20250529193426.png|500]]
 	2. **Troncamento** $$\hat{x}(nT)=\{\hat{x}_{i}:i=\text{arg}\text{ max}_{k}(\hat{x}_{k},\ \hat{x}_{k}\le x(nT))\}$$ Si associano a $x(nT)$ il livello $\hat{x}_{i}$ as esso più vicino tra quelli minori o uguali a $x(nT)$. Se le soglie di quantizzazione coincidono con i livelli di quantizzazione, l'errore commesso soddisfa la disuguaglianza $$0\le|e(nT)|<\Delta$$ ![[Pasted image 20250529193946.png|300]]
 
