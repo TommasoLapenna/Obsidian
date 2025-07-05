@@ -1,6 +1,30 @@
 ---
 sticker: emoji//0030-fe0f-20e3
 ---
+- [[#Definizione di Statistica|Definizione di Statistica]]
+- [[#Rappresentazione dei Dati|Rappresentazione dei Dati]]
+- [[#Tipologie di Grafici|Tipologie di Grafici]]
+	- [[#Tipologie di Grafici#Diagramma a Barre|Diagramma a Barre]]
+	- [[#Tipologie di Grafici#Diagramma a Torta|Diagramma a Torta]]
+	- [[#Tipologie di Grafici#Istogramma|Istogramma]]
+	- [[#Tipologie di Grafici#Ogiva|Ogiva]]
+	- [[#Tipologie di Grafici#Digramma Ramo-Foglia|Digramma Ramo-Foglia]]
+- [[#Indici Statistici|Indici Statistici]]
+	- [[#Indici Statistici#Media Aritmetica|Media Aritmetica]]
+		- [[#Media Aritmetica#Proprietà della Media Aritmetica|Proprietà della Media Aritmetica]]
+	- [[#Indici Statistici#Mediana|Mediana]]
+	- [[#Indici Statistici#Quartili|Quartili]]
+		- [[#Quartili#Box-Plot|Box-Plot]]
+	- [[#Indici Statistici#Moda|Moda]]
+	- [[#Indici Statistici#Campo di Variazione|Campo di Variazione]]
+	- [[#Indici Statistici#Varianza|Varianza]]
+		- [[#Varianza#Proprietà della Varianza|Proprietà della Varianza]]
+	- [[#Indici Statistici#Deviazione Standard|Deviazione Standard]]
+	- [[#Indici Statistici#Coefficiente di Variazione|Coefficiente di Variazione]]
+	- [[#Indici Statistici#Differenza Interquartile|Differenza Interquartile]]
+	- [[#Indici Statistici#Covarianza|Covarianza]]
+		- [[#Covarianza#Indice di Correlazione|Indice di Correlazione]]
+
 ## Definizione di Statistica
 La statistica è la materia che si occupa di apprendere e trarre informazioni dai dati tramite la raccolta dei dati (campionamento, disegni, ecc.), statistica descrittiva (sintesi e descrizione di quanto osservato in un campione) e statistica inferenzaile (estrazione di informazioni a partire da un campione).
 
@@ -15,6 +39,8 @@ La statistica è la materia che si occupa di apprendere e trarre informazioni da
 
 L'estrazione di un campione della popolazione è determinata dal caso.
 Quando si fa inferenza si deve tenere conto di ciò che è stato osservato, ma anche del fatto che al variare del campione saranno variate le osservazioni.
+
+---
 
 ## Rappresentazione dei Dati
 **Tipi di Dati:**
@@ -53,6 +79,8 @@ Le variabili numeriche (quantitative) possono avere molte modalità diverse (con
 > ![[Pasted image 20250702112316.png|center|400]]
 > 
 
+--- 
+
 ## Tipologie di Grafici
 ### Diagramma a Barre
 L'ascissa indica la modalità della variabile, se la variabile è qualitativa non ci sono vincoli sul posizionamento delle barre sull'ascisse; le ordinate indicano le frequenze assolute o relative
@@ -84,6 +112,9 @@ I rami rappresentano la cifra più grande del dato (per esempio le decine), ment
 ![[Pasted image 20250702120126.png|center|350]]
 
 Utilizzo: Variabili di tipo Quantitativo.
+
+---
+
 ## Indici Statistici
 - Indici di **Tendenza Centrale** (o di posizione)
 	- Media
@@ -147,3 +178,99 @@ La media **Campionaria** piò essere calcolata a partire dalla distribuzione di 
 &\overline x= \frac{\overline xn_{1}+\ldots+\overline x_{h}n_{h}}{n_{1}+\ldots+n_{h}}
 \end{align}$$
 - Proprietà Ricorsiva $$\underset{\text{media }\overline x_{n}}{x_{1},x_{2},\ldots, x_{n}},\ x_{n+1};\quad \overline x= \frac{\overline xn+x_{n+1}}{n+1}$$
+### Mediana
+In una lista ordinata di dati, la mediana è il valore centrale. Il modo di individuare questo valore dipende dal numero di unità campionarie $n$:
+- $n$ Dispari: la mediana occupa la posizione $\frac{n+1}{2}$
+- $n$ Pari: la mediana è la media tra i due valori nelle posizioni $\frac{n}{2}$ e $\frac{n}{2}+1$
+
+> [!info] Robustezza Mediana
+> La mediana è un indice robusto a differenza della media, ma dati molti diversi possono avere la stessa mediana
+> $$\begin{align}
+> &29 \ 31 \ 35\ 39 \ 39\ 40\ 43 \ 44\ 44 \ \underline{52} \\
+> &29\ 31\ 35\ 39\ 39 \ 40\ 43\ 44\ 44\ \underline{92}
+> \end{align}$$
+> Le media sono rispettivamente $39.6$ e $43.6$, le mediane sono invece entrambe $39.5$
+> 
+
+### Quartili
+I quartili sono i valori che dividono in 4 parti la distribuzione dei dati
+- $Q_{1}$: La prima modalità la cui frequenza relativa cumulata è almeno $0.25$
+- $Q_{2}$: La prima modalità la cui frequenza relativa cumulata è almeno $0.5$
+- $Q_{3}$: La prima modalità la cui frequenza relativa cumulata è almeno $0.75$
+
+> [!hint] $Q_{2}$
+> La **mediana** è anche detta secondo quartile $Q_{2}$.
+
+#### Box-Plot
+Il box-plot è un diagramma che rappresenta la distribuzione dei dati e presuppone la conoscenza dei quartili. Questo tipo di diagramma risulta utile per evidenziare la presenza di valori eccezzionali, chiamati *outliers*.
+
+![[Pasted image 20250704155545.png|center|500]]
+
+$$\begin{align}&a=max\{x_{min};\ Q_{1}-1.5(Q_{3}-Q_{1})\} \\
+&b=min\{x_{max};\ Q_{3}+1.5(Q_{3}-Q_{1})\}\end{align}$$
+### Moda
+La moda è il valore che occorre più frequentemente nel campione; non è influenzata da valori estremi, può essere usata sia per dati numerici che categorici e ce ne possono essere un numero qualsiasi.
+
+![[Pasted image 20250704160028.png|center|500]]
+
+### Campo di Variazione
+Il campo di variazione è la più semplice misura di variabilità, si calcola come $$x_{max}-x_{min}$$
+Dipende dall'unità di misura della variabile considerata e ignora il modo in cui i dati sono distribuiti. È molto sensibile ai valori estremi.
+### Varianza
+La varianza è la media dei quadrati degli scarti degli scarti fra ciascuna osservazione e la loro media.
+- **Varianza della Popolazione:** $$\sigma^2=\frac{1}{N}\sum^N_{i=1}(x_{i}-\mu)^2$$
+- **Varianza Campionaria:** $$s^2=\frac{1}{n-1}\sum^n_{i=1}(x_{i}-\overline x)^2$$
+con $\mu$ media della popolazione e $\overline x$ media campionaria.
+#### Proprietà della Varianza
+- La varianza è sempre positiva
+- La varianze è uguale a 0 quando tutti i dati sono uguali
+- L'unità di misura della varianza è pari al quadrato dell'unità di misura della variabile considerata
+- La varianza può essere calcolata usando il **Momento Primo** (media) e il **Momento Secondo**, ovvero: $$\begin{align}\sigma^2&=\frac{1}{N}\sum^N_{i=1}(x_{i}-\mu)^2=\frac{1}{N}\sum^N_{i=1}x^2_{i}-\frac{2}{N}\sum^N_{i=1}+x_{i}\mu+\frac{1}{N}\sum^N_{i=1}\mu^2= \\
+&=\mu_{2}-2\mu^2+\mu^2=\mu_{2}-\mu^2\end{align}$$
+> [!info] Momento
+> Il momento $h-$esimo è la media dei valori elevati alla $h-$esima potenza:
+> - Momento Primo $(h=1)\longrightarrow \ \mu=\frac{1}{N}\sum^N_{i=1}x_{i}$
+> - Momento Secondo $(h=2)\longrightarrow \ \mu_{2}=\frac{1}{N}\sum^N_{i=1}x^2_{i}$
+> 
+
+### Deviazione Standard
+La deviazione standard è un modo per esprimere la variabilità nella stessa unità di misura dei dati, ovvero
+$$
+\sigma=\sqrt{ \sigma^2 }=\sqrt{ \frac{1}{N}\sum^N_{i}(x_{i}-\mu)^2 }
+$$
+### Coefficiente di Variazione
+Il coefficiente di variazione è un modo per esprimere la variabilità in modo indipendente dall'unità di misura, ovvero
+$$CV=\frac{\sigma}{|\mu|}$$
+### Differenza Interquartile
+La differenza interquartile è una misura di variabilità robusta, definita come $$DQ=Q_{3}-Q_{1}$$
+Indica dove si trovano nel box-plot il 50% dei valori.
+### Covarianza
+Su ciascuna unità statistica può essere rilevata più di una variabile, nel caso quest'ultime siano due si parla di **Dari Bivariati**. Per sintetizzare questo tipo di problema si possono usare:
+- Distribuzioni di di frequenza doppia
+![[Pasted image 20250704162911.png|400]]
+- Diagrammi a Dispersione 
+![[Pasted image 20250704163001.png|300]]
+
+La **Covarianza** indica (con riferimento al grafo di dispersione) se a valori grandi della prima variabile corrispondo valori grandi o piccoli  della seconda. Dato un campione bivariato $(x_{i},y_{i})$ per $i=1,\ldots, n$, la covarianza *campionaria* è definita come
+$$
+Cov(x,y)= \frac{\sum^n_{i=1}(x_{i}-\overline x)(y_{i}-\overline y)}{n-1}
+$$
+
+> [!hint] Casi di Covarianza
+> Covarianza $>0$ (Dipendenza lineare positiva)
+> ![[Pasted image 20250704163653.png|center|350]]
+> Covarianza < 0 (Dipendenza lineare negativa)
+> ![[Pasted image 20250704163734.png|center|350]]
+> Covarianza $=0$ (Dipendenza lineare assente)
+> ![[Pasted image 20250704163838.png|center|350]]
+
+#### Indice di Correlazione
+Dato un campione bivariato $(x_{i},y_{i})$ per $i=1,\ldots,n$, la **Correlazione Campionaria** è definita come segue:
+$$
+r=\frac{\sum^n_{i=1}(x_{i}-\overline x)(y_{i}-\overline y)}{(n-1)} \frac{1}{s_{x}s_{y}}
+$$
+- $-1\le r\le 1$
+	- $r=1$ in caso di perfetta relazione lineare positiva
+	- $r=-1$ in caso di perfetta relazione lineare negativa
+
+![[Pasted image 20250704164540.png|center|400]]

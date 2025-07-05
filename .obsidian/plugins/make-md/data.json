@@ -38,7 +38,6 @@
   "vaultSelector": true,
   "deleteFileOption": "trash",
   "expandedSpaces": [
-    "/",
     "//Source Material/Source Material/Excalidraw",
     "//Source Material/Source Material/Images/Source Material/Images/Ink",
     "//Source Material/Source Material/Images/Source Material/Images/Ink/Source Material/Images/Ink/Drawing",
@@ -48,7 +47,8 @@
     "//Old Vault/Old Vault/Tags/Old Vault/Tags/Basi di Dati",
     "//University/Old Vault/Tags/Matematica Discreta e Codici",
     "//University",
-    "//University/University/Statistica"
+    "//University/University/Statistica",
+    "/"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",

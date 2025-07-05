@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/Statistica/Statistica Descrittiva.md",
-                "mode": "preview",
+                "file": "University/Statistica/Probabilità.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Statistica Descrittiva"
+              "title": "Probabilità"
             }
           }
         ]
@@ -86,7 +86,7 @@
         }
       },
       {
-        "id": "e6af58d0869624a6",
+        "id": "6da2f79d7bf9447f",
         "type": "leaf",
         "state": {
           "type": "mk-path-view",
@@ -108,7 +108,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "University/Statistica/Statistica Descrittiva.md",
+            "file": "University/Statistica/Probabilità.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -149,9 +149,19 @@
           "icon": "lucide-list",
           "title": "Outline"
         }
+      },
+      {
+        "id": "9efae080e57f4d03",
+        "type": "leaf",
+        "state": {
+          "type": "advanced-tables-toolbar",
+          "state": {},
+          "icon": "spreadsheet",
+          "title": "Advanced Tables"
+        }
       }
     ],
-    "currentTab": 0
+    "currentTab": 3
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -167,20 +177,23 @@
   },
   "active": "7950de1e2662288e",
   "lastOpenFiles": [
-    "Source Material/Images/Pasted image 20250702120126.png",
-    "Source Material/Images/Pasted image 20250702113415.png",
-    "Source Material/Images/Pasted image 20250702113235.png",
-    "Source Material/Images/Pasted image 20250702113012.png",
-    "Source Material/Images/Pasted image 20250702112645.png",
-    "Source Material/Images/Pasted image 20250702112316.png",
-    "Source Material/Images/Pasted image 20250702111449.png",
-    "Source Material/Images/Pasted image 20250702111300.png",
-    "Source Material/Images/Pasted image 20250702110850.png",
-    "Source Material/Images/Pasted image 20250702110343.png",
+    "Source Material/Images/Pasted image 20250705120401.png",
+    "Source Material/Images/Pasted image 20250705120216.png",
+    "Old Vault/Tags/Matematica Discreta e Codici/Matematica Discreta e Codici.md",
+    "University/Statistica/Probabilità.md",
+    "Source Material/Images/Pasted image 20250705105912.png",
+    "Source Material/Images/Pasted image 20250705101212.png",
+    "Source Material/Images/Pasted image 20250704184157.png",
     "University/Statistica/Statistica.md",
-    "University/University.md",
     "University/Statistica/Statistica Descrittiva.md",
-    "Source Material/Images/IMG_0576.png",
+    "Source Material/Images/Pasted image 20250704164540.png",
+    "Source Material/Images/Pasted image 20250704163838.png",
+    "Source Material/Images/Pasted image 20250704163734.png",
+    "Source Material/Images/Pasted image 20250704163653.png",
+    "Source Material/Images/Pasted image 20250704163001.png",
+    "Source Material/Images/Pasted image 20250704162911.png",
+    "Vault.md",
+    "University/University.md",
     "University/Progettazione e Produzione Multimediale/Progettazione e Produzione Multimediale.md",
     "University/Statistica",
     "University/Fondamenti di Segnali e Trasmissione/Quantizzazione.md",
@@ -201,10 +214,7 @@
     "ESP32/Introduction.md",
     "Zettelkasten/18.md",
     "README.md",
-    "Untitled.md",
     "ESP32",
-    "Source Material/Source Material.md",
-    "University/Progettazione e Produzione Multimediale/Immagini (Concetti Generali).md",
     "Source Material/Images/IMG_0477.mov",
     "University/Progettazione e Produzione Multimediale",
     "University/Elettronica Digitale",
