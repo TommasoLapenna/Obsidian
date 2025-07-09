@@ -11,14 +11,12 @@
             "id": "7950de1e2662288e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "mk-space",
               "state": {
-                "file": "University/Statistica/Probabilità.md",
-                "mode": "source",
-                "source": false
+                "path": "University/Statistica"
               },
               "icon": "lucide-file",
-              "title": "Probabilità"
+              "title": "Statistica"
             }
           }
         ]
@@ -86,7 +84,7 @@
         }
       },
       {
-        "id": "6da2f79d7bf9447f",
+        "id": "1992ec0cb0aea0cb",
         "type": "leaf",
         "state": {
           "type": "mk-path-view",
@@ -175,25 +173,29 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7950de1e2662288e",
+  "active": "e13a69031a596bc3",
   "lastOpenFiles": [
-    "Source Material/Images/Pasted image 20250705120401.png",
-    "Source Material/Images/Pasted image 20250705120216.png",
-    "Old Vault/Tags/Matematica Discreta e Codici/Matematica Discreta e Codici.md",
-    "University/Statistica/Probabilità.md",
-    "Source Material/Images/Pasted image 20250705105912.png",
-    "Source Material/Images/Pasted image 20250705101212.png",
-    "Source Material/Images/Pasted image 20250704184157.png",
+    "University/Statistica/Statistiche Campionarie.md",
+    "Source Material/Images/Pasted image 20250709023315.png",
     "University/Statistica/Statistica.md",
-    "University/Statistica/Statistica Descrittiva.md",
-    "Source Material/Images/Pasted image 20250704164540.png",
-    "Source Material/Images/Pasted image 20250704163838.png",
-    "Source Material/Images/Pasted image 20250704163734.png",
-    "Source Material/Images/Pasted image 20250704163653.png",
-    "Source Material/Images/Pasted image 20250704163001.png",
-    "Source Material/Images/Pasted image 20250704162911.png",
-    "Vault.md",
+    "University/Statistica/Variabili Aleatorie Continue.md",
+    "Source Material/Images/Pasted image 20250709014143.png",
+    "Source Material/Images/Pasted image 20250709013916.png",
+    "Source Material/Images/Pasted image 20250709013550.png",
+    "Source Material/Images/Pasted image 20250709012900.png",
+    "Source Material/Images/Pasted image 20250709012502.png",
+    "Source Material/Images/Pasted image 20250709012203.png",
+    "Source Material/Images/Pasted image 20250709011616.png",
+    "Source Material/Images/Pasted image 20250709011558.png",
+    "Source Material/Images/Pasted image 20250709010916.png",
+    "University/Statistica/Variabili Aleatorie Discrete.md",
+    "University/Statistica/Variabili Aleatorie.md",
+    "University/Statistica/Probabilità.md",
     "University/University.md",
+    "Old Vault/Tags/Matematica Discreta e Codici/Matematica Discreta e Codici.md",
+    "Old Vault/Tags/Basi di Dati/Basi di Dati.md",
+    "University/Statistica/Statistica Descrittiva.md",
+    "Vault.md",
     "University/Progettazione e Produzione Multimediale/Progettazione e Produzione Multimediale.md",
     "University/Statistica",
     "University/Fondamenti di Segnali e Trasmissione/Quantizzazione.md",
@@ -209,11 +211,6 @@
     "Zettelkasten/Zettelkasten.md",
     "Zettelkasten/Introduzione.md",
     "University/Fondamenti di Segnali e Trasmissione/Processi Aleatori Analogici.md",
-    "University/Fondamenti di Segnali e Trasmissione/Sistemi Monodimensionali a Tempo Continuo.md",
-    "ESP32/ESP32.md",
-    "ESP32/Introduction.md",
-    "Zettelkasten/18.md",
-    "README.md",
     "ESP32",
     "Source Material/Images/IMG_0477.mov",
     "University/Progettazione e Produzione Multimediale",
