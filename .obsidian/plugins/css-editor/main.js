@@ -28,11 +28,11 @@ __export(main_exports, {
   default: () => CssEditorPlugin
 });
 module.exports = __toCommonJS(main_exports);
-var import_obsidian9 = require("obsidian");
+var import_obsidian10 = require("obsidian");
 
 // src/views/CssEditorView.ts
-var import_obsidian4 = require("obsidian");
-var import_view6 = require("@codemirror/view");
+var import_obsidian5 = require("obsidian");
+var import_view7 = require("@codemirror/view");
 
 // node_modules/@replit/codemirror-vim/dist/index.js
 var import_state = require("@codemirror/state");
@@ -44,11 +44,9 @@ function initVim(CodeMirror2) {
   var Pos2 = CodeMirror2.Pos;
   function transformCursor(cm, range) {
     var vim2 = cm.state.vim;
-    if (!vim2 || vim2.insertMode)
-      return range.head;
+    if (!vim2 || vim2.insertMode) return range.head;
     var head = vim2.sel.head;
-    if (!head)
-      return range.head;
+    if (!head) return range.head;
     if (vim2.visualBlock) {
       if (range.head.line != head.line) {
         return;
@@ -305,8 +303,7 @@ function initVim(CodeMirror2) {
     cm.off("cursorActivity", onCursorActivity);
     CodeMirror2.off(cm.getInputField(), "paste", getOnPasteFn(cm));
     cm.state.vim = null;
-    if (highlightTimeout)
-      clearTimeout(highlightTimeout);
+    if (highlightTimeout) clearTimeout(highlightTimeout);
   }
   function detachVimMap(cm, next) {
     if (this == CodeMirror2.keyMap.vim) {
@@ -318,8 +315,7 @@ function initVim(CodeMirror2) {
   }
   function attachVimMap(cm, prev) {
     if (this == CodeMirror2.keyMap.vim) {
-      if (cm.curOp)
-        cm.curOp.selectionChanged = true;
+      if (cm.curOp) cm.curOp.selectionChanged = true;
       cm.options.$customCursor = transformCursor;
       CodeMirror2.addClass(cm.getWrapperElement(), "cm-fat-cursor");
     }
@@ -886,8 +882,7 @@ function initVim(CodeMirror2) {
           }
           vimGlobalState.macroModeState.lastInsertModeChanges.changes.pop();
         }
-        if (!match.command)
-          clearInputState(cm);
+        if (!match.command) clearInputState(cm);
         return match.command;
       }
       function handleKeyNonInsertMode() {
@@ -979,8 +974,7 @@ function initVim(CodeMirror2) {
   var noremap = false;
   function doKeyToKey(cm, keys2, fromKey) {
     if (fromKey) {
-      if (keyToKeyStack.indexOf(fromKey) != -1)
-        return;
+      if (keyToKeyStack.indexOf(fromKey) != -1) return;
       keyToKeyStack.push(fromKey);
       noremap = fromKey.noremap;
     }
@@ -997,12 +991,9 @@ function initVim(CodeMirror2) {
             var lowerKey = key.toLowerCase().slice(1, -1);
             var parts = lowerKey.split("-");
             var lowerKey = parts.pop();
-            if (lowerKey == "lt")
-              key = "<";
-            else if (lowerKey == "space")
-              key = " ";
-            else if (lowerKey == "cr")
-              key = "\n";
+            if (lowerKey == "lt") key = "<";
+            else if (lowerKey == "space") key = " ";
+            else if (lowerKey == "cr") key = "\n";
             else if (vimToCmKeyMap.hasOwnProperty(lowerKey)) {
               key = vimToCmKeyMap[lowerKey];
               sendCmKey(cm, key);
@@ -1119,8 +1110,7 @@ function initVim(CodeMirror2) {
   }
   RegisterController.prototype = {
     pushText: function(registerName, operator, text, linewise, blockwise) {
-      if (registerName === "_")
-        return;
+      if (registerName === "_") return;
       if (linewise && text.charAt(text.length - 1) !== "\n") {
         text += "\n";
       }
@@ -1186,8 +1176,7 @@ function initVim(CodeMirror2) {
     nextMatch: function(input, up) {
       var historyBuffer = this.historyBuffer;
       var dir = up ? -1 : 1;
-      if (this.initialPrefix === null)
-        this.initialPrefix = input;
+      if (this.initialPrefix === null) this.initialPrefix = input;
       for (var i = this.iterator + dir; up ? i >= 0 : i < historyBuffer.length; i += dir) {
         var element = historyBuffer[i];
         for (var j = 0; j <= element.length; j++) {
@@ -1201,15 +1190,12 @@ function initVim(CodeMirror2) {
         this.iterator = historyBuffer.length;
         return this.initialPrefix;
       }
-      if (i < 0)
-        return input;
+      if (i < 0) return input;
     },
     pushInput: function(input) {
       var index = this.historyBuffer.indexOf(input);
-      if (index > -1)
-        this.historyBuffer.splice(index, 1);
-      if (input.length)
-        this.historyBuffer.push(input);
+      if (index > -1) this.historyBuffer.splice(index, 1);
+      if (input.length) this.historyBuffer.push(input);
     },
     reset: function() {
       this.initialPrefix = null;
@@ -1233,8 +1219,7 @@ function initVim(CodeMirror2) {
       }
       if (bestMatch.keys.slice(-11) == "<character>") {
         var character = lastChar(keys2);
-        if (!character || character.length > 1)
-          return { type: "clear" };
+        if (!character || character.length > 1) return { type: "clear" };
         inputState.selectedCharacter = character;
       }
       return { type: "full", command: bestMatch };
@@ -1379,8 +1364,7 @@ function initVim(CodeMirror2) {
           offset = e.target ? e.target.selectionEnd : 0;
           query2 = vimGlobalState.searchHistoryController.nextMatch(query2, up) || "";
           close(query2);
-          if (offset && e.target)
-            e.target.selectionEnd = e.target.selectionStart = Math.min(offset, e.target.value.length);
+          if (offset && e.target) e.target.selectionEnd = e.target.selectionStart = Math.min(offset, e.target.value.length);
         } else {
           if (keyName != "Left" && keyName != "Right" && keyName != "Ctrl" && keyName != "Alt" && keyName != "Shift")
             vimGlobalState.searchHistoryController.reset();
@@ -1492,8 +1476,7 @@ function initVim(CodeMirror2) {
         vimGlobalState.exCommandHistoryController.pushInput(input);
         vimGlobalState.exCommandHistoryController.reset();
         exCommandDispatcher.processCommand(cm, input);
-        if (cm.state.vim)
-          clearInputState(cm);
+        if (cm.state.vim) clearInputState(cm);
       }
       function onPromptKeyDown(e, input, close) {
         var keyName = CodeMirror2.keyName(e), up, offset;
@@ -1511,8 +1494,7 @@ function initVim(CodeMirror2) {
           offset = e.target ? e.target.selectionEnd : 0;
           input = vimGlobalState.exCommandHistoryController.nextMatch(input, up) || "";
           close(input);
-          if (offset && e.target)
-            e.target.selectionEnd = e.target.selectionStart = Math.min(offset, e.target.value.length);
+          if (offset && e.target) e.target.selectionEnd = e.target.selectionStart = Math.min(offset, e.target.value.length);
         } else if (keyName == "Ctrl-U") {
           CodeMirror2.e_stop(e);
           close("");
@@ -1987,8 +1969,7 @@ function initVim(CodeMirror2) {
       );
       var increment = motionArgs.forward ? -1 : 1;
       recordLastCharacterSearch(increment, motionArgs);
-      if (!curEnd)
-        return null;
+      if (!curEnd) return null;
       curEnd.ch += increment;
       return curEnd;
     },
@@ -2071,8 +2052,7 @@ function initVim(CodeMirror2) {
     moveToEndOfDisplayLine: function(cm) {
       cm.execCommand("goLineRight");
       var head = cm.getCursor();
-      if (head.sticky == "before")
-        head.ch--;
+      if (head.sticky == "before") head.ch--;
       return head;
     },
     textObjectManipulation: function(cm, head, motionArgs, vim2) {
@@ -2277,10 +2257,8 @@ function initVim(CodeMirror2) {
       if (cm.indentMore) {
         var repeat = vim2.visualMode ? args.repeat : 1;
         for (var j = 0; j < repeat; j++) {
-          if (args.indentRight)
-            cm.indentMore();
-          else
-            cm.indentLess();
+          if (args.indentRight) cm.indentMore();
+          else cm.indentLess();
         }
       } else {
         var startLine = ranges[0].anchor.line;
@@ -2518,8 +2496,7 @@ function initVim(CodeMirror2) {
       }
       if (!vimGlobalState.macroModeState.isPlaying) {
         cm.on("change", onChange);
-        if (vim2.insertEnd)
-          vim2.insertEnd.clear();
+        if (vim2.insertEnd) vim2.insertEnd.clear();
         vim2.insertEnd = cm.setBookmark(head, { insertLeft: true });
         CodeMirror2.on(cm.getInputField(), "keydown", onKeyEventTargetKeyDown);
       }
@@ -2810,8 +2787,7 @@ function initVim(CodeMirror2) {
       exitInsertMode(cm, true);
       vim2.insertModeReturn = true;
       CodeMirror2.on(cm, "vim-command-done", function handler() {
-        if (vim2.visualMode)
-          return;
+        if (vim2.visualMode) return;
         if (vim2.insertModeReturn) {
           vim2.insertModeReturn = false;
           if (!vim2.insertMode) {
@@ -2846,8 +2822,7 @@ function initVim(CodeMirror2) {
       curStart = newPositions.start;
       curEnd = newPositions.end;
       if (replaceWith == "\n") {
-        if (!vim2.visualMode)
-          cm.replaceRange("", curStart, curEnd);
+        if (!vim2.visualMode) cm.replaceRange("", curStart, curEnd);
         (CodeMirror2.commands.newlineAndIndentContinueComment || CodeMirror2.commands.newlineAndIndent)(cm);
       } else {
         var replaceWithStr = cm.getRange(curStart, curEnd);
@@ -2882,11 +2857,9 @@ function initVim(CodeMirror2) {
       while ((match = re.exec(lineStr)) !== null) {
         start = match.index;
         end = start + match[0].length;
-        if (cur2.ch < end)
-          break;
+        if (cur2.ch < end) break;
       }
-      if (!actionArgs.backtrack && end <= cur2.ch)
-        return;
+      if (!actionArgs.backtrack && end <= cur2.ch) return;
       if (match) {
         var baseStr = match[2] || match[4];
         var digits = match[3] || match[5];
@@ -2949,8 +2922,7 @@ function initVim(CodeMirror2) {
         direction = -1;
       }
       ch += direction;
-      if (ch > maxCh)
-        ch -= 2;
+      if (ch > maxCh) ch -= 2;
     }
     return new Pos2(line, ch);
   }
@@ -3291,8 +3263,7 @@ function initVim(CodeMirror2) {
     vim2.visualMode = false;
     vim2.visualLine = false;
     vim2.visualBlock = false;
-    if (!vim2.insertMode)
-      CodeMirror2.signal(cm, "vim-mode-change", { mode: "normal" });
+    if (!vim2.insertMode) CodeMirror2.signal(cm, "vim-mode-change", { mode: "normal" });
   }
   function clipToLine(cm, curStart, curEnd) {
     var selection = cm.getRange(curStart, curEnd);
@@ -3416,8 +3387,7 @@ function initVim(CodeMirror2) {
       isComplete: function(state) {
         if (state.nextCh === state.symb) {
           state.depth++;
-          if (state.depth >= 1)
-            return true;
+          if (state.depth >= 1) return true;
         } else if (state.nextCh === state.reverseSymb) {
           state.depth--;
         }
@@ -3449,8 +3419,7 @@ function initVim(CodeMirror2) {
         state.reverseSymb = state.symb === "{" ? "}" : "{";
       },
       isComplete: function(state) {
-        if (state.nextCh === state.symb)
-          return true;
+        if (state.nextCh === state.symb) return true;
         return false;
       }
     },
@@ -3472,8 +3441,7 @@ function initVim(CodeMirror2) {
             }
             state.depth--;
           }
-          if (token === "else" && state.depth === 0)
-            return true;
+          if (token === "else" && state.depth === 0) return true;
         }
         return false;
       }
@@ -3498,8 +3466,7 @@ function initVim(CodeMirror2) {
       curMoveThrough: false
     };
     var mode = symbolToMode[symb];
-    if (!mode)
-      return cur2;
+    if (!mode) return cur2;
     var init = findSymbolModes[mode].init;
     var isComplete = findSymbolModes[mode].isComplete;
     if (init) {
@@ -3953,8 +3920,7 @@ function initVim(CodeMirror2) {
     var offset = curChar === openSym ? 1 : 0;
     start = cm.scanForBracket(new Pos2(cur2.line, cur2.ch + offset), -1, void 0, { "bracketRegex": bracketRegexp });
     end = cm.scanForBracket(new Pos2(cur2.line, cur2.ch + offset), 1, void 0, { "bracketRegex": bracketRegexp });
-    if (!start || !end)
-      return null;
+    if (!start || !end) return null;
     start = start.pos;
     end = end.pos;
     if (start.line == end.line && start.ch > end.ch || start.line > end.line) {
@@ -4055,11 +4021,9 @@ function initVim(CodeMirror2) {
   }
   function splitBySeparator(argString, separator) {
     var slashes = findUnescapedSeparators(argString, separator) || [];
-    if (!slashes.length)
-      return [];
+    if (!slashes.length) return [];
     var tokens = [];
-    if (slashes[0] !== 0)
-      return;
+    if (slashes[0] !== 0) return;
     for (var i = 0; i < slashes.length; i++) {
       if (typeof slashes[i] == "number")
         tokens.push(argString.substring(slashes[i] + 1, slashes[i + 1]));
@@ -4201,24 +4165,16 @@ function initVim(CodeMirror2) {
     return regexp;
   }
   function dom(n) {
-    if (typeof n === "string")
-      n = document.createElement(n);
+    if (typeof n === "string") n = document.createElement(n);
     for (var a, i = 1; i < arguments.length; i++) {
-      if (!(a = arguments[i]))
-        continue;
-      if (typeof a !== "object")
-        a = document.createTextNode(a);
-      if (a.nodeType)
-        n.appendChild(a);
-      else
-        for (var key in a) {
-          if (!Object.prototype.hasOwnProperty.call(a, key))
-            continue;
-          if (key[0] === "$")
-            n.style[key.slice(1)] = a[key];
-          else
-            n.setAttribute(key, a[key]);
-        }
+      if (!(a = arguments[i])) continue;
+      if (typeof a !== "object") a = document.createTextNode(a);
+      if (a.nodeType) n.appendChild(a);
+      else for (var key in a) {
+        if (!Object.prototype.hasOwnProperty.call(a, key)) continue;
+        if (key[0] === "$") n.style[key.slice(1)] = a[key];
+        else n.setAttribute(key, a[key]);
+      }
     }
     return n;
   }
@@ -4261,10 +4217,8 @@ function initVim(CodeMirror2) {
       });
     } else {
       var shortText = "";
-      if (typeof options2.prefix != "string" && options2.prefix)
-        shortText += options2.prefix.textContent;
-      if (options2.desc)
-        shortText += " " + options2.desc;
+      if (typeof options2.prefix != "string" && options2.prefix) shortText += options2.prefix.textContent;
+      if (options2.desc) shortText += " " + options2.desc;
       options2.onClose(prompt(shortText, ""));
     }
   }
@@ -4325,8 +4279,7 @@ function initVim(CodeMirror2) {
         }
         while (!stream.eol()) {
           stream.next();
-          if (stream.match(query, false))
-            break;
+          if (stream.match(query, false)) break;
         }
       },
       query
@@ -4336,8 +4289,7 @@ function initVim(CodeMirror2) {
   function highlightSearchMatches(cm, query) {
     clearTimeout(highlightTimeout);
     highlightTimeout = setTimeout(function() {
-      if (!cm.state.vim)
-        return;
+      if (!cm.state.vim) return;
       var searchState = getSearchState(cm);
       var overlay = searchState.getOverlay();
       if (!overlay || query != overlay.query) {
@@ -4575,8 +4527,7 @@ function initVim(CodeMirror2) {
         case "'":
           var markName = inputStream.next();
           var markPos = getMarkPos(cm, cm.state.vim, markName);
-          if (!markPos)
-            throw new Error("Mark not set");
+          if (!markPos) throw new Error("Mark not set");
           return this.parseLineSpecOffset_(inputStream, markPos.line);
         case "-":
         case "+":
@@ -5306,6 +5257,7 @@ function initVim(CodeMirror2) {
           break;
         case "L":
           replace();
+        // fall through and exit.
         case "Q":
         case "Esc":
         case "Ctrl-C":
@@ -5348,8 +5300,7 @@ function initVim(CodeMirror2) {
     var lastChange = macroModeState.lastInsertModeChanges;
     if (!isPlaying) {
       cm.off("change", onChange);
-      if (vim2.insertEnd)
-        vim2.insertEnd.clear();
+      if (vim2.insertEnd) vim2.insertEnd.clear();
       vim2.insertEnd = null;
       CodeMirror2.off(cm.getInputField(), "keydown", onKeyEventTargetKeyDown);
     }
@@ -5497,8 +5448,7 @@ function initVim(CodeMirror2) {
                   }
                 }
               }
-              if (text)
-                lastChange.changes.push(text);
+              if (text) lastChange.changes.push(text);
             }
           }
         }
@@ -5518,8 +5468,7 @@ function initVim(CodeMirror2) {
         lastChange.expectCursorActivityForChange = false;
       } else {
         lastChange.maybeReset = true;
-        if (vim2.insertEnd)
-          vim2.insertEnd.clear();
+        if (vim2.insertEnd) vim2.insertEnd.clear();
         vim2.insertEnd = cm.setBookmark(cm.getCursor(), { insertLeft: true });
       }
     } else if (!cm.curOp.isVimOp) {
@@ -5653,8 +5602,7 @@ function initVim(CodeMirror2) {
   function cloneVimState(state) {
     var n = new state.constructor();
     Object.keys(state).forEach(function(key) {
-      if (key == "insertEnd")
-        return;
+      if (key == "insertEnd") return;
       var o = state[key];
       if (Array.isArray(o))
         o = o.slice();
@@ -5845,7 +5793,7 @@ function runHistoryCommand(cm, revert) {
   }
 }
 var keys = {};
-var CodeMirror = class {
+var CodeMirror = class _CodeMirror {
   constructor(cm6) {
     this.state = {};
     this.marks = /* @__PURE__ */ Object.create(null);
@@ -6071,7 +6019,7 @@ var CodeMirror = class {
   }
   execCommand(name) {
     if (name == "indentAuto")
-      CodeMirror.commands.indentAuto(this);
+      _CodeMirror.commands.indentAuto(this);
     else if (name == "goLineLeft")
       (0, import_commands.cursorLineBoundaryBackward)(this.cm6);
     else if (name == "goLineRight") {
@@ -6353,8 +6301,10 @@ var CodeMirror = class {
         return this.cm6.state.readOnly;
       case "indentWithTabs":
         return this.cm6.state.facet(import_language.indentUnit) == "	";
+      // TODO
       case "indentUnit":
         return this.cm6.state.facet(import_language.indentUnit).length || 2;
+      // for tests
       case "keyMap":
         return this.state.keyMap || "vim";
     }
@@ -6768,7 +6718,7 @@ var BlockCursorPlugin = class {
     this.setBlinkRate();
   }
   setBlinkRate() {
-    this.cursorLayer.style.animationDuration = 1200 + "ms";
+    this.cursorLayer.style.animationDuration = "1200ms";
   }
   update(update) {
     if (update.selectionSet || update.geometryChanged || update.viewportChanged) {
@@ -6967,8 +6917,7 @@ var vimPlugin = /* @__PURE__ */ import_view.ViewPlugin.fromClass(class {
     if (update.selectionSet) {
       this.cm.onSelectionChange();
     }
-    if (update.viewportChanged)
-      ;
+    if (update.viewportChanged) ;
     if (this.cm.curOp && !this.cm.curOp.isVimOp) {
       this.cm.onBeforeEndOperation();
     }
@@ -7263,8 +7212,7 @@ async function createSnippetFile(app, fileName, data = "") {
 }
 async function renameSnippetFile(app, oldFile, newFileName) {
   const newFile = new CssFile(newFileName);
-  if (oldFile.name === newFile.name)
-    return oldFile;
+  if (oldFile.name === newFile.name) return oldFile;
   await _validateFile(newFile);
   await app.vault.adapter.rename(
     (0, import_obsidian.normalizePath)(`${getSnippetDirectory(app)}${oldFile.name}`),
@@ -7492,8 +7440,7 @@ var FuzzyMatcher = class {
     if (chars.length == 1) {
       let first = (0, import_state2.codePointAt)(word, 0), firstSize = (0, import_state2.codePointSize)(first);
       let score2 = firstSize == word.length ? 0 : -100;
-      if (first == chars[0])
-        ;
+      if (first == chars[0]) ;
       else if (first == folded[0])
         score2 += -200;
       else
@@ -7982,7 +7929,7 @@ function sortOptions(active, state) {
   }
   return result;
 }
-var CompletionDialog = class {
+var CompletionDialog = class _CompletionDialog {
   constructor(options, attrs, tooltip, timestamp, selected, disabled) {
     this.options = options;
     this.attrs = attrs;
@@ -7992,7 +7939,7 @@ var CompletionDialog = class {
     this.disabled = disabled;
   }
   setSelected(selected, id) {
-    return selected == this.selected || selected >= this.options.length ? this : new CompletionDialog(this.options, makeAttrs(id, selected), this.tooltip, this.timestamp, selected, this.disabled);
+    return selected == this.selected || selected >= this.options.length ? this : new _CompletionDialog(this.options, makeAttrs(id, selected), this.tooltip, this.timestamp, selected, this.disabled);
   }
   static build(active, state, id, prev, conf) {
     let options = sortOptions(active, state);
@@ -8000,7 +7947,7 @@ var CompletionDialog = class {
       return prev && active.some(
         (a) => a.state == 1
         /* Pending */
-      ) ? new CompletionDialog(prev.options, prev.attrs, prev.tooltip, prev.timestamp, prev.selected, true) : null;
+      ) ? new _CompletionDialog(prev.options, prev.attrs, prev.tooltip, prev.timestamp, prev.selected, true) : null;
     }
     let selected = state.facet(completionConfig).selectOnOpen ? 0 : -1;
     if (prev && prev.selected != selected && prev.selected != -1) {
@@ -8011,24 +7958,24 @@ var CompletionDialog = class {
           break;
         }
     }
-    return new CompletionDialog(options, makeAttrs(id, selected), {
+    return new _CompletionDialog(options, makeAttrs(id, selected), {
       pos: active.reduce((a, b) => b.hasResult() ? Math.min(a, b.from) : a, 1e8),
       create: completionTooltip(completionState, applyCompletion),
       above: conf.aboveCursor
     }, prev ? prev.timestamp : Date.now(), selected, false);
   }
   map(changes) {
-    return new CompletionDialog(this.options, this.attrs, Object.assign(Object.assign({}, this.tooltip), { pos: changes.mapPos(this.tooltip.pos) }), this.timestamp, this.selected, this.disabled);
+    return new _CompletionDialog(this.options, this.attrs, Object.assign(Object.assign({}, this.tooltip), { pos: changes.mapPos(this.tooltip.pos) }), this.timestamp, this.selected, this.disabled);
   }
 };
-var CompletionState = class {
+var CompletionState = class _CompletionState {
   constructor(active, id, open) {
     this.active = active;
     this.id = id;
     this.open = open;
   }
   static start() {
-    return new CompletionState(none, "cm-ac-" + Math.floor(Math.random() * 2e6).toString(36), null);
+    return new _CompletionState(none, "cm-ac-" + Math.floor(Math.random() * 2e6).toString(36), null);
   }
   update(tr) {
     let { state } = tr, conf = state.facet(completionConfig);
@@ -8068,7 +8015,7 @@ var CompletionState = class {
     for (let effect of tr.effects)
       if (effect.is(setSelectedEffect))
         open = open && open.setSelected(effect.value, this.id);
-    return active == this.active && open == this.open ? this : new CompletionState(active, this.id, open);
+    return active == this.active && open == this.open ? this : new _CompletionState(active, this.id, open);
   }
   get tooltip() {
     return this.open ? this.open.tooltip : null;
@@ -8109,7 +8056,7 @@ var none = [];
 function getUserEvent(tr) {
   return tr.isUserEvent("input.type") ? "input" : tr.isUserEvent("delete.backward") ? "delete" : null;
 }
-var ActiveSource = class {
+var ActiveSource = class _ActiveSource {
   constructor(source, state, explicitPos = -1) {
     this.source = source;
     this.state = state;
@@ -8125,16 +8072,16 @@ var ActiveSource = class {
     else if (tr.docChanged)
       value = value.handleChange(tr);
     else if (tr.selection && value.state != 0)
-      value = new ActiveSource(
+      value = new _ActiveSource(
         value.source,
         0
         /* Inactive */
       );
     for (let effect of tr.effects) {
       if (effect.is(startCompletionEffect))
-        value = new ActiveSource(value.source, 1, effect.value ? cur(tr.state) : -1);
+        value = new _ActiveSource(value.source, 1, effect.value ? cur(tr.state) : -1);
       else if (effect.is(closeCompletionEffect))
-        value = new ActiveSource(
+        value = new _ActiveSource(
           value.source,
           0
           /* Inactive */
@@ -8148,24 +8095,24 @@ var ActiveSource = class {
     return value;
   }
   handleUserEvent(tr, type, conf) {
-    return type == "delete" || !conf.activateOnTyping ? this.map(tr.changes) : new ActiveSource(
+    return type == "delete" || !conf.activateOnTyping ? this.map(tr.changes) : new _ActiveSource(
       this.source,
       1
       /* Pending */
     );
   }
   handleChange(tr) {
-    return tr.changes.touchesRange(cur(tr.startState)) ? new ActiveSource(
+    return tr.changes.touchesRange(cur(tr.startState)) ? new _ActiveSource(
       this.source,
       0
       /* Inactive */
     ) : this.map(tr.changes);
   }
   map(changes) {
-    return changes.empty || this.explicitPos < 0 ? this : new ActiveSource(this.source, this.state, changes.mapPos(this.explicitPos));
+    return changes.empty || this.explicitPos < 0 ? this : new _ActiveSource(this.source, this.state, changes.mapPos(this.explicitPos));
   }
 };
-var ActiveResult = class extends ActiveSource {
+var ActiveResult = class _ActiveResult extends ActiveSource {
   constructor(source, explicitPos, result, from, to) {
     super(source, 2, explicitPos);
     this.result = result;
@@ -8187,9 +8134,9 @@ var ActiveResult = class extends ActiveSource {
       );
     let explicitPos = this.explicitPos < 0 ? -1 : tr.changes.mapPos(this.explicitPos), updated;
     if (checkValid(this.result.validFor, tr.state, from, to))
-      return new ActiveResult(this.source, explicitPos, this.result, from, to);
+      return new _ActiveResult(this.source, explicitPos, this.result, from, to);
     if (this.result.update && (updated = this.result.update(this.result, from, to, new CompletionContext(tr.state, pos, explicitPos >= 0))))
-      return new ActiveResult(this.source, explicitPos, updated, updated.from, (_a = updated.to) !== null && _a !== void 0 ? _a : cur(tr.state));
+      return new _ActiveResult(this.source, explicitPos, updated, updated.from, (_a = updated.to) !== null && _a !== void 0 ? _a : cur(tr.state));
     return new ActiveSource(this.source, 1, explicitPos);
   }
   handleChange(tr) {
@@ -8200,7 +8147,7 @@ var ActiveResult = class extends ActiveSource {
     ) : this.map(tr.changes);
   }
   map(mapping) {
-    return mapping.empty ? this : new ActiveResult(this.source, this.explicitPos < 0 ? -1 : mapping.mapPos(this.explicitPos), this.result, mapping.mapPos(this.from), mapping.mapPos(this.to, 1));
+    return mapping.empty ? this : new _ActiveResult(this.source, this.explicitPos < 0 ? -1 : mapping.mapPos(this.explicitPos), this.result, mapping.mapPos(this.from), mapping.mapPos(this.to, 1));
   }
 };
 function checkValid(validFor, state, from, to) {
@@ -9003,10 +8950,8 @@ var identifiers = new import_lr.ExternalTokenizer((input, stack) => {
   for (let inside = false, dashes = 0, i = 0; ; i++) {
     let { next } = input;
     if (isAlpha(next) || next == dash || next == underscore || inside && isDigit(next)) {
-      if (!inside && (next != dash || i > 0))
-        inside = true;
-      if (dashes === i && next == dash)
-        dashes++;
+      if (!inside && (next != dash || i > 0)) inside = true;
+      if (dashes === i && next == dash) dashes++;
       input.advance();
     } else {
       if (inside)
@@ -10145,25 +10090,117 @@ function focusAndSelectElement(el) {
   }
 }
 
+// src/codemirror-extensions/color-picker.ts
+var import_view6 = require("@codemirror/view");
+var import_obsidian4 = require("obsidian");
+var ColorPickerWidget = class extends import_view6.WidgetType {
+  constructor(color, from, to, view) {
+    super();
+    this.color = color;
+    this.from = from;
+    this.to = to;
+    this.view = view;
+  }
+  eq(other) {
+    return this.color === other.color && this.from === other.from && this.to === other.to;
+  }
+  toDOM() {
+    const wrapper = document.createElement("span");
+    wrapper.className = "css-editor-color-picker-wrapper";
+    const colorComponent = new import_obsidian4.ColorComponent(wrapper);
+    colorComponent.setValue(this.color);
+    colorComponent.onChange((newColor) => {
+      this.view.dispatch({
+        changes: {
+          from: this.from,
+          to: this.to,
+          insert: newColor
+        }
+      });
+    });
+    return wrapper;
+  }
+};
+function findColorValues(text) {
+  const matches = [];
+  const hexColorRegex = /#([a-fA-F0-9]{3}|[a-fA-F0-9]{6}|[a-fA-F0-9]{8})\b/g;
+  let match;
+  while ((match = hexColorRegex.exec(text)) !== null) {
+    matches.push({
+      from: match.index,
+      to: match.index + match[0].length,
+      color: match[0]
+    });
+  }
+  return matches.sort((a, b) => a.from - b.from);
+}
+var colorPickerPlugin = import_view6.ViewPlugin.fromClass(
+  class {
+    constructor(view) {
+      this.decorations = this.buildDecorations(view);
+    }
+    update(update) {
+      if (update.docChanged || update.viewportChanged) {
+        this.decorations = this.buildDecorations(update.view);
+      }
+    }
+    buildDecorations(view) {
+      const builder = new Array();
+      const doc = view.state.doc;
+      const text = doc.toString();
+      if (!doc || doc.length === 0) {
+        return import_view6.Decoration.set([]);
+      }
+      const colorMatches = findColorValues(text);
+      for (const match of colorMatches) {
+        if (match.from < 0 || match.to > doc.length || match.from >= match.to) {
+          continue;
+        }
+        const line = doc.lineAt(match.from);
+        if (view.viewport.from <= line.to && line.from <= view.viewport.to) {
+          const decoration = import_view6.Decoration.widget({
+            widget: new ColorPickerWidget(
+              match.color,
+              match.from,
+              match.to,
+              view
+            ),
+            side: 1
+          });
+          builder.push(decoration.range(match.to));
+        }
+      }
+      return import_view6.Decoration.set(builder);
+    }
+    destroy() {
+      this.decorations = import_view6.Decoration.set([]);
+    }
+  },
+  {
+    decorations: (v) => v.decorations
+  }
+);
+
 // src/views/CssEditorView.ts
 var VIEW_TYPE_CSS = "css-editor-view";
-var CssEditorView = class extends import_obsidian4.ItemView {
+var CssEditorView = class extends import_obsidian5.ItemView {
   constructor(leaf, plugin) {
     var _a, _b;
     super(leaf);
     this.file = null;
     this.isSavingTitle = false;
-    this.requestSave = (0, import_obsidian4.debounce)(this.save, 1e3);
+    this.requestSave = (0, import_obsidian5.debounce)(this.save, 1e3);
     const { settings } = plugin;
     this.navigation = true;
-    this.editor = new import_view6.EditorView({
+    this.editor = new import_view7.EditorView({
       parent: this.contentEl,
       extensions: [
         basicExtensions,
-        lineWrap.of(settings.lineWrap ? import_view6.EditorView.lineWrapping : []),
+        lineWrap.of(settings.lineWrap ? import_view7.EditorView.lineWrapping : []),
         indentSize.of(import_language7.indentUnit.of("".padEnd(settings.indentSize))),
+        colorPickerPlugin,
         ((_b = (_a = this.app.vault).getConfig) == null ? void 0 : _b.call(_a, "vimMode")) ? vim() : [],
-        import_view6.EditorView.updateListener.of((update) => {
+        import_view7.EditorView.updateListener.of((update) => {
           if (update.docChanged) {
             this.requestSave(update.state.doc.toString());
             if (this.file) {
@@ -10177,10 +10214,9 @@ var CssEditorView = class extends import_obsidian4.ItemView {
         })
       ]
     });
-    this.scope = new import_obsidian4.Scope(this.app.scope);
+    this.scope = new import_obsidian5.Scope(this.app.scope);
     this.scope.register(null, "F2", () => {
-      if (!this.file)
-        return;
+      if (!this.file) return;
       if (this.titleEl.isShown()) {
         focusAndSelectElement(this.titleEl);
       } else {
@@ -10201,11 +10237,10 @@ var CssEditorView = class extends import_obsidian4.ItemView {
   async onOpen() {
     const timer = window.setInterval(() => {
       this.editor.focus();
-      if (this.editor.hasFocus)
-        clearInterval(timer);
+      if (this.editor.hasFocus) clearInterval(timer);
     }, 200);
     this.registerInterval(timer);
-    if (import_obsidian4.Platform.isMobileApp) {
+    if (import_obsidian5.Platform.isMobileApp) {
       this.titleEl.addEventListener("touchstart", () => {
         this.titleEl.contentEditable = "true";
       });
@@ -10248,16 +10283,14 @@ var CssEditorView = class extends import_obsidian4.ItemView {
   onTitleBlur() {
     this.saveTitle(this.titleEl);
     this.titleEl.spellcheck = false;
-    if (import_obsidian4.Platform.isMobileApp) {
+    if (import_obsidian5.Platform.isMobileApp) {
       this.titleEl.contentEditable = "false";
     }
     this.editor.focus();
   }
   onTitleKeydown(event) {
-    if (!this.file)
-      return;
-    if (event.isComposing)
-      return;
+    if (!this.file) return;
+    if (event.isComposing) return;
     if (event.key === "Escape") {
       this.titleEl.setText(this.getDisplayText());
       this.titleEl.blur();
@@ -10269,13 +10302,10 @@ var CssEditorView = class extends import_obsidian4.ItemView {
     }
   }
   async saveTitle(el) {
-    if (!this.file)
-      return;
+    if (!this.file) return;
     const newTitle = el.getText().trim();
-    if (newTitle === this.file.basename)
-      return;
-    if (this.isSavingTitle)
-      return;
+    if (newTitle === this.file.basename) return;
+    if (this.isSavingTitle) return;
     this.isSavingTitle = true;
     await renameSnippetFile(this.app, this.file, newTitle);
     this.isSavingTitle = false;
@@ -10292,8 +10322,7 @@ var CssEditorView = class extends import_obsidian4.ItemView {
         from: 0,
         to: this.editor.state.doc.length,
         insert: data
-      },
-      selection: this.editor.state.selection
+      }
     });
   }
   getState() {
@@ -10353,10 +10382,10 @@ var CssEditorView = class extends import_obsidian4.ItemView {
 };
 
 // src/modals/CssSnippetFuzzySuggestModal.ts
-var import_obsidian6 = require("obsidian");
+var import_obsidian7 = require("obsidian");
 
 // src/obsidian/workspace-helpers.ts
-var import_obsidian5 = require("obsidian");
+var import_obsidian6 = require("obsidian");
 async function openView(workspace, type, openInNewTab, state) {
   const leaf = workspace.getLeaf(openInNewTab);
   await leaf.setViewState({
@@ -10369,7 +10398,7 @@ async function detachCssFileLeaves(workspace, file) {
   var _a;
   const leaves = workspace.getLeavesOfType(VIEW_TYPE_CSS);
   for (const leaf of leaves) {
-    if ((0, import_obsidian5.requireApiVersion)("1.7.2")) {
+    if ((0, import_obsidian6.requireApiVersion)("1.7.2")) {
       await leaf.loadIfDeferred();
     }
     if (((_a = leaf.getViewState().state) == null ? void 0 : _a.file) === file.name) {
@@ -10379,7 +10408,7 @@ async function detachCssFileLeaves(workspace, file) {
 }
 
 // src/modals/CssSnippetFuzzySuggestModal.ts
-var CssSnippetFuzzySuggestModal = class extends import_obsidian6.FuzzySuggestModal {
+var CssSnippetFuzzySuggestModal = class extends import_obsidian7.FuzzySuggestModal {
   constructor(app, plugin) {
     super(app);
     this.plugin = plugin;
@@ -10424,12 +10453,12 @@ var CssSnippetFuzzySuggestModal = class extends import_obsidian6.FuzzySuggestMod
     this.setInstructions([
       { command: "\u2191\u2193", purpose: "to navigate" },
       {
-        command: import_obsidian6.Platform.isMacOS ? "\u2318 \u21B5" : "ctrl \u21B5",
+        command: import_obsidian7.Platform.isMacOS ? "\u2318 \u21B5" : "ctrl \u21B5",
         purpose: "to open in new tab"
       },
       { command: "shift \u21B5", purpose: "to create" },
       {
-        command: import_obsidian6.Platform.isMacOS ? "\u2318 del" : "ctrl del",
+        command: import_obsidian7.Platform.isMacOS ? "\u2318 del" : "ctrl del",
         purpose: "to delete"
       },
       { command: "tab", purpose: "to enable/disable" },
@@ -10556,8 +10585,7 @@ var CssSnippetFuzzySuggestModal = class extends import_obsidian6.FuzzySuggestMod
     }
   }
   async onChooseItem(item, evt) {
-    if (!item)
-      return;
+    if (!item) return;
     if (evt instanceof KeyboardEvent) {
       if (evt.key === "Enter") {
         const openInNewTab = evt.metaKey;
@@ -10640,8 +10668,8 @@ function isKeymapInfo(hotkey) {
 }
 
 // src/modals/CssSnippetCreateModal.ts
-var import_obsidian7 = require("obsidian");
-var CssSnippetCreateModal = class extends import_obsidian7.Modal {
+var import_obsidian8 = require("obsidian");
+var CssSnippetCreateModal = class extends import_obsidian8.Modal {
   constructor(app, plugin) {
     super(app);
     this.value = "";
@@ -10654,7 +10682,7 @@ var CssSnippetCreateModal = class extends import_obsidian7.Modal {
     this.buildForm();
   }
   buildForm() {
-    const textInput = new import_obsidian7.TextComponent(this.contentEl);
+    const textInput = new import_obsidian8.TextComponent(this.contentEl);
     textInput.setPlaceholder("CSS snippet file name (ex: snippet.css)");
     textInput.onChange((val) => this.value = val);
     textInput.inputEl.addEventListener("keydown", (evt) => {
@@ -10685,8 +10713,8 @@ var CssSnippetCreateModal = class extends import_obsidian7.Modal {
 
 // src/obsidian/setting-tab.ts
 var import_language8 = require("@codemirror/language");
-var import_view7 = require("@codemirror/view");
-var import_obsidian8 = require("obsidian");
+var import_view8 = require("@codemirror/view");
+var import_obsidian9 = require("obsidian");
 function updateCSSEditorView(app, spec) {
   app.workspace.getLeavesOfType(VIEW_TYPE_CSS).forEach((leaf) => {
     if (leaf.view instanceof CssEditorView) {
@@ -10694,24 +10722,24 @@ function updateCSSEditorView(app, spec) {
     }
   });
 }
-var CSSEditorSettingTab = class extends import_obsidian8.PluginSettingTab {
+var CSSEditorSettingTab = class extends import_obsidian9.PluginSettingTab {
   constructor(app, plugin) {
     super(app, plugin);
     this.plugin = plugin;
   }
   display() {
     this.containerEl.empty();
-    new import_obsidian8.Setting(this.containerEl).setName("Line wrap").setDesc("Toggle line wrap in the editor.").addToggle((toggle) => {
+    new import_obsidian9.Setting(this.containerEl).setName("Line wrap").setDesc("Toggle line wrap in the editor.").addToggle((toggle) => {
       toggle.setValue(this.plugin.settings.lineWrap);
       toggle.onChange((val) => {
         this.plugin.settings.lineWrap = val;
         this.plugin.saveSettings();
         updateCSSEditorView(this.app, {
-          effects: lineWrap.reconfigure(val ? import_view7.EditorView.lineWrapping : [])
+          effects: lineWrap.reconfigure(val ? import_view8.EditorView.lineWrapping : [])
         });
       });
     });
-    new import_obsidian8.Setting(this.containerEl).setName("Indent size").setDesc("Adjust the amount of spaces used for indentation.").addText((field) => {
+    new import_obsidian9.Setting(this.containerEl).setName("Indent size").setDesc("Adjust the amount of spaces used for indentation.").addText((field) => {
       field.setPlaceholder("2");
       field.setValue(this.plugin.settings.indentSize.toString());
       field.onChange((val) => {
@@ -10733,7 +10761,7 @@ var DEFAULT_SETTINGS = {
   lineWrap: true,
   indentSize: 2
 };
-var CssEditorPlugin = class extends import_obsidian9.Plugin {
+var CssEditorPlugin = class extends import_obsidian10.Plugin {
   async onload() {
     await this.loadSettings();
     this.addCommand({
@@ -10755,13 +10783,10 @@ var CssEditorPlugin = class extends import_obsidian9.Plugin {
       name: "Delete CSS snippet",
       checkCallback: (checking) => {
         const activeCssEditorView = this.app.workspace.getActiveViewOfType(CssEditorView);
-        if (!activeCssEditorView)
-          return false;
-        if (checking)
-          return true;
+        if (!activeCssEditorView) return false;
+        if (checking) return true;
         const { file } = activeCssEditorView.getState();
-        if (!file)
-          return;
+        if (!file) return;
         const cssFile = new CssFile(file);
         detachCssFileLeaves(this.app.workspace, cssFile).then(
           async () => {
@@ -10776,13 +10801,10 @@ var CssEditorPlugin = class extends import_obsidian9.Plugin {
       name: "Toggle the enabled/disabled state of CSS snippet",
       checkCallback: (checking) => {
         const activeCssEditorView = this.app.workspace.getActiveViewOfType(CssEditorView);
-        if (!activeCssEditorView)
-          return false;
-        if (checking)
-          return true;
+        if (!activeCssEditorView) return false;
+        if (checking) return true;
         const { file } = activeCssEditorView.getState();
-        if (!file)
-          return;
+        if (!file) return;
         const cssFile = new CssFile(file);
         const isEnabled = toggleSnippetFileState(this.app, cssFile);
         new InfoNotice(

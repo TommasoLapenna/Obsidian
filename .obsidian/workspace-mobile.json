@@ -11,12 +11,14 @@
             "id": "7950de1e2662288e",
             "type": "leaf",
             "state": {
-              "type": "mk-space",
+              "type": "markdown",
               "state": {
-                "path": "University/Statistica"
+                "file": "University/Statistica/Modello Lineare.md",
+                "mode": "source",
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Statistica"
+              "title": "Modello Lineare"
             }
           }
         ]
@@ -84,7 +86,7 @@
         }
       },
       {
-        "id": "1992ec0cb0aea0cb",
+        "id": "6747d8f3b09977b5",
         "type": "leaf",
         "state": {
           "type": "mk-path-view",
@@ -169,29 +171,32 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-excalidraw-plugin:New drawing": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e13a69031a596bc3",
+  "active": "7950de1e2662288e",
   "lastOpenFiles": [
-    "University/Statistica/Statistiche Campionarie.md",
-    "Source Material/Images/Pasted image 20250709023315.png",
-    "University/Statistica/Statistica.md",
-    "University/Statistica/Variabili Aleatorie Continue.md",
-    "Source Material/Images/Pasted image 20250709014143.png",
-    "Source Material/Images/Pasted image 20250709013916.png",
-    "Source Material/Images/Pasted image 20250709013550.png",
-    "Source Material/Images/Pasted image 20250709012900.png",
-    "Source Material/Images/Pasted image 20250709012502.png",
-    "Source Material/Images/Pasted image 20250709012203.png",
-    "Source Material/Images/Pasted image 20250709011616.png",
-    "Source Material/Images/Pasted image 20250709011558.png",
-    "Source Material/Images/Pasted image 20250709010916.png",
-    "University/Statistica/Variabili Aleatorie Discrete.md",
+    "Source Material/Images/Pasted image 20250710162602.png",
+    "Source Material/Images/Pasted image 20250710161930.png",
+    "Source Material/Images/Pasted image 20250710154656.png",
+    "Source Material/Images/Pasted image 20250710035000.png",
+    "Source Material/Images/Pasted image 20250710034906.png",
     "University/Statistica/Variabili Aleatorie.md",
-    "University/Statistica/Probabilità.md",
+    "University/Statistica/Modello Lineare.md",
+    "Source Material/Images/Pasted image 20250710030236.png",
+    "University/Statistica/Verifica di Ipotesi.md",
+    "Source Material/Images/Pasted image 20250710002238.png",
+    "Source Material/Images/Pasted image 20250709234158.png",
+    "University/Statistica/Inferenza Parametrica Bayesiana.md",
+    "Source Material/Images/Pasted image 20250709184856.png",
+    "Source Material/Images/Pasted image 20250709182830.png",
+    "Source Material/Images/Pasted image 20250709181937.png",
+    "University/Statistica/Variabili Aleatorie Discrete.md",
+    "University/Statistica/Statistica.md",
     "University/University.md",
+    "University/Statistica/Statistiche Campionarie.md",
+    "University/Statistica/Variabili Aleatorie Continue.md",
+    "University/Statistica/Probabilità.md",
     "Old Vault/Tags/Matematica Discreta e Codici/Matematica Discreta e Codici.md",
     "Old Vault/Tags/Basi di Dati/Basi di Dati.md",
     "University/Statistica/Statistica Descrittiva.md",
@@ -208,9 +213,6 @@
     "University/Fondamenti di Segnali e Trasmissione/Segnali Aperiodici a Tempo Continuo.md",
     "University/Fondamenti di Segnali e Trasmissione/Appendice.md",
     "University/Fondamenti di Segnali e Trasmissione/Segnali Periodici a Tempo Continuo.md",
-    "Zettelkasten/Zettelkasten.md",
-    "Zettelkasten/Introduzione.md",
-    "University/Fondamenti di Segnali e Trasmissione/Processi Aleatori Analogici.md",
     "ESP32",
     "Source Material/Images/IMG_0477.mov",
     "University/Progettazione e Produzione Multimediale",
