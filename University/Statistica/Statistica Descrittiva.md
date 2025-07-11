@@ -66,7 +66,15 @@ Nel caso in cui le variabili siano numeriche o categoriche ordinali si possono c
 
 ![[Pasted image 20250702111449.png|center|400]]
 
-Le variabili numeriche (quantitative) possono avere molte modalità diverse (continue e discrete), in questi casi è utile raggruppare le modalità in classi e calcolare la frequenza delle classi:
+Dal punto di vista pratico, per costruire le distribuzioni di frequenza si usa la seguente schema, con $v_{i}$ dati dei quali si osserva la frequenza:
+
+
+| $v_{i}$ | Frequenza Assoluta $f_{i}$ | Frequenza Relativa $\frac{f_{i}}{n}$ | Frequenza Percentuale | Frequenza Cumulativa |
+| ------- | -------------------------- | ------------------------------------ | --------------------- | -------------------- |
+| ...     | ...                        | ...                                  | ...                   | ...                  |
+
+
+Le variabili numeriche (==quantitative==) possono avere molte modalità diverse (continue e discrete), in questi casi è utile raggruppare le modalità in classi e calcolare la frequenza delle classi:
 - Si possono decidere che le classi abbiano tutte la stessa **ampiezza**, in questo caso, l'ampiezza delle classi è determinata come  $$\frac{\text{Valore Massimo}- \text{Valore Minimo}}{\text{Numero di Classi}}$$Maggiore è l'ampiezza delle classi maggiore è la perdita di informazioni nel passaggio dalla matrice dei dati alla distribuzione di frequenza.
 
 > [!example]+ Esempio:
@@ -130,9 +138,10 @@ Utilizzo: Variabili di tipo Quantitativo.
 
 ### Media Aritmetica
 La media aritmetica è la misura della tendenza centrale più comune. Essa può essere  calcolata per variabili per variabili quantitative.
-- Si suppone di osservare un insieme di $n$ dati $x_{1},x_{2},\ldots,x_{n}$. La media campionaria è la media aritmetica di questi dati e si calcola come $$\overline{x}= \frac{x_{1}+x_{2}+\ldots+x_{n}}{n}=\frac{1}{n}\sum^n_{i=1}x_{i}$$La media di popolazione $\mu$ è calcolata usando tutte le $N$ unità statistiche che costituiscono la popolazione di riferimento.
+- Si suppone di osservare un insieme di $n$ dati $x_{1},x_{2},\ldots,x_{n}$. La media campionaria è la media aritmetica di questi dati e si calcola come $$\overline{x}= \frac{x_{1}+x_{2}+\ldots+x_{n}}{n}=\frac{1}{n}\sum^n_{i=1}x_{i}$$
+La media di popolazione $\mu$ è calcolata usando tutte le $N$ unità statistiche che costituiscono la popolazione di riferimento.
 
-La media **Campionaria** piò essere calcolata a partire dalla distribuzione di frequenza assoluta o relativa. Si suppone che le modalità che la variabile assume nel campione siano $v_{1},v_{2},\ldots,v_{k}$ con numerosità $f_{1},f_{2},\ldots,f_{k}$. Allora:
+La media **Campionaria** può essere calcolata a partire dalla distribuzione di frequenza assoluta o relativa. Si suppone che le modalità che la variabile assume nel campione siano $v_{1},v_{2},\ldots,v_{k}$ con numerosità $f_{1},f_{2},\ldots,f_{k}$. Allora:
 - Usando le frequenza assolute:$$\overline x=\frac{1}{n}\sum^k_{i=1}f_{i}v_{i}$$
 - Usando le frequenze relative: $$\overline x=\sum^k_{i=1} \frac{f_{i}}{n}v_{i}$$
 
@@ -201,6 +210,10 @@ I quartili sono i valori che dividono in 4 parti la distribuzione dei dati
 > [!hint] $Q_{2}$
 > La **mediana** è anche detta secondo quartile $Q_{2}$.
 
+Dal punto di vista pratico, per trovare i quartili:
+1. Si ordinano le osservazioni
+2. Si calcola il $Q_{2}$ come la mediana
+3. Guardando i dati divisi in due dalla mediana, si calcola nuovamente la mediana in queste due meta $Q_{1}$ e $Q_{2}$
 #### Box-Plot
 Il box-plot è un diagramma che rappresenta la distribuzione dei dati e presuppone la conoscenza dei quartili. Questo tipo di diagramma risulta utile per evidenziare la presenza di valori eccezzionali, chiamati *outliers*.
 
@@ -220,6 +233,7 @@ Dipende dall'unità di misura della variabile considerata e ignora il modo in cu
 La varianza è la media dei quadrati degli scarti degli scarti fra ciascuna osservazione e la loro media.
 - **Varianza della Popolazione:** $$\sigma^2=\frac{1}{N}\sum^N_{i=1}(x_{i}-\mu)^2$$
 - **Varianza Campionaria:** $$s^2=\frac{1}{n-1}\sum^n_{i=1}(x_{i}-\overline x)^2$$
+
 con $\mu$ media della popolazione e $\overline x$ media campionaria.
 #### Proprietà della Varianza
 - La varianza è sempre positiva
@@ -234,12 +248,12 @@ con $\mu$ media della popolazione e $\overline x$ media campionaria.
 > 
 
 ### Deviazione Standard
-La deviazione standard è un modo per esprimere la variabilità nella stessa unità di misura dei dati, ovvero
+La deviazione standard è un modo per esprimere la variabilità ==nella stessa unità di misura dei dati==, ovvero
 $$
 \sigma=\sqrt{ \sigma^2 }=\sqrt{ \frac{1}{N}\sum^N_{i}(x_{i}-\mu)^2 }
 $$
 ### Coefficiente di Variazione
-Il coefficiente di variazione è un modo per esprimere la variabilità in modo indipendente dall'unità di misura, ovvero
+==Il coefficiente di variazione è un modo per esprimere la variabilità in modo indipendente dall'unità di misura,== ovvero
 $$CV=\frac{\sigma}{|\mu|}$$
 ### Differenza Interquartile
 La differenza interquartile è una misura di variabilità robusta, definita come $$DQ=Q_{3}-Q_{1}$$
@@ -267,7 +281,7 @@ $$
 #### Indice di Correlazione
 Dato un campione bivariato $(x_{i},y_{i})$ per $i=1,\ldots,n$, la **Correlazione Campionaria** è definita come segue:
 $$
-r=\frac{\sum^n_{i=1}(x_{i}-\overline x)(y_{i}-\overline y)}{(n-1)} \frac{1}{s_{x}s_{y}}
+r=\frac{\sum^n_{i=1}(x_{i}-\overline x)(y_{i}-\overline y)}{(n-1)} \frac{1}{s_{x}s_{y}}=\frac{Cov(x,y)}{s_{x}s_{y}}
 $$
 - $-1\le r\le 1$
 	- $r=1$ in caso di perfetta relazione lineare positiva
