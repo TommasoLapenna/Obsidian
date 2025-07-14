@@ -1,5 +1,6 @@
 ---
 sticker: emoji//0038-fe0f-20e3
+Order: "7"
 ---
 - [[#Verifica di Ipotesi: Approccio Frequentista|Verifica di Ipotesi: Approccio Frequentista]]
 	- [[#Verifica di Ipotesi: Approccio Frequentista#Ipotesi e Livelli di Significatività|Ipotesi e Livelli di Significatività]]

@@ -1,5 +1,6 @@
 ---
-sticker: emoji//0030-fe0f-20e3
+sticker: emoji//0031-fe0f-20e3
+Order: "0"
 ---
 - [[#Definizione di Statistica|Definizione di Statistica]]
 - [[#Rappresentazione dei Dati|Rappresentazione dei Dati]]

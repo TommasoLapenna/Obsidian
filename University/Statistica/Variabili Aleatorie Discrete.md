@@ -1,5 +1,6 @@
 ---
 sticker: emoji//0034-fe0f-20e3
+Order: "3"
 ---
 - [[#Variabile Aleatoria di Bernoulli|Variabile Aleatoria di Bernoulli]]
 	- [[#Variabile Aleatoria di Bernoulli#Valore Atteso e Varianza|Valore Atteso e Varianza]]
@@ -46,10 +47,15 @@ $$
 \underset{\text{possono essere scelti per primo}}{n}\cdot \underset{\text{possono essere scelti per secondo}}{(n-1)}\cdot(n-2)\cdot \ldots\cdot \underset{\text{possono essere scelti per }i-esimo}{(n-i+1)}= \frac{n!}{(n-i)!}
 $$
 
-Si suppone di lanciare una moneta truccata (con probablità test: $\frac{2}{3}$ e di croce: $\frac{1}{3}$) per $n=4$ volte. Si calcoli la probabilità che esca 2 volte testa.
-$X_{1},X_{2},X_{3},X_{4}$ sono variabili di Bernoulli iid, $Y=\sum^4_{i=1}X_{i}$
-$$P(Y=2)= \frac{4!}{2!2!}\left( \frac{2}{3} \right)^2 \left( \frac{1}{3} \right)^2$$
+- Se si ha $i=0$, allora $\begin{pmatrix} n \\ 0\end{pmatrix}=1$ 
+
+> [!example]+ Esempio:
+> Si suppone di lanciare una moneta truccata (con probablità test: $\frac{2}{3}$ e di croce: $\frac{1}{3}$) per $n=4$ volte. Si calcoli la probabilità che esca 2 volte testa.
+> $X_{1},X_{2},X_{3},X_{4}$ sono variabili di Bernoulli iid, $Y=\sum^4_{i=1}X_{i}$
+> $$P(Y=2)= \frac{4!}{2!2!}\left( \frac{2}{3} \right)^2 \left( \frac{1}{3} \right)^2$$
+
 ### Valore Atteso e Varianza
+
 Se $X_{i}\sim Ber(p)$, $Y=X_{1}+X_{2}+\ldots+X_{n}$; $Y\sim Bin(n,\pi)$
 - **Valore Atteso:** $$E[Y]=E[X_{1}]+\ldots+E[X_{n}]=n\pi$$
 - **Varianza:** $$\begin{align}Var(Y)&=Var(X_{1})+\ldots+Var(X_{n})+\underset{=0}{Cov(X_{1},X_{2})}+\ldots+Cov(X_{n-1},X_{n})=n\pi(1-\pi)\end{align}$$
@@ -77,7 +83,7 @@ $$\begin{gather}
 ---
 ## Variabile Aleatoria Ipergeometrica
 - **Esperimento:** $n$ ripetizioni non indipendenti con risultato vero/falso
-- Si immagina un'urna in cui c'è un numero finito di palline nere $N$ e palline marroni $M$, ad ogni estrazione ogni pallina non viene rimessa nell'urna. La variabile aleatoria $X$ indica il numero di palline nere in $n$ estrazioni e $\mathcal X=\{\max(0,n-M),\ldots,\min(n,N)\}$
+- Si immagina un'urna in cui c'è un numero finito di palline nere $N$ e palline marroni $M$, ad ogni estrazione ogni pallina ==non viene rimessa nell'urna==. La variabile aleatoria $X$ indica il numero di palline nere in $n$ estrazioni e $\mathcal X=\{\max(0,n-M),\ldots,\min(n,N)\}$
 - **Funzione di Massa di Probabilità:** $$P(X=i)= \frac{\begin{pmatrix} N \\ i\end{pmatrix}\begin{pmatrix}M \\ n-i \end{pmatrix}}{\begin{pmatrix}N+M\\ n \end{pmatrix}}\qquad i=\max(0,n-M),\ldots,\min(n,N)$$
 ### Valore Atteso e Varianza
 Ciascuna estrazione presa per se determina una variabile di Bernoulli $$X_{i}=\begin{cases}

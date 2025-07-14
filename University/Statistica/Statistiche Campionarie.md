@@ -1,5 +1,6 @@
 ---
 sticker: emoji//0036-fe0f-20e3
+Order: "5"
 ---
 n## Varianza Campionaria
 Si considerano nuovamente delle variabili aleatorie $X_{1},\ldots,X_{n}$, tratte da una popolazione la cui caratteristica $X$ ha media $\mu$ e varianza $\sigma^2$.

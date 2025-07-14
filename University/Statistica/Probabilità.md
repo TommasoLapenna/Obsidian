@@ -1,5 +1,6 @@
 ---
-sticker: emoji//0031-fe0f-20e3
+sticker: emoji//0032-fe0f-20e3
+Order: "1"
 ---
 - [[#Calcolo delle Probabilità|Calcolo delle Probabilità]]
 	- [[#Calcolo delle Probabilità#Spazio Campionario|Spazio Campionario]]
@@ -132,8 +133,8 @@ Il calcolo della probabilità consente di determinare la probabilità di eventi 
 3. Additività Finita: Valuta la probabilità dell'unione di eventi mutualmente esclusive. Se $E_{1},E_{2},\ldots,E_{n}$ sono mutualmente esclusivi $$P(E_{1}\cup E_{2}\cup\ldots\cup E_{n})=P\left(\bigcup^n_{i=1}E_{i}\right)=\sum^n_{i=1}P(E_{i})$$
 ### Proprietà della Probabilità 
 Dagli assiomi di Kolmogorov si possono dedurre altre proprietà:
-1. Se $E\subset \Omega$, $P(\overline {E})=1-P(E)$ $$1=P(\Omega)=P(E\cup \overline E)=P(E)+P(\overline E)$$
-2. Siano $E$ ed $F$ due eventi qualsiasi $$P(E\cup F)=P(E)+P(F)-P(E\cap F)$$![[Pasted image 20250705101212.png|350]]
+==1.== Se $E\subset \Omega$, $P(\overline {E})=1-P(E)$ $$1=P(\Omega)=P(E\cup \overline E)=P(E)+P(\overline E)$$
+2. Siano $E$ ed $F$ due eventi qualsiasi ==$$P(E\cup F)=P(E)+P(F)-P(E\cap F)$$==![[Pasted image 20250705101212.png|350]]
 
 ---
 
@@ -208,7 +209,7 @@ La scomposizione $likelihood\times prior$ è utile perché è spesso facile valu
 **Generalizzazione:**
 Si considerano $H$ e alcune differenti evidenze $E_{1},\ldots, E_{n}$, nel caso le evidenze siano tutte rilevanti si hanno $n!$ possibili scomposizioni (tutte valide)
 
-> [!gray] Chain Rule
+> [!gray] <mark style='background:var(--mk-color-yellow)'>Chain Rule</mark>
 > $$\begin{align}&P(H,E_{1},E_{2},\ldots,E_{n})= \\
 > &=P(H|E_{1},\ldots,E_{n})P(E_{1},\ldots,E_{n}) \\
 > &= P(H|E_{1},\ldots,E_{n})P(E_{1}|E_{2},\ldots,E_{n})\ldots P(E_{n}) \\
@@ -247,7 +248,7 @@ Per il [[#Assiomi di Kolmogorov|terzo assioma]], la probabilità dell'unione di 
 $$
 P(A)=P((A\cap B)\cup (A\cap \overline B))=P(A\cap B)+P(A\cap \overline B)=\underset{\text{likelihood}\times\text{prior}}{P(A|B)P(B)}+\underset{\text{likelihood}\times\text{prior}}{P(A|\overline B)P(\overline B)}
 $$
-In generale, con $E=$ evidenze e $H=$ variabili non esservabili:
+==In generale, con $E=$ evidenze e $H=$ variabili non esservabili:==
 $$
 P(E)=\underset{\text{likelihood}}{P(E|H)}\underset{\text{prior}}{P(H)}+P(E|\overline H)P(\overline H)
 $$
@@ -266,16 +267,12 @@ Dal teorema delle probabilità condizionate:
 
 > [!gray] Teorema di Bayes
 > $$P(H|E)=\frac{P(E,H)}{P(E)}$$
-> 
-
+>
 Tramite la fattorizzazione della congiunta (numeratore) e l'extending conversation (denominatore) si ottiene
-$$
-P(H|E)= \frac{P(E|H)P(H)}{P(E|H)P(H)+P(E|\overline H)P(\overline H)}
-$$
-In generale:
-$$
-P(H_{i}|E)= \frac{P(E|H_{i})P(H_{i})}{\sum^n_{i=1}P(E|H_{i})P(H_{i})}
-$$
+>$$P(H|E)= \frac{P(E|H)P(H)}{P(E|H)P(H)+P(E|\overline H)P(\overline H)}$$
+>In generale:
+>$$P(H_{i}|E)= \frac{P(E|H_{i})P(H_{i})}{\sum^n_{i=1}P(E|H_{i})P(H_{i})}$$
+
 Questa formula risponde alla domanda di qual'è la probabilità della ipotesi tenendo conto delle evidenze. Per avere questa risposta si devono valutare la probabilità di ciò che è stato osservato assumendo vera ciascuna delle ipotesi considerate (likelihood), e la probabilità a priori delle ipotesi.
 ### Teorema di Bayes in *Odds Form*
 Nel caso più semplie, quando sia $H=\{H,\overline H\}$ che $E=\{E,\overline E\}$ sono eventi elementari, il supporto che l'evidenza $E$ da alle due ipotesi è detto **Likelohhod Ratio**

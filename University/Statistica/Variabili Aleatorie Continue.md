@@ -1,5 +1,6 @@
 ---
 sticker: emoji//0035-fe0f-20e3
+Order: "4"
 ---
 - [[#Variabile Uniforme Continua|Variabile Uniforme Continua]]
 	- [[#Variabile Uniforme Continua#Media e Varianza|Media e Varianza]]

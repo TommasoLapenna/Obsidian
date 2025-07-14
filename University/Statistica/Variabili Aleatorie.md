@@ -1,5 +1,6 @@
 ---
 sticker: emoji//0033-fe0f-20e3
+Order: "2"
 ---
 - [[#Introduzione|Introduzione]]
 - [[#Variabili Aleatorie Discrete e Continue|Variabili Aleatorie Discrete e Continue]]
@@ -19,6 +20,7 @@ sticker: emoji//0033-fe0f-20e3
 - [[#Covarianza|Covarianza]]
 	- [[#Covarianza#Generalizzazione|Generalizzazione]]
 - [[#Caso di Indipendenza, $X\perp\!\!\!\perp Y$|Caso di Indipendenza, $X\perp\!\!\!\perp Y$]]
+- [[#Caso di Indipendenza, $X\perp\!\!\!\perp Y$#Mediana|Mediana]]
 - [[#Entropia per Variabili Discrete|Entropia per Variabili Discrete]]
 	- [[#Entropia per Variabili Discrete#H(p) Come Quantità Media di Informazione|H(p) Come Quantità Media di Informazione]]
 - [[#Funzione Generatrice dei Momenti|Funzione Generatrice dei Momenti]]
@@ -75,6 +77,7 @@ $$P(x):=P(X=x)$$
 - $P(x)>0,\ x \in \mathcal X$
 - $P(x)=0,\ x\notin\mathcal X$
 - $\sum_{x\in \mathcal X}P(x)=1$
+
 **Funzione di Ripartizione:** 
 $$F(a)=\sum_{x\le a}P(x)$$
 ![[Pasted image 20250706124927.png|center|500]]
@@ -107,7 +110,7 @@ Una v.a. definita in $\mathbb{R}$ non consente una probabilizzazione per ogni po
 $$
 F(x)=P(X\le x)
 $$
-Per descrivere l'incertezza su $X$ si utilizza la **Funzione di Densità**
+Per descrivere l'incertezza su $X$ si utilizza la ==**Funzione di Densità**==
 $$
 f_{X}(x)=\frac{d}{dx}F(x)
 $$
@@ -140,7 +143,7 @@ P((X,Y)\in C)=\iint_{(x,y)\in C}f(x,y)\ dxdy\end{gather}$$
 con
 $$\begin{gather}C=\{x,y\in \mathbb{R}^2:x\in A,\ y\in B\} \\ P(X\in A,Y\in B)=\int_{B}\int_{A}f(x,y)\ dxdy \\
 F(a,b)=P(X\le a, Y\le b)=\int_{-\infty}^b\int_{-\infty}^a f(x,y)\ dxdy\end{gather}$$
-Le marginali sono nuovamente ottenute per integrazione
+==Le marginali sono nuovamente ottenute per integrazione==
 $$
 f_{X}(x)\int_{\infty}^\infty f(x,y)\ dy\qquad f_{Y}(y)=\int_{-\infty}^\infty f(x,y)\ dx
 $$
@@ -198,13 +201,16 @@ Se $X$ è discreta, il valore atteso di $X$, $E[X]$ è $$E[X]:= \sum_{i}x_{i}P(X
 
 ### Per$X$ Continua
 Se $X$ è continua, il valore atteso di $X$, $E[X]$ è $$E[X]:=\int_{-\infty}^\infty xf(x)\ dx$$
-La durata di una lampadina è espressa da una variabile aleatoria la cui densità è $$f(x)=\frac{1}{1000}\exp\left( - \frac{x}{1000} \right)$$
-Quanto dura in media una lampadina?
-$$\begin{align}
-E[X]&=\int^\infty_{0}x \frac{1}{1000}\exp\left( - \frac{x}{1000} \right)\ dx = uv|^\infty_{0}-\int_{0}^\infty u'v\ dx= \\
-&=\left.-x\exp\left( -\frac{x}{1000} \right)\right|^\infty_{0}-\int^\infty_{0}-\exp\left( -\frac{x}{1000} \right)\ dx= 0+1000=1000
-\end{align}$$
-avendo posto $u=x$ e $v=\int \frac{1}{1000}\exp\left( -\frac{x}{1000} \right)\ dx=-\exp\left( -\frac{x}{1000} \right)$.
+
+> [!example]+ Esempio:
+> La durata di una lampadina è espressa da una variabile aleatoria la cui densità è $$f(x)=\frac{1}{1000}\exp\left( - \frac{x}{1000} \right)$$
+> Quanto dura in media una lampadina?
+> $$\begin{align}
+> E[X]&=\int^\infty_{0}x \frac{1}{1000}\exp\left( - \frac{x}{1000} \right)\ dx = uv|^\infty_{0}-\int_{0}^\infty u'v\ dx= \\
+> &=\left.-x\exp\left( -\frac{x}{1000} \right)\right|^\infty_{0}-\int^\infty_{0}-\exp\left( -\frac{x}{1000} \right)\ dx= 0+1000=1000
+> \end{align}$$
+> avendo posto $u=x$ e $v=\int \frac{1}{1000}\exp\left( -\frac{x}{1000} \right)\ dx=-\exp\left( -\frac{x}{1000} \right)$.
+
 ### Proprietà
 - Se $X$ è una variabile aleatoria, allora anche la funzione $g(X)$ è una variabile aleatoria.
 	- Se $X$ è continua: $$E[g(X)]:=\int_{-\infty}^\infty g(x)f(x)\ dx$$
@@ -277,6 +283,9 @@ Quindi:
 > Questo perché
 > $$Var(X_{i})=E(X_{i}^2)-E(X_{i})^2=\pi-\pi^2=\pi(1-\pi)$$
 
+## Mediana
+La mediana $m$ è quel valore della variabile tale che $F(m)=\frac{1}{2}$
+
 ---
 
 ## Entropia per Variabili Discrete
@@ -346,7 +355,7 @@ Se $X\perp\!\!\!\perp Y$ $$\phi_{X+Y}=E[e^{t(X+Y)}]=E[e^{t(X)}e^{t(Y)}]=E[e^{t(X
 > \frac{d\phi(0)}{dt}=0\end{gather}$$
 > 
 
-Si considera una v.a.a definita per $X>0$, tale che $f(x|\lambda)=\lambda \exp (-\lambda x)$, per $\lambda>0$
+Si considera una v.a. definita per $X>0$, tale che $f(x|\lambda)=\lambda \exp (-\lambda x)$, per $\lambda>0$
 $$\begin{gather}
 \phi(t)=E[e^{tX}]=\int_{0}^\infty \exp(ts)\cdot \lambda \exp(-s\lambda)\ ds=\int_{0}^\infty \lambda \exp(s(t-\lambda))\ ds= \frac{\lambda}{\lambda-t} \\
 \frac{d\phi(t)}{dt}= \frac{\lambda}{(\lambda-t)^2} \\
