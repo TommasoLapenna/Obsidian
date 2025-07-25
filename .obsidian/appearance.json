@@ -1,6 +1,9 @@
 {
   "enabledCssSnippets": [
     "Image Align",
-    "TextBox"
-  ]
+    "TextBox",
+    "Math Block Highlight"
+  ],
+  "cssTheme": "",
+  "accentColor": ""
 }

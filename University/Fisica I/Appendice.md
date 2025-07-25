@@ -2,7 +2,10 @@
 order: "0"
 sticker: emoji//0030-fe0f-20e3
 ---
-# Derivata di un Versore
+- [[#Derivata di un Versore|Derivata di un Versore]]
+- [[#Integrazione di un Vettore|Integrazione di un Vettore]]
+
+## Derivata di un Versore
 Siccome un versore è un vettore unitario, solo la direzione può cambiare in funzione di $t$, cioè può solo compiere una rotazione di $\Delta \theta$, quindi
 $$
 \Delta \hat{u} = \hat{u}(t+\Delta t)- \hat{u}(t)
@@ -22,7 +25,7 @@ $$
 \frac{d \hat{u}}{dt}= \frac{d\theta}{dt} \hat{u}_{N}
 $$
 La derivata di un versore è un vettore perpendicolare rispetto al versore, di modulo $\frac{d\theta}{dt}$ (non necessariamente unitario, quindi il risultato non è un versore).
-# Integrazione di un Vettore
+## Integrazione di un Vettore
 Si divide una funzione vettoriale $\vec{a}(t)$ definita in un certo intervallo della variabile $t$ in sottointervalli $\Delta t_{i}$, dei quali si considera unvalore $\vec{a}(t_{i})$.
 Si costruiscono i vettori $\vec{a(t_{i})}\Delta t_{i}$  e si sommano
 $$

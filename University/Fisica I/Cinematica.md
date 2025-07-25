@@ -4,39 +4,70 @@ sticker: emoji//0032-fe0f-20e3
 ---
 Tags: [[Fisica I]] [[Old Vault/Indexes/University]] 
 
+- [[#Cinematica di un Punto Materiale|Cinematica di un Punto Materiale]]
+	- [[#Cinematica di un Punto Materiale#Sistema di Riferimento|Sistema di Riferimento]]
+		- [[#Sistema di Riferimento#Coordinate Polari|Coordinate Polari]]
+	- [[#Cinematica di un Punto Materiale#Grandezze Fondamentali|Grandezze Fondamentali]]
+	- [[#Cinematica di un Punto Materiale#Vettori|Vettori]]
+		- [[#Vettori#Raggio Vettore|Raggio Vettore]]
+	- [[#Cinematica di un Punto Materiale#Velocità|Velocità]]
+		- [[#Velocità#Componenti Cartesiane della Velocità|Componenti Cartesiane della Velocità]]
+		- [[#Velocità#Componenti Polari della Velocità|Componenti Polari della Velocità]]
+	- [[#Cinematica di un Punto Materiale#Accelerazione|Accelerazione]]
+		- [[#Accelerazione#Componenti Cartesiane|Componenti Cartesiane]]
+		- [[#Accelerazione#Componenti Polari|Componenti Polari]]
+- [[#Classificazioni di Moto|Classificazioni di Moto]]
+	- [[#Classificazioni di Moto#Moto Rettilineo|Moto Rettilineo]]
+		- [[#Moto Rettilineo#Moto Rettilineo Uniforme|Moto Rettilineo Uniforme]]
+		- [[#Moto Rettilineo#Moto Uniformemente Accellerato|Moto Uniformemente Accellerato]]
+	- [[#Classificazioni di Moto#Moto Verticale|Moto Verticale]]
+	- [[#Classificazioni di Moto#Moto Armonico Semplice|Moto Armonico Semplice]]
+	- [[#Classificazioni di Moto#Moto Circolare|Moto Circolare]]
+		- [[#Moto Circolare#Moto Circolare Uniforme|Moto Circolare Uniforme]]
+		- [[#Moto Circolare#Moto Circolare Non Uniforme|Moto Circolare Non Uniforme]]
+		- [[#Moto Circolare#Moto Circolare Uniformemente Accelerato|Moto Circolare Uniformemente Accelerato]]
+		- [[#Moto Circolare#Moto Circolare e Moto armonico|Moto Circolare e Moto armonico]]
+			- [[#Moto Circolare e Moto armonico#Notazione Vettoriale del Moto Circolare|Notazione Vettoriale del Moto Circolare]]
+	- [[#Classificazioni di Moto#Moto Parabolico|Moto Parabolico]]
+	- [[#Classificazioni di Moto#Velocità ed Accelerazione in Funzione della Posizione|Velocità ed Accelerazione in Funzione della Posizione]]
+
 # Cinematica di un Punto Materiale
 La parte della meccanica che descrive il moto di un corpo, indipendentemente dalle cause che lo determinano viene detta *Cinematica*
 
 - **Punto Materiale:** Oggetto che ha dimensioni più piccole rispetto allo spazio studiato.
 - **Traiettoria:** Luogo dei punti che il Punto Materiale porta avanti nel tempo
 
-![[Pasted image 20250308154041.png]]
-### Sistema di Riferimento
+![[Pasted image 20250308154041.png|center|500]]
+
+## Sistema di Riferimento
 Il moto di un punto materiale è determinato se è nota la sua posizione in funzione del tempo in un determinato *Sistema di Riferimento*. 
 
-![[Pasted image 20250308155417.png]]
+![[Pasted image 20250308155417.png|center|450]]
 ### Coordinate Polari
 
-![[Pasted image 20250308161613.png]]
+![[Pasted image 20250308161613.png|center|500]]
 
-Se la traiettoria è nota, è possibile esprimere la posizione di $P$ nello spazio attraverso l'*Ascissa Curvilinea* $s(t)$ (la parte rossa), ovvero ls lunghezza dell'arco di curva da un'origine arbitria $O$. Se si riesce a dare forma della traiettoria e la funzione $s(t)$ allora si può avere una descrizione completa del moto.
-### Grandezze Fondamentali
+Se la traiettoria è nota, è possibile esprimere la posizione di $P$ nello spazio attraverso ==l'*Ascissa Curvilinea* $s(t)$== (la parte rossa), ovvero la lunghezza dell'arco di curva da un'origine arbitria $O$. Se si riesce a dare forma della traiettoria e la funzione $s(t)$ allora si può avere una descrizione completa del moto.
+## Grandezze Fondamentali
 Attraverso il concetto di derivata si studiano le variazioni di posizione e velocità del punto materiale lungo la traiettoria, si ricavano così le grandezze fondamentali delle cinematica che sono *Posizione*, *Velocità* ed *Accelerazione*.
 Si definisce inoltre il concetto di *Quiete*, ovvero un tipo particolare di moto dove le coordinate restano costanti e quindi velocità ed accelerazione risultano nulle.
-### Vettori
+## Vettori
 Grandezze con caratteristiche direzionali, composte da:
 - Modulo
 - Direzione
 - Verso 
 - Origine
 
-![[Pasted image 20250308163103.png]]
+![[Pasted image 20250308163103.png|center|800]]
 ### Raggio Vettore
 Dato un sistema di riferimento cartesiano con origine $O$ e assi $x,y,z$, la posizione del punto può essere individuata attraverso il *Raggio Vettore* $r$, che congiunge l'origine $O$ col punto $P$.
 
-![[Pasted image 20250308164730.png]]
-##### Legge Oraria
-Se si conosce la dipendenza la dipendenza dal tempo, allora di conoscono le leggi orarie di $\vec{r}=(x(t),y(t),z(t))$
+![[Pasted image 20250308164730.png|center|800]]
+
+> [!info] Legge Oraria
+> Se si conosce la dipendenza la dipendenza dal tempo, allora di conoscono le leggi orarie di $\vec{r}=(x(t),y(t),z(t))$
+
+---
 ## Velocità
 Si considerano due posizioni occupate da $P$ al tempo $t$ e al tempo $t+\Delta t$, individuate dai vettori $\vec{r}(t)$ e $\vec{r}(t+\Delta t)=\vec{r}(t)+\Delta\vec{r}$.
 $$ \Delta\vec{r} = \vec{r}(t+\Delta t)- \vec{r}(t)
@@ -44,9 +75,10 @@ $$
 Si chiama vettore spostamento. Si definisce la *Velocità Media* su quest'ultimo:
 $$\vec{v}_{m}= \frac{\Delta\vec{r}}{\Delta t}$$
 
-![[Pasted image 20250308182412.png]]
+![[Pasted image 20250308182412.png|center|750]]
 
-Se $\Delta t\to 0$, allora si passa a variazioni infinitesime, si calcola così la velocità istantanea $$\vec{v}= \frac{d\vec{r}}{dt}$$
+Se $\Delta t\to 0$, allora si passa a variazioni infinitesime, si calcola così la ==velocità istantanea==
+$$\vec{v}= \frac{d\vec{r}}{dt}$$
 L'incremento $d \vec{r}$ infinitesimo risulta in direzione tangente alla traiettoria nel punto $P$. Essendo quindi il vettore velocità sempre tangente si può scrivere come 
 $$ \vec{v}=v \hat{u}_{T}=\frac{ds}{dt} \hat{u}_{T}$$
 con $\hat{u}_{T}$ versore tangente.
@@ -69,7 +101,7 @@ $$
 x=r \cos \theta \quad y= r \sin \theta \quad \iff r =\sqrt{ x^2+y^2 } \quad \tan \theta = \frac{y}{x}
 $$
 
-![[Pasted image 20250309113243.png]]
+![[Pasted image 20250309113243.png|center|600]]
 
 Si introducono i versori $\hat{u}_{r}$ e $\hat{u_{\theta}}$, rispettivamente della direzione di $\vec{r}$ e il versore ortogonale, questi versori ruotano durante il moto. Applicando la formula di derivazione di un versore si ottiene:
 $$
@@ -82,7 +114,8 @@ Il modulo della velocità è
 $$
 |\vec{v}|= \sqrt{ \left( \frac{dr}{dt} \right)^2+r^2 \left( \frac{d\theta}{dt} \right)^2 }
 $$
-### Accelerazione
+---
+## Accelerazione
 L'accelerazione media è definita in modo analogo alla velocità media, espressa come variazione della velocità nel tempo 
 $$
 \vec{a}_{m}= \frac{\Delta \vec{v}}{\Delta t}
@@ -108,7 +141,7 @@ $$
 ### Componenti Polari
 L'accelerazione deve esprimere le variazioni di velocità come modulo e e direzione, quindi avrà due componenti legati ad essi. 
 
-![[Pasted image 20250309125400.png]]
+![[Pasted image 20250309125400.png|center|800]]
 
 Applicando la formula di derivazione di un versore si ottiene:
 $$
@@ -130,13 +163,18 @@ $$
 L'accelerazione è composta quindi da due elementi:
 - *Accelerazione Tangenziale*, $\vec{a}_{T}$
 - *Accelerazione Normale* o *Centripeta*, $\vec{a}_{N}$
+---
 # Classificazioni di Moto
-- $\vec{a}_{T}\ne 0\quad \vec{a}_{N}\ne 0$ **Moto Curvilineo Vario**
-- $\vec{a}_{T}=0\quad \vec{a}_{N}\ne 0$ **Moto Curvilineo Uniforme**
--  $\vec{a}_{T}\ne 0\quad \vec{a}_{N}= 0$ **Moto Rettilineo Vario**
--  $\vec{a}_{T}=0\quad \vec{a}_{N} 0$ **Moto Rettilineo Uniforme**
+
+| Tipo di Moto             | Accelerazione Tangenziale | Accelerazione Normale |
+| ------------------------ | ------------------------- | --------------------- |
+| Moto Curvilineo Vario    | $\vec{a}_{T}\ne 0$        | $\vec{a}_{N}\ne 0$    |
+| Moto Curvilineo Uniforme | $\vec{a}_{T}= 0$          | $\vec{a}_{N}\ne 0$    |
+| Moto Rettilineo Vario    | $\vec{a}_{T}\ne 0$        | $\vec{a}_{N}= 0$      |
+| Moto Rettilineo Uniforme | $\vec{a}_{T}= 0$          | $\vec{a}_{N}= 0$      |
+
 ## Moto Rettilineo
-![[Pasted image 20250310184050.png]]
+![[Pasted image 20250310184050.png|center|600]]
 
 Il moto è descrivibile da una sola coordinata $x(t)$, quindi i vettori $\vec{r}$, $\vec{v}$ e $\vec{a}$ hanno una sola componente.
 Dato uno spostamento in un intervallo di tempo si può ricavare la *Velocità Media*
@@ -152,6 +190,7 @@ $$
 \Delta x = \int_{x_{0}}^x dx = \int_{t_{0}}^t v(t)dt \Longrightarrow x(t)= x_{0}+ \int_{t_{0}}^t v(t)dt
 $$
 ^dd
+
 Usando la relazione tra velocità media e istantanea si ottiene anche che 
 $$
 v_{m}= \frac{1}{t-t_{0}}\int_{t_{0}}^tv(t)dt
@@ -202,7 +241,7 @@ g= 9,8 ms^{-2}
 $$
 Il moto di un corpo lasciato cadere è costante
 
-![[Pasted image 20250311181845.png]]
+![[Pasted image 20250311181845.png|center|450]]
 
 Si considera $a=-g$ per riscrivere le espressioni della velocità e posizione:
 $$
@@ -236,6 +275,7 @@ con:
 - $A$: Ampiezza del moto (costante)
 - $\phi$: Fase del moto (costante)
 - $\omega$: Pulsazione
+
 Dunque il moto armonico semplice è un tipo moto rettilineo vario. Inoltre risulta essere periodico di periodo $T$ (per via del seno). 
 Per definizione di periodo si prendono due istanti di tempo $t'$ e $t$ tali che $t' = t+T$, quindi $x(t)=x(t')$. Essendo poi $T=2\pi$ (periodo del seno), si ha che $\omega t'+\phi=\omega t+\phi+2\pi$. Ne segue che $\omega(t'-t)=2\pi$ ($T=t'-t$)
 $$ T= \frac{2\pi}{\omega}\quad \omega = \frac{2\pi}{T}$$
@@ -254,7 +294,7 @@ a(t)= \frac{dv}{dt}=\frac{d^2x}{dt^2}=-\omega ^2A\sin(\omega t+\phi)=-\omega^2x(
 $$
  ^8f41d9
 
-![[Pasted image 20250311201814.png]]
+![[Pasted image 20250311201814.png|center|400]]
 
 La posizione, velocità e accelerazione sono sfasate l'una con l'altra di $\frac{\pi}{2}$. Inoltre la velocità raggiunge il massimo nel centro di oscillazione e si annulla agli estremi di, mentre l'accelerazione si comporta in modo opposto.
 Le tre funzioni $x(t)$, $v(t)$ e $a(t)$ hanno la stessa forma e periodo, cambiano solo il valore dell'ampiezza che rispettivamente risulta $A$, $\omega A$ e $\omega^2 A$.
@@ -270,20 +310,25 @@ Dalla legge oraria [[#^pp|(*)]]  si osserva che l'accelerazione è proporzionale
 $$
 \frac{d^2x(t)}{dt^2}+\omega ^2x(t)=0
 $$
-Per dimostrare che un moto è armonico basta quindi dimostrare che $-a$ è proporzionale a $x(t)$. Le uniche funzioni che riescono a soddisfare la condizione precedente sono $\sin$ e $\cos$; una sistema che obbedisce all'equazione del moto armonico si chiama *Oscillatore Armonico Semplice*.
+
+> [!hint] Dimostrazione Moto Armonico
+> Per dimostrare che un moto è armonico basta quindi dimostrare che $-a$ è proporzionale a $x(t)$. Le uniche funzioni che riescono a soddisfare la condizione precedente sono $\sin$ e $\cos$; una sistema che obbedisce all'equazione del moto armonico si chiama *Oscillatore Armonico Semplice*.
+
 ## Moto Circolare
 Un moto di dice *Circolare* se la sua traiettoria segue una circonferenza, la velocità cambia continuamente direzione e l'accelerazione centripeta è sempre diversa da 0.
 
-![[Pasted image 20250312105844.png]]
+![[Pasted image 20250312105844.png|center|500]]
 
 - $\vec{a}= \vec{a}_{T}+\vec{a}_{N}$
 - $\vec{a}_{N}\ne 0$
 - $\vec{a}_{T}=0$
 - $\phi= \frac{s(t)}{R}$
+
 Il moto circolare può essere descritto facendo riferimento all'ascissa curvilinea $s(t)$ oppure utilizzando l'angolo $\theta(t)$, sotteso dall'arco $s(t)$ (quindi $\theta(t)=\frac{s(t)}{R}$).
 Usare come variabile l'angolo $\theta(t)$ significa porsi in un sistema di coordinate polari con centro in $O$ in cui il moto avviene con $R=r(t)$, le Coordinate Polari sono:
 - $x(t)=R\cos \phi(t)$
 - $y(t)=R\sin \phi(t)$
+
 Si definisco la *Velocità Angolare Media*
 $$
 \omega_{m}= \frac{\theta_{2}(t+\Delta t)-\theta_{1}(t)}{\Delta t}= \frac{\Delta \theta(t)}{\Delta t}
@@ -350,7 +395,7 @@ $$
 $$
 Questo è vero se si applica $\vec{\omega}$ applicata con $O$ centro della circonferenza, com $r=R$
 
-![[Pasted image 20250313154913.png]]
+![[Pasted image 20250313154913.png|center|450]]
 
 Nel caso si applichi $\vec{\omega}$ in un altro punto $O'$ sempre sull'*Asse di Rotazione* (retta ortogonale al piano passante per il centro della circonferenza), la definizione precedente rimane comunque valida e il modulo vale ancora $v=\omega r\sin \phi=\omega R$
 Tramite $\vec{\omega}$ e $\vec{\alpha}$ (ottenuta derivando nel tempo $\vec{\omega}$) si può esprimere l'accelerazione del moto circolare:
@@ -365,7 +410,7 @@ Infine, se il moto è circolare uniforme allora $\vec{\omega}$ è un vettore cos
 
 Si studia un punto $P$ lanciato dall'origine $O$ con una velocità iniziale $\vec{v}_{0}$, nello specificola traiettoria, altezza massima raggiunta r punto $G$ di atterraggio (gittata $OG$).
 
-![[Pasted image 20250313172142.png]]
+![[Pasted image 20250313172142.png|center|700]]
 
 Il moto è caratterizzato da un'accelerazione costante $\vec{a}=-\vec{g}=-g\hat{u}_{y}$ con condizioni iniziali $\vec{r}=0$ e $\vec{v}=\vec{v}_{0}$ (al tempo $t=0$)
 $$
@@ -406,7 +451,11 @@ Si nota infine che la velocità nel punto $G$ è la stessa in modulo, ma è orie
 $$
 v_{x}(t_{G})=v_{0}\cos \theta,\quad v_{y}(t_{G})=-v_{0}\sin \theta,\quad \tan \phi=-\tan \theta
 $$
-> L'angolo che da la gittata maggiore è $45°$, infatti $\frac{dx_{G}}{dt}=0$ cioè $2v_{0}^2(-\sin^2\theta+\cos^2\theta)=0$ da $\theta=45°$ e $x_{G}= \frac{v_{0}^2}{g}$
+
+> [!hint] Gittata Maggiore
+>  L'angolo che da la gittata maggiore è $45°$, infatti $\frac{dx_{G}}{dt}=0$ cioè $2v_{0}^2(-\sin^2\theta+\cos^2\theta)=0$ da $\theta=45°$ e $x_{G}= \frac{v_{0}^2}{g}$
+
+---
 ## Velocità ed Accelerazione in Funzione della Posizione
 Si osserva che se a un certo istante $t$ un punto occupa una determinata posizione $x$ con una velocità $v$, si può allora pensare di comporre una funzione $v(t)=v[x(t)]$ e si deriva nel tempo:
 $$
