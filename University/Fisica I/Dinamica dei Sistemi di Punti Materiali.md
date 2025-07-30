@@ -3,6 +3,20 @@ sticker: emoji//0035-fe0f-20e3
 Order: "6"
 order: "6"
 ---
+- [[#Sistemi di Punti|Sistemi di Punti]]
+- [[#Centro di Massa di un Sistema di Punti|Centro di Massa di un Sistema di Punti]]
+- [[#Conservazione della Quantità di Moto|Conservazione della Quantità di Moto]]
+- [[#Teorema del Momento Angolare|Teorema del Momento Angolare]]
+- [[#Conservazione del Momento Angolare|Conservazione del Momento Angolare]]
+- [[#Sistema di Riferimento del Centro di Massa|Sistema di Riferimento del Centro di Massa]]
+- [[#Teorema di König|Teorema di König]]
+	- [[#Teorema di König#Teorema di König per il Momento Angolare|Teorema di König per il Momento Angolare]]
+	- [[#Teorema di König#Teorema di König per l'Energia Cinetica|Teorema di König per l'Energia Cinetica]]
+- [[#Teorema dell'Energia Cinetica|Teorema dell'Energia Cinetica]]
+- [[#Proprietà dei Sistema di Forze Applicate a Punti Diversi|Proprietà dei Sistema di Forze Applicate a Punti Diversi]]
+	- [[#Proprietà dei Sistema di Forze Applicate a Punti Diversi#Sistema di Forze Parallele|Sistema di Forze Parallele]]
+
+
 ## Sistemi di Punti
 Si considera un sistema di $n$ punti materiali, interagenti tra loro e col restante universo. La forza $\vec{F}_{i}$ agente sull'$i-$esimo punto si può pensare come la risultante delle:
 - **Forze Esterne** agenti sul punto $\vec{F}_{i}^{(E)}$
@@ -248,3 +262,141 @@ $$
 
 > [!info] Teorema del Momento Angolare per Sistema di Riferimento del CM
 > Il teorema del momento angolare sussiste anche per grandezze calcolate nel sistema di riferimento non inerziale del centro di massa, purché come polo si assuma il centro di massa.
+
+## Teorema di König
+I teoremi di König si basano sulla nozione di sistema di riferimento del centro di massa, forniscono sia per il momento angolare e sia per l'energia cinetica di un sistema di punti materiali una relazione tra valore misurato di un sistema inerziale e quello misurato nel sistema del centro di massa.
+### Teorema di König per il Momento Angolare
+Si assume come polo l'origine del sistema inerziale, il momento angolare è dato da
+$$
+\vec{L}=\sum_{i}(\vec{r}_{i}\times m_{i}\vec{v}_{i})
+$$
+Si riscrive adesso questa relazione utilizzando le relazioni precedenti $\vec{r}_{i}=\vec{r}_{i}'+\vec{r}_{CM}$ e $\vec{v}_{i}=\vec{v}_{i}'+\vec{v}_{CM}$
+$$
+\vec{L}=\sum_{i}[(\vec{r}_{i}'+\vec{r}_{CM})\times m_{i}(\vec{v}_{i}'+\vec{v}_{CM})]= \sum_{i}(\vec{r}_{i}'\times m_{i}\vec{v}_{i}')+\sum_{i}(\vec{r}_{i}'\times m_{i}\vec{v}_{CM})+\sum_{i}(\vec{r}_{CM}\times m_{i}\vec{v}_{i}')+\sum_{i}(\vec{r}_{CM}\times m_{i}\vec{v}_{CM})
+$$
+Ci sono quindi 4 sommatorie:
+1. $\sum_{i}\vec{r}_{i}'\times m_{i}\vec{v}_{i}'=\vec{L}'$ rappresenta il momento angolare rispetto al momento di massa
+2. $\left( \sum_{i}m_{i}\vec{r}_{i} \right)\times \vec{v}_{CM}=$ nulla
+3. $\vec{r}_{CM}\times\left( \sum_{i}m_{i}\vec{v}_{i}' \right)=$ nulla
+4. $\vec{r}_{CM}\times m\vec{v}_{CM}= \vec{r}_{CM}\times \vec{P}$ rappresenta il momento angolare rispetto all'origine del sistema inerziale di un punto materiale che ha una massa totale a quella del sistema, coincide col centro di massa e ha la stessa velocità di quest'ultimo. Questo elemento viene infatti chiamato momento angolare del centro di massa
+
+Si può quindi enunciare il seguente teorema
+
+> [!gray] Primo Teorema di König
+> $$\vec{L}=\vec{L}'+\vec{r}_{CM}\times m\vec{v}_{CM}=\vec{L}'+\vec{L}_{CM}$$
+> Il momento angolare del sistema angolare si può scrivere, nel sistema di riferimento inerziale, come somma del momento angolare dovuto al moto del centro di riferimento di massa $\vec{L}_{CM}$ e di quello rispetto al centro di massa
+> 
+
+### Teorema di König per l'Energia Cinetica
+L'energia cinetica per un sistema inerziale è $E_{k}=\sum_{i}\frac{1}{2} m_{i}v_{i}^2$, utilizzando la relazione $\vec{v}_{i}=\vec{v}_{i}'+\vec{v}_{CM}$ si ottiene
+$$
+E_{k}= \sum_{i} \frac{1}{2} m_{i}(\vec{v}_{i}'+\vec{v}_{CM})^2= \sum_{i} \frac{1}{2}m_{i}v_{i}'^2+\sum_{i} \frac{1}{2}m_{i}v_{CM}^2+\sum_{i}m_{i}\vec{v}_{i}'\cdot \vec{v}_{CM}
+$$
+Ci sono quindi 3 sommatorie:
+1. $\sum_{i} \frac{1}{2}m_{i}\vec{v}_{i}'^2$ rappresenta l'energia cinetica nel sistema di riferimento nel centro di massa (ossia l'energia cinerica rispetto al centro di massa $E_{k}'$)
+2. $\sum_{i} \frac{1}{2}m_{i}v_{CM}^2$ rappresenta l'energia cinetica di un punto materiale che possiede tutta la massa del sistema e si muove con la velocità del centro di massa (detta energia cinetica del centro di massa)
+3. $\sum_{i}m_{i}\vec{v}_{i}'\cdot \vec{v}_{CM}=$ nulla (è uguale a $\sum_{i}m_{i}\vec{v}_{i}'\cdot \vec{v}_{CM}$)
+
+Si può quindi enunciare il seguente teorema
+
+> [!gray] Secondo Teorema di König
+> $$E_{k}=E_{k}'+\frac{1}{2}mv^2_{CM}= E_{k}'+E_{k,CM}$$
+> L'energia cinetica del sistema di punti si può scrivere, nel sistema di riferimento inerziale, come la somma dell'energia cinetica dovuta al moto del centro di massa $E_{k,CM}$ e di quella del sistema rispetto al centro di massa.
+
+## Teorema dell'Energia Cinetica
+Si calcola il lavoro associato al moto di un sistema di punti materiali:
+$$
+dW_{i}=\vec{F}_{i}\cdot d\vec{r}_{i}= \vec{F}_{i}^{(E)}\cdot d\vec{r}_{i}+\vec{F}_{i}^{(I)}\cdot d\vec{r}_{i}= dW_{i}^{(E)}+dW_{i}^{(I)}
+$$
+Sommando tutti i punti e integrando le traiettorie $C_{i}$ percorse si ottiene il lavoro totale come somma del lavoro delle forze interne ed esterne
+$$
+W=W^{(E)}+W^{(I)}
+$$
+Questa volta il contributo delle forze interne non scompare, infatti $dW^{(I)}$ è formato da coppie di termini del tipo 
+$$
+\vec{F}_{i,j}\cdot d\vec{r}_{j}+\vec{F}_{j,i}\cdot d\vec{r}_{i}= \vec{F}_{i,j}\cdot (d\vec{r}_{j}-d\vec{r}_{i})=\vec{F}_{i,j}\cdot d(\vec{r}_{j}-d\vec{r}_{i})= \vec{F}_{i,j}\cdot d\vec{r}_{i,j}
+$$
+in generale non nulle e con somma diversa da zero. La struttura di $dW^{(I)}$ implica che al lavoro delle forze interne è legato un cambiamento dell distanze mutue tra i vari punti.
+
+Riprendendo l'espressione $dW_{i}=\vec{F}_{i}\cdot d\vec{r}_{i}$, che è uguale a $m_{i}v_{i}dv_{i}$, sommando e integrando su tutti i punti si ottiene
+$$
+W=\sum_{i} \frac{1}{2} m_{i}v_{i,B}^2-\sum_{i} \frac{1}{2} m_{i}v_{i,A}^2= E_{k,B}-E_{k,A}
+$$
+con $v_{i,\ldots}$ i moduli delle velocità del punto $i-$esimo nelle posizioni $A$ e $B$ del percorso, $E_{k,\ldots}$ l'energia cinetica associata a queste velocità.
+
+![[Pasted image 20250730203722.png|center|500]]
+
+Unendo i risultati, si ottiene
+
+> [!gray] Teorema dell'Energia Cinetica
+> $$
+> W^{(E)}+W^{(I)}=E_{k,B}-E_{k,A}=\Delta E_{k}
+> $$
+> Il lavoro complessivo fatto dalle forze esterne ed interne che agiscono su un sistema di punti materiali è uguale alla variazione dell'energia cinetica dello stesso sistema tra la configurazione (posizione) finale e quella iniziale.
+
+Se le forze interne, il lavoro è esprimibile come l'opposto della variazione dell'energia potenziale legata a queste forze:
+$$
+W^{(I)}=-\Delta E_{p}^{(I)}\qquad W^{(E)}=-\Delta E_{p}^{(E)}
+$$
+
+> [!gray] Teorema di Conservazione dell'Energia Meccanica del Sistema
+> Quando sia le forze interne ed esterne sono conservative, si può allora esprimere il **Teorema di Conservazione dell'Energia Meccanica del Sistema**:
+> $$\begin{align}
+> &W=\Delta E_{k}=-\Delta E_{p}=-(E_{p,B}-E_{p,A})
+>  \\ &E_{m,A}= (E_{k}+E_{p})_{A}=E_{m,B}=(E_{k}+E_{p})_{B}=\text{costante}
+> \end{align}$$
+> 
+
+Se invece non tutte le forze agenti sono conservative si ha
+$$
+W_{nc}=(E_{k}+E_{p})_{B}-(E_{k}+E_{p})_{A}=E_{m,B}-E_{m,A}
+$$
+In questa formula il lavoro delle forze conservative è espresso da $E_{p,A}-E_{p,B}$ e quello delle forze non conservative da $W_{nc}$
+## Proprietà dei Sistema di Forze Applicate a Punti Diversi
+Si indica con $\vec{F}=\sum_{i}\vec{F}_{i}$ la risultante delle forze e con 
+$$
+\vec{M}_{O}=\sum_{i}(\vec{O}\vec{P}_{i}\times \vec{F}_{i})= \sum_{i} (\vec{r}_{i}\times \vec{F}_{i})
+$$
+il **Momento Risultante delle Forze Rispetto al Polo $O$**.
+Se si cambia polo, si ha allora $\vec{M}_{O'}=\sum_{i}(\vec{r}_{i}'\times \vec{F}_{i})$ con $\vec{r}_{i}'=\vec{r}_{i}-\vec{O}\vec{O}'= \vec{r}_{i}+\vec{O}'\vec{O}$ per cui
+$$
+\vec{M}_{O'}=\sum_{i}[(\vec{r}_{i}+\vec{O}'\vec{O})\times \vec{F}_{i}]=\sum_{i}(\vec{r}_{i}\times \vec{F}_{i})+\vec{O}'\vec{O}\times \sum_{i}\vec{F}_{i}=\vec{M}_{O}+\vec{O}'\vec{O}\times \vec{F}
+$$
+Il moto dipende dal polo, a meno che non sia $\vec{F}=0$.
+
+![[Pasted image 20250730210516.png|center|350]]
+
+> [!example]+ Applicazione: Coppia di Forze
+> Si chiama coppia di forze un sistema formato da due forze eguali e opposte, avendo una differente retta d'azione, e la distanza tra le due rette d'azione è chiamata *braccio*. La risultante delle due forze è pertanto il momento $\vec{M}$, ortogonale al piano individuato dalle due rette, con verso individuato dal prodotto vettoriale.
+> 
+> ![[Pasted image 20250730211911.png|center|300]]
+> 
+> Le forze interne di un sistema di punti materiali costituiscono un insieme di coppie a braccio nullo, pertanto il momento risultante è nullo rispetto a qualsiasi polo.
+
+In generale, dato un qualsiasi sistema di forze, i vettori $\vec{F}$ e $\vec{M}_{O}$ non sono ortogonali e quindi non possibile trovare due punti $O$ e $P$ tali che $\vec{M}_{O}=\vec{O}\vec{P}\times \vec{F}$. Ciò vuol dire che $\vec{M}_{O}$ non è indipendente da $\vec{F}$ e conferma che le equazioni cardinali della dinamica dei sistemi sono indipendenti.
+
+> [!info] Risultato Generale
+> Dato un sistema di forze applicate in punti diversi e fissato un polo per i momenti, noti $\vec{F}$ e $\vec{M}_{O}$, questo sistema può essere sempre ridotto a una forza $\vec{F}$ con retta d'azione passante per il polo (con momento rispetto al polo nullo) e ad una coppia di forze di momento $\vec{M}_{O}$ (che ha risultante nulla e momento indipendente dal polo).
+
+### Sistema di Forze Parallele
+Questo sistema  formato da forze aventi la stessa direzione, individuata dal versore $\hat{u}$. Pertanto $\vec{F}_{i}=F_{i}\hat{u}$ e la risultante $\vec{F}=\sum_{i}\vec{F}_{i}\left( \sum_{i}F_{i} \right)\hat{u}$ risulta parallela a $\hat{u}$.
+Il momento della risultante è dato da 
+$$
+\vec{M}= \sum_{i}(\vec{r}_{i}\times F_{i}\hat{u})= \left( \sum_{i}F_{i}\vec{r}_{i} \right)\times \hat{u}
+$$
+ed è ortogonale a $\hat{u}$ (quindi ad $\vec{F}$). Deve essere quindi possibile trovare un punto $C$ dove applicare $\vec{F}$, tale che
+$$
+\vec{M}=\vec{O}\vec{C}\times \vec{F}=\vec{r}_{C}\times \vec{F}
+$$
+Eguagliando queste due espressioni scritte per $\vec{M}$
+$$\left( \sum_{i}F_{i}\vec{r}_{i} \right)\times \hat{u}=\vec{r}_{C}\times\left( \sum_{i}F_{i} \right)\hat{u}= \left( \sum_{i}F_{i} \right)\vec{r}_{C}\times \hat{u}\Longrightarrow \vec{r}_{C}=\vec{O}\vec{C}= \frac{\sum_{i}F_{i}\vec{r}_{i}}{\sum_{i}F_{i}}= \frac{F_{1}\vec{r}_{1}+\ldots+F_{n}\vec{r}_{n}}{F_{1}+\ldots+F_{n}}$$
+Il punto $C$ è chiamato **Centro delle Forze Parallele**. Questi tipi di sistemi sono riducibili ad una sola forza (la risultante $\vec{F}$) applicata al punto $C$. Il risultato non dipende da $O$, ma solo dalla posizione relativa dei punti.
+
+Un sistema comune di forze parallele è quello delle forze peso applicate ad un insieme di punti. Le singole forze sono pari a $m_{i}\vec{g}$, la risultante è $\vec{F}=m\vec{g}$ e il centro, detto **Baricentro** (o centro di gravità) è individuato dal vettore
+$$
+\vec{r}_{C}= \frac{\sum_{i}m_{i}g\vec{r}_{i}}{\sum_{i}m_{i}g}= \frac{\sum_{i}m_{i}\vec{r}_{i}}{\sum_{i}m_{i}}= \vec{r}_{CM}
+$$
+
+![[Pasted image 20250730214922.png|center|400]]
+
+Il momento risultante della forza peso è $\vec{M}=\vec{r}_{C}\times m\vec{g}=\vec{r}_{CM}\times m\vec{g}$.
