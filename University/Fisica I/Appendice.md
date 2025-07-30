@@ -49,3 +49,4 @@ $$
 $$
 Quindi l'integrale del vettore ha come componenti gli integrali delle componenti del vettore.
 # TODO equazioni differenziali
+# TODO momento
