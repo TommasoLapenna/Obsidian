@@ -9994,7 +9994,6 @@ var basicExtensions = [
     ...completionKeymap,
     ...import_lint.lintKeymap
   ]),
-  (0, import_commands2.history)(),
   css(),
   (0, import_view5.lineNumbers)(),
   (0, import_language6.foldGutter)(),
@@ -10011,10 +10010,14 @@ var basicExtensions = [
   obsidian
 ].filter((ext) => ext);
 
+// src/views/CssEditorView.ts
+var import_commands3 = require("@codemirror/commands");
+
 // src/codemirror-extensions/compartments.ts
 var import_state4 = require("@codemirror/state");
 var lineWrap = new import_state4.Compartment();
 var indentSize = new import_state4.Compartment();
+var historyCompartment = new import_state4.Compartment();
 
 // src/views/CssEditorView.ts
 var import_language7 = require("@codemirror/language");
@@ -10198,6 +10201,7 @@ var CssEditorView = class extends import_obsidian5.ItemView {
         basicExtensions,
         lineWrap.of(settings.lineWrap ? import_view7.EditorView.lineWrapping : []),
         indentSize.of(import_language7.indentUnit.of("".padEnd(settings.indentSize))),
+        historyCompartment.of((0, import_commands3.history)()),
         colorPickerPlugin,
         ((_b = (_a = this.app.vault).getConfig) == null ? void 0 : _b.call(_a, "vimMode")) ? vim() : [],
         import_view7.EditorView.updateListener.of((update) => {
@@ -10366,7 +10370,16 @@ var CssEditorView = class extends import_obsidian5.ItemView {
     this.leaf.updateHeader();
     const data = file ? await readSnippetFile(this.app, file) : "";
     this.dispatchEditorData(data);
+    this.resetHistory();
     this.app.workspace.requestSaveLayout();
+  }
+  resetHistory() {
+    this.editor.dispatch({
+      effects: [historyCompartment.reconfigure([])]
+    });
+    this.editor.dispatch({
+      effects: [historyCompartment.reconfigure((0, import_commands3.history)())]
+    });
   }
   /**
    * You should almost always call `requestSave` instead of `save` to debounce the saving.
@@ -10436,15 +10449,14 @@ var CssSnippetFuzzySuggestModal = class extends import_obsidian7.FuzzySuggestMod
     });
     this.scope.register([], "Tab", (evt) => {
       if (this.chooser) {
-        const selItem = this.chooser.selectedItem;
-        const selSnippet = this.chooser.values[selItem].item;
-        const isEnabled = toggleSnippetFileState(this.app, selSnippet);
-        const selEl = this.chooser.suggestions[selItem].querySelector(
+        const selectedItem = this.chooser.selectedItem;
+        const file = this.chooser.values[selectedItem].item;
+        const isEnabled = toggleSnippetFileState(this.app, file);
+        const buttonEl = this.chooser.suggestions[selectedItem].querySelector(
           ".css-editor-status"
         );
-        selEl == null ? void 0 : selEl.setText(isEnabled ? "enabled" : "disabled");
-        selEl == null ? void 0 : selEl.removeClass(isEnabled ? "disabled" : "enabled");
-        selEl == null ? void 0 : selEl.addClass(isEnabled ? "enabled" : "disabled");
+        buttonEl == null ? void 0 : buttonEl.setText(isEnabled ? "enabled" : "disabled");
+        buttonEl == null ? void 0 : buttonEl.toggleClass("mod-cta", isEnabled);
       }
       return false;
     });
@@ -10515,18 +10527,22 @@ var CssSnippetFuzzySuggestModal = class extends import_obsidian7.FuzzySuggestMod
       const isEnabled = this.isEnabled(item.item);
       const isNewElement = this.inputEl.value.trim().length > 0 && item.match.score === 0;
       if (!isNewElement) {
-        el.appendChild(
-          createDiv(
-            {
-              cls: [
-                "suggestion-aux",
-                "css-editor-status",
-                isEnabled ? "enabled" : "disabled"
-              ]
-            },
-            (el2) => el2.appendText(isEnabled ? "enabled" : "disabled")
-          )
-        );
+        const button = new import_obsidian7.ButtonComponent(el).setButtonText(isEnabled ? "enabled" : "disabled").setClass("css-editor-status").onClick(async (e) => {
+          e.stopPropagation();
+          const newState = toggleSnippetFileState(
+            this.app,
+            item.item
+          );
+          button.setButtonText(newState ? "enabled" : "disabled");
+          if (newState) {
+            button.setCta();
+          } else {
+            button.removeCta();
+          }
+        });
+        if (isEnabled) {
+          button.setCta();
+        }
       }
     }
     if (this.inputEl.value.trim().length > 0 && item.match.score === 0) {
