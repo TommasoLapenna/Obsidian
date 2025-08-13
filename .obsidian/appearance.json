@@ -2,7 +2,8 @@
   "enabledCssSnippets": [
     "Image Align",
     "TextBox",
-    "Math Block Highlight"
+    "Math Block Highlight",
+    "List Padding"
   ],
   "cssTheme": "",
   "accentColor": ""

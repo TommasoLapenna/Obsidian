@@ -52,4 +52,4 @@ Quindi l'integrale del vettore ha come componenti gli integrali delle componenti
 # TODO momento
 
 # Sketch Lavagna
-![[Pasted image 20250731154757.png]]![[Pasted image 20250801161254.png]]
+![[Pasted image 20250731154757.png]]![[Pasted image 20250801161254.png]]![[Pasted image 20250811114511.png]]

@@ -11,14 +11,12 @@
             "id": "7950de1e2662288e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "mk-space",
               "state": {
-                "file": "University/Fisica I/Fenomeni d'Urto.md",
-                "mode": "preview",
-                "source": false
+                "path": "University/Fisica I"
               },
               "icon": "lucide-file",
-              "title": "Fenomeni d'Urto"
+              "title": "Fisica I"
             }
           }
         ]
@@ -86,7 +84,7 @@
         }
       },
       {
-        "id": "b45a71c2f64c7cb7",
+        "id": "f1dc3fca029d52ac",
         "type": "leaf",
         "state": {
           "type": "mk-path-view",
@@ -141,7 +139,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "University/Fisica I/Dinamica del Corpo Rigido.md",
+            "file": "University/Fisica I/Primo Principio della Termodinamica.md",
             "followCursor": false,
             "showSearch": false,
             "searchQuery": ""
@@ -171,32 +169,36 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-camera:Obsidian Camera": false
     }
   },
   "active": "7950de1e2662288e",
   "lastOpenFiles": [
-    "Source Material/Images/Pasted image 20250808121527.png",
-    "Source Material/Images/Pasted image 20250807235905.png",
-    "Source Material/Images/Pasted image 20250807192717.png",
-    "Source Material/Images/Pasted image 20250807184157.png",
-    "Source Material/Images/Pasted image 20250807175528.png",
-    "Source Material/Images/Pasted image 20250807173945.png",
+    "University/Fisica I/Cinematica.md",
+    "University/Fisica I/Primo Principio della Termodinamica.md",
+    "Source Material/Images/Pasted image 20250812160252.jpg",
+    "Source Material/Images/Pasted image 20250812115222.jpg",
+    "Source Material/Images/Pasted image 20250812114049.jpg",
+    "Source Material/Images/Pasted image 20250812113016.jpg",
+    "Source Material/Images/Pasted image 20250812100448.jpg",
+    "Source Material/Images/Pasted image 20250812093625.png",
+    "Source Material/Images/Pasted image 20250812092818.png",
+    "Source Material/Images/Pasted image 20250812091541.jpg",
+    "Source Material/Images/Pasted image 20250811190159.png",
+    "Source Material/Images/Pasted image 20250811180044.jpg",
+    "University/Fisica I/Sistemi Termodinamici.md",
+    "attachments/snaps",
+    "attachments",
+    "Untitled.canvas",
+    "University/Fisica I/Appendice.md",
     "University/Fisica I/Fenomeni d'Urto.md",
     "University/Fisica I/Dinamica del Corpo Rigido.md",
-    "Source Material/Images/Pasted image 20250806175203.png",
-    "Source Material/Images/Pasted image 20250806173401.png",
-    "Source Material/Images/Pasted image 20250806172520.png",
-    "Source Material/Images/Pasted image 20250806165101.png",
-    "Source Material/Images/Pasted image 20250806162924.png",
     "University/Fisica I/Dinamica dei Sistemi di Punti Materiali.md",
     "University/Fisica I/.md",
-    "University/Fisica I/Appendice.md",
     "University/Fisica I/Energia e Lavoro.md",
     "University/Fisica I/Dinamica.md",
-    "University/Fisica I/Cinematica.md",
     "University/Fisica I/Introduzione.md",
-    "Untitled.canvas",
     "Zettelkasten/Funzioni Reali di Variabile Reale.md",
     "Zettelkasten/Integrali Multipli.md",
     "Zettelkasten/Distribuzioni, Densità Congiunta.md",
@@ -212,8 +214,6 @@
     "University/Statistica/Variabili Aleatorie.md",
     "University/Statistica/Variabili Aleatorie Discrete.md",
     "University/Statistica/Statistica.md",
-    "University/University.md",
-    "University/Statistica/Probabilità.md",
     "University/Statistica",
     "ESP32",
     "Source Material/Images/IMG_0477.mov",
@@ -221,8 +221,6 @@
     "University/Elettronica Digitale",
     "Old Vault/Tags/Basi di Dati",
     "University/Fisica I",
-    "Old Vault/Tags/Matematica Discreta e Codici",
-    "Old Vault/Tags/Analisi 2 e Probabilità",
     "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas"
   ]
 }
