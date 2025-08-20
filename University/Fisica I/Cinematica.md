@@ -323,6 +323,11 @@ $$
 > [!hint] Dimostrazione Moto Armonico
 > Per dimostrare che un moto è armonico basta quindi dimostrare che $-a$ è proporzionale a $x(t)$. Le uniche funzioni che riescono a soddisfare la condizione precedente sono $\sin$ e $\cos$; una sistema che obbedisce all'equazione del moto armonico si chiama *Oscillatore Armonico Semplice*.
 
+> [!info] Calcolo dei Valori Massimi di $v$ e $\omega$
+> $$
+> v_{max}= \omega A\qquad a_{max}=\omega^2A
+> $$
+
 ### Moto Circolare
 Un moto di dice *Circolare* se la sua traiettoria segue una circonferenza, la velocità cambia continuamente direzione e l'accelerazione centripeta è sempre diversa da 0.
 
@@ -420,7 +425,7 @@ Si studia un punto $P$ lanciato dall'origine $O$ con una velocità iniziale $\ve
 
 ![[Pasted image 20250313172142.png|center|700]]
 
-Il moto è caratterizzato da un'accelerazione costante $\vec{a}=-\vec{g}=-g\hat{u}_{y}$ con condizioni iniziali $\vec{r}=0$ e $\vec{v}=\vec{v}_{0}$ (al tempo $t=0$)
+Il moto è caratterizzato da un'==accelerazione costante $\vec{a}=-\vec{g}=-g\hat{u}_{y}$== con condizioni iniziali $\vec{r}=0$ e $\vec{v}=\vec{v}_{0}$ (al tempo $t=0$)
 $$
 \vec{v}(t)= \vec{v}_{0}+\int_{0}^t \vec{a}(t)dt=\vec{v}_{0}-g\hat{u}_{y}
 $$

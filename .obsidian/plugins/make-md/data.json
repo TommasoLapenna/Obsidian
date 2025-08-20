@@ -47,7 +47,9 @@
     "//Old Vault/Old Vault/Tags/Old Vault/Tags/Basi di Dati",
     "/",
     "//University/Old Vault/Tags/Matematica Discreta e Codici",
-    "//University"
+    "//University",
+    "//attachments",
+    "//University/University/Fisica I"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
@@ -80,7 +82,8 @@
     "Source Material/INFO_Pasted image 20241228161931_PNG.md",
     "Old Vault",
     "Tags",
-    "Pasted image 20250521124452.png"
+    "Pasted image 20250521124452.png",
+    "attachments"
   ],
   "hiddenExtensions": [
     ".mdb",
@@ -229,6 +232,7 @@
   "notesPreview": false,
   "editStickerInSidebar": true,
   "overrideNativeMenu": false,
+  "onboardingCompleted": false,
   "dataviewInlineContext": false,
   "searchWorker": false
 }

@@ -84,7 +84,7 @@
         }
       },
       {
-        "id": "f1dc3fca029d52ac",
+        "id": "0f1bec049b079044",
         "type": "leaf",
         "state": {
           "type": "mk-path-view",
@@ -139,7 +139,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "University/Fisica I/Primo Principio della Termodinamica.md",
+            "file": "University/Fisica I/Cinematica.md",
             "followCursor": false,
             "showSearch": false,
             "searchQuery": ""
@@ -163,6 +163,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -176,6 +177,8 @@
   "active": "7950de1e2662288e",
   "lastOpenFiles": [
     "University/Fisica I/Cinematica.md",
+    "University/Fisica I/Appendice.md",
+    "Source Material/Images/Pasted image 20250820193022.png",
     "University/Fisica I/Primo Principio della Termodinamica.md",
     "Source Material/Images/Pasted image 20250812160252.jpg",
     "Source Material/Images/Pasted image 20250812115222.jpg",
@@ -186,12 +189,10 @@
     "Source Material/Images/Pasted image 20250812092818.png",
     "Source Material/Images/Pasted image 20250812091541.jpg",
     "Source Material/Images/Pasted image 20250811190159.png",
-    "Source Material/Images/Pasted image 20250811180044.jpg",
     "University/Fisica I/Sistemi Termodinamici.md",
     "attachments/snaps",
     "attachments",
     "Untitled.canvas",
-    "University/Fisica I/Appendice.md",
     "University/Fisica I/Fenomeni d'Urto.md",
     "University/Fisica I/Dinamica del Corpo Rigido.md",
     "University/Fisica I/Dinamica dei Sistemi di Punti Materiali.md",
