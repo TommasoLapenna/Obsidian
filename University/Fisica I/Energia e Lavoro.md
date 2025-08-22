@@ -266,4 +266,4 @@ $$
 > detto **Teorema dell'Impulso**., secondo il quale la variazione di momento angolare è uguale al momento dell'impulso applicato al punto
 
 Si osserva che anche il lavoro può essere espresso tramite il momento della forza, infatti
-$$W=\int_{A}^B F_{T}\ ds=\int_{\theta_{a}}^{\theta_{b}}rF_{T}\ d\theta = \int_{\theta_{a}}^{\theta_{b}}M\ dt\eta$$
+$$W=\int_{A}^B F_{T}\ ds=\int_{\theta_{a}}^{\theta_{b}}rF_{T}\ d\theta = \int_{\theta_{a}}^{\theta_{b}}M\ d\theta$$
