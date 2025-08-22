@@ -305,16 +305,28 @@ Se la molla viene compressa alla lunghezza $l<l_{0}$, la forza ha la stessa espr
 >![[Pasted image 20250726182744.png|center|500]]
 >Se si vuole deformare una molla di una quantità $x$, si devono applicare ai due estremi due forze eguali e contrarie di modulo $kx$.
 
-
+### Moto Armonico e Forza Elastica
 Si suppone adesso che la molla si bloccata ad u estremo, deformata di $x_{0}$, all'altro estremo è fissata una massa $m$ poggiata su un piano orizzontale liscio. Se all'istante $t=0$ il punto viene lasciato libero con velocità nulla ($x=x_{0}, v=0$ per $t=0$) esso si muovo di moto armonico per la forza elastica. 
 La soluzione dell'equazione di moto è
 $$
 m \frac{d^2x}{dt^2}=-xk\Longrightarrow \frac{d^2x}{dt^2}+\frac{k}{m}x=0
 $$
 con $x=A\sin(\omega t+\phi)$ con $\omega=\sqrt{ \frac{k}{m} }$. 
+
+> [!info] Oscillatore armonico
+> Un punto materiale di massa $m$ soggetto ad una forza elastica $F=-kx$, quando viene spostato dalla sua posizione di equilibrio delle oscillazioni armoniche regolate dall'equazione differenziale dell'oscillatore armonico
+> $$
+> \frac{d^2x(t)}{dt^2}+\omega^2x(t)=0
+> $$
+>  La quale soluzione è la relazione
+>  $$
+>  x=A\sin(\omega t+\phi)
+>  $$
+>  con $A$ ampiezza dell'oscillazione e $\phi$ fase che determina la condizione iniziale $x(0)$.
+
 I valori delle costanti $A$ e $\phi$ si calcolano dalle condizioni iniziali:
 $$
-x_{0}\cos \omega t\qquad v=-\omega x_{0}\sin \omega t
+x_{0}=A\sin \phi\qquad 0=\omega A\cos \phi
 $$
 dato che $v=\omega A\cos(\omega t+\phi)$.
 Per $\phi$ compreso tra $0$ e $2\pi$ sono possibili due soluzioni: $A=x_{0},\ \phi=\frac{\pi}{2}$ e $A=-x_{0},\ \phi= \frac{3}{2}\pi$; in ogni caso si hanno per la legge oraria e per la velocità le espressioni
@@ -326,6 +338,30 @@ Se le condizioni iniziali sono diverse si ottiene sempre un moto armonico con la
 $$
 A= \sqrt{ x_{0}^2+ \frac{v_{0}^2}{\omega^2} }\qquad \tan \phi=\omega  \frac{x_{0}}{v_{0}}
 $$
+
+Il chat dice (da ricontrollare) per la fase iniziale del moto armonico
+- **Guarda dove si trova la particella all’inizio**
+    
+    - Se è **al centro** → la fase iniziale è 0 o π.
+        
+    - Se è **a un’estremità** (massimo o minimo) → la fase iniziale è π/2 o -π/2.
+        
+- **Guarda la direzione della velocità all’inizio**
+    
+    - Se la particella parte verso **destra (positivo)** → scegli la fase che rende la velocità positiva.
+        
+    - Se parte verso **sinistra (negativo)** → scegli la fase che rende la velocità negativa.
+        
+- **Combina i due punti**
+    
+    - Centro + velocità positiva → fase iniziale = 0.
+        
+    - Centro + velocità negativa → fase iniziale = π.
+        
+    - Estremo positivo + velocità negativa → fase iniziale = π/2.
+        
+    - Estremo negativo + velocità positiva → fase iniziale = -π/2.
+
 ---
 ## Pendolo Semplice
 Il pendolo semplice è costituito da un punto materiale appeso tramite un filo ideale. La posizione di equilibrio statico è quella verticale, mentre la forza esercitata dal filo vale in modulo $T_{F}=mg$

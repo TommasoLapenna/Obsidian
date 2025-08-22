@@ -1,0 +1,12 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.inFolder("University")
+  - type: table
+    name: View
+    filters:
+      and:
+        - file.inFolder("University/Fisica I")
+    rowHeight: medium
