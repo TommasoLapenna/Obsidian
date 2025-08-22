@@ -388,7 +388,7 @@ $$
 In questo caso particolare di moto circolare non uniforme si ha che $\alpha=\text{costante}$ e $a_{T}= \text{costante}$ e si avrà quindi
 $$
 \omega =\omega_{0}+\alpha t\quad \theta=\theta_{0}+\omega _{0}t+ \frac{1}{2}
-\alpha t$$
+\alpha t^2$$
 Per quanto riguarda le due componenti dell'accelerazione
 $$
 a_{T}=\text{costante} = R\alpha\quad a_{N}= \omega^2R=(\omega_{0}+\alpha t)^2
@@ -488,7 +488,7 @@ con $v_{0}$ velocità nel punto $x_{0}$. Si applica questo risultato trovato ai 
  &\int _{x_{0}}^x a(x)dx=-\omega \int_{x_{0}}^x xdx=\frac{1}{2}\omega^2(x_{0}^2-x^2)=\frac{1}{2}v^2-\frac{1}{2}v_{0}^2  \\
 &\Longrightarrow v^2(x)=v_{0}^2+\omega^2(x_{0}^2-x^2)
 \end{align}$$con riferimento al centro ($x_{0}=0$ e $v_{0}=\omega A$) $$v^2(x)=\omega^2(A^2-x^2)$$
-- **Moto Circolare:** nota la funzione $\alpha(\theta)$ si calcola l'incremento della velocità angolare in corrispondenza all'incremento $\theta-\theta_{0}$ $$\alpha= \frac{d\omega}{dt}=\frac{d\omega}{d\theta} \frac{d\theta}{dt}=\omega\frac{d\omega}{d\theta}\Longrightarrow \alpha d\theta=\omega d\omega\Longrightarrow \int_{\theta_{0}}^\theta \alpha(\theta)d\theta= \frac{1}{2}\omega^2-\frac{1}{2}\omega^2$$
+- **Moto Circolare:** nota la funzione $\alpha(\theta)$ si calcola l'incremento della velocità angolare in corrispondenza all'incremento $\theta-\theta_{0}$ $$\alpha= \frac{d\omega}{dt}=\frac{d\omega}{d\theta} \frac{d\theta}{dt}=\omega\frac{d\omega}{d\theta}\Longrightarrow \alpha d\theta=\omega d\omega\Longrightarrow \int_{\theta_{0}}^\theta \alpha(\theta)d\theta= \frac{1}{2}\omega^2-\frac{1}{2}\omega^2_{0}$$
 ---
 # Moti Relativi
 Si hanno:
