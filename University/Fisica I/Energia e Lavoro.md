@@ -66,6 +66,7 @@ dove $E_{k}=\frac{1}{2}mv^2$ rappresenta l'**Energia Cinetica**.
 
 > [!gray] Teorema dell'Energia Cinetica
 > Il lavoro compiuto dalla risultante delle forze nello spostamento di un punto materiale dalla posizione $A$ alla posizione $B$ è uguale alla variazione dell'energia cinetica del punto materiale stesso. Questo teorema è una conseguenza delle seconda legge di Newton.
+$$L_{tot}= \frac{1}{2}mv^2_{f}-\frac{1}{2}mv^2_{i}$$
 
 > [!hint] Osservazione su $\vec{p}$
 > Se si riprende la definizione di quantità di moto, $\vec{p}=m\vec{v}$, si osserva che la relazoione tra energia cinetica e modulo della quantità di moto sussiste
@@ -187,7 +188,7 @@ $$
 > $$
 > 
 
-Durante il moto, avviene una trasformazione da un tipo di energia ad un'altra (tramite il lavoro), ma il contenuto energetico totale (energia meccanica) non cambia.
+Durante il moto, avviene una trasformazione da un tipo di energia ad un'altra (tramite il lavoro), ma il contenuto energetico totale (energia meccanica) non cambia. Questo perché il lavoro ottenuto a spesa della riduzione di energia potenziale causa un aumento dell'energia cinetica e viceversa ($\frac{1}{2}v_{a}^2+mgh_{b}= \frac{1}{2}v_{b}^2+mgh_{b}$)
 
 Quando invece agiscono sia forze conservative che non, il lavoro complessivo è dato dalla somma delle forze conservative $W_{c}$ e quello delle forze non conservative $W_{nc}$
 $$

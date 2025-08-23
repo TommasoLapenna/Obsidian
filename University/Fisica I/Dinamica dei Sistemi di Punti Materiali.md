@@ -85,13 +85,13 @@ $$
 > $$
 
 > [!hint] Osservazione
-> La quantità di moto di un sistema di punti materiali è eguale alla quantità di moto $m\vec{v}_{CM}$ che avrebbe il centro di massa se considerato come un punto materiale che annia la posizione $\vec{r}_{CM}$ e la velocità $\vec{v}_{CM}$ e massa pari alla massa totale $m$.
+> La quantità di moto di un sistema di punti materiali è eguale alla quantità di moto $m\vec{v}_{CM}$ che avrebbe il centro di massa se considerato come un punto materiale che abbia la posizione $\vec{r}_{CM}$ e la velocità $\vec{v}_{CM}$ e massa pari alla massa totale $m$.
 
 Analogamente si può calcolare l'accelerazione del centro di massa derivando l'espressione precedente:
 $$
 \vec{a}_{CM}= \frac{d\vec{v}_{CM}}{dt}= \frac{\sum_{i}m_{i} \frac{d\vec{v}_{i}}{dt}}{\sum_{i}m_{i}}= \frac{\sum_{i}m_{i}\vec{a}_{i}}{\sum_{i}m_{i}}= \frac{\sum_{i}m_{i}\vec{a}_{i}}{m}
 $$
-Se il sistema di riferimento è inerziale allora vale $\vec{F}_{i}=m_{i}\vec{a}_{i}=\vec{F}_{i}^{(E)}+\vec{F}_{i}^{(E)}$, sotituendo quindi questa espressione nella relazione dell'accelerazione si ottiene si ottiene
+Se il sistema di riferimento è inerziale allora vale $\vec{F}_{i}=m_{i}\vec{a}_{i}=\vec{F}_{i}^{(E)}+\vec{F}_{i}^{(E)}$, sostituendo quindi questa espressione nella relazione dell'accelerazione si ottiene si ottiene
 $$
 m\vec{a}_{CM} = \sum_{i}m_{i}\vec{a}_{i}=\sum_{i}(\vec{F}_{i}^{(E)}+\vec{F}_{i}^{(I)})= \vec{F}^{(E)}
 $$

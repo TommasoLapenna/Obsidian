@@ -69,7 +69,8 @@ $$
 Nel sistema di riferimento del centro di massa la quantità di moto totale è nulla, la verifica è immediata (usando la [[#^pp|relazione precedente]]):
 $$
 \vec{P}=m_{1}\vec{v}_{1}+m_{2}\vec{v}_{2}=m_{1}\vec{v}_{1}'+m_{2}\vec{v}_{2}'+(m_{1}+m_{2})\vec{v}_{CM}\Longrightarrow m_{1}\vec{v}_{1}'+m_{2}\vec{v}_{2}'=0
-$$ Dunque
+$$ 
+Dunque
 $$
 m_{1}\vec{v}_{1,in}'+m_{2}\vec{v}_{2,in}=m_{1}\vec{v}_{1,fin}+m_{2}\vec{v}_{2,fin}=0\Longrightarrow \vec{p}_{1,in}'=-\vec{p}_{2,in}',\ \vec{p}_{1,fin}'=-\vec{p}_{2,fin}'
 $$
