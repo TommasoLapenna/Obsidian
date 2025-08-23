@@ -274,6 +274,13 @@ La forza, con direzione lungo il filo teso, che il filo esercita su un qualsiasi
 
 Si esamina un infinitesimo $ds$ di un filo teso in quiete (supposto inestensibile e di massa trascurabile), le due forze agenti agli estremi di $ds$ devono avere moduli uguali e versi opposti per garantire l'equilibrio statico. In particolare, ad un estremo del filo si ha $\vec{T}=-\vec{F}$ e per un filo $AB$ si ha $F_{A}=F_{B}=T$ ($\vec{F}_{A}, \vec{F}_{B}=-\vec{F}_{A}$).
 
+
+> [!info] Carrucole
+> Le carrucole hanno lo scopo di cambiare la direzione della forza
+> 
+> ![[Pasted image 20250823171054.jpg|center|500]]
+> 
+
 ---
 ## Forza Elastica
 Si definisce forza elastica (unidimensionale) una forza di direzione costante con verso rivolto verso $O$ (chiamato centro) e modulo proporzionale alla distanza da $O$.

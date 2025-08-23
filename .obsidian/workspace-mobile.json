@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "abca017b998ae40a",
+        "id": "3b489dcca383ad41",
         "type": "tabs",
         "children": [
           {
-            "id": "7950de1e2662288e",
+            "id": "9e2a06e3a432ebec",
             "type": "leaf",
             "state": {
-              "type": "mk-space",
+              "type": "markdown",
               "state": {
-                "path": "University/Fisica I"
+                "file": "University/Fisica I/Dinamica.md",
+                "mode": "preview",
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Fisica I"
+              "title": "Dinamica"
             }
           }
         ]
@@ -84,7 +86,57 @@
         }
       },
       {
-        "id": "0f1bec049b079044",
+        "id": "f76b257971e24486",
+        "type": "leaf",
+        "state": {
+          "type": "mk-space",
+          "state": {
+            "path": "University/Fisica I"
+          },
+          "icon": "lucide-file",
+          "title": "Fisica I"
+        }
+      },
+      {
+        "id": "60d99008cc7e0181",
+        "type": "leaf",
+        "state": {
+          "type": "bases",
+          "state": {
+            "file": "Zettelkasten/Untitled 2.base",
+            "viewName": "Table"
+          },
+          "icon": "lucide-table",
+          "title": "Untitled 2"
+        }
+      },
+      {
+        "id": "c71f46c6a64e6fde",
+        "type": "leaf",
+        "state": {
+          "type": "mk-space",
+          "state": {
+            "path": "University/Fisica I"
+          },
+          "icon": "lucide-file",
+          "title": "Fisica I"
+        }
+      },
+      {
+        "id": "1fa6f9e2540830e1",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical",
+            "autoReveal": false
+          },
+          "icon": "lucide-folder-closed",
+          "title": "Files"
+        }
+      },
+      {
+        "id": "d14b8cfab03ad5ce",
         "type": "leaf",
         "state": {
           "type": "mk-path-view",
@@ -94,7 +146,7 @@
         }
       }
     ],
-    "currentTab": 4
+    "currentTab": 8
   },
   "right": {
     "id": "a10862bf1887e6d2",
@@ -174,10 +226,18 @@
       "obsidian-camera:Obsidian Camera": false
     }
   },
-  "active": "7950de1e2662288e",
+  "active": "9e2a06e3a432ebec",
   "lastOpenFiles": [
-    "University/Fisica I/Cinematica.md",
+    "Source Material/Images/Pasted image 20250823171054.jpg",
+    "Source Material/Images/Pasted image 20250823171023.jpg",
     "University/Fisica I/Appendice.md",
+    "Source Material/Images/Pasted image 20250823115125.jpg",
+    "Zettelkasten/Untitled 4.base",
+    "Zettelkasten/Untitled 3.base",
+    "Zettelkasten/Untitled 2.base",
+    "Source Material/Images/Pasted image 20250823114242.jpg",
+    "Source Material/Images/Scansione 23-08-25 (11.39.32).pdf",
+    "University/Fisica I/Cinematica.md",
     "Source Material/Images/Pasted image 20250820193022.png",
     "University/Fisica I/Primo Principio della Termodinamica.md",
     "Source Material/Images/Pasted image 20250812160252.jpg",
@@ -186,9 +246,6 @@
     "Source Material/Images/Pasted image 20250812113016.jpg",
     "Source Material/Images/Pasted image 20250812100448.jpg",
     "Source Material/Images/Pasted image 20250812093625.png",
-    "Source Material/Images/Pasted image 20250812092818.png",
-    "Source Material/Images/Pasted image 20250812091541.jpg",
-    "Source Material/Images/Pasted image 20250811190159.png",
     "University/Fisica I/Sistemi Termodinamici.md",
     "attachments/snaps",
     "attachments",
@@ -218,10 +275,6 @@
     "University/Statistica",
     "ESP32",
     "Source Material/Images/IMG_0477.mov",
-    "University/Progettazione e Produzione Multimediale",
-    "University/Elettronica Digitale",
-    "Old Vault/Tags/Basi di Dati",
-    "University/Fisica I",
     "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas"
   ]
 }
