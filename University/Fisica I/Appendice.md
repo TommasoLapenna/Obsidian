@@ -55,3 +55,4 @@ Quindi l'integrale del vettore ha come componenti gli integrali delle componenti
 ![[Pasted image 20250731154757.png]]![[Pasted image 20250801161254.png]]![[Pasted image 20250811114511.png]]
 ![[Pasted image 20250820193022.png]]
 ![[Pasted image 20250825161259.jpg]]
+![[Pasted image 20250825180056.jpg]]
