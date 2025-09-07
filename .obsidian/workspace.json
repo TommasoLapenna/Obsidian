@@ -8,49 +8,35 @@
         "type": "tabs",
         "children": [
           {
-            "id": "01424771bbb934fa",
+            "id": "a57e789f00cac185",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/Fisica I/Appendice.md",
-                "mode": "preview",
+                "file": "Linux/NixOs/Utilizzo.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Appendice"
+              "title": "Utilizzo"
             }
           },
           {
-            "id": "a2ec1480eb065278",
+            "id": "b53c67901436ca02",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/Fisica I/Cinematica.md",
+                "file": "Linux/NixOs/Installazione.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Cinematica"
-            }
-          },
-          {
-            "id": "00475ce1c3128bc5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "University/Fisica I/Energia e Lavoro.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Energia e Lavoro"
+              "title": "Installazione"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -130,7 +116,7 @@
             }
           },
           {
-            "id": "3b4bb81510bb5331",
+            "id": "b36881bf43cceff1",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -144,7 +130,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 332.5
+    "width": 332.5,
+    "collapsed": true
   },
   "right": {
     "id": "73070c279435b60b",
@@ -208,13 +195,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "University/Fisica I/Energia e Lavoro.md",
+                "file": "Linux/NixOs/Installazione.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Energia e Lavoro"
+              "title": "Outline of Installazione"
             }
           },
           {
@@ -232,7 +219,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 322.5
+    "width": 322.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -247,20 +235,39 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "00475ce1c3128bc5",
+  "active": "b53c67901436ca02",
   "lastOpenFiles": [
-    "University/Fisica I/Fenomeni d'Urto.md",
-    "University/Fisica I/Dinamica del Corpo Rigido.md",
+    "Linux/NixOs/Utilizzo.md",
+    "Linux/NixOs/Installazione.md",
     "University/Fisica I/Dinamica dei Sistemi di Punti Materiali.md",
+    "Linux/NixOs/NixOs.md",
+    "Linux/NixOs",
+    "Linux/Linux.md",
+    "Linux",
     "University/Fisica I/Energia e Lavoro.md",
     "University/Fisica I/Dinamica.md",
     "University/Fisica I/Cinematica.md",
+    "University/Fisica I/Fenomeni d'Urto.md",
+    "Zettelkasten/Domande Orale.md",
+    "University/Fisica I/Dinamica del Corpo Rigido.md",
+    "Source Material/Images/darktable_exported/Pasted image 20250731154757.jpg",
+    "Source Material/Images/darktable_exported",
+    "Source Material/Images/Pasted image 20250731154757.png.xmp",
     "University/Fisica I/Appendice.md",
+    "Source Material/Images/Pasted image 20250825180056.jpg",
+    "Zettelkasten/Untitled 5.base",
+    "Source Material/Images/Pasted image 20250825161259.jpg",
+    "Zettelkasten/Untitled 4.base",
+    "Zettelkasten/Untitled 3.base",
+    "Zettelkasten/Untitled 2.base",
+    "Source Material/Images/Scansione 23-08-25 (11.39.32).pdf",
+    "Source Material/Images/Pasted image 20250823171054.jpg",
+    "Source Material/Images/Pasted image 20250823171023.jpg",
+    "Source Material/Images/Pasted image 20250823115125.jpg",
+    "Source Material/Images/Pasted image 20250823114242.jpg",
     "Source Material/Images/Pasted image 20250820193022.png",
     "University/Fisica I/Untitled.base",
     "University/Fisica I/Untitled.md",
-    "Zettelkasten/Untitled 1.base",
-    "Zettelkasten/Untitled.base",
     "Zettelkasten/Untitled 1.md",
     "Zettelkasten/Untitled.md",
     "Untitled.canvas",
@@ -276,21 +283,7 @@
     "University/Elettronica Digitale/Dispositivi Elettronici.md",
     "University/Elettronica Digitale/Circuiti Logici Digitali.md",
     "University/Elettronica Digitale/Programma.md",
-    "Zettelkasten/Numeri Complessi.md",
-    "Zettelkasten/Segnali Periodici a Tempo Continuo.md",
-    "University/Fondamenti di Segnali e Trasmissione/Fondamenti di Segnali e Trasmissione.md",
-    "Zettelkasten/Introduzione allo Studio di Segnali.md",
-    "University/University.md",
-    "Tags",
-    "Image Align.css",
     "Source Material/Images/Pasted image 20250308154041.png",
-    "Source Material/Images/Pasted image 20250308155417.png",
-    "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas",
-    "trim.jpg",
-    "control.jpg",
-    "flight.jpg",
-    "pithc.png",
-    "prop.jpg",
-    "Source Material/PDFs/TUTTO ANALISI II E PROBABILITÀ.pdf"
+    "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas"
   ]
 }

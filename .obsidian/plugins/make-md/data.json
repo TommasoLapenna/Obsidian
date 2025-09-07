@@ -47,9 +47,10 @@
     "//Old Vault/Old Vault/Tags/Old Vault/Tags/Basi di Dati",
     "/",
     "//University/Old Vault/Tags/Matematica Discreta e Codici",
-    "//University",
     "//attachments",
-    "//University/University/Fisica I"
+    "//University/University/Fisica I",
+    "//Linux",
+    "//Linux/Linux/NixOs"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
