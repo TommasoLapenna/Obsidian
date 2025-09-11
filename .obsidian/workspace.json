@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linux/NixOs/Installazione.md",
+                "file": "Zettelkasten/DDL.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Installazione"
+              "title": "DDL"
             }
           }
         ],
@@ -116,7 +116,7 @@
             }
           },
           {
-            "id": "b36881bf43cceff1",
+            "id": "34148d4c049412d5",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -130,8 +130,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 332.5,
-    "collapsed": true
+    "width": 332.5
   },
   "right": {
     "id": "73070c279435b60b",
@@ -237,8 +236,10 @@
   },
   "active": "b53c67901436ca02",
   "lastOpenFiles": [
-    "Linux/NixOs/Utilizzo.md",
+    "Zettelkasten/DDL.md",
+    "University/Fisica I/Appendice.md",
     "Linux/NixOs/Installazione.md",
+    "Linux/NixOs/Utilizzo.md",
     "University/Fisica I/Dinamica dei Sistemi di Punti Materiali.md",
     "Linux/NixOs/NixOs.md",
     "Linux/NixOs",
@@ -253,7 +254,6 @@
     "Source Material/Images/darktable_exported/Pasted image 20250731154757.jpg",
     "Source Material/Images/darktable_exported",
     "Source Material/Images/Pasted image 20250731154757.png.xmp",
-    "University/Fisica I/Appendice.md",
     "Source Material/Images/Pasted image 20250825180056.jpg",
     "Zettelkasten/Untitled 5.base",
     "Source Material/Images/Pasted image 20250825161259.jpg",
@@ -282,7 +282,6 @@
     "University/Elettronica Digitale/Elettronica Digitale.md",
     "University/Elettronica Digitale/Dispositivi Elettronici.md",
     "University/Elettronica Digitale/Circuiti Logici Digitali.md",
-    "University/Elettronica Digitale/Programma.md",
     "Source Material/Images/Pasted image 20250308154041.png",
     "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas"
   ]
