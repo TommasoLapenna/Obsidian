@@ -13,15 +13,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linux/NixOs/Flakes.md",
-                "mode": "source",
+                "file": "Linux/NixOs/Utilizzo.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Flakes"
+              "title": "Utilizzo"
+            }
+          },
+          {
+            "id": "6f8682f45d25e84a",
+            "type": "leaf",
+            "state": {
+              "type": "mk-space",
+              "state": {
+                "path": "Old Vault/Tags/Analisi 2 e Probabilità"
+              },
+              "icon": "lucide-file",
+              "title": "Analisi 2 e Probabilità"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -101,7 +114,7 @@
             }
           },
           {
-            "id": "13f935f70365204e",
+            "id": "f30bb2fc70207f15",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -115,8 +128,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 332.5,
-    "collapsed": true
+    "width": 332.5
   },
   "right": {
     "id": "73070c279435b60b",
@@ -220,17 +232,24 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a57e789f00cac185",
+  "active": "6f8682f45d25e84a",
   "lastOpenFiles": [
+    "Zettelkasten/Limiti e Continuità per Funzioni di più Variabili.md",
+    "Linux/NixOs/Installazione.md",
+    "Linux/NixOs/Flakes.md",
     "Linux/NixOs/Utilizzo.md",
+    "Source Material/Images/Pasted image 20250914183505.png",
+    "Source Material/Images/Pasted image 20250914182802.png",
+    "Source Material/Images/Pasted image 20250914182604.png",
+    "Source Material/Images/Pasted image 20250914182038.png",
+    "Source Material/Images/Pasted image 20250914174811.png",
+    "Source Material/Images/Pasted image 20250914173852.png",
+    "Source Material/Images/Pasted image 20250914172853.png",
+    "Source Material/Images/Pasted image 20250914172801.png",
     "Source Material/Images/Pasted image 20250914145143.png",
     "Source Material/Images/Pasted image 20250914144443.png",
-    "Linux/NixOs/Flakes.md",
-    "Source Material/Images/Pasted image 20250914142124.png",
-    "Source Material/Images/Pasted image 20250914135124.png",
     "Zettelkasten/DDL.md",
     "University/Fisica I/Appendice.md",
-    "Linux/NixOs/Installazione.md",
     "University/Fisica I/Dinamica dei Sistemi di Punti Materiali.md",
     "Linux/NixOs/NixOs.md",
     "Linux/NixOs",
@@ -242,19 +261,13 @@
     "University/Fisica I/Fenomeni d'Urto.md",
     "Zettelkasten/Domande Orale.md",
     "University/Fisica I/Dinamica del Corpo Rigido.md",
-    "Source Material/Images/darktable_exported/Pasted image 20250731154757.jpg",
     "Source Material/Images/darktable_exported",
     "Source Material/Images/Pasted image 20250731154757.png.xmp",
-    "Source Material/Images/Pasted image 20250825180056.jpg",
     "Zettelkasten/Untitled 5.base",
-    "Source Material/Images/Pasted image 20250825161259.jpg",
     "Zettelkasten/Untitled 4.base",
     "Zettelkasten/Untitled 3.base",
     "Zettelkasten/Untitled 2.base",
     "Source Material/Images/Scansione 23-08-25 (11.39.32).pdf",
-    "Source Material/Images/Pasted image 20250823171054.jpg",
-    "Source Material/Images/Pasted image 20250823171023.jpg",
-    "Source Material/Images/Pasted image 20250823115125.jpg",
     "University/Fisica I/Untitled.base",
     "University/Fisica I/Untitled.md",
     "Zettelkasten/Untitled 1.md",
