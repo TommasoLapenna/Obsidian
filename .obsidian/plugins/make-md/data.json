@@ -50,7 +50,9 @@
     "//University",
     "//ESP32",
     "//Linux",
-    "//University/Old Vault/Tags/Analisi 2 e Probabilità"
+    "//University/Old Vault/Tags/Analisi 2 e Probabilità",
+    "//Linux/Linux/NixOs",
+    "//Linux/Linux/Gentoo"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
