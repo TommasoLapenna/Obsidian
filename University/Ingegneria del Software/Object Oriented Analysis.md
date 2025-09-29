@@ -1,0 +1,6 @@
+- Use Case Diagram
+- Class Diagram
+- UML
+- Altri Costrutti
+	- Association Classes
+	- Independent Generalization

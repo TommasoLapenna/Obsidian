@@ -1,0 +1,18 @@
+- Observer
+	- Classi java observer
+- Adapter
+	- Class Adapter
+	- Object Adapter
+- Factory
+	- Abstract Factory
+- Proxy
+- Decorator
+- Composite
+- Strategy
+- Bridge
+- Facde
+- Mediator
+- Builder
+- Visitor
+- Iterator
+	
