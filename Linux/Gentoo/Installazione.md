@@ -38,7 +38,7 @@ ls -l /dev/disk/by-id
 ```
 Con questi identificatori individuati si può adesso creare la zpool col mirror:
 ```
-zpool create -f -o ashift=12 -o autotrim=on -o cachefile=/etc/zfs/zpoo.lcache -O compression=lz4 -O xattr=sa -O relatime=on -O acltype=posixacl -O dedup=off none -R /mnt/gentoo rpool mirror /dev/disk/by-id/... /dev/disk/by-id/...
+zpool create -f -o ashift=12 -o autotrim=on -o cachefile=/etc/zfs/zpoo.lcache -O compression=lz4 -O xattr=sa -O relatime=on -O acltype=posixacl -O dedup=off -m none -R /mnt/gentoo rpool mirror /dev/disk/by-id/... /dev/disk/by-id/...
 ```
 Si creano ora tutti i necessari dataset:
 ```
@@ -57,6 +57,10 @@ Si crea poi la user home directory dataset
 ```
 zfs create -o mountpoint=/home/tommaso rpool/home/username
 ```
+ E poi si aggiornano i device symbolics links:
+ ```
+ udevadm trigger
+ ```
 Si può adesso procedere con l'istallazione vera e propria di gentoo: si controlla la data con `date`.ù
 Si monta la partizione di boot nella directory del chroot
 ```
@@ -67,7 +71,7 @@ mount /dev/nvme0n1p1 boot
 Si scarica adesso lo stage file, meglio versione desktop in quanto sembra che in quella non si possono creare delle dipendenze circolari e si compila più velocemente
 ```
 wget https://distfiles.gentoo.org/releases/amd64/autobuilds/20250921T170345Z/stage3-amd64-desktop-openrc-20250921T170345Z.tar.xz
-tar xpvf stage3-...-.tar.xz --xattrs-include='*.*' --numeric-pwner -C /mnt/gentoo
+tar xpvf stage3-...-.tar.xz --xattrs-include='*.*' --numeric-owner -C /mnt/gentoo
 ```
 Si copia la zpool cache
 ```
@@ -81,7 +85,7 @@ cp /etc/resolv.conf etc/
 Si montano i device richiesti
 ```
 mount --rbind /dev dev
-mount --rbind /proc proc
+mount --types /proc proc
 mount --rbind /sys sys
 mount --make-rslave dev
 mount --make-rslave proc
