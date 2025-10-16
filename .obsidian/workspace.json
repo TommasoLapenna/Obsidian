@@ -4,35 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "79c853c3fe411195",
+        "id": "b668972dd31e15bf",
         "type": "tabs",
         "children": [
           {
-            "id": "6f8682f45d25e84a",
+            "id": "b27bfd9bc6185b01",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "mk-space",
               "state": {
-                "file": "Linux/Gentoo/Installazione.md",
-                "mode": "source",
-                "source": false
+                "path": "University/Fisica I"
               },
               "icon": "lucide-file",
-              "title": "Installazione"
-            }
-          },
-          {
-            "id": "b4c7604953453f3f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Linux/NixOs/Installazione.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Installazione"
+              "title": "Fisica I"
             }
           }
         ]
@@ -89,33 +73,7 @@
             }
           },
           {
-            "id": "c39233bb19c97eb7",
-            "type": "leaf",
-            "state": {
-              "type": "mk-space",
-              "state": {
-                "path": "University/Fisica I"
-              },
-              "icon": "lucide-file",
-              "title": "Fisica I"
-            }
-          },
-          {
-            "id": "7454a0d70912492e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "University/Fisica I/Appendice.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Appendice"
-            }
-          },
-          {
-            "id": "95022b31fe3da56d",
+            "id": "a306d508b6ec061d",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -125,12 +83,11 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 332.5,
-    "collapsed": true
+    "width": 332.5
   },
   "right": {
     "id": "73070c279435b60b",
@@ -234,20 +191,47 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6f8682f45d25e84a",
+  "active": "b27bfd9bc6185b01",
   "lastOpenFiles": [
-    "Linux/NixOs/Installazione.md",
-    "Linux/Gentoo/Installazione.md",
-    "University/Ingegneria del Software/Design Patterns.md",
-    "University/Ingegneria del Software/Object Oriented Analysis.md",
-    "University/Ingegneria del Software/Ingegneria del Software.md",
+    "University/Fisica I/Appendice.md",
+    "Old Vault/Tags/Tags.md",
+    "Old Vault/Tags/Typescript.md",
+    "Old Vault/Tags/Virtualization.md",
+    "University/Basi di Dati/Domande Orale.md",
+    "Old Vault/Indexes/University.md",
+    "Old Vault/Old Vault.md",
+    "Zettelkasten/18.md",
+    "Zettelkasten/Frame (Materials, Orientation).md",
+    "University/Matematica Discreta e Codici/Definizioni.md",
+    "University/Basi di Dati/DDL.md",
+    "Zettelkasten/CSS.md",
+    "University/Basi di Dati",
+    "University/Analisi 2 e Probabilità/Coordinate Polari.md",
+    "Drone Project/Electromotive and Back Electromotive Force.md",
+    "Zettelkasten/DSC05429.jpg",
+    "Zettelkasten/GrafoProva.md",
+    "Zettelkasten/HTML.md",
+    "University/Matematica Discreta e Codici/Introduzione alla Teoria dei Codici.md",
+    "Zettelkasten/PDF examples.md",
+    "Zettelkasten/PID Control.md",
+    "University/Matematica Discreta e Codici/Preliminari di algebra.md",
+    "University/Fondamenti di Segnali e Trasmissione/Programma Seganli.md",
+    "University/Analisi 2 e Probabilità/Progetto Sito.md",
+    "University/Analisi 2 e Probabilità/Variabili Aleatorie Continue.md",
+    "Zettelkasten/provaprova.md",
+    "University/Analisi 2 e Probabilità/Riassunto Analisi 2 e Probabilità.canvas",
+    "Zettelkasten/Select Note.md",
+    "Drone Project/Three Axis Motion.md",
+    "Zettelkasten/Untitled 3.base",
+    "Zettelkasten/Untitled 5.base",
+    "University/Matematica Discreta e Codici",
+    "University/Intelligenza Artificiale",
+    "Programming/Typescript",
+    "Programming",
+    "University/Analisi 2 e Probabilità",
+    "Drone Project",
     "University/Ingegneria del Software",
     "Source Material/Images/PHOTO-2025-09-29-03-28-03.jpg",
-    "Linux/NixOs/Utilizzo.md",
-    "Linux/Gentoo/Gentoo.md",
-    "Linux/Gentoo",
-    "Zettelkasten/Limiti e Continuità per Funzioni di più Variabili.md",
-    "Linux/NixOs/Flakes.md",
     "Source Material/Images/Pasted image 20250914183505.png",
     "Source Material/Images/Pasted image 20250914182802.png",
     "Source Material/Images/Pasted image 20250914182604.png",
@@ -256,33 +240,6 @@
     "Source Material/Images/Pasted image 20250914173852.png",
     "Source Material/Images/Pasted image 20250914172853.png",
     "Source Material/Images/Pasted image 20250914172801.png",
-    "Source Material/Images/Pasted image 20250914145143.png",
-    "Zettelkasten/DDL.md",
-    "University/Fisica I/Appendice.md",
-    "University/Fisica I/Dinamica dei Sistemi di Punti Materiali.md",
-    "Linux/NixOs/NixOs.md",
-    "Linux/NixOs",
-    "Linux/Linux.md",
-    "Linux",
-    "University/Fisica I/Energia e Lavoro.md",
-    "University/Fisica I/Dinamica.md",
-    "University/Fisica I/Cinematica.md",
-    "University/Fisica I/Fenomeni d'Urto.md",
-    "Zettelkasten/Domande Orale.md",
-    "University/Fisica I/Dinamica del Corpo Rigido.md",
-    "Source Material/Images/darktable_exported",
-    "Source Material/Images/Pasted image 20250731154757.png.xmp",
-    "Zettelkasten/Untitled 5.base",
-    "Zettelkasten/Untitled 4.base",
-    "Zettelkasten/Untitled 3.base",
-    "Zettelkasten/Untitled 2.base",
-    "University/Fisica I/Untitled.md",
-    "Zettelkasten/Untitled 1.md",
-    "Zettelkasten/Untitled.md",
-    "Untitled.canvas",
-    "University/Statistica/Variabili Aleatorie Continue.md",
-    "University/Statistica/Variabili Aleatorie Discrete.md",
-    "University/Statistica/Variabili Aleatorie.md",
-    "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas"
+    "Untitled.canvas"
   ]
 }

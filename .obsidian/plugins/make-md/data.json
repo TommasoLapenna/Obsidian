@@ -48,11 +48,7 @@
     "/",
     "//attachments",
     "//University",
-    "//ESP32",
-    "//Linux",
-    "//University/Old Vault/Tags/Analisi 2 e Probabilità",
-    "//Linux/Linux/NixOs",
-    "//Linux/Linux/Gentoo"
+    "//University/Old Vault/Tags/Analisi 2 e Probabilità"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
@@ -236,6 +232,7 @@
   "editStickerInSidebar": true,
   "overrideNativeMenu": false,
   "onboardingCompleted": false,
+  "contextCreateUseModal": false,
   "dataviewInlineContext": false,
   "searchWorker": false
 }
