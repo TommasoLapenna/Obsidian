@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/Ingegneria del Software/Design Patterns.md",
+                "file": "Linux/Gentoo/Installazione.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Design Patterns"
+              "title": "Installazione"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/Ingegneria del Software/Object Oriented Analysis.md",
-                "mode": "source",
+                "file": "Linux/NixOs/Installazione.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Object Oriented Analysis"
+              "title": "Installazione"
             }
           }
         ],
@@ -150,7 +150,7 @@
         }
       },
       {
-        "id": "ecdfd3c86292d022",
+        "id": "99dda2f5208b9e2f",
         "type": "leaf",
         "state": {
           "type": "file-explorer",
@@ -163,7 +163,7 @@
         }
       },
       {
-        "id": "99dda2f5208b9e2f",
+        "id": "08cbcf12b0c6c258",
         "type": "leaf",
         "state": {
           "type": "mk-path-view",
@@ -255,12 +255,12 @@
   },
   "active": "e28240a7db25eda5",
   "lastOpenFiles": [
-    "University/Ingegneria del Software/Design Patterns.md",
     "University/Ingegneria del Software/Object Oriented Analysis.md",
+    "Linux/Gentoo/Installazione.md",
+    "University/Ingegneria del Software/Design Patterns.md",
     "Source Material/Images/PHOTO-2025-09-29-03-28-03.jpg",
     "University/Ingegneria del Software/Ingegneria del Software.md",
     "University/Ingegneria del Software",
-    "Linux/Gentoo/Installazione.md",
     "University/Fisica I/Appendice.md",
     "Source Material/Images/Pasted image 20250825180056.jpg",
     "Source Material/Images/Pasted image 20250825161259.jpg",
