@@ -1,3 +1,6 @@
+---
+sticker: emoji//1f681
+---
 Sources:
 - https://www.instructables.com/The-Ultimate-Guide-to-Building-a-Quadcopter-From-S/
 - https://robocraze.com/blogs/post/drone-part-list

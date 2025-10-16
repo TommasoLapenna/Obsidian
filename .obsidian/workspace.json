@@ -4,19 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "b668972dd31e15bf",
+        "id": "a7701b5501d41004",
         "type": "tabs",
         "children": [
           {
-            "id": "b27bfd9bc6185b01",
+            "id": "cac477be782a9c05",
             "type": "leaf",
             "state": {
-              "type": "mk-space",
-              "state": {
-                "path": "University/Fisica I"
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Fisica I"
+              "title": "New tab"
             }
           }
         ]
@@ -73,7 +71,7 @@
             }
           },
           {
-            "id": "a306d508b6ec061d",
+            "id": "4601f7543f69a998",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -166,8 +164,8 @@
             "state": {
               "type": "advanced-tables-toolbar",
               "state": {},
-              "icon": "spreadsheet",
-              "title": "Advanced Tables"
+              "icon": "lucide-ghost",
+              "title": "advanced-tables-toolbar"
             }
           }
         ],
@@ -181,18 +179,32 @@
   "left-ribbon": {
     "hiddenItems": {
       "bases:Create new base": false,
-      "obsidian-camera:Obsidian Camera": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "templates:Insert template": false,
       "daily-notes:Open today's daily note": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-kanban:Create new board": false
     }
   },
-  "active": "b27bfd9bc6185b01",
+  "active": "cac477be782a9c05",
   "lastOpenFiles": [
+    "University/Fondamenti di Segnali e Trasmissione/Segnali Aperiodici a Tempo Continuo.md",
+    "University/Analisi 2 e Probabilità/Analisi 2 e Probabilità.md",
+    "University/Basi di Dati/Basi di Dati.md",
+    "University/Elettronica Digitale/Elettronica Digitale.md",
+    "University/Basi di Dati/DDL.md",
+    "University/Matematica Discreta e Codici/Matematica Discreta e Codici.md",
+    "University/Intelligenza Artificiale/Intelligenza Artificiale.md",
+    "Programming/Programming.md",
+    "Zettelkasten/Zettelkasten.md",
+    "Source Material/Info/INFO_TUTTO ANALISI II E PROBABILITÀ_PDF.md",
+    "Source Material/Images/Esercizi_Foglio2_bd265c7c9c695a504c22f417c678d2a2.pdf",
+    "Source Material/Info/INFO_Pasted image 20250102114734_PNG.md",
+    "Source Material/Pasted image 20250521124452.png",
+    "Source Material/Lezioni Analisi 2 e Probabilità/Lezione  17 Analisi 2.md",
     "University/Fisica I/Appendice.md",
     "Old Vault/Tags/Tags.md",
     "Old Vault/Tags/Typescript.md",
@@ -203,25 +215,13 @@
     "Zettelkasten/18.md",
     "Zettelkasten/Frame (Materials, Orientation).md",
     "University/Matematica Discreta e Codici/Definizioni.md",
-    "University/Basi di Dati/DDL.md",
     "Zettelkasten/CSS.md",
     "University/Basi di Dati",
     "University/Analisi 2 e Probabilità/Coordinate Polari.md",
     "Drone Project/Electromotive and Back Electromotive Force.md",
     "Zettelkasten/DSC05429.jpg",
     "Zettelkasten/GrafoProva.md",
-    "Zettelkasten/HTML.md",
-    "University/Matematica Discreta e Codici/Introduzione alla Teoria dei Codici.md",
-    "Zettelkasten/PDF examples.md",
-    "Zettelkasten/PID Control.md",
-    "University/Matematica Discreta e Codici/Preliminari di algebra.md",
-    "University/Fondamenti di Segnali e Trasmissione/Programma Seganli.md",
-    "University/Analisi 2 e Probabilità/Progetto Sito.md",
-    "University/Analisi 2 e Probabilità/Variabili Aleatorie Continue.md",
-    "Zettelkasten/provaprova.md",
     "University/Analisi 2 e Probabilità/Riassunto Analisi 2 e Probabilità.canvas",
-    "Zettelkasten/Select Note.md",
-    "Drone Project/Three Axis Motion.md",
     "Zettelkasten/Untitled 3.base",
     "Zettelkasten/Untitled 5.base",
     "University/Matematica Discreta e Codici",
@@ -230,7 +230,6 @@
     "Programming",
     "University/Analisi 2 e Probabilità",
     "Drone Project",
-    "University/Ingegneria del Software",
     "Source Material/Images/PHOTO-2025-09-29-03-28-03.jpg",
     "Source Material/Images/Pasted image 20250914183505.png",
     "Source Material/Images/Pasted image 20250914182802.png",
@@ -239,7 +238,6 @@
     "Source Material/Images/Pasted image 20250914174811.png",
     "Source Material/Images/Pasted image 20250914173852.png",
     "Source Material/Images/Pasted image 20250914172853.png",
-    "Source Material/Images/Pasted image 20250914172801.png",
     "Untitled.canvas"
   ]
 }

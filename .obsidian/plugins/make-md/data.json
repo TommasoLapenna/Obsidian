@@ -45,10 +45,14 @@
     "//Old Vault/Old Vault/Tags",
     "//Old Vault/Old Vault/Tags/Old Vault/Tags/Matematica Discreta e Codici",
     "//Old Vault/Old Vault/Tags/Old Vault/Tags/Basi di Dati",
-    "/",
     "//attachments",
-    "//University",
-    "//University/Old Vault/Tags/Analisi 2 e Probabilità"
+    "//University/Old Vault/Tags/Analisi 2 e Probabilità",
+    "/",
+    "//Source Material/Source Material/PDFs",
+    "//Source Material/Source Material/Images",
+    "//Zettelkasten",
+    "//Linux",
+    "//University"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
