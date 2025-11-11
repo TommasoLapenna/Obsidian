@@ -138,7 +138,7 @@ Utilizzo: Variabili di tipo Quantitativo.
 	- Coefficiente di Variazione
 
 ### Media Aritmetica
-La media aritmetica è la misura della tendenza centrale più comune. Essa può essere  calcolata per variabili per variabili quantitative.
+La media aritmetica è la misura della tendenza centrale più comune. Essa può essere  calcolata per variabili per quantitative.
 - Si suppone di osservare un insieme di $n$ dati $x_{1},x_{2},\ldots,x_{n}$. La media campionaria è la media aritmetica di questi dati e si calcola come $$\overline{x}= \frac{x_{1}+x_{2}+\ldots+x_{n}}{n}=\frac{1}{n}\sum^n_{i=1}x_{i}$$
 La media di popolazione $\mu$ è calcolata usando tutte le $N$ unità statistiche che costituiscono la popolazione di riferimento.
 

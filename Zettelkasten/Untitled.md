@@ -1,0 +1,22 @@
+Configuration:
+- Flake:
+	- home-manager
+	- dgop
+	- dms-cli
+	- DankMaterialShell
+	- niri
+	- yazi
+-  firefox
+- git 
+- neovim
+- niri
+- dankmaterialshell.greeter
+- zsh
+- starship
+- yazi
+- dconf
+- kdeconnect
+Home:
+- dankmaterialshell
+- chromium
+- vsccode

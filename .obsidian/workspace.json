@@ -4,20 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "a7701b5501d41004",
+        "id": "7774b81cdb5ffcbd",
         "type": "tabs",
         "children": [
           {
-            "id": "cac477be782a9c05",
+            "id": "226c31a81005cf61",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "University/Statistica/Statistica Descrittiva.md",
+                "mode": "preview",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Statistica Descrittiva"
+            }
+          },
+          {
+            "id": "889ee48ce561bafc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "University/Statistica/Statistica Descrittiva.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Statistica Descrittiva"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -71,7 +90,7 @@
             }
           },
           {
-            "id": "4601f7543f69a998",
+            "id": "4e86bf3ba22f3ef8",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -81,11 +100,12 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 332.5
+    "width": 332.5,
+    "collapsed": true
   },
   "right": {
     "id": "73070c279435b60b",
@@ -189,8 +209,14 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "cac477be782a9c05",
+  "active": "889ee48ce561bafc",
   "lastOpenFiles": [
+    "University/Statistica/Statistica Descrittiva.md",
+    "Zettelkasten/Untitled.md",
+    "Zettelkasten/Untitled.base",
+    "University/Fondamenti di Segnali e Trasmissione/Elementi di un Sistema di Comunicazione Digitale.md",
+    "University/Fondamenti di Segnali e Trasmissione/Programma.md",
+    "Tags",
     "University/Fondamenti di Segnali e Trasmissione/Segnali Aperiodici a Tempo Continuo.md",
     "University/Analisi 2 e Probabilità/Analisi 2 e Probabilità.md",
     "University/Basi di Dati/Basi di Dati.md",
@@ -215,12 +241,8 @@
     "Zettelkasten/18.md",
     "Zettelkasten/Frame (Materials, Orientation).md",
     "University/Matematica Discreta e Codici/Definizioni.md",
-    "Zettelkasten/CSS.md",
     "University/Basi di Dati",
-    "University/Analisi 2 e Probabilità/Coordinate Polari.md",
-    "Drone Project/Electromotive and Back Electromotive Force.md",
     "Zettelkasten/DSC05429.jpg",
-    "Zettelkasten/GrafoProva.md",
     "University/Analisi 2 e Probabilità/Riassunto Analisi 2 e Probabilità.canvas",
     "Zettelkasten/Untitled 3.base",
     "Zettelkasten/Untitled 5.base",
@@ -228,8 +250,6 @@
     "University/Intelligenza Artificiale",
     "Programming/Typescript",
     "Programming",
-    "University/Analisi 2 e Probabilità",
-    "Drone Project",
     "Source Material/Images/PHOTO-2025-09-29-03-28-03.jpg",
     "Source Material/Images/Pasted image 20250914183505.png",
     "Source Material/Images/Pasted image 20250914182802.png",
