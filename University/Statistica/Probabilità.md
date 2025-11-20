@@ -190,7 +190,8 @@ Si vuole includere nel calcolo della probabilità $H$ l'informazione che l'event
 > Ovvero il rapporto fra:
 > - La probabilità che ambedue $E$ e $H$ si realizzino
 > - La probabilità che si realizzi $E$, qualsiasi sia $H$
-> $P(E|H)$ è la probabilità di realizzazione di $H$ essendosi ristretto lo spazio degli eventi a $\Omega_{E}$.
+>
+> $P(H|E)$ è la probabilità di realizzazione di $H$ essendosi ristretto lo spazio degli eventi a $\Omega_{E}$.
 
 ### Congiunte Tramite Fattorizzazione di Condizionate
 Non è sempre facile valutare $P(E,H)\equiv P(E\cap H)$. Dal teorema delle probabilità condizionare, moltiplicando entrambi i membri per $P(E)$, si deriva che 
@@ -230,7 +231,59 @@ Si considerano due eventi $E$ e $H$,
 P(H,E_{1},E_{2})&=P(E_{1}|E_{2},H)P(E_{2}|H)P(H)& \quad \text{forma standard}&\\
 &= P(E_{1}|H)P(E_{2}|H)P(H)&\text{se }E_{1}\coprod E_{2}|H&
 \end{align}$$
-Se $E_{1}$ e $E_{2}$ sono osservazioni di una medesima variabile aleatoria osservata su diversi membri di un campione allora sono dette *iid* (independent identical distributed).
+Se $E_{1}$ e $E_{2}$ sono osservazioni di una medesima variabile aleatoria osservata su diversi membri di un campione allora sono dette *iid* (independent identical distributed).a
+
+
+> [!gray] Dal Chat:
+> ### 1️⃣ Due eventi indipendenti
+> 
+> - Definizione: A⊥B  ⟺  P(A∩B)=P(A)P(B)A \perp B \iff P(A \cap B) = P(A) P(B)A⊥B⟺P(A∩B)=P(A)P(B)
+>     
+> - Conseguenza: P(A∣B)=P(A)P(A \mid B) = P(A)P(A∣B)=P(A), P(B∣A)=P(B)P(B \mid A) = P(B)P(B∣A)=P(B)
+>     
+> - Fattorizzazione:
+>     
+> 
+> P(A∩B)=P(A)P(B)P(A \cap B) = P(A) P(B)P(A∩B)=P(A)P(B)
+> 
+> ---
+> 
+> ### 2️⃣ Tre o più eventi
+> 
+> #### a) Indipendenza totale
+> 
+> - Condizione: ogni coppia e ogni insieme congiunto soddisfa l’indipendenza:
+>     
+> 
+> {P(A∩B)=P(A)P(B)P(A∩C)=P(A)P(C)P(B∩C)=P(B)P(C)P(A∩B∩C)=P(A)P(B)P(C)\begin{cases} P(A \cap B) = P(A) P(B) \\ P(A \cap C) = P(A) P(C) \\ P(B \cap C) = P(B) P(C) \\ P(A \cap B \cap C) = P(A) P(B) P(C) \end{cases}⎩⎨⎧​P(A∩B)=P(A)P(B)P(A∩C)=P(A)P(C)P(B∩C)=P(B)P(C)P(A∩B∩C)=P(A)P(B)P(C)​
+> 
+> - Fattorizzazione completa:
+>     
+> 
+> P(A∩B∩C)=P(A)P(B)P(C)P(A \cap B \cap C) = P(A) P(B) P(C)P(A∩B∩C)=P(A)P(B)P(C)
+> 
+> #### b) Indipendenza a coppie
+> 
+> - Condizione: solo le coppie sono indipendenti:
+>     
+> 
+> P(A∩B)=P(A)P(B),P(A∩C)=P(A)P(C),P(B∩C)=P(B)P(C)P(A \cap B) = P(A) P(B),\quad P(A \cap C) = P(A) P(C),\quad P(B \cap C) = P(B) P(C)P(A∩B)=P(A)P(B),P(A∩C)=P(A)P(C),P(B∩C)=P(B)P(C)
+> 
+> - **Attenzione:** non garantisce P(A∩B∩C)=P(A)P(B)P(C)P(A \cap B \cap C) = P(A) P(B) P(C)P(A∩B∩C)=P(A)P(B)P(C)
+>     
+> 
+> ---
+> 
+> ### 3️⃣ Indipendenza condizionata
+> 
+> - Definizione: AAA e BBB sono indipendenti **dato** un evento CCC:
+>     
+> 
+> P(A∩B∣C)=P(A∣C)P(B∣C)P(A \cap B \mid C) = P(A \mid C) P(B \mid C)P(A∩B∣C)=P(A∣C)P(B∣C)
+> 
+> - Fattorizzazione valida **solo all’interno del sottoinsieme CCC**.
+> 
+
 ### Indipendenze Condizionate
 Si considera $V=\{x_{1},\ldots,x_{n} \}$. La rappresentazione della congiunta completa può essere troppo onerosa usando la chain rule, si sfrutta allora l'indipendenza condizionata degli elementi in $V$ rispetto ad una variabile di cui si conosce l'instanziazione $H$ (per semplificare la scomposizione congiunta).
 

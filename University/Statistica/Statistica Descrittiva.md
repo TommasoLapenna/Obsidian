@@ -96,6 +96,10 @@ Le variabili numeriche (==quantitative==) possono avere molte modalità diverse 
 > ![[Pasted image 20250702112316.png|center|400]]
 > 
 
+
+> [!info] Per gli Esercizi
+> Quindi negli esercizi può essere chiesto di calcolare le frequenze per le classi di dati oppure per dei dati in un numero di ampiezze predefiniti, per ognuno di questi si conta quante volte si ripete (freq. ass) e poi si divide per il numero di dati totali (freq. rel).
+
 --- 
 
 ## Tipologie di Grafici

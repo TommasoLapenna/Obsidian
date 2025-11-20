@@ -4,37 +4,10 @@
     "type": "split",
     "children": [
       {
-        "id": "2e78afe1760f4ee0",
+        "id": "85888b9dab10e845",
         "type": "tabs",
+        "dimension": 50,
         "children": [
-          {
-            "id": "84eebc0d40e05fb6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "University/Statistica/Statistica Descrittiva.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Statistica Descrittiva"
-            }
-          },
-          {
-            "id": "61e08199667af29b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "University/Statistica/Probabilità.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Probabilità"
-            }
-          },
           {
             "id": "2084591a4aefc1a1",
             "type": "leaf",
@@ -47,6 +20,45 @@
               },
               "icon": "lucide-file",
               "title": "Flakes"
+            }
+          },
+          {
+            "id": "84eebc0d40e05fb6",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "University/Statistica/Riassunto.canvas",
+                "viewState": {
+                  "x": 1218.2831228049415,
+                  "y": 685.5648012410365,
+                  "zoom": -0.0912166356543702
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "Riassunto"
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "3ba17822ef0f4cf4",
+        "type": "tabs",
+        "dimension": 50,
+        "children": [
+          {
+            "id": "4cf0430f81bdae2d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "University/Statistica/Probabilità.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Probabilità"
             }
           }
         ]
@@ -224,9 +236,11 @@
   },
   "active": "84eebc0d40e05fb6",
   "lastOpenFiles": [
-    "Linux/NixOs/Flakes.md",
-    "University/Statistica/Statistica Descrittiva.md",
     "University/Statistica/Probabilità.md",
+    "University/Statistica/Riassunto.canvas",
+    "Linux/NixOs/Flakes.md",
+    "Zettelkasten/Untitled.base",
+    "University/Statistica/Statistica Descrittiva.md",
     "University/Statistica/Variabili Aleatorie.md",
     "Linux/NixOs/Installazione.md",
     "Linux/NixOs/Utilizzo.md",
@@ -241,7 +255,6 @@
     "University/Analisi 2 e Probabilità/Riassunto.md",
     "University/Ingegneria del Software/Design Patterns.md",
     "Zettelkasten/Untitled.md",
-    "Zettelkasten/Untitled.base",
     "University/Fondamenti di Segnali e Trasmissione/Elementi di un Sistema di Comunicazione Digitale.md",
     "University/Fondamenti di Segnali e Trasmissione/Programma.md",
     "Tags",
@@ -252,7 +265,6 @@
     "University/Matematica Discreta e Codici/Matematica Discreta e Codici.md",
     "University/Intelligenza Artificiale/Intelligenza Artificiale.md",
     "Programming/Programming.md",
-    "Zettelkasten/Zettelkasten.md",
     "Source Material/Images/Esercizi_Foglio2_bd265c7c9c695a504c22f417c678d2a2.pdf",
     "Source Material/Pasted image 20250521124452.png",
     "University/Basi di Dati",
