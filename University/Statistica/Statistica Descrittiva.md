@@ -52,6 +52,14 @@ Quando si fa inferenza si deve tenere conto di ciò che è stato osservato, ma a
 	- Continui
 	- Discreti
 
+
+> [!hint] Tipi di Variabili
+> I tipi di variabili usati negli esercizi sono:
+>- Quantitativa: se si tratta di numeri
+>- Qualitativa: se non sono numeri
+> - Discreta o Continua (Per le quantitive)
+> - Nominale o Ordinale (Per le qualtitative, nominale se sono semplicemente delle etichette, invece ordinali se sono tipo "basso" "medio" ecc.)
+
 I Dati solo generalmente organizzato in una matrice dei dati:
 
 ![[Pasted image 20250702110850.png|center|400]]
@@ -96,19 +104,19 @@ L'ascissa indica la modalità della variabile, se la variabile è qualitativa no
 
 ![[Pasted image 20250702112645.png|center|400]]
 
-Utilizzo: Variabili di tipo qualitativo o quantitativo discreto.
+==Utilizzo: Variabili di tipo qualitativo o quantitativo discreto.==
 ### Diagramma a Torta
 Ogni settore circolare corrisponde ad una modalità della variabile, l'angolo interno è proporzionale alla frequenza ($360°\times\text{ Frequenza Relativa della Modalita'}$).
 
 ![[Pasted image 20250702113012.png|center|200]]
 
-Utilizzo: Variabili di tipo quantitativo.
+==Utilizzo: Variabili di tipo quantitativo.== 
 ### Istogramma
 L'ascissa riporta gli estremi delle classi, la base del rettangolo è proporzionale all'ampiezza della classe e l'altezza del rettangolo è proporzionale alla densità di frequenza della classe, calcolata come $\frac{\text{Frequenza}}{\text{Ampiezza}}$
 
 ![[Pasted image 20250702113235.png|center|300]]
 
-Utilizzo: Variabili di tipo quantitativo continue.
+==Utilizzo: Variabili di tipo quantitativo continue.==
 ### Ogiva
 L'ascissa riporta gli estremi delle classi, mentre l'ordinata riporta il valore della frequenza cumulata
 
@@ -120,7 +128,7 @@ I rami rappresentano la cifra più grande del dato (per esempio le decine), ment
 
 ![[Pasted image 20250702120126.png|center|350]]
 
-Utilizzo: Variabili di tipo Quantitativo.
+==Utilizzo: Variabili di tipo Quantitativo.==
 
 ---
 
@@ -187,7 +195,7 @@ La media **Campionaria** può essere calcolata a partire dalla distribuzione di 
 &\underset{n_{1}\text{ elementi media }\overline x_{1}}{x_{1},x_{2},\ldots,}\underset{n_{2}\text{ elementi media }\overline x_{2}}{\ldots,\ldots},\ldots, \underset{n_{h} \text{ elementi media }\overline x_{h}}{\ldots,x_{n}} \\
 &\overline x= \frac{\overline xn_{1}+\ldots+\overline x_{h}n_{h}}{n_{1}+\ldots+n_{h}}
 \end{align}$$
-- Proprietà Ricorsiva $$\underset{\text{media }\overline x_{n}}{x_{1},x_{2},\ldots, x_{n}},\ x_{n+1};\quad \overline x= \frac{\overline xn+x_{n+1}}{n+1}$$
+- Proprietà Ricorsiva $$\underset{\text{media }\overline x_{n}}{x_{1},x_{2},\ldots, x_{n}},\ x_{n+1};\quad \overline x= \frac{\overline x_{n}+x_{n+1}}{n+1}$$
 ### Mediana
 In una lista ordinata di dati, la mediana è il valore centrale. Il modo di individuare questo valore dipende dal numero di unità campionarie $n$:
 - $n$ Dispari: la mediana occupa la posizione $\frac{n+1}{2}$
@@ -234,8 +242,14 @@ Dipende dall'unità di misura della variabile considerata e ignora il modo in cu
 La varianza è la media dei quadrati degli scarti degli scarti fra ciascuna osservazione e la loro media.
 - **Varianza della Popolazione:** $$\sigma^2=\frac{1}{N}\sum^N_{i=1}(x_{i}-\mu)^2$$
 - **Varianza Campionaria:** $$s^2=\frac{1}{n-1}\sum^n_{i=1}(x_{i}-\overline x)^2$$
+> [!hint] Motivo di $n-1$
+> - Si usa quando si calcola la varianza da **un campione** e non dall’intera popolazione.
+>- La formula divide per **n − 1** (correzione di Bessel), non per n.
+>- Motivo: la varianza calcolata dal campione tende a **sottostimare** la varianza vera della popolazione.
+>- Dividere per **n − 1** rende la stima **non distorta** (in media uguale alla varianza reale).
 
-con $\mu$ media della popolazione e $\overline x$ media campionaria.
+
+==con $\mu$ media della popolazione e $\overline x$ media campionaria.==
 #### Proprietà della Varianza
 - La varianza è sempre positiva
 - La varianze è uguale a 0 quando tutti i dati sono uguali
@@ -253,6 +267,11 @@ La deviazione standard è un modo per esprimere la variabilità ==nella stessa u
 $$
 \sigma=\sqrt{ \sigma^2 }=\sqrt{ \frac{1}{N}\sum^N_{i}(x_{i}-\mu)^2 }
 $$
+
+> [!info] Motivo 
+> Questo perché l'unità al quadrato della varianza non ha senso ($m^2$, $euro^2$)
+
+
 ### Coefficiente di Variazione
 ==Il coefficiente di variazione è un modo per esprimere la variabilità in modo indipendente dall'unità di misura,== ovvero
 $$CV=\frac{\sigma}{|\mu|}$$
