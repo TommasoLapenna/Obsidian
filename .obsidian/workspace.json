@@ -6,7 +6,7 @@
       {
         "id": "264175c30d6fb5cf",
         "type": "tabs",
-        "dimension": 47.45119305856833,
+        "dimension": 47.451193058568336,
         "children": [
           {
             "id": "adf17629dca5c87d",
@@ -35,14 +35,31 @@
               "icon": "lucide-file",
               "title": "Introduzione Probabilità, Analisi Combinatoria"
             }
+          },
+          {
+            "id": "d9a4b89736494dad",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "University/Statistica/Riassunto.canvas",
+                "viewState": {
+                  "x": 772.1393065442012,
+                  "y": -367.92636492311357,
+                  "zoom": -2.036237529891659
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "Riassunto"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       },
       {
         "id": "0b9a096f6b0d9353",
         "type": "tabs",
-        "dimension": 52.54880694143167,
+        "dimension": 52.548806941431664,
         "children": [
           {
             "id": "e57830b2183dbe21",
@@ -112,7 +129,7 @@
             }
           },
           {
-            "id": "7cf3d50a129afdb2",
+            "id": "3a0662870559ff9d",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -231,8 +248,9 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "e57830b2183dbe21",
+  "active": "d9a4b89736494dad",
   "lastOpenFiles": [
+    "University/Fisica I/Cinematica.md",
     "University/Fisica I/Dinamica dei Sistemi di Punti Materiali.md",
     "University/Statistica/Riassunto.canvas",
     "University/Fisica I/Fisica I.md",
@@ -262,7 +280,6 @@
     "University/Fondamenti di Segnali e Trasmissione/Segnali Aperiodici a Tempo Continuo.md",
     "University/Basi di Dati/Basi di Dati.md",
     "University/Elettronica Digitale/Elettronica Digitale.md",
-    "University/Basi di Dati/DDL.md",
     "Source Material/Images/Esercizi_Foglio2_bd265c7c9c695a504c22f417c678d2a2.pdf",
     "Source Material/Pasted image 20250521124452.png",
     "University/Basi di Dati",
