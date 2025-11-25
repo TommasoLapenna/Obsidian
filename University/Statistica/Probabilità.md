@@ -255,7 +255,7 @@ Se $E_{1}$ e $E_{2}$ sono osservazioni di una medesima variabile aleatoria osser
 > - Condizione: ogni coppia e ogni insieme congiunto soddisfa l’indipendenza:
 >     
 > 
-> {P(A∩B)=P(A)P(B)P(A∩C)=P(A)P(C)P(B∩C)=P(B)P(C)P(A∩B∩C)=P(A)P(B)P(C)\begin{cases} P(A \cap B) = P(A) P(B) \\ P(A \cap C) = P(A) P(C) \\ P(B \cap C) = P(B) P(C) \\ P(A \cap B \cap C) = P(A) P(B) P(C) \end{cases}⎩⎨⎧​P(A∩B)=P(A)P(B)P(A∩C)=P(A)P(C)P(B∩C)=P(B)P(C)P(A∩B∩C)=P(A)P(B)P(C)​
+> $$P(A∩B)=P(A)P(B)P(A∩C)=P(A)P(C)P(B∩C)=P(B)P(C)P(A∩B∩C)=P(A)P(B)P(C)\begin{cases} P(A \cap B) = P(A) P(B) \\ P(A \cap C) = P(A) P(C) \\ P(B \cap C) = P(B) P(C) \\ P(A \cap B \cap C) = P(A) P(B) P(C) \end{cases}⎩⎨⎧​P(A∩B)=P(A)P(B)P(A∩C)=P(A)P(C)P(B∩C)=P(B)P(C)P(A∩B∩C)=P(A)P(B)P(C)$$​
 > 
 > - Fattorizzazione completa:
 >     
@@ -267,7 +267,7 @@ Se $E_{1}$ e $E_{2}$ sono osservazioni di una medesima variabile aleatoria osser
 > - Condizione: solo le coppie sono indipendenti:
 >     
 > 
-> P(A∩B)=P(A)P(B),P(A∩C)=P(A)P(C),P(B∩C)=P(B)P(C)P(A \cap B) = P(A) P(B),\quad P(A \cap C) = P(A) P(C),\quad P(B \cap C) = P(B) P(C)P(A∩B)=P(A)P(B),P(A∩C)=P(A)P(C),P(B∩C)=P(B)P(C)
+> $$$ P(A∩B)=P(A)P(B),P(A∩C)=P(A)P(C),P(B∩C)=P(B)P(C)P(A \cap B) = P(A) P(B),\quad P(A \cap C) = P(A) P(C),\quad P(B \cap C) = P(B) P(C)P(A∩B)=P(A)P(B),P(A∩C)=P(A)P(C),P(B∩C)=P(B)P(C) $$
 > 
 > - **Attenzione:** non garantisce P(A∩B∩C)=P(A)P(B)P(C)P(A \cap B \cap C) = P(A) P(B) P(C)P(A∩B∩C)=P(A)P(B)P(C)
 >     

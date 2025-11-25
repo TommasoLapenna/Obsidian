@@ -4,51 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "85888b9dab10e845",
+        "id": "264175c30d6fb5cf",
         "type": "tabs",
-        "dimension": 50,
+        "dimension": 47.45119305856833,
         "children": [
           {
-            "id": "2084591a4aefc1a1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Linux/NixOs/Flakes.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Flakes"
-            }
-          },
-          {
-            "id": "84eebc0d40e05fb6",
-            "type": "leaf",
-            "state": {
-              "type": "canvas",
-              "state": {
-                "file": "University/Statistica/Riassunto.canvas",
-                "viewState": {
-                  "x": 1218.2831228049415,
-                  "y": 685.5648012410365,
-                  "zoom": -0.0912166356543702
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "Riassunto"
-            }
-          }
-        ],
-        "currentTab": 1
-      },
-      {
-        "id": "3ba17822ef0f4cf4",
-        "type": "tabs",
-        "dimension": 50,
-        "children": [
-          {
-            "id": "4cf0430f81bdae2d",
+            "id": "adf17629dca5c87d",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -59,6 +20,42 @@
               },
               "icon": "lucide-file",
               "title": "Probabilità"
+            }
+          },
+          {
+            "id": "ffd90a3774a9ddd3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "University/Analisi 2 e Probabilità/Introduzione Probabilità, Analisi Combinatoria.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Introduzione Probabilità, Analisi Combinatoria"
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "0b9a096f6b0d9353",
+        "type": "tabs",
+        "dimension": 52.54880694143167,
+        "children": [
+          {
+            "id": "e57830b2183dbe21",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "University/Fisica I/Cinematica.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Cinematica"
             }
           }
         ]
@@ -115,7 +112,7 @@
             }
           },
           {
-            "id": "6b0b12da77c17af7",
+            "id": "7cf3d50a129afdb2",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -234,21 +231,25 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "84eebc0d40e05fb6",
+  "active": "e57830b2183dbe21",
   "lastOpenFiles": [
-    "University/Statistica/Probabilità.md",
+    "University/Fisica I/Dinamica dei Sistemi di Punti Materiali.md",
     "University/Statistica/Riassunto.canvas",
+    "University/Fisica I/Fisica I.md",
+    "University/Analisi 2 e Probabilità/Introduzione Probabilità, Analisi Combinatoria.md",
+    "University/Statistica/Probabilità.md",
+    "University/Analisi 2 e Probabilità/Analisi 2 e Probabilità.md",
+    "University/Analisi 2 e Probabilità/Probabilità del Bro Bombardelli.md",
+    "Linux/NixOs/Installazione.md",
     "Linux/NixOs/Flakes.md",
     "Zettelkasten/Untitled.base",
     "University/Statistica/Statistica Descrittiva.md",
     "University/Statistica/Variabili Aleatorie.md",
-    "Linux/NixOs/Installazione.md",
     "Linux/NixOs/Utilizzo.md",
     "University/Statistica/Statistica.md",
     "University/Analisi 2 e Probabilità/Funzioni Reali di Variabile Reale.md",
     "University/Analisi 2 e Probabilità/Coordinate Polari.md",
     "University/Analisi 2 e Probabilità/Calcolo Differenziale.md",
-    "University/Analisi 2 e Probabilità/Analisi 2 e Probabilità.md",
     "University/Analisi 2 e Probabilità/Riassunto Analisi 2 e Probabilità.canvas",
     "University/Analisi 2 e Probabilità/Ottimizzazione.md",
     "University/Analisi 2 e Probabilità/Limiti e Continuità per Funzioni di più Variabili.md",
@@ -262,9 +263,6 @@
     "University/Basi di Dati/Basi di Dati.md",
     "University/Elettronica Digitale/Elettronica Digitale.md",
     "University/Basi di Dati/DDL.md",
-    "University/Matematica Discreta e Codici/Matematica Discreta e Codici.md",
-    "University/Intelligenza Artificiale/Intelligenza Artificiale.md",
-    "Programming/Programming.md",
     "Source Material/Images/Esercizi_Foglio2_bd265c7c9c695a504c22f417c678d2a2.pdf",
     "Source Material/Pasted image 20250521124452.png",
     "University/Basi di Dati",
