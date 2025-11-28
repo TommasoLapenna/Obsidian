@@ -395,3 +395,5 @@ $$\begin{align}
 > Quanto deve essere grande un campion di una variabile $X$ di media $\mu$ e varianza $\sigma^2$ affinché si abbia una probabilità di almeno il $99\%$ che a fronte di $n$ osservazioni la media campionaria osservata $\overline X_{n}$ sia un intorno di ampiezza $0.5\sigma$ da $\mu$?
 > $$P(|\overline X_{n}-\mu|\le0-5\sigma)\ge 1-0.01=0.99$$
 > Essendo in questo caso: $0.01=\frac{\sigma^2}{nk^2}$ e $k=0.5\sigma$ allora $$n=\frac{\sigma^2}{0.01(0.5\sigma)^2}$$
+
+provaaaaaaaa
