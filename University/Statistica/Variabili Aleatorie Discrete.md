@@ -79,7 +79,7 @@ $$\begin{gather}
 - **Varianza:** $$Var[X]=\exp[\lambda(e^0-1)\lambda] e^0+\exp[\lambda(e^0-1)](\lambda e^0)^2-E[X]^2=\lambda$$
 ### Proprietà della v.a. di Poisson
 - La variabile aleatoria di Poisson con $\lambda=np$ approssima una distribuzione $Bin(n,\pi)$ quando $n$ è molto grande e $\pi$ è molto piccolo. Infatti, il numero di successi in un gran numero di ripetizioni, con una piccola probabilità di successo, è approssimativamente Poisson con $\lambda=np$.
-- La domma di v.a. di Poisson indipendenti:  $$X_{1}\sim Pois(\lambda_{1}),\ X_{2}\sim Pois(\lambda_{2})\qquad (X_{1}+X_{2})\sim Pois(\lambda_{1}+\lambda_{2})$$infatti $$\phi_{X_{1}+X_{2}}(t)=\exp[\lambda_{1}(e^t-1)]\exp[\lambda_{2}(e^t-1)]=\exp[(\lambda_{1}+\lambda_{2})(e^t-1)]$$
+- La somma di v.a. di Poisson indipendenti:  $$X_{1}\sim Pois(\lambda_{1}),\ X_{2}\sim Pois(\lambda_{2})\qquad (X_{1}+X_{2})\sim Pois(\lambda_{1}+\lambda_{2})$$infatti $$\phi_{X_{1}+X_{2}}(t)=\exp[\lambda_{1}(e^t-1)]\exp[\lambda_{2}(e^t-1)]=\exp[(\lambda_{1}+\lambda_{2})(e^t-1)]$$
 ---
 ## Variabile Aleatoria Ipergeometrica
 - **Esperimento:** $n$ ripetizioni non indipendenti con risultato vero/falso

@@ -275,7 +275,7 @@ E[XY]&=\int_{\mathcal Y}\int_{\mathcal X}xy\ f(x,y)\ dxdy= \int_{\mathcal Y}\int
 \end{align}$$
 Quindi:
 - $Cov(XY)=E[XY]-E[X]E[Y]=0$
-- $Var\left( \sum^n_{i=1}=\sum^n_{i=1}Var(X_{i}) \right)$
+- $Var\left( \sum^n_{i=1} X_{i}\right)=\sum^n_{i=1}Var(X_{i})$
 
 > [!example] Esempio:
 > Calcolare la varianza del numero di successi su $n$ ripetizioni condizionatamente indipendenti di un esperimento con probabilità di successo $\pi$, $X_{i}=\{0,1\}$ 
