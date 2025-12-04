@@ -93,6 +93,9 @@ $$\begin{gather} \phi(t)=\exp\left\{ \mu t+\frac{\sigma^2t^2}{2} \right\}  \\
 \end{gather}$$
 Con $E[X]=\mu$ e $Var(X)=\sigma^2$
 Al contrario della binomiale e della Poisson, la posizione della dispersione della distribuzione nella normale possono essere vantaggiosamente regolate in modo separato.
+
+### Proprietà
+- Se $X\sim N(\mu_{X},\sigma^2_{X})$ e $Y\sim N(\mu_{Y},\sigma^2_{Y})$, allora la loro somma è  $$Z=X+Y\qquad Z\sim(\mu_{X}+\mu_{Y},\sigma_{X}^2+\sigma^2_{Y})$$
 ### Variabile Normale Standardizzata
 
 > [!info] Trasformata Lineare di una Normale
@@ -149,6 +152,7 @@ Quale $\sigma$ è compatibile con una percentuale di difetti $\le 1\%$?
 Se deve essere $P(Z\le 0.895\cup X\ge 0.905)=0.01$ allora deve essere anche $$P\left( Z\ge \frac{0.905-0.9}{\sigma} =\frac{0.005}{\sigma}\right)=0.005$$
 Quindi $\phi\left( \frac{0.005}{\sigma} \right)=0.995$. Infine, poiché
 $$\phi^{-1}(0.995)=2.57=\frac{0.005}{\sigma}\Longrightarrow \sigma= \frac{0.005}{2.57}=0.001945$$
+---
 ## Variabile Aleatoria Esponenziale
 La variabile aleatoria esponenziale è la più semplice forma di modellazione del tempo di durata/attesa di un evento.
 **Funzione di Densità** e di **Ripartizione:**
@@ -168,8 +172,7 @@ $$\begin{align}
 $$\begin{gather}\phi'(t)= \frac{\lambda}{(\lambda-t)^2} \\
 \phi''(t)= \frac{2\lambda}{(\lambda-t)^3} \\
 E[X]=\phi'(0)= \frac{1}{\lambda}\quad E[X^2]=\phi''(0)=\frac{2}{\lambda^2}\quad Var[X]=\frac{1}{\lambda^2}\end{gather}$$
----
-## Esponenziale
+### Proprietà
 La esponenziale è una variabile senza memoria, ovvero la probabilità di una durata maggiore di $t+s$ non è influenzata dalla conoscenza che l'evento ha già raggiunto la durata $t$, ovvero
 $$
 P[X>s+t|X>t]= \frac{P[X>s+t,\ X>t]}{P[X>t]}= \frac{\exp[-\lambda(s+t)]}{\exp[-\lambda(t)]}=P[X>s]
@@ -183,9 +186,16 @@ $$
 P[\text{vita residua}>s]=P[\text{vita totale}>t+s|\text{vita vissuta}=t]= \frac{1-F(t+s)}{1-F(t)}
 $$
 
-Il tempo di vita di un'auto è una $Exp\left( \frac{1}{20} \right)$
-- Qual'è la probabilità che faccia almeno altri $20(000)$ km avendone già fatte $10(000)$? $$1-F\left( 20|\lambda=\frac{1}{20} \right)=\exp[-\lambda 20]=\exp\left( -\frac{20}{20} \right)=0.3678$$
-- Come cambia la risposta se la durata di vita dell'auto è $U(0,40)$? $$\begin{align}P(X>\underset{t+s}{30}|X\ge \underset{t}{10})= \frac{1-F(t+s)}{1-F(t)}=\frac{1-P(X\le 30)}{1-P(X\le 10)}=\frac{1- \frac{3}{4}}{1- \frac{1}{4}}=0.33\ne 0.5\end{align}$$
+> [!example]+ Esempio:
+> Il tempo di vita di un'auto è una $Exp\left( \frac{1}{20} \right)$
+> - Qual'è la probabilità che faccia almeno altri $20(000)$ km avendone già fatte $10(000)$? $$1-F\left( 20|\lambda=\frac{1}{20} \right)=\exp[-\lambda 20]=\exp\left( -\frac{20}{20} \right)=0.3678$$
+> - Come cambia la risposta se la durata di vita dell'auto è $U(0,40)$? $$\begin{align}P(X>\underset{t+s}{30}|X\ge \underset{t}{10})= \frac{1-F(t+s)}{1-F(t)}=\frac{1-P(X\le 30)}{1-P(X\le 10)}=\frac{1- \frac{3}{4}}{1- \frac{1}{4}}=0.33\ne 0.5\end{align}$$
+
+> [!example]+ Esempio:
+> L'incertezza sul tempo (in ore) per una riparazione è descritta da una $Exp(\lambda = 1)$. 
+> - Qual'è la probabilità che la riparazione duri più di 3 ore sapendo che ne sono già passate $2$?
+> Per l'assenza di memoria, basta calcolare la probabilità che passi almeno $3-2=1$ ore, quindi: $$P(X>1) = 1-(1-e^{-1})=e^{-1}= 0.3679$$
+
 ---
 ## Variabile Beta
 La variabile $X$ beta è definita su un intervallo finito $\mathcal X=[a,b]$. I parametri della distribuzione sono $(\alpha,\beta)$, con $\alpha>0$ e $\beta>0$. Si usa per esprimere l'incertezza.
@@ -199,11 +209,16 @@ E[X]= \frac{\alpha}{\alpha+\beta}\qquad Var[X]= \frac{\alpha\beta}{(\alpha+\beta
 $$
 ---
 ## Variabile Gamma
-La variabile aleatoria gamma con parametri $(\alpha,\lambda)$, $\alpha>0$ e $\lambda>0$, è definita dall'integrale di Eulero di secondo tipo: 
-$$
-\lceil(\alpha):=\int_{0}^\infty \lambda^\alpha x^{\alpha-1}\exp[-\lambda x]\ dx
-$$
-Pertanto la funzione di densità è 
+Serve a descrivere il tempo totale necessario affinché accadano $n$ eventi indipendenti, ognuno dei quali ha un tempo di attesa *esponenziale*.
+
+> [!info] Funzione Gamma di Eulero
+> La variabile aleatoria gamma con parametri $(\alpha,\lambda)$, $\alpha>0$ e $\lambda>0$, è definita dall'integrale di Eulero di secondo tipo: 
+> $$
+> \lceil(\alpha):=\int_{0}^\infty \lambda^\alpha x^{\alpha-1}\exp[-\lambda x]\ dx
+> $$
+> Questa funzione restituisce un fattoriale: $$\Gamma(n)= (n-1)!$$
+
+La funzione di densità è (per $X\sim Gamma(\alpha,\lambda)$)
 $$
 f(x)=\begin{cases}
 \frac{\lambda^\alpha}{\lceil(\alpha)x^{\alpha-1}}\exp[-\lambda x] & se\ x>0 \\
@@ -229,7 +244,7 @@ $$\begin{gather}
 $$E[X]=\phi'(0)=\frac{a}{\lambda}\qquad E[X^2]=\phi''(0)= \frac{\alpha(\alpha+1)}{\lambda^2}\qquad Var[X]=E[X^2]-E[X]^2=\frac{\alpha}{2}$$
 
 - Per $\alpha=1$, la gamma coincide con l'esponenziale
-- La somma di esponenziali di parametro ($\lambda$) iid è una gamma di parametri $(n,\lambda)$
+- ==La somma di esponenziali di parametro ($\lambda$) iid è una gamma di parametri $(n,\lambda)$==
 
 > [!example]+ Esempio:
 > La durata di un esponenziale $\left( \frac{1}{30} \right)$. Se si hanno $5$ toner, si ha un'autonomia espressa da una gamma $\left( \frac{5,1}{30} \right)$
@@ -243,6 +258,7 @@ $$\begin{align}\phi_{X_{1}+X_{2}}(t)&=E[\exp^{t(X_{1}+X_{2})}]=E[\exp^{tX_{1}}\e
 &=\left( \frac{\lambda}{\lambda-t} \right)^{\alpha_{1}}\left( \frac{\lambda}{\lambda-t} \right)^{\alpha_{2}}=\left( \frac{\lambda}{\lambda-t} \right)^{\alpha_{1}+\alpha_{2}}\end{align}$$
 ---
 ## Variabile $\chi^2$
+Serve per effettuare test statistici, come per esempio il test di indipendenza.
 Se $Z\sim N(0,1)$ allora
 $$Z^2\sim \chi_{1}^2$$
 Ovvero se 
@@ -264,18 +280,28 @@ $$
 
 ![[Pasted image 20250709012502.png|center|500]]
 
-Si spara ad un bersaglio bidimensionale e si commette un errore in vertical $X_{1}$ ed orizzontale $X_{2}$ che seguono indipendentemente una distribuzione $N(\mu=0,\sigma=2)$. Qual'è la probabilità che il bersaglio venga mancato di più di $3$cm?
+> [!example]+ Esempio:
+> Siano $X\sim \chi_{3}^2$ e $Y\sim\chi_{2}^2$, calcolare la probabilità che $X+Y> 11$.
+> - Si sommano i gradi di libertà per la riproducibilità di $\chi^2$, quindi se $Z= X+Y$, $Z\sim \chi^2_{5}$. Adesso, per calcolare $P(Z>11)$ si procede nel seguente modo:
+> 	- Si prendono gli $n$ gradi di libertà (in questo caso 5) e si osserva la **riga** relativa nella tabella.
+> 	- Si scorre la riga finché i valori critici ($\chi^2_{5,\alpha}$) sono vicini ad $11$, in questo caso $11.07$.
+> 	- Si osserva infine il valore $\alpha$ in cima alla colonna, in questo caso $0.05$.
 
-Si sa che la distanza fra il bersaglio e il colpo è 
-$$D^2=X_{1}^2+X_{2}^2$$Quindi 
-$$\frac{D^2}{4}=\left( \frac{X_{1}}{2} \right)^2+\left( \frac{X_{2}}{2} \right)^2$$
-![[Pasted image 20250709012900.png|center|300]]
-$$P[D>3]=P[D^2>9]=P[X^2_{1}+X_{2}^2>9]=P\left[ Z_{1}^2+Z_{2}^2> \frac{9}{4} \right]=P\left[ \frac{\chi_{2}>9}{4} \right]\approx 0.3246525$$
-Avendo ottenuto $Z_{i}=\frac{1}{\sigma}$, $X_{i}\sim N(0,1)$, $i=1,2$.
+
+> [!example]+ Esempio:
+> Si spara ad un bersaglio bidimensionale e si commette un errore in vertical $X_{1}$ ed orizzontale $X_{2}$ che seguono indipendentemente una distribuzione $N(\mu=0,\sigma=2)$. Qual'è la probabilità che il bersaglio venga mancato di più di $3$cm?
+> 
+> Si sa che la distanza fra il bersaglio e il colpo è 
+> $$D^2=X_{1}^2+X_{2}^2$$Quindi 
+> $$\frac{D^2}{4}=\left( \frac{X_{1}}{2} \right)^2+\left( \frac{X_{2}}{2} \right)^2$$
+> ![[Pasted image 20250709012900.png|center|300]]
+> $$P[D>3]=P[D^2>9]=P[X^2_{1}+X_{2}^2>9]=P\left[ Z_{1}^2+Z_{2}^2> \frac{9}{4} \right]=P\left[ \frac{\chi_{2}>9}{4} \right]\approx 0.3246525$$
+> Avendo ottenuto $Z_{i}=\frac{1}{\sigma}$, $X_{i}\sim N(0,1)$, $i=1,2$.
+> 
 
 ---
 ## Variabile $t$ di Student
-La variabile $t$ è anche detta $t$ di student.
+La variabile $t$ è anche detta $t$ di student, si usa per stimare la media quando la varianza non è nota, oltre ad essere utile per alcuni test.
 Data una v.a. normale standard $Z$ e una chi-quadro $C_{n}$ si ha
 $$
 T_{n}= \frac{Z}{\sqrt{ \underset{\text{radice di una varianza}}{\frac{C_{n}}{n}} }}
@@ -289,8 +315,13 @@ che è una $t$ di student con $n$ gradi di libertà
 - $t_{\alpha,n}$ è definito come quel valore t.c. $P(T_{n}\ge t_{\alpha,n})=\alpha$
 - Anche i valori $t_{\alpha ,n}$ sono tabulati
 
-**Distribuzione $t$, $P[T_{n}\ge t_{\alpha ,n}]=\alpha$:**
-![[Pasted image 20250709013916.png|center|500]]
+**Distribuzione $t$, $P[T_{n}\ge t_{\alpha ,n}]=\alpha$:** 
+
+![[Pasted image 20250709013916.png|center|700]]
+
+> [!hint] Tabella di $t$
+> La tabella si usa nello stesso modo della variabile Chi-Quadro, per $P(X<t)=-\text{valore opposto}$
+
 ### Media e Varianza
 $$E[T_{n}]=0\quad per\ n\ge 2\qquad Var[T_{n}]= \frac{n}{n-2}\quad per\ n\ge 3$$
 ??? MGF di $X\sim X_{1}^2$ non c'è nelle slide???
@@ -300,4 +331,5 @@ $$E[T_{n}]=0\quad per\ n\ge 2\qquad Var[T_{n}]= \frac{n}{n-2}\quad per\ n\ge 3$$
 Serve per confrontare la distribuzione di due varianza.
 Date una v.a. $C_{n}\sim \chi_{n}$ e una v.a. $C_{m}\sim \chi_{m}$ indipendenti, allora
 $$\frac{\frac{C_{n}}{n}}{\frac{C_{m}}{m}}\sim F_{n,m}\qquad P(F_{n,m}>f_{n,m,\alpha})=\alpha$$
-![[Pasted image 20250709014143.png|center|400]]
+![[Pasted image 20250709014143.png|center|700]]
+!!! DA GUARDARE COME USARE LA TABELLA

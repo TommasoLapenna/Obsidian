@@ -53,7 +53,8 @@
     "//University/University/Statistica",
     "//University/University/Ingegneria del Software",
     "//Linux/Linux/NixOs",
-    "//University/University/Fisica I"
+    "//University/University/Fisica I",
+    "//University"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
