@@ -1,6 +1,6 @@
 ---
-sticker: emoji//0037-fe0f-20e3
-Order: "6"
+sticker: ""
+Order: "7"
 ---
 - [[#Elementi Comuni fra Scuola Frequentista e Bayesiana|Elementi Comuni fra Scuola Frequentista e Bayesiana]]
 - [[#Inferenza Statistica Bayesiana|Inferenza Statistica Bayesiana]]

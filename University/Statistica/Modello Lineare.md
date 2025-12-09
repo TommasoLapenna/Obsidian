@@ -1,6 +1,6 @@
 ---
-sticker: emoji//0039-fe0f-20e3
-Order: "8"
+sticker: emoji//1f51f
+Order: "9"
 ---
 ## Modelli Statistici
 Si continua con l'inferenza sui parametri di una variabile aleatoria che regola l'incertezza circa una quantità $Y$ e sulla possibile predizione $Y_{n+1}$  ma in un contesto condizionato alla conoscenza del valore assunto da altre variabili che specificano l'ambiente dal quale originano le osservazioni.
