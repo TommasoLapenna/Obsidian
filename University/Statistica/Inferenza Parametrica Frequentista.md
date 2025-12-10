@@ -2,6 +2,32 @@
 sticker: emoji//0037-fe0f-20e3
 Order: "6"
 ---
+- [[#Introduzione|Introduzione]]
+- [[#Stimatori|Stimatori]]
+- [[#Funzione di Veroiomiglianza|Funzione di Veroiomiglianza]]
+	- [[#Funzione di Veroiomiglianza#MLE di $\theta$ di una Bernoulliana|MLE di $\theta$ di una Bernoulliana]]
+	- [[#Funzione di Veroiomiglianza#MLE di $\theta$ di una Poisson|MLE di $\theta$ di una Poisson]]
+	- [[#Funzione di Veroiomiglianza#MLE di $\mu$ e $\sigma^2$ di una Normale|MLE di $\mu$ e $\sigma^2$ di una Normale]]
+	- [[#Funzione di Veroiomiglianza#Proprietà Asintotiche degli Stimatori MLE|Proprietà Asintotiche degli Stimatori MLE]]
+	- [[#Funzione di Veroiomiglianza#Varianza degli Stimatori MLE|Varianza degli Stimatori MLE]]
+	- [[#Funzione di Veroiomiglianza#Calcolo di $I(\theta)$ usando la Likelihood, Poisson|Calcolo di $I(\theta)$ usando la Likelihood, Poisson]]
+	- [[#Funzione di Veroiomiglianza#Calcolo di $I(\theta)$ usando la Probabilità di una sola prova|Calcolo di $I(\theta)$ usando la Probabilità di una sola prova]]
+- [[#Stimatori|Stimatori]]
+	- [[#Stimatori#Valutazione di Stimatori|Valutazione di Stimatori]]
+	- [[#Stimatori#Bias|Bias]]
+	- [[#Stimatori#Proprietà|Proprietà]]
+	- [[#Stimatori#Stimatori Distorti|Stimatori Distorti]]
+- [[#Intervalli di Confidenza|Intervalli di Confidenza]]
+	- [[#Intervalli di Confidenza#Intervalli di Confidenza per $\mu$, $X\sim N(\mu,\sigma)$|Intervalli di Confidenza per $\mu$, $X\sim N(\mu,\sigma)$]]
+	- [[#Intervalli di Confidenza#Determinazione della Numerosità del Campione|Determinazione della Numerosità del Campione]]
+	- [[#Intervalli di Confidenza#CI per $\mu$ della Normale, non noto $\sigma$|CI per $\mu$ della Normale, non noto $\sigma$]]
+	- [[#Intervalli di Confidenza#Intervalli di Predizione|Intervalli di Predizione]]
+	- [[#Intervalli di Confidenza#Intervalli di Confidenza per la Varianza|Intervalli di Confidenza per la Varianza]]
+	- [[#Intervalli di Confidenza#Intervalli di Confidenza per la Differenza fra Medie di due Popolazioni Normali, $\sigma^2_{1}$ e $\sigma_{2}^2$ Note|Intervalli di Confidenza per la Differenza fra Medie di due Popolazioni Normali, $\sigma^2_{1}$ e $\sigma_{2}^2$ Note]]
+	- [[#Intervalli di Confidenza#Intervalli di Confidenza per la Differenza fra Medie di due Popolazioni Normali, $\sigma_{1}^2=\sigma_{2}^2$ Incognite|Intervalli di Confidenza per la Differenza fra Medie di due Popolazioni Normali, $\sigma_{1}^2=\sigma_{2}^2$ Incognite]]
+	- [[#Intervalli di Confidenza#Intervalli di Confidenza per il Parametro $\pi$ di una Bernoulliana|Intervalli di Confidenza per il Parametro $\pi$ di una Bernoulliana]]
+
+
 ## Introduzione
 Si restringe l'attenzione all'inferenza parametrica, ovvero si assume di aver scelto un modello parametrico per descrivere l'incertezza sulle variabili osservate. L'obiettivo è quello di saper dire qualcosa circa la specifica distribuzione di probabilità che genere le osservazioni di una caratteristica in una popolazione. Questo significa saper dire qualcosa sui parametri $\theta$.
 
@@ -26,7 +52,7 @@ $$
 f(X_{1},\ldots,X_{n}|\theta)= \prod^n_{i=1}f(X_{i}|\theta)
 $$
 Prima di effettuare le osservazioni, l'argomento della funzione sono le v.a. $X_{i}$. Dopo aver osservato, le $X_{i}$ si materializzano in $x_{i}$ e si può riconsiderare la funzione con argomento $\theta$.
-Al variare di $\theta$:
+Al variare di $\theta$ (==*Funzione di Verosimigianza*==):
 $$
 l(\theta;x_{1},\ldots,x_{n})= \prod^n_{i=1}f(x_{i}|\theta)
 $$
@@ -278,9 +304,11 @@ $$
 $$
 Cioè $\mu$ risulterà incluso con probabilità $1-\alpha$ in tutti gli intervalli che al variare del campione venissero prodotti.
 
-Riprendendo l'esempio delle misure con errore:
-- Primo calcolo $s=0.00920326$
-- Si guarda poi sulle tavole $t_{0.025,4}=-2.776$, quindi si determina $$\overline x\pm t_{\frac{\alpha}{2},n-1} \frac{s}{\sqrt{ n }}=[3.1387,3.1616]$$
+> [!example]+ Esempio:
+> Riprendendo l'esempio delle misure con errore:
+> - Primo calcolo $s=0.00920326$
+> - Si guarda poi sulle tavole $t_{0.025,4}=-2.776$, quindi si determina $$\overline x\pm t_{\frac{\alpha}{2},n-1} \frac{s}{\sqrt{ n }}=[3.1387,3.1616]$$
+
 ### Intervalli di Predizione
 L'obiettivo è dire qualcosa circa la previsione sul prossimo valore di $X$ osservato dopo aver osservato $x_{1},\ldots,x_{n}$.
 Si suppone $X\sim N(\mu,\sigma)$, $\mu$ e $\sigma$ parametri incogniti, sarà quindi

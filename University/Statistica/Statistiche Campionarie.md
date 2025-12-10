@@ -2,6 +2,21 @@
 sticker: emoji//0036-fe0f-20e3
 Order: "5"
 ---
+- [[#Concetti Preliminari|Concetti Preliminari]]
+- [[#Approccio Frequentista|Approccio Frequentista]]
+	- [[#Approccio Frequentista#Media e Varianza della Media Campionaria di Osservazioni iid|Media e Varianza della Media Campionaria di Osservazioni iid]]
+- [[#Teorema del Limite Centrale|Teorema del Limite Centrale]]
+	- [[#Teorema del Limite Centrale#Dimostrazione|Dimostrazione]]
+	- [[#Teorema del Limite Centrale#Binomiale|Binomiale]]
+		- [[#Binomiale#Correzione di Continuità|Correzione di Continuità]]
+	- [[#Teorema del Limite Centrale#Distribuzione della Media Campionaria|Distribuzione della Media Campionaria]]
+- [[#Varianza Campionaria|Varianza Campionaria]]
+- [[#Distribuzione di $\overline X$ per Popolazioni Gaussiane|Distribuzione di $\overline X$ per Popolazioni Gaussiane]]
+- [[#Distribuzione di $S^2$ per Popolazioni Gaussiana|Distribuzione di $S^2$ per Popolazioni Gaussiana]]
+- [[#Distribuzione di $\overline X$ e $S^2$ per Popolazioni Gaussiane|Distribuzione di $\overline X$ e $S^2$ per Popolazioni Gaussiane]]
+- [[#Distribuzione $\overline X$ stimando $\sigma^2$ tramite $S^2$ per Popolazioni Gaussiane|Distribuzione $\overline X$ stimando $\sigma^2$ tramite $S^2$ per Popolazioni Gaussiane]]
+
+
 ## Concetti Preliminari
 - **Popolazione:** Ci si riferisce ad una popolazione sui cui membri è possibile operare delle osservazioni di alcune caratteristiche (come per esempio un tempo di durata prima di una rottura o i pezzi buoni/non buoni prodotti da una macchina). Ognuna delle caratteristiche avrà una sua distribuzione nella popolazione.
 - **Contesto:** Si estrae un campione della popolazione di interesse, prima di osservare una caratteristica si ha incertezza sulla sua determinazione. Si assume allora che il campione sia tratto con ripetizione in modo probabilistico e si assume anche nota la v.a. parametrica che regola l'incertezza dei parametri
