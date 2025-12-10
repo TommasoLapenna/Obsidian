@@ -20,7 +20,7 @@ Uno stimatore è una funzione delle variabili aleatorie che generano le osservaz
 > Qualora per fornire una stima della media di una caratteristica della popolazione si utilizzi la media aritmetica delle osservazioni del campione, diventa allora rilevante studiare la v.a. $\overline X$.
 > $\overline X$ è una media aritmetica di osservazioni ed è una stima valutata sul campione disponibile.
 
-## Funzione di Verosomiglianza
+## Funzione di Veroiomiglianza
 Si considera la v.a. congiunta delle $X_{i}$ che descrive l'incertezza del piano di osservazione
 $$
 f(X_{1},\ldots,X_{n}|\theta)= \prod^n_{i=1}f(X_{i}|\theta)
@@ -199,7 +199,8 @@ con $b_{\theta}(T)^2=(E[T]-\theta)^2$
 > Cioè $T_{2}$ è sempre migliore di $T_{1}$ in termini di MSE.
 
 ---
-## Intervalli di Confidenza per $\mu$, $X\sim N(\mu,\sigma)$
+## Intervalli di Confidenza
+### Intervalli di Confidenza per $\mu$, $X\sim N(\mu,\sigma)$
 Si vuole dare un intervallo di valori su $\theta$ al $95\%$ invece che una stima puntuale.
 Si sa che: $\overline X\sim N\left( \mu, \frac{\sigma^2}{n} \right)$
 $$\begin{gather}
@@ -232,7 +233,7 @@ $\to$ No, non si può solo dire che se si fossero generati molti campioni, quest
 > $$
 > 
 
-#### Determinazione della Numerosità del Campione
+### Determinazione della Numerosità del Campione
 Ci si può assegnare il compito di determinare la numerosità campionaria che determini un intervallo di confidenza di ampiezza e livello di confidenza prefissati, poiché
 $$
 \begin{align}
@@ -247,7 +248,7 @@ $$
 > n=\left( \frac{2*1.96*0.01}{0.01} \right)^2=54.32^2\approx 1536
 > $$
 
-#### CI per $\mu$ della Normale, non noto $\sigma$
+### CI per $\mu$ della Normale, non noto $\sigma$
 Si ricorda che si è definita la va. $t-$student:
 $$
 \frac{Z}{\sqrt{ \frac{\chi^2_{n-1}}{n-1} }}\sim t_{n-1}
@@ -280,7 +281,7 @@ Cioè $\mu$ risulterà incluso con probabilità $1-\alpha$ in tutti gli interval
 Riprendendo l'esempio delle misure con errore:
 - Primo calcolo $s=0.00920326$
 - Si guarda poi sulle tavole $t_{0.025,4}=-2.776$, quindi si determina $$\overline x\pm t_{\frac{\alpha}{2},n-1} \frac{s}{\sqrt{ n }}=[3.1387,3.1616]$$
-## Intervalli di Predizione
+### Intervalli di Predizione
 L'obiettivo è dire qualcosa circa la previsione sul prossimo valore di $X$ osservato dopo aver osservato $x_{1},\ldots,x_{n}$.
 Si suppone $X\sim N(\mu,\sigma)$, $\mu$ e $\sigma$ parametri incogniti, sarà quindi
 $$
@@ -309,4 +310,95 @@ $$
 \left( \overline x_{n}-t_{\frac{\alpha}{2},n-1}s_{n} \sqrt{ 1+ \frac{1}{n} },\ \overline x_{n}+t_{\frac{\alpha}{2},n_{1}}s_{n}\sqrt{  1+ \frac{1}{n} } \right)
 $$
 conterrà il valore da prevedere nell'$(1-\alpha)\%$ dei possibili intervalli che si sarebbero potuti derivare da tutti i possibili campioni.
-## Intervalli di Confidenza per la Varianza
+### Intervalli di Confidenza per la Varianza
+Ricordando che
+$$
+(n-1) \frac{S^2}{\sigma^2}\sim \chi_{n-1}
+$$
+Quindi
+$$
+\begin{align}
+1-\alpha &= P\left( \chi_{1- \frac{\alpha}{2},n-1}> (n-1) \frac{S^2}{\sigma^2}> \chi_{\frac{\alpha}{2},n-1} \right) \\
+&= P\left( \frac{\chi_{1-\alpha,n-1}}{(n-1)S^2}> \frac{1}{\sigma^2}> \frac{\chi_{\frac{\alpha}{2},n-1}}{(n-1)S^2} \right) \\
+&= P\left(  \frac{(n-1)S^2}{\chi_{\frac{\alpha}{2},n-1}}<\sigma^2< \frac{(n-1)S^2}{\chi_{1-\frac{\alpha}{2},n-1}} \right)
+\end{align}
+$$
+Quindi passando dalle v.a. ai dati campionari con confidenza $1-\alpha$, $\sigma^2$ sarà compreso fra:
+$$
+\left(  \frac{(n-1)s^2}{\chi_{\frac{\alpha}{2},n-1}}, \frac{(n-1)s^2}{\chi_{1-\frac{\alpha}{2},n-1}} \right)
+$$
+nell'$(1-\alpha)\%$ dei CI ottenibili dai possibili campioni.
+### Intervalli di Confidenza per la Differenza fra Medie di due Popolazioni Normali, $\sigma^2_{1}$ e $\sigma_{2}^2$ Note
+- $X_{1},\ldots,X_{n}\sim N(\mu_{1},\sigma_{1}^2)$
+- $Y_{1},\ldots,Y_{n}\sim N(\mu_{2},\sigma_{2}^2)$
+- $\overline X\sim N\left( \mu_{1}, \frac{\sigma_{1}^2}{n_{2}} \right)$
+- $\overline Y\sim N\left( \mu_{2}, \frac{\sigma_{2}^2}{n_{2}} \right)$
+- $\overline X-\overline Y\sim \left( \mu_{1}-\mu_{2},\ \left( \frac{\sigma_{1}^2}{n_{1}}+ \frac{\sigma_{2}^2}{n_{2}} \right) \right)$
+Quindi:
+$$
+\frac{\overline X-\overline Y-(\mu_{1}-\mu_{2})}{\sqrt{ \frac{\sigma^2_{1}}{n}+ \frac{\sigma_{2}^2}{m} }}\sim N(0,1)
+$$
+Quindi
+$$
+\begin{align}
+1-\alpha&= P\left( -z_{\frac{\alpha}{2}}< \frac{\overline X-\overline Y-(\mu_{1}-\mu_{2})}{\sqrt{  \frac{\sigma^2_{1}}{n} + \frac{\sigma^2_{2}}{m}}}< z_{\frac{\alpha}{2}} \right) \\
+&= P\left( \overline X-\overline Y- z_{\frac{\alpha}{2}}\sqrt{  \frac{\sigma^2_{1}}{n}+ \frac{\sigma^2_{2}}{m} }<\mu_{1}-\mu_{2}<\overline X-\overline Y+ z_{\frac{\alpha}{2}} \sqrt{  \frac{\sigma_{1}^2}{n}+\frac{\sigma_{2}^2}{m} } \right)
+\end{align}
+$$
+Passando al campione osservato, con un livello di confidenza di $1-\alpha$, sarà
+$$
+\mu_{1}-\mu_{2}\in\left( \overline x-\overline y\pm z_{\frac{\alpha}{2}}\sqrt{  \frac{\sigma_{1}^2}{n}+ \frac{\sigma_{2}^2}{m} } \right)
+$$
+Se l'intervallo comprende lo 0 c'è indecisione su quale delle due $\mu$ è più grande, viceversa se il limite inferiore è >0 c'è evidenza che la prima media eccede la seconda al livello di confidenza $1-\alpha$.
+### Intervalli di Confidenza per la Differenza fra Medie di due Popolazioni Normali, $\sigma_{1}^2=\sigma_{2}^2$ Incognite
+Se si può assumere che $\sigma_{1}^2=\sigma_{2}^2$, si trova allora facilmente la distribuzione di $\overline X-\overline Y$, basate su campioni di numerosità $n$ e $m$. Si ha quindi:
+$$
+\frac{\overline X-\overline Y-(\mu_{1}-\mu_{2})}{\sqrt{ \frac{\sigma_{1}^2}{n}+\frac{\sigma_{2}^2}{m} }}\sim N(0,1)
+$$
+e per la riproducibilità di $\chi^2$ indipendenti:
+$$
+(n-1) \frac{S_{1}^2}{\sigma^2}+(m-1 ) \frac{S^2_{2}}{\sigma^2}\sim \chi^2_{n+m-2}
+$$
+Ricordando
+$$
+\frac{N(0,1)}{\sqrt{ \frac{\chi^2_{n}}{n} }}\sim t_{n}
+$$
+e chiamando 
+$$\begin{align}
+S_{p}^2&:= \frac{(n-1)S_{1}^2+(m-1)S_{2}^2}{n+m-2}= \frac{n-1}{n+m-2}S_{1}^2+ \frac{m-1}{n+m-2}S_{2}^2
+\end{align}$$
+si ottiene infine che
+$$
+\frac{\overline X-\overline Y-(\mu_{1}-\mu_{2})}{\sqrt{ \sigma^2 \left( \frac{1}{n}+\frac{1}{m} \right)}} \left( \frac{S_{p}^2}{\sigma^2} \right)^{-\frac{1}{2}}= \frac{\overline X-\overline Y-(\mu_{1}-\mu_{2})}{S_{p}\sqrt{ \frac{1}{n}+\frac{1}{m} }}\sim t_{n+m-2}
+$$
+Concludendo:
+$$
+P\left( -t_{\frac{\alpha}{2},n+m-2}\le \frac{\overline X-\overline Y-(\mu_{1}-\mu_{2})}{S_{p}\sqrt{ \frac{1}{n}+\frac{1}{m} }}\le t_{\frac{\alpha}{2},n+m-2} \right)= 1-\alpha
+$$
+Dopo aver calcolato $\overline x$, $\overline y$, $s_{1}$ e $s_{2}$ si può dire che $\mu_{1}-\mu_{2}$ appartiene all'intervallo
+$$
+\overline x-\overline y\pm t_{\frac{\alpha}{2},n+m-2}\cdot s_{p}\sqrt{ \frac{1}{n}+\frac{1}{m} }
+$$
+con un livello di confidenza di $1-\alpha$.
+### Intervalli di Confidenza per il Parametro $\pi$ di una Bernoulliana
+$$
+Y=\{0,1\}\qquad\text{allora}\qquad X=\sum^n_{i=1}Y_{i}\approx N(n\pi,n\pi(1-\pi))
+$$
+Allora, osservato $x=\sum^n_{i=1}x_{i}$, l'intervallo di confidenza per $\pi$ sarà
+$$
+\left\{ x\pm z_{\frac{\alpha}{2}}\sqrt{ n\pi(1-\pi) } \right\}
+$$
+In questo modo però la varianza $n\pi(1-\pi)$ non è nota e dipende da $\pi$. 
+Stimandola attraverso $\hat{\pi}= \frac{\sum x_{i}}{n}$ (MLE di $\pi$) si ottiene
+$$
+\frac{X-n\pi}{\sqrt{ n\hat{\pi}(1-\hat{\pi}) }}\sim N(0,1)
+$$
+Questa statistica, al contrario della precedente, consente di arrivare rapidamente ad un intervallo di confidenza
+$$
+\begin{align}
+1-\alpha&=P\left( -z_{\frac{\alpha}{2}}< \frac{X-n\pi}{\sqrt{ n \hat{\pi}(1-\hat{\pi}) }} < z_{\frac{\alpha}{2}} \right) \\
+&=P\left( -z_{\frac{\alpha}{2}}\sqrt{ n\hat{\pi}(1-\hat{\pi}) } <n\pi-X<z_{\frac{\alpha}{2}}\sqrt{ n\hat{\pi}(1-\hat{\pi}) }\right) \\
+&= P\left( \hat{\pi}-z_{\frac{\alpha}{2}}\sqrt{ \frac{\hat{\pi}(1-\hat{\pi})}{n} }<\pi < \hat{\pi}+z_{\frac{\alpha}{2}}\sqrt{ \frac{\hat{\pi}(1-\hat{\pi})}{n} } \right)
+\end{align}
+$$
+Rimanendo inteso che l'ultima formula fornisce un intervallo di confidenza approssimato per $\pi$.
