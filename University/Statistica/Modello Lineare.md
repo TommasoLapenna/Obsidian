@@ -2,20 +2,48 @@
 sticker: emoji//1f51f
 Order: "9"
 ---
+- [[#Modelli Statistici|Modelli Statistici]]
+- [[#Modello Lineare Deterministico (Versione Base)|Modello Lineare Deterministico (Versione Base)]]
+- [[#Modello Lineare Stocastico Base|Modello Lineare Stocastico Base]]
+- [[#Modello Lineare: Stima ai Minimi Quadrati|Modello Lineare: Stima ai Minimi Quadrati]]
+- [[#Modello Lineare: Distribuzione degli Stimatori|Modello Lineare: Distribuzione degli Stimatori]]
+	- [[#Modello Lineare: Distribuzione degli Stimatori#Distribuzione dello Stimatore $B$|Distribuzione dello Stimatore $B$]]
+- [[#Distribuzione dello Stimatore $A$|Distribuzione dello Stimatore $A$]]
+- [[#Distribuzione dello Stimatore di $\sigma^2$|Distribuzione dello Stimatore di $\sigma^2$]]
+- [[#Definizione di Statistiche *Sum of Squares*|Definizione di Statistiche *Sum of Squares*]]
+- [[#Modello Lineare vs Modello Quadratico|Modello Lineare vs Modello Quadratico]]
+- [[#Inferenza sui Parametri di Regressione|Inferenza sui Parametri di Regressione]]
+	- [[#Inferenza sui Parametri di Regressione#Test d'ipotesi|Test d'ipotesi]]
+	- [[#Inferenza sui Parametri di Regressione#Intervalli di confidenza su $\beta$|Intervalli di confidenza su $\beta$]]
+- [[#Regressione della Media: Altezze padri vs Altezza figli|Regressione della Media: Altezze padri vs Altezza figli]]
+- [[#Inferenza su $\alpha$, $\sigma^2$ non noto|Inferenza su $\alpha$, $\sigma^2$ non noto]]
+- [[#Inferenza sulla Risposta in Media|Inferenza sulla Risposta in Media]]
+- [[#Varianza della Risposta in Media|Varianza della Risposta in Media]]
+- [[#Inferenza sulla Risposta in Media,  $\sigma^2$ non noto|Inferenza sulla Risposta in Media,  $\sigma^2$ non noto]]
+- [[#Inferenza sulla Predizione della Risposta|Inferenza sulla Predizione della Risposta]]
+- [[#Coefficiente di Determinazione e di Correlazione|Coefficiente di Determinazione e di Correlazione]]
+- [[#Analisi dei Residui|Analisi dei Residui]] (NON NELL'ESAME)
+
+
 ## Modelli Statistici
-Si continua con l'inferenza sui parametri di una variabile aleatoria che regola l'incertezza circa una quantità $Y$ e sulla possibile predizione $Y_{n+1}$  ma in un contesto condizionato alla conoscenza del valore assunto da altre variabili che specificano l'ambiente dal quale originano le osservazioni.
+Si continua con l'inferenza sui parametri di una variabile aleatoria che regola l'incertezza circa una quantità $Y$ e sulla possibile predizione $Y_{n+1}$  ma in un contesto condizionato dalla conoscenza del valore assunto da altre variabili che specificano l'ambiente dal quale originano le osservazioni.
 
 > [!example]+ Esempio:
 > Si vuole valutare l'incertezza circa il peso di un gruppo producendo stime condizionate al genere, sia per la media che predizione
 
 L'obiettivo è ottenere valutazioni meno incerte sulle quantità di interesse, siano esse parametri o predizioni rispetto a quelle ottenibili per la popolazione generale.
-## Modello Lineare Deterministico (Versione Base)
+## Modelli Lineari
+
+> [!info] Parametri Regressione
+> $\alpha$ e $\beta$, insieme ad $\epsilon$ sono i *Parametri di Regressione*
+
+### Modello Lineare Deterministico (Versione Base)
 Sono necessarie:
 - Una variabile $Y$ di risposta (quella che si vuole predire, v.a. dipendente)
 - Alcune variabili $x_{1},\ldots,x_{r}$ di regressione (regressori, variabili di input osservabili, variabili indipendenti) osservate insieme a corrispondenti determinazioni della $Y,\ \{y_{1},\ldots,y_{n}\}$
 - Sia la variabile risposta che i regressori si assumono continui
 - Si assume una relazione lineare esatta come estrema semplificazione $$y=\alpha+\beta x_{1}+\ldots+\beta_{r}x_{r}$$
-## Modello Lineare Stocastico Base
+### Modello Lineare Stocastico Base
 Si aggiunge, realisticamente, una componente aleatoria che consente una specifica approssimata della relazione, la presenza di errori di misurazione e qualunque  perturbazione la cui origine non sia specificata dal modello. $\epsilon$ è una variabile aleatoria.
 $$Y=\alpha+\beta x_{1}+\ldots+\beta_{r}x_{r}+\epsilon$$
 Si impone una condizione base per $\epsilon$ e cioè $E(\epsilon)=0$ che implica
@@ -31,7 +59,7 @@ Ovvero la retta di regressione stimata deve passare in mezzo ai dati sicché la 
 > - $y=\alpha+\beta x+\epsilon$
 > - Naturalmente si deve stimare $a$ e $\beta$ in modo tale che la condizione $E(\epsilon)=0$ sia verificata
 
-## Modello Lineare: Stima ai Minimi Quadrati
+### Modello Lineare: Stima ai Minimi Quadrati
 Da un metodo eucartistico si ottengono gli stimatori per $\alpha$ e $\beta$, questo metodo si chiama metodo dei minimi quadrati, che impone la minimizzazione del danno quadratico subito sostituendo alle osservazioni le stime fornite dal modello.
 Si definisce il danno quadratico come
 $$\sum^N_{i=1}(y_{i}-\alpha-\beta x_{i})^2$$
@@ -56,7 +84,7 @@ Dalle assunzioni ne consegue
 $$
 Y_{i}|\sigma^2,\alpha,\beta,\mathbf{x}\sim N(\alpha+\beta x_{i},\sigma^2)
 $$
-### Distribuzione dello Stimatore $B$
+#### Distribuzione dello Stimatore $B$
 Considerando lo stimatore $B$ di $\hat{\beta}$
 $$B= \frac{\sum_{i}(x_{i}-\overline x)(Y_{i}-\overline Y)}{\sum_{i}x_{i}^2-n\overline x^2}=\frac{\sum_{i}(x_{i}-\overline x)Y_{i}-\overline Y\sum_{i}(x_{i}-\overline x )}{\sum_{i}x_{i^2}-n\overline x^2}$$
 $B$ è una combinazione di variabili normali $Y_{i}$, quindi normale
@@ -65,7 +93,7 @@ $$\begin{align} E[B]&= \frac{\sum_{i}(x_{i}-\overline x)E[Y_{i}]}{\sum_{i}x_{i}^
 **Varianza:**
 $$\begin{align}Var[B]&= Var\left( \frac{\sum_{i}(x_{i}-\overline x)Y_{i}}{\sum_{i}x_{i}^2-n\overline x^2} \right)= \frac{Var\left\{ \sum_{i}(x_{i}-\overline x)Y_{i} \right\}}{\left( \sum_{i}x_{i}^2-n\overline x^2 \right)^2}= \frac{\sum_{i}(x_{i}-\overline x)^2Var[Y_{i}]}{\left( \sum_{i}x_{i}^2-n\overline x^2 \right)^2} \\
 &= \frac{\sigma^2\sum_{i}(x_{i}-\overline x)^2}{\left( \sum_{i}x_{i}^2-n\overline x ^2\right)^2}=\frac{\sigma^2}{\sum_{i}x_{i}^2-n\overline x^2}\end{align}$$
-## Distribuzione dello Stimatore $A$
+#### Distribuzione dello Stimatore $A$
 Si considera lo stimatore $A$ di $\hat{\alpha}$
 $$A=\frac{1}{n}\sum_{i}Y_{i}-B\overline x\sim N(E(A), Var(A))$$
 **Media:**
@@ -80,7 +108,7 @@ $$\begin{align}Cov(\overline Y,B)&= Cov\left( \overline Y, \sum\delta_{i},Y_{i} 
  \\
 Var[A]&= Var(\overline Y)+\overline x^2Var(B)-2\overline xCov(\overline Y,B)=\frac{\sigma^2}{n}+ \frac{\overline x^2\sigma^2}{\sum_{i}x_{i}^2-n\overline x^2} \\
 &= \frac{\sigma^2\sum_{i}x_{i}^2}{n\left( \sum_{i}x_{i}^2-n\overline x^2 \right)}\end{align}$$
-## Distribuzione dello Stimatore di $\sigma^2$
+#### Distribuzione dello Stimatore di $\sigma^2$
 $$\begin{align}
 \frac{\sum(Y_{i}-\mu)^2}{\sigma^2}&\sim \chi_{n}^2 \\
 \frac{\sum(Y_{i}-\overline Y)^2}{\sigma^2}&\sim \chi^2_{{n-1}} \\
@@ -90,14 +118,14 @@ $SS_R:=\sum^n_{i=1}(Y_{i}-A-Bx_{i})^2$ somma dei quadrati residui
 $$\frac{SS_{R}}{\sigma^2}\sim \chi^2_{{n-2}}$$
 $E\left[ \frac{SS_{R}}{\sigma^2} \right]=n-2$ e quindi che $E\left[ \frac{SS_{R}}{n-2} \right]=\sigma^2$
 Si può cioè usare $\frac{SS_{R}}{n-2}$ come stimatore non distorto di $\sigma^2$
-## Definizione di Statistiche *Sum of Squares*
+#### Definizione di Statistiche *Sum of Squares*
 $$\begin{align} 
 S_{xy}&:=\sum_{i=1}^n(x_{i}-\overline x)(y_{i}-\overline y)=\sum^n_{i=1}x_{i}y_{i}-n\overline x\overline y \\
 S_{xx}&:= \sum^n_{i=1}(x_{i}-\overline x)^2= \sum^n_{i=1}x_{i}^2-n\overline x^2 \\
 S_{yy}&:= \sum^n_{i=1}(y_{i}-\overline y)^2=\sum^n_{i=1}y_{i}^2-n\overline y^2
 \end{align}$$
 Da queste espressioni si ricava
-$$\hat{\beta} \frac{S_{xy}}{S_{xx}}\qquad \hat{\alpha}=\overline y-B\overline x\qquad ss_{R}= \frac{S_{xx}S_{yy}-S^2_{xy}}{S_{xx}}$$
+$$\hat{\beta} =\frac{S_{xy}}{S_{xx}}\qquad \hat{\alpha}=\overline y-\beta\overline x\qquad ss_{R}= \frac{S_{xx}S_{yy}-S^2_{xy}}{S_{xx}}$$
 
 > [!example]
 > Relazione fra $x$, la percentuale d'acqua durante la lavorazione di un certo materiale, con $Y$, la densità del prodotto finito.
@@ -110,14 +138,17 @@ $$\hat{\beta} \frac{S_{xy}}{S_{xx}}\qquad \hat{\alpha}=\overline y-B\overline x\
 ## Modello Lineare vs Modello Quadratico
 ![[Pasted image 20250710034906.png|center|600]]
 
+---
+
 ## Inferenza sui Parametri di Regressione
+
 ![[Pasted image 20250710035000.png|center|400]]
 
 Note le distribuzioni degli stimatori dei parametri $\alpha,\beta,\sigma^2$ si può procedere alla verifica di ipotesi sul loro valore. Ci si concentra su $\beta$ che da conto dell'esistenza e del segno dell'associazione fra $X$ e $Y$
 - Poiché $\frac{B-\beta}{\frac{\sigma}{\sqrt{ S_{XX} }}}\sim N(0,1)$
 - Inoltre: $\frac{SS_{R}}{\sigma^2}\sim \chi^2_{n-2}$
 - Quindi: $$\frac{\frac{B-\beta}{\frac{\sigma}{\sqrt{  S_{xx} }}}}{\sqrt{ \frac{SS_{R}}{\sigma^2}(n-2) }}=\frac{B-\beta}{\sqrt{ (n-2) }S_{xx}}\sim t_{n-2}$$
-### Test d'ipotesi  
+### Test d'ipotesi su $\beta$
 Si confrontano le due ipotesi
 $$H_{0}:\beta=0\quad vs\quad H_{1}:\beta\ne 0$$
 Se $\beta=0$ la regione di rifiuto del test sarà individuata al livello di significatività $\gamma$ dai valori di $B$ tali che $$\sqrt{ \frac{(n-2)S_{xx}}{SS_{R}} }|B|> t_{\frac{\gamma}{2},n-2}$$
@@ -129,7 +160,7 @@ Quindi, a partire dai risultati campionari $\hat{\beta}$ si individua l'interval
 $$
 \hat{\beta}\pm t_{\frac{\gamma}{2},n-2}\cdot \sqrt{ \frac{SS_{R}}{(n-2)S_{xx}} }
 $$
-## Regressione della Media: Altezze padri vs Altezza figli
+### Regressione della Media: Altezze padri vs Altezza figli
 ![[Pasted image 20250710154656.png|center|550]]
 
 Si ha evidenza che c'è una relazione lineare fra le altezze, ci si chiede quindi se si ha un effetto di regression, ovvero $H_{0}:\beta=1\ vs\ H_{1}:\beta<1$.
@@ -137,7 +168,7 @@ Si può calcolare l'intervallo di confidenza per $\beta$ al $95\%$
 - $S_{xx}=171.6$, $S_{xy}=79.72$, $S_{yy}=38.529$ 
 $$0.4646\pm 2.26 \sqrt{ \frac{1.4935}{8*1.71.6} }=\{0.3901,0.5390\}$$
 Si verifica che $1$ non ricade nell'intervallo. Alternativamente si può valutare la statistica $$\frac{\hat{\beta}-\beta_{H_{0}}}{\sqrt{ \frac{SS_{R}}{(n-2)S_{xx}} }}= \frac{0.46-1}{0.3901}=-16.39$$
-## Inferenza su $\alpha$, $\sigma^2$ non noto
+### Inferenza su $\alpha$, $\sigma^2$ non noto
 Si sa che
 $$\begin{gather}
 A\sim N\left( \alpha, \frac{\sigma^2\sum_{i}x_{i^2}}{nS_{xx}} \right) \\
@@ -148,7 +179,7 @@ Si ottiene la statistica per la verifica delle ipotesi
 $$\sqrt{ \frac{n(n-2)S_{xx}}{SS_{R}\cdot \sum_{i}x_{i}^2} }(A-\alpha)\sim t_{n-2}$$
 di conseguenza, ad un livello di $1-\gamma$, l'intervallo di confiedenza bilaterale per un particolare campione è
 $$\hat{\alpha}\pm t_{\frac{\gamma}{2},n-2}\cdot \sqrt{ \frac{SS_{R}\cdot \sum_{i}x_{i}^2}{(n-2)\cdot n S_{xx}} }$$
-## Inferenza sulla Risposta in Media
+### Inferenza sulla Risposta in Media
 Per ogni possibile per ogni valore del predittore $x_{0}$, cosa ci si può aspettare $E(Y|x_{0})?$
 In termini di stima puntuale sarà
 $$E[A+Bx_{0}]=E[A]+x_{0}E[B]=\alpha+\beta x_{0}$$
@@ -158,7 +189,7 @@ $$E(Y_{x_{0}})=E(A+Bx_{0})=E(A)+E(B)x_{0}=\alpha+\beta x_{0}$$
 Poiché $B=\sum^n_{i=1} \frac{(x_{i}-\overline x)Y_{i}}{S_{xx}}$ e $A=\overline Y-B\overline x$
 $$A+Bx_{0}=\overline Y-B(\overline x-x_{0})=\sum^n_{i=1} \frac{1}{n}Y_{i}-\sum^n_{i=1} \frac{(x_{i}-\overline x)(\overline x-x_{0})}{S_{xx}}Y_{i}=\sum^n_{i=1}\left[ \frac{1}{n}- \frac{(x_{i}-\overline x)(\overline x-x_{0})}{S_{\times}} \right]Y_{i}$$
 Ovvero una combinazione lineare di normali indipendenti di media $\alpha+\beta x_{0}$
-## Varianza della Risposta in Media
+### Varianza della Risposta in Media
 $$\begin{align}
 Var[A+Bx_{0}]&= \sum^n_{i=1}\left[ \frac{1}{n} - \frac{(x_{i}-\overline x)(\overline x-x_{0})}{S_{xx}} \right]^2 Var[Y_{i}] \\
 &= \sigma^2 \sum^n_{i=1}\left[  \frac{1}{n^2}- \frac{2(x_{i}-\overline x)(\overline x-x_{0})}{nS_{xx}}+ \frac{(x_{i}-\overline x)^2(\overline x-x_{0})^2}{S^2_{xx}} \right] \\
@@ -167,7 +198,7 @@ Var[A+Bx_{0}]&= \sum^n_{i=1}\left[ \frac{1}{n} - \frac{(x_{i}-\overline x)(\over
 &=\sigma^2\left[ \frac{1}{n}+ \frac{(\overline x-x_{0})^2}{S_{\times}} \right]
 \end{align}$$
 Ovvero tanto più ci si allontana dal centro delle osservazioni di $X$, tanto più cresce l'incertezza sulla risposta media.
-## Inferenza sulla Risposta in Media,  $\sigma^2$ non noto
+### Inferenza sulla Risposta in Media,  $\sigma^2$ non noto
 Pur disponendo di $$A+Bx_{0}\sim N\left( \alpha+\beta x_{0}\quad \sigma^2\left[ \frac{1}{n}+ \frac{(\overline x-x_{0})^2}{S_{xx}} \right] \right)$$
 Si deve come al solito eliminare $\sigma^2$ usando $$\frac{SS_{R}}{\sigma^2}\sim \chi^2_{n-2}$$
 $$\frac{A+Bx_{0}-(\alpha+\beta x_{0})}{\sqrt{  \frac{1}{n}+ \frac{(\overline x-x_{0})^2}{S_{xx}} }\sqrt{  \frac{SS_{R}}{n-2} }}\sim t_{n-2}$$
@@ -177,7 +208,7 @@ $$
 $$
 ![[Pasted image 20250710161930.png|center|400]]
 
-## Inferenza sulla Predizione della Risposta
+### Inferenza sulla Predizione della Risposta
 Per ogni possibile $x_{0}$ cosa è possibile dire su $Y|x_{0}$?
 Il modello delle osservazioni era $$Y\sim N(\alpha+\beta x_{0},\sigma^2)$$
 Mentre l'incertezza sul valore degli stimatori produceba
@@ -198,7 +229,7 @@ $$
 > [!example]+ Esempio: Altezze:
 > ![[Pasted image 20250710162602.png|center|400]]
 
-## Coefficiente di Determinazione e di Correlazione
+### Coefficiente di Determinazione e di Correlazione
 Si parte dalla variabilità delle $y$ attorno alla loro media
 $$
 S_{yy}:= \sum^n_{i=1}(Y_{i}-\overline Y)^2
@@ -219,3 +250,89 @@ r^2&= S^2_{xy}\quad \text{ma dalla formulazione di }SS_{r} \\
  Quindi la misura di associazione fra variabili coincide con la riduzione di variabilità della $Y$ dovuta all'introduzione della stima e all'impiego del modello lineare.
 
 ## Analisi dei Residui
+
+## Estensione 1: Linearizzazione
+La risposta media potrebbe non essere una funzione lineare dei parametri. Se la forma di questa relazione può essere determinata si possono allora trasformare le variabili e usare il modello lineare.
+
+> [!example]+ Esempio:
+> L'intensità $W(t)$ di un segnale dopo un tempo $t$ potrebbe seguire un decadimento esponenziale
+> $$
+> W(t)\approx c \exp[-dt]
+> $$
+> Se si prendono i logaritmi naturali, ciò può essere espresso come
+> $$
+> \log W(t)\approx \log c-dt
+> $$
+> Se si pone 
+> $$Y=\log W(t)\qquad \alpha=\log c \qquad \beta=-d$$
+> la relazione iniziale può essere modellizzata da 
+> $$
+> Y=\alpha+\beta t+\epsilon
+> $$
+> permettendo quindi di stimare $\alpha$ e $\beta$ con l'usuale metodo dei minimi quadrati, e fare previsioni tramite
+> $$
+> W(t)\approx \exp[A+Bt]
+> $$
+> 
+
+## Estensione 2: Regression Polinomiale
+## Estensione 3: Regressione Lineare Multipla
+La risposta di un esperimento può essere predetta da più di una variabile indipendente. In questo caso si usa quindi la regressione lineare multipla, che è un modello di regressione in cui ci sono $k$ variabili indipendenti, la risposta è legata tramite una relazione lineare:
+$$
+Y=\beta_{0}+\beta_{1}x_{1}+\ldots+\beta_{k}x_{k}+\epsilon
+$$
+dove per $j\in\{1,\ldots,k\}$ $x_{j}$ è la $j-$esima variabile di ingresso e $\epsilon\sim N(0,\sigma^2)$ (con $\sigma^2$ costante).
+
+I parametri $\beta_{0},\ldots,\beta_{k}$, così come $\sigma^2$ si suppongono incogniti e devono essere stimati dai dati. Le singole variabili $Y_{i}$ sono legate alle covariate tramite
+$$
+E[Y_{i}]=\beta_{0}+\beta_{1}x_{i1}+\ldots+\beta_{k}x_{ik}
+$$
+La somma dei residui al quadrato è
+$$
+S= \sum^n_{i=1}(y_{i}-\beta_{0}-\beta_{1} x_{i 1}-\beta_{2} x_{i 2}-\ldots-\beta_{k}x_{ik})^2
+$$
+che deve essere minimizzata tramite le stime dei parametri di regressione ai minimi quadrati.
+Per determinare le stime ai quadrati minimi si calcolano le derivate parziali rispetto a $\beta_{0},\ldots,\beta_{k}$ della somma di quadrati precedente, e la si pone uguale a 0.
+
+Le $k+1$ equazioni che si ottengono sono piuttosto tediose da scrivere, conviene portare il problema in forma matriciale:
+$$
+\mathbf{Y}=\mathbf{x}\beta+\epsilon
+$$
+Definito: $p=k+1$
+$$
+\mathbf{y}:=\begin{bmatrix}
+Y_{1} \\
+Y_{2} \\
+\vdots \\
+Y_{n}
+\end{bmatrix}
+\qquad
+\mathbf{X}:= \begin{bmatrix}
+1 & x_{11} & x_{12} & \cdots & x_{1k} \\
+1 & x_{21} & x_{22} & \cdots & x_{2k} \\
+\vdots &  & & & \vdots \\
+1 & x_{n1} & x_{n 2} & \cdots & x_{nk}
+\end{bmatrix}
+\qquad
+\beta:= \begin{bmatrix}
+\beta_{0} \\
+\beta_{1} \\
+\vdots \\
+\beta_{k}
+\end{bmatrix}
+\qquad 
+\epsilon:= \begin{bmatrix}
+\epsilon_{1} \\
+\epsilon_{2} \\
+\vdots \\
+\epsilon_{n}
+\end{bmatrix}
+$$
+- $\mathbf{y}$ è una $n\times 1$
+- $\mathbf{ X}$ è una $n\times p$
+- $\beta$ è una $p\times 1$
+- $\epsilon$ è una $n\times 1$
+Allora la quantità da minimizzare sarà:
+$$\begin{gather}
+
+\end{gather}$$

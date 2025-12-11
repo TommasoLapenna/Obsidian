@@ -1,5 +1,5 @@
 ---
-sticker: ""
+sticker: emoji//0038-fe0f-20e3
 Order: "7"
 ---
 - [[#Elementi Comuni fra Scuola Frequentista e Bayesiana|Elementi Comuni fra Scuola Frequentista e Bayesiana]]

@@ -23,7 +23,7 @@ Order: "8"
 - [[#Test sul Parametro $\lambda$ di una Poisson|Test sul Parametro $\lambda$ di una Poisson]]
 
 ## Verifica di Ipotesi: Approccio Frequentista
-Si restringe l'attenzione alla formulazione e verifica di ipotesi circa il valore assunto dai parametri $\theta$ di una legge che regola l'incertezza du una v.a. osservabile $X$.
+Si restringe l'attenzione alla formulazione e verifica di ipotesi circa il valore assunto dai parametri $\theta$ di una legge che regola l'incertezza di una v.a. osservabile $X$.
 L'obiettivo è decidere se l'ipotesi fatta è accettabile alla luce dei risultati di un campione di $n$ osservazioni da $X$.
 Accettare o rifiutare un'ipotesi non implica che esse siano necessariamente vere o false ma solo che il campione supporta o meno l'ipotesi fatta, considerando la possibilità con cui essi potrebbero avvenire utilizzando un gran numero di campioni.
 ### Ipotesi e Livelli di Significatività
@@ -31,6 +31,7 @@ Si suppone di volere verificare una qualunque ipotesi su $\theta$, che si chiame
 Sia, ad esempio, $X$ una caratteristica con distribuzione normale con media $\theta$ e varianza $1$, due possibili ipotesi nulle su $\theta$ sono:
 1. $H_{0}:\theta=1$
 2. $H_{0}:\theta\le 1$
+
 Si considera un campione aleatorio $X_{1},X_{2},\ldots,X_{n}$ proveniente da questa popolazione, e si utilizza per eseguire una verifica o test della ipotesi nulla $H_{0}$.
 Il test sarà definito da una regione $C$ nello spazio campionario a $n$ dimensioni: se il vettore $(x_{1},x_{2},\ldots,x_{n})$ appartiene a $C$ l'ipotesi viene rifiutata, mentre viene accettata in caso contrario.
 Una regione $C$ con queste caratteristiche viene detta **Regione Critica** del test.
@@ -48,7 +49,10 @@ $$\text{accetta }H_{0}\ \text{se }(x_{1},x_{2},\ldots,x_{n})\notin C$$
 > $$\sum^3_{i=2}\begin{pmatrix} 3 \\ i \end{pmatrix}\left( \frac{2}{5} \right)^i \left( \frac{3}{5} \right)^{3-1}=\left( \frac{2}{5} \right)^3+3 \left( \frac{2}{5} \right)^2 \frac{3}{5}=0.352$$
 > Si chiama questa circostanza sfavorevole un error di $I$ specie. Tradizionalmente se ne indica l'ammontare con $\alpha$
 
-**Riassunto:**
+> [!info] Livello di Significatività
+> Il livello di significatività $\alpha$ è arbitrario, e determina la regione di accettazione per la verifica dell'ipotesi.
+
+**Riassumendo:**
 - Si considera uno stimatore puntuale del parametro da testare, $T(\mathbf{X})$
 - Si valuta la sua distribuzione di probabilità nello spazio dei campioni, valendo l'ipotesi $H_{0}$
 - Si osserva la determinazione campionaria e si calcola la stima del parametro utilizzando quello stimatore
@@ -92,6 +96,10 @@ Riassumendo:
 Dato $$H_{0}:\mu=\mu_{0}\quad vs \quad H_{1}:\mu\ne \mu_{0}$$
 È possibile scegliere $H_{0}$ pur essendo vero $H_{1}$, ovvero che sia $\mu\ne\mu_{0}$. La probabilità di questo evento è chiamata *probabilità dell'errore di seconda specie* ed è indicata con $\beta$.
 Cioè, pur essendo il valore del parametro $\mu\ne\mu_{0}$, con che probabilità si avrebbe osservato un campione nella regione di accettazione del test definita secondo $H_{0}$?
+
+> [!hint] Osservazione
+> Quindi, se con l'errore di prima specie $\alpha$ si indica la probabilità di rifiutare un'ipotesi $\mu_{0}$ quando è vera, l'errore di seconda specie $\beta$ indica la probabilità di non rifiutare un ipotesi $\mu_{0}$ falsa.
+
 Per determinare la risposta si deve valutare
 $$\beta(\mu):=(\text{accettare } H_{0})=P_{\mu}\left( \left| \frac{\overline X-\mu_{0}}{\frac{\sigma}{\sqrt{ n }}}\le z_{\frac{\alpha}{2}} \right| \right)=P_{\mu}\left( -z_{\frac{\alpha}{2}}\le \frac{\overline X-\mu_{0}}{\frac{\sigma}{\sqrt{ n }}}\le z_{\frac{\alpha}{2}} \right)$$
 Operativamente si considera che, valendo $H_{1}$

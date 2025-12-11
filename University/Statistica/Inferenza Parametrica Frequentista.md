@@ -226,6 +226,12 @@ con $b_{\theta}(T)^2=(E[T]-\theta)^2$
 
 ---
 ## Intervalli di Confidenza
+
+> [!info] Notazione Livello di Confidenza
+> Nella notazione del livello di confidenza
+> $$1-\alpha=0,95/0,99/ecc.\%$$
+> La $\alpha$ è il valore sottratto a $1.0$.
+
 ### Intervalli di Confidenza per $\mu$, $X\sim N(\mu,\sigma)$
 Si vuole dare un intervallo di valori su $\theta$ al $95\%$ invece che una stima puntuale.
 Si sa che: $\overline X\sim N\left( \mu, \frac{\sigma^2}{n} \right)$
@@ -259,6 +265,8 @@ $\to$ No, non si può solo dire che se si fossero generati molti campioni, quest
 > $$
 > 
 
+> [!hint] CI 99%
+> Per l'intervallo un confidenza del 99%, $z_{\frac{\alpha}{2}}=z_{0,005}=2,5758$, da sostituire a $1,96$, che invece è quello di $z_{\frac{\alpha}{2}}=z_{0,025}$ (intervallo del 95%).
 ### Determinazione della Numerosità del Campione
 Ci si può assegnare il compito di determinare la numerosità campionaria che determini un intervallo di confidenza di ampiezza e livello di confidenza prefissati, poiché
 $$
