@@ -334,5 +334,134 @@ $$
 - $\epsilon$ è una $n\times 1$
 Allora la quantità da minimizzare sarà:
 $$\begin{gather}
-
+S= \underset{1\times n}{(\mathbf{y}-\mathbf{X}\beta)^T}\underset{n\times 1}{(\mathbf{y}-\mathbf{X}\beta)}=\mathbf{y}^T\mathbf{y}-\beta^T\mathbf{X}^T\mathbf{y}-\mathbf{y}^T-\mathbf{X}\beta+\beta^T\mathbf{X}^T\mathbf{X}\beta \\
+\frac{\delta S}{\delta \beta}=-\mathbf{X}^T\mathbf{y}-\mathbf{y}^T\mathbf{X}+2\mathbf{X}^T\mathbf{X\beta}=0 \\
+\mathbf{X}^T\mathbf{X}\beta=\mathbf{X^T\mathbf{y}}
 \end{gather}$$
+Se $\mathbf{X}^T\mathbf{X}$ è invertibile:
+$$
+\hat{\beta}=(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X^T}\mathbf{y}
+$$
+
+> [!example] Example:
+> ![[Pasted image 20251212111224.png|center|600]]
+
+**Proprietà degli Stimatori:**
+- Gli stimatori $B_{0},\ldots,B_{k}$, ricavabili dalle stime ai minimi quadrati, sono combinazioni lineari delle $\mathbf{Y}$, che si stanno supponendo essere variabili aleatori normali e indipendenti. Tali stimatori hanno distribuzione normala multivariata.
+- Gli stimatori dei minimi quadrati sono corretti: $$
+\begin{align}
+E[\mathbf{B}]&=E[(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{Y}] \\
+&= E[(\mathbf{X^T}\mathbf{X})^{-1}\mathbf{X}^T(\mathbf{X}\beta+\epsilon) ] \\
+&=E[(\mathbf{ X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}\beta+(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\epsilon] \\
+&= E[\beta+(\mathbf{X^T\mathbf{X}})^{-1}\mathbf{X^T}\epsilon] \\
+&=\beta+(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^{T}\mathbf{E}[\epsilon]=\beta
+\end{align}
+$$
+- *Varianza e Covarianza dei* $B_{j}$: Si denota con $Cov(\mathbf{B})$ la matrice delle covarianze, vale dire 
+$$Cov(\mathbf{B}):=\begin{bmatrix}
+Cov(B_{0},B_{0}) & \cdots & Cov(B_{0},Bk) \\
+\vdots & \ddots & \vdots \\
+Cov(B_{k},B_{0}) & \cdots & Cov(B_{k},B_{k})
+\end{bmatrix}$$
+Si pone $\mathbf{C}:= (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T$, con dimensione $p\times n$. Si può riscrivere allora $\mathbf{B}$ nella forma
+$$\begin{bmatrix}
+B_{0} \\ \vdots  \\ B_{i-1} \\ \vdots \\ B_{k}
+\end{bmatrix}=\mathbf{B}=\mathbf{CY}=\begin{bmatrix}
+C_{11} & \cdots & C_{1n} \\
+\vdots & & \vdots \\
+C_{i_{1}} & \cdots & C_{in} \\
+\vdots & & \vdots \\
+C_{p1} & \cdots & C_{pn}
+\end{bmatrix}$$
+Si ha quindi che 
+$$B_{i-1}= \sum^n_{l=1}C_{il}Y_{l}\qquad B_{j-1}=\sum^n_{r=1}C_{jr}Y_{r}$$
+La covarianza di una coppia di stimatori $B$ risulta 
+$$Cov(B_{i-1},B_{j-1})=Cov\left( \sum^n_{l=1}C_{il}Y_{l},\sum^n_{r=1}C_{jr}Y_{r} \right)= \sum^n_{l=1}\sum^n_{r=1}C_{il}C_{jr}Cov(Y_{l},Y_{r})$$
+siccome quando $l\ne r$ si ha che $Y_{l}$ e $Y_{r}$ sono indipendenti:
+$$Cov(Y_{l},Y_{r})=\begin{cases}
+0 & \text{se }l\ne r \\
+Var[Y_{r}] & \text{se }l=r
+\end{cases}$$
+e siccome $Var[Y_{r}]=\sigma^2$ si ottiene che 
+$$Cov(B_{i-1},B_{j-1})=\sigma^2\sum^n_{r=1}C_{ir}C_{jr}=\sigma^2\cdot\underset{\text{elemento }j-\text{esimo della matrice}}{(\mathbf{C}\mathbf{C}^T)_{ij}}$$
+Quindi
+$$
+Cov(\mathbf{ B})=\sigma^2\mathbf{C}\mathbf{ C}^T
+$$
+Inoltre, siccome 
+$$
+\mathbf{C}^T:= ((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T)^T=\mathbf{X}((\mathbf{X}^T\mathbf{X})^{-1})^T=\mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}
+$$
+Allora:
+$$
+\mathbf{CC}^{T}= (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}=(\mathbf{X}^T\mathbf{X})^{-1}
+$$
+La matrice di varianza e covarianza diventa
+$$Cov(\mathbf{B})=\sigma^2(\mathbf{X}^T\mathbf{X})^{-1}$$
+-  *Stimatore di* $\sigma^2$: se si pone
+$$
+SS_{R}:= \sum^n_{i=1}(Y_{i}-B_{0}-B_{1}{x_{i 1}}-B_{2}{ x_{i 2}}-\ldots-B_{k}x_{ik})^2
+$$
+è possibile dimostrare che
+$$
+\frac{SS_{R}}{\sigma^2}\sim \chi^2_{{n-(k+1)}}
+$$
+da cui deriva che
+$$
+E\left[ \frac{SS_{R}}{\sigma^2} \right]=n-k-1\qquad E\left[ \frac{SS_{R}}{n-k-1} \right]=\sigma^2
+$$
+Per cui $\frac{SS_{R}}{n-k-1}$ è uno stimatore corretto di $\sigma^2$
+
+**Bontà dell'adattamento del modello ai dati**:
+- Il *Coefficiente di Determinazione Multipla* 
+$$R^2:= 1- \frac{SS_{R}}{\sum^n_{i=1}(Y_{i}-\overline Y)}^2$$
+misura la diminuzione di variabilità nelle risposte quando si usa il criterio dei minimi quadrati
+---
+## Risposta Media
+Si suppone di essere prossimi a realizzare una serie di esperimenti, ripetuti più volte e on livelli delle covariate uguali a quelli che hanno condotto la stima. Basandosi sui dati precedenti, si vuole stimare la risposta media di questi nuovi esperimenti.
+
+Il parametro incognito è dato da
+$$
+E[Y|x]=\beta_{0}+\beta_{1}x_{1}+\ldots+\beta_{k}x_{k}
+$$
+il naturale stimatore puntuale è $\sum^k_{i=0}B_{i}x_{i}$ ($x_{0}\equiv 1$.
+Per determinare la distribuzione di questo stimatore si usa una variabile aleatoria normale, in quanto esprimibile come combinazione lineare delle variabili aleatorie normali e indipendeti $Y_{1},\ldots,Y_{n}$.
+
+- **Media:** $$\begin{align}
+E\left[ \sum^k_{i=0} x_{i}B_{i}\right]&=\sum^k_{i=0}x_{i}E[B_{i}]=\underset{\text{in quanto }E[B_{i}]=\beta_{i}}{\sum^k_{i=0}x_{i}\beta_{i}} =E[Y|x]
+\end{align}$$
+- **Varianza:** $$Var\left( \sum^k_{i=0}x_{i}B_{i} \right)=Cov\left( \sum^k_{i=0}x_{i}B_{i},\ \sum^k_{j=0}x_{j}B_{j} \right)=\sum^k_{i=0}\sum^k_{j=0}x_{i}x_{j}Cov(B_{i},B_{j})=\sigma^2\mathbf{x}^T(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{x}$$
+Quindi
+$$
+\frac{\sum_{i}x_{i}B_{i}-\sum_{i}x_{i}\beta_{i}}{\sigma \sqrt{ \mathbf{ x}^T(\mathbf{X}^T\mathbf{X})^{-1} }\mathbf{x}}\sim N(0,1)
+$$
+- In caso che $\sigma^2$ non sia noto lo sostituisce con il suo stimatore $\frac{SS_{R}}{n-k-1}$
+$$
+\frac{\sum_{i}x_{i}\beta_{i}-\sum_{i}x_{i}\beta_{i}}{\sqrt{ \frac{SS_{R}}{n-k-1} }\sqrt{ \mathbf{x}^T(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{x} }}\sim t_{n-k-1}
+$$
+- Intervalli di confidenza al livello $\gamma$ di significatività per la risposta media:
+$$
+\sum^k_{i=0}x_{i}B_{i}\pm t_{\frac{\gamma}{2},n-k-1}\cdot \sqrt{ \frac{SS_{R}}{n-k-1} }\sqrt{ \mathbf{X}^T(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{x} }
+$$
+### Predizione di Risposte Future
+Piuttosto che usare uno stimatore della risposta media, si potrebbe ottenere un predittore della risposta, si utilizza quindi il campione di dati per predire nel modo migliore il valore che verrà assunto dalla variabile aleatoria
+$$
+Y(\mathbf{x})=\sum^k_{i=0}\beta_{i}x_{i}+\epsilon
+$$
+Un predittore puntuale è dato da $\sum^k_{i=0}B_{i}x_{i}$, dove $B_{i}$ è lo stimatore dei minimi quadrati di $\beta_{i}$.
+Si nota che la risposta futura è indipendente dai $B_{i}$, quindi $Y(\mathbf{x})-\sum^k_{i=0}B_{i}x_{i}$ è normale ocn media nulla e varianza
+$$
+Var\left[ Y(\mathbf{x})-\sum^k_{i=0}B_{i}x_{i} \right]=Var\left( \sum^k_{i=0}B_{i}x_{i} \right)=\sigma^2+\sigma^2\mathbf{x}^T(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{x}
+$$
+Quindi
+$$
+\frac{Y(\mathbf{x})-\sum_{i}B_{i}x_{i}}{\sigma \sqrt{ 1+\mathbf{x}^T(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{x} }}\sim N(0,1)
+$$
+ovvero, tramite la sola sostituzione di $\sigma$ con il relativo stimatore,
+$$
+\frac{Y(\mathbf{x})-\sum_{i}B_{i}x_{i}}{\sqrt{ \frac{SS_{R}}{n-k-1} }\sqrt{ 1+\mathbf{ x}^T(\mathbf{ X}^T\mathbf{X})^{-1}\mathbf{x} }}\sim t_{n-k-1}
+$$
+Con livello di confidenza $1-\gamma$, la risposta $Y(\mathbf{x})$ cadrà entro 
+$$
+\sum^k_{i=0}\beta_{i}x_{i}\pm t_{\frac{\gamma}{2},n-k-1}\cdot \sqrt{ \frac{SS_{R}}{n-k-1} }\sqrt{ 1+\mathbf{x}^T(\mathbf{X^T\mathbf{X}})^{-1}\mathbf{x} }
+$$
