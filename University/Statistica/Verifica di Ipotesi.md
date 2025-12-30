@@ -242,7 +242,7 @@ Se l'ipotesi è unilaterale allora
 $$H_{0}:\mu=\mu_{0}\qquad H_{1}:\mu\ge \mu_{0}$$
 Quindi si rifiuterà $H_{0}$ qualora
 $$
-\frac{\overline H-\mu_{0}}{\frac{S}{\sqrt{ n }}}>t_{\alpha,n-1}
+\frac{\overline x-\mu_{0}}{\frac{S}{\sqrt{ n }}}>t_{\alpha,n-1}
 $$
 ## Confronto fra due Popolazioni Normali
 È la massima semplificazione del confronto fra due popolazioni che vengono considerate rispetto alla sola media
