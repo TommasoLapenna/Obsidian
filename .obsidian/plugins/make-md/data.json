@@ -50,11 +50,9 @@
     "/",
     "//Source Material/Source Material/PDFs",
     "//Source Material/Source Material/Images",
-    "//University/University/Statistica",
-    "//University/University/Ingegneria del Software",
     "//Linux/Linux/NixOs",
-    "//University/University/Fisica I",
-    "//University"
+    "//University",
+    "//University/University/Fisica I"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",

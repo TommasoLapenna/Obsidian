@@ -127,7 +127,7 @@ $$
 \oint \vec{F}\cdot d\vec{s}=0
 $$
 ## Energia Potenziale
-Se la forza è conservativa, allora il lavoro che la forza compierebbe nello spostamento tra la posizione di riferimento $O$ e la posizione generica $P$ $$W=\int_{O}^P \vec{F}\cdot d\vec{s}=0$$
+Se la forza è conservativa, allora il lavoro che la forza compierebbe nello spostamento tra la posizione di riferimento $O$ e la posizione generica $P$ $$W=\int_{O}^P \vec{F}\cdot d\vec{s}$$
 può dipendere solo da $O$ e $P$ (ossia dalle sue coordinate).
 La conservatività della forza consente di definire in ogni punto $P$ dello spazio una funzione dipendente unicamente dalle coordinate di $P$:
 $$

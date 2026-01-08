@@ -154,7 +154,7 @@ L'accelerazione deve esprimere le variazioni di velocità come modulo e e direzi
 
 Applicando la formula di derivazione di un versore si ottiene:
 $$
-\vec{a} = \frac{d}{dt}(v \hat{u}_{T})=\frac{dv}{dt} \hat{u}_T+ v \frac{d \hat{u}_{T}}{dt} = \frac{dv}{dt} \hat{u}_{T}v \frac{d\phi}{dt}\hat{u}_{N}
+\vec{a} = \frac{d}{dt}(v \hat{u}_{T})=\frac{dv}{dt} \hat{u}_T+ v \frac{d \hat{u}_{T}}{dt} = \frac{dv}{dt} \hat{u}_{T}+v \frac{d\phi}{dt}\hat{u}_{N}
 $$
 dove il primo componente indica il cambiamento del modulo di velocità, mentre il secondo indica il cambio di direzione della velocità, si ha inoltre che $\frac{dv}{dt}\hat{u}_{T}\parallel \vec{v}$.
 Per esprimere in maniera più significativa la componente normale, si considera il fatto che le rette normali alla traiettoria in punti vicini si incontrano in un punto $C$, detto *Centro di Curvatura* (nei tratti rettilinei va all'infinito. L'arco di traiettoria $ds =R d\phi$ (variazione infinitesima della coordinata curvilinea) con $R= \overline{CP}$ *Raggio di curvatura*. Pertanto 

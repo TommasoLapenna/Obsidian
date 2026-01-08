@@ -4,109 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "6accc7de612f88b5",
+        "id": "031c5eeab177a8e0",
         "type": "tabs",
         "children": [
           {
-            "id": "53b302bc305ad5e5",
+            "id": "99189be0a0b28867",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/Statistica/Statistiche Campionarie.md",
+                "file": "University/Fisica I/Energia e Lavoro.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Statistiche Campionarie"
-            }
-          },
-          {
-            "id": "c04dac5b19659bec",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "University/Statistica/Variabili Aleatorie Continue.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Variabili Aleatorie Continue"
-            }
-          },
-          {
-            "id": "94f4be965f45aeb2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "University/Statistica/Inferenza Parametrica Frequentista.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Inferenza Parametrica Frequentista"
-            }
-          },
-          {
-            "id": "e61f6d9cd289493e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "University/Statistica/Verifica di Ipotesi.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Verifica di Ipotesi"
-            }
-          },
-          {
-            "id": "98a2f2b5d5978d21",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "University/Statistica/Variabili Aleatorie Discrete.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Variabili Aleatorie Discrete"
-            }
-          },
-          {
-            "id": "b3547781d7ba9340",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "University/Statistica/Inferenza Parametrica Frequentista.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Inferenza Parametrica Frequentista"
-            }
-          },
-          {
-            "id": "547265aef47eac15",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "University/Statistica/Modello Lineare.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Modello Lineare"
+              "title": "Energia e Lavoro"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -160,7 +75,7 @@
             }
           },
           {
-            "id": "85bff5dcf437496e",
+            "id": "5a5a3b827de06e18",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -238,13 +153,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "University/Statistica/Modello Lineare.md",
+                "file": "University/Fisica I/Energia e Lavoro.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Modello Lineare"
+              "title": "Outline of Energia e Lavoro"
             }
           },
           {
@@ -253,8 +168,8 @@
             "state": {
               "type": "advanced-tables-toolbar",
               "state": {},
-              "icon": "spreadsheet",
-              "title": "Advanced Tables"
+              "icon": "lucide-ghost",
+              "title": "advanced-tables-toolbar"
             }
           }
         ],
@@ -262,8 +177,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 322.5,
-    "collapsed": true
+    "width": 322.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -278,20 +192,27 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "e61f6d9cd289493e",
+  "active": "99189be0a0b28867",
   "lastOpenFiles": [
-    "University/Statistica/Modello Lineare.md",
+    "University/Fisica I/Dinamica.md",
+    "University/Fisica I/Cinematica.md",
+    "University/Fisica I/Appendice.md",
+    "Source Material/Images/prova",
+    "University/Fisica I/Introduzione.md",
+    "Untitled.canvas",
+    "University/Fisica I/Dinamica del Corpo Rigido.md",
+    "University/Fisica I/Dinamica dei Sistemi di Punti Materiali.md",
     "University/Statistica/Inferenza Parametrica Frequentista.md",
-    "University/Statistica/Statistiche Campionarie.md",
+    "University/Statistica/Variabili Aleatorie Continue.md",
+    "University/Statistica/Modello Lineare.md",
     "University/Statistica/Variabili Aleatorie Discrete.md",
     "University/Statistica/Verifica di Ipotesi.md",
+    "University/Statistica/Statistiche Campionarie.md",
     "University/Statistica/Statistica Descrittiva.md",
-    "University/Statistica/Variabili Aleatorie Continue.md",
     "University/Statistica/Variabili Aleatorie.md",
     "University/Statistica/Probabilità.md",
     "Source Material/Images/Pasted image 20251212111224.png",
     "University/Statistica/Inferenza Parametrica Bayesiana.md",
-    "Untitled.canvas",
     "Source Material/Images/Pasted image 20251209190349.png",
     "Source Material/Images/Pasted image 20251209185730.png",
     "Source Material/Images/Pasted image 20251209183614.png",
@@ -306,13 +227,7 @@
     "University/Fisica I/Primo Principio della Termodinamica.md",
     "University/Fisica I/Sistemi Termodinamici.md",
     "University/Fisica I/Fenomeni d'Urto.md",
-    "University/Fisica I/Dinamica del Corpo Rigido.md",
-    "University/Fisica I/Dinamica dei Sistemi di Punti Materiali.md",
     "University/Fisica I/Energia e Lavoro.md",
-    "University/Fisica I/Dinamica.md",
-    "University/Fisica I/Cinematica.md",
-    "University/Fisica I/Introduzione.md",
-    "University/Fisica I/Appendice.md",
     "University/Fisica I Baldè buho.zip",
     "University/Statistica/Riassunto.canvas",
     "Tags",
@@ -326,7 +241,6 @@
     "Zettelkasten/Untitled 5.base",
     "University/Matematica Discreta e Codici",
     "University/Intelligenza Artificiale",
-    "Programming/Typescript",
     "Source Material/Images/PHOTO-2025-09-29-03-28-03.jpg"
   ]
 }
