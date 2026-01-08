@@ -131,7 +131,7 @@ In questo caso tutti i punti descrivono un moto circolare, le traiettorie sono a
 ![[Pasted image 20250804185228.png|center|500]]
 
 La rigidità del corpo implica che i punti abbiano in un dato istante la stessa velocità angolare $\vec{\omega}$ parallela all'asse di rotazione, mentre le velocità $\vec{v}_{i}$ dei singoli punti sono diverse a seconda della distanza $R_{i}$ dall'asse di rotazione.
-Se l'asse di rotazione è fisso nel tempo $\vec{\omega}$ può cambiare solo di modeulo e verso.
+Se l'asse di rotazione è fisso nel tempo $\vec{\omega}$ può cambiare solo di modulo e verso.
 L'**Equazione Dinamica di Base del Moto di Rotazione** è
 $$
 \vec{M}= \frac{d\vec{L}}{dt}

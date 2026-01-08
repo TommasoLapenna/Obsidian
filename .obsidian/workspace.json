@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/Fisica I/Energia e Lavoro.md",
+                "file": "University/Fisica I/Dinamica del Corpo Rigido.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Energia e Lavoro"
+              "title": "Dinamica del Corpo Rigido"
             }
           }
         ]
@@ -153,13 +153,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "University/Fisica I/Energia e Lavoro.md",
+                "file": "University/Fisica I/Dinamica del Corpo Rigido.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Energia e Lavoro"
+              "title": "Outline of Dinamica del Corpo Rigido"
             }
           },
           {
@@ -194,6 +194,10 @@
   },
   "active": "99189be0a0b28867",
   "lastOpenFiles": [
+    "University/Fisica I/Dinamica dei Sistemi di Punti Materiali.md",
+    "Source Material/Images/Pasted image 20260108155551.png",
+    "University/Fisica I/Energia e Lavoro.md",
+    "University/Fisica I/Fenomeni d'Urto.md",
     "University/Fisica I/Dinamica.md",
     "University/Fisica I/Cinematica.md",
     "University/Fisica I/Appendice.md",
@@ -201,7 +205,6 @@
     "University/Fisica I/Introduzione.md",
     "Untitled.canvas",
     "University/Fisica I/Dinamica del Corpo Rigido.md",
-    "University/Fisica I/Dinamica dei Sistemi di Punti Materiali.md",
     "University/Statistica/Inferenza Parametrica Frequentista.md",
     "University/Statistica/Variabili Aleatorie Continue.md",
     "University/Statistica/Modello Lineare.md",
@@ -226,8 +229,6 @@
     "Source Material/Images/Pasted image 20251204181312.png",
     "University/Fisica I/Primo Principio della Termodinamica.md",
     "University/Fisica I/Sistemi Termodinamici.md",
-    "University/Fisica I/Fenomeni d'Urto.md",
-    "University/Fisica I/Energia e Lavoro.md",
     "University/Fisica I Baldè buho.zip",
     "University/Statistica/Riassunto.canvas",
     "Tags",
@@ -240,7 +241,6 @@
     "Zettelkasten/Untitled 3.base",
     "Zettelkasten/Untitled 5.base",
     "University/Matematica Discreta e Codici",
-    "University/Intelligenza Artificiale",
-    "Source Material/Images/PHOTO-2025-09-29-03-28-03.jpg"
+    "University/Intelligenza Artificiale"
   ]
 }

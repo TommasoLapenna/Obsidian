@@ -24,6 +24,7 @@ Si considera un sistema di $n$ punti materiali, interagenti tra loro e col resta
 $$
 \vec{F}_{i}=\vec{F}_{i}^{(E)}+\vec{F}_{i}^{(I)}
 $$
+
 Si deve ovviamente prendere in considerazione la terza legge di Newton, infatti se il punto $i$ esercita sul punto $j$ una forza $\vec{F}_{ij}$, allora si avrà anche una forza $\vec{F}_{ji}$ esercitata dal punto $j$ su $i$ (stessa direzione e modulo, ma verso opposto).
 
 ![[Pasted image 20250728164522.png|center|400]]
@@ -284,8 +285,10 @@ Si può quindi enunciare il seguente teorema
 
 > [!gray] Primo Teorema di König
 > $$\vec{L}=\vec{L}'+\vec{r}_{CM}\times m\vec{v}_{CM}=\vec{L}'+\vec{L}_{CM}$$
+>![[Pasted image 20260108155551.png|center]]
 > Il momento angolare del sistema angolare si può scrivere, nel sistema di riferimento inerziale, come somma del momento angolare dovuto al moto del centro di riferimento di massa $\vec{L}_{CM}$ e di quello rispetto al centro di massa
 > 
+
 
 ### Teorema di König per l'Energia Cinetica
 L'energia cinetica per un sistema inerziale è $E_{k}=\sum_{i}\frac{1}{2} m_{i}v_{i}^2$, utilizzando la relazione $\vec{v}_{i}=\vec{v}_{i}'+\vec{v}_{CM}$ si ottiene
