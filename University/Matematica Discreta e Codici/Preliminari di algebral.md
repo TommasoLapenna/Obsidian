@@ -1,3 +1,6 @@
+---
+sticker: emoji//0032-fe0f-20e3
+---
 ### **DEFINIZIONE (Anello)** 
 Struttura: $(R,\ +_R,\ \cdot_R,\ 0_R,\ 1_R)$
 	$R:$ insieme
@@ -17,8 +20,8 @@ Struttura: $(R,\ +_R,\ \cdot_R,\ 0_R,\ 1_R)$
 
 ^80205d
 
-[[Preliminari di algebra#^80205d|(1.)]] [[Preliminari di algebra#^80205d|(2.)]]  È l'unico elemento neutro di $+_R\ (\cdot_R)$: si suppone che $0'_R\in R$ sia un altro elemento neutro di $+_R$ cioè $x+_R0'_R=x, \forall x\in R$, se $\ x=0_R \Rightarrow 0_r=0_R+_R0_R'$ , ma $0_R$ è per definizione l'elemento neutro di $+_R$. Quindi tutti gli elementi neutri sono comunque uguali a $0_R$.
-[[Preliminari di algebra#^80205d|(4.)]] $\forall x\in R \ \exists!$ l'opposto di $x$: siano $y,y'\in R:x+_Ry=x+_Ry'=0_R$, allora $y=y+_R0_R=x+_Ry+_Ry'=0_R+_Ry'=y'$
+[[Preliminari di algebral#^80205d|(1.)]] [[Preliminari di algebral#^80205d|(2.)]]  È l'unico elemento neutro di $+_R\ (\cdot_R)$: si suppone che $0'_R\in R$ sia un altro elemento neutro di $+_R$ cioè $x+_R0'_R=x, \forall x\in R$, se $\ x=0_R \Rightarrow 0_r=0_R+_R0_R'$ , ma $0_R$ è per definizione l'elemento neutro di $+_R$. Quindi tutti gli elementi neutri sono comunque uguali a $0_R$.
+[[Preliminari di algebral#^80205d|(4.)]] $\forall x\in R \ \exists!$ l'opposto di $x$: siano $y,y'\in R:x+_Ry=x+_Ry'=0_R$, allora $y=y+_R0_R=x+_Ry+_Ry'=0_R+_Ry'=y'$
 
 ### **ESEMPI DI ANELLI COMMUTATIVI**
 	$(\mathbb{R}, \ +,\ \cdot, \ 0, \ 1)$    $(\mathbb{C}, \ +, \ \cdot,\ 1)$    $(\frac{\mathbb{Z}}{2}, \ +, \ \cdot, \ 0, \ 1)$ $(M_{n,n}(\mathbb{R} \ o \ \mathbb{C}), \ +, \begin{bmatrix} 0 & \cdots & 0 \\ \vdots  & \ddots & \vdots \\0 & \cdots & 0 \end{bmatrix}, \begin{bmatrix} 1 & \cdots & 1 \\ \vdots  & \ddots & \vdots \\1 & \cdots & 1 \end{bmatrix})$ (anello non commutativo se $n>1$)
@@ -72,9 +75,9 @@ Sia $R$ una anello commutativo, un sottoinsieme $I\subseteq R$ si dice ideale (i
 1.  Se $R$ è un qualsiasi anello commutativo, allora $I=R$ e$I=\{0_R\}$ sono ideali in $R$ ($x\cdot_R 0_R = 0_R\in I$).
 	2. Sia $I\underset{ideale}\subseteq R$ tale che $1_R\in I$, allora $I=R$ ($\forall x \in R, x\cdot_R 1_R=x\in I$). Se $1_R\notin I$, allora $I$ è un ideale proprio.
 	3. Se $R$ è un anello commutativo, $r_0\in R$, si definisce $(r_0):=\{r\cdot_Rr_0|r\in R\}\subseteq R$
-		$r_0\in(r_0)$ [[Preliminari di algebra#^d46f00|(i)]], $(r_0)$ è chiuso rispetto alla somma [[Preliminari di algebra#^d46f00|(ii)]], sia $r\cdot_R r_0(\in(r_0))$ e $r'\in R$ , $r'\cdot_R(r\cdot_R r_0)\overset{associativa}=\underset{(\in R)}{(r'\cdot_Rr)}\cdot_Rr_0\in R$ [[Preliminari di algebra#^d46f00|(iii)]]
+		$r_0\in(r_0)$ [[Preliminari di algebral#^d46f00|(i)]], $(r_0)$ è chiuso rispetto alla somma [[Preliminari di algebral#^d46f00|(ii)]], sia $r\cdot_R r_0(\in(r_0))$ e $r'\in R$ , $r'\cdot_R(r\cdot_R r_0)\overset{associativa}=\underset{(\in R)}{(r'\cdot_Rr)}\cdot_Rr_0\in R$ [[Preliminari di algebral#^d46f00|(iii)]]
 	4. Sia $I\underset{ideale}\subseteq R$, allora $r\in I\Rightarrow -r\in I$ (opposto rispetto a $+_R$). Infatti: $(-1_R)\cdot_Rr=-r\in I$ per assorbenza.
-	5. Sia $I\underset{ideale}\subseteq R\Rightarrow 0_R\in I$ (da [[Preliminari di algebra#^90c038|(4.)]] e [[Preliminari di algebra#^d46f00|(i)]])
+	5. Sia $I\underset{ideale}\subseteq R\Rightarrow 0_R\in I$ (da [[Preliminari di algebral#^90c038|(4.)]] e [[Preliminari di algebral#^d46f00|(i)]])
 
 ### **PROPOSIZIONE**
 Sia $\phi:R\rightarrow S$ un morfismo di anelli commutativi. Allora $Ker(\phi)\underset{ideale}\subseteq R$
@@ -182,7 +185,7 @@ Sia $R$ anello commutativo
 
 ### **DIMOSTRAZIONE**
 1. L'osservazione precedente è $\Rightarrow$, si dimostra $\Leftarrow$: Sia $Ideali(R):=\{(0_R),R\}$. Intanto $0_R\neq 1_R$ (perché $(0_R)\neq 1_R$). Sia poi $r\in R \backslash\{0_R\}$, si deve dimostrare che $\exists r^{-1}\in R$: si considera $(r)\underset{ideale}\subseteq R$ ideale generato da $R$, ma $(r)\neq(0_R)$. Quindi , per ipotesi $(r)=R$, allora $1_R\in(r)$ cioè $\exists r\in R:r\cdot s=1_R, \ s=r^{-1}$.
-	2. Per [[Preliminari di algebra#^b96372|(1.)]] , dimostrare [[Preliminari di algebra#^b96372|(2.)]] che: $I\underset{ideale}\subseteq R$ è un $max\iff Ideali(\,^{R}\!/\!_{I})\overset{per \ definizione \ di \ ideale \ massimale}=\{0_{\,^{R}\!/\!_{I}},\,^{R}\!/\!_{I}\}$   
+	2. Per [[Preliminari di algebral#^b96372|(1.)]] , dimostrare [[Preliminari di algebral#^b96372|(2.)]] che: $I\underset{ideale}\subseteq R$ è un $max\iff Ideali(\,^{R}\!/\!_{I})\overset{per \ definizione \ di \ ideale \ massimale}=\{0_{\,^{R}\!/\!_{I}},\,^{R}\!/\!_{I}\}$   
 ^b96372
 
 ### **PROPOSIZIONE**
@@ -235,7 +238,7 @@ Sia $I=(f)\underset{ideale}\subseteq K[x],\ deg(f)=n\ge 1$
 	2. Si sa che $Ideali\left( \frac{K[x]}{(f)} \right)\overset{\sim}{\rightarrow}\{Ideali(J)\underset{ideale}\subseteq K[x]|J\supseteq(f)\} \overset{\sim}{\rightarrow}$ {polinomi monici $g\in K[x]:(g)\overset{\iff g\mid f}\supseteq(f)$}={polinomi monici $g\in K[x]$ t.c. $g\mid f$}
 
 ### **OSSERVAZIONE**
-[[Preliminari di algebra#^bda974|(1.)]] L'immagine ottenuta tramite $\epsilon$ della base canonica $e_i=(0,\ldots,0,1,0,\ldots,0)\in K^n$ è una base di $\frac{K[x]}{(f)}$ come $K-$spazio vettoriale, quindi $\{[1]_{(f)},[x]_{(f)}[x^2]_{(f)},\ldots,[x^{n-1}]_{(f)}\}$ base di $\frac{K[x]}{(f)}$. In particolare $dim_K \frac{K[x]}{(f)}=deg(f)=n$.
+[[Preliminari di algebral#^bda974|(1.)]] L'immagine ottenuta tramite $\epsilon$ della base canonica $e_i=(0,\ldots,0,1,0,\ldots,0)\in K^n$ è una base di $\frac{K[x]}{(f)}$ come $K-$spazio vettoriale, quindi $\{[1]_{(f)},[x]_{(f)}[x^2]_{(f)},\ldots,[x^{n-1}]_{(f)}\}$ base di $\frac{K[x]}{(f)}$. In particolare $dim_K \frac{K[x]}{(f)}=deg(f)=n$.
 
 ### **TEOREMA (Esistenza e unicità dei campi finiti)**
 Sia $q\ge2, \ q\in\mathbb{N}$. Esiste un campo finito con $q$ elementi se e solo se $q=p^r$, $p$ primo, $r\ge 1$. Inoltre se $K$ e $K'$ sono campi con $q$ elementi, esiste un isomorfismo $K\simeq K'$ ($\exists$ un solo campo finito con $q$ elementi) (NO DIM).
@@ -247,8 +250,8 @@ Si considera $\mathbb{F}_p[x]$ e si sceglie un polinomio irriducibile e di grado
 		Bisogna dimostrare che in $\mathbb{F}_p[x]$ con $p$ primo arbitrario esistono polinomi irriducibili di grado arbitrario.
 	Si considera l'anello quoziente $\frac{\mathbb{F}_p[x]}{(f)}, \ deg(f)=r, \ f$ irriducibile **CLAIM:** $\frac{\mathbb{F}_p[x]}{(f)}$ è un campo con $q$ elementi.
 	**DIMOSTRAZIONE**
-		$\overset{} {dim_{\mathbb{F}_p}\left( \mathbb{\frac{F_p[x]}{(f)}} \right)=r}$ (per [[Preliminari di algebra#^bda974|(1.)]])$\Rightarrow\#\left( \frac{\mathbb{F}_p[x]}{(f)} \right)=p^r$ ok, quindi $\frac{\mathbb{F}_p[x]}{(f)}$ ha $q=p^r$ elementi. 
-		Resta da verificare che $\frac{\mathbb{F}_p[x]}{(f)}$ è un campo, a tal fine $f$ è un polinomio irriducibile in $\mathbb{F}_p[x]$. $Ideali\left( \frac{\mathbb{F}_p[x]}{(f)} \right)\overset{\sim}\rightarrow$ (per [[Preliminari di algebra#^bda974|(2.)]]){divisori monici di $f$ in $\mathbb{F}_p=\{a^{-1}_rf,1_\mathbb{F_P}\}$} $\Rightarrow{\frac{\mathbb{F}_p[x]}{(f)}}$ ha solo 2 ideali $\Rightarrow$ è un campo.
+		$\overset{} {dim_{\mathbb{F}_p}\left( \mathbb{\frac{F_p[x]}{(f)}} \right)=r}$ (per [[Preliminari di algebral#^bda974|(1.)]])$\Rightarrow\#\left( \frac{\mathbb{F}_p[x]}{(f)} \right)=p^r$ ok, quindi $\frac{\mathbb{F}_p[x]}{(f)}$ ha $q=p^r$ elementi. 
+		Resta da verificare che $\frac{\mathbb{F}_p[x]}{(f)}$ è un campo, a tal fine $f$ è un polinomio irriducibile in $\mathbb{F}_p[x]$. $Ideali\left( \frac{\mathbb{F}_p[x]}{(f)} \right)\overset{\sim}\rightarrow$ (per [[Preliminari di algebral#^bda974|(2.)]]){divisori monici di $f$ in $\mathbb{F}_p=\{a^{-1}_rf,1_\mathbb{F_P}\}$} $\Rightarrow{\frac{\mathbb{F}_p[x]}{(f)}}$ ha solo 2 ideali $\Rightarrow$ è un campo.
 		($f=a_0+a_1x+\ldots+a_rx^r$ $a_r\neq0_{\mathbb{F}_p}$ poiché $deg(f)=r, \ a_i\in\mathbb{F}_p, \ f$ irriducibile).
 	**ESEMPIO**
 		Si costruisce $\mathbb{F}_4, \ q=4=2^2, \ p=r=2$ 	

@@ -8,35 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "9e2a06e3a432ebec",
+            "id": "3bb525555e8d686a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linux/Gentoo/Installazione.md",
+                "file": "University/Matematica Discreta e Codici/Preliminari di Algebra.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Installazione"
-            }
-          },
-          {
-            "id": "e28240a7db25eda5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Linux/NixOs/Installazione.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Installazione"
+              "title": "Preliminari di Algebra"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -101,56 +86,7 @@
         }
       },
       {
-        "id": "f76b257971e24486",
-        "type": "leaf",
-        "state": {
-          "type": "mk-space",
-          "state": {
-            "path": "University/Fisica I"
-          },
-          "icon": "lucide-file",
-          "title": "Fisica I"
-        }
-      },
-      {
-        "id": "60d99008cc7e0181",
-        "type": "leaf",
-        "state": {
-          "type": "bases",
-          "state": {
-            "file": "Zettelkasten/Untitled 2.base",
-            "viewName": "Table"
-          },
-          "icon": "lucide-table",
-          "title": "Untitled 2"
-        }
-      },
-      {
-        "id": "c71f46c6a64e6fde",
-        "type": "leaf",
-        "state": {
-          "type": "mk-space",
-          "state": {
-            "path": "University/Fisica I"
-          },
-          "icon": "lucide-file",
-          "title": "Fisica I"
-        }
-      },
-      {
-        "id": "86e31d5bef8b64e3",
-        "type": "leaf",
-        "state": {
-          "type": "mk-space",
-          "state": {
-            "path": "University"
-          },
-          "icon": "lucide-file",
-          "title": "University"
-        }
-      },
-      {
-        "id": "99dda2f5208b9e2f",
+        "id": "fb438aeb72de6dbf",
         "type": "leaf",
         "state": {
           "type": "file-explorer",
@@ -163,7 +99,7 @@
         }
       },
       {
-        "id": "08cbcf12b0c6c258",
+        "id": "5dc1013cc185bbfa",
         "type": "leaf",
         "state": {
           "type": "mk-path-view",
@@ -173,7 +109,7 @@
         }
       }
     ],
-    "currentTab": 9
+    "currentTab": 4
   },
   "right": {
     "id": "a10862bf1887e6d2",
@@ -218,7 +154,6 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "University/Ingegneria del Software/Object Oriented Analysis.md",
             "followCursor": false,
             "showSearch": false,
             "searchQuery": ""
@@ -242,6 +177,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-kanban:Create new board": false,
       "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
@@ -249,14 +185,21 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-camera:Obsidian Camera": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e28240a7db25eda5",
+  "active": "3bb525555e8d686a",
   "lastOpenFiles": [
-    "University/Ingegneria del Software/Object Oriented Analysis.md",
+    "University/Matematica Discreta e Codici/Preliminari di Algebra.md",
+    "University/Matematica Discreta e Codici/Preliminari di algebral.md",
+    "University/Fisica I/Dinamica dei Sistemi di Punti Materiali.md",
+    "University/Matematica Discreta e Codici/Introduzione alla Teoria dei Codici.md",
+    "Source Material/Images/Pasted image 20260116171708.png",
+    "Source Material/Images/Pasted image 20260116160539.png",
+    "University/Fisica I/Energia e Lavoro.md",
     "Linux/Gentoo/Installazione.md",
+    "Linux/NixOs/Installazione.md",
+    "University/Ingegneria del Software/Object Oriented Analysis.md",
     "University/Ingegneria del Software/Design Patterns.md",
     "Source Material/Images/PHOTO-2025-09-29-03-28-03.jpg",
     "University/Ingegneria del Software/Ingegneria del Software.md",
@@ -278,16 +221,12 @@
     "University/Fisica I/Cinematica.md",
     "Source Material/Images/Pasted image 20250820193022.png",
     "University/Fisica I/Primo Principio della Termodinamica.md",
-    "Source Material/Images/Pasted image 20250812160252.jpg",
-    "Source Material/Images/Pasted image 20250812115222.jpg",
     "University/Fisica I/Sistemi Termodinamici.md",
     "attachments/snaps",
     "attachments",
     "Untitled.canvas",
     "University/Fisica I/Dinamica del Corpo Rigido.md",
-    "University/Fisica I/Dinamica dei Sistemi di Punti Materiali.md",
     "University/Fisica I/.md",
-    "University/Fisica I/Energia e Lavoro.md",
     "University/Fisica I/Introduzione.md",
     "Zettelkasten/Funzioni Reali di Variabile Reale.md",
     "Zettelkasten/Integrali Multipli.md",
@@ -296,10 +235,6 @@
     "University/Fondamenti di Segnali e Trasmissione/Sistemi Monodimensionali a Tempo Continuo.md",
     "University/Fondamenti di Segnali e Trasmissione/Sistemi Monodimensionali a Tempo Discreto.md",
     "University/Statistica/Variabili Aleatorie Continue.md",
-    "University/Statistica/Verifica di Ipotesi.md",
-    "University/Statistica/Modello Lineare.md",
-    "University/Statistica/Statistiche Campionarie.md",
-    "University/Statistica/Inferenza Parametrica Bayesiana.md",
     "Tags",
     "University/Statistica",
     "Zettelkasten/Riassunto Analisi 2 e Probabilità.canvas"
