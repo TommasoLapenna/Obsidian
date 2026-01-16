@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/Fisica I/Dinamica del Corpo Rigido.md",
-                "mode": "preview",
+                "file": "University/Matematica Discreta e Codici/Introduzione alla Teoria dei Codici.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Dinamica del Corpo Rigido"
+              "title": "Introduzione alla Teoria dei Codici"
             }
           }
         ]
@@ -75,7 +75,7 @@
             }
           },
           {
-            "id": "5a5a3b827de06e18",
+            "id": "9b62a78256bb3b57",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -153,13 +153,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "University/Fisica I/Dinamica del Corpo Rigido.md",
+                "file": "University/Matematica Discreta e Codici/Introduzione alla Teoria dei Codici.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Dinamica del Corpo Rigido"
+              "title": "Outline of Introduzione alla Teoria dei Codici"
             }
           },
           {
@@ -194,17 +194,21 @@
   },
   "active": "99189be0a0b28867",
   "lastOpenFiles": [
+    "University/Matematica Discreta e Codici/Preliminari di algebra.md",
+    "University/Matematica Discreta e Codici/Introduzione alla Teoria dei Codici.md",
+    "University/Matematica Discreta e Codici/Definizioni.md",
+    "University/Fisica I/Dinamica.md",
+    "University/Fisica I/Sistemi Termodinamici.md",
+    "University/Fisica I/Fenomeni d'Urto.md",
+    "University/Fisica I/Dinamica del Corpo Rigido.md",
     "University/Fisica I/Dinamica dei Sistemi di Punti Materiali.md",
     "Source Material/Images/Pasted image 20260108155551.png",
     "University/Fisica I/Energia e Lavoro.md",
-    "University/Fisica I/Fenomeni d'Urto.md",
-    "University/Fisica I/Dinamica.md",
     "University/Fisica I/Cinematica.md",
     "University/Fisica I/Appendice.md",
     "Source Material/Images/prova",
     "University/Fisica I/Introduzione.md",
     "Untitled.canvas",
-    "University/Fisica I/Dinamica del Corpo Rigido.md",
     "University/Statistica/Inferenza Parametrica Frequentista.md",
     "University/Statistica/Variabili Aleatorie Continue.md",
     "University/Statistica/Modello Lineare.md",
@@ -225,10 +229,7 @@
     "Linux/NixOs/Flakes.md",
     "Linux/NixOs/Utilizzo.md",
     "Linux/NixOs/Installazione.md",
-    "Linux/NixOs/NixOs.md",
     "Source Material/Images/Pasted image 20251204181312.png",
-    "University/Fisica I/Primo Principio della Termodinamica.md",
-    "University/Fisica I/Sistemi Termodinamici.md",
     "University/Fisica I Baldè buho.zip",
     "University/Statistica/Riassunto.canvas",
     "Tags",
