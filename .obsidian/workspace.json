@@ -11,14 +11,17 @@
             "id": "4a8de40ea925dc94",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "University/Fondementi di Reti di Telecomunicazioni/Domande Orale.md",
-                "mode": "source",
-                "source": false
+                "file": "University/Fondementi di Reti di Telecomunicazioni/Reti.canvas",
+                "viewState": {
+                  "x": 2801.9778302784357,
+                  "y": -627.6576444365687,
+                  "zoom": -2.233875460724036
+                }
               },
-              "icon": "lucide-file",
-              "title": "Domande Orale"
+              "icon": "lucide-layout-dashboard",
+              "title": "Reti"
             }
           }
         ]
@@ -75,7 +78,7 @@
             }
           },
           {
-            "id": "822ff595a7a464e7",
+            "id": "91536a4b3a79218b",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -89,8 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 332.5,
-    "collapsed": true
+    "width": 332.5
   },
   "right": {
     "id": "73070c279435b60b",
@@ -208,6 +210,13 @@
   },
   "active": "4a8de40ea925dc94",
   "lastOpenFiles": [
+    "Source Material/Images/Pasted image 20260130153143.png",
+    "Source Material/Images/Pasted image 20260130123753.png",
+    "Source Material/Images/Pasted image 20260130122340.png",
+    "Source Material/Images/Pasted image 20260130122242.png",
+    "Source Material/Images/Pasted image 20260130120253.png",
+    "Source Material/Images/Pasted image 20260130115347.png",
+    "Source Material/Images/Pasted image 20260130115207.png",
     "University/Fondementi di Reti di Telecomunicazioni/Domande Orale.md",
     "Zettelkasten/BUDAPEST.md",
     "Source Material/Images/high-res-popular-transportation.png",
@@ -240,21 +249,14 @@
     "University/Statistica/Modello Lineare.md",
     "University/Statistica/Variabili Aleatorie Discrete.md",
     "University/Statistica/Verifica di Ipotesi.md",
-    "University/Statistica/Statistiche Campionarie.md",
     "Source Material/Images/Pasted image 20251212111224.png",
     "Source Material/Images/Pasted image 20251209190349.png",
-    "Source Material/Images/Pasted image 20251209185730.png",
-    "Source Material/Images/Pasted image 20251209183614.png",
-    "Source Material/Images/Pasted image 20251209162449.png",
-    "Source Material/Images/Pasted image 20251209162402.png",
-    "Source Material/Images/Pasted image 20251204181312.png",
     "University/Fisica I Baldè buho.zip",
     "University/Statistica/Riassunto.canvas",
     "Tags",
     "Zettelkasten/Untitled.base",
     "University/Analisi 2 e Probabilità/Riassunto Analisi 2 e Probabilità.canvas",
     "Source Material/Images/Esercizi_Foglio2_bd265c7c9c695a504c22f417c678d2a2.pdf",
-    "Source Material/Pasted image 20250521124452.png",
     "University/Basi di Dati",
     "Zettelkasten/Untitled 3.base",
     "Zettelkasten/Untitled 5.base"
