@@ -10,5 +10,9 @@
   "table-editor-obsidian",
   "obsidian-text-format",
   "obsidian-plantuml",
-  "obsidian-kanban"
+  "obsidian-kanban",
+  "mermaid-tools",
+  "advanced-canvas",
+  "better-export-pdf",
+  "share-note"
 ]

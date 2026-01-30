@@ -52,7 +52,9 @@
     "//Source Material/Source Material/Images",
     "//Linux/Linux/NixOs",
     "//University",
-    "//University/University/Matematica Discreta e Codici"
+    "//University/University/Matematica Discreta e Codici",
+    "//ESP32",
+    "//University/University/Fondementi di Reti di Telecomunicazioni"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",

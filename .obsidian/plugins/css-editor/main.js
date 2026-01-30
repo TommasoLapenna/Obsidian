@@ -34,7 +34,6 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // src/main.ts
 var main_exports = {};
 __export(main_exports, {
-  DEFAULT_SETTINGS: () => DEFAULT_SETTINGS,
   default: () => CssEditorPlugin
 });
 module.exports = __toCommonJS(main_exports);
@@ -7726,7 +7725,7 @@ var CssFile = class {
   }
 };
 
-// src/obsidian/file-system-helpers.ts
+// src/utils/file-system-helpers.ts
 var import_obsidian = require("obsidian");
 function getSnippetDirectory(app) {
   return `${app.vault.configDir}/snippets/`;
@@ -10678,7 +10677,7 @@ var CssSnippetRenameModal = class extends import_obsidian3.Modal {
   }
 };
 
-// src/obsidian/view-helpers.ts
+// src/utils/view-helpers.ts
 function focusAndSelectElement(el) {
   el.focus({ preventScroll: true });
   const range = document.createRange();
@@ -12767,32 +12766,9 @@ var colorPickerPlugin = import_view7.ViewPlugin.fromClass(
   }
 );
 
-// src/obsidian/workspace-helpers.ts
-var import_obsidian5 = require("obsidian");
-async function openView(workspace, type, openInNewTab, state) {
-  const leaf = workspace.getLeaf(openInNewTab);
-  await leaf.setViewState({
-    type,
-    state
-  });
-  workspace.setActiveLeaf(leaf);
-}
-async function detachCssFileLeaves(workspace, file) {
-  var _a;
-  const leaves = workspace.getLeavesOfType(VIEW_TYPE_CSS);
-  for (const leaf of leaves) {
-    if ((0, import_obsidian5.requireApiVersion)("1.7.2")) {
-      await leaf.loadIfDeferred();
-    }
-    if (((_a = leaf.getViewState().state) == null ? void 0 : _a.file) === file.name) {
-      leaf.detach();
-    }
-  }
-}
-
 // src/modals/CssSnippetDeleteConfirmModal.ts
-var import_obsidian6 = require("obsidian");
-var CssSnippetDeleteConfirmModal = class extends import_obsidian6.Modal {
+var import_obsidian5 = require("obsidian");
+var CssSnippetDeleteConfirmModal = class extends import_obsidian5.Modal {
   constructor(app, plugin, file) {
     super(app);
     this.plugin = plugin;
@@ -12821,8 +12797,8 @@ var CssSnippetDeleteConfirmModal = class extends import_obsidian6.Modal {
       type: "checkbox"
     });
     dontAskAgainCheckbox.insertAdjacentText("afterend", "Don't ask again");
-    new import_obsidian6.ButtonComponent(buttonContainer).setButtonText("Delete").setWarning().onClick(() => this.delete());
-    new import_obsidian6.ButtonComponent(buttonContainer).setButtonText("Cancel").onClick(() => this.close());
+    new import_obsidian5.ButtonComponent(buttonContainer).setButtonText("Delete").setWarning().onClick(() => this.delete());
+    new import_obsidian5.ButtonComponent(buttonContainer).setButtonText("Cancel").onClick(() => this.close());
   }
   async delete() {
     try {
@@ -12833,14 +12809,54 @@ var CssSnippetDeleteConfirmModal = class extends import_obsidian6.Modal {
         this.plugin.settings.promptDelete = false;
         await this.plugin.saveSettings();
       }
-      await detachCssFileLeaves(this.app.workspace, this.file);
-      await deleteSnippetFile(this.app, this.file);
+      await deleteSnippet(this.app, this.file);
       this.close();
     } catch (err) {
       handleError(err, "Failed to delete CSS file.");
     }
   }
 };
+
+// src/utils/workspace-helpers.ts
+var import_obsidian6 = require("obsidian");
+async function openView(workspace, type, openInNewTab, state) {
+  const leaf = workspace.getLeaf(openInNewTab);
+  await leaf.setViewState({
+    type,
+    state
+  });
+  workspace.setActiveLeaf(leaf);
+}
+async function detachCssFileLeaves(workspace, file) {
+  var _a;
+  const leaves = workspace.getLeavesOfType(VIEW_TYPE_CSS);
+  for (const leaf of leaves) {
+    if ((0, import_obsidian6.requireApiVersion)("1.7.2")) {
+      await leaf.loadIfDeferred();
+    }
+    if (((_a = leaf.getViewState().state) == null ? void 0 : _a.file) === file.name) {
+      leaf.detach();
+    }
+  }
+}
+
+// src/utils/delete-snippet.ts
+async function tryDeleteSnippet(plugin, file) {
+  if (plugin.settings.promptDelete) {
+    const modal = new CssSnippetDeleteConfirmModal(
+      plugin.app,
+      plugin,
+      file
+    );
+    modal.open();
+  } else {
+    await deleteSnippet(plugin.app, file);
+  }
+}
+async function deleteSnippet(app, file) {
+  await deleteSnippetFile(app, file);
+  await detachCssFileLeaves(app.workspace, file);
+}
 
 // src/views/CssEditorView.ts
 var VIEW_TYPE_CSS = "css-editor-view";
@@ -12902,7 +12918,7 @@ var CssEditorView = class extends import_obsidian7.ItemView {
     return VIEW_TYPE_CSS;
   }
   getIcon() {
-    return "file-code";
+    return "css-editor-logo";
   }
   getDisplayText() {
     var _a, _b;
@@ -12991,28 +13007,16 @@ var CssEditorView = class extends import_obsidian7.ItemView {
           menu.addItem((item) => {
             item.setIcon("lucide-trash-2").setSection("danger").setTitle("Delete snippet").setWarning(true).onClick(async () => {
               if (this.file) {
-                if (this.plugin.settings.promptDelete) {
-                  new CssSnippetDeleteConfirmModal(
-                    this.app,
+                try {
+                  await tryDeleteSnippet(
                     this.plugin,
                     this.file
-                  ).open();
-                } else {
-                  try {
-                    await detachCssFileLeaves(
-                      this.app.workspace,
-                      this.file
-                    );
-                    await deleteSnippetFile(
-                      this.app,
-                      this.file
-                    );
-                  } catch (err) {
-                    handleError(
-                      err,
-                      "Failed to delete CSS file."
-                    );
-                  }
+                  );
+                } catch (err) {
+                  handleError(
+                    err,
+                    "Failed to delete CSS file."
+                  );
                 }
               }
             });
@@ -13236,11 +13240,14 @@ var CssSnippetFuzzySuggestModal = class extends import_obsidian8.FuzzySuggestMod
           { cls: "suggestion-content" },
           (suggestionContentEl) => {
             suggestionContentEl.appendChild(
-              createDiv({}, (nestedEl) => {
-                existingChildren.forEach((child) => {
-                  nestedEl.appendChild(child);
-                });
-              })
+              createDiv(
+                { cls: "css-editor-suggestion-name" },
+                (nestedEl) => {
+                  existingChildren.forEach((child) => {
+                    nestedEl.appendChild(child);
+                  });
+                }
+              )
             );
             suggestionContentEl.appendChild(
               createDiv(
@@ -13342,10 +13349,7 @@ var CssSnippetFuzzySuggestModal = class extends import_obsidian8.FuzzySuggestMod
           }).catch(handleError);
         }
       } else if (evt.key === "Delete") {
-        Promise.all([
-          detachCssFileLeaves(this.app.workspace, item),
-          deleteSnippetFile(this.app, item)
-        ]).then(() => {
+        tryDeleteSnippet(this.plugin, item).then(() => {
           new import_obsidian8.Notice(`${item.name} was deleted.`);
         }).catch((err) => {
           handleError(err, "Failed to delete CSS file.");
@@ -13394,7 +13398,7 @@ function around1(obj, method, createWrapper) {
   }
 }
 
-// src/obsidian/ignore-obsidian-hotkey.ts
+// src/utils/ignore-obsidian-hotkey.ts
 function ignoreObsidianHotkey(scope, keymapInfo, checkCallback) {
   const uninstallCommand = around(scope, {
     handleKey(originalMethod) {
@@ -13458,10 +13462,20 @@ var CssSnippetCreateModal = class extends import_obsidian9.Modal {
   }
 };
 
-// src/obsidian/setting-tab.ts
+// src/settings/CssEditorSettingTab.ts
 var import_language10 = require("@codemirror/language");
 var import_view9 = require("@codemirror/view");
 var import_obsidian10 = require("obsidian");
+
+// src/settings/settings.ts
+var DEFAULT_SETTINGS = {
+  promptDelete: true,
+  lineWrap: true,
+  indentSize: 2,
+  relativeLineNumbers: false
+};
+
+// src/settings/CssEditorSettingTab.ts
 function updateCSSEditorView(app, spec) {
   app.workspace.getLeavesOfType(VIEW_TYPE_CSS).forEach((leaf) => {
     if (leaf.view instanceof CssEditorView) {
@@ -13472,75 +13486,93 @@ function updateCSSEditorView(app, spec) {
 var CSSEditorSettingTab = class extends import_obsidian10.PluginSettingTab {
   constructor(app, plugin) {
     super(app, plugin);
+    this.icon = "css-editor-logo";
     this.plugin = plugin;
   }
   display() {
     this.containerEl.empty();
-    new import_obsidian10.Setting(this.containerEl).setName("Confirm CSS snippet deletion").setDesc("Prompt before CSS snippet deletion.").addToggle((toggle) => {
-      toggle.setValue(this.plugin.settings.promptDelete);
-      toggle.onChange(async (val) => {
-        this.plugin.settings.promptDelete = val;
-        await this.plugin.saveSettings();
-      });
-    });
-    new import_obsidian10.Setting(this.containerEl).setName("Line wrap").setDesc("Toggle line wrap in the editor.").addToggle((toggle) => {
-      toggle.setValue(this.plugin.settings.lineWrap);
-      toggle.onChange(async (val) => {
-        this.plugin.settings.lineWrap = val;
-        await this.plugin.saveSettings();
-        updateCSSEditorView(this.app, {
-          effects: lineWrap.reconfigure(
-            val ? import_view9.EditorView.lineWrapping : []
-          )
+    const editorGroup = new import_obsidian10.SettingGroup(this.containerEl);
+    editorGroup.addSetting((setting) => {
+      setting.setName("Line wrap").setDesc("Toggle line wrap in the editor.").addToggle((toggle) => {
+        toggle.setValue(this.plugin.settings.lineWrap);
+        toggle.onChange(async (val) => {
+          this.plugin.settings.lineWrap = val;
+          await this.plugin.saveSettings();
+          updateCSSEditorView(this.app, {
+            effects: lineWrap.reconfigure(
+              val ? import_view9.EditorView.lineWrapping : []
+            )
+          });
         });
       });
     });
-    new import_obsidian10.Setting(this.containerEl).setName("Indent size").setDesc("Adjust the amount of spaces used for indentation.").addText((field) => {
-      field.setPlaceholder("2");
-      field.setValue(this.plugin.settings.indentSize.toString());
-      field.onChange(async (val) => {
-        val = val.replace(/\D/g, "");
-        field.setValue(val);
-        const size = parseInt(val);
-        this.plugin.settings.indentSize = size;
-        await this.plugin.saveSettings();
-        updateCSSEditorView(this.app, {
-          effects: indentSize.reconfigure(
-            import_language10.indentUnit.of("".padEnd(size))
-          )
+    editorGroup.addSetting((setting) => {
+      setting.setName("Indent size").setDesc("Adjust the amount of spaces used for indentation.").addExtraButton((btn) => {
+        btn.setIcon("reset").setTooltip("Restore default").onClick(async () => {
+          this.plugin.settings.indentSize = DEFAULT_SETTINGS.indentSize;
+          await this.plugin.saveSettings();
+          updateCSSEditorView(this.app, {
+            effects: indentSize.reconfigure(
+              import_language10.indentUnit.of("".padEnd(2))
+            )
+          });
+          this.display();
+        });
+      }).addSlider((slider) => {
+        slider.setLimits(1, 8, 1).setValue(this.plugin.settings.indentSize).setDynamicTooltip().onChange(async (val) => {
+          this.plugin.settings.indentSize = val;
+          await this.plugin.saveSettings();
+          updateCSSEditorView(this.app, {
+            effects: indentSize.reconfigure(
+              import_language10.indentUnit.of("".padEnd(val))
+            )
+          });
         });
       });
     });
-    new import_obsidian10.Setting(this.containerEl).setName("Relative line numbers").setDesc("Show line numbers relative to cursor position.").addToggle((toggle) => {
-      toggle.setValue(this.plugin.settings.relativeLineNumbers);
-      toggle.onChange(async (val) => {
-        this.plugin.settings.relativeLineNumbers = val;
-        await this.plugin.saveSettings();
-        updateCSSEditorView(this.app, {
-          effects: relativeLineNumberGutter.reconfigure(
-            (0, import_view9.lineNumbers)({
-              formatNumber: val ? relativeLineNumbersFormatter : absoluteLineNumbers
-            })
-          )
+    editorGroup.addSetting((setting) => {
+      setting.setName("Relative line numbers").setDesc("Show line numbers relative to cursor position.").addToggle((toggle) => {
+        toggle.setValue(this.plugin.settings.relativeLineNumbers);
+        toggle.onChange(async (val) => {
+          this.plugin.settings.relativeLineNumbers = val;
+          await this.plugin.saveSettings();
+          updateCSSEditorView(this.app, {
+            effects: relativeLineNumberGutter.reconfigure(
+              (0, import_view9.lineNumbers)({
+                formatNumber: val ? relativeLineNumbersFormatter : absoluteLineNumbers
+              })
+            )
+          });
+        });
+      });
+    });
+    const trashGroup = new import_obsidian10.SettingGroup(this.containerEl).setHeading(
+      "Trash"
+    );
+    trashGroup.addSetting((setting) => {
+      setting.setName("Confirm file deletion").setDesc("Ask before deleting a file.").addToggle((toggle) => {
+        toggle.setValue(this.plugin.settings.promptDelete);
+        toggle.onChange(async (val) => {
+          this.plugin.settings.promptDelete = val;
+          await this.plugin.saveSettings();
         });
       });
     });
   }
 };
 
+// src/icons/css-icon.svg
+var css_icon_default = '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 1000 1000" role="img">\n  <defs>\n    <mask id="css-editor-logo-cutout-mask">\n      <rect width="1000" height="1000" fill="white"/>\n      <path fill="black" d="m358.1,920c-64.23-.06-103.86-36.23-103.1-102.79,0,0,0-168.39,0-168.39,0-33.74,9.88-59.4,29.64-76.96,35.49-34.19,117.83-36.27,152.59.52,21.42,18.89,29.5,57.48,27.58,93.49h-73.72c.56-14.15-.19-35.58-8.51-43.65-10.81-14.63-39.36-12.91-46.91,2.32-4.64,8.26-6.96,20.49-6.96,36.67v146.18c0,30.65,10.65,46.15,31.96,46.49,9.96,0,17.53-3.62,22.68-10.85,7.19-8.58,8.31-27.58,7.73-41.32h73.72c5.04,70.07-36.32,119.16-106.71,118.29Zm234.04,0c-71.17.98-103.01-49.66-101.04-118.29h69.59c-1.93,29.92,8.35,57.17,32.99,55.27,10.99,0,18.73-3.44,23.2-10.33,8.5-12.59,10.09-48.95-2.06-63.02-8.49-13.55-39.03-25.51-55.16-33.57-23.03-11.02-39.61-24.1-49.75-39.26-22.87-33.64-20.75-107.48,11.34-137.4,31.18-36.92,112.61-38.62,143.82-.77,19.25,19.51,27.66,57.9,26.03,93.23h-67.02c.57-14.52-.8-37.95-6.44-46.49-3.95-7.23-11.43-10.85-22.42-10.85-19.59,0-29.38,11.71-29.38,35.12.21,24.86,9.9,35.06,32.48,45.45,29.24,11.36,66.42,30.76,79.9,54.24,40.2,71.54,12.62,180.82-86.09,176.65Zm224.76,0c-71.17.98-103.01-49.66-101.04-118.29h69.59c-1.93,29.92,8.35,57.17,32.99,55.27,10.99,0,18.73-3.44,23.2-10.33,8.5-12.59,10.09-48.95-2.06-63.02-8.49-13.55-39.03-25.51-55.16-33.57-23.03-11.02-39.61-24.1-49.75-39.26-22.87-33.64-20.75-107.48,11.34-137.4,31.18-36.92,112.61-38.62,143.82-.77,19.25,19.51,27.66,57.9,26.03,93.23h-67.02c.57-14.52-.8-37.95-6.44-46.49-3.95-7.23-11.43-10.85-22.42-10.85-19.59,0-29.38,11.71-29.38,35.12.21,24.86,9.9,35.06,32.48,45.45,29.24,11.36,66.42,30.76,79.9,54.24,40.2,71.54,12.62,180.82-86.09,176.65Z"/>\n    </mask>\n  </defs>\n  <path fill="currentColor" mask="url(#css-editor-logo-cutout-mask)" d="M0 0H840A160 160 0 0 1 1000 160V840A160 160 0 0 1 840 1000H160A160 160 0 0 1 0 840V0Z"/>\n</svg>';
+
 // src/main.ts
-var DEFAULT_SETTINGS = {
-  promptDelete: true,
-  lineWrap: true,
-  indentSize: 2,
-  relativeLineNumbers: false
-};
 var CssEditorPlugin = class extends import_obsidian11.Plugin {
   async onload() {
     await this.loadSettings();
+    (0, import_obsidian11.addIcon)("css-editor-logo", css_icon_default);
     this.addCommand({
       id: "create-css-snippet",
       name: "Create CSS snippet",
+      icon: "file-plus",
       callback: () => {
         new CssSnippetCreateModal(this.app, this).open();
       }
@@ -13548,6 +13580,7 @@ var CssEditorPlugin = class extends import_obsidian11.Plugin {
     this.addCommand({
       id: "open-quick-switcher",
       name: "Open quick switcher",
+      icon: "file-search",
       callback: () => {
         new CssSnippetFuzzySuggestModal(this.app, this).open();
       }
@@ -13555,6 +13588,7 @@ var CssEditorPlugin = class extends import_obsidian11.Plugin {
     this.addCommand({
       id: "delete-css-snippet",
       name: "Delete CSS snippet",
+      icon: "trash-2",
       checkCallback: (checking) => {
         const activeCssEditorView = this.app.workspace.getActiveViewOfType(CssEditorView);
         if (!activeCssEditorView) return false;
@@ -13562,20 +13596,11 @@ var CssEditorPlugin = class extends import_obsidian11.Plugin {
         if (!file) return false;
         if (checking) return true;
         const cssFile = new CssFile(file);
-        if (this.settings.promptDelete) {
-          new CssSnippetDeleteConfirmModal(
-            this.app,
-            this,
-            cssFile
-          ).open();
-        } else {
-          detachCssFileLeaves(this.app.workspace, cssFile).then(async () => {
-            await deleteSnippetFile(this.app, cssFile);
-            new import_obsidian11.Notice(`"${cssFile.name}" was deleted.`);
-          }).catch((err) => {
-            handleError(err, "Failed to delete CSS file.");
-          });
-        }
+        tryDeleteSnippet(this, cssFile).then(() => {
+          new import_obsidian11.Notice(`"${cssFile.name}" was deleted.`);
+        }).catch((err) => {
+          handleError(err, "Failed to delete CSS file.");
+        });
         return true;
       }
     });
@@ -13596,6 +13621,13 @@ var CssEditorPlugin = class extends import_obsidian11.Plugin {
         return true;
       }
     });
+    this.addRibbonIcon(
+      "css-editor-logo",
+      "Open CSS editor quick switcher",
+      () => {
+        new CssSnippetFuzzySuggestModal(this.app, this).open();
+      }
+    );
     this.register(
       ignoreObsidianHotkey(
         this.app.scope,
