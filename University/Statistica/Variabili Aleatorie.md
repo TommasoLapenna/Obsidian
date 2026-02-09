@@ -333,6 +333,7 @@ $$
 \phi(t):=E_{x}[e^{tX}]=\sum_{x}e^{tx}p(x)\quad \forall t\in \mathbb{R}
 $$
 - Data una v.a. *continua* $X$, è definita funzione generatrice dei momenti  il valore atteso $$\phi(t):=E[e^{tX}]=\int_{-\infty}^\infty e^{tx} f(x)\ dx \quad \forall t\in \mathbb{R}$$
+
 Il nome deriva dal fatto che il momento $r-$esimo di $X$ può essere generato da $\phi(t)$ calcolando la derivata $r-$ esima rispetto a $t$ nel punto $t=0$, infatti:
 $$
 \frac{\delta^r\phi(t)}{\delta t}=\frac{\delta^r E(e^{tx})}{\delta t}=E\left( \frac{\delta^re^{tx}}{\delta t} \right)=E(X^re^{tx})=E(X^r)\quad se\ t=0

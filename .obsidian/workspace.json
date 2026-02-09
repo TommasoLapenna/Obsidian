@@ -11,17 +11,14 @@
             "id": "4a8de40ea925dc94",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "University/Fondementi di Reti di Telecomunicazioni/Reti.canvas",
-                "viewState": {
-                  "x": 2801.9778302784357,
-                  "y": -627.6576444365687,
-                  "zoom": -2.233875460724036
-                }
+                "file": "University/Statistica/Variabili Aleatorie.md",
+                "mode": "preview",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "Reti"
+              "icon": "lucide-file",
+              "title": "Variabili Aleatorie"
             }
           }
         ]
@@ -78,7 +75,7 @@
             }
           },
           {
-            "id": "91536a4b3a79218b",
+            "id": "02842abf0dbe10cd",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -210,6 +207,12 @@
   },
   "active": "4a8de40ea925dc94",
   "lastOpenFiles": [
+    "University/Statistica/Probabilità.md",
+    "University/Fisica I/Cinematica.md",
+    "University/Fisica I/Fisica I.md",
+    "University/Statistica/Statistica Descrittiva.md",
+    "University/Statistica/Variabili Aleatorie.md",
+    "University/Fondementi di Reti di Telecomunicazioni/Reti.canvas",
     "Source Material/Images/Pasted image 20260130153143.png",
     "Source Material/Images/Pasted image 20260130123753.png",
     "Source Material/Images/Pasted image 20260130122340.png",
@@ -222,7 +225,6 @@
     "Source Material/Images/high-res-popular-transportation.png",
     "Source Material/Images/bp_20e_bkk_uj_web_2512131.pdf",
     "Zettelkasten/.md",
-    "University/Fondementi di Reti di Telecomunicazioni/Reti.canvas",
     "University/Matematica Discreta e Codici/Preliminari di Algebra.md",
     "Zettelkasten/Untitled Kanban.md",
     "University/Matematica Discreta e Codici/Introduzione alla Teoria dei Codici.md",
@@ -239,18 +241,13 @@
     "University/Fisica I/Dinamica dei Sistemi di Punti Materiali.md",
     "Source Material/Images/Pasted image 20260108155551.png",
     "University/Fisica I/Energia e Lavoro.md",
-    "University/Fisica I/Cinematica.md",
     "University/Fisica I/Appendice.md",
     "Source Material/Images/prova",
     "University/Fisica I/Introduzione.md",
     "Untitled.canvas",
     "University/Statistica/Inferenza Parametrica Frequentista.md",
     "University/Statistica/Variabili Aleatorie Continue.md",
-    "University/Statistica/Modello Lineare.md",
-    "University/Statistica/Variabili Aleatorie Discrete.md",
-    "University/Statistica/Verifica di Ipotesi.md",
     "Source Material/Images/Pasted image 20251212111224.png",
-    "Source Material/Images/Pasted image 20251209190349.png",
     "University/Fisica I Baldè buho.zip",
     "University/Statistica/Riassunto.canvas",
     "Tags",
