@@ -175,6 +175,7 @@ Si rifiuta $H_{0}$ se
 1. $\overline X-\mu_{0}>z_{\alpha} \frac{\sigma}{\sqrt{ n }}$ oppure se
 2. $\frac{\overline X-\mu_{0}}{\frac{\sigma}{\sqrt{ n }}}>z_{\alpha}$ oppure se
 3. $p-value=1-\Phi\left( \frac{\overline X-\mu_{0}}{\frac{\sigma}{\sqrt{ n }}} \right)<\alpha$
+
 Curva OC
 $$\begin{align}
 \beta(\mu)&:=P_{\mu}(\text{accettare }H_{0}|\mu)= P_{\mu}\left( \overline X\le\mu_{0}+z_{\alpha} \frac{\sigma}{\sqrt{ n }} \right)=P_{\mu}\left( \frac{\overline X-\mu}{\frac{\sigma}{\sqrt{ n }}}\le \frac{\mu_{0}-\mu}{\frac{\sigma}{\sqrt{ n }}}+z_{\alpha} \right) \\
@@ -310,6 +311,7 @@ $$
 - Sia $X^A=\{0,1\}$, si dispone di v.a. $X_{1}^A,\ldots,X_{n}^A$ e si considera $$Y^A=\sum^{n_{A}}_{i=1}X_{i}^A\sim Bin(\pi^A,n_{A})$$
 - Sia $X^B=\{0,1\}$, si dispone di v.a. $X_{1}^B,\ldots,X_{n}^A$ e si considera $$Y^B=\sum^{n_{B}}_{i=1}X_{i}^B\sim Bin(\pi^B,n_{B})$$
 - Si vuole sottoporre a verifica il sistema di ipotesi $$H_{0}:\pi^A=\pi^B\quad vs \quad H_{1}:\pi^A\ne \pi^B$$
+
 Dai risultati campionari si avrà $Y^A$, $Y^B$, cioè la somma dei pezzi di tipo "1" sarà $k=y^A+y^B$. 
 Si deve calcolare la regione di rifiuto del test valendo l'ipotesi che le unità statistiche siano governate dalla medesima legge, ovvero $A$ e $B$ siano la stessa popolazione.
 ## Test di Fisher-Irwin sul $\pi$ di due Popolazioni Bernoulliane

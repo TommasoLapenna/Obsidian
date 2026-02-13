@@ -241,7 +241,7 @@ $$\begin{gather}
 \phi'(t)= \frac{\alpha\lambda^\alpha}{(\lambda-t)^{\alpha+1}} \\
 \phi''(t)=\frac{\alpha(\alpha+1)\lambda^\alpha}{(\lambda-t)^{\alpha+2}}
 \end{gather}$$
-$$E[X]=\phi'(0)=\frac{a}{\lambda}\qquad E[X^2]=\phi''(0)= \frac{\alpha(\alpha+1)}{\lambda^2}\qquad Var[X]=E[X^2]-E[X]^2=\frac{\alpha}{2}$$
+$$E[X]=\phi'(0)=\frac{a}{\lambda}\qquad E[X^2]=\phi''(0)= \frac{\alpha(\alpha+1)}{\lambda^2}\qquad Var[X]=E[X^2]-E[X]^2=\frac{\alpha}{\lambda^2}$$
 
 - Per $\alpha=1$, la gamma coincide con l'esponenziale
 - ==La somma di esponenziali di parametro ($\lambda$) iid è una gamma di parametri $(n,\lambda)$==

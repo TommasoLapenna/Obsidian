@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/Statistica/Variabili Aleatorie.md",
+                "file": "University/Statistica/Variabili Aleatorie Discrete.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Variabili Aleatorie"
+              "title": "Variabili Aleatorie Discrete"
             }
           }
         ]
@@ -75,7 +75,7 @@
             }
           },
           {
-            "id": "02842abf0dbe10cd",
+            "id": "891ea7a971e9f746",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -153,13 +153,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "University/Fondementi di Reti di Telecomunicazioni/Reti.canvas",
+                "file": "University/Statistica/Variabili Aleatorie Discrete.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Reti"
+              "title": "Outline of Variabili Aleatorie Discrete"
             }
           },
           {
@@ -183,12 +183,11 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 431.5,
-    "collapsed": true
+    "width": 372.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -207,11 +206,17 @@
   },
   "active": "4a8de40ea925dc94",
   "lastOpenFiles": [
+    "University/Statistica/Modello Lineare.md",
+    "University/Statistica/Verifica di Ipotesi.md",
+    "University/Statistica/Variabili Aleatorie Discrete.md",
+    "University/Statistica/Inferenza Parametrica Frequentista.md",
+    "University/Statistica/Statistiche Campionarie.md",
+    "University/Statistica/Variabili Aleatorie Continue.md",
+    "University/Statistica/Variabili Aleatorie.md",
     "University/Statistica/Probabilità.md",
     "University/Fisica I/Cinematica.md",
     "University/Fisica I/Fisica I.md",
     "University/Statistica/Statistica Descrittiva.md",
-    "University/Statistica/Variabili Aleatorie.md",
     "University/Fondementi di Reti di Telecomunicazioni/Reti.canvas",
     "Source Material/Images/Pasted image 20260130153143.png",
     "Source Material/Images/Pasted image 20260130123753.png",
@@ -238,15 +243,9 @@
     "University/Fisica I/Sistemi Termodinamici.md",
     "University/Fisica I/Fenomeni d'Urto.md",
     "University/Fisica I/Dinamica del Corpo Rigido.md",
-    "University/Fisica I/Dinamica dei Sistemi di Punti Materiali.md",
     "Source Material/Images/Pasted image 20260108155551.png",
-    "University/Fisica I/Energia e Lavoro.md",
-    "University/Fisica I/Appendice.md",
     "Source Material/Images/prova",
-    "University/Fisica I/Introduzione.md",
     "Untitled.canvas",
-    "University/Statistica/Inferenza Parametrica Frequentista.md",
-    "University/Statistica/Variabili Aleatorie Continue.md",
     "Source Material/Images/Pasted image 20251212111224.png",
     "University/Fisica I Baldè buho.zip",
     "University/Statistica/Riassunto.canvas",

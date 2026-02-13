@@ -185,7 +185,8 @@ Se $X\sim f(X|\theta)$ e $E(X)=\theta$ allora:
 1. $T(X)=\sum^n_{i=1}\lambda_{i}X_{i}$ è corretto per $\theta$ se $\sum^n_{i=1}\lambda_{i}=1$ $$E\left[ \sum^n_{i=1}\lambda_{i}X_{o} \right]= \sum^n_{i=1}\lambda_{i}E[X_{i}]=\sum^n_{i=1}\lambda_{i}\theta=\theta$$
 2. Se $T(X)$ è uno stimatore corretto, allora il suo errore quadratico medio è $$\begin{align}
 MSE_{T}(\theta)&= E_{X}[(T(X)-\theta)^2]=E_{X}[(T(X)-E[T])^2]=Var[T(X)]
-\end{align}$$Quindi l'errore quadratico medio di uno stimatore corretto è pari alla sua varianza
+\end{align}$$
+Quindi l'errore quadratico medio di uno stimatore corretto è pari alla sua varianza
 ### Stimatori Distorti
 Si determina il MSE per uno stimatore distorto
 $$
