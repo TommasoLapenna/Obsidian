@@ -52,7 +52,6 @@
     "//Source Material/Source Material/Images",
     "//Linux/Linux/NixOs",
     "//University",
-    "//ESP32",
     "//University/University/Intelligenza Artificiale"
   ],
   "expandFolderOnClick": true,
@@ -99,7 +98,7 @@
   "inlineBacklinks": false,
   "inlineContext": true,
   "inlineBacklinksExpanded": false,
-  "inlineContextExpanded": true,
+  "inlineContextExpanded": false,
   "inlineContextProperties": true,
   "inlineContextSectionsExpanded": true,
   "banners": true,
