@@ -3,7 +3,9 @@
     "Image Align",
     "TextBox",
     "Math Block Highlight",
-    "List Padding"
+    "List Padding",
+    "header-tabella",
+    "center-text-canvas"
   ],
   "cssTheme": "",
   "accentColor": ""
