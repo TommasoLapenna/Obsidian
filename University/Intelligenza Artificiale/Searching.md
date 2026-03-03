@@ -63,7 +63,7 @@ Un modello è una descrizione matematica astratta della realtà, perciò è oppo
 > Un'astrazione è valida se è possibile elaborare una soluzione astratta per ottenere una soluzione nel mondo reale.
 
 > [!example]+ Esempio: Sliding Tiles 
-> // Disegno
+> ![[IMG_1100.jpeg|center|400]]
 > 
 > 
 > | **States**                 | Posizione delle caselle                                                                        |
@@ -75,28 +75,61 @@ Un modello è una descrizione matematica astratta della realtà, perciò è oppo
 > | **Path Cost**              | Ogni azione ha costo unitario                                                                  |
 > Questo problema ha $\frac{9!}{2}=181440$ stati.
 
-Esempio: Problema delle 8 Regine
-// immagine
-Il problema consiste nel piazzare 8 regine sulla scacchiera in modo che non si attacchino a vicenda.
-- Formulazione Incrementale: a partire dalla scacchiera vuota si aggiunge una regina alla volta:
+> [!example]+ Esempio: Problema delle 8 Regine
+> ![[Pasted image 20260303102301.png|center]]
+> 
+> Il problema consiste nel piazzare 8 regine sulla scacchiera in modo che non si attacchino a vicenda.
+>$$\mathcal S = \sum^8_{k=0} \begin{pmatrix}
+n^2 \\ k
+\end{pmatrix}$$
+> - Formulazione Incrementale: a partire dalla scacchiera vuota si aggiunge una regina alla volta:
+> 
+> | **States**            | Ogni piazzamento sulla scacchiera della regina da 0 a 8                   |
+> | --------------------- | ------------------------------------------------------------------------- |
+> | **Initial State**     | Scacchiera Vuota                                                          |
+> | **Actions**           | Aggiunta di una regina in una casella vuota                               |
+> | **Transaction Model** | Restituisce la scacchiera con una regina in più nella casella specificata |
+> | **Goal Test**         | Scacchiera con 8 regine che non si attaccano                              |
+> In questa formulazione ci sono $64\cdot 63\dots \cdot 57\approx 1,8\times 10^{14}$ possibili sequenze.
+> - Formulazione a Stato Completo:
+> 
+> | **States**            | Configurazione di $n$ regine($0\le n\le 8$), una per colonna, a partire da sinistra, in modo tale che nessuna regina attacchi l'altra |
+> | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+> | **Actions**           | Aggiungere regina nella prima colonna libera a partire da sinistra, in modo tale che non attacchi o non sia attaccata.                |
+> In questa formulazione si riduce lo spazio degli stati a solo $2057$.
+> A differenza degli algoritmi per il cammino, non c'è frontiera (not systematic exploration).
 
-| **States**            | Ogni piazzamento sulla scacchiera della regina da 0 a 8                   |
-| --------------------- | ------------------------------------------------------------------------- |
-| **Initial State**     | Scacchiera Vuota                                                          |
-| **Actions**           | Aggiunta di una regina in una casella vuota                               |
-| **Transaction Model** | Restituisce la scacchiera con una regina in più nella casella specificata |
-| **Goal Test**         | Scacchiera con 8 regine che non si attaccano                              |
-In questa formulazione ci sono $64\cdot 63\dots \cdot 57\approx 1,8\times 10^{14}$ possibili sequenze.
-- Formulazione a Stato Completo:
+> [!example]+ Esempio: Donald Knuth, Derivation of any positive integer
+> $$ \left\lfloor \sqrt{ \sqrt{ \sqrt{ \sqrt{ \sqrt{ (4!)! } } } } }=5\right\rfloor$$
+> 
+> | **States**            | Numeri positivi reali                             |
+> | --------------------- | ------------------------------------------------- |
+> | **Initial States**    | 4                                                 |
+> | **Actions**           | Si esegue la radice quadrata, floor, o fattoriale |
+> | **Transaction Model** | Data dalla definizione matematica degli oprandi   |
+> | **Goal State**        | Numero intero positivo desiderato                 |
+> | **Action Cost**       | 1                                                 |
+> Lo state space di questo problema è infinito.
 
-| **States**            | Configurazione di $n$ regine($0\le n\le 8$), una per colonna, a partire da sinistra, in modo tale che nessuna regina attacchi l'altra |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| **Actions**           | Aggiungere regina nella prima colonna libera a partire da sinistra, in modo tale che non attacchi o non sia attaccata.                |
-In questa formulazione si riduce lo spazio degli stati a solo $2057$.
-
-
-### States
-### Actions
-### Costs
-### Search Graph
+Si ricorda che le azioni hanno un costo:
+$$
+cost(s_{t-1},a_{t})
+$$
+e il costo totale per un goal è 
+$$
+\sum^I_{t=1}cost(s_{t-1},a_{t})
+$$
+![[IMG_1104.jpeg]]
+## Search Algorithms
+Un algoritmo di ricerca è prende come input un search problem e restituisce una soluzione, oppure un'indicazione di fallimento. Come menzionato precedentemente, i nodi corrispondono ad uno stato nello state space e gli archi corrispondono alle azioni.
+Occorre effettuare una distinzione tra lo state space e il search tree: il primo (possibilmente infinito) descrive la totalità di stati reali e gli stai che li congiungono, mentre il secondo descrive i percorsi tra gli stati fino a raggiungere il goal state (ma ogni nodo ha un solo percorso che ritorna alla root).
 ### Search Tree
+La root corrisponde all'*Initial State*, i rami corrispondono alle *Actions* e i nodi rappresentano gli *States*.
+Quando si percorre l'albero per ricercare il goal, si esegue un'espansione del nodo ad ogni passo, considerando le *ACTIONS* per quello stato, utilizzando la funzione *RESULT* per vedere dove le azioni conducono e per ognuna si genere un nuovo nodo figlio. Successivamente si sceglie quale figlio considerare (in base all'algoritmo) e si ripete il processo.
+
+> [!info] Albero Infinito
+> Si tratta di una struttura dati concettuale: infatti durante la ricerca del goal state è possibile effettuare l'operazione di espansione un numero infinito di nodi.
+
+![[Gemini_Generated_Image_47f2qx47f2qx47f2.png|center||600]]
+
+### Search Graph
