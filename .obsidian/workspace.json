@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "University/Intelligenza Artificiale/Searching.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -89,7 +89,7 @@
             }
           },
           {
-            "id": "d5305c6904fc9c20",
+            "id": "5316b3f876fc9544",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -103,8 +103,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 332.5,
-    "collapsed": true
+    "width": 332.5
   },
   "right": {
     "id": "73070c279435b60b",
@@ -188,7 +187,7 @@
             }
           },
           {
-            "id": "0586d7221a92c578",
+            "id": "d5d078fd5a91031a",
             "type": "leaf",
             "state": {
               "type": "mermaid-toolbar-view",
@@ -198,7 +197,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",

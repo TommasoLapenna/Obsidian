@@ -4,7 +4,8 @@ sticker: emoji//0031-fe0f-20e3
 ## Agenti ed Ambienti
 Un agente è un qualsiasi elemento che può interagire con l'ambiente nel quale è immerso (attraverso dei sensori), e può anche agire su esso (attraverso degli attuatori).
 
-![[IMG_1098.jpeg]]
+![[IMG_1098.jpeg|center|500]]
+
 
 Attraverso la percept sequence di un agente, si ha una lista completa di ciò che ha percepito attraverso i sensori. Di conseguenza le azioni che vengono effettivamente attuate dall'agente in un dato istante è nota e basata su ciò che è stato percepito fino a quel momento (ma niente di ciò che deve ancora percepire), in termini matematica questo comportamento è mappato da una agent function (implementato da un agent program).
 
@@ -132,4 +133,61 @@ Quando si percorre l'albero per ricercare il goal, si esegue un'espansione del n
 
 ![[Gemini_Generated_Image_47f2qx47f2qx47f2.png|center||600]]
 
-### Search Graph
+Negli algoritmi di ricerca, si costruisce un sottoinsieme di questo albero infinito: si utilizza una struttura dati detta **Frontiera**, ed ogni nodo generato che si trova in esso è considerato raggiunto (quindi separa i nodi già incontrati da quelli ancora da visitare).
+
+> [!gray] Frontier Separation Propriety
+> Ogni cammino dai nodi esplorati a quelli inesplorati interseca la frontiera.
+
+Occorre prendere in considerazione anche la gestione dei loop (percorsi che portano allo stesso stato) e soprattutto dei nodi duplicati, che posso essere gestiti nei seguenti modi:
+- **Hash Table:** Si usa una closed list nella quale si inseriscono i nodi visitati
+- **Who Cares**
+- **Only Check Loops:** Consuma meno memoria, non è esaustivo
+
+### Search Data Structures
+- **node:** 
+	- STATE: stato al quale corrisponde il nodo
+	- PARENT: il nodo dell'albero che l'ha generato
+	- ACTION: l'azione che è stata applicata allo stato del nodo padre per generare quello corrente
+	- PATH_COST: costo calcolato a partire da quello iniziale ($g(node)$)
+	
+- **frontier:**
+	- IS-EMPTY(frontier): ritorna vero se non ci sono nodi nella frontiera
+	- POP(frontier): rimuove il nodo in testa e lo ritorna
+	- TOP(frontier): ritorna il nodo in testa
+	- ADD(node, frontier): inserisce il nodo nella posizione appropriata nella coda
+
+- **priority queue**: il pop viene effettuato sul nodo col costo minore (calcolato con $f$), usato nel BEST-FIRST SEARCH
+- **FIFO QUEUE:** il pop viene effettuato sul primo elemento inserito nella lista.
+- **LIFO QUEUE:**  il pop viene effettuato sull'ultimo elemento inserito nella lista.
+
+Gli stati raggiunti sono invece salvati su una lookup table (come una tabella di hash), dove ad ogni chiave è associato uno stato e il valore del nodo per quello stato.
+### Best-First Search
+Un primo approccio per decidere quale nodo espandere a partire dalla frontiera è il Best-First Search
+
+``` python
+# P problema, f evaulation funcrion, PQ priority queue
+BEST-FIRST-SEARCH(P, f)
+	n = Node(STATE = P.INITIAL)
+	frontier = PQ(f)
+	reached = Hash({P.INITIAL, n})
+	while not IS-EMPTY(frontier)
+		# L'elemento del POP dipende dal criterio di f
+		n = frontier.POP()
+		if P.is-goal(n.state)
+			return n
+		for c in EXPAND(P, n)
+			s = c.STATE
+			if s not in reached or c.PATH_COST < reached[s].PATH_COST 
+				reached[s] = c
+				frontier.PUSH(c)
+	return None
+
+EXPAND(P, n)
+	s = n.STATE
+	for a in P.ACTIONS(s)
+		s_1 = P.RESULT(a, s)
+		cost = n.PATH_COST + P.STEP_COST(s, a)
+		yield Node(state = s_1, parent = n, action = a, path_cost = cost)
+```
+
+
