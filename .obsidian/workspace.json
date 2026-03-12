@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "University/Intelligenza Artificiale/Searching.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -89,7 +89,7 @@
             }
           },
           {
-            "id": "5316b3f876fc9544",
+            "id": "b1a58617730471e2",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -103,7 +103,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 332.5
+    "width": 332.5,
+    "collapsed": true
   },
   "right": {
     "id": "73070c279435b60b",
@@ -197,7 +198,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -221,12 +222,13 @@
   },
   "active": "85aa5a186ac59a75",
   "lastOpenFiles": [
+    "University/Intelligenza Artificiale/Programma.md",
+    "University/Intelligenza Artificiale/Searching.md",
+    "Source Material/Images/Pasted image 20260311162321.png",
     "Source Material/Images/Gemini_Generated_Image_47f2qx47f2qx47f2.png",
     "Source Material/Images/Gemini_Generated_Image_azs2lzazs2lzazs2.png",
     "Source Material/Images/IMG_1104.jpeg",
     "Source Material/Images/IMG_1102.jpeg",
-    "University/Intelligenza Artificiale/Programma.md",
-    "University/Intelligenza Artificiale/Searching.md",
     "Source Material/Images/IMG_1100.jpeg",
     "Source Material/Images/Pasted image 20260303102301.png",
     "Source Material/Images/IMG_1098.jpeg",
@@ -244,8 +246,6 @@
     "University/Fondementi di Reti di Telecomunicazioni/Reti.canvas",
     "Source Material/Images/Pasted image 20260130153143.png",
     "Source Material/Images/Pasted image 20260130123753.png",
-    "Source Material/Images/Pasted image 20260130122340.png",
-    "Source Material/Images/Pasted image 20260130122242.png",
     "University/Fondementi di Reti di Telecomunicazioni/Domande Orale.md",
     "Zettelkasten/BUDAPEST.md",
     "Source Material/Images/bp_20e_bkk_uj_web_2512131.pdf",

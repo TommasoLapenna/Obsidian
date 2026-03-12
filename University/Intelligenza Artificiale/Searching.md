@@ -161,6 +161,8 @@ Occorre prendere in considerazione anche la gestione dei loop (percorsi che port
 - **LIFO QUEUE:**  il pop viene effettuato sull'ultimo elemento inserito nella lista.
 
 Gli stati raggiunti sono invece salvati su una lookup table (come una tabella di hash), dove ad ogni chiave è associato uno stato e il valore del nodo per quello stato.
+
+## Blind Search
 ### Best-First Search
 Un primo approccio per decidere quale nodo espandere a partire dalla frontiera è il Best-First Search
 
@@ -190,4 +192,67 @@ EXPAND(P, n)
 		yield Node(state = s_1, parent = n, action = a, path_cost = cost)
 ```
 
+### Breadth-First
+Quando tutte le azioni hanno lo stesso costo, allora è una buona idea usare la Breadth-First search, dove a partire e nodo e poi successivamente per ogni figlio, vengono espanti tutti i nodi. Si tratta di una ricerca *sistematica*, perciò questo algoritmo gode della proprietà di completeness (anche su spazi infiniti).
+Può essere implementato con l'algoritmo del Best-First Search ponendo la funzione $f(n)$ come profondità del nodo, ma risulta più efficiente un'implementazione con una coda FIFO. Inoltre, siccome il primo goal che si trova sarà sicuramente il migliore (in quanto una volta raggiunto uno stato si è già trovato anche il percorso ottimale ad esso) si può effettuare un'early goal test, non appena il nodo viene generato (in questo caso reached è un insieme di stati invece che di percorsi).
+Infine è anche cost optimal, visto che che trova la soluzione con un numero minimo di azioni.
 
+``` python
+BREADTH-FIRST-SEARCH(P)
+	node = Node(P.INITIAL)
+	if P.IS-GOAL(node.STATE)
+		return node
+	frontier = FIFO
+	reached = {P.INITIAL}
+	while not IS-EMPTY(frontier)
+		node = POP(frontier)
+		for each child in EXPAND(P, node)
+			s = child.STATE
+			if P.IS-GOAL(s) 
+				return child
+			if s is not in reached
+				add s to reached
+				add child to frontier
+	return failure
+
+UNIFORM-COST-SEARCH(P)
+	return BEST-FIRST-SEARCH(P, PATH-COST)
+```
+
+### Dijkstra
+Quando ci sono costi diversi per le azioni, risulta allora ovvio usare l'algoritmo di Best-First search, dove l'evaluation function è il costo del cammino dalla root fino al nodo corrente. L'algoritmo che si ottiene è chiamato algoritmo di Dijkstra, o nel campo dell'ai **Uniform-Cost Search**.
+
+> [!info] Evaluation Function
+> $f(n)$= PATH-COST
+
+## Misurazione Performance del Problem-Solving
+Siccome i problemi proposti utilizzano grafi teoricamente infiniti, a differenza di problemi con strutture dati esplicite (dove le misure dei costi si effettuano con $|E|$ e $|V|$), nei problemi di ai (dove lo state space è *implicito*) si utilizzano i seguenti termini:
+- $d$: depth of the shallowest goal in the search tree (soluzione ottimale)
+- $b$: branching factor, ovvero il numero massimo di azioni che si possono fare in un generico stato
+- $m$: lunghezza del cammino più luno del grafo (maximum number of action in any path)
+Ci sono anche altri criteri con il quale si valutano gli algoritmi:
+- **Completeness:** Se esiste una soluzione, allora verrà trovata sicuramente dall'algoritmo.
+- **Cost Optimality:** Se la soluzione che trova è quella col path (e costo) minore (se ci sono più goal=.
+- **Time Complexity:** Quanto tempo impiega a trovare la soluzione.
+- **Space Complexity:** Quanta memoria utilizza durante la ricerca.
+
+
+|            |  **BFS**   |     **DFS**     |                                **DIJKSTRA**                                | **ITERATIVE DEEPENING** |
+|:----------:|:----------:|:---------------:|:--------------------------------------------------------------------------:|:-----------------------:|
+| *Complete* |    Yes     |      Yes*       |                                   Yes**                                    |           Yes           |
+| *Optimal*  |   Yes***   |       No        |                                    Yes                                     |         Yes***          |
+|   *Cost*   | $$O(b^d)$$ |   $$O(b^m)$$    | $$O\left( b^{1+\left\lfloor   {c^*}   /{\epsilon} \right\rfloor} \right)$$ |       $$O(b^d)$$        |
+|  *Space*   | $$O(b^d)$$ | $$O(b\cdot m)$$ | $$O\left( b^{1+\left\lfloor   {c^*}   /{\epsilon} \right\rfloor} \right)$$ |     $$O(b\cdot d)$$     |
+
+- \* $\longrightarrow$ con tabella di hash e gestione dei duplicati
+- \*\* $\longrightarrow$ $STEP\_COST >\epsilon>0$, per evitare soluzioni infinite
+- \*\*\* $\longrightarrow$ $STEP\_ COST= \text{ costant}$
+- $c^*$ = costo ottimo
+
+Il DFS può essere migliorato impostando una soglia massima di profondità $d$, per poi aumentarla via via fino a trovare il goal, si ottiene quindi l'algoritmo **Iterative Deepening**. Lo svantaggio principale però di questo algoritmo è che passa più volte da nodi già esplorati, aumentando lo spazio.
+
+Un'altro algoritmo possibile, nel caso si conosca lo stato goal, è quello della **Bidirectional Search**: si fanno partire due ricerca simmetriche (in ampiezza), una dallo stato iniziale e una dal goal, e quando le due frontiere si intersecano si è trovato il path ricercato. Facendo ciò si riduce la memoria necessaria ($\frac{d}{2}$).
+
+![[Pasted image 20260311162321.png|center|500]]
+
+## Informed Search
