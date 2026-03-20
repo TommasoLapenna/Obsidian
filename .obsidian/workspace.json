@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "University/Intelligenza Artificiale/Searching.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -89,7 +89,7 @@
             }
           },
           {
-            "id": "b1a58617730471e2",
+            "id": "2f85ba2f7e71c1bd",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -224,14 +224,16 @@
   "lastOpenFiles": [
     "University/Intelligenza Artificiale/Programma.md",
     "University/Intelligenza Artificiale/Searching.md",
+    "Source Material/Images/Pasted image 20260320182517.png",
+    "Source Material/Images/Pasted image 20260320173749.png",
+    "Source Material/Images/IMG_1111.jpeg",
+    "Source Material/Images/IMG_1109.jpeg",
+    "Source Material/Images/IMG_1107.jpeg",
     "Source Material/Images/Pasted image 20260311162321.png",
     "Source Material/Images/Gemini_Generated_Image_47f2qx47f2qx47f2.png",
     "Source Material/Images/Gemini_Generated_Image_azs2lzazs2lzazs2.png",
     "Source Material/Images/IMG_1104.jpeg",
     "Source Material/Images/IMG_1102.jpeg",
-    "Source Material/Images/IMG_1100.jpeg",
-    "Source Material/Images/Pasted image 20260303102301.png",
-    "Source Material/Images/IMG_1098.jpeg",
     "University/Statistica/Variabili Aleatorie Discrete.md",
     "University/Statistica/Modello Lineare.md",
     "University/Statistica/Verifica di Ipotesi.md",
@@ -244,8 +246,6 @@
     "University/Fisica I/Fisica I.md",
     "University/Statistica/Statistica Descrittiva.md",
     "University/Fondementi di Reti di Telecomunicazioni/Reti.canvas",
-    "Source Material/Images/Pasted image 20260130153143.png",
-    "Source Material/Images/Pasted image 20260130123753.png",
     "University/Fondementi di Reti di Telecomunicazioni/Domande Orale.md",
     "Zettelkasten/BUDAPEST.md",
     "Source Material/Images/bp_20e_bkk_uj_web_2512131.pdf",

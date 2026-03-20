@@ -256,3 +256,113 @@ Un'altro algoritmo possibile, nel caso si conosca lo stato goal, è quello della
 ![[Pasted image 20260311162321.png|center|500]]
 
 ## Informed Search
+Si introduce una funzione $h(n)$, funzione dello stato , che stima quanto è lontano il goal. In questo caso si parla di algoritmi che utilizzano l'**Euristica**.
+
+**Ottimalità** di $h(n)$ (condizioni):
+- *Ammissibilità*: non sovrastima mai costo per arrivare all'obiettivo.
+- *Consistenza*: per ogni nodo $n$ e ogni successore $n'$ che genera tramite un'azione $a$, il costo stimato per raggiungere l'obiettivo partendo da $n$ non è mai superiore al costo di passo per arrivare da $n$ ad $n'$ sommato al costo stimato per raggiungere l'obiettivo da $n'$, ovvero se: $$h(n)\le c(n, a, n')+h(n')$$
+![[IMG_1107.jpeg|center|400]]
+
+Inoltre $$\begin{align}
+Consistency &\Longrightarrow Admissibility \\
+Admissibility\ &\centernot\Longrightarrow Consistency
+\end{align} $$
+L'euristica permette di ridurre notevolmente ill branching factor.
+### Greedy Best-First
+L'algoritmo Greedy Best-First è uguale al BFS, solo che espande i nodi dell'albero utilizzando il minimo $h(n)$ ($f(n)=h(n)$), valuta quindi solo sulla base dell'euristica. Questo algoritmo è efficiente, ma non è ottimale.
+
+### A*
+L'algoritmo A* è una versione migliorata dell'algoritmo Uniform Cost, utilizza l'evaluation function 
+$$
+f(n)=g(n)+h(n)
+$$
+con $g(n)$ è il miglior costo del cammino a partire dal nodo iniziale e $f(n)$ è il costo stimato del percorso più corto dal nodo $n$ fino al goal state (nell'uniform cost $h(n)=0$).
+
+
+> [!gray] Teorema
+> A* è ottimale per $h$ consistente
+>
+**Lemma:**
+Un'euristica consistente è monotona (ovvero che scendendo nel grafico $f$ non è decrescente)
+
+**Dimostrazione:**
+$$\begin{align}
+g(n')&= g(n)+c(n,a,n')& \\
+f(n')&= g(n')+h(n')= g(n)+c(n,a,n')+h(n')& &\ge g(n)+h(n)= f(n)
+\end{align}$$
+
+![[IMG_1109.jpeg|center|400]]
+
+Si ha che $h\ is \ consistent \Longrightarrow h\ is \ monotone$, allora:
+$$\begin{align}
+&f(n^*)\ge f(n') \\
+&f(n')\le f(n^*)= g(n^*)+\underset{\text{è un goal}}{\cancel{h(n^*)}}<g(n)= g(n)+\underset{= 0}{\cancel{h(n)}}= f(n)
+\end{align}$$
+Risulterebbe che $f(n')$ è meglio di $f(n)$, quindi è un assurdo.
+### Heuristic Functions
+Si prende ora in esame come un'euristica impatti sulle performance di un algoritmo. Si prende per esempio il problema dell'8-puzzle. In questo caso ci sono $\frac{9!}{2}=181400$ configurazioni di stato possibile (si possono tenere tutti in memoria), ma se si passa ad un 15-puzzle se ne avrebbero $\frac{16!}{2}\simeq 10\ trillions$, quindi per effettuare ricerche su questi space state occorre una buona euristica.
+- $h_{1}$ = numero di tasselli fuori posto
+- $h_{2}$ = la somma delle distanze di tutti i tasselli dalla loro posizione corrente a quella della configurazione goal, e siccome i tasselli si possono muovere in orizzontale o verticale si ha la **Manhattan Distance**
+
+Entrambe queste euristiche non sovrastimano mai il costo e sono pertanto ammissibili.
+
+> [!gray] Teorema
+> Se un'euristica $h_{2}$ è più informata di un'euristica $h_{1}$, ovvero se $h_{2}(n)\ge h_{1}(n)$, si dice allora che $h_{2}$ *domina* su $h_{1}$. 
+> 
+> ![[IMG_1111.jpeg|center|300]]
+> 
+> Si ha quindi che $E_{1} \subset E_{2}$, in quanto ogni nodo espanto da $A^*(h_{1})$  è anche espanto da $A^*(h_{2})$.
+
+Se un problema ha più euristiche ammissibili a propria disposizione ($h_{1},h_{2},h_{3},\dots$), allora per ogni nodo si prende quella più efficace in quella situazione, ovvero
+$$
+h(n) = \max\{ h_{1}(n),h_{2}(n),h_{3}(n),\dots \}
+$$
+#### Accuratezza Funzione Euristica
+Un modo per determinare l'accuratezza di un'euristica è l'**Effective Branching Factor** $b^*$. Se il numero totale di nodi generati da A* per un problema è $N$ e la profondità della soluzione è $d$, allora $b^*$ è il branching factor che un albero uniforme di profondità deve avere in modo da contenere $N+1$ nodi, perciò
+$$
+N+1=1+b^*+(b^*)^2+\ldots+ (b^*)^d
+$$
+Un $b^*$ di una funzione euristica ottimale tenderebbe ad 1, ciò significa che anche grandi problemi possono essere risolti con un costo computazionale contenuto.
+### Pattern Databases
+È possibile derivare euristiche ammissibili dal costo della soluzione di un sottoproblema. Questo avviene attraverso i **Database Pattern**, memorizzano i costi di ogni possibile configurazione di sottoproblema.
+
+> [!example]+ Esempio:
+> 
+> ![[Pasted image 20260320173749.png|center|550]]
+> 
+> Si devono mettere i tasselli 1,2,3 e 4 nei tasselli liberi. Le configurazioni possibili delle soluzioni sono $9\times8\times 7 \times 6 \times  5=15,120$, che sarà il numero di pattern nel database.
+
+Successivamente si può ottenere un'euristica ammissibile $h_{DB}$ per ogni stato completo incontrato durante una ricerca, semplicemente estraendo dal database la corrispondente configurazione del sottoproblema.
+Il database è costruito eseguendo una ricerca all'indietro dallo stato obiettivo e memorizzando il costo di ogni configurazione incontrata.
+(disjoint pattern database?)
+
+### Landmarks
+Un'euristica può essere generata a partire dalla precomputazione e salvataggio del costo del path ottimale per ogni serie di vertivi.
+Se si aggiungono dei **Landmark** a una serie di vertici, si computa il costo del path migliore del vertice $v$ al landmark $L$ come $C^*(v,L)$. Memorizzando i costi in una tabella, si può generare una funzione euristica efficiente ma inammissibile:
+$$
+h_{L}(n) = \min_{L\in Landmarks} C^*(n,L)+C^*(L,goal)
+$$
+Se il path ottimale passa da un landmark, allora l'euristica è esatta, altrimenti non è ammissibile.
+È possibile infine renderla sia efficiente, sia ammissibile se si considera
+$$
+h_{DH}(n)=\min_{L\in Landmarks}|C^*(n,L)-C^*(L,goal)|
+$$
+cioè un'*euristica differenziale*.
+La scelta dei Landmark può essere effettuata in maniera randomica (scelta più rapida), oppure scegliendoli in modo che non siano troppo vicini tra loro, o in maniera greedy, scegliendo il primo Landmark random e aggiungendo gli altri in modo che siano lontani da quest'ultimo.
+
+## Search in Complex Environments
+Si passa adesso da ambienti deterministici, statici e osservabili ad altri nei quali queste ipotesi vengono alleggerite.
+### Local Search and Optimization Problems
+Gli algoritmi di Local Search operano partendo da uno stato iniziale a quelli vicini, non tenendo traccia del percorso effettuato e dei nodi espanti. Quindi questi algoritmi si possono applicare nei problemi con l'obiettivo di trovare il goal, ma non importano gli stati intermedi, come si arriva alla soluzione e quali azioni vengono intraprese (*no step-cost*), come ad esempio il problema delle 8 regine.
+Gli algoritmi di ricerca locale non sono sistematici, e perciò potrebbero non esplorare mai lo spazio dove si trova la soluzione. In compenso hanno 2 vantaggi fondamentali:
+1. Basso utilizzo di memoria
+2. Possono trovare soluzioni ragionevoli in spazi infiniti (dove gli algoritmi sistematici non sono adatti)
+Possono anche essere usati per risolvere problemi di ottimizzazione, attraverso una funzione obiettivo.
+
+È possibile raffigurare la local search come state-space landscape, dove l'elevazione rappresenta il valore corrispondente della objective function.
+
+![[Pasted image 20260320182517.png|center|500]]
+
+- Un'algoritmo di ricerca locale *completo* trova sempre un obiettivo, se esiste. 
+- Un algoritmo di ricerca locale *ottimo* trova sempre un max/min locale.
+### Hill Climbing
