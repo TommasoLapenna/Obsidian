@@ -15,4 +15,3 @@
 - Builder
 - Visitor
 - Iterator
-	

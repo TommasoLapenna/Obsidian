@@ -13,26 +13,40 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/Intelligenza Artificiale/Searching.md",
+                "file": "University/Ingegneria del Software/Suddivisione Lavoro.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Searching"
+              "title": "Suddivisione Lavoro"
             }
           },
           {
-            "id": "c2ee7d50dc05302e",
+            "id": "8431b32a0949b40b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/Intelligenza Artificiale/Programma.md",
+                "file": "University/Ingegneria del Software/Design Patterns.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Programma"
+              "title": "Design Patterns"
+            }
+          },
+          {
+            "id": "9d59bcd785b43a9e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "University/Ingegneria del Software/Use Case prova.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Use Case prova"
             }
           }
         ]
@@ -89,7 +103,7 @@
             }
           },
           {
-            "id": "2f85ba2f7e71c1bd",
+            "id": "d29e593097059442",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -103,8 +117,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 332.5,
-    "collapsed": true
+    "width": 332.5
   },
   "right": {
     "id": "73070c279435b60b",
@@ -188,7 +201,7 @@
             }
           },
           {
-            "id": "d5d078fd5a91031a",
+            "id": "e764ea500c9b2b53",
             "type": "leaf",
             "state": {
               "type": "mermaid-toolbar-view",
@@ -198,7 +211,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -222,7 +235,18 @@
   },
   "active": "85aa5a186ac59a75",
   "lastOpenFiles": [
+    "University/Ingegneria del Software/Suddivisione Lavoro.md",
+    "University/Statistica/Variabili Aleatorie Continue.md",
+    "University/Statistica/Modello Lineare.md",
+    "University/Statistica/Inferenza Parametrica Frequentista.md",
+    "University/Statistica/Statistiche Campionarie.md",
+    "University/Statistica/Variabili Aleatorie.md",
+    "University/Statistica/Probabilità.md",
+    "University/Statistica/Statistica Descrittiva.md",
+    "University/Ingegneria del Software/Untitled.md",
+    "University/Ingegneria del Software/Use Case prova.md",
     "University/Intelligenza Artificiale/Programma.md",
+    "University/Ingegneria del Software/Design Patterns.md",
     "University/Intelligenza Artificiale/Searching.md",
     "Source Material/Images/Pasted image 20260320182517.png",
     "Source Material/Images/Pasted image 20260320173749.png",
@@ -235,16 +259,9 @@
     "Source Material/Images/IMG_1104.jpeg",
     "Source Material/Images/IMG_1102.jpeg",
     "University/Statistica/Variabili Aleatorie Discrete.md",
-    "University/Statistica/Modello Lineare.md",
     "University/Statistica/Verifica di Ipotesi.md",
-    "University/Statistica/Inferenza Parametrica Frequentista.md",
-    "University/Statistica/Statistiche Campionarie.md",
-    "University/Statistica/Variabili Aleatorie Continue.md",
-    "University/Statistica/Variabili Aleatorie.md",
-    "University/Statistica/Probabilità.md",
     "University/Fisica I/Cinematica.md",
     "University/Fisica I/Fisica I.md",
-    "University/Statistica/Statistica Descrittiva.md",
     "University/Fondementi di Reti di Telecomunicazioni/Reti.canvas",
     "University/Fondementi di Reti di Telecomunicazioni/Domande Orale.md",
     "Zettelkasten/BUDAPEST.md",
@@ -257,9 +274,6 @@
     "University/Fondementi di Reti di Telecomunicazioni",
     "University/Untitled.md",
     "University/Matematica Discreta e Codici/Preliminari di algebral.md",
-    "University/Matematica Discreta e Codici/Preliminari di algebra.md",
-    "University/Matematica Discreta e Codici/Definizioni.md",
-    "University/Fisica I/Dinamica.md",
     "Source Material/Images/prova",
     "Untitled.canvas",
     "University/Fisica I Baldè buho.zip",

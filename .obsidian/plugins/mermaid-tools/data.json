@@ -783,6 +783,14 @@
       "content": "architecture-beta\n    group api(cloud)[API]\n\n    service db(database)[Database] in api\n    service disk1(disk)[Storage] in api\n    service disk2(disk)[Storage] in api\n    service server(server)[Server] in api\n\n    db:L -- R:server\n    disk1:T -- B:server\n    disk2:T -- B:db\n",
       "sortingOrder": 0,
       "isPinned": false
+    },
+    {
+      "id": "10355ec9-c8dd-4ad5-8a80-3a0c1681c06e",
+      "categoryId": "classDiagram",
+      "description": "sample class (copy)",
+      "content": "class Duck{\n            +String beakColor\n            +swim()\n            +quack()\n        }",
+      "sortingOrder": 13,
+      "isPinned": false
     }
   ],
   "customCategories": [],
