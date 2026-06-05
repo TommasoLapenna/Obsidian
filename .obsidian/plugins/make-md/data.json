@@ -48,12 +48,10 @@
     "//attachments",
     "//University/Old Vault/Tags/Analisi 2 e Probabilità",
     "/",
-    "//Source Material/Source Material/PDFs",
-    "//Source Material/Source Material/Images",
     "//Linux/Linux/NixOs",
     "//University",
-    "//University/University/Intelligenza Artificiale",
-    "//University/University/Ingegneria del Software"
+    "//University/University/Fisica II",
+    "//Source Material"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",

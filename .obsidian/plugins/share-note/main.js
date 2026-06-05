@@ -34,23 +34,6 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 ));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-// manifest.json
-var require_manifest = __commonJS({
-  "manifest.json"(exports, module2) {
-    module2.exports = {
-      id: "share-note",
-      name: "Share Note",
-      version: "1.3.1",
-      minAppVersion: "0.15.0",
-      description: "Instantly share a note, with the full theme and content exactly like you see in Reading View. Data is shared encrypted by default, and only you and the person you send it to have the key.",
-      author: "Alan Grainger",
-      authorUrl: "https://github.com/alangrainger",
-      fundingUrl: "https://ko-fi.com/alan_",
-      isDesktopOnly: false
-    };
-  }
-});
-
 // node_modules/data-uri-to-buffer/dist/index.js
 var require_dist = __commonJS({
   "node_modules/data-uri-to-buffer/dist/index.js"(exports) {
@@ -406,10 +389,10 @@ var require_util = __commonJS({
       return Array(level + 1).join("../") + aPath.substr(aRoot.length + 1);
     }
     exports.relative = relative;
-    var supportsNullProto = function() {
+    var supportsNullProto = (function() {
       var obj = /* @__PURE__ */ Object.create(null);
       return !("__proto__" in obj);
-    }();
+    })();
     function identity(s2) {
       return s2;
     }
@@ -1041,6 +1024,9 @@ var DEFAULT_SETTINGS = {
 var ShareSettingsTab = class extends import_obsidian.PluginSettingTab {
   constructor(app, plugin) {
     super(app, plugin);
+    // Ephemeral - resets when Obsidian restarts. The "Danger / Advanced"
+    // section must be re-opened explicitly each session.
+    this.showAdvanced = false;
     this.plugin = plugin;
   }
   display() {
@@ -1059,9 +1045,9 @@ var ShareSettingsTab = class extends import_obsidian.PluginSettingTab {
       this.plugin.settings.yamlField = value || DEFAULT_SETTINGS.yamlField;
       await this.plugin.saveSettings();
     }));
-    new import_obsidian.Setting(containerEl).setName("Upload options").setHeading();
+    new import_obsidian.Setting(containerEl).setName("Sharing").setHeading();
     new import_obsidian.Setting(containerEl).setName(`\u2B50 Your shared note theme is "${this.plugin.settings.theme || "Obsidian default theme"}"`).setDesc("To set a new theme, change the theme in Obsidian to your desired theme and then use the `Force re-upload all data` command. You can change your Obsidian theme after that without affecting the theme for your shared notes.").then((setting) => addDocs(setting, "https://docs.note.sx/notes/theme"));
-    new import_obsidian.Setting(containerEl).setName("Light/Dark mode").setDesc("Choose the mode with which your files will be shared").addDropdown((dropdown) => {
+    new import_obsidian.Setting(containerEl).setName("Light/dark mode").setDesc("Choose the mode with which your files will be shared").addDropdown((dropdown) => {
       dropdown.addOption("Same as theme", "Same as theme").addOption("Dark", "Dark").addOption("Light", "Light").setValue(ThemeMode[this.plugin.settings.themeMode]).onChange(async (value) => {
         this.plugin.settings.themeMode = ThemeMode[value];
         await this.plugin.saveSettings();
@@ -1073,7 +1059,7 @@ var ShareSettingsTab = class extends import_obsidian.PluginSettingTab {
         await this.plugin.saveSettings();
       });
     });
-    new import_obsidian.Setting(containerEl).setName("Note options").setHeading();
+    new import_obsidian.Setting(containerEl).setName("Note display").setHeading();
     const defaultTitleDesc = "Select the location to source the published note title. It will default to the note title if nothing is found for the selected option.";
     const titleSetting = new import_obsidian.Setting(containerEl).setName("Note title source").setDesc(defaultTitleDesc).addDropdown((dropdown) => {
       for (const enumKey in TitleSource) {
@@ -1108,7 +1094,7 @@ var ShareSettingsTab = class extends import_obsidian.PluginSettingTab {
       });
     });
     new import_obsidian.Setting(containerEl).setName("Remove custom elements").setDesc("Remove elements before sharing by targeting them with CSS selectors. One selector per line.").addTextArea((text) => {
-      text.setPlaceholder("div.class-to-remove").setValue(this.plugin.settings.removeElements).onChange(async (value) => {
+      text.setPlaceholder(".class-to-remove").setValue(this.plugin.settings.removeElements).onChange(async (value) => {
         this.plugin.settings.removeElements = value;
         await this.plugin.saveSettings();
       });
@@ -1123,6 +1109,24 @@ var ShareSettingsTab = class extends import_obsidian.PluginSettingTab {
       this.plugin.settings.expiry = value;
       await this.plugin.saveSettings();
     })).then((setting) => addDocs(setting, "https://docs.note.sx/notes/self-deleting-notes"));
+    new import_obsidian.Setting(containerEl).setName("Danger / advanced").setHeading();
+    new import_obsidian.Setting(containerEl).setName("Show advanced options").setDesc("Reveal advanced fields. Changing these can break your shared notes.").addToggle((toggle) => {
+      toggle.setValue(this.showAdvanced).onChange((value) => {
+        this.showAdvanced = value;
+        this.display();
+      });
+    });
+    if (this.showAdvanced) {
+      new import_obsidian.Setting(containerEl).setName("User ID").setDesc("Your user ID for the server. Read-only.").addText((text) => {
+        text.setValue(this.plugin.settings.uid).setDisabled(true);
+      });
+      new import_obsidian.Setting(containerEl).setName("Server URL").setDesc(`The API server used to create shared notes. Default: ${DEFAULT_SETTINGS.server}`).addText((text) => {
+        text.setPlaceholder(DEFAULT_SETTINGS.server).setValue(this.plugin.settings.server).onChange(async (value) => {
+          this.plugin.settings.server = value || DEFAULT_SETTINGS.server;
+          await this.plugin.saveSettings();
+        });
+      });
+    }
   }
 };
 function addDocs(setting, url) {
@@ -1192,25 +1196,26 @@ async function encryptString(plaintext, existingKey) {
   }
   const aesKey = await _getAesGcmKey(key);
   const ciphertext = [];
+  const ivs = [];
   const length = plaintext.length;
   const chunkSize = 2e3;
   let index = 0;
   while (index * chunkSize < length) {
     const plaintextChunk = plaintext.slice(index * chunkSize, (index + 1) * chunkSize);
     const encodedText = new TextEncoder().encode(plaintextChunk);
+    const iv = window.crypto.getRandomValues(new Uint8Array(12));
     const bufCiphertext = await window.crypto.subtle.encrypt(
-      {
-        name: "AES-GCM",
-        iv: indexToIv(index)
-      },
+      { name: "AES-GCM", iv },
       aesKey,
       encodedText
     );
     ciphertext.push(arrayBufferToBase64(bufCiphertext));
+    ivs.push(arrayBufferToBase64(iv.buffer));
     index++;
   }
   return {
     ciphertext,
+    ivs,
     key: masterKeyToString(key).slice(0, 43)
   };
 }
@@ -1234,18 +1239,10 @@ async function sha1(data) {
 async function shortHash(text) {
   return (await sha256(text)).slice(0, 32);
 }
-function indexToIv(int) {
-  const iv = new Uint8Array(12);
-  for (let i2 = 0; i2 < iv.length; i2++) {
-    iv[i2] = int % 256;
-    int = Math.floor(int / 256);
-  }
-  return iv;
-}
 
 // src/StatusMessage.ts
 var import_obsidian2 = require("obsidian");
-var pluginName = require_manifest().name;
+var pluginName = "Share Note";
 var statuses = {
   [2 /* Error */]: {
     class: "share-note-status-error",
@@ -1265,23 +1262,28 @@ var StatusMessage = class extends import_obsidian2.Notice {
     var _a;
     const messageDoc = new DocumentFragment();
     const icon = ((_a = statuses[type]) == null ? void 0 : _a.icon) || "";
-    const messageEl = messageDoc.createEl("div");
-    messageEl.innerHTML = `${icon}${pluginName}: ${text}`;
+    const messageEl = messageDoc.createDiv({ text: `${icon}${pluginName}: ${text}` });
     super(messageDoc, duration);
-    if (messageEl.parentElement) {
-      if (statuses[type]) {
-        messageEl.parentElement.classList.add(statuses[type].class);
-      }
+    if (statuses[type]) {
+      this.containerEl.classList.add(statuses[type].class);
     }
     this.icon = icon;
     this.messageEl = messageEl;
   }
   setStatus(message) {
-    this.messageEl.innerText = `${this.icon}${pluginName}: ${message}`;
+    this.messageEl.setText(`${this.icon}${pluginName}: ${message}`);
+  }
+  /**
+   * Append a clickable link to the message on its own line.
+   */
+  addLink(url, text) {
+    this.messageEl.createEl("br");
+    this.messageEl.createEl("br");
+    this.messageEl.createEl("a", { text, href: url });
   }
 };
 
-// src/NoteTemplate.ts
+// src/NotePayload.ts
 function getElementStyle(key, element) {
   const elementStyle = {
     element: key,
@@ -1295,16 +1297,10 @@ function getElementStyle(key, element) {
       style.removeProperty("margin-bottom");
     }
     elementStyle.style = style.cssText;
-  } catch (e2) {
-    console.log(e2);
+  } catch (_e) {
   }
   return elementStyle;
 }
-var NoteTemplate = class {
-  constructor() {
-    this.elements = [];
-  }
-};
 
 // src/note.ts
 var import_data_uri_to_buffer = __toESM(require_dist());
@@ -1378,32 +1374,32 @@ var import_obsidian3 = require("obsidian");
 
 // node_modules/browser-image-compression/dist/browser-image-compression.mjs
 function _mergeNamespaces(e2, t2) {
-  return t2.forEach(function(t3) {
-    t3 && "string" != typeof t3 && !Array.isArray(t3) && Object.keys(t3).forEach(function(r2) {
+  return t2.forEach((function(t3) {
+    t3 && "string" != typeof t3 && !Array.isArray(t3) && Object.keys(t3).forEach((function(r2) {
       if ("default" !== r2 && !(r2 in e2)) {
         var i2 = Object.getOwnPropertyDescriptor(t3, r2);
         Object.defineProperty(e2, r2, i2.get ? i2 : { enumerable: true, get: function() {
           return t3[r2];
         } });
       }
-    });
-  }), Object.freeze(e2);
+    }));
+  })), Object.freeze(e2);
 }
 function copyExifWithoutOrientation(e2, t2) {
-  return new Promise(function(r2, i2) {
+  return new Promise((function(r2, i2) {
     let o2;
-    return getApp1Segment(e2).then(function(e3) {
+    return getApp1Segment(e2).then((function(e3) {
       try {
         return o2 = e3, r2(new Blob([t2.slice(0, 2), o2, t2.slice(2)], { type: "image/jpeg" }));
       } catch (e4) {
         return i2(e4);
       }
-    }, i2);
-  });
+    }), i2);
+  }));
 }
-var getApp1Segment = (e2) => new Promise((t2, r2) => {
+var getApp1Segment = (e2) => new Promise(((t2, r2) => {
   const i2 = new FileReader();
-  i2.addEventListener("load", ({ target: { result: e3 } }) => {
+  i2.addEventListener("load", (({ target: { result: e3 } }) => {
     const i3 = new DataView(e3);
     let o2 = 0;
     if (65496 !== i3.getUint16(o2)) return r2("not a valid JPEG");
@@ -1439,15 +1435,15 @@ var getApp1Segment = (e2) => new Promise((t2, r2) => {
       o2 += 2 + s2;
     }
     return t2(new Blob());
-  }), i2.readAsArrayBuffer(e2);
-});
+  })), i2.readAsArrayBuffer(e2);
+}));
 var e = {};
 var t = { get exports() {
   return e;
 }, set exports(t2) {
   e = t2;
 } };
-!function(e2) {
+!(function(e2) {
   var r2, i2, UZIP2 = {};
   t.exports = UZIP2, UZIP2.parse = function(e3, t2) {
     for (var r3 = UZIP2.bin.readUshort, i3 = UZIP2.bin.readUint, o2 = 0, a2 = {}, s2 = new Uint8Array(e3), f2 = s2.length - 4; 101010256 != i3(s2, f2); ) f2--;
@@ -1525,13 +1521,13 @@ var t = { get exports() {
   }, UZIP2._writeHeader = function(e3, t2, r3, i3, o2, a2) {
     var s2 = UZIP2.bin.writeUint, f2 = UZIP2.bin.writeUshort, l2 = i3.file;
     return s2(e3, t2, 0 == o2 ? 67324752 : 33639248), t2 += 4, 1 == o2 && (t2 += 2), f2(e3, t2, 20), f2(e3, t2 += 2, 0), f2(e3, t2 += 2, i3.cpr ? 8 : 0), s2(e3, t2 += 2, 0), s2(e3, t2 += 4, i3.crc), s2(e3, t2 += 4, l2.length), s2(e3, t2 += 4, i3.usize), f2(e3, t2 += 4, UZIP2.bin.sizeUTF8(r3)), f2(e3, t2 += 2, 0), t2 += 2, 1 == o2 && (t2 += 2, t2 += 2, s2(e3, t2 += 6, a2), t2 += 4), t2 += UZIP2.bin.writeUTF8(e3, t2, r3), 0 == o2 && (e3.set(l2, t2), t2 += l2.length), t2;
-  }, UZIP2.crc = { table: function() {
+  }, UZIP2.crc = { table: (function() {
     for (var e3 = new Uint32Array(256), t2 = 0; t2 < 256; t2++) {
       for (var r3 = t2, i3 = 0; i3 < 8; i3++) 1 & r3 ? r3 = 3988292384 ^ r3 >>> 1 : r3 >>>= 1;
       e3[t2] = r3;
     }
     return e3;
-  }(), update: function(e3, t2, r3, i3) {
+  })(), update: function(e3, t2, r3, i3) {
     for (var o2 = 0; o2 < i3; o2++) e3 = UZIP2.crc.table[255 & (e3 ^ t2[r3 + o2])] ^ e3 >>> 8;
     return e3;
   }, crc: function(e3, t2, r3) {
@@ -1727,9 +1723,9 @@ var t = { get exports() {
       l2 = 0 == c2 ? 1 : 0;
       return t2[1 + (c2 << 1)] = 1, t2[1 + (l2 << 1)] = 1, 1;
     }
-    i3.sort(function(e4, t3) {
+    i3.sort((function(e4, t3) {
       return e4.f - t3.f;
-    });
+    }));
     var u = i3[0], h = i3[1], d = 0, A = 1, g = 2;
     for (i3[0] = { lit: -1, f: u.f + h.f, l: u, r: h, d: 0 }; A != f2 - 1; ) u = d != A && (g == f2 || i3[d].f < i3[g].f) ? i3[d++] : i3[g++], h = d != A && (g == f2 || i3[d].f < i3[g].f) ? i3[d++] : i3[g++], i3[A++] = { lit: -1, f: u.f + h.f, l: u, r: h };
     var p = UZIP2.F.setDepth(i3[A - 1], 0);
@@ -1739,9 +1735,9 @@ var t = { get exports() {
     return -1 != e3.lit ? (e3.d = t2, t2) : Math.max(UZIP2.F.setDepth(e3.l, t2 + 1), UZIP2.F.setDepth(e3.r, t2 + 1));
   }, UZIP2.F.restrictDepth = function(e3, t2, r3) {
     var i3 = 0, o2 = 1 << r3 - t2, a2 = 0;
-    for (e3.sort(function(e4, t3) {
+    for (e3.sort((function(e4, t3) {
       return t3.d == e4.d ? e4.f - t3.f : t3.d - e4.d;
-    }), i3 = 0; i3 < e3.length && e3[i3].d > t2; i3++) {
+    })), i3 = 0; i3 < e3.length && e3[i3].d > t2; i3++) {
       var s2 = e3[i3].d;
       e3[i3].d = t2, a2 += o2 - (1 << r3 - s2);
     }
@@ -1856,7 +1852,7 @@ var t = { get exports() {
     return (e3[t2 >>> 3] | e3[1 + (t2 >>> 3)] << 8 | e3[2 + (t2 >>> 3)] << 16) >>> (7 & t2);
   }, UZIP2.F._get25 = function(e3, t2) {
     return (e3[t2 >>> 3] | e3[1 + (t2 >>> 3)] << 8 | e3[2 + (t2 >>> 3)] << 16 | e3[3 + (t2 >>> 3)] << 24) >>> (7 & t2);
-  }, UZIP2.F.U = (r2 = Uint16Array, i2 = Uint32Array, { next_code: new r2(16), bl_count: new r2(16), ordr: [16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15], of0: [3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 15, 17, 19, 23, 27, 31, 35, 43, 51, 59, 67, 83, 99, 115, 131, 163, 195, 227, 258, 999, 999, 999], exb: [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 0, 0, 0, 0], ldef: new r2(32), df0: [1, 2, 3, 4, 5, 7, 9, 13, 17, 25, 33, 49, 65, 97, 129, 193, 257, 385, 513, 769, 1025, 1537, 2049, 3073, 4097, 6145, 8193, 12289, 16385, 24577, 65535, 65535], dxb: [0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 0, 0], ddef: new i2(32), flmap: new r2(512), fltree: [], fdmap: new r2(32), fdtree: [], lmap: new r2(32768), ltree: [], ttree: [], dmap: new r2(32768), dtree: [], imap: new r2(512), itree: [], rev15: new r2(32768), lhst: new i2(286), dhst: new i2(30), ihst: new i2(19), lits: new i2(15e3), strt: new r2(65536), prev: new r2(32768) }), function() {
+  }, UZIP2.F.U = (r2 = Uint16Array, i2 = Uint32Array, { next_code: new r2(16), bl_count: new r2(16), ordr: [16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15], of0: [3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 15, 17, 19, 23, 27, 31, 35, 43, 51, 59, 67, 83, 99, 115, 131, 163, 195, 227, 258, 999, 999, 999], exb: [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 0, 0, 0, 0], ldef: new r2(32), df0: [1, 2, 3, 4, 5, 7, 9, 13, 17, 25, 33, 49, 65, 97, 129, 193, 257, 385, 513, 769, 1025, 1537, 2049, 3073, 4097, 6145, 8193, 12289, 16385, 24577, 65535, 65535], dxb: [0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 0, 0], ddef: new i2(32), flmap: new r2(512), fltree: [], fdmap: new r2(32), fdtree: [], lmap: new r2(32768), ltree: [], ttree: [], dmap: new r2(32768), dtree: [], imap: new r2(512), itree: [], rev15: new r2(32768), lhst: new i2(286), dhst: new i2(30), ihst: new i2(19), lits: new i2(15e3), strt: new r2(65536), prev: new r2(32768) }), (function() {
     for (var e3 = UZIP2.F.U, t2 = 0; t2 < 32768; t2++) {
       var r3 = t2;
       r3 = (4278255360 & (r3 = (4042322160 & (r3 = (3435973836 & (r3 = (2863311530 & r3) >>> 1 | (1431655765 & r3) << 1)) >>> 2 | (858993459 & r3) << 2)) >>> 4 | (252645135 & r3) << 4)) >>> 8 | (16711935 & r3) << 8, e3.rev15[t2] = (r3 >>> 16 | r3 << 16) >>> 17;
@@ -1866,10 +1862,10 @@ var t = { get exports() {
     }
     for (t2 = 0; t2 < 32; t2++) e3.ldef[t2] = e3.of0[t2] << 3 | e3.exb[t2], e3.ddef[t2] = e3.df0[t2] << 4 | e3.dxb[t2];
     pushV(e3.fltree, 144, 8), pushV(e3.fltree, 112, 9), pushV(e3.fltree, 24, 7), pushV(e3.fltree, 8, 8), UZIP2.F.makeCodes(e3.fltree, 9), UZIP2.F.codes2map(e3.fltree, 9, e3.flmap), UZIP2.F.revCodes(e3.fltree, 9), pushV(e3.fdtree, 32, 5), UZIP2.F.makeCodes(e3.fdtree, 5), UZIP2.F.codes2map(e3.fdtree, 5, e3.fdmap), UZIP2.F.revCodes(e3.fdtree, 5), pushV(e3.itree, 19, 0), pushV(e3.ltree, 286, 0), pushV(e3.dtree, 30, 0), pushV(e3.ttree, 320, 0);
-  }();
-}();
+  })();
+})();
 var UZIP = _mergeNamespaces({ __proto__: null, default: e }, [e]);
-var UPNG = function() {
+var UPNG = (function() {
   var e2 = { nextZero(e3, t3) {
     for (; 0 != e3[t3]; ) t3++;
     return t3;
@@ -1988,7 +1984,7 @@ var UPNG = function() {
   }
   function _decompress(e3, r2, i2, o2) {
     const a2 = _getBPP(e3), s2 = Math.ceil(i2 * a2 / 8), f2 = new Uint8Array((s2 + 1 + e3.interlace) * o2);
-    return r2 = e3.tabs.CgBI ? t2(r2, f2) : _inflate(r2, f2), 0 == e3.interlace ? r2 = _filterZero(r2, e3, 0, i2, o2) : 1 == e3.interlace && (r2 = function _readInterlace(e4, t3) {
+    return r2 = e3.tabs.CgBI ? t2(r2, f2) : _inflate(r2, f2), 0 == e3.interlace ? r2 = _filterZero(r2, e3, 0, i2, o2) : 1 == e3.interlace && (r2 = (function _readInterlace(e4, t3) {
       const r3 = t3.width, i3 = t3.height, o3 = _getBPP(t3), a3 = o3 >> 3, s3 = Math.ceil(r3 * o3 / 8), f3 = new Uint8Array(i3 * s3);
       let l2 = 0;
       const c2 = [0, 0, 4, 0, 2, 0, 1], u = [0, 4, 0, 2, 0, 1, 0], h = [8, 8, 8, 4, 4, 2, 2], d = [8, 8, 4, 4, 2, 2, 1];
@@ -2020,12 +2016,12 @@ var UPNG = function() {
         w * v != 0 && (l2 += v * (1 + E)), A += 1;
       }
       return f3;
-    }(r2, e3)), r2;
+    })(r2, e3)), r2;
   }
   function _inflate(e3, r2) {
     return t2(new Uint8Array(e3.buffer, 2, e3.length - 6), r2);
   }
-  var t2 = function() {
+  var t2 = (function() {
     const e3 = { H: {} };
     return e3.H.N = function(t3, r2) {
       const i2 = Uint8Array;
@@ -2146,10 +2142,10 @@ var UPNG = function() {
       return (e4[t3 >>> 3] | e4[1 + (t3 >>> 3)] << 8 | e4[2 + (t3 >>> 3)] << 16) >>> (7 & t3);
     }, e3.H.i = function(e4, t3) {
       return (e4[t3 >>> 3] | e4[1 + (t3 >>> 3)] << 8 | e4[2 + (t3 >>> 3)] << 16 | e4[3 + (t3 >>> 3)] << 24) >>> (7 & t3);
-    }, e3.H.m = function() {
+    }, e3.H.m = (function() {
       const e4 = Uint16Array, t3 = Uint32Array;
       return { K: new e4(16), j: new e4(16), X: [16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15], S: [3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 15, 17, 19, 23, 27, 31, 35, 43, 51, 59, 67, 83, 99, 115, 131, 163, 195, 227, 258, 999, 999, 999], T: [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 0, 0, 0, 0], q: new e4(32), p: [1, 2, 3, 4, 5, 7, 9, 13, 17, 25, 33, 49, 65, 97, 129, 193, 257, 385, 513, 769, 1025, 1537, 2049, 3073, 4097, 6145, 8193, 12289, 16385, 24577, 65535, 65535], z: [0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 0, 0], c: new t3(32), J: new e4(512), _: [], h: new e4(32), $: [], w: new e4(32768), C: [], v: [], d: new e4(32768), D: [], u: new e4(512), Q: [], r: new e4(32768), s: new t3(286), Y: new t3(30), a: new t3(19), t: new t3(15e3), k: new e4(65536), g: new e4(32768) };
-    }(), function() {
+    })(), (function() {
       const t3 = e3.H.m;
       for (var r2 = 0; r2 < 32768; r2++) {
         let e4 = r2;
@@ -2160,8 +2156,8 @@ var UPNG = function() {
       }
       for (r2 = 0; r2 < 32; r2++) t3.q[r2] = t3.S[r2] << 3 | t3.T[r2], t3.c[r2] = t3.p[r2] << 4 | t3.z[r2];
       n(t3._, 144, 8), n(t3._, 112, 9), n(t3._, 24, 7), n(t3._, 8, 8), e3.H.n(t3._, 9), e3.H.A(t3._, 9, t3.J), e3.H.l(t3._, 9), n(t3.$, 32, 5), e3.H.n(t3.$, 5), e3.H.A(t3.$, 5, t3.h), e3.H.l(t3.$, 5), n(t3.Q, 19, 0), n(t3.C, 286, 0), n(t3.D, 30, 0), n(t3.v, 320, 0);
-    }(), e3.H.N;
-  }();
+    })(), e3.H.N;
+  })();
   function _getBPP(e3) {
     return [1, null, 3, 1, 2, null, 4][e3.ctype] * e3.depth;
   }
@@ -2306,10 +2302,10 @@ var UPNG = function() {
     }
     return i2;
   }, _paeth, _copyTile, _bin: e2 };
-}();
-!function() {
+})();
+!(function() {
   const { _copyTile: e2 } = UPNG, { _bin: t2 } = UPNG, r2 = UPNG._paeth;
-  var i2 = { table: function() {
+  var i2 = { table: (function() {
     const e3 = new Uint32Array(256);
     for (let t3 = 0; t3 < 256; t3++) {
       let r3 = t3;
@@ -2317,7 +2313,7 @@ var UPNG = function() {
       e3[t3] = r3;
     }
     return e3;
-  }(), update(e3, t3, r3, o3) {
+  })(), update(e3, t3, r3, o3) {
     for (let a2 = 0; a2 < o3; a2++) e3 = i2.table[255 & (e3 ^ t3[r3 + a2])] ^ e3 >>> 8;
     return e3;
   }, crc: (e3, t3, r3) => 4294967295 ^ i2.update(4294967295, e3, t3, r3) };
@@ -2423,7 +2419,7 @@ var UPNG = function() {
       const e3 = new Uint8Array(t3[p]);
       for (var m = e3.length, w = 0; w < m; w += 4) g &= e3[w + 3];
     }
-    const v = 255 != g, b = function framize(t4, r4, i4, o4, a3, s3) {
+    const v = 255 != g, b = (function framize(t4, r4, i4, o4, a3, s3) {
       const f3 = [];
       for (var l3 = 0; l3 < t4.length; l3++) {
         const h3 = new Uint8Array(t4[l3]), A3 = new Uint32Array(h3.buffer);
@@ -2459,11 +2455,11 @@ var UPNG = function() {
         h2 += (A2 = f3[d2]).rect.width * A2.rect.height;
       }
       return f3;
-    }(t3, r3, i3, s2, f2, l2), y = {}, E = [], F4 = [];
+    })(t3, r3, i3, s2, f2, l2), y = {}, E = [], F4 = [];
     if (0 != o3) {
       const e3 = [];
       for (w = 0; w < b.length; w++) e3.push(b[w].img.buffer);
-      const t4 = function concatRGBA(e4) {
+      const t4 = (function concatRGBA(e4) {
         let t5 = 0;
         for (var r5 = 0; r5 < e4.length; r5++) t5 += e4[r5].byteLength;
         const i5 = new Uint8Array(t5);
@@ -2478,7 +2474,7 @@ var UPNG = function() {
           o4 += a3;
         }
         return i5.buffer;
-      }(e3), r4 = quantize(t4, o3);
+      })(e3), r4 = quantize(t4, o3);
       for (w = 0; w < r4.plte.length; w++) E.push(r4.plte[w].est.rgba);
       let i4 = 0;
       for (w = 0; w < b.length; w++) {
@@ -2627,15 +2623,15 @@ var UPNG = function() {
       for (s2 = 0; s2 < 4; s2++) u.bst.m[s2] = f2.bst.m[s2] - c2.bst.m[s2];
       u.est = estats(u.bst), f2.left = c2, f2.right = u, a2[o4] = c2, a2.push(u);
     }
-    a2.sort((e4, t4) => t4.bst.N - e4.bst.N);
+    a2.sort(((e4, t4) => t4.bst.N - e4.bst.N));
     for (s2 = 0; s2 < a2.length; s2++) a2[s2].ind = s2;
     return [o3, a2];
   }
   function getNearest(e3, t3, r3, i3, o3) {
-    if (null == e3.left) return e3.tdst = function dist(e4, t4, r4, i4, o4) {
+    if (null == e3.left) return e3.tdst = (function dist(e4, t4, r4, i4, o4) {
       const a3 = t4 - e4[0], s3 = r4 - e4[1], f3 = i4 - e4[2], l3 = o4 - e4[3];
       return a3 * a3 + s3 * s3 + f3 * f3 + l3 * l3;
-    }(e3.est.q, t3, r3, i3, o3), e3;
+    })(e3.est.q, t3, r3, i3, o3), e3;
     const a2 = planeDst(e3.est, t3, r3, i3, o3);
     let s2 = e3.left, f2 = e3.right;
     a2 > 0 && (s2 = e3.right, f2 = e3.left);
@@ -2687,7 +2683,7 @@ var UPNG = function() {
     for (let i4 = 0; i4 < e3.length; i4++) l2.frames.push({ rect: { x: 0, y: 0, width: t3, height: r3 }, img: new Uint8Array(e3[i4]), blend: 0, dispose: 1, bpp: Math.ceil(c2 / 8), bpl: Math.ceil(u / 8) });
     return compressPNG(l2, 0, true), _main(l2, t3, r3, s2, f2);
   }, UPNG.encode.compress = compress4, UPNG.encode.dither = dither, UPNG.quantize = quantize, UPNG.quantize.getKDtree = getKDtree, UPNG.quantize.getNearest = getNearest;
-}();
+})();
 var r = { toArrayBuffer(e2, t2) {
   const i2 = e2.width, o2 = e2.height, a2 = i2 << 2, s2 = e2.getContext("2d").getImageData(0, 0, i2, o2), f2 = new Uint32Array(s2.data.buffer), l2 = (32 * i2 + 31) / 32 << 2, c2 = l2 * o2, u = 122 + c2, h = new ArrayBuffer(u), d = new DataView(h), A = 1 << 20;
   let g, p, m, w, v = A, b = 0, y = 0, E = 0;
@@ -2700,17 +2696,17 @@ var r = { toArrayBuffer(e2, t2) {
   function seek(e3) {
     y += e3;
   }
-  set16(19778), set32(u), seek(4), set32(122), set32(108), set32(i2), set32(-o2 >>> 0), set16(1), set16(32), set32(3), set32(c2), set32(2835), set32(2835), seek(8), set32(16711680), set32(65280), set32(255), set32(4278190080), set32(1466527264), function convert() {
+  set16(19778), set32(u), seek(4), set32(122), set32(108), set32(i2), set32(-o2 >>> 0), set16(1), set16(32), set32(3), set32(c2), set32(2835), set32(2835), seek(8), set32(16711680), set32(65280), set32(255), set32(4278190080), set32(1466527264), (function convert() {
     for (; b < o2 && v > 0; ) {
       for (w = 122 + b * l2, g = 0; g < a2; ) v--, p = f2[E++], m = p >>> 24, d.setUint32(w + g, p << 8 | m), g += 4;
       b++;
     }
     E < f2.length ? (v = A, setTimeout(convert, r._dly)) : t2(h);
-  }();
+  })();
 }, toBlob(e2, t2) {
-  this.toArrayBuffer(e2, (e3) => {
+  this.toArrayBuffer(e2, ((e3) => {
     t2(new Blob([e3], { type: "image/bmp" }));
-  });
+  }));
 }, _dly: 9 };
 var i = { CHROME: "CHROME", FIREFOX: "FIREFOX", DESKTOP_SAFARI: "DESKTOP_SAFARI", IE: "IE", IOS: "IOS", ETC: "ETC" };
 var o = { [i.CHROME]: 16384, [i.FIREFOX]: 11180, [i.DESKTOP_SAFARI]: 16384, [i.IE]: 8192, [i.IOS]: 4096, [i.ETC]: 8192 };
@@ -2720,26 +2716,26 @@ var f = a && window.cordova && window.cordova.require && window.cordova.require(
 var CustomFile = (a || s) && (f && f.getOriginalSymbol(window, "File") || "undefined" != typeof File && File);
 var CustomFileReader = (a || s) && (f && f.getOriginalSymbol(window, "FileReader") || "undefined" != typeof FileReader && FileReader);
 function getFilefromDataUrl(e2, t2, r2 = Date.now()) {
-  return new Promise((i2) => {
+  return new Promise(((i2) => {
     const o2 = e2.split(","), a2 = o2[0].match(/:(.*?);/)[1], s2 = globalThis.atob(o2[1]);
     let f2 = s2.length;
     const l2 = new Uint8Array(f2);
     for (; f2--; ) l2[f2] = s2.charCodeAt(f2);
     const c2 = new Blob([l2], { type: a2 });
     c2.name = t2, c2.lastModified = r2, i2(c2);
-  });
+  }));
 }
 function getDataUrlFromFile(e2) {
-  return new Promise((t2, r2) => {
+  return new Promise(((t2, r2) => {
     const i2 = new CustomFileReader();
     i2.onload = () => t2(i2.result), i2.onerror = (e3) => r2(e3), i2.readAsDataURL(e2);
-  });
+  }));
 }
 function loadImage(e2) {
-  return new Promise((t2, r2) => {
+  return new Promise(((t2, r2) => {
     const i2 = new Image();
     i2.onload = () => t2(i2), i2.onerror = (e3) => r2(e3), i2.src = e2;
-  });
+  }));
 }
 function getBrowserName() {
   if (void 0 !== getBrowserName.cachedResult) return getBrowserName.cachedResult;
@@ -2774,7 +2770,7 @@ function isIOS() {
   return void 0 !== isIOS.cachedResult || (isIOS.cachedResult = ["iPad Simulator", "iPhone Simulator", "iPod Simulator", "iPad", "iPhone", "iPod"].includes(navigator.platform) || navigator.userAgent.includes("Mac") && "undefined" != typeof document && "ontouchend" in document), isIOS.cachedResult;
 }
 function drawFileInCanvas(e2, t2 = {}) {
-  return new Promise(function(r2, o2) {
+  return new Promise((function(r2, o2) {
     let a2, s2;
     var $Try_2_Post = function() {
       try {
@@ -2794,25 +2790,25 @@ function drawFileInCanvas(e2, t2 = {}) {
         };
         try {
           let t4;
-          return getDataUrlFromFile(e2).then(function(e3) {
+          return getDataUrlFromFile(e2).then((function(e3) {
             try {
-              return t4 = e3, loadImage(t4).then(function(e4) {
+              return t4 = e3, loadImage(t4).then((function(e4) {
                 try {
-                  return a2 = e4, function() {
+                  return a2 = e4, (function() {
                     try {
                       return $Try_2_Post();
                     } catch (e5) {
                       return o2(e5);
                     }
-                  }();
+                  })();
                 } catch (e5) {
                   return $Try_3_Catch(e5);
                 }
-              }, $Try_3_Catch);
+              }), $Try_3_Catch);
             } catch (e4) {
               return $Try_3_Catch(e4);
             }
-          }, $Try_3_Catch);
+          }), $Try_3_Catch);
         } catch (e3) {
           $Try_3_Catch(e3);
         }
@@ -2822,20 +2818,20 @@ function drawFileInCanvas(e2, t2 = {}) {
     };
     try {
       if (isIOS() || [i.DESKTOP_SAFARI, i.MOBILE_SAFARI].includes(getBrowserName())) throw new Error("Skip createImageBitmap on IOS and Safari");
-      return createImageBitmap(e2).then(function(e3) {
+      return createImageBitmap(e2).then((function(e3) {
         try {
           return a2 = e3, $Try_2_Post();
         } catch (e4) {
           return $Try_2_Catch();
         }
-      }, $Try_2_Catch);
+      }), $Try_2_Catch);
     } catch (e3) {
       $Try_2_Catch();
     }
-  });
+  }));
 }
 function canvasToFile(e2, t2, i2, o2, a2 = 1) {
-  return new Promise(function(s2, f2) {
+  return new Promise((function(s2, f2) {
     let l2;
     if ("image/png" === t2) {
       let c2, u, h;
@@ -2845,7 +2841,7 @@ function canvasToFile(e2, t2, i2, o2, a2 = 1) {
       let $If_5 = function() {
         return $If_4.call(this);
       };
-      if ("image/bmp" === t2) return new Promise((t3) => r.toBlob(e2, t3)).then(function(e3) {
+      if ("image/bmp" === t2) return new Promise(((t3) => r.toBlob(e2, t3))).then(function(e3) {
         try {
           return l2 = e3, l2.name = i2, l2.lastModified = o2, $If_5.call(this);
         } catch (e4) {
@@ -2878,43 +2874,43 @@ function canvasToFile(e2, t2, i2, o2, a2 = 1) {
     function $If_4() {
       return s2(l2);
     }
-  });
+  }));
 }
 function cleanupCanvasMemory(e2) {
   e2.width = 0, e2.height = 0;
 }
 function isAutoOrientationInBrowser() {
-  return new Promise(function(e2, t2) {
+  return new Promise((function(e2, t2) {
     let r2, i2, o2, a2, s2;
-    return void 0 !== isAutoOrientationInBrowser.cachedResult ? e2(isAutoOrientationInBrowser.cachedResult) : (r2 = "data:image/jpeg;base64,/9j/4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAYAAAAAAAD/2wCEAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/AABEIAAEAAgMBEQACEQEDEQH/xABKAAEAAAAAAAAAAAAAAAAAAAALEAEAAAAAAAAAAAAAAAAAAAAAAQEAAAAAAAAAAAAAAAAAAAAAEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA/8H//2Q==", getFilefromDataUrl("data:image/jpeg;base64,/9j/4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAYAAAAAAAD/2wCEAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/AABEIAAEAAgMBEQACEQEDEQH/xABKAAEAAAAAAAAAAAAAAAAAAAALEAEAAAAAAAAAAAAAAAAAAAAAAQEAAAAAAAAAAAAAAAAAAAAAEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA/8H//2Q==", "test.jpg", Date.now()).then(function(r3) {
+    return void 0 !== isAutoOrientationInBrowser.cachedResult ? e2(isAutoOrientationInBrowser.cachedResult) : (r2 = "data:image/jpeg;base64,/9j/4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAYAAAAAAAD/2wCEAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/AABEIAAEAAgMBEQACEQEDEQH/xABKAAEAAAAAAAAAAAAAAAAAAAALEAEAAAAAAAAAAAAAAAAAAAAAAQEAAAAAAAAAAAAAAAAAAAAAEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA/8H//2Q==", getFilefromDataUrl("data:image/jpeg;base64,/9j/4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAYAAAAAAAD/2wCEAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/AABEIAAEAAgMBEQACEQEDEQH/xABKAAEAAAAAAAAAAAAAAAAAAAALEAEAAAAAAAAAAAAAAAAAAAAAAQEAAAAAAAAAAAAAAAAAAAAAEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA/8H//2Q==", "test.jpg", Date.now()).then((function(r3) {
       try {
-        return i2 = r3, drawFileInCanvas(i2).then(function(r4) {
+        return i2 = r3, drawFileInCanvas(i2).then((function(r4) {
           try {
-            return o2 = r4[1], canvasToFile(o2, i2.type, i2.name, i2.lastModified).then(function(r5) {
+            return o2 = r4[1], canvasToFile(o2, i2.type, i2.name, i2.lastModified).then((function(r5) {
               try {
-                return a2 = r5, cleanupCanvasMemory(o2), drawFileInCanvas(a2).then(function(r6) {
+                return a2 = r5, cleanupCanvasMemory(o2), drawFileInCanvas(a2).then((function(r6) {
                   try {
                     return s2 = r6[0], isAutoOrientationInBrowser.cachedResult = 1 === s2.width && 2 === s2.height, e2(isAutoOrientationInBrowser.cachedResult);
                   } catch (e3) {
                     return t2(e3);
                   }
-                }, t2);
+                }), t2);
               } catch (e3) {
                 return t2(e3);
               }
-            }, t2);
+            }), t2);
           } catch (e3) {
             return t2(e3);
           }
-        }, t2);
+        }), t2);
       } catch (e3) {
         return t2(e3);
       }
-    }, t2));
-  });
+    }), t2));
+  }));
 }
 function getExifOrientation(e2) {
-  return new Promise((t2, r2) => {
+  return new Promise(((t2, r2) => {
     const i2 = new CustomFileReader();
     i2.onload = (e3) => {
       const r3 = new DataView(e3.target.result);
@@ -2938,7 +2934,7 @@ function getExifOrientation(e2) {
       }
       return t2(-1);
     }, i2.onerror = (e3) => r2(e3), i2.readAsArrayBuffer(e2);
-  });
+  }));
 }
 function handleMaxWidthOrHeight(e2, t2) {
   const { width: r2 } = e2, { height: i2 } = e2, { maxWidthOrHeight: o2 } = t2;
@@ -2972,7 +2968,7 @@ function followExifOrientation(e2, t2) {
   return a2.drawImage(e2, 0, 0, r2, i2), cleanupCanvasMemory(e2), o2;
 }
 function compress(e2, t2, r2 = 0) {
-  return new Promise(function(i2, o2) {
+  return new Promise((function(i2, o2) {
     let a2, s2, f2, l2, c2, u, h, d, A, g, p, m, w, v, b, y, E, F4, _, B;
     function incProgress(e3 = 5) {
       if (t2.signal && t2.signal.aborted) throw t2.signal.reason;
@@ -2984,7 +2980,7 @@ function compress(e2, t2, r2 = 0) {
     }
     return a2 = r2, s2 = t2.maxIteration || 10, f2 = 1024 * t2.maxSizeMB * 1024, incProgress(), drawFileInCanvas(e2, t2).then(function(r3) {
       try {
-        return [, l2] = r3, incProgress(), c2 = handleMaxWidthOrHeight(l2, t2), incProgress(), new Promise(function(r4, i3) {
+        return [, l2] = r3, incProgress(), c2 = handleMaxWidthOrHeight(l2, t2), incProgress(), new Promise((function(r4, i3) {
           var o3;
           if (!(o3 = t2.exifOrientation)) return getExifOrientation(e2).then(function(e3) {
             try {
@@ -2997,7 +2993,7 @@ function compress(e2, t2, r2 = 0) {
             return r4(o3);
           }
           return $If_2.call(this);
-        }).then(function(r4) {
+        })).then(function(r4) {
           try {
             return u = r4, incProgress(), isAutoOrientationInBrowser().then(function(r5) {
               try {
@@ -3007,13 +3003,13 @@ function compress(e2, t2, r2 = 0) {
                       let $Loop_3 = function() {
                         if (s2-- && (b > f2 || b > w)) {
                           let t3, r7;
-                          return t3 = B ? 0.95 * _.width : _.width, r7 = B ? 0.95 * _.height : _.height, [E, F4] = getNewCanvasAndCtx(t3, r7), F4.drawImage(_, 0, 0, t3, r7), d *= "image/png" === A ? 0.85 : 0.95, canvasToFile(E, A, e2.name, e2.lastModified, d).then(function(e3) {
+                          return t3 = B ? 0.95 * _.width : _.width, r7 = B ? 0.95 * _.height : _.height, [E, F4] = getNewCanvasAndCtx(t3, r7), F4.drawImage(_, 0, 0, t3, r7), d *= "image/png" === A ? 0.85 : 0.95, canvasToFile(E, A, e2.name, e2.lastModified, d).then((function(e3) {
                             try {
                               return y = e3, cleanupCanvasMemory(_), _ = E, b = y.size, setProgress(Math.min(99, Math.floor((v - b) / (v - f2) * 100))), $Loop_3;
                             } catch (e4) {
                               return o2(e4);
                             }
-                          }, o2);
+                          }), o2);
                         }
                         return [1];
                       }, $Loop_3_exit = function() {
@@ -3051,30 +3047,30 @@ function compress(e2, t2, r2 = 0) {
         return o2(e3);
       }
     }.bind(this), o2);
-  });
+  }));
 }
 var l = "\nlet scriptImported = false\nself.addEventListener('message', async (e) => {\n  const { file, id, imageCompressionLibUrl, options } = e.data\n  options.onProgress = (progress) => self.postMessage({ progress, id })\n  try {\n    if (!scriptImported) {\n      // console.log('[worker] importScripts', imageCompressionLibUrl)\n      self.importScripts(imageCompressionLibUrl)\n      scriptImported = true\n    }\n    // console.log('[worker] self', self)\n    const compressedFile = await imageCompression(file, options)\n    self.postMessage({ file: compressedFile, id })\n  } catch (e) {\n    // console.error('[worker] error', e)\n    self.postMessage({ error: e.message + '\\n' + e.stack, id })\n  }\n})\n";
 var c;
 function compressOnWebWorker(e2, t2) {
-  return new Promise((r2, i2) => {
-    c || (c = function createWorkerScriptURL(e3) {
+  return new Promise(((r2, i2) => {
+    c || (c = (function createWorkerScriptURL(e3) {
       const t3 = [];
       return "function" == typeof e3 ? t3.push(`(${e3})()`) : t3.push(e3), URL.createObjectURL(new Blob(t3));
-    }(l));
+    })(l));
     const o2 = new Worker(c);
-    o2.addEventListener("message", function handler(e3) {
+    o2.addEventListener("message", (function handler(e3) {
       if (t2.signal && t2.signal.aborted) o2.terminate();
       else if (void 0 === e3.data.progress) {
         if (e3.data.error) return i2(new Error(e3.data.error)), void o2.terminate();
         r2(e3.data.file), o2.terminate();
       } else t2.onProgress(e3.data.progress);
-    }), o2.addEventListener("error", i2), t2.signal && t2.signal.addEventListener("abort", () => {
+    })), o2.addEventListener("error", i2), t2.signal && t2.signal.addEventListener("abort", (() => {
       i2(t2.signal.reason), o2.terminate();
-    }), o2.postMessage({ file: e2, imageCompressionLibUrl: t2.libURL, options: { ...t2, onProgress: void 0, signal: void 0 } });
-  });
+    })), o2.postMessage({ file: e2, imageCompressionLibUrl: t2.libURL, options: { ...t2, onProgress: void 0, signal: void 0 } });
+  }));
 }
 function imageCompression(e2, t2) {
-  return new Promise(function(r2, i2) {
+  return new Promise((function(r2, i2) {
     let o2, a2, s2, f2, l2, c2;
     if (o2 = { ...t2 }, s2 = 0, { onProgress: f2 } = o2, o2.maxSizeMB = o2.maxSizeMB || Number.POSITIVE_INFINITY, l2 = "boolean" != typeof o2.useWebWorker || o2.useWebWorker, delete o2.useWebWorker, o2.onProgress = (e3) => {
       s2 = e3, "function" == typeof f2 && f2(s2);
@@ -3095,25 +3091,25 @@ function imageCompression(e2, t2) {
       }
     }.bind(this), $Try_1_Catch = function(t3) {
       try {
-        return compress(e2, o2).then(function(e3) {
+        return compress(e2, o2).then((function(e3) {
           try {
             return a2 = e3, u();
           } catch (e4) {
             return i2(e4);
           }
-        }, i2);
+        }), i2);
       } catch (e3) {
         return i2(e3);
       }
     };
     try {
-      return o2.libURL = o2.libURL || "https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js", compressOnWebWorker(e2, o2).then(function(e3) {
+      return o2.libURL = o2.libURL || "https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js", compressOnWebWorker(e2, o2).then((function(e3) {
         try {
           return a2 = e3, u();
         } catch (e4) {
           return $Try_1_Catch();
         }
-      }, $Try_1_Catch);
+      }), $Try_1_Catch);
     } catch (e3) {
       $Try_1_Catch();
     }
@@ -3128,7 +3124,7 @@ function imageCompression(e2, t2) {
       }
       return r2(a2);
     }
-  });
+  }));
 }
 imageCompression.getDataUrlFromFile = getDataUrlFromFile, imageCompression.getFilefromDataUrl = getFilefromDataUrl, imageCompression.loadImage = loadImage, imageCompression.drawImageInCanvas = drawImageInCanvas, imageCompression.drawFileInCanvas = drawFileInCanvas, imageCompression.canvasToFile = canvasToFile, imageCompression.getExifOrientation = getExifOrientation, imageCompression.handleMaxWidthOrHeight = handleMaxWidthOrHeight, imageCompression.followExifOrientation = followExifOrientation, imageCompression.cleanupCanvasMemory = cleanupCanvasMemory, imageCompression.isAutoOrientationInBrowser = isAutoOrientationInBrowser, imageCompression.approximateBelowMaximumCanvasSizeOfBrowser = approximateBelowMaximumCanvasSizeOfBrowser, imageCompression.copyExifWithoutOrientation = copyExifWithoutOrientation, imageCompression.getBrowserName = getBrowserName, imageCompression.version = "2.0.2";
 
@@ -3161,9 +3157,7 @@ async function compressImage(data, filetype) {
       const originalData = data;
       data = await compressArrayBuffer(data, type, defaultOptions);
       if (data.byteLength > 200 * 1024) {
-        const test = await compressArrayBuffer(data, type, Object.assign(defaultOptions, {
-          fileType: "image/jpeg"
-        }));
+        const test = await compressArrayBuffer(data, type, { ...defaultOptions, fileType: "image/jpeg" });
         if (test.byteLength < data.byteLength) {
           data = test;
           filetype = "jpg";
@@ -3173,8 +3167,7 @@ async function compressImage(data, filetype) {
         data = originalData;
       }
       changed = data.byteLength !== originalData.byteLength;
-    } catch (e2) {
-      console.log(e2);
+    } catch (_e) {
     }
   }
   return {
@@ -3185,7 +3178,13 @@ async function compressImage(data, filetype) {
 }
 
 // src/api.ts
-var pluginVersion = require_manifest().version;
+var HandledError = class extends Error {
+  constructor(message = "Handled error") {
+    super(message);
+    this.handled = true;
+    this.name = "HandledError";
+  }
+};
 var API = class {
   constructor(plugin) {
     this.plugin = plugin;
@@ -3197,7 +3196,7 @@ var API = class {
       "x-sharenote-id": this.plugin.settings.uid,
       "x-sharenote-key": await sha256(nonce + this.plugin.settings.apiKey),
       "x-sharenote-nonce": nonce,
-      "x-sharenote-version": pluginVersion
+      "x-sharenote-version": this.plugin.manifest.version
     };
   }
   async post(endpoint, data, retries = 1) {
@@ -3207,38 +3206,32 @@ var API = class {
       "Content-Type": "application/json"
     };
     if (data == null ? void 0 : data.byteLength) headers["x-sharenote-bytelength"] = data.byteLength.toString();
-    const body = Object.assign({}, data);
+    const body = { ...data };
     if (this.plugin.settings.debug) body.debug = this.plugin.settings.debug;
     while (retries > 0) {
-      try {
-        const res = await (0, import_obsidian3.requestUrl)({
-          url: this.plugin.settings.server + endpoint,
-          method: "POST",
-          headers,
-          body: JSON.stringify(body)
-        });
-        if (this.plugin.settings.debug === 1 && (data == null ? void 0 : data.filetype) === "html") {
-          console.log(res.json.html);
-        }
-        return res.json;
-      } catch (error) {
-        if (error.status < 500 || retries <= 1) {
-          const message = (_a = error.headers) == null ? void 0 : _a.message;
-          if (message) {
-            new StatusMessage(message, 2 /* Error */);
-            if (error.status === 462) {
-              this.plugin.authRedirect("share").then();
-            }
-            throw new Error("Known error");
+      const res = await (0, import_obsidian3.requestUrl)({
+        url: this.plugin.settings.server + endpoint,
+        method: "POST",
+        headers,
+        body: JSON.stringify(body),
+        throw: false
+      });
+      if (res.status === 200) return res.json;
+      if (res.status < 500 || retries <= 1) {
+        const message = (_a = res.headers) == null ? void 0 : _a.message;
+        if (message) {
+          new StatusMessage(message, 2 /* Error */);
+          if (res.status === 462) {
+            void this.plugin.authRedirect("share");
           }
-          throw new Error("Unknown error");
-        } else {
-          await new Promise((resolve) => setTimeout(resolve, 1e3));
+          throw new HandledError(message);
         }
+        throw new Error("Unknown error");
       }
-      console.log("Retrying " + retries);
+      await new Promise((resolve) => window.setTimeout(resolve, 1e3));
       retries--;
     }
+    throw new Error("Retries exhausted");
   }
   async postRaw(endpoint, data, retries = 4) {
     const headers = {
@@ -3248,30 +3241,29 @@ var API = class {
     };
     if (data.byteLength) headers["x-sharenote-bytelength"] = data.byteLength.toString();
     while (retries > 0) {
-      const res = await fetch(this.plugin.settings.server + endpoint, {
+      const res = await (0, import_obsidian3.requestUrl)({
+        url: this.plugin.settings.server + endpoint,
         method: "POST",
         headers,
-        body: data.content
+        body: data.content,
+        throw: false
       });
-      if (res.status !== 200) {
-        if (res.status < 500 || retries <= 1) {
-          const message = await res.text();
-          if (message) {
-            new StatusMessage(message, 2 /* Error */);
-            throw new Error("Known error");
-          }
-          throw new Error("Unknown error");
+      if (res.status === 200) return res.json;
+      if (res.status < 500 || retries <= 1) {
+        const message = res.text;
+        if (message) {
+          new StatusMessage(message, 2 /* Error */);
+          throw new HandledError(message);
         }
-        await new Promise((resolve) => setTimeout(resolve, 1e3));
-      } else {
-        return res.json();
+        throw new Error("Unknown error");
       }
-      console.log("Retrying " + retries);
+      await new Promise((resolve) => window.setTimeout(resolve, 1e3));
       retries--;
     }
+    throw new Error("Retries exhausted");
   }
   async queueUpload(item) {
-    if (item.data.content) {
+    if (item.data.content && typeof item.data.content !== "string") {
       const compressed = await compressImage(item.data.content, item.data.filetype);
       if (compressed.changed) {
         item.data.content = compressed.data;
@@ -3282,35 +3274,33 @@ var API = class {
   }
   async processQueue(status, type = "attachment") {
     const res = await this.post("/v1/file/check-files", {
-      files: this.uploadQueue.map((x) => {
-        return {
-          hash: x.data.hash,
-          filetype: x.data.filetype,
-          byteLength: x.data.byteLength
-        };
-      })
+      files: this.uploadQueue.map((x) => ({
+        hash: x.data.hash,
+        filetype: x.data.filetype,
+        byteLength: x.data.byteLength
+      }))
     });
     let count = 1;
-    const promises = [];
+    const total = this.uploadQueue.length;
+    const uploads = [];
     for (const queueItem of this.uploadQueue) {
       const checkFile = res == null ? void 0 : res.files.find((item) => item.hash === queueItem.data.hash && item.filetype === queueItem.data.filetype);
       if (checkFile == null ? void 0 : checkFile.url) {
-        status.setStatus(`Uploading ${type} ${count++} of ${this.uploadQueue.length}...`);
+        status.setStatus(`Uploading ${type} ${count++} of ${total}...`);
         queueItem.callback(checkFile.url);
       } else {
-        promises.push(new Promise((resolve) => {
-          this.postRaw("/v1/file/upload", queueItem.data).then((res2) => {
-            status.setStatus(`Uploading ${type} ${count++} of ${this.uploadQueue.length}...`);
-            queueItem.callback(res2.url);
-            resolve();
-          }).catch((e2) => {
-            console.log(e2);
-            resolve();
-          });
-        }));
+        uploads.push((async () => {
+          try {
+            const uploaded = await this.postRaw("/v1/file/upload", queueItem.data);
+            status.setStatus(`Uploading ${type} ${count++} of ${total}...`);
+            queueItem.callback(uploaded.url);
+          } catch (e2) {
+            console.error(`[Share Note] ${type} upload failed:`, e2);
+          }
+        })());
       }
     }
-    await Promise.all(promises);
+    await Promise.all(uploads);
     this.uploadQueue = [];
     return res;
   }
@@ -3318,13 +3308,14 @@ var API = class {
     const res = await this.postRaw("/v1/file/upload", data);
     return res.url;
   }
-  async createNote(template, expiration) {
+  async createNote(payload, expiration) {
     const res = await this.post("/v1/file/create-note", {
-      filename: template.filename,
+      filename: payload.filename,
       filetype: "html",
-      hash: await sha1(template.content),
+      hash: await sha1(payload.content),
       expiration,
-      template
+      template: payload
+      // wire key kept as 'template' for server backwards compat
     }, 3);
     return res.url;
   }
@@ -3341,14 +3332,12 @@ var API = class {
 };
 function parseExistingShareUrl(url) {
   const match = url.match(/(\w+)(#.+?|)$/);
-  if (match) {
-    return {
-      filename: match[1],
-      decryptionKey: match[2].slice(1) || "",
-      url
-    };
-  }
-  return false;
+  if (!match) return null;
+  return {
+    filename: match[1],
+    decryptionKey: match[2].slice(1) || "",
+    url
+  };
 }
 
 // node_modules/csso/lib/syntax.js
@@ -5434,8 +5423,8 @@ function createWalker(config) {
   const types3 = getTypesFromConfig(config);
   const iteratorsNatural = {};
   const iteratorsReverse = {};
-  const breakWalk = Symbol("break-walk");
-  const skipNode = Symbol("skip-node");
+  const breakWalk = /* @__PURE__ */ Symbol("break-walk");
+  const skipNode = /* @__PURE__ */ Symbol("skip-node");
   for (const name41 in types3) {
     if (hasOwnProperty2.call(types3, name41) && types3[name41] !== null) {
       iteratorsNatural[name41] = createTypeIterator(types3[name41], false);
@@ -14781,51 +14770,51 @@ var cssAttachmentWhitelist = {
 };
 var Note = class {
   constructor(plugin) {
+    this.meta = null;
     this.isEncrypted = true;
     this.isForceUpload = false;
     this.isForceClipboard = false;
+    this.elements = [];
+    this.payload = {
+      width: "",
+      elements: [],
+      encrypted: true,
+      content: "",
+      mathJax: false
+    };
     var _a;
     this.plugin = plugin;
     this.leaf = (_a = this.plugin.app.workspace.getActiveFileView()) == null ? void 0 : _a.leaf;
-    this.elements = [];
-    this.template = new NoteTemplate();
-  }
-  /**
-   * Return the name (key) of a frontmatter property, eg 'share_link'
-   * @param key
-   * @return {string} The name (key) of a frontmatter property
-   */
-  field(key) {
-    return this.plugin.field(key);
   }
   async share() {
     var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l, _m;
+    this.status = new StatusMessage("Please do not change to another note as the current note data is still being parsed.", 0 /* Default */, 60 * 1e3);
     if (!this.plugin.settings.apiKey) {
-      this.plugin.authRedirect("share").then();
+      this.status.hide();
+      void this.plugin.authRedirect("share");
       return;
     }
-    this.status = new StatusMessage("Please do not change to another note as the current note data is still being parsed.", 0 /* Default */, 60 * 1e3);
     const startMode = this.leaf.getViewState();
     const previewMode = this.leaf.getViewState();
     if (previewMode.state) {
       previewMode.state.mode = "preview";
     }
     await this.leaf.setViewState(previewMode);
-    await new Promise((resolve) => setTimeout(resolve, 600));
+    await new Promise((resolve) => window.setTimeout(resolve, 600));
     this.leaf.view.previewMode.applyScroll(0);
-    await new Promise((resolve) => setTimeout(resolve, 100));
+    await new Promise((resolve) => window.setTimeout(resolve, 100));
     try {
       const view = this.leaf.view;
       const renderer = view.modes.preview.renderer;
-      this.elements.push(getElementStyle("html", document.documentElement));
-      const bodyStyle = getElementStyle("body", document.body);
+      this.elements.push(getElementStyle("html", activeDocument.documentElement));
+      const bodyStyle = getElementStyle("body", activeDocument.body);
       bodyStyle.classes.push("share-note-plugin");
       this.elements.push(bodyStyle);
       this.elements.push(getElementStyle("preview", renderer.previewEl));
       this.elements.push(getElementStyle("pusher", renderer.pusherEl));
       this.contentDom = new DOMParser().parseFromString(await this.querySelectorAll(this.leaf.view), "text/html");
       this.cssRules = [];
-      Array.from(document.styleSheets).forEach((x) => Array.from(x.cssRules).forEach((rule) => {
+      Array.from(activeDocument.styleSheets).forEach((x) => Array.from(x.cssRules).forEach((rule) => {
         this.cssRules.push(rule);
       }));
       this.css = this.cssRules.filter((rule) => {
@@ -14833,13 +14822,13 @@ var Note = class {
         return ((_a2 = rule == null ? void 0 : rule.media) == null ? void 0 : _a2[0]) !== "print";
       }).map((rule) => rule.cssText).join("").replace(/\n/g, "");
     } catch (e2) {
-      console.log(e2);
+      console.error("[Share Note] Failed to parse current note:", e2);
       this.status.hide();
-      new StatusMessage("Failed to parse current note, check console for details", 2 /* Error */);
+      new StatusMessage("Failed to parse the current note", 2 /* Error */);
       return;
     }
-    setTimeout(() => {
-      this.leaf.setViewState(startMode);
+    window.setTimeout(() => {
+      void this.leaf.setViewState(startMode);
     }, 200);
     this.status.setStatus("Processing note...");
     const file = this.plugin.app.workspace.getActiveFile();
@@ -14855,14 +14844,14 @@ var Note = class {
       (_c = this.contentDom.querySelector("div.frontmatter-container")) == null ? void 0 : _c.remove();
     } else {
       this.contentDom.querySelectorAll("div.metadata-property").forEach((propertyContainerEl) => {
-        var _a2, _b2;
+        var _a2, _b2, _c2;
         const propertyName = propertyContainerEl.getAttribute("data-property-key");
         if (propertyName) {
           const labelEl = propertyContainerEl.querySelector("input.metadata-property-key-input");
           labelEl == null ? void 0 : labelEl.setAttribute("value", propertyName);
           const valueEl = propertyContainerEl.querySelector("div.metadata-property-value > input");
-          const value = ((_b2 = (_a2 = this.meta) == null ? void 0 : _a2.frontmatter) == null ? void 0 : _b2[propertyName]) || "";
-          valueEl == null ? void 0 : valueEl.setAttribute("value", value);
+          const value = (_c2 = (_b2 = (_a2 = this.meta) == null ? void 0 : _a2.frontmatter) == null ? void 0 : _b2[propertyName]) != null ? _c2 : "";
+          valueEl == null ? void 0 : valueEl.setAttribute("value", String(value));
           switch (valueEl == null ? void 0 : valueEl.getAttribute("type")) {
             case "checkbox":
               if (value) valueEl.setAttribute("checked", "checked");
@@ -14887,7 +14876,11 @@ var Note = class {
       const iconEl = el.querySelector("div.callout-icon");
       const svgEl = iconEl == null ? void 0 : iconEl.querySelector("svg");
       if (svgEl) {
-        svgEl.outerHTML = `<svg width="16" height="16" data-share-note-lucide="${icon}"></svg>`;
+        const newSvg = this.contentDom.createElementNS("http://www.w3.org/2000/svg", "svg");
+        newSvg.setAttribute("width", "16");
+        newSvg.setAttribute("height", "16");
+        newSvg.setAttribute("data-share-note-lucide", icon);
+        svgEl.replaceWith(newSvg);
       }
     }
     for (const el of this.contentDom.querySelectorAll("a.internal-link, a.footnote-link")) {
@@ -14911,8 +14904,7 @@ var Note = class {
           el.removeAttribute("target");
           el.removeAttribute("href");
           continue;
-        } catch (e2) {
-          console.error(e2);
+        } catch (_e2) {
         }
       } else if (match) {
         if (this.internalLinkToSharedNote(match[1], el)) {
@@ -14928,21 +14920,21 @@ var Note = class {
     this.cssResult = uploadResult.css;
     await this.processCss();
     let decryptionKey = "";
-    if ((_g = (_f = this.meta) == null ? void 0 : _f.frontmatter) == null ? void 0 : _g[this.field(0 /* link */)]) {
-      const match = parseExistingShareUrl((_i = (_h = this.meta) == null ? void 0 : _h.frontmatter) == null ? void 0 : _i[this.field(0 /* link */)]);
+    if ((_g = (_f = this.meta) == null ? void 0 : _f.frontmatter) == null ? void 0 : _g[this.plugin.field(0 /* link */)]) {
+      const match = parseExistingShareUrl((_i = (_h = this.meta) == null ? void 0 : _h.frontmatter) == null ? void 0 : _i[this.plugin.field(0 /* link */)]);
       if (match) {
-        this.template.filename = match.filename;
+        this.payload.filename = match.filename;
         decryptionKey = match.decryptionKey;
       }
     }
-    this.template.encrypted = this.isEncrypted;
+    this.payload.encrypted = this.isEncrypted;
     let title;
     switch (this.plugin.settings.titleSource) {
       case 1 /* First H1 */:
         title = (_k = (_j = this.contentDom.getElementsByTagName("h1")) == null ? void 0 : _j[0]) == null ? void 0 : _k.innerText;
         break;
       case 2 /* Frontmatter property */:
-        title = (_m = (_l = this.meta) == null ? void 0 : _l.frontmatter) == null ? void 0 : _m[this.field(4 /* title */)];
+        title = (_m = (_l = this.meta) == null ? void 0 : _l.frontmatter) == null ? void 0 : _m[this.plugin.field(4 /* title */)];
         break;
     }
     if (!title) {
@@ -14955,48 +14947,52 @@ var Note = class {
         basename: title
       });
       const encryptedData = await encryptString(plaintext, decryptionKey);
-      this.template.content = JSON.stringify({
-        ciphertext: encryptedData.ciphertext
+      this.payload.content = JSON.stringify({
+        ciphertext: encryptedData.ciphertext,
+        ivs: encryptedData.ivs
       });
       decryptionKey = encryptedData.key;
     } else {
-      this.template.content = this.contentDom.body.innerHTML;
-      this.template.title = title;
+      this.payload.content = this.contentDom.body.innerHTML;
+      this.payload.title = title;
       const desc = Array.from(this.contentDom.querySelectorAll("p")).map((x) => x.innerText).filter((x) => !!x).join(" ");
-      this.template.description = desc.length > 200 ? desc.slice(0, 197) + "..." : desc;
+      this.payload.description = desc.length > 200 ? desc.slice(0, 197) + "..." : desc;
     }
-    this.template.width = this.plugin.settings.noteWidth;
+    this.payload.width = this.plugin.settings.noteWidth;
     if (this.plugin.settings.themeMode !== 0 /* Same as theme */) {
       this.elements.filter((x) => x.element === "body").forEach((item) => {
         item.classes = item.classes.filter((cls) => cls !== "theme-dark" && cls !== "theme-light");
         item.classes.push("theme-" + ThemeMode[this.plugin.settings.themeMode].toLowerCase());
       });
     }
-    this.template.elements = this.elements;
-    this.template.mathJax = !!this.contentDom.body.innerHTML.match(/<mjx-container/);
+    this.payload.elements = this.elements;
+    this.payload.mathJax = !!this.contentDom.querySelector("mjx-container");
     this.status.setStatus("Uploading note...");
-    let shareLink = await this.plugin.api.createNote(this.template, this.expiration);
-    (0, import_obsidian4.requestUrl)(shareLink).then().catch();
+    let shareLink = await this.plugin.api.createNote(this.payload, this.expiration);
+    void (0, import_obsidian4.requestUrl)({ url: shareLink, throw: false });
     if (shareLink && this.isEncrypted) {
       shareLink += "#" + decryptionKey;
     }
     let shareMessage = "The note has been shared";
     if (shareLink) {
       await this.plugin.app.fileManager.processFrontMatter(file, (frontmatter) => {
-        frontmatter[this.field(0 /* link */)] = shareLink;
-        frontmatter[this.field(1 /* updated */)] = (0, import_obsidian4.moment)().format();
+        frontmatter[this.plugin.field(0 /* link */)] = shareLink;
+        frontmatter[this.plugin.field(1 /* updated */)] = (0, import_obsidian4.moment)().format();
       });
       if (this.plugin.settings.clipboard || this.isForceClipboard) {
         try {
           await navigator.clipboard.writeText(shareLink);
           shareMessage = `${shareMessage} and the link is copied to your clipboard \u{1F4CB}`;
-        } catch (e2) {
+        } catch (_e2) {
         }
         this.isForceClipboard = false;
       }
     }
     this.status.hide();
-    new StatusMessage(shareMessage + `<br><br><a href="${shareLink}">\u2197\uFE0F Open shared note</a>`, 3 /* Success */, 6e3);
+    const successMsg = new StatusMessage(shareMessage, 3 /* Success */, 6e3);
+    if (shareLink) {
+      successMsg.addLink(shareLink, "\u2197\uFE0F Open shared note");
+    }
   }
   /**
    * Upload media attachments
@@ -15013,7 +15009,6 @@ var Note = class {
       }
       const filesource = el.getAttribute("filesource");
       if (filesource == null ? void 0 : filesource.match(/excalidraw/i)) {
-        console.log("Processing Excalidraw drawing...");
         try {
           const excalidraw = this.plugin.app.plugins.getPlugin("obsidian-excalidraw-plugin");
           if (!excalidraw) continue;
@@ -15021,8 +15016,7 @@ var Note = class {
           content = content.outerHTML;
           filetype = "svg";
         } catch (e2) {
-          console.error("Unable to process Excalidraw drawing:");
-          console.error(e2);
+          console.error("[Share Note] Unable to process Excalidraw drawing:", e2);
         }
       } else {
         try {
@@ -15032,7 +15026,7 @@ var Note = class {
             const parsed = new URL(src);
             filetype = parsed.pathname.split(".").pop();
           }
-        } catch (e2) {
+        } catch (_e) {
           continue;
         }
       }
@@ -15063,7 +15057,7 @@ var Note = class {
       this.status.setStatus("Processing CSS...");
       const attachments = this.css.match(/url\s*\(.*?\)/g) || [];
       for (const attachment of attachments) {
-        const assetMatch = attachment.match(/url\s*\(\s*"*(.*?)\s*(?<!\\)"\s*\)/);
+        const assetMatch = attachment.match(/url\s*\(\s*"((?:\\.|[^"\\])*)"\s*\)/);
         if (!assetMatch) continue;
         const assetUrl = (assetMatch == null ? void 0 : assetMatch[1]) || "";
         if (assetUrl.startsWith("data:")) {
@@ -15132,42 +15126,34 @@ var Note = class {
         this.plugin.settings.theme = ((_c = (_b = this.plugin.app) == null ? void 0 : _b.customCss) == null ? void 0 : _c.theme) || "";
         await this.plugin.saveSettings();
       } catch (e2) {
+        console.error("[Share Note] CSS upload failed:", e2);
       }
     }
   }
+  /**
+   * Poll the renderer until enough sections have rendered (or we time out),
+   * then return the concatenated outerHTML of all sections.
+   */
   async querySelectorAll(view) {
     const renderer = view.modes.preview.renderer;
-    let html = "";
-    await new Promise((resolve) => {
-      let count = 0;
-      let parsing = 0;
-      const timer = setInterval(() => {
-        try {
+    const maxTicks = 40;
+    let parsing = 0;
+    for (let count = 0; count < maxTicks; count++) {
+      try {
+        if (renderer.parsing) parsing++;
+        if (count > parsing) {
           const sections = renderer.sections;
-          count++;
-          if (renderer.parsing) parsing++;
-          if (count > parsing) {
-            let rendered = 0;
-            if (sections.length > 12) {
-              sections.slice(sections.length - 7, sections.length - 1).forEach((section) => {
-                if (section.el.innerHTML) rendered++;
-              });
-              if (rendered > 3) count = 100;
-            } else {
-              count = 100;
-            }
-          }
-          if (count > 40) {
-            html = this.reduceSections(renderer.sections);
-            resolve();
-          }
-        } catch (e2) {
-          clearInterval(timer);
-          resolve();
+          if (sections.length <= 12) break;
+          const tail = sections.slice(sections.length - 7, sections.length - 1);
+          const rendered = tail.filter((s2) => s2.el.innerHTML).length;
+          if (rendered > 3) break;
         }
-      }, 100);
-    });
-    return html;
+      } catch (_e) {
+        break;
+      }
+      await new Promise((resolve) => window.setTimeout(resolve, 100));
+    }
+    return this.reduceSections(renderer.sections);
   }
   /**
    * Takes a linkText like 'Some note' or 'Some path/Some note.md' and sees if that note is already shared.
@@ -15179,7 +15165,7 @@ var Note = class {
       const linkedFile = this.plugin.app.metadataCache.getFirstLinkpathDest(linkText, "");
       if (linkedFile instanceof import_obsidian4.TFile) {
         const linkedMeta = this.plugin.app.metadataCache.getFileCache(linkedFile);
-        const href = (_a = linkedMeta == null ? void 0 : linkedMeta.frontmatter) == null ? void 0 : _a[this.field(0 /* link */)];
+        const href = (_a = linkedMeta == null ? void 0 : linkedMeta.frontmatter) == null ? void 0 : _a[this.plugin.field(0 /* link */)];
         if (href && typeof href === "string") {
           if (method === 0 /* ANCHOR */) {
             el.setAttribute("href", href);
@@ -15189,10 +15175,10 @@ var Note = class {
             el.classList.add("force-cursor");
           }
           return true;
+        } else {
         }
       }
-    } catch (e2) {
-      console.error(e2);
+    } catch (_e) {
     }
     return false;
   }
@@ -15249,7 +15235,7 @@ var Note = class {
     if (expiration) {
       const match = expiration.match(/^(\d+) ([a-z]+?)s?$/);
       if (match && whitelist.includes(match[2])) {
-        return parseInt((0, import_obsidian4.moment)().add(+match[1], match[2] + "s").format("x"), 10);
+        return (0, import_obsidian4.moment)().add(+match[1], match[2] + "s").valueOf();
       }
     }
   }
@@ -15258,34 +15244,28 @@ var Note = class {
 // src/UI.ts
 var import_obsidian5 = require("obsidian");
 var ConfirmDialog = class extends import_obsidian5.Modal {
-  constructor(app, onConfirm) {
+  constructor(app, title, body, onConfirm) {
     super(app);
+    this.title = title;
+    this.body = body;
     this.onConfirm = onConfirm;
   }
   onOpen() {
     const { contentEl } = this;
-    if (this.title) {
-      contentEl.createEl("h2", { text: this.title });
-    }
-    if (this.body) {
-      contentEl.createEl("p", { text: this.body });
-    }
-    new import_obsidian5.Setting(contentEl).addButton((btn) => btn.setButtonText("\u{1F5D1}\uFE0F Yes, delete").setCta().onClick(() => {
+    if (this.title) contentEl.createEl("h2", { text: this.title });
+    if (this.body) contentEl.createEl("p", { text: this.body });
+    new import_obsidian5.Setting(contentEl).addButton((btn) => btn.setButtonText("Delete").setCta().onClick(() => {
       this.close();
-      this.onConfirm();
-    })).addButton((btn) => btn.setButtonText("No, cancel").onClick(() => {
-      this.close();
-    }));
+      void this.onConfirm();
+    })).addButton((btn) => btn.setButtonText("Cancel").onClick(() => this.close()));
   }
 };
 var UI = class {
   constructor(app) {
     this.app = app;
   }
-  confirmDialog(title = "", body = "", onConfirm) {
-    const dialog = new ConfirmDialog(this.app, onConfirm);
-    dialog.title = title;
-    dialog.body = body;
+  confirmDialog(title, body, onConfirm) {
+    const dialog = new ConfirmDialog(this.app, title, body, onConfirm);
     dialog.open();
     return dialog;
   }
@@ -15302,11 +15282,7 @@ var SharePlugin = class extends import_obsidian6.Plugin {
   async onload() {
     await this.loadSettings();
     if (!this.settings.uid) {
-      this.settings.uid = await shortHash("" + Date.now() + Math.random());
-      await this.saveSettings();
-    }
-    if (this.settings.server === "https://api.obsidianshare.com") {
-      this.settings.server = "https://api.note.sx";
+      this.settings.uid = await shortHash(`${Date.now()}-${Math.random()}`);
       await this.saveSettings();
     }
     this.settingsPage = new ShareSettingsTab(this.app, this);
@@ -15314,29 +15290,32 @@ var SharePlugin = class extends import_obsidian6.Plugin {
     this.api = new API(this);
     this.ui = new UI(this.app);
     this.registerObsidianProtocolHandler("share-note", async (data) => {
+      var _a;
       if (data.action === "share-note" && data.key) {
         this.settings.apiKey = data.key;
         await this.saveSettings();
-        if (this.settingsPage.apikeyEl) {
-          this.settingsPage.apikeyEl.setValue(data.key);
-        }
+        (_a = this.settingsPage.apikeyEl) == null ? void 0 : _a.setValue(data.key);
         if (this.settings.authRedirect === "share") {
-          this.authRedirect(null).then();
-          this.uploadNote().then();
+          void this.authRedirect(null);
+          void this.uploadNote();
         } else {
           new StatusMessage("Plugin successfully connected. You can now start sharing notes!", 3 /* Success */, 6e3);
         }
       }
     });
     this.addCommand({
-      id: "share-note",
+      id: "share",
       name: "Share current note",
-      callback: () => this.uploadNote()
+      callback: () => {
+        void this.uploadNote();
+      }
     });
     this.addCommand({
       id: "force-upload",
       name: "Force re-upload of all data for this note",
-      callback: () => this.uploadNote(true)
+      callback: () => {
+        void this.uploadNote(true);
+      }
     });
     this.addCommand({
       id: "delete-note",
@@ -15346,7 +15325,7 @@ var SharePlugin = class extends import_obsidian6.Plugin {
         if (checking) {
           return !!sharedFile;
         } else if (sharedFile) {
-          this.deleteSharedNote(sharedFile.file);
+          void this.deleteSharedNote(sharedFile.file);
         }
       }
     });
@@ -15358,7 +15337,7 @@ var SharePlugin = class extends import_obsidian6.Plugin {
         if (checking) {
           return file instanceof import_obsidian6.TFile;
         } else if (file) {
-          this.copyShareLink(file);
+          void this.copyShareLink(file);
         }
       }
     });
@@ -15368,7 +15347,9 @@ var SharePlugin = class extends import_obsidian6.Plugin {
           menu.addItem((item) => {
             item.setIcon("globe");
             item.setTitle("Share note on the web");
-            item.onClick(() => this.uploadNote());
+            item.onClick(() => {
+              void this.uploadNote();
+            });
           });
           menu.addItem((item) => {
             item.setIcon("share-2");
@@ -15387,7 +15368,7 @@ var SharePlugin = class extends import_obsidian6.Plugin {
   onunload() {
   }
   async loadSettings() {
-    this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
+    this.settings = { ...DEFAULT_SETTINGS, ...await this.loadData() };
   }
   async saveSettings() {
     await this.saveData(this.settings);
@@ -15406,10 +15387,10 @@ var SharePlugin = class extends import_obsidian6.Plugin {
       if (this.settings.shareUnencrypted) {
         note.shareAsPlainText(true);
       }
-      if (((_a = meta == null ? void 0 : meta.frontmatter) == null ? void 0 : _a[note.field(3 /* unencrypted */)]) === true) {
+      if (((_a = meta == null ? void 0 : meta.frontmatter) == null ? void 0 : _a[this.field(3 /* unencrypted */)]) === true) {
         note.shareAsPlainText(true);
       }
-      if (((_b = meta == null ? void 0 : meta.frontmatter) == null ? void 0 : _b[note.field(2 /* encrypted */)]) === true) {
+      if (((_b = meta == null ? void 0 : meta.frontmatter) == null ? void 0 : _b[this.field(2 /* encrypted */)]) === true) {
         note.shareAsPlainText(false);
       }
       if (forceUpload) {
@@ -15421,8 +15402,8 @@ var SharePlugin = class extends import_obsidian6.Plugin {
       try {
         await note.share();
       } catch (e2) {
-        if (e2.message !== "Known error") {
-          console.log(e2);
+        if (!(e2 instanceof HandledError)) {
+          console.error("[Share Note] Upload failed:", e2);
           new StatusMessage("There was an error uploading the note, please try again.", 2 /* Error */);
         }
       }
@@ -15446,7 +15427,7 @@ var SharePlugin = class extends import_obsidian6.Plugin {
     }
     return shareLink;
   }
-  async deleteSharedNote(file) {
+  deleteSharedNote(file) {
     const sharedFile = this.hasSharedFile(file);
     if (sharedFile) {
       this.ui.confirmDialog(
@@ -15465,43 +15446,41 @@ var SharePlugin = class extends import_obsidian6.Plugin {
   }
   addShareIcons() {
     let count = 0;
-    const timer = setInterval(() => {
+    const tick = () => {
       var _a, _b;
       count++;
-      if (count > 8) {
-        clearInterval(timer);
-        return;
-      }
       const activeFile = this.app.workspace.getActiveFile();
-      if (!activeFile) return;
-      const shareLink = (_b = (_a = this.app.metadataCache.getFileCache(activeFile)) == null ? void 0 : _a.frontmatter) == null ? void 0 : _b[this.field(0 /* link */)];
-      if (!shareLink) return;
-      document.querySelectorAll(`div.metadata-property[data-property-key="${this.field(0 /* link */)}"]`).forEach((propertyEl) => {
-        const valueEl = propertyEl.querySelector("div.metadata-property-value");
-        const linkEl = valueEl == null ? void 0 : valueEl.querySelector("div.external-link");
-        if ((linkEl == null ? void 0 : linkEl.innerText) !== shareLink) return;
-        if (valueEl && !valueEl.querySelector("div.share-note-icons")) {
-          const iconsEl = document.createElement("div");
-          iconsEl.classList.add("share-note-icons");
-          const shareIcon = iconsEl.createEl("span");
-          shareIcon.title = "Re-share note";
-          (0, import_obsidian6.setIcon)(shareIcon, "upload-cloud");
-          shareIcon.onclick = () => this.uploadNote();
-          const copyIcon = iconsEl.createEl("span");
-          copyIcon.title = "Copy link to clipboard";
-          (0, import_obsidian6.setIcon)(copyIcon, "copy");
-          copyIcon.onclick = async () => {
-            await navigator.clipboard.writeText(shareLink);
-            new StatusMessage("\u{1F4CB} Shared link copied to clipboard");
-          };
-          const deleteIcon = iconsEl.createEl("span");
-          deleteIcon.title = "Delete shared note";
-          (0, import_obsidian6.setIcon)(deleteIcon, "trash-2");
-          deleteIcon.onclick = () => this.deleteSharedNote(activeFile);
-          valueEl.prepend(iconsEl);
-        }
-      });
-    }, 50);
+      const shareLink = activeFile ? (_b = (_a = this.app.metadataCache.getFileCache(activeFile)) == null ? void 0 : _a.frontmatter) == null ? void 0 : _b[this.field(0 /* link */)] : void 0;
+      if (activeFile && shareLink) {
+        activeDocument.querySelectorAll(`div.metadata-property[data-property-key="${this.field(0 /* link */)}"]`).forEach((propertyEl) => {
+          const valueEl = propertyEl.querySelector("div.metadata-property-value");
+          const linkEl = valueEl == null ? void 0 : valueEl.querySelector("div.external-link");
+          if ((linkEl == null ? void 0 : linkEl.innerText) !== shareLink) return;
+          if (valueEl && !valueEl.querySelector("div.share-note-icons")) {
+            const iconsEl = createDiv({ cls: "share-note-icons" });
+            const shareIcon = iconsEl.createSpan({ attr: { title: "Re-share note" } });
+            (0, import_obsidian6.setIcon)(shareIcon, "upload-cloud");
+            this.registerDomEvent(shareIcon, "click", () => {
+              void this.uploadNote();
+            });
+            const copyIcon = iconsEl.createSpan({ attr: { title: "Copy link to clipboard" } });
+            (0, import_obsidian6.setIcon)(copyIcon, "copy");
+            this.registerDomEvent(copyIcon, "click", async () => {
+              await navigator.clipboard.writeText(shareLink);
+              new StatusMessage("\u{1F4CB} Shared link copied to clipboard");
+            });
+            const deleteIcon = iconsEl.createSpan({ attr: { title: "Delete shared note" } });
+            (0, import_obsidian6.setIcon)(deleteIcon, "trash-2");
+            this.registerDomEvent(deleteIcon, "click", () => {
+              void this.deleteSharedNote(activeFile);
+            });
+            valueEl.prepend(iconsEl);
+          }
+        });
+      }
+      if (count < 8) window.setTimeout(tick, 50);
+    };
+    tick();
   }
   /**
    * Redirect a user back to their position in the flow after they finish the auth.
@@ -15514,23 +15493,17 @@ var SharePlugin = class extends import_obsidian6.Plugin {
   }
   hasSharedFile(file) {
     var _a;
-    if (!file) {
-      file = this.app.workspace.getActiveFile() || void 0;
-    }
-    if (file) {
-      const meta = this.app.metadataCache.getFileCache(file);
-      const shareLink = (_a = meta == null ? void 0 : meta.frontmatter) == null ? void 0 : _a[this.settings.yamlField + "_" + YamlField[0 /* link */]];
-      if (shareLink && parseExistingShareUrl(shareLink)) {
-        return {
-          file,
-          ...parseExistingShareUrl(shareLink)
-        };
-      }
-    }
-    return false;
+    const target = file != null ? file : this.app.workspace.getActiveFile();
+    if (!target) return null;
+    const meta = this.app.metadataCache.getFileCache(target);
+    const shareLink = (_a = meta == null ? void 0 : meta.frontmatter) == null ? void 0 : _a[this.field(0 /* link */)];
+    if (typeof shareLink !== "string") return null;
+    const parsed = parseExistingShareUrl(shareLink);
+    if (!parsed) return null;
+    return { file: target, ...parsed };
   }
   field(key) {
-    return [this.settings.yamlField, YamlField[key]].join("_");
+    return `${this.settings.yamlField}_${YamlField[key]}`;
   }
 };
 

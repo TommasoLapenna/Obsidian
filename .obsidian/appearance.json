@@ -8,5 +8,6 @@
     "center-text-canvas"
   ],
   "cssTheme": "",
-  "accentColor": ""
+  "accentColor": "",
+  "theme": "obsidian"
 }
